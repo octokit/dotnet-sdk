@@ -23,9 +23,9 @@ We want to...
 1.  provide 100% coverage of the API in our SDK
 2.  use this as a building block for future SDK tooling.
 
-## Why Go?
+## Why .NET?
 
-We don't currently support a Go SDK and we wanted a narrow scope for the initial effort without worrying about cutting over users of an existing SDK.
+We have a substantial userbase that uses .NET and we wanted them to get access to our generated SDK as early as possible.
 
 ## How can I report on my experience or issues with the SDK?
 
