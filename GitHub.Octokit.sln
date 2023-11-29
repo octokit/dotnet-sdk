@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHub.Octokit", "GitHub\GitHub.Octokit.csproj", "{C118D1F2-D47D-4488-9D2F-88BA4A7729BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C118D1F2-D47D-4488-9D2F-88BA4A7729BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C118D1F2-D47D-4488-9D2F-88BA4A7729BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C118D1F2-D47D-4488-9D2F-88BA4A7729BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C118D1F2-D47D-4488-9D2F-88BA4A7729BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
