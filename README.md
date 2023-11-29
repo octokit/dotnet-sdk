@@ -6,12 +6,11 @@ An "alpha" version of a generated .NET SDK in C# from [GitHub's OpenAPI spec](ht
 
 ```
 using GitHub.Client;
-using GitHub.Octokit;
 using GitHub.Authentication;
 
 var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "";
-var octokitRequest = OctokitRequestAdapter.Create(new GitHubTokenAuthenticationProvider("Octokit.Gen",token));
-var gitHubClient = new OctokitClient(octokitRequest);
+var request = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen",token));
+var gitHubClient = new Client(request);
 
 var pullRequests = await gitHubClient.Repos["octokit"]["octokit.net"].Pulls.GetAsync();
 ```
