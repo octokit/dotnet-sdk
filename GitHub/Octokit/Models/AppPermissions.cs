@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// The permissions granted to the user access token.
     /// </summary>
@@ -33,9 +33,13 @@ namespace GitHub.Octokit.Models {
         public AppPermissions_organization_administration? OrganizationAdministration { get; set; }
         /// <summary>The level of permission to grant the access token to view and manage announcement banners for an organization.</summary>
         public AppPermissions_organization_announcement_banners? OrganizationAnnouncementBanners { get; set; }
+        /// <summary>The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.</summary>
+        public AppPermissions_organization_copilot_seat_management? OrganizationCopilotSeatManagement { get; set; }
+        /// <summary>The level of permission to grant the access token for custom organization roles management.</summary>
+        public AppPermissions_organization_custom_org_roles? OrganizationCustomOrgRoles { get; set; }
         /// <summary>The level of permission to grant the access token for custom property management.</summary>
         public AppPermissions_organization_custom_properties? OrganizationCustomProperties { get; set; }
-        /// <summary>The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.</summary>
+        /// <summary>The level of permission to grant the access token for custom repository roles management.</summary>
         public AppPermissions_organization_custom_roles? OrganizationCustomRoles { get; set; }
         /// <summary>The level of permission to grant the access token to manage the post-receive hooks for an organization.</summary>
         public AppPermissions_organization_hooks? OrganizationHooks { get; set; }
@@ -61,6 +65,8 @@ namespace GitHub.Octokit.Models {
         public AppPermissions_pages? Pages { get; set; }
         /// <summary>The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.</summary>
         public AppPermissions_pull_requests? PullRequests { get; set; }
+        /// <summary>The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.</summary>
+        public AppPermissions_repository_custom_properties? RepositoryCustomProperties { get; set; }
         /// <summary>The level of permission to grant the access token to manage the post-receive hooks for a repository.</summary>
         public AppPermissions_repository_hooks? RepositoryHooks { get; set; }
         /// <summary>The level of permission to grant the access token to manage repository projects, columns, and cards.</summary>
@@ -111,6 +117,8 @@ namespace GitHub.Octokit.Models {
                 {"metadata", n => { Metadata = n.GetEnumValue<AppPermissions_metadata>(); } },
                 {"organization_administration", n => { OrganizationAdministration = n.GetEnumValue<AppPermissions_organization_administration>(); } },
                 {"organization_announcement_banners", n => { OrganizationAnnouncementBanners = n.GetEnumValue<AppPermissions_organization_announcement_banners>(); } },
+                {"organization_copilot_seat_management", n => { OrganizationCopilotSeatManagement = n.GetEnumValue<AppPermissions_organization_copilot_seat_management>(); } },
+                {"organization_custom_org_roles", n => { OrganizationCustomOrgRoles = n.GetEnumValue<AppPermissions_organization_custom_org_roles>(); } },
                 {"organization_custom_properties", n => { OrganizationCustomProperties = n.GetEnumValue<AppPermissions_organization_custom_properties>(); } },
                 {"organization_custom_roles", n => { OrganizationCustomRoles = n.GetEnumValue<AppPermissions_organization_custom_roles>(); } },
                 {"organization_hooks", n => { OrganizationHooks = n.GetEnumValue<AppPermissions_organization_hooks>(); } },
@@ -125,6 +133,7 @@ namespace GitHub.Octokit.Models {
                 {"packages", n => { Packages = n.GetEnumValue<AppPermissions_packages>(); } },
                 {"pages", n => { Pages = n.GetEnumValue<AppPermissions_pages>(); } },
                 {"pull_requests", n => { PullRequests = n.GetEnumValue<AppPermissions_pull_requests>(); } },
+                {"repository_custom_properties", n => { RepositoryCustomProperties = n.GetEnumValue<AppPermissions_repository_custom_properties>(); } },
                 {"repository_hooks", n => { RepositoryHooks = n.GetEnumValue<AppPermissions_repository_hooks>(); } },
                 {"repository_projects", n => { RepositoryProjects = n.GetEnumValue<AppPermissions_repository_projects>(); } },
                 {"secret_scanning_alerts", n => { SecretScanningAlerts = n.GetEnumValue<AppPermissions_secret_scanning_alerts>(); } },
@@ -154,6 +163,8 @@ namespace GitHub.Octokit.Models {
             writer.WriteEnumValue<AppPermissions_metadata>("metadata", Metadata);
             writer.WriteEnumValue<AppPermissions_organization_administration>("organization_administration", OrganizationAdministration);
             writer.WriteEnumValue<AppPermissions_organization_announcement_banners>("organization_announcement_banners", OrganizationAnnouncementBanners);
+            writer.WriteEnumValue<AppPermissions_organization_copilot_seat_management>("organization_copilot_seat_management", OrganizationCopilotSeatManagement);
+            writer.WriteEnumValue<AppPermissions_organization_custom_org_roles>("organization_custom_org_roles", OrganizationCustomOrgRoles);
             writer.WriteEnumValue<AppPermissions_organization_custom_properties>("organization_custom_properties", OrganizationCustomProperties);
             writer.WriteEnumValue<AppPermissions_organization_custom_roles>("organization_custom_roles", OrganizationCustomRoles);
             writer.WriteEnumValue<AppPermissions_organization_hooks>("organization_hooks", OrganizationHooks);
@@ -168,6 +179,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteEnumValue<AppPermissions_packages>("packages", Packages);
             writer.WriteEnumValue<AppPermissions_pages>("pages", Pages);
             writer.WriteEnumValue<AppPermissions_pull_requests>("pull_requests", PullRequests);
+            writer.WriteEnumValue<AppPermissions_repository_custom_properties>("repository_custom_properties", RepositoryCustomProperties);
             writer.WriteEnumValue<AppPermissions_repository_hooks>("repository_hooks", RepositoryHooks);
             writer.WriteEnumValue<AppPermissions_repository_projects>("repository_projects", RepositoryProjects);
             writer.WriteEnumValue<AppPermissions_secrets>("secrets", Secrets);

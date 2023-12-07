@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Metadata for a Git tag
     /// </summary>
@@ -70,10 +70,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.Verification? Verification { get; set; }
+        public Octokit.Client.Models.Verification? Verification { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.Verification Verification { get; set; }
+        public Octokit.Client.Models.Verification Verification { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new gitTag and sets the default values.
@@ -101,7 +101,7 @@ namespace GitHub.Octokit.Models {
                 {"tag", n => { Tag = n.GetStringValue(); } },
                 {"tagger", n => { Tagger = n.GetObjectValue<GitTag_tagger>(GitTag_tagger.CreateFromDiscriminatorValue); } },
                 {"url", n => { Url = n.GetStringValue(); } },
-                {"verification", n => { Verification = n.GetObjectValue<GitHub.Octokit.Models.Verification>(GitHub.Octokit.Models.Verification.CreateFromDiscriminatorValue); } },
+                {"verification", n => { Verification = n.GetObjectValue<Octokit.Client.Models.Verification>(Octokit.Client.Models.Verification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -117,7 +117,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteStringValue("tag", Tag);
             writer.WriteObjectValue<GitTag_tagger>("tagger", Tagger);
             writer.WriteStringValue("url", Url);
-            writer.WriteObjectValue<GitHub.Octokit.Models.Verification>("verification", Verification);
+            writer.WriteObjectValue<Octokit.Client.Models.Verification>("verification", Verification);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

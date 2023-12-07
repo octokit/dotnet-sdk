@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Environments {
+namespace Octokit.Client.Repos.Item.Item.Environments {
     [Obsolete("This class is obsolete. Use environmentsGetResponse instead.")]
     public class EnvironmentsResponse : EnvironmentsGetResponse, IParsable {
         /// <summary>

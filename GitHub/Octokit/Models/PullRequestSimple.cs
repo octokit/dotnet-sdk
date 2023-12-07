@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Pull Request Simple
     /// </summary>
@@ -36,14 +36,14 @@ namespace GitHub.Octokit.Models {
         public List<SimpleUser> Assignees { get; set; }
 #endif
         /// <summary>How the author is associated with the repository.</summary>
-        public GitHub.Octokit.Models.AuthorAssociation? AuthorAssociation { get; set; }
+        public Octokit.Client.Models.AuthorAssociation? AuthorAssociation { get; set; }
         /// <summary>The status of auto merging a pull request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.AutoMerge? AutoMerge { get; set; }
+        public Octokit.Client.Models.AutoMerge? AutoMerge { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.AutoMerge AutoMerge { get; set; }
+        public Octokit.Client.Models.AutoMerge AutoMerge { get; set; }
 #endif
         /// <summary>The base property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -268,7 +268,7 @@ namespace GitHub.Octokit.Models {
                 {"assignee", n => { Assignee = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
                 {"assignees", n => { Assignees = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
-                {"auto_merge", n => { AutoMerge = n.GetObjectValue<GitHub.Octokit.Models.AutoMerge>(GitHub.Octokit.Models.AutoMerge.CreateFromDiscriminatorValue); } },
+                {"auto_merge", n => { AutoMerge = n.GetObjectValue<Octokit.Client.Models.AutoMerge>(Octokit.Client.Models.AutoMerge.CreateFromDiscriminatorValue); } },
                 {"base", n => { Base = n.GetObjectValue<PullRequestSimple_base>(PullRequestSimple_base.CreateFromDiscriminatorValue); } },
                 {"body", n => { Body = n.GetStringValue(); } },
                 {"closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
@@ -312,7 +312,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteObjectValue<NullableSimpleUser>("assignee", Assignee);
             writer.WriteCollectionOfObjectValues<SimpleUser>("assignees", Assignees);
             writer.WriteEnumValue<AuthorAssociation>("author_association", AuthorAssociation);
-            writer.WriteObjectValue<GitHub.Octokit.Models.AutoMerge>("auto_merge", AutoMerge);
+            writer.WriteObjectValue<Octokit.Client.Models.AutoMerge>("auto_merge", AutoMerge);
             writer.WriteObjectValue<PullRequestSimple_base>("base", Base);
             writer.WriteStringValue("body", Body);
             writer.WriteDateTimeOffsetValue("closed_at", ClosedAt);

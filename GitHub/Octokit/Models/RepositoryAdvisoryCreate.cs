@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     public class RepositoryAdvisoryCreate : IParsable {
         /// <summary>A list of users receiving credit for their participation in the security advisory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,6 +48,8 @@ namespace GitHub.Octokit.Models {
 #endif
         /// <summary>The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.</summary>
         public RepositoryAdvisoryCreate_severity? Severity { get; set; }
+        /// <summary>Whether to create a temporary private fork of the repository to collaborate on a fix.</summary>
+        public bool? StartPrivateFork { get; set; }
         /// <summary>A short summary of the advisory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +85,7 @@ namespace GitHub.Octokit.Models {
                 {"cwe_ids", n => { CweIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"severity", n => { Severity = n.GetEnumValue<RepositoryAdvisoryCreate_severity>(); } },
+                {"start_private_fork", n => { StartPrivateFork = n.GetBoolValue(); } },
                 {"summary", n => { Summary = n.GetStringValue(); } },
                 {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<RepositoryAdvisoryCreate_vulnerabilities>(RepositoryAdvisoryCreate_vulnerabilities.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -99,6 +102,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("cwe_ids", CweIds);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<RepositoryAdvisoryCreate_severity>("severity", Severity);
+            writer.WriteBoolValue("start_private_fork", StartPrivateFork);
             writer.WriteStringValue("summary", Summary);
             writer.WriteCollectionOfObjectValues<RepositoryAdvisoryCreate_vulnerabilities>("vulnerabilities", Vulnerabilities);
         }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Import.Authors.Item {
+namespace Octokit.Client.Repos.Item.Item.Import.Authors.Item {
     public class WithAuthor_PatchRequestBody : IParsable {
         /// <summary>The new Git author email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

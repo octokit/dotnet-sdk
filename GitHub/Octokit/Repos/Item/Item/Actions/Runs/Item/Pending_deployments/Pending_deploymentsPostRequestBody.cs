@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.Runs.Item.Pending_deployments {
+namespace Octokit.Client.Repos.Item.Item.Actions.Runs.Item.Pending_deployments {
     public class Pending_deploymentsPostRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

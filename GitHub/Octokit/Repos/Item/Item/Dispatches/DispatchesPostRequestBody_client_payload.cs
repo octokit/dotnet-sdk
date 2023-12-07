@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Dispatches {
+namespace Octokit.Client.Repos.Item.Item.Dispatches {
     /// <summary>
     /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
     /// </summary>

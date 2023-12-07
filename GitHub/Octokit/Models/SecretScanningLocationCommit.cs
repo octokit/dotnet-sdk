@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Represents a &apos;commit&apos; secret scanning location type. This location type shows that a secret was detected inside a commit to a repository.
     /// </summary>

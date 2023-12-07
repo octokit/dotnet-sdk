@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection_rules.Apps {
+namespace Octokit.Client.Repos.Item.Item.Environments.Item.Deployment_protection_rules.Apps {
     [Obsolete("This class is obsolete. Use appsGetResponse instead.")]
     public class AppsResponse : AppsGetResponse, IParsable {
         /// <summary>

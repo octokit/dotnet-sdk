@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Projects.Columns.Item.Moves {
+namespace Octokit.Client.Projects.Columns.Item.Moves {
     [Obsolete("This class is obsolete. Use movesPostResponse instead.")]
     public class MovesResponse : MovesPostResponse, IParsable {
         /// <summary>

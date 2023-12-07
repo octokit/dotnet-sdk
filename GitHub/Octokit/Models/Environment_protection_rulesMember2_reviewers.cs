@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     public class Environment_protection_rulesMember2_reviewers : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -58,18 +58,18 @@ namespace GitHub.Octokit.Models {
             /// <summary>Composed type representation for type simpleUser</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.SimpleUser? SimpleUser { get; set; }
+            public Octokit.Client.Models.SimpleUser? SimpleUser { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.SimpleUser SimpleUser { get; set; }
+            public Octokit.Client.Models.SimpleUser SimpleUser { get; set; }
 #endif
             /// <summary>Composed type representation for type team</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.Team? Team { get; set; }
+            public Octokit.Client.Models.Team? Team { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.Team Team { get; set; }
+            public Octokit.Client.Models.Team Team { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -78,8 +78,8 @@ namespace GitHub.Octokit.Models {
             public static Environment_protection_rulesMember2_reviewers_reviewer CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new Environment_protection_rulesMember2_reviewers_reviewer();
-                result.SimpleUser = new GitHub.Octokit.Models.SimpleUser();
-                result.Team = new GitHub.Octokit.Models.Team();
+                result.SimpleUser = new Octokit.Client.Models.SimpleUser();
+                result.Team = new Octokit.Client.Models.Team();
                 return result;
             }
             /// <summary>
@@ -97,7 +97,7 @@ namespace GitHub.Octokit.Models {
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<GitHub.Octokit.Models.SimpleUser>(null, SimpleUser, Team);
+                writer.WriteObjectValue<Octokit.Client.Models.SimpleUser>(null, SimpleUser, Team);
             }
         }
     }

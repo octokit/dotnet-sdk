@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// A GitHub Classroom assignment
     /// </summary>
@@ -16,10 +16,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>A GitHub Classroom classroom</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.Classroom? Classroom { get; set; }
+        public Octokit.Client.Models.Classroom? Classroom { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.Classroom Classroom { get; set; }
+        public Octokit.Client.Models.Classroom Classroom { get; set; }
 #endif
         /// <summary>The time at which the assignment is due.</summary>
         public DateTimeOffset? Deadline { get; set; }
@@ -111,7 +111,7 @@ namespace GitHub.Octokit.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"accepted", n => { Accepted = n.GetIntValue(); } },
-                {"classroom", n => { Classroom = n.GetObjectValue<GitHub.Octokit.Models.Classroom>(GitHub.Octokit.Models.Classroom.CreateFromDiscriminatorValue); } },
+                {"classroom", n => { Classroom = n.GetObjectValue<Octokit.Client.Models.Classroom>(Octokit.Client.Models.Classroom.CreateFromDiscriminatorValue); } },
                 {"deadline", n => { Deadline = n.GetDateTimeOffsetValue(); } },
                 {"editor", n => { Editor = n.GetStringValue(); } },
                 {"feedback_pull_requests_enabled", n => { FeedbackPullRequestsEnabled = n.GetBoolValue(); } },
@@ -138,7 +138,7 @@ namespace GitHub.Octokit.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("accepted", Accepted);
-            writer.WriteObjectValue<GitHub.Octokit.Models.Classroom>("classroom", Classroom);
+            writer.WriteObjectValue<Octokit.Client.Models.Classroom>("classroom", Classroom);
             writer.WriteDateTimeOffsetValue("deadline", Deadline);
             writer.WriteStringValue("editor", Editor);
             writer.WriteBoolValue("feedback_pull_requests_enabled", FeedbackPullRequestsEnabled);

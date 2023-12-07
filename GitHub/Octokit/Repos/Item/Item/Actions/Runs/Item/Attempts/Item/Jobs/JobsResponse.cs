@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.Runs.Item.Attempts.Item.Jobs {
+namespace Octokit.Client.Repos.Item.Item.Actions.Runs.Item.Attempts.Item.Jobs {
     [Obsolete("This class is obsolete. Use jobsGetResponse instead.")]
     public class JobsResponse : JobsGetResponse, IParsable {
         /// <summary>

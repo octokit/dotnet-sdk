@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     public class RepositoryAdvisory_submission : IAdditionalDataHolder, IParsable {
         /// <summary>Whether a private vulnerability report was accepted by the repository&apos;s administrators.</summary>
         public bool? Accepted { get; private set; }

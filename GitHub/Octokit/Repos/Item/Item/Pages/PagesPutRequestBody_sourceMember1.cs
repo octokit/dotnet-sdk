@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Pages {
+namespace Octokit.Client.Repos.Item.Item.Pages {
     /// <summary>
     /// Update the source for the repository. Must include the branch name and path.
     /// </summary>

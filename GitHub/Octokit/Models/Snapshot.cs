@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Create a new snapshot of a repository&apos;s dependencies.
     /// </summary>
@@ -36,10 +36,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>User-defined metadata to store domain-specific information limited to 8 keys with scalar values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.Metadata? Metadata { get; set; }
+        public Octokit.Client.Models.Metadata? Metadata { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.Metadata Metadata { get; set; }
+        public Octokit.Client.Models.Metadata Metadata { get; set; }
 #endif
         /// <summary>The repository branch that triggered this snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace GitHub.Octokit.Models {
                 {"detector", n => { Detector = n.GetObjectValue<Snapshot_detector>(Snapshot_detector.CreateFromDiscriminatorValue); } },
                 {"job", n => { Job = n.GetObjectValue<Snapshot_job>(Snapshot_job.CreateFromDiscriminatorValue); } },
                 {"manifests", n => { Manifests = n.GetObjectValue<Snapshot_manifests>(Snapshot_manifests.CreateFromDiscriminatorValue); } },
-                {"metadata", n => { Metadata = n.GetObjectValue<GitHub.Octokit.Models.Metadata>(GitHub.Octokit.Models.Metadata.CreateFromDiscriminatorValue); } },
+                {"metadata", n => { Metadata = n.GetObjectValue<Octokit.Client.Models.Metadata>(Octokit.Client.Models.Metadata.CreateFromDiscriminatorValue); } },
                 {"ref", n => { Ref = n.GetStringValue(); } },
                 {"scanned", n => { Scanned = n.GetDateTimeOffsetValue(); } },
                 {"sha", n => { Sha = n.GetStringValue(); } },
@@ -93,7 +93,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteObjectValue<Snapshot_detector>("detector", Detector);
             writer.WriteObjectValue<Snapshot_job>("job", Job);
             writer.WriteObjectValue<Snapshot_manifests>("manifests", Manifests);
-            writer.WriteObjectValue<GitHub.Octokit.Models.Metadata>("metadata", Metadata);
+            writer.WriteObjectValue<Octokit.Client.Models.Metadata>("metadata", Metadata);
             writer.WriteStringValue("ref", Ref);
             writer.WriteDateTimeOffsetValue("scanned", Scanned);
             writer.WriteStringValue("sha", Sha);

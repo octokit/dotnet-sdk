@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.User.Codespaces.Item.Machines {
+namespace Octokit.Client.User.Codespaces.Item.Machines {
     [Obsolete("This class is obsolete. Use machinesGetResponse instead.")]
     public class MachinesResponse : MachinesGetResponse, IParsable {
         /// <summary>

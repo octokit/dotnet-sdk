@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.PersonalAccessTokenRequests.Item {
+namespace Octokit.Client.Orgs.Item.PersonalAccessTokenRequests.Item {
     public class WithPat_request_PostRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Action to apply to the request.</summary>
         public WithPat_request_PostRequestBody_action? Action { get; set; }

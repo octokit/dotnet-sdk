@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Minimal Repository
     /// </summary>
@@ -58,10 +58,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>Code Of Conduct</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.CodeOfConduct? CodeOfConduct { get; set; }
+        public Octokit.Client.Models.CodeOfConduct? CodeOfConduct { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.CodeOfConduct CodeOfConduct { get; set; }
+        public Octokit.Client.Models.CodeOfConduct CodeOfConduct { get; set; }
 #endif
         /// <summary>The collaborators_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -416,12 +416,12 @@ namespace GitHub.Octokit.Models {
         /// <summary>The security_and_analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
+        public Octokit.Client.Models.SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.SecurityAndAnalysis SecurityAndAnalysis { get; set; }
+        public Octokit.Client.Models.SecurityAndAnalysis SecurityAndAnalysis { get; set; }
 #endif
-        /// <summary>The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.</summary>
+        /// <summary>The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.</summary>
         public int? Size { get; set; }
         /// <summary>The ssh_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -565,7 +565,7 @@ namespace GitHub.Octokit.Models {
                 {"blobs_url", n => { BlobsUrl = n.GetStringValue(); } },
                 {"branches_url", n => { BranchesUrl = n.GetStringValue(); } },
                 {"clone_url", n => { CloneUrl = n.GetStringValue(); } },
-                {"code_of_conduct", n => { CodeOfConduct = n.GetObjectValue<GitHub.Octokit.Models.CodeOfConduct>(GitHub.Octokit.Models.CodeOfConduct.CreateFromDiscriminatorValue); } },
+                {"code_of_conduct", n => { CodeOfConduct = n.GetObjectValue<Octokit.Client.Models.CodeOfConduct>(Octokit.Client.Models.CodeOfConduct.CreateFromDiscriminatorValue); } },
                 {"collaborators_url", n => { CollaboratorsUrl = n.GetStringValue(); } },
                 {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
                 {"commits_url", n => { CommitsUrl = n.GetStringValue(); } },
@@ -624,7 +624,7 @@ namespace GitHub.Octokit.Models {
                 {"pushed_at", n => { PushedAt = n.GetDateTimeOffsetValue(); } },
                 {"releases_url", n => { ReleasesUrl = n.GetStringValue(); } },
                 {"role_name", n => { RoleName = n.GetStringValue(); } },
-                {"security_and_analysis", n => { SecurityAndAnalysis = n.GetObjectValue<GitHub.Octokit.Models.SecurityAndAnalysis>(GitHub.Octokit.Models.SecurityAndAnalysis.CreateFromDiscriminatorValue); } },
+                {"security_and_analysis", n => { SecurityAndAnalysis = n.GetObjectValue<Octokit.Client.Models.SecurityAndAnalysis>(Octokit.Client.Models.SecurityAndAnalysis.CreateFromDiscriminatorValue); } },
                 {"size", n => { Size = n.GetIntValue(); } },
                 {"ssh_url", n => { SshUrl = n.GetStringValue(); } },
                 {"stargazers_count", n => { StargazersCount = n.GetIntValue(); } },
@@ -660,7 +660,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteStringValue("blobs_url", BlobsUrl);
             writer.WriteStringValue("branches_url", BranchesUrl);
             writer.WriteStringValue("clone_url", CloneUrl);
-            writer.WriteObjectValue<GitHub.Octokit.Models.CodeOfConduct>("code_of_conduct", CodeOfConduct);
+            writer.WriteObjectValue<Octokit.Client.Models.CodeOfConduct>("code_of_conduct", CodeOfConduct);
             writer.WriteStringValue("collaborators_url", CollaboratorsUrl);
             writer.WriteStringValue("comments_url", CommentsUrl);
             writer.WriteStringValue("commits_url", CommitsUrl);
@@ -719,7 +719,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteDateTimeOffsetValue("pushed_at", PushedAt);
             writer.WriteStringValue("releases_url", ReleasesUrl);
             writer.WriteStringValue("role_name", RoleName);
-            writer.WriteObjectValue<GitHub.Octokit.Models.SecurityAndAnalysis>("security_and_analysis", SecurityAndAnalysis);
+            writer.WriteObjectValue<Octokit.Client.Models.SecurityAndAnalysis>("security_and_analysis", SecurityAndAnalysis);
             writer.WriteIntValue("size", Size);
             writer.WriteStringValue("ssh_url", SshUrl);
             writer.WriteIntValue("stargazers_count", StargazersCount);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.Oidc.Customization.Sub {
+namespace Octokit.Client.Repos.Item.Item.Actions.Oidc.Customization.Sub {
     /// <summary>
     /// Actions OIDC subject customization for a repository
     /// </summary>

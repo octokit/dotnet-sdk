@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.DependencyGraph.Snapshots {
+namespace Octokit.Client.Repos.Item.Item.DependencyGraph.Snapshots {
     [Obsolete("This class is obsolete. Use snapshotsPostResponse instead.")]
     public class SnapshotsResponse : SnapshotsPostResponse, IParsable {
         /// <summary>

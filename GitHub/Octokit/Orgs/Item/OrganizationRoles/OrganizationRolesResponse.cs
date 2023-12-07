@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.OrganizationRoles {
+namespace Octokit.Client.Orgs.Item.OrganizationRoles {
     [Obsolete("This class is obsolete. Use organizationRolesGetResponse instead.")]
     public class OrganizationRolesResponse : OrganizationRolesGetResponse, IParsable {
         /// <summary>

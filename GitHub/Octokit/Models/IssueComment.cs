@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Comments provide a way for people to collaborate on an issue.
     /// </summary>
@@ -12,7 +12,7 @@ namespace GitHub.Octokit.Models {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How the author is associated with the repository.</summary>
-        public GitHub.Octokit.Models.AuthorAssociation? AuthorAssociation { get; set; }
+        public Octokit.Client.Models.AuthorAssociation? AuthorAssociation { get; set; }
         /// <summary>Contents of the issue comment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

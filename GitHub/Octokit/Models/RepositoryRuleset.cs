@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// A set of rules to apply when specified conditions are met.
     /// </summary>
@@ -145,18 +145,18 @@ namespace GitHub.Octokit.Models {
             /// <summary>Composed type representation for type orgRulesetConditions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.OrgRulesetConditions? OrgRulesetConditions { get; set; }
+            public Octokit.Client.Models.OrgRulesetConditions? OrgRulesetConditions { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.OrgRulesetConditions OrgRulesetConditions { get; set; }
+            public Octokit.Client.Models.OrgRulesetConditions OrgRulesetConditions { get; set; }
 #endif
             /// <summary>Composed type representation for type repositoryRulesetConditions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.RepositoryRulesetConditions? RepositoryRulesetConditions { get; set; }
+            public Octokit.Client.Models.RepositoryRulesetConditions? RepositoryRulesetConditions { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.RepositoryRulesetConditions RepositoryRulesetConditions { get; set; }
+            public Octokit.Client.Models.RepositoryRulesetConditions RepositoryRulesetConditions { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -165,8 +165,8 @@ namespace GitHub.Octokit.Models {
             public static RepositoryRuleset_conditions CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new RepositoryRuleset_conditions();
-                result.OrgRulesetConditions = new GitHub.Octokit.Models.OrgRulesetConditions();
-                result.RepositoryRulesetConditions = new GitHub.Octokit.Models.RepositoryRulesetConditions();
+                result.OrgRulesetConditions = new Octokit.Client.Models.OrgRulesetConditions();
+                result.RepositoryRulesetConditions = new Octokit.Client.Models.RepositoryRulesetConditions();
                 return result;
             }
             /// <summary>
@@ -184,7 +184,7 @@ namespace GitHub.Octokit.Models {
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<GitHub.Octokit.Models.OrgRulesetConditions>(null, OrgRulesetConditions, RepositoryRulesetConditions);
+                writer.WriteObjectValue<Octokit.Client.Models.OrgRulesetConditions>(null, OrgRulesetConditions, RepositoryRulesetConditions);
             }
         }
     }

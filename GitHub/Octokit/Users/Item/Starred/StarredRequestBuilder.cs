@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Octokit.Users.Item.Starred {
+namespace Octokit.Client.Users.Item.Starred {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\starred
     /// </summary>
@@ -34,10 +34,10 @@ namespace GitHub.Octokit.Users.Item.Starred {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<StarredGetResponse?> GetAsStarredGetResponseAsync(Action<StarredRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<StarredGetResponse?> GetAsStarredGetResponseAsync(Action<RequestConfiguration<StarredRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<StarredGetResponse> GetAsStarredGetResponseAsync(Action<StarredRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<StarredGetResponse> GetAsStarredGetResponseAsync(Action<RequestConfiguration<StarredRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<StarredGetResponse>(requestInfo, StarredGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +51,10 @@ namespace GitHub.Octokit.Users.Item.Starred {
         [Obsolete("This method is obsolete. Use GetAsStarredGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<StarredResponse?> GetAsync(Action<StarredRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<StarredResponse?> GetAsync(Action<RequestConfiguration<StarredRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<StarredResponse> GetAsync(Action<StarredRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<StarredResponse> GetAsync(Action<RequestConfiguration<StarredRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<StarredResponse>(requestInfo, StarredResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -65,24 +65,14 @@ namespace GitHub.Octokit.Users.Item.Starred {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<StarredRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StarredRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<StarredRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<StarredRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new StarredRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -99,18 +89,18 @@ namespace GitHub.Octokit.Users.Item.Starred {
             /// <summary>Composed type representation for type repository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Users.Item.Starred.Repository? Repository { get; set; }
+            public List<Octokit.Client.Users.Item.Starred.Repository>? Repository { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Users.Item.Starred.Repository Repository { get; set; }
+            public List<Octokit.Client.Users.Item.Starred.Repository> Repository { get; set; }
 #endif
             /// <summary>Composed type representation for type starredRepository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Users.Item.Starred.StarredRepository? StarredRepository { get; set; }
+            public List<Octokit.Client.Users.Item.Starred.StarredRepository>? StarredRepository { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Users.Item.Starred.StarredRepository StarredRepository { get; set; }
+            public List<Octokit.Client.Users.Item.Starred.StarredRepository> StarredRepository { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -119,17 +109,18 @@ namespace GitHub.Octokit.Users.Item.Starred {
             public static StarredGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new StarredGetResponse();
-                result.Repository = new GitHub.Octokit.Users.Item.Starred.Repository();
-                result.StarredRepository = new GitHub.Octokit.Users.Item.Starred.StarredRepository();
+                if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.Repository>(Octokit.Client.Users.Item.Starred.Repository.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Users.Item.Starred.Repository> repositoryValue) {
+                    result.Repository = repositoryValue;
+                }
+                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.StarredRepository>(Octokit.Client.Users.Item.Starred.StarredRepository.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Users.Item.Starred.StarredRepository> starredRepositoryValue) {
+                    result.StarredRepository = starredRepositoryValue;
+                }
                 return result;
             }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(Repository != null || StarredRepository != null) {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(Repository, StarredRepository);
-                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -138,7 +129,12 @@ namespace GitHub.Octokit.Users.Item.Starred {
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<GitHub.Octokit.Users.Item.Starred.Repository>(null, Repository, StarredRepository);
+                if(Repository != null) {
+                    writer.WriteCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.Repository>(null, Repository);
+                }
+                else if(StarredRepository != null) {
+                    writer.WriteCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.StarredRepository>(null, StarredRepository);
+                }
             }
         }
         /// <summary>
@@ -183,20 +179,8 @@ namespace GitHub.Octokit.Users.Item.Starred {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class StarredRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public StarredRequestBuilderGetQueryParameters QueryParameters { get; set; } = new StarredRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new starredRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public StarredRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class StarredRequestBuilderGetRequestConfiguration : RequestConfiguration<StarredRequestBuilderGetQueryParameters> {
         }
         /// <summary>
         /// Composed type wrapper for classes repository, starredRepository
@@ -205,18 +189,18 @@ namespace GitHub.Octokit.Users.Item.Starred {
             /// <summary>Composed type representation for type repository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Users.Item.Starred.Repository? Repository { get; set; }
+            public List<Octokit.Client.Users.Item.Starred.Repository>? Repository { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Users.Item.Starred.Repository Repository { get; set; }
+            public List<Octokit.Client.Users.Item.Starred.Repository> Repository { get; set; }
 #endif
             /// <summary>Composed type representation for type starredRepository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Users.Item.Starred.StarredRepository? StarredRepository { get; set; }
+            public List<Octokit.Client.Users.Item.Starred.StarredRepository>? StarredRepository { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Users.Item.Starred.StarredRepository StarredRepository { get; set; }
+            public List<Octokit.Client.Users.Item.Starred.StarredRepository> StarredRepository { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -225,17 +209,18 @@ namespace GitHub.Octokit.Users.Item.Starred {
             public static StarredResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new StarredResponse();
-                result.Repository = new GitHub.Octokit.Users.Item.Starred.Repository();
-                result.StarredRepository = new GitHub.Octokit.Users.Item.Starred.StarredRepository();
+                if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.Repository>(Octokit.Client.Users.Item.Starred.Repository.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Users.Item.Starred.Repository> repositoryValue) {
+                    result.Repository = repositoryValue;
+                }
+                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.StarredRepository>(Octokit.Client.Users.Item.Starred.StarredRepository.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Users.Item.Starred.StarredRepository> starredRepositoryValue) {
+                    result.StarredRepository = starredRepositoryValue;
+                }
                 return result;
             }
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(Repository != null || StarredRepository != null) {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(Repository, StarredRepository);
-                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -244,7 +229,12 @@ namespace GitHub.Octokit.Users.Item.Starred {
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<GitHub.Octokit.Users.Item.Starred.Repository>(null, Repository, StarredRepository);
+                if(Repository != null) {
+                    writer.WriteCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.Repository>(null, Repository);
+                }
+                else if(StarredRepository != null) {
+                    writer.WriteCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.StarredRepository>(null, StarredRepository);
+                }
             }
         }
     }

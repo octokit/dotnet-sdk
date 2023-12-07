@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Commits.Item.CheckRuns {
+namespace Octokit.Client.Repos.Item.Item.Commits.Item.CheckRuns {
     [Obsolete("This class is obsolete. Use checkRunsGetResponse instead.")]
     public class CheckRunsResponse : CheckRunsGetResponse, IParsable {
         /// <summary>

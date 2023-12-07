@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Emojis {
+namespace Octokit.Client.Emojis {
     [Obsolete("This class is obsolete. Use emojisGetResponse instead.")]
     public class EmojisResponse : EmojisGetResponse, IParsable {
         /// <summary>

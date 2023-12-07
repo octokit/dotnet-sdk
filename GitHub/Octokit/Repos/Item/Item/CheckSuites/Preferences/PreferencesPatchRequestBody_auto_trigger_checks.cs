@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.CheckSuites.Preferences {
+namespace Octokit.Client.Repos.Item.Item.CheckSuites.Preferences {
     public class PreferencesPatchRequestBody_auto_trigger_checks : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

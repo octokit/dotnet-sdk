@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Actions.Runners {
+namespace Octokit.Client.Orgs.Item.Actions.Runners {
     [Obsolete("This class is obsolete. Use runnersGetResponse instead.")]
     public class RunnersResponse : RunnersGetResponse, IParsable {
         /// <summary>

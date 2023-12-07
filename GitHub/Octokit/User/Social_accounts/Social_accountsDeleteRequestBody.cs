@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.User.Social_accounts {
+namespace Octokit.Client.User.Social_accounts {
     public class Social_accountsDeleteRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Full URLs for the social media profiles to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

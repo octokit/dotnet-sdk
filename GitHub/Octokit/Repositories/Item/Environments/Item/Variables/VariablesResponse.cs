@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repositories.Item.Environments.Item.Variables {
+namespace Octokit.Client.Repositories.Item.Environments.Item.Variables {
     [Obsolete("This class is obsolete. Use variablesGetResponse instead.")]
     public class VariablesResponse : VariablesGetResponse, IParsable {
         /// <summary>

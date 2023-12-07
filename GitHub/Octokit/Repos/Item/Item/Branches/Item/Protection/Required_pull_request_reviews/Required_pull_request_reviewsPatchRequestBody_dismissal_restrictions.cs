@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_reviews {
+namespace Octokit.Client.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_reviews {
     /// <summary>
     /// Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
     /// </summary>

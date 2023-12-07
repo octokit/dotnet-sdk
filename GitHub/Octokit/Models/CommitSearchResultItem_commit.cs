@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     public class CommitSearchResultItem_commit : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -53,10 +53,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.Verification? Verification { get; set; }
+        public Octokit.Client.Models.Verification? Verification { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.Verification Verification { get; set; }
+        public Octokit.Client.Models.Verification Verification { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new commitSearchResultItem_commit and sets the default values.
@@ -83,7 +83,7 @@ namespace GitHub.Octokit.Models {
                 {"message", n => { Message = n.GetStringValue(); } },
                 {"tree", n => { Tree = n.GetObjectValue<CommitSearchResultItem_commit_tree>(CommitSearchResultItem_commit_tree.CreateFromDiscriminatorValue); } },
                 {"url", n => { Url = n.GetStringValue(); } },
-                {"verification", n => { Verification = n.GetObjectValue<GitHub.Octokit.Models.Verification>(GitHub.Octokit.Models.Verification.CreateFromDiscriminatorValue); } },
+                {"verification", n => { Verification = n.GetObjectValue<Octokit.Client.Models.Verification>(Octokit.Client.Models.Verification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<CommitSearchResultItem_commit_tree>("tree", Tree);
             writer.WriteStringValue("url", Url);
-            writer.WriteObjectValue<GitHub.Octokit.Models.Verification>("verification", Verification);
+            writer.WriteObjectValue<Octokit.Client.Models.Verification>("verification", Verification);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

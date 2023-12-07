@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Gists.Item.Star {
+namespace Octokit.Client.Gists.Item.Star {
     public class Star404Error : ApiException, IParsable {
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }

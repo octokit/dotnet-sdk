@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Installation
     /// </summary>
@@ -199,18 +199,18 @@ namespace GitHub.Octokit.Models {
             /// <summary>Composed type representation for type enterprise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.Enterprise? Enterprise { get; set; }
+            public Octokit.Client.Models.Enterprise? Enterprise { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.Enterprise Enterprise { get; set; }
+            public Octokit.Client.Models.Enterprise Enterprise { get; set; }
 #endif
             /// <summary>Composed type representation for type simpleUser</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.SimpleUser? SimpleUser { get; set; }
+            public Octokit.Client.Models.SimpleUser? SimpleUser { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.SimpleUser SimpleUser { get; set; }
+            public Octokit.Client.Models.SimpleUser SimpleUser { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -219,8 +219,8 @@ namespace GitHub.Octokit.Models {
             public static Installation_account CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new Installation_account();
-                result.Enterprise = new GitHub.Octokit.Models.Enterprise();
-                result.SimpleUser = new GitHub.Octokit.Models.SimpleUser();
+                result.Enterprise = new Octokit.Client.Models.Enterprise();
+                result.SimpleUser = new Octokit.Client.Models.SimpleUser();
                 return result;
             }
             /// <summary>
@@ -238,7 +238,7 @@ namespace GitHub.Octokit.Models {
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<GitHub.Octokit.Models.Enterprise>(null, Enterprise, SimpleUser);
+                writer.WriteObjectValue<Octokit.Client.Models.Enterprise>(null, Enterprise, SimpleUser);
             }
         }
     }

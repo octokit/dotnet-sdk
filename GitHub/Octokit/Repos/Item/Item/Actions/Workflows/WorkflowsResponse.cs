@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.Workflows {
+namespace Octokit.Client.Repos.Item.Item.Actions.Workflows {
     [Obsolete("This class is obsolete. Use workflowsGetResponse instead.")]
     public class WorkflowsResponse : WorkflowsGetResponse, IParsable {
         /// <summary>

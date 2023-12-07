@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item {
+namespace Octokit.Client.Repos.Item.Item {
     /// <summary>
     /// Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see &quot;[About GitHub Advanced Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security).&quot;
     /// </summary>

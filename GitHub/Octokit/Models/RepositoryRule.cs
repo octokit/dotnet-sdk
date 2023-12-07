@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Composed type wrapper for classes repositoryRuleBranchNamePattern, repositoryRuleCommitAuthorEmailPattern, repositoryRuleCommitMessagePattern, repositoryRuleCommitterEmailPattern, repositoryRuleCreation, repositoryRuleDeletion, repositoryRuleNonFastForward, repositoryRulePullRequest, repositoryRuleRequiredDeployments, repositoryRuleRequiredLinearHistory, repositoryRuleRequiredSignatures, repositoryRuleRequiredStatusChecks, repositoryRuleTagNamePattern, repositoryRuleUpdate, repositoryRuleWorkflows
     /// </summary>
@@ -13,602 +13,602 @@ namespace GitHub.Octokit.Models {
         /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern? RepositoryRuleBranchNamePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern? RepositoryRuleBranchNamePattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern RepositoryRuleBranchNamePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern RepositoryRuleBranchNamePattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleCommitAuthorEmailPattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleCommitAuthorEmailPattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleCommitAuthorEmailPattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleCommitAuthorEmailPattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleCommitMessagePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleCommitMessagePattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern RepositoryRuleCommitMessagePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern RepositoryRuleCommitMessagePattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleCommitterEmailPattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleCommitterEmailPattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleCommitterEmailPattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleCommitterEmailPattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCreation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCreation? RepositoryRuleCreation { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation? RepositoryRuleCreation { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCreation RepositoryRuleCreation { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation RepositoryRuleCreation { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleDeletion? RepositoryRuleDeletion { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion? RepositoryRuleDeletion { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleDeletion RepositoryRuleDeletion { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion RepositoryRuleDeletion { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward? RepositoryRuleNonFastForward { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward? RepositoryRuleNonFastForward { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward RepositoryRuleNonFastForward { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward RepositoryRuleNonFastForward { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRulePullRequest? RepositoryRulePullRequest { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest? RepositoryRulePullRequest { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRulePullRequest RepositoryRulePullRequest { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest RepositoryRulePullRequest { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCreation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCreation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCreation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleCreation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest0 { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest0 { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest1 { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest1 { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest2 { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest2 { get; set; }
+        public Octokit.Client.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows0 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows0 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows0 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows1 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows1 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows1 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows2 { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows2 { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows2 { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRequiredDeployments { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRequiredDeployments { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredDeployments RepositoryRuleRequiredDeployments { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredDeployments RepositoryRuleRequiredDeployments { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRequiredLinearHistory { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRequiredLinearHistory { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRequiredLinearHistory { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRequiredLinearHistory { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRequiredSignatures { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRequiredSignatures { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredSignatures RepositoryRuleRequiredSignatures { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredSignatures RepositoryRuleRequiredSignatures { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRequiredStatusChecks { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRequiredStatusChecks { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRequiredStatusChecks { get; set; }
+        public Octokit.Client.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRequiredStatusChecks { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern? RepositoryRuleTagNamePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern? RepositoryRuleTagNamePattern { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleTagNamePattern RepositoryRuleTagNamePattern { get; set; }
+        public Octokit.Client.Models.RepositoryRuleTagNamePattern RepositoryRuleTagNamePattern { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleUpdate? RepositoryRuleUpdate { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate? RepositoryRuleUpdate { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleUpdate RepositoryRuleUpdate { get; set; }
+        public Octokit.Client.Models.RepositoryRuleUpdate RepositoryRuleUpdate { get; set; }
 #endif
         /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows? RepositoryRuleWorkflows { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows? RepositoryRuleWorkflows { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRuleWorkflows RepositoryRuleWorkflows { get; set; }
+        public Octokit.Client.Models.RepositoryRuleWorkflows RepositoryRuleWorkflows { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -619,229 +619,229 @@ namespace GitHub.Octokit.Models {
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new RepositoryRule();
             if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleBranchNamePattern = new GitHub.Octokit.Models.RepositoryRuleBranchNamePattern();
+                result.RepositoryRuleBranchNamePattern = new Octokit.Client.Models.RepositoryRuleBranchNamePattern();
             }
             else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleCommitAuthorEmailPattern = new GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern();
+                result.RepositoryRuleCommitAuthorEmailPattern = new Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
             else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleCommitMessagePattern = new GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern();
+                result.RepositoryRuleCommitMessagePattern = new Octokit.Client.Models.RepositoryRuleCommitMessagePattern();
             }
             else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleCommitterEmailPattern = new GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern();
+                result.RepositoryRuleCommitterEmailPattern = new Octokit.Client.Models.RepositoryRuleCommitterEmailPattern();
             }
             else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleCreation = new GitHub.Octokit.Models.RepositoryRuleCreation();
+                result.RepositoryRuleCreation = new Octokit.Client.Models.RepositoryRuleCreation();
             }
             else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleDeletion = new GitHub.Octokit.Models.RepositoryRuleDeletion();
+                result.RepositoryRuleDeletion = new Octokit.Client.Models.RepositoryRuleDeletion();
             }
             else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleNonFastForward = new GitHub.Octokit.Models.RepositoryRuleNonFastForward();
+                result.RepositoryRuleNonFastForward = new Octokit.Client.Models.RepositoryRuleNonFastForward();
             }
             else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRulePullRequest = new GitHub.Octokit.Models.RepositoryRulePullRequest();
+                result.RepositoryRulePullRequest = new Octokit.Client.Models.RepositoryRulePullRequest();
             }
             else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleBranchNamePattern = new GitHub.Octokit.Models.RepositoryRuleBranchNamePattern();
+                result.RepositoryRuleRepositoryRuleBranchNamePattern = new Octokit.Client.Models.RepositoryRuleBranchNamePattern();
             }
             else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleBranchNamePattern0 = new GitHub.Octokit.Models.RepositoryRuleBranchNamePattern();
+                result.RepositoryRuleRepositoryRuleBranchNamePattern0 = new Octokit.Client.Models.RepositoryRuleBranchNamePattern();
             }
             else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleBranchNamePattern1 = new GitHub.Octokit.Models.RepositoryRuleBranchNamePattern();
+                result.RepositoryRuleRepositoryRuleBranchNamePattern1 = new Octokit.Client.Models.RepositoryRuleBranchNamePattern();
             }
             else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleBranchNamePattern2 = new GitHub.Octokit.Models.RepositoryRuleBranchNamePattern();
+                result.RepositoryRuleRepositoryRuleBranchNamePattern2 = new Octokit.Client.Models.RepositoryRuleBranchNamePattern();
             }
             else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern = new GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern();
+                result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern = new Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
             else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 = new GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern();
+                result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 = new Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
             else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 = new GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern();
+                result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 = new Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
             else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 = new GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern();
+                result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 = new Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
             else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitMessagePattern = new GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern();
+                result.RepositoryRuleRepositoryRuleCommitMessagePattern = new Octokit.Client.Models.RepositoryRuleCommitMessagePattern();
             }
             else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitMessagePattern0 = new GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern();
+                result.RepositoryRuleRepositoryRuleCommitMessagePattern0 = new Octokit.Client.Models.RepositoryRuleCommitMessagePattern();
             }
             else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitMessagePattern1 = new GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern();
+                result.RepositoryRuleRepositoryRuleCommitMessagePattern1 = new Octokit.Client.Models.RepositoryRuleCommitMessagePattern();
             }
             else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitMessagePattern2 = new GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern();
+                result.RepositoryRuleRepositoryRuleCommitMessagePattern2 = new Octokit.Client.Models.RepositoryRuleCommitMessagePattern();
             }
             else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitterEmailPattern = new GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern();
+                result.RepositoryRuleRepositoryRuleCommitterEmailPattern = new Octokit.Client.Models.RepositoryRuleCommitterEmailPattern();
             }
             else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitterEmailPattern0 = new GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern();
+                result.RepositoryRuleRepositoryRuleCommitterEmailPattern0 = new Octokit.Client.Models.RepositoryRuleCommitterEmailPattern();
             }
             else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitterEmailPattern1 = new GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern();
+                result.RepositoryRuleRepositoryRuleCommitterEmailPattern1 = new Octokit.Client.Models.RepositoryRuleCommitterEmailPattern();
             }
             else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCommitterEmailPattern2 = new GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern();
+                result.RepositoryRuleRepositoryRuleCommitterEmailPattern2 = new Octokit.Client.Models.RepositoryRuleCommitterEmailPattern();
             }
             else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCreation = new GitHub.Octokit.Models.RepositoryRuleCreation();
+                result.RepositoryRuleRepositoryRuleCreation = new Octokit.Client.Models.RepositoryRuleCreation();
             }
             else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCreation0 = new GitHub.Octokit.Models.RepositoryRuleCreation();
+                result.RepositoryRuleRepositoryRuleCreation0 = new Octokit.Client.Models.RepositoryRuleCreation();
             }
             else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCreation1 = new GitHub.Octokit.Models.RepositoryRuleCreation();
+                result.RepositoryRuleRepositoryRuleCreation1 = new Octokit.Client.Models.RepositoryRuleCreation();
             }
             else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleCreation2 = new GitHub.Octokit.Models.RepositoryRuleCreation();
+                result.RepositoryRuleRepositoryRuleCreation2 = new Octokit.Client.Models.RepositoryRuleCreation();
             }
             else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleDeletion = new GitHub.Octokit.Models.RepositoryRuleDeletion();
+                result.RepositoryRuleRepositoryRuleDeletion = new Octokit.Client.Models.RepositoryRuleDeletion();
             }
             else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleDeletion0 = new GitHub.Octokit.Models.RepositoryRuleDeletion();
+                result.RepositoryRuleRepositoryRuleDeletion0 = new Octokit.Client.Models.RepositoryRuleDeletion();
             }
             else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleDeletion1 = new GitHub.Octokit.Models.RepositoryRuleDeletion();
+                result.RepositoryRuleRepositoryRuleDeletion1 = new Octokit.Client.Models.RepositoryRuleDeletion();
             }
             else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleDeletion2 = new GitHub.Octokit.Models.RepositoryRuleDeletion();
+                result.RepositoryRuleRepositoryRuleDeletion2 = new Octokit.Client.Models.RepositoryRuleDeletion();
             }
             else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleNonFastForward = new GitHub.Octokit.Models.RepositoryRuleNonFastForward();
+                result.RepositoryRuleRepositoryRuleNonFastForward = new Octokit.Client.Models.RepositoryRuleNonFastForward();
             }
             else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleNonFastForward0 = new GitHub.Octokit.Models.RepositoryRuleNonFastForward();
+                result.RepositoryRuleRepositoryRuleNonFastForward0 = new Octokit.Client.Models.RepositoryRuleNonFastForward();
             }
             else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleNonFastForward1 = new GitHub.Octokit.Models.RepositoryRuleNonFastForward();
+                result.RepositoryRuleRepositoryRuleNonFastForward1 = new Octokit.Client.Models.RepositoryRuleNonFastForward();
             }
             else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleNonFastForward2 = new GitHub.Octokit.Models.RepositoryRuleNonFastForward();
+                result.RepositoryRuleRepositoryRuleNonFastForward2 = new Octokit.Client.Models.RepositoryRuleNonFastForward();
             }
             else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRulePullRequest = new GitHub.Octokit.Models.RepositoryRulePullRequest();
+                result.RepositoryRuleRepositoryRulePullRequest = new Octokit.Client.Models.RepositoryRulePullRequest();
             }
             else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRulePullRequest0 = new GitHub.Octokit.Models.RepositoryRulePullRequest();
+                result.RepositoryRuleRepositoryRulePullRequest0 = new Octokit.Client.Models.RepositoryRulePullRequest();
             }
             else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRulePullRequest1 = new GitHub.Octokit.Models.RepositoryRulePullRequest();
+                result.RepositoryRuleRepositoryRulePullRequest1 = new Octokit.Client.Models.RepositoryRulePullRequest();
             }
             else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRulePullRequest2 = new GitHub.Octokit.Models.RepositoryRulePullRequest();
+                result.RepositoryRuleRepositoryRulePullRequest2 = new Octokit.Client.Models.RepositoryRulePullRequest();
             }
             else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredDeployments = new GitHub.Octokit.Models.RepositoryRuleRequiredDeployments();
+                result.RepositoryRuleRepositoryRuleRequiredDeployments = new Octokit.Client.Models.RepositoryRuleRequiredDeployments();
             }
             else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredDeployments0 = new GitHub.Octokit.Models.RepositoryRuleRequiredDeployments();
+                result.RepositoryRuleRepositoryRuleRequiredDeployments0 = new Octokit.Client.Models.RepositoryRuleRequiredDeployments();
             }
             else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredDeployments1 = new GitHub.Octokit.Models.RepositoryRuleRequiredDeployments();
+                result.RepositoryRuleRepositoryRuleRequiredDeployments1 = new Octokit.Client.Models.RepositoryRuleRequiredDeployments();
             }
             else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredDeployments2 = new GitHub.Octokit.Models.RepositoryRuleRequiredDeployments();
+                result.RepositoryRuleRepositoryRuleRequiredDeployments2 = new Octokit.Client.Models.RepositoryRuleRequiredDeployments();
             }
             else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredLinearHistory = new GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory();
+                result.RepositoryRuleRepositoryRuleRequiredLinearHistory = new Octokit.Client.Models.RepositoryRuleRequiredLinearHistory();
             }
             else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredLinearHistory0 = new GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory();
+                result.RepositoryRuleRepositoryRuleRequiredLinearHistory0 = new Octokit.Client.Models.RepositoryRuleRequiredLinearHistory();
             }
             else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredLinearHistory1 = new GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory();
+                result.RepositoryRuleRepositoryRuleRequiredLinearHistory1 = new Octokit.Client.Models.RepositoryRuleRequiredLinearHistory();
             }
             else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredLinearHistory2 = new GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory();
+                result.RepositoryRuleRepositoryRuleRequiredLinearHistory2 = new Octokit.Client.Models.RepositoryRuleRequiredLinearHistory();
             }
             else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredSignatures = new GitHub.Octokit.Models.RepositoryRuleRequiredSignatures();
+                result.RepositoryRuleRepositoryRuleRequiredSignatures = new Octokit.Client.Models.RepositoryRuleRequiredSignatures();
             }
             else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredSignatures0 = new GitHub.Octokit.Models.RepositoryRuleRequiredSignatures();
+                result.RepositoryRuleRepositoryRuleRequiredSignatures0 = new Octokit.Client.Models.RepositoryRuleRequiredSignatures();
             }
             else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredSignatures1 = new GitHub.Octokit.Models.RepositoryRuleRequiredSignatures();
+                result.RepositoryRuleRepositoryRuleRequiredSignatures1 = new Octokit.Client.Models.RepositoryRuleRequiredSignatures();
             }
             else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredSignatures2 = new GitHub.Octokit.Models.RepositoryRuleRequiredSignatures();
+                result.RepositoryRuleRepositoryRuleRequiredSignatures2 = new Octokit.Client.Models.RepositoryRuleRequiredSignatures();
             }
             else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredStatusChecks = new GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks();
+                result.RepositoryRuleRepositoryRuleRequiredStatusChecks = new Octokit.Client.Models.RepositoryRuleRequiredStatusChecks();
             }
             else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredStatusChecks0 = new GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks();
+                result.RepositoryRuleRepositoryRuleRequiredStatusChecks0 = new Octokit.Client.Models.RepositoryRuleRequiredStatusChecks();
             }
             else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredStatusChecks1 = new GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks();
+                result.RepositoryRuleRepositoryRuleRequiredStatusChecks1 = new Octokit.Client.Models.RepositoryRuleRequiredStatusChecks();
             }
             else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleRequiredStatusChecks2 = new GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks();
+                result.RepositoryRuleRepositoryRuleRequiredStatusChecks2 = new Octokit.Client.Models.RepositoryRuleRequiredStatusChecks();
             }
             else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleTagNamePattern = new GitHub.Octokit.Models.RepositoryRuleTagNamePattern();
+                result.RepositoryRuleRepositoryRuleTagNamePattern = new Octokit.Client.Models.RepositoryRuleTagNamePattern();
             }
             else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleTagNamePattern0 = new GitHub.Octokit.Models.RepositoryRuleTagNamePattern();
+                result.RepositoryRuleRepositoryRuleTagNamePattern0 = new Octokit.Client.Models.RepositoryRuleTagNamePattern();
             }
             else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleTagNamePattern1 = new GitHub.Octokit.Models.RepositoryRuleTagNamePattern();
+                result.RepositoryRuleRepositoryRuleTagNamePattern1 = new Octokit.Client.Models.RepositoryRuleTagNamePattern();
             }
             else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleTagNamePattern2 = new GitHub.Octokit.Models.RepositoryRuleTagNamePattern();
+                result.RepositoryRuleRepositoryRuleTagNamePattern2 = new Octokit.Client.Models.RepositoryRuleTagNamePattern();
             }
             else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleUpdate = new GitHub.Octokit.Models.RepositoryRuleUpdate();
+                result.RepositoryRuleRepositoryRuleUpdate = new Octokit.Client.Models.RepositoryRuleUpdate();
             }
             else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleUpdate0 = new GitHub.Octokit.Models.RepositoryRuleUpdate();
+                result.RepositoryRuleRepositoryRuleUpdate0 = new Octokit.Client.Models.RepositoryRuleUpdate();
             }
             else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleUpdate1 = new GitHub.Octokit.Models.RepositoryRuleUpdate();
+                result.RepositoryRuleRepositoryRuleUpdate1 = new Octokit.Client.Models.RepositoryRuleUpdate();
             }
             else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleUpdate2 = new GitHub.Octokit.Models.RepositoryRuleUpdate();
+                result.RepositoryRuleRepositoryRuleUpdate2 = new Octokit.Client.Models.RepositoryRuleUpdate();
             }
             else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleWorkflows = new GitHub.Octokit.Models.RepositoryRuleWorkflows();
+                result.RepositoryRuleRepositoryRuleWorkflows = new Octokit.Client.Models.RepositoryRuleWorkflows();
             }
             else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleWorkflows0 = new GitHub.Octokit.Models.RepositoryRuleWorkflows();
+                result.RepositoryRuleRepositoryRuleWorkflows0 = new Octokit.Client.Models.RepositoryRuleWorkflows();
             }
             else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleWorkflows1 = new GitHub.Octokit.Models.RepositoryRuleWorkflows();
+                result.RepositoryRuleRepositoryRuleWorkflows1 = new Octokit.Client.Models.RepositoryRuleWorkflows();
             }
             else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRepositoryRuleWorkflows2 = new GitHub.Octokit.Models.RepositoryRuleWorkflows();
+                result.RepositoryRuleRepositoryRuleWorkflows2 = new Octokit.Client.Models.RepositoryRuleWorkflows();
             }
             else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRequiredDeployments = new GitHub.Octokit.Models.RepositoryRuleRequiredDeployments();
+                result.RepositoryRuleRequiredDeployments = new Octokit.Client.Models.RepositoryRuleRequiredDeployments();
             }
             else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRequiredLinearHistory = new GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory();
+                result.RepositoryRuleRequiredLinearHistory = new Octokit.Client.Models.RepositoryRuleRequiredLinearHistory();
             }
             else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRequiredSignatures = new GitHub.Octokit.Models.RepositoryRuleRequiredSignatures();
+                result.RepositoryRuleRequiredSignatures = new Octokit.Client.Models.RepositoryRuleRequiredSignatures();
             }
             else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleRequiredStatusChecks = new GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks();
+                result.RepositoryRuleRequiredStatusChecks = new Octokit.Client.Models.RepositoryRuleRequiredStatusChecks();
             }
             else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleTagNamePattern = new GitHub.Octokit.Models.RepositoryRuleTagNamePattern();
+                result.RepositoryRuleTagNamePattern = new Octokit.Client.Models.RepositoryRuleTagNamePattern();
             }
             else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleUpdate = new GitHub.Octokit.Models.RepositoryRuleUpdate();
+                result.RepositoryRuleUpdate = new Octokit.Client.Models.RepositoryRuleUpdate();
             }
             else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRuleWorkflows = new GitHub.Octokit.Models.RepositoryRuleWorkflows();
+                result.RepositoryRuleWorkflows = new Octokit.Client.Models.RepositoryRuleWorkflows();
             }
             return result;
         }
@@ -1083,229 +1083,229 @@ namespace GitHub.Octokit.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             if(RepositoryRuleBranchNamePattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleBranchNamePattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleBranchNamePattern);
             }
             else if(RepositoryRuleCommitAuthorEmailPattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleCommitAuthorEmailPattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleCommitAuthorEmailPattern);
             }
             else if(RepositoryRuleCommitMessagePattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleCommitMessagePattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleCommitMessagePattern);
             }
             else if(RepositoryRuleCommitterEmailPattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleCommitterEmailPattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleCommitterEmailPattern);
             }
             else if(RepositoryRuleCreation != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCreation>(null, RepositoryRuleCreation);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCreation>(null, RepositoryRuleCreation);
             }
             else if(RepositoryRuleDeletion != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleDeletion>(null, RepositoryRuleDeletion);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleDeletion>(null, RepositoryRuleDeletion);
             }
             else if(RepositoryRuleNonFastForward != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleNonFastForward);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleNonFastForward);
             }
             else if(RepositoryRulePullRequest != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRulePullRequest>(null, RepositoryRulePullRequest);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRulePullRequest>(null, RepositoryRulePullRequest);
             }
             else if(RepositoryRuleRepositoryRuleBranchNamePattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern);
             }
             else if(RepositoryRuleRepositoryRuleBranchNamePattern0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern0);
             }
             else if(RepositoryRuleRepositoryRuleBranchNamePattern1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern1);
             }
             else if(RepositoryRuleRepositoryRuleBranchNamePattern2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern2);
             }
             else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern);
             }
             else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0);
             }
             else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1);
             }
             else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2);
             }
             else if(RepositoryRuleRepositoryRuleCommitMessagePattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern);
             }
             else if(RepositoryRuleRepositoryRuleCommitMessagePattern0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern0);
             }
             else if(RepositoryRuleRepositoryRuleCommitMessagePattern1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern1);
             }
             else if(RepositoryRuleRepositoryRuleCommitMessagePattern2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern2);
             }
             else if(RepositoryRuleRepositoryRuleCommitterEmailPattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern);
             }
             else if(RepositoryRuleRepositoryRuleCommitterEmailPattern0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern0);
             }
             else if(RepositoryRuleRepositoryRuleCommitterEmailPattern1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern1);
             }
             else if(RepositoryRuleRepositoryRuleCommitterEmailPattern2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern2);
             }
             else if(RepositoryRuleRepositoryRuleCreation != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation);
             }
             else if(RepositoryRuleRepositoryRuleCreation0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation0);
             }
             else if(RepositoryRuleRepositoryRuleCreation1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation1);
             }
             else if(RepositoryRuleRepositoryRuleCreation2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation2);
             }
             else if(RepositoryRuleRepositoryRuleDeletion != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion);
             }
             else if(RepositoryRuleRepositoryRuleDeletion0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion0);
             }
             else if(RepositoryRuleRepositoryRuleDeletion1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion1);
             }
             else if(RepositoryRuleRepositoryRuleDeletion2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion2);
             }
             else if(RepositoryRuleRepositoryRuleNonFastForward != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward);
             }
             else if(RepositoryRuleRepositoryRuleNonFastForward0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward0);
             }
             else if(RepositoryRuleRepositoryRuleNonFastForward1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward1);
             }
             else if(RepositoryRuleRepositoryRuleNonFastForward2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward2);
             }
             else if(RepositoryRuleRepositoryRulePullRequest != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest);
             }
             else if(RepositoryRuleRepositoryRulePullRequest0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest0);
             }
             else if(RepositoryRuleRepositoryRulePullRequest1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest1);
             }
             else if(RepositoryRuleRepositoryRulePullRequest2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest2);
             }
             else if(RepositoryRuleRepositoryRuleRequiredDeployments != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments);
             }
             else if(RepositoryRuleRepositoryRuleRequiredDeployments0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments0);
             }
             else if(RepositoryRuleRepositoryRuleRequiredDeployments1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments1);
             }
             else if(RepositoryRuleRepositoryRuleRequiredDeployments2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments2);
             }
             else if(RepositoryRuleRepositoryRuleRequiredLinearHistory != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory);
             }
             else if(RepositoryRuleRepositoryRuleRequiredLinearHistory0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory0);
             }
             else if(RepositoryRuleRepositoryRuleRequiredLinearHistory1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory1);
             }
             else if(RepositoryRuleRepositoryRuleRequiredLinearHistory2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory2);
             }
             else if(RepositoryRuleRepositoryRuleRequiredSignatures != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures);
             }
             else if(RepositoryRuleRepositoryRuleRequiredSignatures0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures0);
             }
             else if(RepositoryRuleRepositoryRuleRequiredSignatures1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures1);
             }
             else if(RepositoryRuleRepositoryRuleRequiredSignatures2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures2);
             }
             else if(RepositoryRuleRepositoryRuleRequiredStatusChecks != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks);
             }
             else if(RepositoryRuleRepositoryRuleRequiredStatusChecks0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks0);
             }
             else if(RepositoryRuleRepositoryRuleRequiredStatusChecks1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks1);
             }
             else if(RepositoryRuleRepositoryRuleRequiredStatusChecks2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks2);
             }
             else if(RepositoryRuleRepositoryRuleTagNamePattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern);
             }
             else if(RepositoryRuleRepositoryRuleTagNamePattern0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern0);
             }
             else if(RepositoryRuleRepositoryRuleTagNamePattern1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern1);
             }
             else if(RepositoryRuleRepositoryRuleTagNamePattern2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern2);
             }
             else if(RepositoryRuleRepositoryRuleUpdate != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate);
             }
             else if(RepositoryRuleRepositoryRuleUpdate0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate0);
             }
             else if(RepositoryRuleRepositoryRuleUpdate1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate1);
             }
             else if(RepositoryRuleRepositoryRuleUpdate2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate2);
             }
             else if(RepositoryRuleRepositoryRuleWorkflows != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows);
             }
             else if(RepositoryRuleRepositoryRuleWorkflows0 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows0);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows0);
             }
             else if(RepositoryRuleRepositoryRuleWorkflows1 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows1);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows1);
             }
             else if(RepositoryRuleRepositoryRuleWorkflows2 != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows2);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows2);
             }
             else if(RepositoryRuleRequiredDeployments != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRequiredDeployments);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRequiredDeployments);
             }
             else if(RepositoryRuleRequiredLinearHistory != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRequiredLinearHistory);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRequiredLinearHistory);
             }
             else if(RepositoryRuleRequiredSignatures != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRequiredSignatures);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRequiredSignatures);
             }
             else if(RepositoryRuleRequiredStatusChecks != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRequiredStatusChecks);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRequiredStatusChecks);
             }
             else if(RepositoryRuleTagNamePattern != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleTagNamePattern);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleTagNamePattern);
             }
             else if(RepositoryRuleUpdate != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleUpdate>(null, RepositoryRuleUpdate);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleUpdate>(null, RepositoryRuleUpdate);
             }
             else if(RepositoryRuleWorkflows != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRuleWorkflows>(null, RepositoryRuleWorkflows);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRuleWorkflows>(null, RepositoryRuleWorkflows);
             }
         }
     }

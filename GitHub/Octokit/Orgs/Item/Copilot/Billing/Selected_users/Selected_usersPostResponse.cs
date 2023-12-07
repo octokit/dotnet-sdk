@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Copilot.Billing.Selected_users {
+namespace Octokit.Client.Orgs.Item.Copilot.Billing.Selected_users {
     /// <summary>
     /// The total number of seat assignments created.
     /// </summary>

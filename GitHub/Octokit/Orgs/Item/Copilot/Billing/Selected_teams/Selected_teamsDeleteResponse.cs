@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Copilot.Billing.Selected_teams {
+namespace Octokit.Client.Orgs.Item.Copilot.Billing.Selected_teams {
     /// <summary>
     /// The total number of seat assignments cancelled.
     /// </summary>

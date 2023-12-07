@@ -7,9 +7,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationSecrets {
+namespace Octokit.Client.Repos.Item.Item.Actions.OrganizationSecrets {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\actions\organization-secrets
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\organization-secrets
     /// </summary>
     public class OrganizationSecretsRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -17,14 +17,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationSecrets {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationSecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/organization-secrets{?per_page*,page*}", pathParameters) {
+        public OrganizationSecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-secrets{?per_page*,page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new OrganizationSecretsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationSecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/organization-secrets{?per_page*,page*}", rawUrl) {
+        public OrganizationSecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-secrets{?per_page*,page*}", rawUrl) {
         }
         /// <summary>
         /// Lists all organization secrets shared with a repository without revealing their encryptedvalues.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `secrets` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read secrets.
@@ -34,10 +34,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationSecrets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OrganizationSecretsGetResponse?> GetAsOrganizationSecretsGetResponseAsync(Action<OrganizationSecretsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationSecretsGetResponse?> GetAsOrganizationSecretsGetResponseAsync(Action<RequestConfiguration<OrganizationSecretsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<OrganizationSecretsGetResponse> GetAsOrganizationSecretsGetResponseAsync(Action<OrganizationSecretsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationSecretsGetResponse> GetAsOrganizationSecretsGetResponseAsync(Action<RequestConfiguration<OrganizationSecretsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<OrganizationSecretsGetResponse>(requestInfo, OrganizationSecretsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +51,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationSecrets {
         [Obsolete("This method is obsolete. Use GetAsOrganizationSecretsGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OrganizationSecretsResponse?> GetAsync(Action<OrganizationSecretsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationSecretsResponse?> GetAsync(Action<RequestConfiguration<OrganizationSecretsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<OrganizationSecretsResponse> GetAsync(Action<OrganizationSecretsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationSecretsResponse> GetAsync(Action<RequestConfiguration<OrganizationSecretsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<OrganizationSecretsResponse>(requestInfo, OrganizationSecretsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -65,24 +65,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationSecrets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<OrganizationSecretsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OrganizationSecretsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<OrganizationSecretsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OrganizationSecretsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new OrganizationSecretsRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -106,20 +96,8 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationSecrets {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class OrganizationSecretsRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public OrganizationSecretsRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OrganizationSecretsRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new organizationSecretsRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public OrganizationSecretsRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class OrganizationSecretsRequestBuilderGetRequestConfiguration : RequestConfiguration<OrganizationSecretsRequestBuilderGetQueryParameters> {
         }
     }
 }

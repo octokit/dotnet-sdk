@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Actions.Cache.UsageByRepository {
+namespace Octokit.Client.Orgs.Item.Actions.Cache.UsageByRepository {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\cache\usage-by-repository
     /// </summary>
@@ -34,10 +34,10 @@ namespace GitHub.Octokit.Orgs.Item.Actions.Cache.UsageByRepository {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UsageByRepositoryGetResponse?> GetAsUsageByRepositoryGetResponseAsync(Action<UsageByRepositoryRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UsageByRepositoryGetResponse?> GetAsUsageByRepositoryGetResponseAsync(Action<RequestConfiguration<UsageByRepositoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<UsageByRepositoryGetResponse> GetAsUsageByRepositoryGetResponseAsync(Action<UsageByRepositoryRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UsageByRepositoryGetResponse> GetAsUsageByRepositoryGetResponseAsync(Action<RequestConfiguration<UsageByRepositoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<UsageByRepositoryGetResponse>(requestInfo, UsageByRepositoryGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +51,10 @@ namespace GitHub.Octokit.Orgs.Item.Actions.Cache.UsageByRepository {
         [Obsolete("This method is obsolete. Use GetAsUsageByRepositoryGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UsageByRepositoryResponse?> GetAsync(Action<UsageByRepositoryRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UsageByRepositoryResponse?> GetAsync(Action<RequestConfiguration<UsageByRepositoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<UsageByRepositoryResponse> GetAsync(Action<UsageByRepositoryRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UsageByRepositoryResponse> GetAsync(Action<RequestConfiguration<UsageByRepositoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<UsageByRepositoryResponse>(requestInfo, UsageByRepositoryResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -65,24 +65,14 @@ namespace GitHub.Octokit.Orgs.Item.Actions.Cache.UsageByRepository {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<UsageByRepositoryRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UsageByRepositoryRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<UsageByRepositoryRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UsageByRepositoryRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new UsageByRepositoryRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -106,20 +96,8 @@ namespace GitHub.Octokit.Orgs.Item.Actions.Cache.UsageByRepository {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class UsageByRepositoryRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public UsageByRepositoryRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UsageByRepositoryRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new usageByRepositoryRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public UsageByRepositoryRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class UsageByRepositoryRequestBuilderGetRequestConfiguration : RequestConfiguration<UsageByRepositoryRequestBuilderGetQueryParameters> {
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
+namespace Octokit.Client.Repos.Item.Item.Contents.Item {
     /// <summary>
     /// object containing information about the committer.
     /// </summary>

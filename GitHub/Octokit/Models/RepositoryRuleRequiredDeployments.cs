@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
     /// </summary>

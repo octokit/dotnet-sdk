@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Outside_collaborators.Item {
+namespace Octokit.Client.Orgs.Item.Outside_collaborators.Item {
     public class WithUsernamePutResponse : IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

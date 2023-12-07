@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.
     /// </summary>
@@ -15,34 +15,34 @@ namespace GitHub.Octokit.Models {
         /// <summary>Composed type representation for type RepositoryRulesetConditionsForRepositoryIDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryIDs? OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryIDs { get; set; }
+        public Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryIDs? OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryIDs { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryIDs OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryIDs { get; set; }
+        public Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryIDs OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryIDs { get; set; }
 #endif
         /// <summary>Composed type representation for type RepositoryRulesetConditionsForRepositoryNames</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryNames? OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryNames { get; set; }
+        public Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryNames? OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryNames { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryNames OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryNames { get; set; }
+        public Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryNames OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryNames { get; set; }
 #endif
         /// <summary>Composed type representation for type RepositoryRulesetConditionsForRepositoryIDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryIDs? RepositoryRulesetConditionsForRepositoryIDs { get; set; }
+        public Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryIDs? RepositoryRulesetConditionsForRepositoryIDs { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryIDs RepositoryRulesetConditionsForRepositoryIDs { get; set; }
+        public Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryIDs RepositoryRulesetConditionsForRepositoryIDs { get; set; }
 #endif
         /// <summary>Composed type representation for type RepositoryRulesetConditionsForRepositoryNames</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryNames? RepositoryRulesetConditionsForRepositoryNames { get; set; }
+        public Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryNames? RepositoryRulesetConditionsForRepositoryNames { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryNames RepositoryRulesetConditionsForRepositoryNames { get; set; }
+        public Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryNames RepositoryRulesetConditionsForRepositoryNames { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new orgRulesetConditions and sets the default values.
@@ -59,16 +59,16 @@ namespace GitHub.Octokit.Models {
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new OrgRulesetConditions();
             if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryIDs = new GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryIDs();
+                result.OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryIDs = new Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryIDs();
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryNames = new GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryNames();
+                result.OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryNames = new Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryNames();
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRulesetConditionsForRepositoryIDs = new GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryIDs();
+                result.RepositoryRulesetConditionsForRepositoryIDs = new Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryIDs();
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                result.RepositoryRulesetConditionsForRepositoryNames = new GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryNames();
+                result.RepositoryRulesetConditionsForRepositoryNames = new Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryNames();
             }
             return result;
         }
@@ -97,16 +97,16 @@ namespace GitHub.Octokit.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             if(OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryIDs != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryIDs>(null, OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryIDs);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryIDs>(null, OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryIDs);
             }
             else if(OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryNames != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryNames>(null, OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryNames);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryNames>(null, OrgRulesetConditionsRepositoryRulesetConditionsForRepositoryNames);
             }
             else if(RepositoryRulesetConditionsForRepositoryIDs != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryIDs>(null, RepositoryRulesetConditionsForRepositoryIDs);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryIDs>(null, RepositoryRulesetConditionsForRepositoryIDs);
             }
             else if(RepositoryRulesetConditionsForRepositoryNames != null) {
-                writer.WriteObjectValue<GitHub.Octokit.Models.RepositoryRulesetConditionsForRepositoryNames>(null, RepositoryRulesetConditionsForRepositoryNames);
+                writer.WriteObjectValue<Octokit.Client.Models.RepositoryRulesetConditionsForRepositoryNames>(null, RepositoryRulesetConditionsForRepositoryNames);
             }
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item {
+namespace Octokit.Client.Orgs.Item {
     [Obsolete("This class is obsolete. Use WithOrgDeleteResponse instead.")]
     public class WithOrgResponse : WithOrgDeleteResponse, IParsable {
         /// <summary>

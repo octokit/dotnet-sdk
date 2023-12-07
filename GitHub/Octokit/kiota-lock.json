@@ -1,10 +1,10 @@
 {
-  "descriptionHash": "0537B05328C91729747ED852557C84933AE68B4C26D3FBEF2E6B2B8A92DA8ACC451A2939DA0A87EC622FB88365F4314B044D12DA5D45F50762CBEE5632CD3CE4",
-  "descriptionLocation": "../../../../schemas/downloaded.json",
+  "descriptionHash": "EF90E2AF1AEAF00399680241ED082065E7D5A88EDEC05E560F61DD8478992AFDDE768CE0056CC6C70C08041E324CC5835271A8B430B49E549DE6BFBBCEE29E42",
+  "descriptionLocation": "../../../source-generator/schemas/downloaded.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.8.1",
+  "kiotaVersion": "1.9.0-preview.202311300001",
   "clientClassName": "OctokitClient",
-  "clientNamespaceName": "GitHub.Octokit",
+  "clientNamespaceName": "Octokit.Client",
   "language": "CSharp",
   "usesBackingStore": false,
   "excludeBackwardCompatible": false,
@@ -21,7 +21,7 @@
     "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
   ],
   "structuredMimeTypes": [
-    "application/json;q=1",
+    "application/json",
     "text/plain;q=0.9",
     "application/x-www-form-urlencoded;q=0.2",
     "multipart/form-data;q=0.1"

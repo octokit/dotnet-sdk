@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.SecurityAdvisories.Item.Cve {
+namespace Octokit.Client.Repos.Item.Item.SecurityAdvisories.Item.Cve {
     [Obsolete("This class is obsolete. Use cvePostResponse instead.")]
     public class CveResponse : CvePostResponse, IParsable {
         /// <summary>

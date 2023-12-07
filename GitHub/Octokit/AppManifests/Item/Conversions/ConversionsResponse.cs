@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.AppManifests.Item.Conversions {
+namespace Octokit.Client.AppManifests.Item.Conversions {
     [Obsolete("This class is obsolete. Use conversionsPostResponse instead.")]
     public class ConversionsResponse : ConversionsPostResponse, IParsable {
         /// <summary>

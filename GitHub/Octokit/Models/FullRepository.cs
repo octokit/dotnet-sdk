@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Full Repository
     /// </summary>
@@ -448,12 +448,12 @@ namespace GitHub.Octokit.Models {
         /// <summary>The security_and_analysis property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
+        public Octokit.Client.Models.SecurityAndAnalysis? SecurityAndAnalysis { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.SecurityAndAnalysis SecurityAndAnalysis { get; set; }
+        public Octokit.Client.Models.SecurityAndAnalysis SecurityAndAnalysis { get; set; }
 #endif
-        /// <summary>The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.</summary>
+        /// <summary>The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.</summary>
         public int? Size { get; set; }
         /// <summary>A repository on GitHub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -688,7 +688,7 @@ namespace GitHub.Octokit.Models {
                 {"pulls_url", n => { PullsUrl = n.GetStringValue(); } },
                 {"pushed_at", n => { PushedAt = n.GetDateTimeOffsetValue(); } },
                 {"releases_url", n => { ReleasesUrl = n.GetStringValue(); } },
-                {"security_and_analysis", n => { SecurityAndAnalysis = n.GetObjectValue<GitHub.Octokit.Models.SecurityAndAnalysis>(GitHub.Octokit.Models.SecurityAndAnalysis.CreateFromDiscriminatorValue); } },
+                {"security_and_analysis", n => { SecurityAndAnalysis = n.GetObjectValue<Octokit.Client.Models.SecurityAndAnalysis>(Octokit.Client.Models.SecurityAndAnalysis.CreateFromDiscriminatorValue); } },
                 {"size", n => { Size = n.GetIntValue(); } },
                 {"source", n => { Source = n.GetObjectValue<Repository>(Repository.CreateFromDiscriminatorValue); } },
                 {"squash_merge_commit_message", n => { SquashMergeCommitMessage = n.GetEnumValue<FullRepository_squash_merge_commit_message>(); } },
@@ -798,7 +798,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteStringValue("pulls_url", PullsUrl);
             writer.WriteDateTimeOffsetValue("pushed_at", PushedAt);
             writer.WriteStringValue("releases_url", ReleasesUrl);
-            writer.WriteObjectValue<GitHub.Octokit.Models.SecurityAndAnalysis>("security_and_analysis", SecurityAndAnalysis);
+            writer.WriteObjectValue<Octokit.Client.Models.SecurityAndAnalysis>("security_and_analysis", SecurityAndAnalysis);
             writer.WriteIntValue("size", Size);
             writer.WriteObjectValue<Repository>("source", Source);
             writer.WriteEnumValue<FullRepository_squash_merge_commit_message>("squash_merge_commit_message", SquashMergeCommitMessage);

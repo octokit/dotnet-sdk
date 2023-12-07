@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Projects.Columns.Cards.Item.Moves {
+namespace Octokit.Client.Projects.Columns.Cards.Item.Moves {
     public class MovesPostResponse : IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

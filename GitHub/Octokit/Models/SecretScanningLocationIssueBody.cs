@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Represents an &apos;issue_body&apos; secret scanning location type. This location type shows that a secret was detected in the body of an issue.
     /// </summary>

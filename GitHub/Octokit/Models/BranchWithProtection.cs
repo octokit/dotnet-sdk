@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Branch With Protection
     /// </summary>
@@ -14,10 +14,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>Commit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.Commit? Commit { get; set; }
+        public Octokit.Client.Models.Commit? Commit { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.Commit Commit { get; set; }
+        public Octokit.Client.Models.Commit Commit { get; set; }
 #endif
         /// <summary>The _links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace GitHub.Octokit.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"commit", n => { Commit = n.GetObjectValue<GitHub.Octokit.Models.Commit>(GitHub.Octokit.Models.Commit.CreateFromDiscriminatorValue); } },
+                {"commit", n => { Commit = n.GetObjectValue<Octokit.Client.Models.Commit>(Octokit.Client.Models.Commit.CreateFromDiscriminatorValue); } },
                 {"_links", n => { Links = n.GetObjectValue<BranchWithProtection__links>(BranchWithProtection__links.CreateFromDiscriminatorValue); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"pattern", n => { Pattern = n.GetStringValue(); } },
@@ -98,7 +98,7 @@ namespace GitHub.Octokit.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<GitHub.Octokit.Models.Commit>("commit", Commit);
+            writer.WriteObjectValue<Octokit.Client.Models.Commit>("commit", Commit);
             writer.WriteObjectValue<BranchWithProtection__links>("_links", Links);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("pattern", Pattern);

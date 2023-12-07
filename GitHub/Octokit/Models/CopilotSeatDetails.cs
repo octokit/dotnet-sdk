@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Information about a Copilot Business seat assignment for a user, team, or organization.
     /// </summary>
@@ -85,26 +85,26 @@ namespace GitHub.Octokit.Models {
             /// <summary>Composed type representation for type organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.Organization? Organization { get; set; }
+            public Octokit.Client.Models.Organization? Organization { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.Organization Organization { get; set; }
+            public Octokit.Client.Models.Organization Organization { get; set; }
 #endif
             /// <summary>Composed type representation for type simpleUser</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.SimpleUser? SimpleUser { get; set; }
+            public Octokit.Client.Models.SimpleUser? SimpleUser { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.SimpleUser SimpleUser { get; set; }
+            public Octokit.Client.Models.SimpleUser SimpleUser { get; set; }
 #endif
             /// <summary>Composed type representation for type team</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.Team? Team { get; set; }
+            public Octokit.Client.Models.Team? Team { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.Team Team { get; set; }
+            public Octokit.Client.Models.Team Team { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -115,13 +115,13 @@ namespace GitHub.Octokit.Models {
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new CopilotSeatDetails_assignee();
                 if("organization".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.Organization = new GitHub.Octokit.Models.Organization();
+                    result.Organization = new Octokit.Client.Models.Organization();
                 }
                 else if("simple-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.SimpleUser = new GitHub.Octokit.Models.SimpleUser();
+                    result.SimpleUser = new Octokit.Client.Models.SimpleUser();
                 }
                 else if("team".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.Team = new GitHub.Octokit.Models.Team();
+                    result.Team = new Octokit.Client.Models.Team();
                 }
                 return result;
             }
@@ -147,13 +147,13 @@ namespace GitHub.Octokit.Models {
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 if(Organization != null) {
-                    writer.WriteObjectValue<GitHub.Octokit.Models.Organization>(null, Organization);
+                    writer.WriteObjectValue<Octokit.Client.Models.Organization>(null, Organization);
                 }
                 else if(SimpleUser != null) {
-                    writer.WriteObjectValue<GitHub.Octokit.Models.SimpleUser>(null, SimpleUser);
+                    writer.WriteObjectValue<Octokit.Client.Models.SimpleUser>(null, SimpleUser);
                 }
                 else if(Team != null) {
-                    writer.WriteObjectValue<GitHub.Octokit.Models.Team>(null, Team);
+                    writer.WriteObjectValue<Octokit.Client.Models.Team>(null, Team);
                 }
             }
         }

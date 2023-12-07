@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     public class ActionsRepositoryPermissions : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The permissions policy that controls the actions and reusable workflows that are allowed to run.</summary>
-        public GitHub.Octokit.Models.AllowedActions? AllowedActions { get; set; }
+        public Octokit.Client.Models.AllowedActions? AllowedActions { get; set; }
         /// <summary>Whether GitHub Actions is enabled on the repository.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.</summary>

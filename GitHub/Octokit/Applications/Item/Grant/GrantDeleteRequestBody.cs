@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Applications.Item.Grant {
+namespace Octokit.Client.Applications.Item.Grant {
     public class GrantDeleteRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The OAuth access token used to authenticate to the GitHub API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     public class ProtectedBranch_required_conversation_resolution : IParsable {
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }

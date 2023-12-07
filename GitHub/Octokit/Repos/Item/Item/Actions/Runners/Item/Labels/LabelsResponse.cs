@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.Runners.Item.Labels {
+namespace Octokit.Client.Repos.Item.Item.Actions.Runners.Item.Labels {
     [Obsolete("This class is obsolete. Use labelsGetResponse instead.")]
     public class LabelsResponse : LabelsGetResponse, IParsable {
         /// <summary>

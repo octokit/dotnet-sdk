@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Dependabot.Alerts.Item {
+namespace Octokit.Client.Repos.Item.Item.Dependabot.Alerts.Item {
     public class WithAlert_numberPatchRequestBody : IParsable {
         /// <summary>An optional comment associated with dismissing the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Pages.Deployment {
+namespace Octokit.Client.Repos.Item.Item.Pages.Deployment {
     /// <summary>
     /// The object used to create GitHub Pages deployment
     /// </summary>

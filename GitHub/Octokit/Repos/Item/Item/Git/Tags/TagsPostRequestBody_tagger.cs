@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Git.Tags {
+namespace Octokit.Client.Repos.Item.Item.Git.Tags {
     /// <summary>
     /// An object with information about the individual creating the tag.
     /// </summary>

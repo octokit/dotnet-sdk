@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Outside_collaborators.Item {
+namespace Octokit.Client.Orgs.Item.Outside_collaborators.Item {
     [Obsolete("This class is obsolete. Use WithUsernamePutResponse instead.")]
     public class WithUsernameResponse : WithUsernamePutResponse, IParsable {
         /// <summary>

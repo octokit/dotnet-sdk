@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Pages {
+namespace Octokit.Client.Repos.Item.Item.Pages {
     /// <summary>
     /// The source branch and directory used to publish your Pages site.
     /// </summary>

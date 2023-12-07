@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Actions.Runners.GenerateJitconfig {
+namespace Octokit.Client.Orgs.Item.Actions.Runners.GenerateJitconfig {
     [Obsolete("This class is obsolete. Use generateJitconfigPostResponse instead.")]
     public class GenerateJitconfigResponse : GenerateJitconfigPostResponse, IParsable {
         /// <summary>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     public class Event_payload : IAdditionalDataHolder, IParsable {
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -27,10 +27,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.Issue? Issue { get; set; }
+        public Octokit.Client.Models.Issue? Issue { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.Issue Issue { get; set; }
+        public Octokit.Client.Models.Issue Issue { get; set; }
 #endif
         /// <summary>The pages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,7 +61,7 @@ namespace GitHub.Octokit.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"action", n => { Action = n.GetStringValue(); } },
                 {"comment", n => { Comment = n.GetObjectValue<IssueComment>(IssueComment.CreateFromDiscriminatorValue); } },
-                {"issue", n => { Issue = n.GetObjectValue<GitHub.Octokit.Models.Issue>(GitHub.Octokit.Models.Issue.CreateFromDiscriminatorValue); } },
+                {"issue", n => { Issue = n.GetObjectValue<Octokit.Client.Models.Issue>(Octokit.Client.Models.Issue.CreateFromDiscriminatorValue); } },
                 {"pages", n => { Pages = n.GetCollectionOfObjectValues<Event_payload_pages>(Event_payload_pages.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -73,7 +73,7 @@ namespace GitHub.Octokit.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
             writer.WriteObjectValue<IssueComment>("comment", Comment);
-            writer.WriteObjectValue<GitHub.Octokit.Models.Issue>("issue", Issue);
+            writer.WriteObjectValue<Octokit.Client.Models.Issue>("issue", Issue);
             writer.WriteCollectionOfObjectValues<Event_payload_pages>("pages", Pages);
             writer.WriteAdditionalData(AdditionalData);
         }

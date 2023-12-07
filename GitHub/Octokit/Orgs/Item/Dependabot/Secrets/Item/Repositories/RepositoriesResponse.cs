@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Dependabot.Secrets.Item.Repositories {
+namespace Octokit.Client.Orgs.Item.Dependabot.Secrets.Item.Repositories {
     [Obsolete("This class is obsolete. Use repositoriesGetResponse instead.")]
     public class RepositoriesResponse : RepositoriesGetResponse, IParsable {
         /// <summary>

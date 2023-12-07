@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.User.Codespaces {
+namespace Octokit.Client.User.Codespaces {
     /// <summary>
     /// Pull request number for this codespace
     /// </summary>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
     /// </summary>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     public class ContributorActivity_weeks : IAdditionalDataHolder, IParsable {
         /// <summary>The a property</summary>
         public int? A { get; set; }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Issue Search Result Item
     /// </summary>
@@ -36,7 +36,7 @@ namespace GitHub.Octokit.Models {
         public List<SimpleUser> Assignees { get; set; }
 #endif
         /// <summary>How the author is associated with the repository.</summary>
-        public GitHub.Octokit.Models.AuthorAssociation? AuthorAssociation { get; set; }
+        public Octokit.Client.Models.AuthorAssociation? AuthorAssociation { get; set; }
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,10 +158,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>A repository on GitHub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.Repository? Repository { get; set; }
+        public Octokit.Client.Models.Repository? Repository { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.Repository Repository { get; set; }
+        public Octokit.Client.Models.Repository Repository { get; set; }
 #endif
         /// <summary>The repository_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -274,7 +274,7 @@ namespace GitHub.Octokit.Models {
                 {"performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
                 {"pull_request", n => { PullRequest = n.GetObjectValue<IssueSearchResultItem_pull_request>(IssueSearchResultItem_pull_request.CreateFromDiscriminatorValue); } },
                 {"reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
-                {"repository", n => { Repository = n.GetObjectValue<GitHub.Octokit.Models.Repository>(GitHub.Octokit.Models.Repository.CreateFromDiscriminatorValue); } },
+                {"repository", n => { Repository = n.GetObjectValue<Octokit.Client.Models.Repository>(Octokit.Client.Models.Repository.CreateFromDiscriminatorValue); } },
                 {"repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
                 {"score", n => { Score = n.GetDoubleValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
@@ -317,7 +317,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteObjectValue<NullableIntegration>("performed_via_github_app", PerformedViaGithubApp);
             writer.WriteObjectValue<IssueSearchResultItem_pull_request>("pull_request", PullRequest);
             writer.WriteObjectValue<ReactionRollup>("reactions", Reactions);
-            writer.WriteObjectValue<GitHub.Octokit.Models.Repository>("repository", Repository);
+            writer.WriteObjectValue<Octokit.Client.Models.Repository>("repository", Repository);
             writer.WriteStringValue("repository_url", RepositoryUrl);
             writer.WriteDoubleValue("score", Score);
             writer.WriteStringValue("state", State);

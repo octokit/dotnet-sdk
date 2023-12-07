@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.InteractionLimits {
+namespace Octokit.Client.Orgs.Item.InteractionLimits {
     public class InteractionLimitsGetResponseMember1 : IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

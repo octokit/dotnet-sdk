@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.PersonalAccessTokens {
+namespace Octokit.Client.Orgs.Item.PersonalAccessTokens {
     [Obsolete("This class is obsolete. Use personalAccessTokensPostResponse instead.")]
     public class PersonalAccessTokensResponse : PersonalAccessTokensPostResponse, IParsable {
         /// <summary>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Copilot.Billing.Seats {
+namespace Octokit.Client.Orgs.Item.Copilot.Billing.Seats {
     [Obsolete("This class is obsolete. Use seatsGetResponse instead.")]
     public class SeatsResponse : SeatsGetResponse, IParsable {
         /// <summary>

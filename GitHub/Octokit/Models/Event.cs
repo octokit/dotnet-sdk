@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Event
     /// </summary>
@@ -12,10 +12,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>Actor</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.Actor? Actor { get; set; }
+        public Octokit.Client.Models.Actor? Actor { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.Actor Actor { get; set; }
+        public Octokit.Client.Models.Actor Actor { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -32,10 +32,10 @@ namespace GitHub.Octokit.Models {
         /// <summary>Actor</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.Actor? Org { get; set; }
+        public Octokit.Client.Models.Actor? Org { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.Actor Org { get; set; }
+        public Octokit.Client.Models.Actor Org { get; set; }
 #endif
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,10 +82,10 @@ namespace GitHub.Octokit.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"actor", n => { Actor = n.GetObjectValue<GitHub.Octokit.Models.Actor>(GitHub.Octokit.Models.Actor.CreateFromDiscriminatorValue); } },
+                {"actor", n => { Actor = n.GetObjectValue<Octokit.Client.Models.Actor>(Octokit.Client.Models.Actor.CreateFromDiscriminatorValue); } },
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
-                {"org", n => { Org = n.GetObjectValue<GitHub.Octokit.Models.Actor>(GitHub.Octokit.Models.Actor.CreateFromDiscriminatorValue); } },
+                {"org", n => { Org = n.GetObjectValue<Octokit.Client.Models.Actor>(Octokit.Client.Models.Actor.CreateFromDiscriminatorValue); } },
                 {"payload", n => { Payload = n.GetObjectValue<Event_payload>(Event_payload.CreateFromDiscriminatorValue); } },
                 {"public", n => { Public = n.GetBoolValue(); } },
                 {"repo", n => { Repo = n.GetObjectValue<Event_repo>(Event_repo.CreateFromDiscriminatorValue); } },
@@ -98,10 +98,10 @@ namespace GitHub.Octokit.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<GitHub.Octokit.Models.Actor>("actor", Actor);
+            writer.WriteObjectValue<Octokit.Client.Models.Actor>("actor", Actor);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<GitHub.Octokit.Models.Actor>("org", Org);
+            writer.WriteObjectValue<Octokit.Client.Models.Actor>("org", Org);
             writer.WriteObjectValue<Event_payload>("payload", Payload);
             writer.WriteBoolValue("public", Public);
             writer.WriteObjectValue<Event_repo>("repo", Repo);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
+namespace Octokit.Client.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
     /// <summary>
     /// Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
     /// </summary>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item {
+namespace Octokit.Client.Repos.Item.Item {
     /// <summary>
     /// Use the `status` property to enable or disable secret scanning for this repository. For more information, see &quot;[About secret scanning](/code-security/secret-security/about-secret-scanning).&quot;
     /// </summary>

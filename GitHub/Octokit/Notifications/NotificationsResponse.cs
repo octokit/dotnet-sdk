@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Notifications {
+namespace Octokit.Client.Notifications {
     [Obsolete("This class is obsolete. Use notificationsPutResponse instead.")]
     public class NotificationsResponse : NotificationsPutResponse, IParsable {
         /// <summary>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.Secrets {
+namespace Octokit.Client.Repos.Item.Item.Actions.Secrets {
     [Obsolete("This class is obsolete. Use secretsGetResponse instead.")]
     public class SecretsResponse : SecretsGetResponse, IParsable {
         /// <summary>

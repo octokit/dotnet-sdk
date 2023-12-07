@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Branches.Item.Protection {
+namespace Octokit.Client.Repos.Item.Item.Branches.Item.Protection {
     /// <summary>
     /// Allow specific users, teams, or apps to bypass pull request requirements.
     /// </summary>

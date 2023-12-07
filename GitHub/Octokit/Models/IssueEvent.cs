@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Issue Event
     /// </summary>
@@ -36,7 +36,7 @@ namespace GitHub.Octokit.Models {
         public NullableSimpleUser Assigner { get; set; }
 #endif
         /// <summary>How the author is associated with the repository.</summary>
-        public GitHub.Octokit.Models.AuthorAssociation? AuthorAssociation { get; set; }
+        public Octokit.Client.Models.AuthorAssociation? AuthorAssociation { get; set; }
         /// <summary>The commit_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

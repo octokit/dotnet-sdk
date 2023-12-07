@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.Runners.Item.Labels.Item {
+namespace Octokit.Client.Repos.Item.Item.Actions.Runners.Item.Labels.Item {
     [Obsolete("This class is obsolete. Use WithNameDeleteResponse instead.")]
     public class WithNameResponse : WithNameDeleteResponse, IParsable {
         /// <summary>

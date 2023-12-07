@@ -7,9 +7,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationVariables {
+namespace Octokit.Client.Repos.Item.Item.Actions.OrganizationVariables {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\actions\organization-variables
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\organization-variables
     /// </summary>
     public class OrganizationVariablesRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -17,14 +17,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationVariables {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationVariablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/organization-variables{?per_page*,page*}", pathParameters) {
+        public OrganizationVariablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-variables{?per_page*,page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new OrganizationVariablesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationVariablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/organization-variables{?per_page*,page*}", rawUrl) {
+        public OrganizationVariablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-variables{?per_page*,page*}", rawUrl) {
         }
         /// <summary>
         /// Lists all organiation variables shared with a repository.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions_variables:read` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
@@ -34,10 +34,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationVariables {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OrganizationVariablesGetResponse?> GetAsOrganizationVariablesGetResponseAsync(Action<OrganizationVariablesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationVariablesGetResponse?> GetAsOrganizationVariablesGetResponseAsync(Action<RequestConfiguration<OrganizationVariablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<OrganizationVariablesGetResponse> GetAsOrganizationVariablesGetResponseAsync(Action<OrganizationVariablesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationVariablesGetResponse> GetAsOrganizationVariablesGetResponseAsync(Action<RequestConfiguration<OrganizationVariablesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<OrganizationVariablesGetResponse>(requestInfo, OrganizationVariablesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +51,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationVariables {
         [Obsolete("This method is obsolete. Use GetAsOrganizationVariablesGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OrganizationVariablesResponse?> GetAsync(Action<OrganizationVariablesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationVariablesResponse?> GetAsync(Action<RequestConfiguration<OrganizationVariablesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<OrganizationVariablesResponse> GetAsync(Action<OrganizationVariablesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<OrganizationVariablesResponse> GetAsync(Action<RequestConfiguration<OrganizationVariablesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<OrganizationVariablesResponse>(requestInfo, OrganizationVariablesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -65,24 +65,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationVariables {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<OrganizationVariablesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OrganizationVariablesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<OrganizationVariablesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OrganizationVariablesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new OrganizationVariablesRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -106,20 +96,8 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.OrganizationVariables {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class OrganizationVariablesRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public OrganizationVariablesRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OrganizationVariablesRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new organizationVariablesRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public OrganizationVariablesRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class OrganizationVariablesRequestBuilderGetRequestConfiguration : RequestConfiguration<OrganizationVariablesRequestBuilderGetQueryParameters> {
         }
     }
 }

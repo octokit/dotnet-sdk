@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     public class RuleSuites : IAdditionalDataHolder, IParsable {
         /// <summary>The number that identifies the user.</summary>
         public int? ActorId { get; set; }

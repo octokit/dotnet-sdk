@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Codespaces {
+namespace Octokit.Client.Orgs.Item.Codespaces {
     [Obsolete("This class is obsolete. Use codespacesGetResponse instead.")]
     public class CodespacesResponse : CodespacesGetResponse, IParsable {
         /// <summary>

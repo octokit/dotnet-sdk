@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Gists {
+namespace Octokit.Client.Gists {
     /// <summary>
     /// Names and content for the files that make up the gist
     /// </summary>

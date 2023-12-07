@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Search.Repositories {
+namespace Octokit.Client.Search.Repositories {
     [Obsolete("This class is obsolete. Use repositoriesGetResponse instead.")]
     public class RepositoriesResponse : RepositoriesGetResponse, IParsable {
         /// <summary>

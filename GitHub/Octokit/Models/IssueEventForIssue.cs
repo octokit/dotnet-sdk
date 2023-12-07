@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Models {
+namespace Octokit.Client.Models {
     /// <summary>
     /// Composed type wrapper for classes addedToProjectIssueEvent, assignedIssueEvent, convertedNoteToIssueIssueEvent, demilestonedIssueEvent, labeledIssueEvent, lockedIssueEvent, milestonedIssueEvent, movedColumnInProjectIssueEvent, removedFromProjectIssueEvent, renamedIssueEvent, reviewDismissedIssueEvent, reviewRequestedIssueEvent, reviewRequestRemovedIssueEvent, unassignedIssueEvent, unlabeledIssueEvent
     /// </summary>
@@ -13,122 +13,122 @@ namespace GitHub.Octokit.Models {
         /// <summary>Composed type representation for type addedToProjectIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.AddedToProjectIssueEvent? AddedToProjectIssueEvent { get; set; }
+        public Octokit.Client.Models.AddedToProjectIssueEvent? AddedToProjectIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.AddedToProjectIssueEvent AddedToProjectIssueEvent { get; set; }
+        public Octokit.Client.Models.AddedToProjectIssueEvent AddedToProjectIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type assignedIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.AssignedIssueEvent? AssignedIssueEvent { get; set; }
+        public Octokit.Client.Models.AssignedIssueEvent? AssignedIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.AssignedIssueEvent AssignedIssueEvent { get; set; }
+        public Octokit.Client.Models.AssignedIssueEvent AssignedIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type convertedNoteToIssueIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.ConvertedNoteToIssueIssueEvent? ConvertedNoteToIssueIssueEvent { get; set; }
+        public Octokit.Client.Models.ConvertedNoteToIssueIssueEvent? ConvertedNoteToIssueIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.ConvertedNoteToIssueIssueEvent ConvertedNoteToIssueIssueEvent { get; set; }
+        public Octokit.Client.Models.ConvertedNoteToIssueIssueEvent ConvertedNoteToIssueIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type demilestonedIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.DemilestonedIssueEvent? DemilestonedIssueEvent { get; set; }
+        public Octokit.Client.Models.DemilestonedIssueEvent? DemilestonedIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.DemilestonedIssueEvent DemilestonedIssueEvent { get; set; }
+        public Octokit.Client.Models.DemilestonedIssueEvent DemilestonedIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type labeledIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.LabeledIssueEvent? LabeledIssueEvent { get; set; }
+        public Octokit.Client.Models.LabeledIssueEvent? LabeledIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.LabeledIssueEvent LabeledIssueEvent { get; set; }
+        public Octokit.Client.Models.LabeledIssueEvent LabeledIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type lockedIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.LockedIssueEvent? LockedIssueEvent { get; set; }
+        public Octokit.Client.Models.LockedIssueEvent? LockedIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.LockedIssueEvent LockedIssueEvent { get; set; }
+        public Octokit.Client.Models.LockedIssueEvent LockedIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type milestonedIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.MilestonedIssueEvent? MilestonedIssueEvent { get; set; }
+        public Octokit.Client.Models.MilestonedIssueEvent? MilestonedIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.MilestonedIssueEvent MilestonedIssueEvent { get; set; }
+        public Octokit.Client.Models.MilestonedIssueEvent MilestonedIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type movedColumnInProjectIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.MovedColumnInProjectIssueEvent? MovedColumnInProjectIssueEvent { get; set; }
+        public Octokit.Client.Models.MovedColumnInProjectIssueEvent? MovedColumnInProjectIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.MovedColumnInProjectIssueEvent MovedColumnInProjectIssueEvent { get; set; }
+        public Octokit.Client.Models.MovedColumnInProjectIssueEvent MovedColumnInProjectIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type removedFromProjectIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RemovedFromProjectIssueEvent? RemovedFromProjectIssueEvent { get; set; }
+        public Octokit.Client.Models.RemovedFromProjectIssueEvent? RemovedFromProjectIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RemovedFromProjectIssueEvent RemovedFromProjectIssueEvent { get; set; }
+        public Octokit.Client.Models.RemovedFromProjectIssueEvent RemovedFromProjectIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type renamedIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.RenamedIssueEvent? RenamedIssueEvent { get; set; }
+        public Octokit.Client.Models.RenamedIssueEvent? RenamedIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.RenamedIssueEvent RenamedIssueEvent { get; set; }
+        public Octokit.Client.Models.RenamedIssueEvent RenamedIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type reviewDismissedIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.ReviewDismissedIssueEvent? ReviewDismissedIssueEvent { get; set; }
+        public Octokit.Client.Models.ReviewDismissedIssueEvent? ReviewDismissedIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.ReviewDismissedIssueEvent ReviewDismissedIssueEvent { get; set; }
+        public Octokit.Client.Models.ReviewDismissedIssueEvent ReviewDismissedIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type reviewRequestedIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.ReviewRequestedIssueEvent? ReviewRequestedIssueEvent { get; set; }
+        public Octokit.Client.Models.ReviewRequestedIssueEvent? ReviewRequestedIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.ReviewRequestedIssueEvent ReviewRequestedIssueEvent { get; set; }
+        public Octokit.Client.Models.ReviewRequestedIssueEvent ReviewRequestedIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type reviewRequestRemovedIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedIssueEvent { get; set; }
+        public Octokit.Client.Models.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.ReviewRequestRemovedIssueEvent ReviewRequestRemovedIssueEvent { get; set; }
+        public Octokit.Client.Models.ReviewRequestRemovedIssueEvent ReviewRequestRemovedIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type unassignedIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.UnassignedIssueEvent? UnassignedIssueEvent { get; set; }
+        public Octokit.Client.Models.UnassignedIssueEvent? UnassignedIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.UnassignedIssueEvent UnassignedIssueEvent { get; set; }
+        public Octokit.Client.Models.UnassignedIssueEvent UnassignedIssueEvent { get; set; }
 #endif
         /// <summary>Composed type representation for type unlabeledIssueEvent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GitHub.Octokit.Models.UnlabeledIssueEvent? UnlabeledIssueEvent { get; set; }
+        public Octokit.Client.Models.UnlabeledIssueEvent? UnlabeledIssueEvent { get; set; }
 #nullable restore
 #else
-        public GitHub.Octokit.Models.UnlabeledIssueEvent UnlabeledIssueEvent { get; set; }
+        public Octokit.Client.Models.UnlabeledIssueEvent UnlabeledIssueEvent { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -137,21 +137,21 @@ namespace GitHub.Octokit.Models {
         public static IssueEventForIssue CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var result = new IssueEventForIssue();
-            result.AddedToProjectIssueEvent = new GitHub.Octokit.Models.AddedToProjectIssueEvent();
-            result.AssignedIssueEvent = new GitHub.Octokit.Models.AssignedIssueEvent();
-            result.ConvertedNoteToIssueIssueEvent = new GitHub.Octokit.Models.ConvertedNoteToIssueIssueEvent();
-            result.DemilestonedIssueEvent = new GitHub.Octokit.Models.DemilestonedIssueEvent();
-            result.LabeledIssueEvent = new GitHub.Octokit.Models.LabeledIssueEvent();
-            result.LockedIssueEvent = new GitHub.Octokit.Models.LockedIssueEvent();
-            result.MilestonedIssueEvent = new GitHub.Octokit.Models.MilestonedIssueEvent();
-            result.MovedColumnInProjectIssueEvent = new GitHub.Octokit.Models.MovedColumnInProjectIssueEvent();
-            result.RemovedFromProjectIssueEvent = new GitHub.Octokit.Models.RemovedFromProjectIssueEvent();
-            result.RenamedIssueEvent = new GitHub.Octokit.Models.RenamedIssueEvent();
-            result.ReviewDismissedIssueEvent = new GitHub.Octokit.Models.ReviewDismissedIssueEvent();
-            result.ReviewRequestedIssueEvent = new GitHub.Octokit.Models.ReviewRequestedIssueEvent();
-            result.ReviewRequestRemovedIssueEvent = new GitHub.Octokit.Models.ReviewRequestRemovedIssueEvent();
-            result.UnassignedIssueEvent = new GitHub.Octokit.Models.UnassignedIssueEvent();
-            result.UnlabeledIssueEvent = new GitHub.Octokit.Models.UnlabeledIssueEvent();
+            result.AddedToProjectIssueEvent = new Octokit.Client.Models.AddedToProjectIssueEvent();
+            result.AssignedIssueEvent = new Octokit.Client.Models.AssignedIssueEvent();
+            result.ConvertedNoteToIssueIssueEvent = new Octokit.Client.Models.ConvertedNoteToIssueIssueEvent();
+            result.DemilestonedIssueEvent = new Octokit.Client.Models.DemilestonedIssueEvent();
+            result.LabeledIssueEvent = new Octokit.Client.Models.LabeledIssueEvent();
+            result.LockedIssueEvent = new Octokit.Client.Models.LockedIssueEvent();
+            result.MilestonedIssueEvent = new Octokit.Client.Models.MilestonedIssueEvent();
+            result.MovedColumnInProjectIssueEvent = new Octokit.Client.Models.MovedColumnInProjectIssueEvent();
+            result.RemovedFromProjectIssueEvent = new Octokit.Client.Models.RemovedFromProjectIssueEvent();
+            result.RenamedIssueEvent = new Octokit.Client.Models.RenamedIssueEvent();
+            result.ReviewDismissedIssueEvent = new Octokit.Client.Models.ReviewDismissedIssueEvent();
+            result.ReviewRequestedIssueEvent = new Octokit.Client.Models.ReviewRequestedIssueEvent();
+            result.ReviewRequestRemovedIssueEvent = new Octokit.Client.Models.ReviewRequestRemovedIssueEvent();
+            result.UnassignedIssueEvent = new Octokit.Client.Models.UnassignedIssueEvent();
+            result.UnlabeledIssueEvent = new Octokit.Client.Models.UnlabeledIssueEvent();
             return result;
         }
         /// <summary>
@@ -169,7 +169,7 @@ namespace GitHub.Octokit.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<GitHub.Octokit.Models.AddedToProjectIssueEvent>(null, AddedToProjectIssueEvent, AssignedIssueEvent, ConvertedNoteToIssueIssueEvent, DemilestonedIssueEvent, LabeledIssueEvent, LockedIssueEvent, MilestonedIssueEvent, MovedColumnInProjectIssueEvent, RemovedFromProjectIssueEvent, RenamedIssueEvent, ReviewDismissedIssueEvent, ReviewRequestedIssueEvent, ReviewRequestRemovedIssueEvent, UnassignedIssueEvent, UnlabeledIssueEvent);
+            writer.WriteObjectValue<Octokit.Client.Models.AddedToProjectIssueEvent>(null, AddedToProjectIssueEvent, AssignedIssueEvent, ConvertedNoteToIssueIssueEvent, DemilestonedIssueEvent, LabeledIssueEvent, LockedIssueEvent, MilestonedIssueEvent, MovedColumnInProjectIssueEvent, RemovedFromProjectIssueEvent, RenamedIssueEvent, ReviewDismissedIssueEvent, ReviewRequestedIssueEvent, ReviewRequestRemovedIssueEvent, UnassignedIssueEvent, UnlabeledIssueEvent);
         }
     }
 }

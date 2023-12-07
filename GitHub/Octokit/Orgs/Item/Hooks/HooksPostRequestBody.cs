@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Hooks {
+namespace Octokit.Client.Orgs.Item.Hooks {
     public class HooksPostRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.</summary>
         public bool? Active { get; set; }

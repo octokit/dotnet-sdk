@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
+namespace Octokit.Client.Repos.Item.Item.Contents.Item {
     /// <summary>
     /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
     /// </summary>

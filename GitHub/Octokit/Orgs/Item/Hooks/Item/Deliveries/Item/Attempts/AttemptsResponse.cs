@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Hooks.Item.Deliveries.Item.Attempts {
+namespace Octokit.Client.Orgs.Item.Hooks.Item.Deliveries.Item.Attempts {
     [Obsolete("This class is obsolete. Use attemptsPostResponse instead.")]
     public class AttemptsResponse : AttemptsPostResponse, IParsable {
         /// <summary>

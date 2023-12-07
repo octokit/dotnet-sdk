@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
+namespace Octokit.Client.Repos.Item.Item.Contents.Item {
     /// <summary>
     /// The person that committed the file. Default: the authenticated user.
     /// </summary>

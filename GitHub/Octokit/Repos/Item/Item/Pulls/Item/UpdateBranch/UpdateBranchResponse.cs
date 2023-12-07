@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Repos.Item.Item.Pulls.Item.UpdateBranch {
+namespace Octokit.Client.Repos.Item.Item.Pulls.Item.UpdateBranch {
     [Obsolete("This class is obsolete. Use updateBranchPutResponse instead.")]
     public class UpdateBranchResponse : UpdateBranchPutResponse, IParsable {
         /// <summary>

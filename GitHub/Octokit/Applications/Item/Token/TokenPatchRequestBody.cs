@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Applications.Item.Token {
+namespace Octokit.Client.Applications.Item.Token {
     public class TokenPatchRequestBody : IAdditionalDataHolder, IParsable {
         /// <summary>The access_token of the OAuth or GitHub application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

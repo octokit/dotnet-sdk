@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Octokit.Orgs.Item.Repos {
+namespace Octokit.Client.Orgs.Item.Repos {
     /// <summary>
     /// The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.
     /// </summary>
