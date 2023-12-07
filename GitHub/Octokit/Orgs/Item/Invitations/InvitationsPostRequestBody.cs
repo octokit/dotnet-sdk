@@ -18,7 +18,7 @@ namespace GitHub.Octokit.Orgs.Item.Invitations {
 #endif
         /// <summary>**Required unless you provide `email`**. GitHub user ID for the person you are inviting.</summary>
         public int? InviteeId { get; set; }
-        /// <summary>The role for the new member.  * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.   * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.   * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.</summary>
+        /// <summary>The role for the new member.  * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.   * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.   * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.</summary>
         public InvitationsPostRequestBody_role? Role { get; set; }
         /// <summary>Specify IDs for the teams you want to invite new members to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

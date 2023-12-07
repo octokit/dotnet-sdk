@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Dependabot {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\dependabot
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\dependabot
     /// </summary>
     public class DependabotRequestBuilder : BaseRequestBuilder {
         /// <summary>The alerts property</summary>
@@ -25,14 +25,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Dependabot {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DependabotRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/dependabot", pathParameters) {
+        public DependabotRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependabot", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DependabotRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DependabotRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/dependabot", rawUrl) {
+        public DependabotRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependabot", rawUrl) {
         }
     }
 }

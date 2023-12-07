@@ -22,7 +22,7 @@ namespace GitHub.Octokit.Repos.Item.Item.CodeScanning.Sarifs {
 #else
         public string CommitSha { get; set; }
 #endif
-        /// <summary>The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`,`refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.</summary>
+        /// <summary>The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`,`refs/tags/&lt;tag&gt;`, `refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ref { get; set; }

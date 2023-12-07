@@ -16,7 +16,7 @@ namespace GitHub.Octokit.Models {
 #else
         public SecretScanningLocation_details Details { get; set; }
 #endif
-        /// <summary>The location type. Because secrets may be found in different types of resources (ie. code, comments, issues), this field identifies the type of resource where the secret was found.</summary>
+        /// <summary>The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.</summary>
         public SecretScanningLocation_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new secretScanningLocation and sets the default values.
@@ -52,7 +52,7 @@ namespace GitHub.Octokit.Models {
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes secretScanningLocationCommit, secretScanningLocationIssueBody, secretScanningLocationIssueComment, secretScanningLocationIssueTitle
+        /// Composed type wrapper for classes secretScanningLocationCommit, secretScanningLocationDiscussionBody, secretScanningLocationDiscussionComment, secretScanningLocationDiscussionTitle, secretScanningLocationIssueBody, secretScanningLocationIssueComment, secretScanningLocationIssueTitle, secretScanningLocationPullRequestBody, secretScanningLocationPullRequestComment, secretScanningLocationPullRequestReview, secretScanningLocationPullRequestReviewComment, secretScanningLocationPullRequestTitle
         /// </summary>
         public class SecretScanningLocation_details : IComposedTypeWrapper, IParsable {
             /// <summary>Composed type representation for type secretScanningLocationCommit</summary>
@@ -62,6 +62,30 @@ namespace GitHub.Octokit.Models {
 #nullable restore
 #else
             public GitHub.Octokit.Models.SecretScanningLocationCommit SecretScanningLocationCommit { get; set; }
+#endif
+            /// <summary>Composed type representation for type secretScanningLocationDiscussionBody</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Octokit.Models.SecretScanningLocationDiscussionBody? SecretScanningLocationDiscussionBody { get; set; }
+#nullable restore
+#else
+            public GitHub.Octokit.Models.SecretScanningLocationDiscussionBody SecretScanningLocationDiscussionBody { get; set; }
+#endif
+            /// <summary>Composed type representation for type secretScanningLocationDiscussionComment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Octokit.Models.SecretScanningLocationDiscussionComment? SecretScanningLocationDiscussionComment { get; set; }
+#nullable restore
+#else
+            public GitHub.Octokit.Models.SecretScanningLocationDiscussionComment SecretScanningLocationDiscussionComment { get; set; }
+#endif
+            /// <summary>Composed type representation for type secretScanningLocationDiscussionTitle</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Octokit.Models.SecretScanningLocationDiscussionTitle? SecretScanningLocationDiscussionTitle { get; set; }
+#nullable restore
+#else
+            public GitHub.Octokit.Models.SecretScanningLocationDiscussionTitle SecretScanningLocationDiscussionTitle { get; set; }
 #endif
             /// <summary>Composed type representation for type secretScanningLocationIssueBody</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,6 +111,46 @@ namespace GitHub.Octokit.Models {
 #else
             public GitHub.Octokit.Models.SecretScanningLocationIssueTitle SecretScanningLocationIssueTitle { get; set; }
 #endif
+            /// <summary>Composed type representation for type secretScanningLocationPullRequestBody</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestBody? SecretScanningLocationPullRequestBody { get; set; }
+#nullable restore
+#else
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestBody SecretScanningLocationPullRequestBody { get; set; }
+#endif
+            /// <summary>Composed type representation for type secretScanningLocationPullRequestComment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestComment? SecretScanningLocationPullRequestComment { get; set; }
+#nullable restore
+#else
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestComment SecretScanningLocationPullRequestComment { get; set; }
+#endif
+            /// <summary>Composed type representation for type secretScanningLocationPullRequestReview</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestReview? SecretScanningLocationPullRequestReview { get; set; }
+#nullable restore
+#else
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestReview SecretScanningLocationPullRequestReview { get; set; }
+#endif
+            /// <summary>Composed type representation for type secretScanningLocationPullRequestReviewComment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestReviewComment? SecretScanningLocationPullRequestReviewComment { get; set; }
+#nullable restore
+#else
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestReviewComment SecretScanningLocationPullRequestReviewComment { get; set; }
+#endif
+            /// <summary>Composed type representation for type secretScanningLocationPullRequestTitle</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestTitle? SecretScanningLocationPullRequestTitle { get; set; }
+#nullable restore
+#else
+            public GitHub.Octokit.Models.SecretScanningLocationPullRequestTitle SecretScanningLocationPullRequestTitle { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -98,6 +162,15 @@ namespace GitHub.Octokit.Models {
                 if("secret-scanning-location-commit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.SecretScanningLocationCommit = new GitHub.Octokit.Models.SecretScanningLocationCommit();
                 }
+                else if("secret-scanning-location-discussion-body".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                    result.SecretScanningLocationDiscussionBody = new GitHub.Octokit.Models.SecretScanningLocationDiscussionBody();
+                }
+                else if("secret-scanning-location-discussion-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                    result.SecretScanningLocationDiscussionComment = new GitHub.Octokit.Models.SecretScanningLocationDiscussionComment();
+                }
+                else if("secret-scanning-location-discussion-title".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                    result.SecretScanningLocationDiscussionTitle = new GitHub.Octokit.Models.SecretScanningLocationDiscussionTitle();
+                }
                 else if("secret-scanning-location-issue-body".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.SecretScanningLocationIssueBody = new GitHub.Octokit.Models.SecretScanningLocationIssueBody();
                 }
@@ -106,6 +179,21 @@ namespace GitHub.Octokit.Models {
                 }
                 else if("secret-scanning-location-issue-title".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.SecretScanningLocationIssueTitle = new GitHub.Octokit.Models.SecretScanningLocationIssueTitle();
+                }
+                else if("secret-scanning-location-pull-request-body".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                    result.SecretScanningLocationPullRequestBody = new GitHub.Octokit.Models.SecretScanningLocationPullRequestBody();
+                }
+                else if("secret-scanning-location-pull-request-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                    result.SecretScanningLocationPullRequestComment = new GitHub.Octokit.Models.SecretScanningLocationPullRequestComment();
+                }
+                else if("secret-scanning-location-pull-request-review".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                    result.SecretScanningLocationPullRequestReview = new GitHub.Octokit.Models.SecretScanningLocationPullRequestReview();
+                }
+                else if("secret-scanning-location-pull-request-review-comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                    result.SecretScanningLocationPullRequestReviewComment = new GitHub.Octokit.Models.SecretScanningLocationPullRequestReviewComment();
+                }
+                else if("secret-scanning-location-pull-request-title".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                    result.SecretScanningLocationPullRequestTitle = new GitHub.Octokit.Models.SecretScanningLocationPullRequestTitle();
                 }
                 return result;
             }
@@ -116,6 +204,15 @@ namespace GitHub.Octokit.Models {
                 if(SecretScanningLocationCommit != null) {
                     return SecretScanningLocationCommit.GetFieldDeserializers();
                 }
+                else if(SecretScanningLocationDiscussionBody != null) {
+                    return SecretScanningLocationDiscussionBody.GetFieldDeserializers();
+                }
+                else if(SecretScanningLocationDiscussionComment != null) {
+                    return SecretScanningLocationDiscussionComment.GetFieldDeserializers();
+                }
+                else if(SecretScanningLocationDiscussionTitle != null) {
+                    return SecretScanningLocationDiscussionTitle.GetFieldDeserializers();
+                }
                 else if(SecretScanningLocationIssueBody != null) {
                     return SecretScanningLocationIssueBody.GetFieldDeserializers();
                 }
@@ -124,6 +221,21 @@ namespace GitHub.Octokit.Models {
                 }
                 else if(SecretScanningLocationIssueTitle != null) {
                     return SecretScanningLocationIssueTitle.GetFieldDeserializers();
+                }
+                else if(SecretScanningLocationPullRequestBody != null) {
+                    return SecretScanningLocationPullRequestBody.GetFieldDeserializers();
+                }
+                else if(SecretScanningLocationPullRequestComment != null) {
+                    return SecretScanningLocationPullRequestComment.GetFieldDeserializers();
+                }
+                else if(SecretScanningLocationPullRequestReview != null) {
+                    return SecretScanningLocationPullRequestReview.GetFieldDeserializers();
+                }
+                else if(SecretScanningLocationPullRequestReviewComment != null) {
+                    return SecretScanningLocationPullRequestReviewComment.GetFieldDeserializers();
+                }
+                else if(SecretScanningLocationPullRequestTitle != null) {
+                    return SecretScanningLocationPullRequestTitle.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -136,6 +248,15 @@ namespace GitHub.Octokit.Models {
                 if(SecretScanningLocationCommit != null) {
                     writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationCommit>(null, SecretScanningLocationCommit);
                 }
+                else if(SecretScanningLocationDiscussionBody != null) {
+                    writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationDiscussionBody>(null, SecretScanningLocationDiscussionBody);
+                }
+                else if(SecretScanningLocationDiscussionComment != null) {
+                    writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationDiscussionComment>(null, SecretScanningLocationDiscussionComment);
+                }
+                else if(SecretScanningLocationDiscussionTitle != null) {
+                    writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationDiscussionTitle>(null, SecretScanningLocationDiscussionTitle);
+                }
                 else if(SecretScanningLocationIssueBody != null) {
                     writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationIssueBody>(null, SecretScanningLocationIssueBody);
                 }
@@ -144,6 +265,21 @@ namespace GitHub.Octokit.Models {
                 }
                 else if(SecretScanningLocationIssueTitle != null) {
                     writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationIssueTitle>(null, SecretScanningLocationIssueTitle);
+                }
+                else if(SecretScanningLocationPullRequestBody != null) {
+                    writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationPullRequestBody>(null, SecretScanningLocationPullRequestBody);
+                }
+                else if(SecretScanningLocationPullRequestComment != null) {
+                    writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationPullRequestComment>(null, SecretScanningLocationPullRequestComment);
+                }
+                else if(SecretScanningLocationPullRequestReview != null) {
+                    writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationPullRequestReview>(null, SecretScanningLocationPullRequestReview);
+                }
+                else if(SecretScanningLocationPullRequestReviewComment != null) {
+                    writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationPullRequestReviewComment>(null, SecretScanningLocationPullRequestReviewComment);
+                }
+                else if(SecretScanningLocationPullRequestTitle != null) {
+                    writer.WriteObjectValue<GitHub.Octokit.Models.SecretScanningLocationPullRequestTitle>(null, SecretScanningLocationPullRequestTitle);
                 }
             }
         }

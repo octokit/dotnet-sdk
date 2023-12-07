@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Octokit.Models {
-    /// <summary>The location type. Because secrets may be found in different types of resources (ie. code, comments, issues), this field identifies the type of resource where the secret was found.</summary>
+    /// <summary>The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.</summary>
     public enum SecretScanningLocation_type {
         [EnumMember(Value = "commit")]
         Commit,
@@ -12,5 +12,21 @@ namespace GitHub.Octokit.Models {
         Issue_body,
         [EnumMember(Value = "issue_comment")]
         Issue_comment,
+        [EnumMember(Value = "discussion_title")]
+        Discussion_title,
+        [EnumMember(Value = "discussion_body")]
+        Discussion_body,
+        [EnumMember(Value = "discussion_comment")]
+        Discussion_comment,
+        [EnumMember(Value = "pull_request_title")]
+        Pull_request_title,
+        [EnumMember(Value = "pull_request_body")]
+        Pull_request_body,
+        [EnumMember(Value = "pull_request_comment")]
+        Pull_request_comment,
+        [EnumMember(Value = "pull_request_review")]
+        Pull_request_review,
+        [EnumMember(Value = "pull_request_review_comment")]
+        Pull_request_review_comment,
     }
 }

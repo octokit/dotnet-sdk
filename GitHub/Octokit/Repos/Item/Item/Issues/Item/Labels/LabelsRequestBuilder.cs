@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\issues\{issue_number}\labels
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\issues\{issue_number}\labels
     /// </summary>
     public class LabelsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.issues.item.labels.item collection</summary>
@@ -26,14 +26,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LabelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/issues/{issue_number}/labels{?per_page*,page*}", pathParameters) {
+        public LabelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/labels{?per_page*,page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new LabelsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/issues/{issue_number}/labels{?per_page*,page*}", rawUrl) {
+        public LabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/labels{?per_page*,page*}", rawUrl) {
         }
         /// <summary>
         /// Removes all labels from an issue.
@@ -43,10 +43,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<LabelsRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<LabelsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -63,10 +63,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Label>?> GetAsync(Action<LabelsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Label>?> GetAsync(Action<RequestConfiguration<LabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<Label>> GetAsync(Action<LabelsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Label>> GetAsync(Action<RequestConfiguration<LabelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -85,10 +85,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Label>?> PostAsync(LabelsPostRequestBody body, Action<LabelsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Label>?> PostAsync(LabelsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<Label>> PostAsync(LabelsPostRequestBody body, Action<LabelsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Label>> PostAsync(LabelsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -109,10 +109,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Label>?> PutAsync(LabelsPutRequestBody body, Action<LabelsRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Label>?> PutAsync(LabelsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<Label>> PutAsync(LabelsPutRequestBody body, Action<LabelsRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Label>> PutAsync(LabelsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -130,23 +130,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<LabelsRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<LabelsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new LabelsRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json, application/json, application/json");
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -155,24 +146,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<LabelsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<LabelsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LabelsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new LabelsRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -182,24 +163,15 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(LabelsPostRequestBody body, Action<LabelsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(LabelsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(LabelsPostRequestBody body, Action<LabelsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(LabelsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.POST,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new LabelsRequestBuilderPostRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -210,24 +182,15 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(LabelsPutRequestBody body, Action<LabelsRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(LabelsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(LabelsPutRequestBody body, Action<LabelsRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(LabelsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.PUT,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new LabelsRequestBuilderPutRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -261,10 +224,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>Composed type representation for type labelsPostRequestBodyMember3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3? LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>? LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3 LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
 #endif
             /// <summary>Composed type representation for type labelsPostRequestBodyMember1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -285,10 +248,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>Composed type representation for type labelsPostRequestBodyMember3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3? LabelsPostRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>? LabelsPostRequestBodyMember3 { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3 LabelsPostRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> LabelsPostRequestBodyMember3 { get; set; }
 #endif
             /// <summary>Composed type representation for type string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -321,22 +284,22 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
                     result.LabelsPostRequestBodyLabelsPostRequestBodyMember2 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPostRequestBodyLabelsPostRequestBodyMember3 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.LabelsPostRequestBodyMember1 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.LabelsPostRequestBodyMember2 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPostRequestBodyMember3 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3();
                 }
                 else if(parseNode.GetStringValue() is string labelsPostRequestBodyStringValue) {
                     result.LabelsPostRequestBodyString = labelsPostRequestBodyStringValue;
                 }
                 else if(parseNode.GetStringValue() is string stringValue) {
                     result.String = stringValue;
+                }
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> labelsPostRequestBodyLabelsPostRequestBodyMember3Value) {
+                    result.LabelsPostRequestBodyLabelsPostRequestBodyMember3 = labelsPostRequestBodyLabelsPostRequestBodyMember3Value;
+                }
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> labelsPostRequestBodyMember3Value) {
+                    result.LabelsPostRequestBodyMember3 = labelsPostRequestBodyMember3Value;
                 }
                 return result;
             }
@@ -350,17 +313,11 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
                 else if(LabelsPostRequestBodyLabelsPostRequestBodyMember2 != null) {
                     return LabelsPostRequestBodyLabelsPostRequestBodyMember2.GetFieldDeserializers();
                 }
-                else if(LabelsPostRequestBodyLabelsPostRequestBodyMember3 != null) {
-                    return LabelsPostRequestBodyLabelsPostRequestBodyMember3.GetFieldDeserializers();
-                }
                 else if(LabelsPostRequestBodyMember1 != null) {
                     return LabelsPostRequestBodyMember1.GetFieldDeserializers();
                 }
                 else if(LabelsPostRequestBodyMember2 != null) {
                     return LabelsPostRequestBodyMember2.GetFieldDeserializers();
-                }
-                else if(LabelsPostRequestBodyMember3 != null) {
-                    return LabelsPostRequestBodyMember3.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -376,23 +333,23 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
                 else if(LabelsPostRequestBodyLabelsPostRequestBodyMember2 != null) {
                     writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2>(null, LabelsPostRequestBodyLabelsPostRequestBodyMember2);
                 }
-                else if(LabelsPostRequestBodyLabelsPostRequestBodyMember3 != null) {
-                    writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(null, LabelsPostRequestBodyLabelsPostRequestBodyMember3);
-                }
                 else if(LabelsPostRequestBodyMember1 != null) {
                     writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1>(null, LabelsPostRequestBodyMember1);
                 }
                 else if(LabelsPostRequestBodyMember2 != null) {
                     writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2>(null, LabelsPostRequestBodyMember2);
                 }
-                else if(LabelsPostRequestBodyMember3 != null) {
-                    writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(null, LabelsPostRequestBodyMember3);
-                }
                 else if(LabelsPostRequestBodyString != null) {
                     writer.WriteStringValue(null, LabelsPostRequestBodyString);
                 }
                 else if(String != null) {
                     writer.WriteStringValue(null, String);
+                }
+                else if(LabelsPostRequestBodyLabelsPostRequestBodyMember3 != null) {
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(null, LabelsPostRequestBodyLabelsPostRequestBodyMember3);
+                }
+                else if(LabelsPostRequestBodyMember3 != null) {
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(null, LabelsPostRequestBodyMember3);
                 }
             }
         }
@@ -419,10 +376,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>Composed type representation for type labelsPutRequestBodyMember3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3? LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>? LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3 LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
 #endif
             /// <summary>Composed type representation for type labelsPutRequestBodyMember1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -443,10 +400,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>Composed type representation for type labelsPutRequestBodyMember3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3? LabelsPutRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>? LabelsPutRequestBodyMember3 { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3 LabelsPutRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> LabelsPutRequestBodyMember3 { get; set; }
 #endif
             /// <summary>Composed type representation for type string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -479,22 +436,22 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
                     result.LabelsPutRequestBodyLabelsPutRequestBodyMember2 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPutRequestBodyLabelsPutRequestBodyMember3 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.LabelsPutRequestBodyMember1 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.LabelsPutRequestBodyMember2 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPutRequestBodyMember3 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3();
                 }
                 else if(parseNode.GetStringValue() is string labelsPutRequestBodyStringValue) {
                     result.LabelsPutRequestBodyString = labelsPutRequestBodyStringValue;
                 }
                 else if(parseNode.GetStringValue() is string stringValue) {
                     result.String = stringValue;
+                }
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> labelsPutRequestBodyLabelsPutRequestBodyMember3Value) {
+                    result.LabelsPutRequestBodyLabelsPutRequestBodyMember3 = labelsPutRequestBodyLabelsPutRequestBodyMember3Value;
+                }
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> labelsPutRequestBodyMember3Value) {
+                    result.LabelsPutRequestBodyMember3 = labelsPutRequestBodyMember3Value;
                 }
                 return result;
             }
@@ -508,17 +465,11 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
                 else if(LabelsPutRequestBodyLabelsPutRequestBodyMember2 != null) {
                     return LabelsPutRequestBodyLabelsPutRequestBodyMember2.GetFieldDeserializers();
                 }
-                else if(LabelsPutRequestBodyLabelsPutRequestBodyMember3 != null) {
-                    return LabelsPutRequestBodyLabelsPutRequestBodyMember3.GetFieldDeserializers();
-                }
                 else if(LabelsPutRequestBodyMember1 != null) {
                     return LabelsPutRequestBodyMember1.GetFieldDeserializers();
                 }
                 else if(LabelsPutRequestBodyMember2 != null) {
                     return LabelsPutRequestBodyMember2.GetFieldDeserializers();
-                }
-                else if(LabelsPutRequestBodyMember3 != null) {
-                    return LabelsPutRequestBodyMember3.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -534,17 +485,11 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
                 else if(LabelsPutRequestBodyLabelsPutRequestBodyMember2 != null) {
                     writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2>(null, LabelsPutRequestBodyLabelsPutRequestBodyMember2);
                 }
-                else if(LabelsPutRequestBodyLabelsPutRequestBodyMember3 != null) {
-                    writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(null, LabelsPutRequestBodyLabelsPutRequestBodyMember3);
-                }
                 else if(LabelsPutRequestBodyMember1 != null) {
                     writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1>(null, LabelsPutRequestBodyMember1);
                 }
                 else if(LabelsPutRequestBodyMember2 != null) {
                     writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2>(null, LabelsPutRequestBodyMember2);
-                }
-                else if(LabelsPutRequestBodyMember3 != null) {
-                    writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(null, LabelsPutRequestBodyMember3);
                 }
                 else if(LabelsPutRequestBodyString != null) {
                     writer.WriteStringValue(null, LabelsPutRequestBodyString);
@@ -552,23 +497,19 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
                 else if(String != null) {
                     writer.WriteStringValue(null, String);
                 }
+                else if(LabelsPutRequestBodyLabelsPutRequestBodyMember3 != null) {
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(null, LabelsPutRequestBodyLabelsPutRequestBodyMember3);
+                }
+                else if(LabelsPutRequestBodyMember3 != null) {
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(null, LabelsPutRequestBodyMember3);
+                }
             }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class LabelsRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new labelsRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public LabelsRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class LabelsRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
         /// Lists all labels for an issue.
@@ -584,52 +525,20 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class LabelsRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public LabelsRequestBuilderGetQueryParameters QueryParameters { get; set; } = new LabelsRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new labelsRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public LabelsRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class LabelsRequestBuilderGetRequestConfiguration : RequestConfiguration<LabelsRequestBuilderGetQueryParameters> {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class LabelsRequestBuilderPostRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new labelsRequestBuilderPostRequestConfiguration and sets the default values.
-            /// </summary>
-            public LabelsRequestBuilderPostRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class LabelsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class LabelsRequestBuilderPutRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new labelsRequestBuilderPutRequestConfiguration and sets the default values.
-            /// </summary>
-            public LabelsRequestBuilderPutRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class LabelsRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

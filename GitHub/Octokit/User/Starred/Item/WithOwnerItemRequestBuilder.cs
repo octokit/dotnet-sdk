@@ -12,7 +12,7 @@ namespace GitHub.Octokit.User.Starred.Item {
     /// </summary>
     public class WithOwnerItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.user.starred.item.item collection</summary>
-        /// <param name="position">The name of the repository without the `.git` extension. The name is not case sensitive.</param>
+        /// <param name="position">Unique identifier of the item</param>
         public WithRepoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("repo", position);

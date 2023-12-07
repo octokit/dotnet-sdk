@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Rules.Branches {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\rules\branches
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\rules\branches
     /// </summary>
     public class BranchesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.rules.branches.item collection</summary>
@@ -23,14 +23,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Rules.Branches {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/rules/branches", pathParameters) {
+        public BranchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rules/branches", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new BranchesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/rules/branches", rawUrl) {
+        public BranchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rules/branches", rawUrl) {
         }
     }
 }
