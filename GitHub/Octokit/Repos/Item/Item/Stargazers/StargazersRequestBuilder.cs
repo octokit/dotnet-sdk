@@ -96,18 +96,18 @@ namespace Octokit.Client.Repos.Item.Item.Stargazers {
             /// <summary>Composed type representation for type simpleUser</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser>? SimpleUser { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser>? SimpleUser { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser> SimpleUser { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser> SimpleUser { get; set; }
 #endif
             /// <summary>Composed type representation for type stargazer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer>? Stargazer { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer>? Stargazer { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer> Stargazer { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer> Stargazer { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -116,10 +116,10 @@ namespace Octokit.Client.Repos.Item.Item.Stargazers {
             public static StargazersGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new StargazersGetResponse();
-                if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser>(Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser> simpleUserValue) {
+                if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser>(GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser> simpleUserValue) {
                     result.SimpleUser = simpleUserValue;
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer>(Octokit.Client.Repos.Item.Item.Stargazers.Stargazer.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer> stargazerValue) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer>(GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer> stargazerValue) {
                     result.Stargazer = stargazerValue;
                 }
                 return result;
@@ -137,10 +137,10 @@ namespace Octokit.Client.Repos.Item.Item.Stargazers {
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 if(SimpleUser != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser>(null, SimpleUser);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser>(null, SimpleUser);
                 }
                 else if(Stargazer != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer>(null, Stargazer);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer>(null, Stargazer);
                 }
             }
         }
@@ -168,18 +168,18 @@ namespace Octokit.Client.Repos.Item.Item.Stargazers {
             /// <summary>Composed type representation for type simpleUser</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser>? SimpleUser { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser>? SimpleUser { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser> SimpleUser { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser> SimpleUser { get; set; }
 #endif
             /// <summary>Composed type representation for type stargazer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer>? Stargazer { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer>? Stargazer { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer> Stargazer { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer> Stargazer { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -188,10 +188,10 @@ namespace Octokit.Client.Repos.Item.Item.Stargazers {
             public static StargazersResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new StargazersResponse();
-                if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser>(Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser> simpleUserValue) {
+                if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser>(GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser> simpleUserValue) {
                     result.SimpleUser = simpleUserValue;
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer>(Octokit.Client.Repos.Item.Item.Stargazers.Stargazer.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer> stargazerValue) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer>(GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer> stargazerValue) {
                     result.Stargazer = stargazerValue;
                 }
                 return result;
@@ -209,10 +209,10 @@ namespace Octokit.Client.Repos.Item.Item.Stargazers {
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 if(SimpleUser != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Stargazers.SimpleUser>(null, SimpleUser);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Stargazers.SimpleUser>(null, SimpleUser);
                 }
                 else if(Stargazer != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Stargazers.Stargazer>(null, Stargazer);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Stargazers.Stargazer>(null, Stargazer);
                 }
             }
         }

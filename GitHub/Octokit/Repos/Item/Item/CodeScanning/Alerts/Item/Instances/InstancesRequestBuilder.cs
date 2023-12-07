@@ -28,7 +28,7 @@ namespace Octokit.Client.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
         public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts/{alert_number}/instances{?page*,per_page*,ref*}", rawUrl) {
         }
         /// <summary>
-        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repos,the `public_repo` scope also grants permission to read security events on public repos only.
+        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repositories,the `public_repo` scope also grants permission to read security events on public repositories only.
         /// API method documentation <see href="https://docs.github.com/rest/code-scanning/code-scanning#list-instances-of-a-code-scanning-alert" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace Octokit.Client.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repos,the `public_repo` scope also grants permission to read security events on public repos only.
+        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repositories,the `public_repo` scope also grants permission to read security events on public repositories only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Octokit.Client.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
             return new InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repos,the `public_repo` scope also grants permission to read security events on public repos only.
+        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repositories,the `public_repo` scope also grants permission to read security events on public repositories only.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters {
             /// <summary>Page number of the results to fetch.</summary>

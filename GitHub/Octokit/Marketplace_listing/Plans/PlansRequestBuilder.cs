@@ -14,11 +14,19 @@ namespace Octokit.Client.Marketplace_listing.Plans {
     /// Builds and executes requests for operations under \marketplace_listing\plans
     /// </summary>
     public class PlansRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.marketplace_listing.plans.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        public WithPlan_ItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the GitHub.Octokit.marketplace_listing.plans.item collection</summary>
+        /// <param name="position">The unique identifier of the plan.</param>
+        public WithPlan_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plan_id", position);
+            return new WithPlan_ItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
+        /// <summary>Gets an item from the GitHub.Octokit.marketplace_listing.plans.item collection</summary>
+        /// <param name="position">The unique identifier of the plan.</param>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public WithPlan_ItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("plan_id", position);
             return new WithPlan_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>

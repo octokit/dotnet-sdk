@@ -51,10 +51,10 @@ namespace Octokit.Client.Orgs.Item.Rulesets.RuleSuites {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Octokit.Client.Models.RuleSuites>?> GetAsync(Action<RequestConfiguration<RuleSuitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GitHub.Octokit.Models.RuleSuites>?> GetAsync(Action<RequestConfiguration<RuleSuitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<Octokit.Client.Models.RuleSuites>> GetAsync(Action<RequestConfiguration<RuleSuitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GitHub.Octokit.Models.RuleSuites>> GetAsync(Action<RequestConfiguration<RuleSuitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

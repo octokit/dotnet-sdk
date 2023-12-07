@@ -7,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Octokit.Client.Repos.Item.Item.Actions.Runs.Item.Artifacts {
+namespace GitHub.Octokit.Repos.Item.Item.Actions.Runs.Item.Artifacts {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\runs\{run_id}\artifacts
     /// </summary>

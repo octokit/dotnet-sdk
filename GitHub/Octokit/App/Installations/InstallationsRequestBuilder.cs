@@ -51,10 +51,10 @@ namespace Octokit.Client.App.Installations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Octokit.Client.Models.Installation>?> GetAsync(Action<RequestConfiguration<InstallationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GitHub.Octokit.Models.Installation>?> GetAsync(Action<RequestConfiguration<InstallationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<Octokit.Client.Models.Installation>> GetAsync(Action<RequestConfiguration<InstallationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GitHub.Octokit.Models.Installation>> GetAsync(Action<RequestConfiguration<InstallationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<Octokit.Client.Models.Installation>(requestInfo, Octokit.Client.Models.Installation.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);

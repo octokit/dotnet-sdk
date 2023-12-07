@@ -33,7 +33,7 @@ namespace Octokit.Client.Repos.Item.Item.CodeScanning.Alerts.Item {
         public WithAlert_numberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts/{alert_number}", rawUrl) {
         }
         /// <summary>
-        /// Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repos, the `public_repo` scope also grants permission to read security events on public repos only.
+        /// Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repositories, the `public_repo` scope also grants permission to read security events on public repositories only.
         /// API method documentation <see href="https://docs.github.com/rest/code-scanning/code-scanning#get-a-code-scanning-alert" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Octokit.Client.Repos.Item.Item.CodeScanning.Alerts.Item {
             return await RequestAdapter.SendAsync<CodeScanningAlert>(requestInfo, CodeScanningAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repos, the `public_repo` scope also grants permission to read security events on public repos only.
+        /// Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repositories, the `public_repo` scope also grants permission to read security events on public repositories only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

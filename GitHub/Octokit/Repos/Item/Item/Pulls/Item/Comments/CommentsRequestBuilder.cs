@@ -14,11 +14,19 @@ namespace Octokit.Client.Repos.Item.Item.Pulls.Item.Comments {
     /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\pulls\{pull_number}\comments
     /// </summary>
     public class CommentsRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.repos.item.item.pulls.item.comments.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        public WithComment_ItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.pulls.item.comments.item collection</summary>
+        /// <param name="position">The unique identifier of the comment.</param>
+        public WithComment_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("comment_id", position);
+            return new WithComment_ItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
+        /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.pulls.item.comments.item collection</summary>
+        /// <param name="position">The unique identifier of the comment.</param>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public WithComment_ItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("comment_id", position);
             return new WithComment_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>

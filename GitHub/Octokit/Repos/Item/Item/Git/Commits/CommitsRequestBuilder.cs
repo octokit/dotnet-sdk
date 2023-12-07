@@ -14,7 +14,7 @@ namespace Octokit.Client.Repos.Item.Item.Git.Commits {
     /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\git\commits
     /// </summary>
     public class CommitsRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.repos.item.item.git.commits.item collection</summary>
+        /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.git.commits.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         public WithCommit_shaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

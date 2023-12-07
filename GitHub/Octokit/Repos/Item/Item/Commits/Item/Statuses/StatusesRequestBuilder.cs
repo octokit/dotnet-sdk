@@ -35,10 +35,10 @@ namespace Octokit.Client.Repos.Item.Item.Commits.Item.Statuses {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Octokit.Client.Models.Status>?> GetAsync(Action<RequestConfiguration<StatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GitHub.Octokit.Models.Status>?> GetAsync(Action<RequestConfiguration<StatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<Octokit.Client.Models.Status>> GetAsync(Action<RequestConfiguration<StatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GitHub.Octokit.Models.Status>> GetAsync(Action<RequestConfiguration<StatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<Octokit.Client.Models.Status>(requestInfo, Octokit.Client.Models.Status.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);

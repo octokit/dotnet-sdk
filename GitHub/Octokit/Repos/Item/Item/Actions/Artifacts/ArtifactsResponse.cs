@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Octokit.Client.Repos.Item.Item.Actions.Artifacts {
+namespace GitHub.Octokit.Repos.Item.Item.Actions.Artifacts {
     [Obsolete("This class is obsolete. Use artifactsGetResponse instead.")]
     public class ArtifactsResponse : ArtifactsGetResponse, IParsable {
         /// <summary>

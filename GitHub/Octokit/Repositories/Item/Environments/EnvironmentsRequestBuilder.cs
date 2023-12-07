@@ -11,8 +11,8 @@ namespace Octokit.Client.Repositories.Item.Environments {
     /// Builds and executes requests for operations under \repositories\{repository_id}\environments
     /// </summary>
     public class EnvironmentsRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.repositories.item.environments.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <summary>Gets an item from the GitHub.Octokit.repositories.item.environments.item collection</summary>
+        /// <param name="position">The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`.</param>
         public WithEnvironment_nameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("environment_name", position);

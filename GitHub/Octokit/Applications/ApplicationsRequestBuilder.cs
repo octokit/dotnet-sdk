@@ -11,8 +11,8 @@ namespace Octokit.Client.Applications {
     /// Builds and executes requests for operations under \applications
     /// </summary>
     public class ApplicationsRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.applications.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <summary>Gets an item from the GitHub.Octokit.applications.item collection</summary>
+        /// <param name="position">The client ID of the GitHub app.</param>
         public WithClient_ItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("client_id", position);

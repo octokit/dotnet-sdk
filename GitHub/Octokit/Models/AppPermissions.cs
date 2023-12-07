@@ -17,12 +17,26 @@ namespace Octokit.Client.Models {
         public AppPermissions_administration? Administration { get; set; }
         /// <summary>The level of permission to grant the access token for checks on code.</summary>
         public AppPermissions_checks? Checks { get; set; }
+        /// <summary>The level of permission to grant the access token to create, edit, delete, and list Codespaces.</summary>
+        public AppPermissions_codespaces? Codespaces { get; set; }
         /// <summary>The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.</summary>
         public AppPermissions_contents? Contents { get; set; }
+        /// <summary>The leve of permission to grant the access token to manage Dependabot secrets.</summary>
+        public AppPermissions_dependabot_secrets? DependabotSecrets { get; set; }
         /// <summary>The level of permission to grant the access token for deployments and deployment statuses.</summary>
         public AppPermissions_deployments? Deployments { get; set; }
+        /// <summary>The level of permission to grant the access token to manage the email addresses belonging to a user.</summary>
+        public AppPermissions_email_addresses? EmailAddresses { get; set; }
         /// <summary>The level of permission to grant the access token for managing repository environments.</summary>
         public AppPermissions_environments? Environments { get; set; }
+        /// <summary>The level of permission to grant the access token to manage the followers belonging to a user.</summary>
+        public AppPermissions_followers? Followers { get; set; }
+        /// <summary>The level of permission to grant the access token to manage git SSH keys.</summary>
+        public AppPermissions_git_ssh_keys? GitSshKeys { get; set; }
+        /// <summary>The level of permission to grant the access token to view and manage GPG keys belonging to a user.</summary>
+        public AppPermissions_gpg_keys? GpgKeys { get; set; }
+        /// <summary>The level of permission to grant the access token to view and manage interaction limits on a repository.</summary>
+        public AppPermissions_interaction_limits? InteractionLimits { get; set; }
         /// <summary>The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.</summary>
         public AppPermissions_issues? Issues { get; set; }
         /// <summary>The level of permission to grant the access token for organization teams and members.</summary>
@@ -41,6 +55,8 @@ namespace Octokit.Client.Models {
         public AppPermissions_organization_custom_properties? OrganizationCustomProperties { get; set; }
         /// <summary>The level of permission to grant the access token for custom repository roles management.</summary>
         public AppPermissions_organization_custom_roles? OrganizationCustomRoles { get; set; }
+        /// <summary>The level of permission to grant the access token to view events triggered by an activity in an organization.</summary>
+        public AppPermissions_organization_events? OrganizationEvents { get; set; }
         /// <summary>The level of permission to grant the access token to manage the post-receive hooks for an organization.</summary>
         public AppPermissions_organization_hooks? OrganizationHooks { get; set; }
         /// <summary>The level of permission to grant the access token for organization packages published to GitHub Packages.</summary>
@@ -63,6 +79,8 @@ namespace Octokit.Client.Models {
         public AppPermissions_packages? Packages { get; set; }
         /// <summary>The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.</summary>
         public AppPermissions_pages? Pages { get; set; }
+        /// <summary>The level of permission to grant the access token to manage the profile settings belonging to a user.</summary>
+        public AppPermissions_profile? Profile { get; set; }
         /// <summary>The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.</summary>
         public AppPermissions_pull_requests? PullRequests { get; set; }
         /// <summary>The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.</summary>
@@ -79,6 +97,8 @@ namespace Octokit.Client.Models {
         public AppPermissions_security_events? SecurityEvents { get; set; }
         /// <summary>The level of permission to grant the access token to manage just a single file.</summary>
         public AppPermissions_single_file? SingleFile { get; set; }
+        /// <summary>The level of permission to grant the access token to list and manage repositories a user is starring.</summary>
+        public AppPermissions_starring? Starring { get; set; }
         /// <summary>The level of permission to grant the access token for commit statuses.</summary>
         public AppPermissions_statuses? Statuses { get; set; }
         /// <summary>The level of permission to grant the access token to manage team discussions and related comments.</summary>
@@ -109,9 +129,16 @@ namespace Octokit.Client.Models {
                 {"actions", n => { Actions = n.GetEnumValue<AppPermissions_actions>(); } },
                 {"administration", n => { Administration = n.GetEnumValue<AppPermissions_administration>(); } },
                 {"checks", n => { Checks = n.GetEnumValue<AppPermissions_checks>(); } },
+                {"codespaces", n => { Codespaces = n.GetEnumValue<AppPermissions_codespaces>(); } },
                 {"contents", n => { Contents = n.GetEnumValue<AppPermissions_contents>(); } },
+                {"dependabot_secrets", n => { DependabotSecrets = n.GetEnumValue<AppPermissions_dependabot_secrets>(); } },
                 {"deployments", n => { Deployments = n.GetEnumValue<AppPermissions_deployments>(); } },
+                {"email_addresses", n => { EmailAddresses = n.GetEnumValue<AppPermissions_email_addresses>(); } },
                 {"environments", n => { Environments = n.GetEnumValue<AppPermissions_environments>(); } },
+                {"followers", n => { Followers = n.GetEnumValue<AppPermissions_followers>(); } },
+                {"git_ssh_keys", n => { GitSshKeys = n.GetEnumValue<AppPermissions_git_ssh_keys>(); } },
+                {"gpg_keys", n => { GpgKeys = n.GetEnumValue<AppPermissions_gpg_keys>(); } },
+                {"interaction_limits", n => { InteractionLimits = n.GetEnumValue<AppPermissions_interaction_limits>(); } },
                 {"issues", n => { Issues = n.GetEnumValue<AppPermissions_issues>(); } },
                 {"members", n => { Members = n.GetEnumValue<AppPermissions_members>(); } },
                 {"metadata", n => { Metadata = n.GetEnumValue<AppPermissions_metadata>(); } },
@@ -121,6 +148,7 @@ namespace Octokit.Client.Models {
                 {"organization_custom_org_roles", n => { OrganizationCustomOrgRoles = n.GetEnumValue<AppPermissions_organization_custom_org_roles>(); } },
                 {"organization_custom_properties", n => { OrganizationCustomProperties = n.GetEnumValue<AppPermissions_organization_custom_properties>(); } },
                 {"organization_custom_roles", n => { OrganizationCustomRoles = n.GetEnumValue<AppPermissions_organization_custom_roles>(); } },
+                {"organization_events", n => { OrganizationEvents = n.GetEnumValue<AppPermissions_organization_events>(); } },
                 {"organization_hooks", n => { OrganizationHooks = n.GetEnumValue<AppPermissions_organization_hooks>(); } },
                 {"organization_packages", n => { OrganizationPackages = n.GetEnumValue<AppPermissions_organization_packages>(); } },
                 {"organization_personal_access_token_requests", n => { OrganizationPersonalAccessTokenRequests = n.GetEnumValue<AppPermissions_organization_personal_access_token_requests>(); } },
@@ -132,6 +160,7 @@ namespace Octokit.Client.Models {
                 {"organization_user_blocking", n => { OrganizationUserBlocking = n.GetEnumValue<AppPermissions_organization_user_blocking>(); } },
                 {"packages", n => { Packages = n.GetEnumValue<AppPermissions_packages>(); } },
                 {"pages", n => { Pages = n.GetEnumValue<AppPermissions_pages>(); } },
+                {"profile", n => { Profile = n.GetEnumValue<AppPermissions_profile>(); } },
                 {"pull_requests", n => { PullRequests = n.GetEnumValue<AppPermissions_pull_requests>(); } },
                 {"repository_custom_properties", n => { RepositoryCustomProperties = n.GetEnumValue<AppPermissions_repository_custom_properties>(); } },
                 {"repository_hooks", n => { RepositoryHooks = n.GetEnumValue<AppPermissions_repository_hooks>(); } },
@@ -140,6 +169,7 @@ namespace Octokit.Client.Models {
                 {"secrets", n => { Secrets = n.GetEnumValue<AppPermissions_secrets>(); } },
                 {"security_events", n => { SecurityEvents = n.GetEnumValue<AppPermissions_security_events>(); } },
                 {"single_file", n => { SingleFile = n.GetEnumValue<AppPermissions_single_file>(); } },
+                {"starring", n => { Starring = n.GetEnumValue<AppPermissions_starring>(); } },
                 {"statuses", n => { Statuses = n.GetEnumValue<AppPermissions_statuses>(); } },
                 {"team_discussions", n => { TeamDiscussions = n.GetEnumValue<AppPermissions_team_discussions>(); } },
                 {"vulnerability_alerts", n => { VulnerabilityAlerts = n.GetEnumValue<AppPermissions_vulnerability_alerts>(); } },
@@ -155,9 +185,16 @@ namespace Octokit.Client.Models {
             writer.WriteEnumValue<AppPermissions_actions>("actions", Actions);
             writer.WriteEnumValue<AppPermissions_administration>("administration", Administration);
             writer.WriteEnumValue<AppPermissions_checks>("checks", Checks);
+            writer.WriteEnumValue<AppPermissions_codespaces>("codespaces", Codespaces);
             writer.WriteEnumValue<AppPermissions_contents>("contents", Contents);
+            writer.WriteEnumValue<AppPermissions_dependabot_secrets>("dependabot_secrets", DependabotSecrets);
             writer.WriteEnumValue<AppPermissions_deployments>("deployments", Deployments);
+            writer.WriteEnumValue<AppPermissions_email_addresses>("email_addresses", EmailAddresses);
             writer.WriteEnumValue<AppPermissions_environments>("environments", Environments);
+            writer.WriteEnumValue<AppPermissions_followers>("followers", Followers);
+            writer.WriteEnumValue<AppPermissions_git_ssh_keys>("git_ssh_keys", GitSshKeys);
+            writer.WriteEnumValue<AppPermissions_gpg_keys>("gpg_keys", GpgKeys);
+            writer.WriteEnumValue<AppPermissions_interaction_limits>("interaction_limits", InteractionLimits);
             writer.WriteEnumValue<AppPermissions_issues>("issues", Issues);
             writer.WriteEnumValue<AppPermissions_members>("members", Members);
             writer.WriteEnumValue<AppPermissions_metadata>("metadata", Metadata);
@@ -167,6 +204,7 @@ namespace Octokit.Client.Models {
             writer.WriteEnumValue<AppPermissions_organization_custom_org_roles>("organization_custom_org_roles", OrganizationCustomOrgRoles);
             writer.WriteEnumValue<AppPermissions_organization_custom_properties>("organization_custom_properties", OrganizationCustomProperties);
             writer.WriteEnumValue<AppPermissions_organization_custom_roles>("organization_custom_roles", OrganizationCustomRoles);
+            writer.WriteEnumValue<AppPermissions_organization_events>("organization_events", OrganizationEvents);
             writer.WriteEnumValue<AppPermissions_organization_hooks>("organization_hooks", OrganizationHooks);
             writer.WriteEnumValue<AppPermissions_organization_packages>("organization_packages", OrganizationPackages);
             writer.WriteEnumValue<AppPermissions_organization_personal_access_token_requests>("organization_personal_access_token_requests", OrganizationPersonalAccessTokenRequests);
@@ -178,6 +216,7 @@ namespace Octokit.Client.Models {
             writer.WriteEnumValue<AppPermissions_organization_user_blocking>("organization_user_blocking", OrganizationUserBlocking);
             writer.WriteEnumValue<AppPermissions_packages>("packages", Packages);
             writer.WriteEnumValue<AppPermissions_pages>("pages", Pages);
+            writer.WriteEnumValue<AppPermissions_profile>("profile", Profile);
             writer.WriteEnumValue<AppPermissions_pull_requests>("pull_requests", PullRequests);
             writer.WriteEnumValue<AppPermissions_repository_custom_properties>("repository_custom_properties", RepositoryCustomProperties);
             writer.WriteEnumValue<AppPermissions_repository_hooks>("repository_hooks", RepositoryHooks);
@@ -186,6 +225,7 @@ namespace Octokit.Client.Models {
             writer.WriteEnumValue<AppPermissions_secret_scanning_alerts>("secret_scanning_alerts", SecretScanningAlerts);
             writer.WriteEnumValue<AppPermissions_security_events>("security_events", SecurityEvents);
             writer.WriteEnumValue<AppPermissions_single_file>("single_file", SingleFile);
+            writer.WriteEnumValue<AppPermissions_starring>("starring", Starring);
             writer.WriteEnumValue<AppPermissions_statuses>("statuses", Statuses);
             writer.WriteEnumValue<AppPermissions_team_discussions>("team_discussions", TeamDiscussions);
             writer.WriteEnumValue<AppPermissions_vulnerability_alerts>("vulnerability_alerts", VulnerabilityAlerts);

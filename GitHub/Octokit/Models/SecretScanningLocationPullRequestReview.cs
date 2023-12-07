@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Octokit.Client.Models {
+namespace GitHub.Octokit.Models {
     /// <summary>
     /// Represents a &apos;pull_request_review&apos; secret scanning location type. This location type shows that a secret was detected in a review on a pull request.
     /// </summary>

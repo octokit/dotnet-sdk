@@ -11,7 +11,7 @@ namespace Octokit.Client.User.Starred.Item {
     /// Builds and executes requests for operations under \user\starred\{owner}
     /// </summary>
     public class WithOwnerItemRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.user.starred.item.item collection</summary>
+        /// <summary>Gets an item from the GitHub.Octokit.user.starred.item.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         public WithRepoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

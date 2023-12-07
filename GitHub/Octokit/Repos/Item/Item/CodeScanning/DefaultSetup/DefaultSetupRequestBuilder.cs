@@ -28,7 +28,7 @@ namespace Octokit.Client.Repos.Item.Item.CodeScanning.DefaultSetup {
         public DefaultSetupRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/default-setup", rawUrl) {
         }
         /// <summary>
-        /// Gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`scope for public repos.
+        /// Gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
         /// API method documentation <see href="https://docs.github.com/rest/code-scanning/code-scanning#get-a-code-scanning-default-setup-configuration" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace Octokit.Client.Repos.Item.Item.CodeScanning.DefaultSetup {
             return await RequestAdapter.SendAsync<CodeScanningDefaultSetup>(requestInfo, CodeScanningDefaultSetup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`scope for public repos.
+        /// Updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
         /// API method documentation <see href="https://docs.github.com/rest/code-scanning/code-scanning#update-a-code-scanning-default-setup-configuration" />
         /// </summary>
         /// <param name="body">Configuration for code scanning default setup.</param>
@@ -73,7 +73,7 @@ namespace Octokit.Client.Repos.Item.Item.CodeScanning.DefaultSetup {
             return await RequestAdapter.SendAsync<EmptyObject>(requestInfo, EmptyObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`scope for public repos.
+        /// Gets a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,7 +89,7 @@ namespace Octokit.Client.Repos.Item.Item.CodeScanning.DefaultSetup {
             return requestInfo;
         }
         /// <summary>
-        /// Updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repos or the `public_repo`scope for public repos.
+        /// Updates a code scanning default setup configuration.You must use an access token with the `repo` scope to use this endpoint with private repositories or the `public_repo`scope for public repositories.
         /// </summary>
         /// <param name="body">Configuration for code scanning default setup.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

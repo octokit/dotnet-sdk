@@ -11,8 +11,8 @@ namespace Octokit.Client.Repos {
     /// Builds and executes requests for operations under \repos
     /// </summary>
     public class ReposRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.repos.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <summary>Gets an item from the GitHub.Octokit.repos.item collection</summary>
+        /// <param name="position">The account owner of the repository. The name is not case sensitive.</param>
         public WithOwnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("owner", position);

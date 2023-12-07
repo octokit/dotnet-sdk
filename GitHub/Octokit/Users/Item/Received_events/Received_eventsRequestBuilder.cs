@@ -33,7 +33,7 @@ namespace Octokit.Client.Users.Item.Received_events {
         public Received_eventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/received_events{?per_page*,page*}", rawUrl) {
         }
         /// <summary>
-        /// These are events that you&apos;ve received by watching repos and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
+        /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
         /// API method documentation <see href="https://docs.github.com/rest/activity/events#list-events-received-by-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace Octokit.Client.Users.Item.Received_events {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// These are events that you&apos;ve received by watching repos and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
+        /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Octokit.Client.Users.Item.Received_events {
             return new Received_eventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// These are events that you&apos;ve received by watching repos and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
+        /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
         /// </summary>
         public class Received_eventsRequestBuilderGetQueryParameters {
             /// <summary>Page number of the results to fetch.</summary>

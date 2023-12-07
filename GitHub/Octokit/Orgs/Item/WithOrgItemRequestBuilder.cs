@@ -184,8 +184,8 @@ namespace Octokit.Client.Orgs.Item {
         public TeamsRequestBuilder Teams { get =>
             new TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Octokit.Client.orgs.item.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <summary>Gets an item from the GitHub.Octokit.orgs.item.item collection</summary>
+        /// <param name="position">The security feature to enable or disable.</param>
         public WithSecurity_productItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("security_product", position);

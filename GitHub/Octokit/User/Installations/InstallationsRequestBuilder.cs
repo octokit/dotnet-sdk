@@ -14,11 +14,19 @@ namespace Octokit.Client.User.Installations {
     /// Builds and executes requests for operations under \user\installations
     /// </summary>
     public class InstallationsRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.user.installations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        public WithInstallation_ItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the GitHub.Octokit.user.installations.item collection</summary>
+        /// <param name="position">The unique identifier of the installation.</param>
+        public WithInstallation_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("installation_id", position);
+            return new WithInstallation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
+        /// <summary>Gets an item from the GitHub.Octokit.user.installations.item collection</summary>
+        /// <param name="position">The unique identifier of the installation.</param>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public WithInstallation_ItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("installation_id", position);
             return new WithInstallation_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>

@@ -11,8 +11,8 @@ namespace Octokit.Client.Orgs.Item.Migrations.Item.Repos {
     /// Builds and executes requests for operations under \orgs\{org}\migrations\{migration_id}\repos
     /// </summary>
     public class ReposRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.orgs.item.migrations.item.repos.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <summary>Gets an item from the GitHub.Octokit.orgs.item.migrations.item.repos.item collection</summary>
+        /// <param name="position">repo_name parameter</param>
         public WithRepo_nameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("repo_name", position);

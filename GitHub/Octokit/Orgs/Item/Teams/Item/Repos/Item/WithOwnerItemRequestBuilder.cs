@@ -11,7 +11,7 @@ namespace Octokit.Client.Orgs.Item.Teams.Item.Repos.Item {
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\repos\{owner}
     /// </summary>
     public class WithOwnerItemRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.orgs.item.teams.item.repos.item.item collection</summary>
+        /// <summary>Gets an item from the GitHub.Octokit.orgs.item.teams.item.repos.item.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         public WithRepoItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

@@ -207,10 +207,10 @@ namespace Octokit.Client.Repos.Item.Item.Contents.Item {
             /// <summary>Composed type representation for type WithPathGetResponseMember1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Models.WithPathGetResponseMember1>? WithPathGetResponseMember1 { get; set; }
+            public List<GitHub.Octokit.Models.WithPathGetResponseMember1>? WithPathGetResponseMember1 { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Models.WithPathGetResponseMember1> WithPathGetResponseMember1 { get; set; }
+            public List<GitHub.Octokit.Models.WithPathGetResponseMember1> WithPathGetResponseMember1 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -229,7 +229,7 @@ namespace Octokit.Client.Repos.Item.Item.Contents.Item {
                 else if("content-symlink".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.ContentSymlink = new Octokit.Client.Models.ContentSymlink();
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Models.WithPathGetResponseMember1>(Octokit.Client.Models.WithPathGetResponseMember1.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Models.WithPathGetResponseMember1> withPathGetResponseMember1Value) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Models.WithPathGetResponseMember1>(GitHub.Octokit.Models.WithPathGetResponseMember1.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Models.WithPathGetResponseMember1> withPathGetResponseMember1Value) {
                     result.WithPathGetResponseMember1 = withPathGetResponseMember1Value;
                 }
                 return result;
@@ -265,7 +265,7 @@ namespace Octokit.Client.Repos.Item.Item.Contents.Item {
                     writer.WriteObjectValue<Octokit.Client.Models.ContentSymlink>(null, ContentSymlink);
                 }
                 else if(WithPathGetResponseMember1 != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Models.WithPathGetResponseMember1>(null, WithPathGetResponseMember1);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Models.WithPathGetResponseMember1>(null, WithPathGetResponseMember1);
                 }
             }
         }
@@ -333,10 +333,10 @@ namespace Octokit.Client.Repos.Item.Item.Contents.Item {
             /// <summary>Composed type representation for type WithPathGetResponseMember1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Models.WithPathGetResponseMember1>? WithPathGetResponseMember1 { get; set; }
+            public List<GitHub.Octokit.Models.WithPathGetResponseMember1>? WithPathGetResponseMember1 { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Models.WithPathGetResponseMember1> WithPathGetResponseMember1 { get; set; }
+            public List<GitHub.Octokit.Models.WithPathGetResponseMember1> WithPathGetResponseMember1 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -355,7 +355,7 @@ namespace Octokit.Client.Repos.Item.Item.Contents.Item {
                 else if("content-symlink".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.ContentSymlink = new Octokit.Client.Models.ContentSymlink();
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Models.WithPathGetResponseMember1>(Octokit.Client.Models.WithPathGetResponseMember1.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Models.WithPathGetResponseMember1> withPathGetResponseMember1Value) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Models.WithPathGetResponseMember1>(GitHub.Octokit.Models.WithPathGetResponseMember1.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Models.WithPathGetResponseMember1> withPathGetResponseMember1Value) {
                     result.WithPathGetResponseMember1 = withPathGetResponseMember1Value;
                 }
                 return result;
@@ -391,7 +391,7 @@ namespace Octokit.Client.Repos.Item.Item.Contents.Item {
                     writer.WriteObjectValue<Octokit.Client.Models.ContentSymlink>(null, ContentSymlink);
                 }
                 else if(WithPathGetResponseMember1 != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Models.WithPathGetResponseMember1>(null, WithPathGetResponseMember1);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Models.WithPathGetResponseMember1>(null, WithPathGetResponseMember1);
                 }
             }
         }

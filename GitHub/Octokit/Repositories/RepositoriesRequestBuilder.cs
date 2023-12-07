@@ -14,11 +14,19 @@ namespace Octokit.Client.Repositories {
     /// Builds and executes requests for operations under \repositories
     /// </summary>
     public class RepositoriesRequestBuilder : BaseRequestBuilder {
-        /// <summary>Gets an item from the Octokit.Client.repositories.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        public WithRepository_ItemRequestBuilder this[string position] { get {
+        /// <summary>Gets an item from the GitHub.Octokit.repositories.item collection</summary>
+        /// <param name="position">The unique identifier of the repository.</param>
+        public WithRepository_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("repository_id", position);
+            return new WithRepository_ItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
+        /// <summary>Gets an item from the GitHub.Octokit.repositories.item collection</summary>
+        /// <param name="position">The unique identifier of the repository.</param>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public WithRepository_ItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("repository_id", position);
             return new WithRepository_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>

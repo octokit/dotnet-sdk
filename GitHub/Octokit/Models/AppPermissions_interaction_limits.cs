@@ -2,8 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Octokit.Models {
-    /// <summary>The level of permission to grant the access token for custom organization roles management.</summary>
-    public enum AppPermissions_organization_custom_org_roles {
+    /// <summary>The level of permission to grant the access token to view and manage interaction limits on a repository.</summary>
+    public enum AppPermissions_interaction_limits {
         [EnumMember(Value = "read")]
         Read,
         [EnumMember(Value = "write")]

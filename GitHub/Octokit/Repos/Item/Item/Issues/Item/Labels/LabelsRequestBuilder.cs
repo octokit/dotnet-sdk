@@ -224,10 +224,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>Composed type representation for type labelsPostRequestBodyMember3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>? LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>? LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
 #endif
             /// <summary>Composed type representation for type labelsPostRequestBodyMember1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -248,10 +248,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>Composed type representation for type labelsPostRequestBodyMember3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>? LabelsPostRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>? LabelsPostRequestBodyMember3 { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> LabelsPostRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> LabelsPostRequestBodyMember3 { get; set; }
 #endif
             /// <summary>Composed type representation for type string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -281,13 +281,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
                     result.LabelsPostRequestBodyLabelsPostRequestBodyMember1 = new Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPostRequestBodyLabelsPostRequestBodyMember2 = new Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2();
+                    result.LabelsPostRequestBodyMember1 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPostRequestBodyMember1 = new Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPostRequestBodyMember2 = new Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2();
+                    result.LabelsPostRequestBodyMember2 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2();
                 }
                 else if(parseNode.GetStringValue() is string labelsPostRequestBodyStringValue) {
                     result.LabelsPostRequestBodyString = labelsPostRequestBodyStringValue;
@@ -295,10 +292,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
                 else if(parseNode.GetStringValue() is string stringValue) {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> labelsPostRequestBodyLabelsPostRequestBodyMember3Value) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> labelsPostRequestBodyLabelsPostRequestBodyMember3Value) {
                     result.LabelsPostRequestBodyLabelsPostRequestBodyMember3 = labelsPostRequestBodyLabelsPostRequestBodyMember3Value;
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> labelsPostRequestBodyMember3Value) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> labelsPostRequestBodyMember3Value) {
                     result.LabelsPostRequestBodyMember3 = labelsPostRequestBodyMember3Value;
                 }
                 return result;
@@ -331,13 +328,13 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
                     writer.WriteObjectValue<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1>(null, LabelsPostRequestBodyLabelsPostRequestBodyMember1);
                 }
                 else if(LabelsPostRequestBodyLabelsPostRequestBodyMember2 != null) {
-                    writer.WriteObjectValue<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2>(null, LabelsPostRequestBodyLabelsPostRequestBodyMember2);
+                    writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2>(null, LabelsPostRequestBodyLabelsPostRequestBodyMember2);
                 }
                 else if(LabelsPostRequestBodyMember1 != null) {
                     writer.WriteObjectValue<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1>(null, LabelsPostRequestBodyMember1);
                 }
                 else if(LabelsPostRequestBodyMember2 != null) {
-                    writer.WriteObjectValue<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2>(null, LabelsPostRequestBodyMember2);
+                    writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2>(null, LabelsPostRequestBodyMember2);
                 }
                 else if(LabelsPostRequestBodyString != null) {
                     writer.WriteStringValue(null, LabelsPostRequestBodyString);
@@ -346,10 +343,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
                     writer.WriteStringValue(null, String);
                 }
                 else if(LabelsPostRequestBodyLabelsPostRequestBodyMember3 != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(null, LabelsPostRequestBodyLabelsPostRequestBodyMember3);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(null, LabelsPostRequestBodyLabelsPostRequestBodyMember3);
                 }
                 else if(LabelsPostRequestBodyMember3 != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(null, LabelsPostRequestBodyMember3);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(null, LabelsPostRequestBodyMember3);
                 }
             }
         }
@@ -376,10 +373,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>Composed type representation for type labelsPutRequestBodyMember3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>? LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>? LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
 #endif
             /// <summary>Composed type representation for type labelsPutRequestBodyMember1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -400,10 +397,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>Composed type representation for type labelsPutRequestBodyMember3</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>? LabelsPutRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>? LabelsPutRequestBodyMember3 { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> LabelsPutRequestBodyMember3 { get; set; }
+            public List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> LabelsPutRequestBodyMember3 { get; set; }
 #endif
             /// <summary>Composed type representation for type string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -433,13 +430,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
                     result.LabelsPutRequestBodyLabelsPutRequestBodyMember1 = new Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPutRequestBodyLabelsPutRequestBodyMember2 = new Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2();
+                    result.LabelsPutRequestBodyMember1 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPutRequestBodyMember1 = new Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.LabelsPutRequestBodyMember2 = new Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2();
+                    result.LabelsPutRequestBodyMember2 = new GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2();
                 }
                 else if(parseNode.GetStringValue() is string labelsPutRequestBodyStringValue) {
                     result.LabelsPutRequestBodyString = labelsPutRequestBodyStringValue;
@@ -447,10 +441,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
                 else if(parseNode.GetStringValue() is string stringValue) {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> labelsPutRequestBodyLabelsPutRequestBodyMember3Value) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> labelsPutRequestBodyLabelsPutRequestBodyMember3Value) {
                     result.LabelsPutRequestBodyLabelsPutRequestBodyMember3 = labelsPutRequestBodyLabelsPutRequestBodyMember3Value;
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> labelsPutRequestBodyMember3Value) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> labelsPutRequestBodyMember3Value) {
                     result.LabelsPutRequestBodyMember3 = labelsPutRequestBodyMember3Value;
                 }
                 return result;
@@ -483,13 +477,13 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
                     writer.WriteObjectValue<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1>(null, LabelsPutRequestBodyLabelsPutRequestBodyMember1);
                 }
                 else if(LabelsPutRequestBodyLabelsPutRequestBodyMember2 != null) {
-                    writer.WriteObjectValue<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2>(null, LabelsPutRequestBodyLabelsPutRequestBodyMember2);
+                    writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2>(null, LabelsPutRequestBodyLabelsPutRequestBodyMember2);
                 }
                 else if(LabelsPutRequestBodyMember1 != null) {
                     writer.WriteObjectValue<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1>(null, LabelsPutRequestBodyMember1);
                 }
                 else if(LabelsPutRequestBodyMember2 != null) {
-                    writer.WriteObjectValue<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2>(null, LabelsPutRequestBodyMember2);
+                    writer.WriteObjectValue<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2>(null, LabelsPutRequestBodyMember2);
                 }
                 else if(LabelsPutRequestBodyString != null) {
                     writer.WriteStringValue(null, LabelsPutRequestBodyString);
@@ -498,10 +492,10 @@ namespace Octokit.Client.Repos.Item.Item.Issues.Item.Labels {
                     writer.WriteStringValue(null, String);
                 }
                 else if(LabelsPutRequestBodyLabelsPutRequestBodyMember3 != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(null, LabelsPutRequestBodyLabelsPutRequestBodyMember3);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(null, LabelsPutRequestBodyLabelsPutRequestBodyMember3);
                 }
                 else if(LabelsPutRequestBodyMember3 != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(null, LabelsPutRequestBodyMember3);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(null, LabelsPutRequestBodyMember3);
                 }
             }
         }

@@ -89,18 +89,18 @@ namespace Octokit.Client.Users.Item.Starred {
             /// <summary>Composed type representation for type repository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Users.Item.Starred.Repository>? Repository { get; set; }
+            public List<GitHub.Octokit.Users.Item.Starred.Repository>? Repository { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Users.Item.Starred.Repository> Repository { get; set; }
+            public List<GitHub.Octokit.Users.Item.Starred.Repository> Repository { get; set; }
 #endif
             /// <summary>Composed type representation for type starredRepository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Users.Item.Starred.StarredRepository>? StarredRepository { get; set; }
+            public List<GitHub.Octokit.Users.Item.Starred.StarredRepository>? StarredRepository { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Users.Item.Starred.StarredRepository> StarredRepository { get; set; }
+            public List<GitHub.Octokit.Users.Item.Starred.StarredRepository> StarredRepository { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -109,10 +109,10 @@ namespace Octokit.Client.Users.Item.Starred {
             public static StarredGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new StarredGetResponse();
-                if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.Repository>(Octokit.Client.Users.Item.Starred.Repository.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Users.Item.Starred.Repository> repositoryValue) {
+                if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Users.Item.Starred.Repository>(GitHub.Octokit.Users.Item.Starred.Repository.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Users.Item.Starred.Repository> repositoryValue) {
                     result.Repository = repositoryValue;
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.StarredRepository>(Octokit.Client.Users.Item.Starred.StarredRepository.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Users.Item.Starred.StarredRepository> starredRepositoryValue) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Users.Item.Starred.StarredRepository>(GitHub.Octokit.Users.Item.Starred.StarredRepository.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Users.Item.Starred.StarredRepository> starredRepositoryValue) {
                     result.StarredRepository = starredRepositoryValue;
                 }
                 return result;
@@ -130,10 +130,10 @@ namespace Octokit.Client.Users.Item.Starred {
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 if(Repository != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.Repository>(null, Repository);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Users.Item.Starred.Repository>(null, Repository);
                 }
                 else if(StarredRepository != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.StarredRepository>(null, StarredRepository);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Users.Item.Starred.StarredRepository>(null, StarredRepository);
                 }
             }
         }
@@ -189,18 +189,18 @@ namespace Octokit.Client.Users.Item.Starred {
             /// <summary>Composed type representation for type repository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Users.Item.Starred.Repository>? Repository { get; set; }
+            public List<GitHub.Octokit.Users.Item.Starred.Repository>? Repository { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Users.Item.Starred.Repository> Repository { get; set; }
+            public List<GitHub.Octokit.Users.Item.Starred.Repository> Repository { get; set; }
 #endif
             /// <summary>Composed type representation for type starredRepository</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<Octokit.Client.Users.Item.Starred.StarredRepository>? StarredRepository { get; set; }
+            public List<GitHub.Octokit.Users.Item.Starred.StarredRepository>? StarredRepository { get; set; }
 #nullable restore
 #else
-            public List<Octokit.Client.Users.Item.Starred.StarredRepository> StarredRepository { get; set; }
+            public List<GitHub.Octokit.Users.Item.Starred.StarredRepository> StarredRepository { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -209,10 +209,10 @@ namespace Octokit.Client.Users.Item.Starred {
             public static StarredResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new StarredResponse();
-                if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.Repository>(Octokit.Client.Users.Item.Starred.Repository.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Users.Item.Starred.Repository> repositoryValue) {
+                if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Users.Item.Starred.Repository>(GitHub.Octokit.Users.Item.Starred.Repository.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Users.Item.Starred.Repository> repositoryValue) {
                     result.Repository = repositoryValue;
                 }
-                else if(parseNode.GetCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.StarredRepository>(Octokit.Client.Users.Item.Starred.StarredRepository.CreateFromDiscriminatorValue)?.ToList() is List<Octokit.Client.Users.Item.Starred.StarredRepository> starredRepositoryValue) {
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Users.Item.Starred.StarredRepository>(GitHub.Octokit.Users.Item.Starred.StarredRepository.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Users.Item.Starred.StarredRepository> starredRepositoryValue) {
                     result.StarredRepository = starredRepositoryValue;
                 }
                 return result;
@@ -230,10 +230,10 @@ namespace Octokit.Client.Users.Item.Starred {
             public virtual void Serialize(ISerializationWriter writer) {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 if(Repository != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.Repository>(null, Repository);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Users.Item.Starred.Repository>(null, Repository);
                 }
                 else if(StarredRepository != null) {
-                    writer.WriteCollectionOfObjectValues<Octokit.Client.Users.Item.Starred.StarredRepository>(null, StarredRepository);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Users.Item.Starred.StarredRepository>(null, StarredRepository);
                 }
             }
         }
