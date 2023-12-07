@@ -30,3 +30,19 @@ We have a substantial userbase that uses .NET and we wanted them to get access t
 ## How can I report on my experience or issues with the SDK?
 
 Please use this project's [issues](https://github.com/octokit/dotnet-sdk/issues)!
+
+## Source organization
+
+Currently this project is fairly simple (we hope it can stay that way).  All of the package based source is contained in the `GitHub` folder. 
+
+ - **Authentication** - everything related to authenticating requests
+ - **Client** - the logic for constructing the plumbing to interact with the GitHub API
+ - **Middleware** - this represents object and handlers that can mutate the request and are "injected" into the request/response flow.
+ - **Octokit** - types which represent request/response objects
+
+## More details on this SDK and repo
+
+* [Code of conduct](Docs/CODE_OF_CONDUCT.md)
+* [Contributing](Docs/CONTRIBUTING.md)
+* [Releases](Docs/RELEASES.md)
+* [Incidents and security](Docs/SECURITY.md)
