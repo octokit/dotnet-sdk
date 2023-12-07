@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Stats {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\stats
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\stats
     /// </summary>
     public class StatsRequestBuilder : BaseRequestBuilder {
         /// <summary>The code_frequency property</summary>
@@ -40,14 +40,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Stats {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/stats", pathParameters) {
+        public StatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/stats", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new StatsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/stats", rawUrl) {
+        public StatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/stats", rawUrl) {
         }
     }
 }

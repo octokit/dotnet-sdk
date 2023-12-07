@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Traffic {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\traffic
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\traffic
     /// </summary>
     public class TrafficRequestBuilder : BaseRequestBuilder {
         /// <summary>The clones property</summary>
@@ -30,14 +30,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Traffic {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrafficRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/traffic", pathParameters) {
+        public TrafficRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/traffic", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TrafficRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrafficRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/traffic", rawUrl) {
+        public TrafficRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/traffic", rawUrl) {
         }
     }
 }

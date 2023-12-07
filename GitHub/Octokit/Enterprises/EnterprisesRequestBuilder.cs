@@ -12,7 +12,7 @@ namespace GitHub.Octokit.Enterprises {
     /// </summary>
     public class EnterprisesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.enterprises.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The slug version of the enterprise name. You can also substitute this value with the enterprise id.</param>
         public WithEnterpriseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("enterprise", position);

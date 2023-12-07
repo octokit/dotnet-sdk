@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Traffic.Popular {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\traffic\popular
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\traffic\popular
     /// </summary>
     public class PopularRequestBuilder : BaseRequestBuilder {
         /// <summary>The paths property</summary>
@@ -25,14 +25,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Traffic.Popular {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PopularRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/traffic/popular", pathParameters) {
+        public PopularRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/traffic/popular", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PopularRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PopularRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/traffic/popular", rawUrl) {
+        public PopularRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/traffic/popular", rawUrl) {
         }
     }
 }

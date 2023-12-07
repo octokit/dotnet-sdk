@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.DependencyGraph {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\dependency-graph
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\dependency-graph
     /// </summary>
     public class DependencyGraphRequestBuilder : BaseRequestBuilder {
         /// <summary>The compare property</summary>
@@ -30,14 +30,14 @@ namespace GitHub.Octokit.Repos.Item.Item.DependencyGraph {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DependencyGraphRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/dependency-graph", pathParameters) {
+        public DependencyGraphRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DependencyGraphRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DependencyGraphRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/dependency-graph", rawUrl) {
+        public DependencyGraphRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph", rawUrl) {
         }
     }
 }

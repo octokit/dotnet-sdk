@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\contents\{path}
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\contents\{path}
     /// </summary>
     public class WithPathItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPathItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/contents/{path}{?ref*}", pathParameters) {
+        public WithPathItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/contents/{path}{?ref*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new WithPathItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPathItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/contents/{path}{?ref*}", rawUrl) {
+        public WithPathItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/contents/{path}{?ref*}", rawUrl) {
         }
         /// <summary>
         /// Deletes a file in a repository.You can provide an additional `committer` parameter, which is an object containing information about the committer. Or, you can provide an `author` parameter, which is an object containing information about the author.The `author` section is optional and is filled in with the `committer` information if omitted. If the `committer` information is omitted, the authenticated user&apos;s information is used.You must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you&apos;ll receive a `422` status code.**Note:** If you use this endpoint and the &quot;[Create or update file contents](https://docs.github.com/rest/repos/contents/#create-or-update-file-contents)&quot; endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
@@ -36,10 +36,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FileCommit?> DeleteAsync(WithPathDeleteRequestBody body, Action<WithPathItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FileCommit?> DeleteAsync(WithPathDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<FileCommit> DeleteAsync(WithPathDeleteRequestBody body, Action<WithPathItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FileCommit> DeleteAsync(WithPathDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
@@ -59,10 +59,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WithPathGetResponse?> GetAsWithPathGetResponseAsync(Action<WithPathItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithPathGetResponse?> GetAsWithPathGetResponseAsync(Action<RequestConfiguration<WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<WithPathGetResponse> GetAsWithPathGetResponseAsync(Action<WithPathItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithPathGetResponse> GetAsWithPathGetResponseAsync(Action<RequestConfiguration<WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -80,10 +80,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
         [Obsolete("This method is obsolete. Use GetAsWithPathGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WithPathResponse?> GetAsync(Action<WithPathItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithPathResponse?> GetAsync(Action<RequestConfiguration<WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<WithPathResponse> GetAsync(Action<WithPathItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithPathResponse> GetAsync(Action<RequestConfiguration<WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -101,10 +101,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FileCommit?> PutAsync(WithPathPutRequestBody body, Action<WithPathItemRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FileCommit?> PutAsync(WithPathPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<FileCommit> PutAsync(WithPathPutRequestBody body, Action<WithPathItemRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FileCommit> PutAsync(WithPathPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -122,24 +122,15 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(WithPathDeleteRequestBody body, Action<WithPathItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(WithPathDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(WithPathDeleteRequestBody body, Action<WithPathItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(WithPathDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new WithPathItemRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -149,24 +140,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<WithPathItemRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithPathItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<WithPathItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithPathItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new WithPathItemRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -176,24 +157,15 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(WithPathPutRequestBody body, Action<WithPathItemRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(WithPathPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(WithPathPutRequestBody body, Action<WithPathItemRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(WithPathPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.PUT,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new WithPathItemRequestBuilderPutRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -235,10 +207,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
             /// <summary>Composed type representation for type WithPathGetResponseMember1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.WithPathGetResponseMember1? WithPathGetResponseMember1 { get; set; }
+            public List<GitHub.Octokit.Models.WithPathGetResponseMember1>? WithPathGetResponseMember1 { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.WithPathGetResponseMember1 WithPathGetResponseMember1 { get; set; }
+            public List<GitHub.Octokit.Models.WithPathGetResponseMember1> WithPathGetResponseMember1 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -257,8 +229,8 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
                 else if("content-symlink".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.ContentSymlink = new GitHub.Octokit.Models.ContentSymlink();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.WithPathGetResponseMember1 = new GitHub.Octokit.Models.WithPathGetResponseMember1();
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Models.WithPathGetResponseMember1>(GitHub.Octokit.Models.WithPathGetResponseMember1.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Models.WithPathGetResponseMember1> withPathGetResponseMember1Value) {
+                    result.WithPathGetResponseMember1 = withPathGetResponseMember1Value;
                 }
                 return result;
             }
@@ -274,9 +246,6 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
                 }
                 else if(ContentSymlink != null) {
                     return ContentSymlink.GetFieldDeserializers();
-                }
-                else if(WithPathGetResponseMember1 != null) {
-                    return WithPathGetResponseMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -296,25 +265,15 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
                     writer.WriteObjectValue<GitHub.Octokit.Models.ContentSymlink>(null, ContentSymlink);
                 }
                 else if(WithPathGetResponseMember1 != null) {
-                    writer.WriteObjectValue<GitHub.Octokit.Models.WithPathGetResponseMember1>(null, WithPathGetResponseMember1);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Models.WithPathGetResponseMember1>(null, WithPathGetResponseMember1);
                 }
             }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class WithPathItemRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new WithPathItemRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public WithPathItemRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class WithPathItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
         /// Gets the contents of a file or directory in a repository. Specify the file path or directory in `:path`. If you omit`:path`, you will receive the contents of the repository&apos;s root directory. See the description below regarding what the API response includes for directories. Files and symlinks support [a custom media type](https://docs.github.com/rest/overview/media-types) forretrieving the raw content or rendered HTML (when supported). All content types support [a custom mediatype](https://docs.github.com/rest/overview/media-types) to ensure the content is returned in a consistentobject format.**Notes**:*   To get a repository&apos;s contents recursively, you can [recursively get the tree](https://docs.github.com/rest/git/trees#get-a-tree).*   This API has an upper limit of 1,000 files for a directory. If you need to retrieve more files, use the [Git TreesAPI](https://docs.github.com/rest/git/trees#get-a-tree). *  Download URLs expire and are meant to be used just once. To ensure the download URL does not expire, please use the contents API to obtain a fresh download URL for each download. Size limits:If the requested file&apos;s size is:* 1 MB or smaller: All features of this endpoint are supported.* Between 1-100 MB: Only the `raw` or `object` [custom media types](https://docs.github.com/rest/repos/contents#custom-media-types-for-repository-contents) are supported. Both will work as normal, except that when using the `object` media type, the `content` field will be an empty string and the `encoding` field will be `&quot;none&quot;`. To get the contents of these larger files, use the `raw` media type. * Greater than 100 MB: This endpoint is not supported. If the content is a directory:The response will be an array of objects, one object for each item in the directory.When listing the contents of a directory, submodules have their &quot;type&quot; specified as &quot;file&quot;. Logically, the value_should_ be &quot;submodule&quot;. This behavior exists in API v3 [for backwards compatibility purposes](https://git.io/v1YCW).In the next major version of the API, the type will be returned as &quot;submodule&quot;. If the content is a symlink: If the requested `:path` points to a symlink, and the symlink&apos;s target is a normal file in the repository, then theAPI responds with the content of the file (in the format shown in the example. Otherwise, the API responds with an object describing the symlink itself. If the content is a submodule:The `submodule_git_url` identifies the location of the submodule repository, and the `sha` identifies a specificcommit within the submodule repository. Git uses the given URL when cloning the submodule repository, and checks outthe submodule at that specific commit.If the submodule repository is not hosted on github.com, the Git URLs (`git_url` and `_links[&quot;git&quot;]`) and thegithub.com URLs (`html_url` and `_links[&quot;html&quot;]`) will have null values.
@@ -334,36 +293,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class WithPathItemRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public WithPathItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WithPathItemRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new WithPathItemRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public WithPathItemRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class WithPathItemRequestBuilderGetRequestConfiguration : RequestConfiguration<WithPathItemRequestBuilderGetQueryParameters> {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class WithPathItemRequestBuilderPutRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new WithPathItemRequestBuilderPutRequestConfiguration and sets the default values.
-            /// </summary>
-            public WithPathItemRequestBuilderPutRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class WithPathItemRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
         /// Composed type wrapper for classes contentFile, contentSubmodule, contentSymlink, WithPathGetResponseMember1
@@ -396,10 +333,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
             /// <summary>Composed type representation for type WithPathGetResponseMember1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public GitHub.Octokit.Models.WithPathGetResponseMember1? WithPathGetResponseMember1 { get; set; }
+            public List<GitHub.Octokit.Models.WithPathGetResponseMember1>? WithPathGetResponseMember1 { get; set; }
 #nullable restore
 #else
-            public GitHub.Octokit.Models.WithPathGetResponseMember1 WithPathGetResponseMember1 { get; set; }
+            public List<GitHub.Octokit.Models.WithPathGetResponseMember1> WithPathGetResponseMember1 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -418,8 +355,8 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
                 else if("content-symlink".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.ContentSymlink = new GitHub.Octokit.Models.ContentSymlink();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.WithPathGetResponseMember1 = new GitHub.Octokit.Models.WithPathGetResponseMember1();
+                else if(parseNode.GetCollectionOfObjectValues<GitHub.Octokit.Models.WithPathGetResponseMember1>(GitHub.Octokit.Models.WithPathGetResponseMember1.CreateFromDiscriminatorValue)?.ToList() is List<GitHub.Octokit.Models.WithPathGetResponseMember1> withPathGetResponseMember1Value) {
+                    result.WithPathGetResponseMember1 = withPathGetResponseMember1Value;
                 }
                 return result;
             }
@@ -435,9 +372,6 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
                 }
                 else if(ContentSymlink != null) {
                     return ContentSymlink.GetFieldDeserializers();
-                }
-                else if(WithPathGetResponseMember1 != null) {
-                    return WithPathGetResponseMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -457,7 +391,7 @@ namespace GitHub.Octokit.Repos.Item.Item.Contents.Item {
                     writer.WriteObjectValue<GitHub.Octokit.Models.ContentSymlink>(null, ContentSymlink);
                 }
                 else if(WithPathGetResponseMember1 != null) {
-                    writer.WriteObjectValue<GitHub.Octokit.Models.WithPathGetResponseMember1>(null, WithPathGetResponseMember1);
+                    writer.WriteCollectionOfObjectValues<GitHub.Octokit.Models.WithPathGetResponseMember1>(null, WithPathGetResponseMember1);
                 }
             }
         }

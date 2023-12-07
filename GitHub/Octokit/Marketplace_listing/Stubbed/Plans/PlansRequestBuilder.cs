@@ -15,10 +15,18 @@ namespace GitHub.Octokit.Marketplace_listing.Stubbed.Plans {
     /// </summary>
     public class PlansRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.marketplace_listing.stubbed.plans.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        public WithPlan_ItemRequestBuilder this[string position] { get {
+        /// <param name="position">The unique identifier of the plan.</param>
+        public WithPlan_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plan_id", position);
+            return new WithPlan_ItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
+        /// <summary>Gets an item from the GitHub.Octokit.marketplace_listing.stubbed.plans.item collection</summary>
+        /// <param name="position">The unique identifier of the plan.</param>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public WithPlan_ItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("plan_id", position);
             return new WithPlan_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -43,10 +51,10 @@ namespace GitHub.Octokit.Marketplace_listing.Stubbed.Plans {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<MarketplaceListingPlan>?> GetAsync(Action<PlansRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<MarketplaceListingPlan>?> GetAsync(Action<RequestConfiguration<PlansRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<MarketplaceListingPlan>> GetAsync(Action<PlansRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<MarketplaceListingPlan>> GetAsync(Action<RequestConfiguration<PlansRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -61,24 +69,14 @@ namespace GitHub.Octokit.Marketplace_listing.Stubbed.Plans {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<PlansRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlansRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<PlansRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlansRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new PlansRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -102,20 +100,8 @@ namespace GitHub.Octokit.Marketplace_listing.Stubbed.Plans {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class PlansRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public PlansRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PlansRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new plansRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public PlansRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class PlansRequestBuilderGetRequestConfiguration : RequestConfiguration<PlansRequestBuilderGetQueryParameters> {
         }
     }
 }
