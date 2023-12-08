@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Actions.Secrets.PublicKey {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\actions\secrets\public-key
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\secrets\public-key
     /// </summary>
     public class PublicKeyRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.Secrets.PublicKey {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PublicKeyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/secrets/public-key", pathParameters) {
+        public PublicKeyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/secrets/public-key", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PublicKeyRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PublicKeyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/secrets/public-key", rawUrl) {
+        public PublicKeyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/secrets/public-key", rawUrl) {
         }
         /// <summary>
         /// Gets your public key, which you need to encrypt secrets. You need toencrypt a secret before you can create or update secrets.Anyone with read access to the repository can use this endpoint.If the repository is private you must use an access token with the `repo` scope.GitHub Apps must have the `secrets` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read secrets.
@@ -35,10 +35,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.Secrets.PublicKey {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ActionsPublicKey?> GetAsync(Action<PublicKeyRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ActionsPublicKey?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<ActionsPublicKey> GetAsync(Action<PublicKeyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ActionsPublicKey> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<ActionsPublicKey>(requestInfo, ActionsPublicKey.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -49,23 +49,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.Secrets.PublicKey {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<PublicKeyRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<PublicKeyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new PublicKeyRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -78,18 +69,8 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.Secrets.PublicKey {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class PublicKeyRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new publicKeyRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public PublicKeyRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class PublicKeyRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

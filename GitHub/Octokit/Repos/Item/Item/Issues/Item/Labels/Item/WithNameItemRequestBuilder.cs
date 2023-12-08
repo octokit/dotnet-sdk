@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\issues\{issue_number}\labels\{name}
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\issues\{issue_number}\labels\{name}
     /// </summary>
     public class WithNameItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}", pathParameters) {
+        public WithNameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/labels/{name}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new WithNameItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}", rawUrl) {
+        public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/labels/{name}", rawUrl) {
         }
         /// <summary>
         /// Removes the specified label from the issue, and returns the remaining labels on the issue. This endpoint returns a `404 Not Found` status if the label does not exist.
@@ -35,10 +35,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Label>?> DeleteAsync(Action<WithNameItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Label>?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<Label>> DeleteAsync(Action<WithNameItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Label>> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -54,23 +54,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<WithNameItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<WithNameItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new WithNameItemRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -83,18 +74,8 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Labels.Item {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class WithNameItemRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new WithNameItemRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public WithNameItemRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class WithNameItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

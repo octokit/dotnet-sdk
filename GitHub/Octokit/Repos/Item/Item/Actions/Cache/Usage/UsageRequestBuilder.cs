@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Actions.Cache.Usage {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\actions\cache\usage
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\cache\usage
     /// </summary>
     public class UsageRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.Cache.Usage {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/cache/usage", pathParameters) {
+        public UsageRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/cache/usage", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new UsageRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/cache/usage", rawUrl) {
+        public UsageRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/cache/usage", rawUrl) {
         }
         /// <summary>
         /// Gets GitHub Actions cache usage for a repository.The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
@@ -35,10 +35,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.Cache.Usage {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ActionsCacheUsageByRepository?> GetAsync(Action<UsageRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ActionsCacheUsageByRepository?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<ActionsCacheUsageByRepository> GetAsync(Action<UsageRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ActionsCacheUsageByRepository> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<ActionsCacheUsageByRepository>(requestInfo, ActionsCacheUsageByRepository.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -49,23 +49,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.Cache.Usage {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<UsageRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<UsageRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new UsageRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -78,18 +69,8 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.Cache.Usage {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class UsageRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new usageRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public UsageRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class UsageRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

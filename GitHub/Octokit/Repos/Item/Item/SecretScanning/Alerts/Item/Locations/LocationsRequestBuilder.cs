@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\secret-scanning\alerts\{alert_number}\locations
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\secret-scanning\alerts\{alert_number}\locations
     /// </summary>
     public class LocationsRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Octokit.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations{?page*,per_page*}", pathParameters) {
+        public LocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/secret-scanning/alerts/{alert_number}/locations{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new LocationsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations{?page*,per_page*}", rawUrl) {
+        public LocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/secret-scanning/alerts/{alert_number}/locations{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists all locations for a given secret scanning alert for an eligible repository.To use this endpoint, you must be an administrator for the repository or for the organization that owns the repository, and you must use a personal access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope.GitHub Apps must have the `secret_scanning_alerts` read permission to use this endpoint.
@@ -35,10 +35,10 @@ namespace GitHub.Octokit.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SecretScanningLocation>?> GetAsync(Action<LocationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SecretScanningLocation>?> GetAsync(Action<RequestConfiguration<LocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<SecretScanningLocation>> GetAsync(Action<LocationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SecretScanningLocation>> GetAsync(Action<RequestConfiguration<LocationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -53,24 +53,14 @@ namespace GitHub.Octokit.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<LocationsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<LocationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LocationsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new LocationsRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -94,20 +84,8 @@ namespace GitHub.Octokit.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class LocationsRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public LocationsRequestBuilderGetQueryParameters QueryParameters { get; set; } = new LocationsRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new locationsRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public LocationsRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class LocationsRequestBuilderGetRequestConfiguration : RequestConfiguration<LocationsRequestBuilderGetQueryParameters> {
         }
     }
 }

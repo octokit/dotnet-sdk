@@ -430,7 +430,7 @@ namespace GitHub.Octokit.Models {
 #else
         public string ReleasesUrl { get; set; }
 #endif
-        /// <summary>The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.</summary>
+        /// <summary>The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.</summary>
         public int? Size { get; set; }
         /// <summary>The default value for a squash merge commit message:- `PR_BODY` - default to the pull request&apos;s body.- `COMMIT_MESSAGES` - default to the branch&apos;s commit messages.- `BLANK` - default to a blank commit message.</summary>
         public Repository_squash_merge_commit_message? SquashMergeCommitMessage { get; set; }

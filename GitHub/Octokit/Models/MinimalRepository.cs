@@ -421,7 +421,7 @@ namespace GitHub.Octokit.Models {
 #else
         public GitHub.Octokit.Models.SecurityAndAnalysis SecurityAndAnalysis { get; set; }
 #endif
-        /// <summary>The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.</summary>
+        /// <summary>The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.</summary>
         public int? Size { get; set; }
         /// <summary>The ssh_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

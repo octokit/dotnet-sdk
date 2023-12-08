@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\code-scanning\alerts\{alert_number}\instances
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\code-scanning\alerts\{alert_number}\instances
     /// </summary>
     public class InstancesRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,27 +18,27 @@ namespace GitHub.Octokit.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances{?page*,per_page*,ref*}", pathParameters) {
+        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts/{alert_number}/instances{?page*,per_page*,ref*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new InstancesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances{?page*,per_page*,ref*}", rawUrl) {
+        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts/{alert_number}/instances{?page*,per_page*,ref*}", rawUrl) {
         }
         /// <summary>
-        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repos,the `public_repo` scope also grants permission to read security events on public repos only.
+        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repositories,the `public_repo` scope also grants permission to read security events on public repositories only.
         /// API method documentation <see href="https://docs.github.com/rest/code-scanning/code-scanning#list-instances-of-a-code-scanning-alert" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<CodeScanningAlertInstance>?> GetAsync(Action<InstancesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<CodeScanningAlertInstance>?> GetAsync(Action<RequestConfiguration<InstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<CodeScanningAlertInstance>> GetAsync(Action<InstancesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<CodeScanningAlertInstance>> GetAsync(Action<RequestConfiguration<InstancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -50,29 +50,19 @@ namespace GitHub.Octokit.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repos,the `public_repo` scope also grants permission to read security events on public repos only.
+        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repositories,the `public_repo` scope also grants permission to read security events on public repositories only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<InstancesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstancesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<InstancesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstancesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new InstancesRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -83,7 +73,7 @@ namespace GitHub.Octokit.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
             return new InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repos,the `public_repo` scope also grants permission to read security events on public repos only.
+        /// Lists all instances of the specified code scanning alert.You must use an access token with the `security_events` scope to use this endpoint with private repositories,the `public_repo` scope also grants permission to read security events on public repositories only.
         /// </summary>
         public class InstancesRequestBuilderGetQueryParameters {
             /// <summary>Page number of the results to fetch.</summary>
@@ -106,20 +96,8 @@ namespace GitHub.Octokit.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class InstancesRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public InstancesRequestBuilderGetQueryParameters QueryParameters { get; set; } = new InstancesRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new instancesRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public InstancesRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class InstancesRequestBuilderGetRequestConfiguration : RequestConfiguration<InstancesRequestBuilderGetQueryParameters> {
         }
     }
 }

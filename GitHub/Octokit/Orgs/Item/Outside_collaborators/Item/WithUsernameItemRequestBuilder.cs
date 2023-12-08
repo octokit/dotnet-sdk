@@ -35,10 +35,10 @@ namespace GitHub.Octokit.Orgs.Item.Outside_collaborators.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<WithUsernameItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<WithUsernameItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -55,10 +55,10 @@ namespace GitHub.Octokit.Orgs.Item.Outside_collaborators.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WithUsernamePutResponse?> PutAsWithUsernamePutResponseAsync(WithUsernamePutRequestBody body, Action<WithUsernameItemRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithUsernamePutResponse?> PutAsWithUsernamePutResponseAsync(WithUsernamePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<WithUsernamePutResponse> PutAsWithUsernamePutResponseAsync(WithUsernamePutRequestBody body, Action<WithUsernameItemRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithUsernamePutResponse> PutAsWithUsernamePutResponseAsync(WithUsernamePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -77,10 +77,10 @@ namespace GitHub.Octokit.Orgs.Item.Outside_collaborators.Item {
         [Obsolete("This method is obsolete. Use PutAsWithUsernamePutResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WithUsernameResponse?> PutAsync(WithUsernamePutRequestBody body, Action<WithUsernameItemRequestBuilderPutRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithUsernameResponse?> PutAsync(WithUsernamePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<WithUsernameResponse> PutAsync(WithUsernamePutRequestBody body, Action<WithUsernameItemRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithUsernameResponse> PutAsync(WithUsernamePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -95,22 +95,13 @@ namespace GitHub.Octokit.Orgs.Item.Outside_collaborators.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<WithUsernameItemRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<WithUsernameItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new WithUsernameItemRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
@@ -121,24 +112,15 @@ namespace GitHub.Octokit.Orgs.Item.Outside_collaborators.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(WithUsernamePutRequestBody body, Action<WithUsernameItemRequestBuilderPutRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(WithUsernamePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(WithUsernamePutRequestBody body, Action<WithUsernameItemRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(WithUsernamePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.PUT,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new WithUsernameItemRequestBuilderPutRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -152,34 +134,14 @@ namespace GitHub.Octokit.Orgs.Item.Outside_collaborators.Item {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class WithUsernameItemRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new WithUsernameItemRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public WithUsernameItemRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class WithUsernameItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class WithUsernameItemRequestBuilderPutRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new WithUsernameItemRequestBuilderPutRequestConfiguration and sets the default values.
-            /// </summary>
-            public WithUsernameItemRequestBuilderPutRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class WithUsernameItemRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

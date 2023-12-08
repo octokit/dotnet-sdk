@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Deployments {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\deployments
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\deployments
     /// </summary>
     public class DeploymentsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.deployments.item collection</summary>
@@ -34,14 +34,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Deployments {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/deployments{?sha*,ref*,task*,environment*,per_page*,page*}", pathParameters) {
+        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments{?sha*,ref*,task*,environment*,per_page*,page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DeploymentsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/deployments{?sha*,ref*,task*,environment*,per_page*,page*}", rawUrl) {
+        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments{?sha*,ref*,task*,environment*,per_page*,page*}", rawUrl) {
         }
         /// <summary>
         /// Simple filtering of deployments is available via query parameters:
@@ -51,10 +51,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Deployments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<GitHub.Octokit.Models.Deployment>?> GetAsync(Action<DeploymentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GitHub.Octokit.Models.Deployment>?> GetAsync(Action<RequestConfiguration<DeploymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<GitHub.Octokit.Models.Deployment>> GetAsync(Action<DeploymentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GitHub.Octokit.Models.Deployment>> GetAsync(Action<RequestConfiguration<DeploymentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<GitHub.Octokit.Models.Deployment>(requestInfo, GitHub.Octokit.Models.Deployment.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -69,10 +69,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Deployments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GitHub.Octokit.Models.Deployment?> PostAsync(DeploymentsPostRequestBody body, Action<DeploymentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GitHub.Octokit.Models.Deployment?> PostAsync(DeploymentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GitHub.Octokit.Models.Deployment> PostAsync(DeploymentsPostRequestBody body, Action<DeploymentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GitHub.Octokit.Models.Deployment> PostAsync(DeploymentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -87,24 +87,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Deployments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<DeploymentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeploymentsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<DeploymentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeploymentsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new DeploymentsRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -114,24 +104,15 @@ namespace GitHub.Octokit.Repos.Item.Item.Deployments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DeploymentsPostRequestBody body, Action<DeploymentsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DeploymentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DeploymentsPostRequestBody body, Action<DeploymentsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(DeploymentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.POST,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new DeploymentsRequestBuilderPostRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -196,36 +177,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Deployments {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class DeploymentsRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public DeploymentsRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeploymentsRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new deploymentsRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public DeploymentsRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class DeploymentsRequestBuilderGetRequestConfiguration : RequestConfiguration<DeploymentsRequestBuilderGetQueryParameters> {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class DeploymentsRequestBuilderPostRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new deploymentsRequestBuilderPostRequestConfiguration and sets the default values.
-            /// </summary>
-            public DeploymentsRequestBuilderPostRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class DeploymentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

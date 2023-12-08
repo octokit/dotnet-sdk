@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Tarball {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\tarball
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\tarball
     /// </summary>
     public class TarballRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.tarball.item collection</summary>
@@ -23,14 +23,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Tarball {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TarballRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/tarball", pathParameters) {
+        public TarballRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/tarball", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new TarballRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TarballRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/tarball", rawUrl) {
+        public TarballRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/tarball", rawUrl) {
         }
     }
 }

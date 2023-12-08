@@ -6,6 +6,14 @@ using System.Linq;
 using System;
 namespace GitHub.Octokit.Models {
     public class ApiOverview_domains : IAdditionalDataHolder, IParsable {
+        /// <summary>The actions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Actions { get; set; }
+#nullable restore
+#else
+        public List<string> Actions { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The codespaces property</summary>
@@ -59,6 +67,7 @@ namespace GitHub.Octokit.Models {
         /// </summary>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"codespaces", n => { Codespaces = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"copilot", n => { Copilot = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"packages", n => { Packages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -71,6 +80,7 @@ namespace GitHub.Octokit.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("actions", Actions);
             writer.WriteCollectionOfPrimitiveValues<string>("codespaces", Codespaces);
             writer.WriteCollectionOfPrimitiveValues<string>("copilot", Copilot);
             writer.WriteCollectionOfPrimitiveValues<string>("packages", Packages);

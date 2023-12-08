@@ -12,7 +12,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\environments\{environment_name}\deployment_protection_rules
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\environments\{environment_name}\deployment_protection_rules
     /// </summary>
     public class Deployment_protection_rulesRequestBuilder : BaseRequestBuilder {
         /// <summary>The apps property</summary>
@@ -39,14 +39,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Deployment_protection_rulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules", pathParameters) {
+        public Deployment_protection_rulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}/deployment_protection_rules", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new Deployment_protection_rulesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Deployment_protection_rulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules", rawUrl) {
+        public Deployment_protection_rulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}/deployment_protection_rules", rawUrl) {
         }
         /// <summary>
         /// Gets all custom deployment protection rules that are enabled for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint. For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see the [documentation for the `GET /apps/{app_slug}` endpoint](https://docs.github.com/rest/apps/apps#get-an-app).
@@ -56,10 +56,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Deployment_protection_rulesGetResponse?> GetAsDeployment_protection_rulesGetResponseAsync(Action<Deployment_protection_rulesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Deployment_protection_rulesGetResponse?> GetAsDeployment_protection_rulesGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Deployment_protection_rulesGetResponse> GetAsDeployment_protection_rulesGetResponseAsync(Action<Deployment_protection_rulesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Deployment_protection_rulesGetResponse> GetAsDeployment_protection_rulesGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<Deployment_protection_rulesGetResponse>(requestInfo, Deployment_protection_rulesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -73,10 +73,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         [Obsolete("This method is obsolete. Use GetAsDeployment_protection_rulesGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Deployment_protection_rulesResponse?> GetAsync(Action<Deployment_protection_rulesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Deployment_protection_rulesResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Deployment_protection_rulesResponse> GetAsync(Action<Deployment_protection_rulesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Deployment_protection_rulesResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<Deployment_protection_rulesResponse>(requestInfo, Deployment_protection_rulesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -90,10 +90,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeploymentProtectionRule?> PostAsync(Deployment_protection_rulesPostRequestBody body, Action<Deployment_protection_rulesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeploymentProtectionRule?> PostAsync(Deployment_protection_rulesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<DeploymentProtectionRule> PostAsync(Deployment_protection_rulesPostRequestBody body, Action<Deployment_protection_rulesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeploymentProtectionRule> PostAsync(Deployment_protection_rulesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -105,23 +105,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<Deployment_protection_rulesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<Deployment_protection_rulesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new Deployment_protection_rulesRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -131,24 +122,15 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Deployment_protection_rulesPostRequestBody body, Action<Deployment_protection_rulesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Deployment_protection_rulesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Deployment_protection_rulesPostRequestBody body, Action<Deployment_protection_rulesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Deployment_protection_rulesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.POST,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new Deployment_protection_rulesRequestBuilderPostRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -162,34 +144,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class Deployment_protection_rulesRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new deployment_protection_rulesRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public Deployment_protection_rulesRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class Deployment_protection_rulesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class Deployment_protection_rulesRequestBuilderPostRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new deployment_protection_rulesRequestBuilderPostRequestConfiguration and sets the default values.
-            /// </summary>
-            public Deployment_protection_rulesRequestBuilderPostRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class Deployment_protection_rulesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace GitHub.Octokit.Models {
     public class ActionsWorkflowAccessToRepository : IAdditionalDataHolder, IParsable {
-        /// <summary>Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repos only. `organization` level access allows sharing across the organization.</summary>
+        /// <summary>Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.</summary>
         public ActionsWorkflowAccessToRepository_access_level? AccessLevel { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

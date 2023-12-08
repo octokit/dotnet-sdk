@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Octokit.Repos.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}
+    /// Builds and executes requests for operations under \repos\{repos-id}
     /// </summary>
     public class WithOwnerItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.repos.item.item collection</summary>
@@ -23,14 +23,14 @@ namespace GitHub.Octokit.Repos.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithOwnerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}", pathParameters) {
+        public WithOwnerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new WithOwnerItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithOwnerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}", rawUrl) {
+        public WithOwnerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}", rawUrl) {
         }
     }
 }

@@ -12,7 +12,7 @@ namespace GitHub.Octokit.Orgs.Item.Migrations.Item.Repos {
     /// </summary>
     public class ReposRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.orgs.item.migrations.item.repos.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">repo_name parameter</param>
         public WithRepo_nameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("repo_name", position);

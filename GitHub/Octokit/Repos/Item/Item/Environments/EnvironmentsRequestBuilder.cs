@@ -10,11 +10,11 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Environments {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\environments
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\environments
     /// </summary>
     public class EnvironmentsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.environments.item collection</summary>
-        /// <param name="position">The name of the environment.</param>
+        /// <param name="position">The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`.</param>
         public WithEnvironment_nameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("environment_name", position);
@@ -25,14 +25,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/environments{?per_page*,page*}", pathParameters) {
+        public EnvironmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments{?per_page*,page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new EnvironmentsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/environments{?per_page*,page*}", rawUrl) {
+        public EnvironmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments{?per_page*,page*}", rawUrl) {
         }
         /// <summary>
         /// Lists the environments for a repository.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
@@ -42,10 +42,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EnvironmentsGetResponse?> GetAsEnvironmentsGetResponseAsync(Action<EnvironmentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EnvironmentsGetResponse?> GetAsEnvironmentsGetResponseAsync(Action<RequestConfiguration<EnvironmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<EnvironmentsGetResponse> GetAsEnvironmentsGetResponseAsync(Action<EnvironmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EnvironmentsGetResponse> GetAsEnvironmentsGetResponseAsync(Action<RequestConfiguration<EnvironmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<EnvironmentsGetResponse>(requestInfo, EnvironmentsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -59,10 +59,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments {
         [Obsolete("This method is obsolete. Use GetAsEnvironmentsGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EnvironmentsResponse?> GetAsync(Action<EnvironmentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EnvironmentsResponse?> GetAsync(Action<RequestConfiguration<EnvironmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<EnvironmentsResponse> GetAsync(Action<EnvironmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<EnvironmentsResponse> GetAsync(Action<RequestConfiguration<EnvironmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<EnvironmentsResponse>(requestInfo, EnvironmentsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -73,24 +73,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<EnvironmentsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EnvironmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<EnvironmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EnvironmentsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new EnvironmentsRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -114,20 +104,8 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class EnvironmentsRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public EnvironmentsRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EnvironmentsRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new environmentsRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public EnvironmentsRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class EnvironmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<EnvironmentsRequestBuilderGetQueryParameters> {
         }
     }
 }

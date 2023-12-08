@@ -9,7 +9,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection_rules.Apps {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\environments\{environment_name}\deployment_protection_rules\apps
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\environments\{environment_name}\deployment_protection_rules\apps
     /// </summary>
     public class AppsRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -17,14 +17,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps{?page*,per_page*}", pathParameters) {
+        public AppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}/deployment_protection_rules/apps{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AppsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps{?page*,per_page*}", rawUrl) {
+        public AppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}/deployment_protection_rules/apps{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint. If the repository is private and you want to use a personal access token (classic), you must use an access token with the `repo` scope. GitHub Apps and fine-grained personal access tokens must have the `actions:read` permission to use this endpoint.For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see &quot;[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)&quot;.
@@ -34,10 +34,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppsGetResponse?> GetAsAppsGetResponseAsync(Action<AppsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppsGetResponse?> GetAsAppsGetResponseAsync(Action<RequestConfiguration<AppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<AppsGetResponse> GetAsAppsGetResponseAsync(Action<AppsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppsGetResponse> GetAsAppsGetResponseAsync(Action<RequestConfiguration<AppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<AppsGetResponse>(requestInfo, AppsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -51,10 +51,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         [Obsolete("This method is obsolete. Use GetAsAppsGetResponse instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AppsResponse?> GetAsync(Action<AppsRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppsResponse?> GetAsync(Action<RequestConfiguration<AppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<AppsResponse> GetAsync(Action<AppsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<AppsResponse> GetAsync(Action<RequestConfiguration<AppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<AppsResponse>(requestInfo, AppsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -65,24 +65,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<AppsRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<AppsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AppsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new AppsRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -106,20 +96,8 @@ namespace GitHub.Octokit.Repos.Item.Item.Environments.Item.Deployment_protection
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class AppsRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public AppsRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AppsRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new appsRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public AppsRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class AppsRequestBuilderGetRequestConfiguration : RequestConfiguration<AppsRequestBuilderGetQueryParameters> {
         }
     }
 }

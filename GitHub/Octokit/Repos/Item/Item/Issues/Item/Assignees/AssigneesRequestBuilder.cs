@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Assignees {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\issues\{issue_number}\assignees
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\issues\{issue_number}\assignees
     /// </summary>
     public class AssigneesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.issues.item.assignees.item collection</summary>
@@ -26,14 +26,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Assignees {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssigneesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/issues/{issue_number}/assignees", pathParameters) {
+        public AssigneesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/assignees", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AssigneesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssigneesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/issues/{issue_number}/assignees", rawUrl) {
+        public AssigneesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/assignees", rawUrl) {
         }
         /// <summary>
         /// Removes one or more assignees from an issue.
@@ -44,10 +44,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Assignees {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Issue?> DeleteAsync(AssigneesDeleteRequestBody body, Action<AssigneesRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Issue?> DeleteAsync(AssigneesDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Issue> DeleteAsync(AssigneesDeleteRequestBody body, Action<AssigneesRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Issue> DeleteAsync(AssigneesDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
@@ -62,10 +62,10 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Assignees {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Issue?> PostAsync(AssigneesPostRequestBody body, Action<AssigneesRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Issue?> PostAsync(AssigneesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<Issue> PostAsync(AssigneesPostRequestBody body, Action<AssigneesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Issue> PostAsync(AssigneesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -78,24 +78,15 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Assignees {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(AssigneesDeleteRequestBody body, Action<AssigneesRequestBuilderDeleteRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(AssigneesDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(AssigneesDeleteRequestBody body, Action<AssigneesRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(AssigneesDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.DELETE,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new AssigneesRequestBuilderDeleteRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -106,24 +97,15 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Assignees {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AssigneesPostRequestBody body, Action<AssigneesRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(AssigneesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AssigneesPostRequestBody body, Action<AssigneesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(AssigneesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.POST,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new AssigneesRequestBuilderPostRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -137,34 +119,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Issues.Item.Assignees {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class AssigneesRequestBuilderDeleteRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new assigneesRequestBuilderDeleteRequestConfiguration and sets the default values.
-            /// </summary>
-            public AssigneesRequestBuilderDeleteRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class AssigneesRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class AssigneesRequestBuilderPostRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new assigneesRequestBuilderPostRequestConfiguration and sets the default values.
-            /// </summary>
-            public AssigneesRequestBuilderPostRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class AssigneesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

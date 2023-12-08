@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.CheckRuns {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\check-runs
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\check-runs
     /// </summary>
     public class CheckRunsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.repos.item.item.checkRuns.item collection</summary>
@@ -34,14 +34,14 @@ namespace GitHub.Octokit.Repos.Item.Item.CheckRuns {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CheckRunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/check-runs", pathParameters) {
+        public CheckRunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new CheckRunsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CheckRunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/check-runs", rawUrl) {
+        public CheckRunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs", rawUrl) {
         }
         /// <summary>
         /// **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.Creates a new check run for a specific commit in a repository. Your GitHub App must have the `checks:write` permission to create check runs.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.
@@ -52,10 +52,10 @@ namespace GitHub.Octokit.Repos.Item.Item.CheckRuns {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CheckRun?> PostAsync(CheckRunsPostRequestBody body, Action<CheckRunsRequestBuilderPostRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CheckRun?> PostAsync(CheckRunsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<CheckRun> PostAsync(CheckRunsPostRequestBody body, Action<CheckRunsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CheckRun> PostAsync(CheckRunsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -68,24 +68,15 @@ namespace GitHub.Octokit.Repos.Item.Item.CheckRuns {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CheckRunsPostRequestBody body, Action<CheckRunsRequestBuilderPostRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(CheckRunsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CheckRunsPostRequestBody body, Action<CheckRunsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(CheckRunsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.POST,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new CheckRunsRequestBuilderPostRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -195,18 +186,8 @@ namespace GitHub.Octokit.Repos.Item.Item.CheckRuns {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class CheckRunsRequestBuilderPostRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new checkRunsRequestBuilderPostRequestConfiguration and sets the default values.
-            /// </summary>
-            public CheckRunsRequestBuilderPostRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class CheckRunsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

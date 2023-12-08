@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Octokit.Repos.Item.Item.Actions.Cache {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{owner}\{repo}\actions\cache
+    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\cache
     /// </summary>
     public class CacheRequestBuilder : BaseRequestBuilder {
         /// <summary>The usage property</summary>
@@ -20,14 +20,14 @@ namespace GitHub.Octokit.Repos.Item.Item.Actions.Cache {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/cache", pathParameters) {
+        public CacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/cache", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new CacheRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner}/{repo}/actions/cache", rawUrl) {
+        public CacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/cache", rawUrl) {
         }
     }
 }

@@ -15,10 +15,18 @@ namespace GitHub.Octokit.Repositories {
     /// </summary>
     public class RepositoriesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.Octokit.repositories.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        public WithRepository_ItemRequestBuilder this[string position] { get {
+        /// <param name="position">The unique identifier of the repository.</param>
+        public WithRepository_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("repository_id", position);
+            return new WithRepository_ItemRequestBuilder(urlTplParams, RequestAdapter);
+        } }
+        /// <summary>Gets an item from the GitHub.Octokit.repositories.item collection</summary>
+        /// <param name="position">The unique identifier of the repository.</param>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public WithRepository_ItemRequestBuilder this[string position] { get {
+            var urlTplParams = new Dictionary<string, object>(PathParameters);
+            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("repository_id", position);
             return new WithRepository_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
@@ -43,10 +51,10 @@ namespace GitHub.Octokit.Repositories {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<MinimalRepository>?> GetAsync(Action<RepositoriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<MinimalRepository>?> GetAsync(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<MinimalRepository>> GetAsync(Action<RepositoriesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<MinimalRepository>> GetAsync(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -61,24 +69,14 @@ namespace GitHub.Octokit.Repositories {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RepositoriesRequestBuilderGetRequestConfiguration>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RepositoriesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            if (requestConfiguration != null) {
-                var requestConfig = new RepositoriesRequestBuilderGetRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            requestInfo.Headers.TryAdd("Accept", "application/json;q=1");
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -99,20 +97,8 @@ namespace GitHub.Octokit.Repositories {
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
-        public class RepositoriesRequestBuilderGetRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>Request query parameters</summary>
-            public RepositoriesRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RepositoriesRequestBuilderGetQueryParameters();
-            /// <summary>
-            /// Instantiates a new repositoriesRequestBuilderGetRequestConfiguration and sets the default values.
-            /// </summary>
-            public RepositoriesRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        public class RepositoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters> {
         }
     }
 }
