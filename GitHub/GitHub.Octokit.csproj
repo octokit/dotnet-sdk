@@ -10,12 +10,14 @@
     <Description>
     This is an auto-generated SDK for GitHub's REST API, built on Kiota.
     </Description>
+    <Authors>GitHub</Authors>
     <PackageTags>GitHub API Octokit dotnet-core</PackageTags>
     <RepositoryUrl>https://github.com/octokit/dotnet-sdk</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/octokit/dotnet-sdk</PackageProjectUrl>
-		<PackageIconUrl>https://f.cloud.github.com/assets/19977/1510987/64af2b26-4a9d-11e3-89fc-96a185171c75.png</PackageIconUrl>
+		<PackageIcon>octokit.png</PackageIcon>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>NugetREADME.md</PackageReadmeFile>
+    <Copyright>Copyright (c) GitHub 2023</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
