@@ -29,5 +29,6 @@
     <PackageReference Include="Microsoft.Kiota.Serialization.Text" Version="1.1.1" />
     <PackageReference Include="Microsoft.Kiota.Authentication.Azure" Version="1.1.2" />
     <None Include="NugetREADME.md" Pack="true" PackagePath="\"/>
+    <None Include="octokit.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>
