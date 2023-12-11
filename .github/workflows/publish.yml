@@ -1,0 +1,25 @@
+name: Publish Release to NuGet
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.x.x
+
+    - name: Build SDK
+      run: dotnet build
+
+    - name: Publish to NuGet
+      run: dotnet nuget push packaging/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
