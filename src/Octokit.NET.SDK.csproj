@@ -1,10 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Octokit.NET.SDK</PackageId>
+    <Version>0.0.1-alpha</Version>
+    <Title>Octokit</Title>
+    <Description>
+    This is an auto-generated SDK for GitHub's REST API, built on Kiota.
+    </Description>
+    <Authors>GitHub</Authors>
+    <PackageTags>GitHub API Octokit dotnet-core</PackageTags>
+    <RepositoryUrl>https://github.com/octokit/dotnet-sdk</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/octokit/dotnet-sdk</PackageProjectUrl>
+		<PackageIcon>octokit.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>NugetREADME.md</PackageReadmeFile>
+    <Copyright>Copyright (c) GitHub 2023</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,5 +28,7 @@
     <PackageReference Include="Microsoft.Kiota.Serialization.Multipart" Version="1.1.1" />
     <PackageReference Include="Microsoft.Kiota.Serialization.Text" Version="1.1.1" />
     <PackageReference Include="Microsoft.Kiota.Authentication.Azure" Version="1.1.2" />
+    <None Include="NugetREADME.md" Pack="true" PackagePath="\"/>
+    <None Include="octokit.png" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>

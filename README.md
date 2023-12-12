@@ -33,7 +33,7 @@ Please use this project's [issues](https://github.com/octokit/dotnet-sdk/issues)
 
 ## Source organization
 
-Currently this project is fairly simple (we hope it can stay that way).  All of the package based source is contained in the `GitHub` folder. 
+Currently this project is fairly simple (we hope it can stay that way).  All of the package based source is contained in the `GitHub` folder.
 
  - **Authentication** - everything related to authenticating requests
  - **Client** - the logic for constructing the plumbing to interact with the GitHub API
