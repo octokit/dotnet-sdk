@@ -18,8 +18,19 @@ jobs:
       with:
         dotnet-version: 8.x.x
 
-    - name: Build SDK
-      run: dotnet build
+    - name: Restore dependencies
+      run: dotnet restore
 
+    - name: Build
+      run: dotnet build --configuration Release
+
+    - name: Sign assemblies with SNK
+      run: |
+        # Path to SNK file
+        snk_path="./key.snk"
+        
+        # Sign the assemblies with SNK
+        find ./bin -name '*.dll' -exec sn -R $snk_path {} \;
+        
     - name: Publish to NuGet
       run: dotnet nuget push packaging/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}

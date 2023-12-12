@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHub.Octokit", "GitHub\GitHub.Octokit.csproj", "{C118D1F2-D47D-4488-9D2F-88BA4A7729BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Octokit.NET.SDK", "src\Octokit.NET.SDK.csproj", "{C118D1F2-D47D-4488-9D2F-88BA4A7729BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
