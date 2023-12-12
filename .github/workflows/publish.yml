@@ -24,13 +24,5 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release
 
-    - name: Sign assemblies with SNK
-      run: |
-        # Path to SNK file
-        snk_path="./key.snk"
-        
-        # Sign the assemblies with SNK
-        find ./bin -name '*.dll' -exec sn -R $snk_path {} \;
-        
     - name: Publish to NuGet
       run: dotnet nuget push packaging/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
