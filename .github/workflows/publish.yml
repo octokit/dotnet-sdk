@@ -18,9 +18,6 @@ jobs:
       with:
         dotnet-version: 8.x.x
 
-    - name: Restore dependencies
-      run: dotnet restore
-
     - name: Build
       run: dotnet build --configuration Release
 
