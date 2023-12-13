@@ -1,7 +1,7 @@
+// Copyright (c) GitHub 2023 — Licensed as MIT.
+
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
-using GitHub.Client.Middleware;
-
 
 namespace GitHub.Client;
 
@@ -13,8 +13,8 @@ public static class RequestAdapter
     /// TODO: Implement the missing props and methods
     public static HttpClientRequestAdapter Create(IAuthenticationProvider authenticationProvider)
     {
-      var clientFactory = ClientFactory.Create(); 
-      var githubRequestAdapter = new HttpClientRequestAdapter(authenticationProvider, null, null, clientFactory, null);
-      return githubRequestAdapter;
+        var clientFactory = ClientFactory.Create();
+        var githubRequestAdapter = new HttpClientRequestAdapter(authenticationProvider, null, null, clientFactory, null);
+        return githubRequestAdapter;
     }
 }
