@@ -1,27 +1,28 @@
-# dotnet-sdk
+# Octokit: .NET SDK
 
 An "alpha" version of a generated .NET SDK in C# from [GitHub's OpenAPI spec](https://github.com/github/rest-api-description), built on [Kiota](https://github.com/microsoft/kiota).
 
 ## How do I use it?
 
-```
+```csharp
 using GitHub.Client;
 using GitHub.Authentication;
 
 var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "";
-var request = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen",token));
-var gitHubClient = new Client(request);
+var request = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen", token));
+var gitHubClient = new GitHubClient(request);
 
 var pullRequests = await gitHubClient.Repos["octokit"]["octokit.net"].Pulls.GetAsync();
 ```
 
-⚠️ **Note**: This SDK is not yet stable. Breaking changes may occur at any time.
+> [!IMPORTANT]
+> This SDK is not yet stable. Breaking changes may occur at any time.
 
 ## Why a generated SDK?
 
 We want to...
 1.  provide 100% coverage of the API in our SDK
-2.  use this as a building block for future SDK tooling.
+1.  use this as a building block for future SDK tooling
 
 ## Why .NET?
 
@@ -42,7 +43,7 @@ Currently this project is fairly simple (we hope it can stay that way).  All of 
 
 ## More details on this SDK and repo
 
-* [Code of conduct](Docs/CODE_OF_CONDUCT.md)
-* [Contributing](Docs/CONTRIBUTING.md)
-* [Releases](Docs/RELEASES.md)
-* [Incidents and security](Docs/SECURITY.md)
+- [Code of conduct](Docs/CODE_OF_CONDUCT.md)
+- [Contributing](Docs/CONTRIBUTING.md)
+- [Releases](Docs/RELEASES.md)
+- [Incidents and security](Docs/SECURITY.md)
