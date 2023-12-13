@@ -18,11 +18,8 @@ jobs:
       with:
         dotnet-version: 8.x.x
 
-    - name: Restore dependencies
-      run: dotnet restore
-
-    - name: Build
-      run: dotnet build --configuration Release
+    - name: Build and strong name sign
+      run: dotnet build --configuration Release --no-incremental /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=../key.snk
 
     - name: Publish to NuGet
       run: dotnet nuget push packaging/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
