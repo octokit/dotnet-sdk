@@ -25,7 +25,7 @@ jobs:
       run: dotnet build --configuration Release --no-incremental -p:version=${GITHUB_REF#refs/*/v} -p:SignAssembly=true -p:AssemblyOriginatorKeyFile=../key.snk
 
     - name: Pack SDK
-      run: dotnet pack -p:version=${GITHUB_REF#refs/*/v}
+      run: dotnet pack -p:version=${GITHUB_REF#refs/*/v} -o ./publish
 
     - name: Ship to NuGet
-      run: dotnet nuget push bin/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate
+      run: dotnet nuget push ./publish/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate
