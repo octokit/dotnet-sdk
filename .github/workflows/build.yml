@@ -24,12 +24,5 @@ jobs:
       - name: Build SDK
         run: dotnet build
 
-      - name: Sign assemblies with SNK
-        run: |
-          snk_path="./key.snk"
-          
-          # Sign the assemblies with SNK
-          find ./src/bin -name '*.dll' -exec sn -R $snk_path {} \;
-
       - name: Test SDK
         run: dotnet test
