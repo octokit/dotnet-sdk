@@ -1,14 +1,17 @@
 name: Publish Release to NuGet
 
 on:
-  push:
-    tags:
-      - v*
+  release:
+    types: [released]
+    
+defaults:
+  run:
+    shell: bash
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v1
@@ -18,8 +21,11 @@ jobs:
       with:
         dotnet-version: 8.x.x
 
-    - name: Build and strong name sign
-      run: dotnet build --configuration Release --no-incremental /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=../key.snk
+    - name: Build and strong name
+      run: dotnet build --configuration Release --no-incremental -p:version==${GITHUB_REF#refs/*/v} -p:SignAssembly=true -p:AssemblyOriginatorKeyFile=../key.snk
 
-    - name: Publish to NuGet
-      run: dotnet nuget push packaging/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }}
+    - name: Pack SDK
+      run: dotnet pack -p:version=${GITHUB_REF#refs/*/v}
+
+    - name: Ship to NuGet
+      run: dotnet nuget push bin/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate
