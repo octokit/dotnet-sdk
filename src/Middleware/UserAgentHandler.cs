@@ -4,7 +4,6 @@ using System.Net.Http.Headers;
 using GitHub.Client.Middleware.Options;
 using Microsoft.Kiota.Http.HttpClientLibrary.Extensions;
 
-
 namespace GitHub.Client.Middleware;
 
 public class UserAgentHandler(UserAgentOptions? userAgentHandlerOption = null) : DelegatingHandler

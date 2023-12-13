@@ -14,7 +14,10 @@ public static class RequestAdapter
     public static HttpClientRequestAdapter Create(IAuthenticationProvider authenticationProvider)
     {
         var clientFactory = ClientFactory.Create();
-        var githubRequestAdapter = new HttpClientRequestAdapter(authenticationProvider, null, null, clientFactory, null);
-        return githubRequestAdapter;
+
+        var gitHubRequestAdapter = new HttpClientRequestAdapter(
+            authenticationProvider, null, null, clientFactory, null);
+        
+        return gitHubRequestAdapter;
     }
 }
