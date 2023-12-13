@@ -1,23 +1,18 @@
+// Copyright (c) GitHub 2023 — Licensed as MIT.
+
 using System.Net.Http.Headers;
 using GitHub.Client.Middleware.Options;
 using Microsoft.Kiota.Http.HttpClientLibrary.Extensions;
 
-
 namespace GitHub.Client.Middleware;
 
-public class UserAgentHandler : DelegatingHandler
+public class UserAgentHandler(UserAgentOptions? userAgentHandlerOption = null) : DelegatingHandler
 {
-    private readonly UserAgentOptions _userAgentOption;
-
-    public UserAgentHandler(UserAgentOptions? userAgentHandlerOption = null)
-    {
-        _userAgentOption = userAgentHandlerOption ?? new UserAgentOptions();
-    }
+    private readonly UserAgentOptions _userAgentOption = userAgentHandlerOption ?? new UserAgentOptions();
 
     protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        if(request == null)
-            throw new ArgumentNullException(nameof(request));
+        ArgumentNullException.ThrowIfNull(request);
 
         var userAgentHandlerOption = request.GetRequestOption<UserAgentOptions>() ?? _userAgentOption;
 

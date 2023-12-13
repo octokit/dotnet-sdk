@@ -90,6 +90,9 @@ orleans.codegen.cs
 .ntvs_analysis.dat
 node_modules/
 
+# VS
+.vs/*
+
 # VS Code files for those working on multiple tools
 .vscode/*
 !.vscode/settings.json
