@@ -22,7 +22,7 @@ jobs:
         dotnet-version: 8.x.x
 
     - name: Build and strong name
-      run: dotnet build --configuration Release --no-incremental -p:version==${GITHUB_REF#refs/*/v} -p:SignAssembly=true -p:AssemblyOriginatorKeyFile=../key.snk
+      run: dotnet build --configuration Release --no-incremental -p:version=${GITHUB_REF#refs/*/v} -p:SignAssembly=true -p:AssemblyOriginatorKeyFile=../key.snk
 
     - name: Pack SDK
       run: dotnet pack -p:version=${GITHUB_REF#refs/*/v}
