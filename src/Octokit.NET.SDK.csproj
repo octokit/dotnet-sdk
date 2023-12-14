@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <PackageId>Octokit.NET.SDK</PackageId>
     <Version>0.0.1-alpha</Version>
+    <NuGetVersion>0.0.1-alpha</NuGetVersion>
     <Title>Octokit</Title>
     <Description>
     This is an auto-generated SDK for GitHub's REST API, built on Kiota.
