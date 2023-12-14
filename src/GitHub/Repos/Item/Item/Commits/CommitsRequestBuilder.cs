@@ -16,10 +16,10 @@ namespace GitHub.Repos.Item.Item.Commits {
     public class CommitsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.commits.item collection</summary>
         /// <param name="position">The commit reference. Can be a commit SHA, branch name (`heads/BRANCH_NAME`), or tag name (`tags/TAG_NAME`). For more information, see &quot;[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)&quot; in the Git documentation.</param>
-        public WithCommit_shaItemRequestBuilder this[string position] { get {
+        public CommitsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("commit_sha", position);
-            return new WithCommit_shaItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("commits%2Did", position);
+            return new CommitsItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new CommitsRequestBuilder and sets the default values.
