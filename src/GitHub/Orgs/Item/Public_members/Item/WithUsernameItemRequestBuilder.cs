@@ -60,7 +60,7 @@ namespace GitHub.Orgs.Item.Public_members.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The user can publicize their own membership. (A user cannot publicize the membership for another user.)Note that you&apos;ll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see &quot;[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs).&quot;
+        /// The user can publicize their own membership. (A user cannot publicize the membership for another user.)Note that you&apos;ll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see &quot;[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/orgs/members#set-public-organization-membership-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -109,7 +109,7 @@ namespace GitHub.Orgs.Item.Public_members.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The user can publicize their own membership. (A user cannot publicize the membership for another user.)Note that you&apos;ll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see &quot;[HTTP verbs](https://docs.github.com/rest/overview/resources-in-the-rest-api#http-verbs).&quot;
+        /// The user can publicize their own membership. (A user cannot publicize the membership for another user.)Note that you&apos;ll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see &quot;[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).&quot;
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

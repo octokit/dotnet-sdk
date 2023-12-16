@@ -69,10 +69,10 @@ namespace GitHub.Models {
         /// <summary>The rule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CodeScanningAlertRule? Rule { get; set; }
+        public CodeScanningAlertRuleSummary? Rule { get; set; }
 #nullable restore
 #else
-        public CodeScanningAlertRule Rule { get; set; }
+        public CodeScanningAlertRuleSummary Rule { get; set; }
 #endif
         /// <summary>State of a code scanning alert.</summary>
         public CodeScanningAlertState? State { get; set; }
@@ -124,7 +124,7 @@ namespace GitHub.Models {
                 {"most_recent_instance", n => { MostRecentInstance = n.GetObjectValue<CodeScanningAlertInstance>(CodeScanningAlertInstance.CreateFromDiscriminatorValue); } },
                 {"number", n => { Number = n.GetIntValue(); } },
                 {"repository", n => { Repository = n.GetObjectValue<SimpleRepository>(SimpleRepository.CreateFromDiscriminatorValue); } },
-                {"rule", n => { Rule = n.GetObjectValue<CodeScanningAlertRule>(CodeScanningAlertRule.CreateFromDiscriminatorValue); } },
+                {"rule", n => { Rule = n.GetObjectValue<CodeScanningAlertRuleSummary>(CodeScanningAlertRuleSummary.CreateFromDiscriminatorValue); } },
                 {"state", n => { State = n.GetEnumValue<CodeScanningAlertState>(); } },
                 {"tool", n => { Tool = n.GetObjectValue<CodeScanningAnalysisTool>(CodeScanningAnalysisTool.CreateFromDiscriminatorValue); } },
                 {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -142,7 +142,7 @@ namespace GitHub.Models {
             writer.WriteEnumValue<CodeScanningAlertDismissedReason>("dismissed_reason", DismissedReason);
             writer.WriteObjectValue<CodeScanningAlertInstance>("most_recent_instance", MostRecentInstance);
             writer.WriteObjectValue<SimpleRepository>("repository", Repository);
-            writer.WriteObjectValue<CodeScanningAlertRule>("rule", Rule);
+            writer.WriteObjectValue<CodeScanningAlertRuleSummary>("rule", Rule);
             writer.WriteEnumValue<CodeScanningAlertState>("state", State);
             writer.WriteObjectValue<CodeScanningAnalysisTool>("tool", Tool);
             writer.WriteAdditionalData(AdditionalData);
