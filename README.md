@@ -7,6 +7,7 @@ An "alpha" version of a generated .NET SDK in C# from [GitHub's OpenAPI spec](ht
 ## How do I use it?
 
 ```csharp
+using GitHub;
 using GitHub.Client;
 using GitHub.Authentication;
 
@@ -15,6 +16,11 @@ var request = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen
 var gitHubClient = new GitHubClient(request);
 
 var pullRequests = await gitHubClient.Repos["octokit"]["octokit.net"].Pulls.GetAsync();
+
+foreach (var pullRequest in pullRequests)
+{
+    Console.WriteLine($"#{pullRequest.Number} {pullRequest.Title}");
+}
 ```
 
 > [!IMPORTANT]
