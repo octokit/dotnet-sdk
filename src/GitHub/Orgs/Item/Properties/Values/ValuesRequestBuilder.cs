@@ -28,7 +28,7 @@ namespace GitHub.Orgs.Item.Properties.Values {
         public ValuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/properties/values{?per_page*,page*,repository_query*}", rawUrl) {
         }
         /// <summary>
-        /// Lists organization repositories with all of their custom property values.Organization members can read these properties.
+        /// Lists organization repositories with all of their custom property values.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#list-custom-property-values-for-organization-repositories" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace GitHub.Orgs.Item.Properties.Values {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or &apos;unset&apos; the property value from the repository.Only organization owners (or users with the proper permissions granted by them) can update these properties
+        /// Create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or &apos;unset&apos; the property value from the repository.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.GitHub Apps must have the `organization_custom_properties:write` organization permission to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-property-values-for-organization-repositories" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -71,7 +71,7 @@ namespace GitHub.Orgs.Item.Properties.Values {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists organization repositories with all of their custom property values.Organization members can read these properties.
+        /// Lists organization repositories with all of their custom property values.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace GitHub.Orgs.Item.Properties.Values {
             return requestInfo;
         }
         /// <summary>
-        /// Create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or &apos;unset&apos; the property value from the repository.Only organization owners (or users with the proper permissions granted by them) can update these properties
+        /// Create new or update existing custom property values for repositories in a batch that belong to an organization.Each target repository will have its custom property values updated to match the values provided in the request.A maximum of 30 repositories can be updated in a single request.Using a value of `null` for a custom property will remove or &apos;unset&apos; the property value from the repository.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_values_editor` in the organization.GitHub Apps must have the `organization_custom_properties:write` organization permission to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace GitHub.Orgs.Item.Properties.Values {
             return new ValuesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists organization repositories with all of their custom property values.Organization members can read these properties.
+        /// Lists organization repositories with all of their custom property values.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
         /// </summary>
         public class ValuesRequestBuilderGetQueryParameters {
             /// <summary>Page number of the results to fetch.</summary>
