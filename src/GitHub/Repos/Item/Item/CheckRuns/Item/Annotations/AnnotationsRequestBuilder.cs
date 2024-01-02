@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item.Annotations {
         public AnnotationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs/{check_run_id}/annotations{?per_page*,page*}", rawUrl) {
         }
         /// <summary>
-        /// Lists annotations for a check run using the annotation `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get annotations for a check run. OAuth apps and authenticated users must have the `repo` scope to get annotations for a check run in a private repository.
+        /// Lists annotations for a check run using the annotation `id`.GitHub Appsmust have the `checks:read` permission on a private repository or pull access toa public repository to get annotations for a check run. OAuth apps and authenticatedusers must have the `repo` scope to get annotations for a check run in a privaterepository.
         /// API method documentation <see href="https://docs.github.com/rest/checks/runs#list-check-run-annotations" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -45,7 +45,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item.Annotations {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Lists annotations for a check run using the annotation `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get annotations for a check run. OAuth apps and authenticated users must have the `repo` scope to get annotations for a check run in a private repository.
+        /// Lists annotations for a check run using the annotation `id`.GitHub Appsmust have the `checks:read` permission on a private repository or pull access toa public repository to get annotations for a check run. OAuth apps and authenticatedusers must have the `repo` scope to get annotations for a check run in a privaterepository.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item.Annotations {
             return new AnnotationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists annotations for a check run using the annotation `id`. GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get annotations for a check run. OAuth apps and authenticated users must have the `repo` scope to get annotations for a check run in a private repository.
+        /// Lists annotations for a check run using the annotation `id`.GitHub Appsmust have the `checks:read` permission on a private repository or pull access toa public repository to get annotations for a check run. OAuth apps and authenticatedusers must have the `repo` scope to get annotations for a check run in a privaterepository.
         /// </summary>
         public class AnnotationsRequestBuilderGetQueryParameters {
             /// <summary>Page number of the results to fetch.</summary>

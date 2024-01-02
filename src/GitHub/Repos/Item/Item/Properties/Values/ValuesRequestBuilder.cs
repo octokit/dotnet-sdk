@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Properties.Values {
         public ValuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/properties/values", rawUrl) {
         }
         /// <summary>
-        /// Gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.
+        /// Gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.GitHub Apps must have the `metadata:read` repository permission to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/repos/custom-properties#get-all-custom-property-values-for-a-repository" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace GitHub.Repos.Item.Item.Properties.Values {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.
+        /// Gets all custom property values that are set for a repository.Users with read access to the repository can use this endpoint.GitHub Apps must have the `metadata:read` repository permission to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

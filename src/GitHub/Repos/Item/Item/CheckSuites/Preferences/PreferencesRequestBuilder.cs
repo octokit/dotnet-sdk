@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Preferences {
         public PreferencesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-suites/preferences", rawUrl) {
         }
         /// <summary>
-        /// Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://docs.github.com/rest/checks/suites#create-a-check-suite). You must have admin permissions in the repository to set preferences for check suites.
+        /// Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://docs.github.com/rest/checks/suites#create-a-check-suite).You must have admin permissions in the repository to set preferences for check suites.
         /// API method documentation <see href="https://docs.github.com/rest/checks/suites#update-repository-preferences-for-check-suites" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -46,7 +46,7 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Preferences {
             return await RequestAdapter.SendAsync<CheckSuitePreference>(requestInfo, CheckSuitePreference.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://docs.github.com/rest/checks/suites#create-a-check-suite). You must have admin permissions in the repository to set preferences for check suites.
+        /// Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://docs.github.com/rest/checks/suites#create-a-check-suite).You must have admin permissions in the repository to set preferences for check suites.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -29,10 +29,10 @@ namespace GitHub.Repos.Item.Item.Deployments {
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeploymentsPostRequestBody_payload? Payload { get; set; }
+        public string? Payload { get; set; }
 #nullable restore
 #else
-        public DeploymentsPostRequestBody_payload Payload { get; set; }
+        public string Payload { get; set; }
 #endif
         /// <summary>Specifies if the given environment is one that end-users directly interact with. Default: `true` when `environment` is `production` and `false` otherwise.</summary>
         public bool? ProductionEnvironment { get; set; }
@@ -86,7 +86,7 @@ namespace GitHub.Repos.Item.Item.Deployments {
                 {"auto_merge", n => { AutoMerge = n.GetBoolValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"environment", n => { Environment = n.GetStringValue(); } },
-                {"payload", n => { Payload = n.GetObjectValue<DeploymentsPostRequestBody_payload>(DeploymentsPostRequestBody_payload.CreateFromDiscriminatorValue); } },
+                {"payload", n => { Payload = n.GetStringValue(); } },
                 {"production_environment", n => { ProductionEnvironment = n.GetBoolValue(); } },
                 {"ref", n => { Ref = n.GetStringValue(); } },
                 {"required_contexts", n => { RequiredContexts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -103,72 +103,13 @@ namespace GitHub.Repos.Item.Item.Deployments {
             writer.WriteBoolValue("auto_merge", AutoMerge);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("environment", Environment);
-            writer.WriteObjectValue<DeploymentsPostRequestBody_payload>("payload", Payload);
+            writer.WriteStringValue("payload", Payload);
             writer.WriteBoolValue("production_environment", ProductionEnvironment);
             writer.WriteStringValue("ref", Ref);
             writer.WriteCollectionOfPrimitiveValues<string>("required_contexts", RequiredContexts);
             writer.WriteStringValue("task", Task);
             writer.WriteBoolValue("transient_environment", TransientEnvironment);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes deploymentsPostRequestBody_payloadMember1, string
-        /// </summary>
-        public class DeploymentsPostRequestBody_payload : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type deploymentsPostRequestBody_payloadMember1</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public DeploymentsPostRequestBody_payloadMember1? DeploymentsPostRequestBodyPayloadMember1 { get; set; }
-#nullable restore
-#else
-            public DeploymentsPostRequestBody_payloadMember1 DeploymentsPostRequestBodyPayloadMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type string</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static DeploymentsPostRequestBody_payload CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new DeploymentsPostRequestBody_payload();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.DeploymentsPostRequestBodyPayloadMember1 = new DeploymentsPostRequestBody_payloadMember1();
-                }
-                else if(parseNode.GetStringValue() is string stringValue) {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(DeploymentsPostRequestBodyPayloadMember1 != null) {
-                    return DeploymentsPostRequestBodyPayloadMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(DeploymentsPostRequestBodyPayloadMember1 != null) {
-                    writer.WriteObjectValue<DeploymentsPostRequestBody_payloadMember1>(null, DeploymentsPostRequestBodyPayloadMember1);
-                }
-                else if(String != null) {
-                    writer.WriteStringValue(null, String);
-                }
-            }
         }
     }
 }

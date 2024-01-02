@@ -32,6 +32,8 @@ namespace GitHub.Models {
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The security severity of the alert.</summary>
+        public CodeScanningAlertRuleSummary_security_severity_level? SecuritySeverityLevel { get; set; }
         /// <summary>The severity of the alert.</summary>
         public CodeScanningAlertRuleSummary_severity? Severity { get; set; }
         /// <summary>A set of tags applicable for the rule.</summary>
@@ -64,6 +66,7 @@ namespace GitHub.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"security_severity_level", n => { SecuritySeverityLevel = n.GetEnumValue<CodeScanningAlertRuleSummary_security_severity_level>(); } },
                 {"severity", n => { Severity = n.GetEnumValue<CodeScanningAlertRuleSummary_severity>(); } },
                 {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -77,6 +80,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<CodeScanningAlertRuleSummary_security_severity_level>("security_severity_level", SecuritySeverityLevel);
             writer.WriteEnumValue<CodeScanningAlertRuleSummary_severity>("severity", Severity);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
