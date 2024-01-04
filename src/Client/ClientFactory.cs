@@ -1,4 +1,4 @@
-// Copyright (c) GitHub 2023 — Licensed as MIT.
+// Copyright (c) GitHub 2023 ï¿½ Licensed as MIT.
 
 using System.Net;
 using GitHub.Client.Middleware;
