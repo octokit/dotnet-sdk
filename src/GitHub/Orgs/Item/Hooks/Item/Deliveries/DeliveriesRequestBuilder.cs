@@ -101,7 +101,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries {
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>The number of results per page (max 100).</summary>
+            /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             [QueryParameter("redelivery")]

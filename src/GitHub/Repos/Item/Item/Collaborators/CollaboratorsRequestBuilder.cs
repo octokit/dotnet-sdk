@@ -96,7 +96,7 @@ namespace GitHub.Repos.Item.Item.Collaborators {
             /// <summary>Filter collaborators returned by their affiliation. `outside` means all outside collaborators of an organization-owned repository. `direct` means all collaborators with permissions to an organization-owned repository, regardless of organization membership status. `all` means all collaborators the authenticated user can see.</summary>
             [QueryParameter("affiliation")]
             public GetAffiliationQueryParameterType? AffiliationAsGetAffiliationQueryParameterType { get; set; }
-            /// <summary>Page number of the results to fetch.</summary>
+            /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>Filter collaborators by the permissions they have on the repository. If not specified, all collaborators will be returned.</summary>
@@ -113,7 +113,7 @@ namespace GitHub.Repos.Item.Item.Collaborators {
             /// <summary>Filter collaborators by the permissions they have on the repository. If not specified, all collaborators will be returned.</summary>
             [QueryParameter("permission")]
             public GetPermissionQueryParameterType? PermissionAsGetPermissionQueryParameterType { get; set; }
-            /// <summary>The number of results per page (max 100).</summary>
+            /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }
