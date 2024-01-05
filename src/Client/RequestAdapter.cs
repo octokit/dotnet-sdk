@@ -1,7 +1,6 @@
 // Copyright (c) GitHub 2023 � Licensed as MIT.
 
 using Microsoft.Kiota.Abstractions.Authentication;
-using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace GitHub.Client;
