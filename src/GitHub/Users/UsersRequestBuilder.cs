@@ -79,7 +79,7 @@ namespace GitHub.Users {
         /// Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.Note: Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of users.
         /// </summary>
         public class UsersRequestBuilderGetQueryParameters {
-            /// <summary>The number of results per page (max 100).</summary>
+            /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>A user ID. Only return users with an ID greater than this ID.</summary>

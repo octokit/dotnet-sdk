@@ -127,7 +127,7 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// This returns a list of autolinks configured for the given repository.Information about autolinks are only available to repository administrators.
         /// </summary>
         public class AutolinksRequestBuilderGetQueryParameters {
-            /// <summary>Page number of the results to fetch.</summary>
+            /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
         }
