@@ -27,7 +27,7 @@ namespace GitHub.Repos.Item.Item.Stats.Code_frequency {
         public Code_frequencyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/stats/code_frequency", rawUrl) {
         }
         /// <summary>
-        /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
+        /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.
         /// API method documentation <see href="https://docs.github.com/rest/metrics/statistics#get-the-weekly-commit-activity" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -44,7 +44,7 @@ namespace GitHub.Repos.Item.Item.Stats.Code_frequency {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
+        /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
