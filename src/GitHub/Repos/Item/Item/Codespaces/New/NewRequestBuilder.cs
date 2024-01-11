@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.New {
         public NewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/new{?ref*,client_ip*}", rawUrl) {
         }
         /// <summary>
-        /// Gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#get-default-attributes-for-a-codespace" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.New {
             return await RequestAdapter.SendAsync<NewGetResponse>(requestInfo, NewGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#get-default-attributes-for-a-codespace" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.New {
             return await RequestAdapter.SendAsync<NewResponse>(requestInfo, NewResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.New {
             return new NewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Gets the default attributes for codespaces created by the user with the repository.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// </summary>
         public class NewRequestBuilderGetQueryParameters {
             /// <summary>An alternative IP for default location auto-detection, such as when proxying a request.</summary>
