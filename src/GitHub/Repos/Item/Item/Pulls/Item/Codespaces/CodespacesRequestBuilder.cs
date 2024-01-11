@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Codespaces {
         public CodespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/{pull_number}/codespaces", rawUrl) {
         }
         /// <summary>
-        /// Creates a codespace owned by the authenticated user for the specified pull request.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Creates a codespace owned by the authenticated user for the specified pull request.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#create-a-codespace-from-a-pull-request" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -52,7 +52,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Codespaces {
             return await RequestAdapter.SendAsync<Codespace>(requestInfo, Codespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a codespace owned by the authenticated user for the specified pull request.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Creates a codespace owned by the authenticated user for the specified pull request.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

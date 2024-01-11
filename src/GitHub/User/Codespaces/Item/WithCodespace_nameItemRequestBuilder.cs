@@ -53,7 +53,7 @@ namespace GitHub.User.Codespaces.Item {
         public WithCodespace_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces/{codespace_name}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Deletes a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#delete-a-codespace-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace GitHub.User.Codespaces.Item {
             return await RequestAdapter.SendAsync<WithCodespace_nameDeleteResponse>(requestInfo, WithCodespace_nameDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Deletes a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#delete-a-codespace-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -98,7 +98,7 @@ namespace GitHub.User.Codespaces.Item {
             return await RequestAdapter.SendAsync<WithCodespace_nameResponse>(requestInfo, WithCodespace_nameResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets information about a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces` repository permission to use this endpoint.
+        /// Gets information about a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have read access to the `codespaces` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#get-a-codespace-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -120,7 +120,7 @@ namespace GitHub.User.Codespaces.Item {
             return await RequestAdapter.SendAsync<Codespace>(requestInfo, Codespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a codespace owned by the authenticated user. Currently only the codespace&apos;s machine type and recent folders can be modified using this endpoint.If you specify a new machine type it will be applied the next time your codespace is started.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Updates a codespace owned by the authenticated user. Currently only the codespace&apos;s machine type and recent folders can be modified using this endpoint.If you specify a new machine type it will be applied the next time your codespace is started.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#update-a-codespace-for-the-authenticated-user" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -143,7 +143,7 @@ namespace GitHub.User.Codespaces.Item {
             return await RequestAdapter.SendAsync<Codespace>(requestInfo, Codespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Deletes a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,7 +159,7 @@ namespace GitHub.User.Codespaces.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Gets information about a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces` repository permission to use this endpoint.
+        /// Gets information about a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have read access to the `codespaces` repository permission.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -175,7 +175,7 @@ namespace GitHub.User.Codespaces.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Updates a codespace owned by the authenticated user. Currently only the codespace&apos;s machine type and recent folders can be modified using this endpoint.If you specify a new machine type it will be applied the next time your codespace is started.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces` repository permission to use this endpoint.
+        /// Updates a codespace owned by the authenticated user. Currently only the codespace&apos;s machine type and recent folders can be modified using this endpoint.If you specify a new machine type it will be applied the next time your codespace is started.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
