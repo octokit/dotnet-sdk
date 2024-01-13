@@ -125,6 +125,14 @@ namespace GitHub.Models {
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public FullRepository_custom_properties? CustomProperties { get; set; }
+#nullable restore
+#else
+        public FullRepository_custom_properties CustomProperties { get; set; }
+#endif
         /// <summary>The default_branch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -633,6 +641,7 @@ namespace GitHub.Models {
                 {"contents_url", n => { ContentsUrl = n.GetStringValue(); } },
                 {"contributors_url", n => { ContributorsUrl = n.GetStringValue(); } },
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"custom_properties", n => { CustomProperties = n.GetObjectValue<FullRepository_custom_properties>(FullRepository_custom_properties.CreateFromDiscriminatorValue); } },
                 {"default_branch", n => { DefaultBranch = n.GetStringValue(); } },
                 {"delete_branch_on_merge", n => { DeleteBranchOnMerge = n.GetBoolValue(); } },
                 {"deployments_url", n => { DeploymentsUrl = n.GetStringValue(); } },
@@ -743,6 +752,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("contents_url", ContentsUrl);
             writer.WriteStringValue("contributors_url", ContributorsUrl);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteObjectValue<FullRepository_custom_properties>("custom_properties", CustomProperties);
             writer.WriteStringValue("default_branch", DefaultBranch);
             writer.WriteBoolValue("delete_branch_on_merge", DeleteBranchOnMerge);
             writer.WriteStringValue("deployments_url", DeploymentsUrl);
