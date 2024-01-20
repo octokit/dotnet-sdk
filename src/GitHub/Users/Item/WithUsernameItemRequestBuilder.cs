@@ -130,36 +130,16 @@ namespace GitHub.Users.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WithUsernameGetResponse?> GetAsWithUsernameGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithUsernameGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<WithUsernameGetResponse> GetAsWithUsernameGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WithUsernameGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WithUsernameGetResponse>(requestInfo, WithUsernameGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Provides publicly available information about someone with a GitHub account.GitHub Apps with the `Plan` user permission can use this endpoint to retrieve information about a user&apos;s GitHub plan. The GitHub App must be authenticated as a user. See &quot;[Identifying and authorizing users for GitHub Apps](https://docs.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/)&quot; for details about authentication. For an example response, see &apos;Response with GitHub plan information&apos; below&quot;The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be “public” which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication).The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see &quot;[Emails API](https://docs.github.com/rest/users/emails)&quot;.
-        /// API method documentation <see href="https://docs.github.com/rest/users/users#get-a-user" />
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsWithUsernameGetResponse instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<WithUsernameResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task<WithUsernameResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<WithUsernameResponse>(requestInfo, WithUsernameResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides publicly available information about someone with a GitHub account.GitHub Apps with the `Plan` user permission can use this endpoint to retrieve information about a user&apos;s GitHub plan. The GitHub App must be authenticated as a user. See &quot;[Identifying and authorizing users for GitHub Apps](https://docs.github.com/apps/building-github-apps/identifying-and-authorizing-users-for-github-apps/)&quot; for details about authentication. For an example response, see &apos;Response with GitHub plan information&apos; below&quot;The `email` key in the following response is the publicly visible email address from your GitHub [profile page](https://github.com/settings/profile). When setting up your profile, you can select a primary email address to be “public” which provides an email entry for this endpoint. If you do not set a public email address for `email`, then it will have a value of `null`. You only see publicly visible email addresses when authenticated with GitHub. For more information, see [Authentication](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#authentication).The Emails API enables you to list all of your email addresses, and toggle a primary email to be visible publicly. For more information, see &quot;[Emails API](https://docs.github.com/rest/users/emails)&quot;.
@@ -212,74 +192,6 @@ namespace GitHub.Users.Item {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new WithUsernameGetResponse();
-                if("private-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.PrivateUser = new GitHub.Models.PrivateUser();
-                }
-                else if("public-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.PublicUser = new GitHub.Models.PublicUser();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(PrivateUser != null) {
-                    return PrivateUser.GetFieldDeserializers();
-                }
-                else if(PublicUser != null) {
-                    return PublicUser.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(PrivateUser != null) {
-                    writer.WriteObjectValue<GitHub.Models.PrivateUser>(null, PrivateUser);
-                }
-                else if(PublicUser != null) {
-                    writer.WriteObjectValue<GitHub.Models.PublicUser>(null, PublicUser);
-                }
-            }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WithUsernameItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
-        }
-        /// <summary>
-        /// Composed type wrapper for classes privateUser, publicUser
-        /// </summary>
-        public class WithUsernameResponse : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type privateUser</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public GitHub.Models.PrivateUser? PrivateUser { get; set; }
-#nullable restore
-#else
-            public GitHub.Models.PrivateUser PrivateUser { get; set; }
-#endif
-            /// <summary>Composed type representation for type publicUser</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public GitHub.Models.PublicUser? PublicUser { get; set; }
-#nullable restore
-#else
-            public GitHub.Models.PublicUser PublicUser { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static WithUsernameResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new WithUsernameResponse();
                 if("private-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.PrivateUser = new GitHub.Models.PrivateUser();
                 }

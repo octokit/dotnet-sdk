@@ -18,14 +18,6 @@ namespace GitHub.Assignments {
             urlTplParams.Add("assignment_id", position);
             return new WithAssignment_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the GitHub.assignments.item collection</summary>
-        /// <param name="position">The unique identifier of the classroom assignment.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithAssignment_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("assignment_id", position);
-            return new WithAssignment_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new AssignmentsRequestBuilder and sets the default values.
         /// </summary>

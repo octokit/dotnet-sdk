@@ -36,10 +36,10 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GenerateJitconfigPostResponse?> PostAsGenerateJitconfigPostResponseAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GenerateJitconfigPostResponse?> PostAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<GenerateJitconfigPostResponse> PostAsGenerateJitconfigPostResponseAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GenerateJitconfigPostResponse> PostAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -48,29 +48,6 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
                 {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GenerateJitconfigPostResponse>(requestInfo, GenerateJitconfigPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Generates a configuration that can be passed to the runner application at startup.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
-        /// API method documentation <see href="https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-a-repository" />
-        /// </summary>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsGenerateJitconfigPostResponse instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<GenerateJitconfigResponse?> PostAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task<GenerateJitconfigResponse> PostAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<GenerateJitconfigResponse>(requestInfo, GenerateJitconfigResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Generates a configuration that can be passed to the runner application at startup.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
@@ -97,12 +74,6 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GenerateJitconfigRequestBuilder WithUrl(string rawUrl) {
             return new GenerateJitconfigRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GenerateJitconfigRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

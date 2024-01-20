@@ -165,10 +165,10 @@ namespace GitHub.User {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserGetResponse?> GetAsUserGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<UserGetResponse> GetAsUserGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -176,27 +176,6 @@ namespace GitHub.User {
                 {"403", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserGetResponse>(requestInfo, UserGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// If the authenticated user is authenticated with an OAuth token with the `user` scope, then the response lists public and private profile information.If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
-        /// API method documentation <see href="https://docs.github.com/rest/users/users#get-the-authenticated-user" />
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsUserGetResponse instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<UserResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task<UserResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<UserResponse>(requestInfo, UserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.
@@ -292,80 +271,6 @@ namespace GitHub.User {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new UserGetResponse();
-                if("private-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.PrivateUser = new GitHub.Models.PrivateUser();
-                }
-                else if("public-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
-                    result.PublicUser = new GitHub.Models.PublicUser();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(PrivateUser != null) {
-                    return PrivateUser.GetFieldDeserializers();
-                }
-                else if(PublicUser != null) {
-                    return PublicUser.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(PrivateUser != null) {
-                    writer.WriteObjectValue<GitHub.Models.PrivateUser>(null, PrivateUser);
-                }
-                else if(PublicUser != null) {
-                    writer.WriteObjectValue<GitHub.Models.PublicUser>(null, PublicUser);
-                }
-            }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
-        }
-        /// <summary>
-        /// Composed type wrapper for classes privateUser, publicUser
-        /// </summary>
-        public class UserResponse : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type privateUser</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public GitHub.Models.PrivateUser? PrivateUser { get; set; }
-#nullable restore
-#else
-            public GitHub.Models.PrivateUser PrivateUser { get; set; }
-#endif
-            /// <summary>Composed type representation for type publicUser</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public GitHub.Models.PublicUser? PublicUser { get; set; }
-#nullable restore
-#else
-            public GitHub.Models.PublicUser PublicUser { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static UserResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new UserResponse();
                 if("private-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.PrivateUser = new GitHub.Models.PrivateUser();
                 }

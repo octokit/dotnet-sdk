@@ -18,14 +18,6 @@ namespace GitHub.Marketplace_listing.Stubbed.Accounts {
             urlTplParams.Add("account_id", position);
             return new WithAccount_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the GitHub.marketplace_listing.stubbed.accounts.item collection</summary>
-        /// <param name="position">account_id parameter</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithAccount_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("account_id", position);
-            return new WithAccount_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new AccountsRequestBuilder and sets the default values.
         /// </summary>
