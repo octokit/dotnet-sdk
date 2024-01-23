@@ -45,6 +45,8 @@ namespace GitHub.Models {
 #endif
         /// <summary>Whether the property is required.</summary>
         public bool? Required { get; set; }
+        /// <summary>Who can edit the values of the property</summary>
+        public OrgCustomProperty_values_editable_by? ValuesEditableBy { get; set; }
         /// <summary>The type of the value for the property</summary>
         public OrgCustomProperty_value_type? ValueType { get; set; }
         /// <summary>
@@ -72,6 +74,7 @@ namespace GitHub.Models {
                 {"property_name", n => { PropertyName = n.GetStringValue(); } },
                 {"required", n => { Required = n.GetBoolValue(); } },
                 {"value_type", n => { ValueType = n.GetEnumValue<OrgCustomProperty_value_type>(); } },
+                {"values_editable_by", n => { ValuesEditableBy = n.GetEnumValue<OrgCustomProperty_values_editable_by>(); } },
             };
         }
         /// <summary>
@@ -85,6 +88,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("property_name", PropertyName);
             writer.WriteBoolValue("required", Required);
+            writer.WriteEnumValue<OrgCustomProperty_values_editable_by>("values_editable_by", ValuesEditableBy);
             writer.WriteEnumValue<OrgCustomProperty_value_type>("value_type", ValueType);
             writer.WriteAdditionalData(AdditionalData);
         }

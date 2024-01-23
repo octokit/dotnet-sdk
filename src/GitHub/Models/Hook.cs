@@ -13,13 +13,13 @@ namespace GitHub.Models {
         public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The config property</summary>
+        /// <summary>Configuration object of the webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Hook_config? Config { get; set; }
+        public WebhookConfig? Config { get; set; }
 #nullable restore
 #else
-        public Hook_config Config { get; set; }
+        public WebhookConfig Config { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -111,7 +111,7 @@ namespace GitHub.Models {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"active", n => { Active = n.GetBoolValue(); } },
-                {"config", n => { Config = n.GetObjectValue<Hook_config>(Hook_config.CreateFromDiscriminatorValue); } },
+                {"config", n => { Config = n.GetObjectValue<WebhookConfig>(WebhookConfig.CreateFromDiscriminatorValue); } },
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 {"deliveries_url", n => { DeliveriesUrl = n.GetStringValue(); } },
                 {"events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -132,7 +132,7 @@ namespace GitHub.Models {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
-            writer.WriteObjectValue<Hook_config>("config", Config);
+            writer.WriteObjectValue<WebhookConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("deliveries_url", DeliveriesUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);

@@ -21,14 +21,6 @@ namespace GitHub.Repos.Item.Item.Environments.Item.DeploymentBranchPolicies {
             urlTplParams.Add("branch_policy_id", position);
             return new WithBranch_policy_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the GitHub.repos.item.item.environments.item.deploymentBranchPolicies.item collection</summary>
-        /// <param name="position">The unique identifier of the branch policy.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithBranch_policy_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("branch_policy_id", position);
-            return new WithBranch_policy_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new DeploymentBranchPoliciesRequestBuilder and sets the default values.
         /// </summary>
@@ -51,30 +43,13 @@ namespace GitHub.Repos.Item.Item.Environments.Item.DeploymentBranchPolicies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DeploymentBranchPoliciesGetResponse?> GetAsDeploymentBranchPoliciesGetResponseAsync(Action<RequestConfiguration<DeploymentBranchPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeploymentBranchPoliciesGetResponse?> GetAsync(Action<RequestConfiguration<DeploymentBranchPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<DeploymentBranchPoliciesGetResponse> GetAsDeploymentBranchPoliciesGetResponseAsync(Action<RequestConfiguration<DeploymentBranchPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<DeploymentBranchPoliciesGetResponse> GetAsync(Action<RequestConfiguration<DeploymentBranchPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<DeploymentBranchPoliciesGetResponse>(requestInfo, DeploymentBranchPoliciesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Lists the deployment branch policies for an environment.Anyone with read access to the repository can use this endpoint. If the repository is private, you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-        /// API method documentation <see href="https://docs.github.com/rest/deployments/branch-policies#list-deployment-branch-policies" />
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsDeploymentBranchPoliciesGetResponse instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<DeploymentBranchPoliciesResponse?> GetAsync(Action<RequestConfiguration<DeploymentBranchPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task<DeploymentBranchPoliciesResponse> GetAsync(Action<RequestConfiguration<DeploymentBranchPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<DeploymentBranchPoliciesResponse>(requestInfo, DeploymentBranchPoliciesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a deployment branch or tag policy for an environment.You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
@@ -146,18 +121,6 @@ namespace GitHub.Repos.Item.Item.Environments.Item.DeploymentBranchPolicies {
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeploymentBranchPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<DeploymentBranchPoliciesRequestBuilderGetQueryParameters> {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeploymentBranchPoliciesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
         }
     }
 }

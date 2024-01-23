@@ -18,14 +18,6 @@ namespace GitHub.Notifications.Threads {
             urlTplParams.Add("thread_id", position);
             return new WithThread_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the GitHub.notifications.threads.item collection</summary>
-        /// <param name="position">The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user)).</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithThread_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("thread_id", position);
-            return new WithThread_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new ThreadsRequestBuilder and sets the default values.
         /// </summary>

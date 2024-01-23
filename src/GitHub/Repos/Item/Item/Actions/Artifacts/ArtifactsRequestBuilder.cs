@@ -20,14 +20,6 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts {
             urlTplParams.Add("artifact_id", position);
             return new WithArtifact_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the GitHub.repos.item.item.actions.artifacts.item collection</summary>
-        /// <param name="position">The unique identifier of the artifact.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithArtifact_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("artifact_id", position);
-            return new WithArtifact_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new ArtifactsRequestBuilder and sets the default values.
         /// </summary>
@@ -50,30 +42,13 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ArtifactsGetResponse?> GetAsArtifactsGetResponseAsync(Action<RequestConfiguration<ArtifactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ArtifactsGetResponse?> GetAsync(Action<RequestConfiguration<ArtifactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<ArtifactsGetResponse> GetAsArtifactsGetResponseAsync(Action<RequestConfiguration<ArtifactsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ArtifactsGetResponse> GetAsync(Action<RequestConfiguration<ArtifactsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<ArtifactsGetResponse>(requestInfo, ArtifactsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
-        /// API method documentation <see href="https://docs.github.com/rest/actions/artifacts#list-artifacts-for-a-repository" />
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsArtifactsGetResponse instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<ArtifactsResponse?> GetAsync(Action<RequestConfiguration<ArtifactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task<ArtifactsResponse> GetAsync(Action<RequestConfiguration<ArtifactsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<ArtifactsResponse>(requestInfo, ArtifactsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all artifacts for a repository. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
@@ -118,12 +93,6 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts {
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ArtifactsRequestBuilderGetRequestConfiguration : RequestConfiguration<ArtifactsRequestBuilderGetQueryParameters> {
         }
     }
 }

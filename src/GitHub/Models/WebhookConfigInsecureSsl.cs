@@ -27,10 +27,6 @@ namespace GitHub.Models {
         public double? WebhookConfigInsecureSslDouble3 { get; set; }
         /// <summary>Composed type representation for type double</summary>
         public double? WebhookConfigInsecureSslDouble4 { get; set; }
-        /// <summary>Composed type representation for type double</summary>
-        public double? WebhookConfigInsecureSslDouble5 { get; set; }
-        /// <summary>Composed type representation for type double</summary>
-        public double? WebhookConfigInsecureSslDouble6 { get; set; }
         /// <summary>Composed type representation for type string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,22 +75,6 @@ namespace GitHub.Models {
 #else
         public string WebhookConfigInsecureSslString4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type string</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WebhookConfigInsecureSslString5 { get; set; }
-#nullable restore
-#else
-        public string WebhookConfigInsecureSslString5 { get; set; }
-#endif
-        /// <summary>Composed type representation for type string</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WebhookConfigInsecureSslString6 { get; set; }
-#nullable restore
-#else
-        public string WebhookConfigInsecureSslString6 { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -127,12 +107,6 @@ namespace GitHub.Models {
             else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble4Value) {
                 result.WebhookConfigInsecureSslDouble4 = webhookConfigInsecureSslDouble4Value;
             }
-            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble5Value) {
-                result.WebhookConfigInsecureSslDouble5 = webhookConfigInsecureSslDouble5Value;
-            }
-            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble6Value) {
-                result.WebhookConfigInsecureSslDouble6 = webhookConfigInsecureSslDouble6Value;
-            }
             else if(parseNode.GetStringValue() is string webhookConfigInsecureSslStringValue) {
                 result.WebhookConfigInsecureSslString = webhookConfigInsecureSslStringValue;
             }
@@ -150,12 +124,6 @@ namespace GitHub.Models {
             }
             else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString4Value) {
                 result.WebhookConfigInsecureSslString4 = webhookConfigInsecureSslString4Value;
-            }
-            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString5Value) {
-                result.WebhookConfigInsecureSslString5 = webhookConfigInsecureSslString5Value;
-            }
-            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString6Value) {
-                result.WebhookConfigInsecureSslString6 = webhookConfigInsecureSslString6Value;
             }
             return result;
         }
@@ -195,12 +163,6 @@ namespace GitHub.Models {
             else if(WebhookConfigInsecureSslDouble4 != null) {
                 writer.WriteDoubleValue(null, WebhookConfigInsecureSslDouble4);
             }
-            else if(WebhookConfigInsecureSslDouble5 != null) {
-                writer.WriteDoubleValue(null, WebhookConfigInsecureSslDouble5);
-            }
-            else if(WebhookConfigInsecureSslDouble6 != null) {
-                writer.WriteDoubleValue(null, WebhookConfigInsecureSslDouble6);
-            }
             else if(WebhookConfigInsecureSslString != null) {
                 writer.WriteStringValue(null, WebhookConfigInsecureSslString);
             }
@@ -218,12 +180,6 @@ namespace GitHub.Models {
             }
             else if(WebhookConfigInsecureSslString4 != null) {
                 writer.WriteStringValue(null, WebhookConfigInsecureSslString4);
-            }
-            else if(WebhookConfigInsecureSslString5 != null) {
-                writer.WriteStringValue(null, WebhookConfigInsecureSslString5);
-            }
-            else if(WebhookConfigInsecureSslString6 != null) {
-                writer.WriteStringValue(null, WebhookConfigInsecureSslString6);
             }
         }
     }

@@ -134,33 +134,11 @@ namespace GitHub.Advisories {
             public string Cwes { get; set; }
 #endif
             /// <summary>The direction to sort the results by.</summary>
-            [Obsolete("This property is deprecated, use directionAsGetDirectionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direction")]
-            public string? Direction { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direction")]
-            public string Direction { get; set; }
-#endif
-            /// <summary>The direction to sort the results by.</summary>
-            [QueryParameter("direction")]
-            public GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
-            /// <summary>If specified, only advisories for these ecosystems will be returned.</summary>
-            [Obsolete("This property is deprecated, use ecosystemAsGetEcosystemQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ecosystem")]
-            public string? Ecosystem { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ecosystem")]
-            public string Ecosystem { get; set; }
-#endif
+            public GetDirectionQueryParameterType? Direction { get; set; }
             /// <summary>If specified, only advisories for these ecosystems will be returned.</summary>
             [QueryParameter("ecosystem")]
-            public GetEcosystemQueryParameterType? EcosystemAsGetEcosystemQueryParameterType { get; set; }
+            public GetEcosystemQueryParameterType? Ecosystem { get; set; }
             /// <summary>If specified, only advisories with this GHSA (GitHub Security Advisory) identifier will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,47 +176,14 @@ namespace GitHub.Advisories {
             public string Published { get; set; }
 #endif
             /// <summary>If specified, only advisories with these severities will be returned.</summary>
-            [Obsolete("This property is deprecated, use severityAsGetSeverityQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("severity")]
-            public string? Severity { get; set; }
-#nullable restore
-#else
-            [QueryParameter("severity")]
-            public string Severity { get; set; }
-#endif
-            /// <summary>If specified, only advisories with these severities will be returned.</summary>
-            [QueryParameter("severity")]
-            public GetSeverityQueryParameterType? SeverityAsGetSeverityQueryParameterType { get; set; }
-            /// <summary>The property to sort the results by.</summary>
-            [Obsolete("This property is deprecated, use sortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
+            public GetSeverityQueryParameterType? Severity { get; set; }
             /// <summary>The property to sort the results by.</summary>
             [QueryParameter("sort")]
-            public GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-            /// <summary>If specified, only advisories of this type will be returned. By default, a request with no other parameters defined will only return reviewed advisories that are not malware.</summary>
-            [Obsolete("This property is deprecated, use typeAsGetTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public GetSortQueryParameterType? Sort { get; set; }
             /// <summary>If specified, only advisories of this type will be returned. By default, a request with no other parameters defined will only return reviewed advisories that are not malware.</summary>
             [QueryParameter("type")]
-            public GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
+            public GetTypeQueryParameterType? Type { get; set; }
             /// <summary>If specified, only return advisories that were updated on a date or date range.For more information on the syntax of the date range, see &quot;[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -249,12 +194,6 @@ namespace GitHub.Advisories {
             [QueryParameter("updated")]
             public string Updated { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AdvisoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters> {
         }
     }
 }

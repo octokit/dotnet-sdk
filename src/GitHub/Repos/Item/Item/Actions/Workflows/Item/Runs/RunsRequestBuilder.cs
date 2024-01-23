@@ -34,30 +34,13 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RunsGetResponse?> GetAsRunsGetResponseAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RunsGetResponse?> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<RunsGetResponse> GetAsRunsGetResponseAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RunsGetResponse> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<RunsGetResponse>(requestInfo, RunsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
-        /// API method documentation <see href="https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow" />
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsRunsGetResponse instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<RunsResponse?> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task<RunsResponse> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<RunsResponse>(requestInfo, RunsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope.
@@ -142,25 +125,8 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.</summary>
-            [Obsolete("This property is deprecated, use statusAsGetStatusQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public string Status { get; set; }
-#endif
-            /// <summary>Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.</summary>
-            [QueryParameter("status")]
-            public GetStatusQueryParameterType? StatusAsGetStatusQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RunsRequestBuilderGetRequestConfiguration : RequestConfiguration<RunsRequestBuilderGetQueryParameters> {
+            public GetStatusQueryParameterType? Status { get; set; }
         }
     }
 }

@@ -18,14 +18,6 @@ namespace GitHub.Repos.Item.Item.Releases.Assets {
             urlTplParams.Add("asset_id", position);
             return new WithAsset_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the GitHub.repos.item.item.releases.assets.item collection</summary>
-        /// <param name="position">The unique identifier of the asset.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithAsset_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("asset_id", position);
-            return new WithAsset_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new AssetsRequestBuilder and sets the default values.
         /// </summary>

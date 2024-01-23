@@ -20,14 +20,6 @@ namespace GitHub.Repos.Item.Item.Hooks {
 #else
         public string ContentType { get; set; }
 #endif
-        /// <summary>The digest property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Digest { get; set; }
-#nullable restore
-#else
-        public string Digest { get; set; }
-#endif
         /// <summary>The insecure_ssl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,14 +35,6 @@ namespace GitHub.Repos.Item.Item.Hooks {
 #nullable restore
 #else
         public string Secret { get; set; }
-#endif
-        /// <summary>The token property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Token { get; set; }
-#nullable restore
-#else
-        public string Token { get; set; }
 #endif
         /// <summary>The URL to which the payloads will be delivered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,10 +64,8 @@ namespace GitHub.Repos.Item.Item.Hooks {
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"content_type", n => { ContentType = n.GetStringValue(); } },
-                {"digest", n => { Digest = n.GetStringValue(); } },
                 {"insecure_ssl", n => { InsecureSsl = n.GetObjectValue<WebhookConfigInsecureSsl>(WebhookConfigInsecureSsl.CreateFromDiscriminatorValue); } },
                 {"secret", n => { Secret = n.GetStringValue(); } },
-                {"token", n => { Token = n.GetStringValue(); } },
                 {"url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -94,10 +76,8 @@ namespace GitHub.Repos.Item.Item.Hooks {
         public virtual void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content_type", ContentType);
-            writer.WriteStringValue("digest", Digest);
             writer.WriteObjectValue<WebhookConfigInsecureSsl>("insecure_ssl", InsecureSsl);
             writer.WriteStringValue("secret", Secret);
-            writer.WriteStringValue("token", Token);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

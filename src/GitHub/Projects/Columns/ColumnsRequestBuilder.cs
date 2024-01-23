@@ -23,14 +23,6 @@ namespace GitHub.Projects.Columns {
             urlTplParams.Add("column_id", position);
             return new WithColumn_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the GitHub.projects.columns.item collection</summary>
-        /// <param name="position">The unique identifier of the column.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithColumn_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("column_id", position);
-            return new WithColumn_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new ColumnsRequestBuilder and sets the default values.
         /// </summary>

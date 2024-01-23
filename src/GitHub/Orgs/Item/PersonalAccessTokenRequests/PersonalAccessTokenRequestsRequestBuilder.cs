@@ -21,14 +21,6 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
             urlTplParams.Add("pat_request_id", position);
             return new WithPat_request_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the GitHub.orgs.item.personalAccessTokenRequests.item collection</summary>
-        /// <param name="position">Unique identifier of the request for access via fine-grained personal access token.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithPat_request_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("pat_request_id", position);
-            return new WithPat_request_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new PersonalAccessTokenRequestsRequestBuilder and sets the default values.
         /// </summary>
@@ -75,10 +67,10 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PersonalAccessTokenRequestsPostResponse?> PostAsPersonalAccessTokenRequestsPostResponseAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PersonalAccessTokenRequestsPostResponse?> PostAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<PersonalAccessTokenRequestsPostResponse> PostAsPersonalAccessTokenRequestsPostResponseAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PersonalAccessTokenRequestsPostResponse> PostAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -89,31 +81,6 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
                 {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PersonalAccessTokenRequestsPostResponse>(requestInfo, PersonalAccessTokenRequestsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Approves or denies multiple pending requests to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
-        /// API method documentation <see href="https://docs.github.com/rest/orgs/personal-access-tokens#review-requests-to-access-organization-resources-with-fine-grained-personal-access-tokens" />
-        /// </summary>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use PostAsPersonalAccessTokenRequestsPostResponse instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<PersonalAccessTokenRequestsResponse?> PostAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task<PersonalAccessTokenRequestsResponse> PostAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<PersonalAccessTokenRequestsResponse>(requestInfo, PersonalAccessTokenRequestsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
@@ -162,19 +129,8 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
         /// </summary>
         public class PersonalAccessTokenRequestsRequestBuilderGetQueryParameters {
             /// <summary>The direction to sort the results by.</summary>
-            [Obsolete("This property is deprecated, use directionAsGetDirectionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direction")]
-            public string? Direction { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direction")]
-            public string Direction { get; set; }
-#endif
-            /// <summary>The direction to sort the results by.</summary>
-            [QueryParameter("direction")]
-            public GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
+            public GetDirectionQueryParameterType? Direction { get; set; }
             /// <summary>Only show fine-grained personal access tokens used after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
             [QueryParameter("last_used_after")]
             public DateTimeOffset? LastUsedAfter { get; set; }
@@ -218,31 +174,8 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
             public string Repository { get; set; }
 #endif
             /// <summary>The property by which to sort the results.</summary>
-            [Obsolete("This property is deprecated, use sortAsGetSortQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort")]
-            public string? Sort { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort")]
-            public string Sort { get; set; }
-#endif
-            /// <summary>The property by which to sort the results.</summary>
-            [QueryParameter("sort")]
-            public GetSortQueryParameterType? SortAsGetSortQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PersonalAccessTokenRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<PersonalAccessTokenRequestsRequestBuilderGetQueryParameters> {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PersonalAccessTokenRequestsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> {
+            public GetSortQueryParameterType? Sort { get; set; }
         }
     }
 }

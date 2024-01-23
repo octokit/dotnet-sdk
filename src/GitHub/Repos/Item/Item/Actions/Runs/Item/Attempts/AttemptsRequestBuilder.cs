@@ -18,14 +18,6 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts {
             urlTplParams.Add("attempt_number", position);
             return new WithAttempt_numberItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
-        /// <summary>Gets an item from the GitHub.repos.item.item.actions.runs.item.attempts.item collection</summary>
-        /// <param name="position">The attempt number of the workflow run.</param>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public WithAttempt_numberItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("attempt_number", position);
-            return new WithAttempt_numberItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
         /// <summary>
         /// Instantiates a new AttemptsRequestBuilder and sets the default values.
         /// </summary>

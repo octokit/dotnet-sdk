@@ -34,30 +34,13 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CheckRunsGetResponse?> GetAsCheckRunsGetResponseAsync(Action<RequestConfiguration<CheckRunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CheckRunsGetResponse?> GetAsync(Action<RequestConfiguration<CheckRunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<CheckRunsGetResponse> GetAsCheckRunsGetResponseAsync(Action<RequestConfiguration<CheckRunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CheckRunsGetResponse> GetAsync(Action<RequestConfiguration<CheckRunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<CheckRunsGetResponse>(requestInfo, CheckRunsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Lists check runs for a check suite using its `id`.GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
-        /// API method documentation <see href="https://docs.github.com/rest/checks/runs#list-check-runs-in-a-check-suite" />
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("This method is obsolete. Use GetAsCheckRunsGetResponse instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<CheckRunsResponse?> GetAsync(Action<RequestConfiguration<CheckRunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
-#nullable restore
-#else
-        public async Task<CheckRunsResponse> GetAsync(Action<RequestConfiguration<CheckRunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<CheckRunsResponse>(requestInfo, CheckRunsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists check runs for a check suite using its `id`.GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
@@ -97,19 +80,8 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns {
             public string CheckName { get; set; }
 #endif
             /// <summary>Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.</summary>
-            [Obsolete("This property is deprecated, use filterAsGetFilterQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("filter")]
-            public string? Filter { get; set; }
-#nullable restore
-#else
-            [QueryParameter("filter")]
-            public string Filter { get; set; }
-#endif
-            /// <summary>Filters check runs by their `completed_at` timestamp. `latest` returns the most recent check runs.</summary>
-            [QueryParameter("filter")]
-            public GetFilterQueryParameterType? FilterAsGetFilterQueryParameterType { get; set; }
+            public GetFilterQueryParameterType? Filter { get; set; }
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -117,25 +89,8 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns {
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Returns check runs with the specified `status`.</summary>
-            [Obsolete("This property is deprecated, use statusAsGetStatusQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public string Status { get; set; }
-#endif
-            /// <summary>Returns check runs with the specified `status`.</summary>
-            [QueryParameter("status")]
-            public GetStatusQueryParameterType? StatusAsGetStatusQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CheckRunsRequestBuilderGetRequestConfiguration : RequestConfiguration<CheckRunsRequestBuilderGetQueryParameters> {
+            public GetStatusQueryParameterType? Status { get; set; }
         }
     }
 }
