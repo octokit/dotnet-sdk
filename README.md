@@ -6,6 +6,16 @@ An "alpha" version of a generated .NET SDK in C# from [GitHub's OpenAPI spec](ht
 
 ## How do I use it?
 
+### Installation
+
+To install the package, you can use either of the following options:
+
+- In Visual Studio, from the Package Explorer, search for `Octokit.NET.SDK`, or
+- Type `Install-Package Octokit.NET.SDK` into the Package Manager Console, or
+- Type `dotnet add ./path/to/myproject.csproj package Octokit.NET.SDK` in a terminal (replace `./path/to/myproject.csproj` by the path to the _*.csproj_ file you want to add the dependency)
+
+### Make your first request
+
 ```csharp
 using GitHub;
 using GitHub.Client;
