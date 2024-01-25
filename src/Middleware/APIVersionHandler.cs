@@ -1,9 +1,9 @@
-// Copyright (c) GitHub 2023 — Licensed as MIT.
+// Copyright (c) GitHub 2023 ï¿½ Licensed as MIT.
 
-using GitHub.Client.Middleware.Options;
+using GitHub.Octokit.Client.Middleware.Options;
 using Microsoft.Kiota.Http.HttpClientLibrary.Extensions;
 
-namespace GitHub.Client.Middleware;
+namespace GitHub.Octokit.Client.Middleware;
 
 /// <summary>
 /// Represents a handler that adds the API version header to outgoing HTTP requests.

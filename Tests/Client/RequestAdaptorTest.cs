@@ -1,6 +1,6 @@
 using Xunit;
-using GitHub.Client;
-using GitHub.Authentication;
+using GitHub.Octokit.Client;
+using GitHub.Octokit.Authentication;
 using NSubstitute;
 
 public class RequestAdapterTests

@@ -3,7 +3,7 @@
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
-namespace GitHub.Client;
+namespace GitHub.Octokit.Client;
 
 public static class RequestAdapter
 {

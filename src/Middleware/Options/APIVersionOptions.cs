@@ -1,8 +1,8 @@
-// Copyright (c) GitHub 2023 — Licensed as MIT.
+// Copyright (c) GitHub 2023 ï¿½ Licensed as MIT.
 
 using Microsoft.Kiota.Abstractions;
 
-namespace GitHub.Client.Middleware.Options;
+namespace GitHub.Octokit.Client.Middleware.Options;
 
 /// <summary>
 /// Represents the API version options for the middleware.

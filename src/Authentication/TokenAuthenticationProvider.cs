@@ -1,9 +1,9 @@
-// Copyright (c) GitHub 2023 — Licensed as MIT.
+// Copyright (c) GitHub 2023 ï¿½ Licensed as MIT.
 
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Authentication;
 
-namespace GitHub.Authentication;
+namespace GitHub.Octokit.Authentication;
 
 // TODO: Consider implementing `Basic` authentication scheme as a separate class
 // TODO: Consider implementing `Anonymous` authentication scheme as a separate class
