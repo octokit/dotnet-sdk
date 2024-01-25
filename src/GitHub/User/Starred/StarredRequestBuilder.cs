@@ -36,7 +36,7 @@ namespace GitHub.User.Starred {
         public StarredRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/starred{?sort*,direction*,per_page*,page*}", rawUrl) {
         }
         /// <summary>
-        /// Lists repositories the authenticated user has starred.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
+        /// Lists repositories the authenticated user has starred.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
         /// API method documentation <see href="https://docs.github.com/rest/activity/starring#list-repositories-starred-by-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace GitHub.User.Starred {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Lists repositories the authenticated user has starred.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
+        /// Lists repositories the authenticated user has starred.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace GitHub.User.Starred {
             return new StarredRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists repositories the authenticated user has starred.You can also find out _when_ stars were created by passing the following custom [media type](https://docs.github.com/rest/overview/media-types/) via the `Accept` header: `application/vnd.github.star+json`.
+        /// Lists repositories the authenticated user has starred.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
         /// </summary>
         public class StarredRequestBuilderGetQueryParameters {
             /// <summary>The direction to sort the results by.</summary>
