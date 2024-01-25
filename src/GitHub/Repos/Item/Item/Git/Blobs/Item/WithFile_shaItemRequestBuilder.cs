@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Git.Blobs.Item {
         public WithFile_shaItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/git/blobs/{file_sha}", rawUrl) {
         }
         /// <summary>
-        /// The `content` in the response will always be Base64 encoded._Note_: This API supports blobs up to 100 megabytes in size.
+        /// The `content` in the response will always be Base64 encoded.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.raw+json`**: Returns the raw blob data.- **`application/vnd.github+json`**: Returns a JSON representation of the blob with `content` as a base64 encoded string. This is the default if no media type is specified.**Note** This endpoint supports blobs up to 100 megabytes in size.
         /// API method documentation <see href="https://docs.github.com/rest/git/blobs#get-a-blob" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace GitHub.Repos.Item.Item.Git.Blobs.Item {
             return await RequestAdapter.SendAsync<Blob>(requestInfo, Blob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `content` in the response will always be Base64 encoded._Note_: This API supports blobs up to 100 megabytes in size.
+        /// The `content` in the response will always be Base64 encoded.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.raw+json`**: Returns the raw blob data.- **`application/vnd.github+json`**: Returns a JSON representation of the blob with `content` as a base64 encoded string. This is the default if no media type is specified.**Note** This endpoint supports blobs up to 100 megabytes in size.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
