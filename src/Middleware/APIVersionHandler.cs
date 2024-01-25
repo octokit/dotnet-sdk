@@ -1,4 +1,4 @@
-// Copyright (c) GitHub 2023 � Licensed as MIT.
+// Copyright (c) GitHub 2023 - Licensed as MIT.
 
 using GitHub.Octokit.Client.Middleware.Options;
 using Microsoft.Kiota.Http.HttpClientLibrary.Extensions;
