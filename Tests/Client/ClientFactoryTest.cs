@@ -1,5 +1,5 @@
 using Xunit;
-using GitHub.Client;
+using GitHub.Octokit.Client;
 
 public class ClientFactoryTests
 {

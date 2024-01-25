@@ -1,9 +1,9 @@
-// Copyright (c) GitHub 2023 � Licensed as MIT.
+// Copyright (c) GitHub 2023 - Licensed as MIT.
 
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
-namespace GitHub.Client;
+namespace GitHub.Octokit.Client;
 
 public static class RequestAdapter
 {

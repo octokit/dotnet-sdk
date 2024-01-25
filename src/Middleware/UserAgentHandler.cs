@@ -1,10 +1,10 @@
-// Copyright (c) GitHub 2023 — Licensed as MIT.
+// Copyright (c) GitHub 2023 - Licensed as MIT.
 
 using System.Net.Http.Headers;
-using GitHub.Client.Middleware.Options;
+using GitHub.Octokit.Client.Middleware.Options;
 using Microsoft.Kiota.Http.HttpClientLibrary.Extensions;
 
-namespace GitHub.Client.Middleware;
+namespace GitHub.Octokit.Client.Middleware;
 
 public class UserAgentHandler(UserAgentOptions? userAgentHandlerOption = null) : DelegatingHandler
 {

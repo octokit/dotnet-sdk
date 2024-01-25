@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageId>Octokit.NET.SDK</PackageId>
+    <PackageId>GitHub.Octokit.SDK</PackageId>
     <Version>0.0.1-alpha</Version>
     <NuGetVersion>0.0.1-alpha</NuGetVersion>
     <Title>Octokit</Title>

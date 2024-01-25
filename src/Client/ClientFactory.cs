@@ -1,9 +1,9 @@
-// Copyright (c) GitHub 2023 � Licensed as MIT.
+// Copyright (c) GitHub 2023 - Licensed as MIT.
 
 using System.Net;
-using GitHub.Client.Middleware;
+using GitHub.Octokit.Client.Middleware;
 
-namespace GitHub.Client;
+namespace GitHub.Octokit.Client;
 
 /// <summary>
 /// Represents a client factory for creating <see cref="HttpClient"/>.

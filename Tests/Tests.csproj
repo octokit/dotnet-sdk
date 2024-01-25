@@ -38,6 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Octokit.NET.SDK.csproj" />
+    <ProjectReference Include="..\src\GitHub.Octokit.SDK.csproj" />
   </ItemGroup>
 </Project>
