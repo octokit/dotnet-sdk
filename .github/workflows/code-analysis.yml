@@ -20,7 +20,7 @@ jobs:
 
     # Run code analysis for all projects/solutions, such that code analysis violations break the build.
     - name: Run .NET Code Analysis
-      uses: dotnet/code-analysis@v1
+      uses: dotnet/code-analysis@d3a5cb6ef8547e36e87c4378cc3e982d9fe1afe7
       id: code-analysis
       with:
         build-breaking: true
