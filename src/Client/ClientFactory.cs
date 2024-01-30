@@ -10,8 +10,8 @@ namespace GitHub.Octokit.Client;
 /// </summary>
 public static class ClientFactory
 {
-    private static readonly Lazy<List<DelegatingHandler>> s_handlers = 
-        new(() => 
+    private static readonly Lazy<List<DelegatingHandler>> s_handlers =
+        new(() =>
         [
             new APIVersionHandler(),
             new UserAgentHandler(),
@@ -79,7 +79,7 @@ public static class ClientFactory
     /// <param name="handlers">The collection of <see cref="DelegatingHandler"/> instances to chain.</param>
     /// <returns>The first link in the chain of <see cref="DelegatingHandler"/> instances.</returns>
     public static DelegatingHandler? ChainHandlersCollectionAndGetFirstLink(
-        params DelegatingHandler[] handlers) => 
+        params DelegatingHandler[] handlers) =>
         ChainHandlersCollectionAndGetFirstLink(null, handlers);
 
     /// <summary>
