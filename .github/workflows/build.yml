@@ -21,7 +21,7 @@ jobs:
         with:
           dotnet-version: '8.x.x'
 
-      - name: Lint
+      - name: Format
         run: dotnet format --verify-no-changes
 
       - name: Build and strong name sign
