@@ -1,0 +1,26 @@
+name: "Run code analysis on .NET source code"
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  analysis:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run NuGet restore
+      run: dotnet restore
+
+    # Run code analysis for all projects/solutions, such that code analysis violations break the build.
+    - name: Run .NET Code Analysis
+      uses: dotnet/code-analysis@v1
+      id: code-analysis
+      with:
+        build-breaking: true
