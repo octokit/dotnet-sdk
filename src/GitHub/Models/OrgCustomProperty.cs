@@ -11,7 +11,7 @@ namespace GitHub.Models {
     public class OrgCustomProperty : IAdditionalDataHolder, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Ordered list of allowed values of the property</summary>
+        /// <summary>An ordered list of the allowed values of the property.The property can have up to 200 allowed values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedValues { get; set; }
