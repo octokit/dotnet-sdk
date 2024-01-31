@@ -22,7 +22,7 @@ public class TokenAuthenticationProvider : IAuthenticationProvider
     /// Gets or sets the client identifier.
     /// </summary>
     public string ClientId { get; set; }
-    
+
     /// <summary>
     /// Gets or sets the token.
     /// </summary>

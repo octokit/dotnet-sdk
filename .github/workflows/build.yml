@@ -21,6 +21,9 @@ jobs:
         with:
           dotnet-version: '8.x.x'
 
+      - name: Format
+        run: dotnet format --verify-no-changes
+
       - name: Build and strong name sign
         run: dotnet build --no-incremental /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=../key.snk
 
