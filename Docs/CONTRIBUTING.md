@@ -1,73 +1,24 @@
-# How to Contribute
+## How to contribute
 
-NOTE: This SDK is currently in ALPHA and should be considered **unstable**
+Please note that this project is released with a [Contributor Code of Conduct](./CODE_OF_CONDUCT.md). By participating you agree to abide by its terms.
 
-Contributions take many forms from submitting issues, writing docs, to making
-code changes - we welcome it all!
+We appreciate you taking the time to contribute to Octokit or any of the projects in Octokit's ecosystem. Especially as a new contributor, you have a valuable perspective: you will find things confusing and run into problems that no longer occur to the maintainers. Please share them with us so we can make the experience for future contributors the best it can be.
 
-## Getting Started
+Thank you :sparkleheart:
 
-`git clone https://github.com/octokit/dotnet-sdk.git dotnet-sdk`
+There are two types of contributions: issues and pull requests (PRs). Issues are used to track bugs and feature requests, while PRs contribute new content to the repository.
 
-## How can I get involved?
+## Creating an issue
 
-We have an [`Status: Up for grabs`](https://github.com/octokit/dotnet-sdk/labels/Status%3A%20Up%20for%20grabs)
-tag on our issue tracker to indicate tasks which contributors can pick up.
+Before you create a new issue:
+1. Search the [project's issues](https://github.com/octokit/dotnet-sdk/issues) to see if a similar issue already exists. If so, please add onto that issue rather than creating a new one.
+1. If submitting a bug report, include steps and a minimal code sample that will reproduce the issue.
+1. If submitting a feature request, please share the motivation for the new feature, what alternatives you considered, and any implementation suggestions.
 
-If you've found something you'd like to contribute to, leave a comment in the issue
-so everyone is aware.
+## Creating a pull request
 
-NOTE: Everything under the `GitHub\Octokit` folder is 100% generated and should never be manually changed.
+First, is your code a change to the generated source code present in `src/GitHub`? If so, you'll want to go to [octokit/source-generator](https://github.com/octokit/source-generator) to modify the generation process.
 
-## Making Changes
+If your changes do need to be made here, fork the repository. If you're not sure how to do so, please read [the linked docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo). Then clone your fork and `cd` to that directory locally.
 
-When you're ready to make a change, create a branch off the `main` branch:
-
-```
-git checkout main
-git pull origin main
-git checkout -b SOME-BRANCH-NAME
-```
-
-We use `main` as the default branch for the repository, and it holds the most
-recent contributions. By working in a branch away from `main` you can handle
-potential conflicts that may occur in the future.
-
-If you make focused commits (instead of one monolithic commit) and have descriptive
-commit messages, this will help speed up the review process.
-
-### Submitting Changes
-
-You can publish your branch from GitHub for Windows, or run this command from
-the Git Shell:
-
-`git push origin MY-BRANCH-NAME`
-
-Once your changes are ready to be reviewed, publish the branch to GitHub and
-[open a pull request](https://help.github.com/articles/using-pull-requests)
-against it.
-
-A few suggestions when opening a pull request:
-
- - if you are addressing a particular issue, reference it like this:
-
->   Fixes #1145
-
- - Open a DRAFT PR indicate this is a work-in-progress. It's
-   always good to get feedback early, so don't be afraid to open the PR before
-   it's "done".
- - add comments to the PR about things that are unclear or you would like
-   suggestions on
-
-Some things that will increase the chance that your pull request is accepted:
-
-* Follow existing code conventions. Most of what we do follows [standard .NET
-  conventions](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/coding-style.md) except in a few places.
-* Include unit tests that would otherwise fail without your code, but pass with
-  it.
-* Update the documentation, the surrounding one, examples elsewhere, guides,
-  whatever is affected by your contribution
-
-# Additional Resources
-
-* [General GitHub documentation](http://help.github.com/)
+Ensure that `dotnet restore`, `dotnet format`, `dotnet test`, and `dotnet build` commands each succeed and result in no changes to the repository. Make your code changes (adding tests and documentation as necessary) and confirm the above validation steps still pass. If you'd like to debug the project, you can use VSCode's tooling to do so. When you're satisfied with your changes, follow [GitHub's docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to create your PR.
