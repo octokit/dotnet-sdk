@@ -4,7 +4,7 @@ Please note that this project is released with a [Contributor Code of Conduct](.
 
 We appreciate you taking the time to contribute to Octokit or any of the projects in Octokit's ecosystem. Especially as a new contributor, you have a valuable perspective: you will find things confusing and run into problems that no longer occur to the maintainers. Please share them with us so we can make the experience for future contributors the best it can be.
 
-Thank you :sparkleheart:
+Thank you 💖
 
 There are two types of contributions: issues and pull requests (PRs). Issues are used to track bugs and feature requests, while PRs contribute new content to the repository.
 
