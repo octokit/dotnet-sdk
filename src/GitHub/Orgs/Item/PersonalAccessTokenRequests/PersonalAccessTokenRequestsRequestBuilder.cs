@@ -26,14 +26,14 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonalAccessTokenRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?per_page*,page*,sort*,direction*,owner*,repository*,permission*,last_used_before*,last_used_after*}", pathParameters) {
+        public PersonalAccessTokenRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?direction*,last_used_after*,last_used_before*,owner*,page*,permission*,per_page*,repository*,sort*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new PersonalAccessTokenRequestsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonalAccessTokenRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?per_page*,page*,sort*,direction*,owner*,repository*,permission*,last_used_before*,last_used_after*}", rawUrl) {
+        public PersonalAccessTokenRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?direction*,last_used_after*,last_used_before*,owner*,page*,permission*,per_page*,repository*,sort*}", rawUrl) {
         }
         /// <summary>
         /// Lists requests from organization members to access organization resources with a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.

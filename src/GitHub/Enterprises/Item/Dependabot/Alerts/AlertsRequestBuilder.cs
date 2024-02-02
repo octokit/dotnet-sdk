@@ -18,14 +18,14 @@ namespace GitHub.Enterprises.Item.Dependabot.Alerts {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?state*,severity*,ecosystem*,package*,scope*,sort*,direction*,before*,after*,first*,last*,per_page*}", pathParameters) {
+        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,before*,direction*,ecosystem*,first*,last*,package*,per_page*,scope*,severity*,sort*,state*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AlertsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?state*,severity*,ecosystem*,package*,scope*,sort*,direction*,before*,after*,first*,last*,per_page*}", rawUrl) {
+        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,before*,direction*,ecosystem*,first*,last*,package*,per_page*,scope*,severity*,sort*,state*}", rawUrl) {
         }
         /// <summary>
         /// Lists Dependabot alerts for repositories that are owned by the specified enterprise.To use this endpoint, you must be a member of the enterprise, and you must use anaccess token with the `repo` scope or `security_events` scope.Alerts are only returned for organizations in the enterprise for which you are an organization owner or a security manager. For more information about security managers, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;

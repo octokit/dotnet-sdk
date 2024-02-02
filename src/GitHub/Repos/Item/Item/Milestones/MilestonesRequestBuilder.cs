@@ -26,14 +26,14 @@ namespace GitHub.Repos.Item.Item.Milestones {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MilestonesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/milestones{?state*,sort*,direction*,per_page*,page*}", pathParameters) {
+        public MilestonesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/milestones{?direction*,page*,per_page*,sort*,state*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new MilestonesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MilestonesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/milestones{?state*,sort*,direction*,per_page*,page*}", rawUrl) {
+        public MilestonesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/milestones{?direction*,page*,per_page*,sort*,state*}", rawUrl) {
         }
         /// <summary>
         /// Lists milestones for a repository.

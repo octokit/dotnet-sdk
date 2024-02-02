@@ -36,14 +36,14 @@ namespace GitHub.Gists {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GistsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists{?since*,per_page*,page*}", pathParameters) {
+        public GistsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists{?page*,per_page*,since*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new GistsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GistsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists{?since*,per_page*,page*}", rawUrl) {
+        public GistsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists{?page*,per_page*,since*}", rawUrl) {
         }
         /// <summary>
         /// Lists the authenticated user&apos;s gists or if called anonymously, this endpoint returns all public gists:

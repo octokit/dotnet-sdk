@@ -18,14 +18,14 @@ namespace GitHub.User.Repos {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReposRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repos{?visibility*,affiliation*,type*,sort*,direction*,per_page*,page*,since*,before*}", pathParameters) {
+        public ReposRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repos{?affiliation*,before*,direction*,page*,per_page*,since*,sort*,type*,visibility*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ReposRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReposRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repos{?visibility*,affiliation*,type*,sort*,direction*,per_page*,page*,since*,before*}", rawUrl) {
+        public ReposRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repos{?affiliation*,before*,direction*,page*,per_page*,since*,sort*,type*,visibility*}", rawUrl) {
         }
         /// <summary>
         /// Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.The authenticated user has explicit permission to access repositories they own, repositories where they are a collaborator, and repositories that they can access through an organization membership.

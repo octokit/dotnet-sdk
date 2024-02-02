@@ -18,14 +18,14 @@ namespace GitHub.User.Social_accounts {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Social_accountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/social_accounts{?per_page*,page*}", pathParameters) {
+        public Social_accountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/social_accounts{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new Social_accountsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Social_accountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/social_accounts{?per_page*,page*}", rawUrl) {
+        public Social_accountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/social_accounts{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Deletes one or more social accounts from the authenticated user&apos;s profile. This endpoint is accessible with the `user` scope.

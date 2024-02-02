@@ -18,14 +18,14 @@ namespace GitHub.Gists.Starred {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StarredRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists/starred{?since*,per_page*,page*}", pathParameters) {
+        public StarredRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists/starred{?page*,per_page*,since*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new StarredRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StarredRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists/starred{?since*,per_page*,page*}", rawUrl) {
+        public StarredRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists/starred{?page*,per_page*,since*}", rawUrl) {
         }
         /// <summary>
         /// List the authenticated user&apos;s starred gists:

@@ -18,14 +18,14 @@ namespace GitHub.Users.Item.Ssh_signing_keys {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ssh_signing_keysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/ssh_signing_keys{?per_page*,page*}", pathParameters) {
+        public Ssh_signing_keysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/ssh_signing_keys{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new Ssh_signing_keysRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ssh_signing_keysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/ssh_signing_keys{?per_page*,page*}", rawUrl) {
+        public Ssh_signing_keysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/ssh_signing_keys{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists the SSH signing keys for a user. This operation is accessible by anyone.

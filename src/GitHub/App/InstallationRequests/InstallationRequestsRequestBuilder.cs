@@ -18,14 +18,14 @@ namespace GitHub.App.InstallationRequests {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstallationRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/installation-requests{?per_page*,page*}", pathParameters) {
+        public InstallationRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/installation-requests{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new InstallationRequestsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstallationRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/installation-requests{?per_page*,page*}", rawUrl) {
+        public InstallationRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/installation-requests{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists all the pending installation requests for the authenticated GitHub App.

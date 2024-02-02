@@ -26,14 +26,14 @@ namespace GitHub.User.Repository_invitations {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Repository_invitationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repository_invitations{?per_page*,page*}", pathParameters) {
+        public Repository_invitationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repository_invitations{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new Repository_invitationsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Repository_invitationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repository_invitations{?per_page*,page*}", rawUrl) {
+        public Repository_invitationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repository_invitations{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
