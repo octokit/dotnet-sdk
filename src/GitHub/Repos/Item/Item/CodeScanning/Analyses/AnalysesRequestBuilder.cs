@@ -26,14 +26,14 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Analyses {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnalysesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/analyses{?tool_name*,tool_guid*,page*,per_page*,ref*,sarif_id*,direction*,sort*}", pathParameters) {
+        public AnalysesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/analyses{?direction*,page*,per_page*,ref*,sarif_id*,sort*,tool_guid*,tool_name*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AnalysesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnalysesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/analyses{?tool_name*,tool_guid*,page*,per_page*,ref*,sarif_id*,direction*,sort*}", rawUrl) {
+        public AnalysesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/analyses{?direction*,page*,per_page*,ref*,sarif_id*,sort*,tool_guid*,tool_name*}", rawUrl) {
         }
         /// <summary>
         /// Lists the details of all code scanning analyses for a repository,starting with the most recent.The response is paginated and you can use the `page` and `per_page` parametersto list the analyses you&apos;re interested in.By default 30 analyses are listed per page.The `rules_count` field in the response give the number of rulesthat were run in the analysis.For very old analyses this data is not available,and `0` is returned in this field.You must use an access token with the `security_events` scope to use this endpoint with private repositories,the `public_repo` scope also grants permission to read security events on public repositories only.**Deprecation notice**:The `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.

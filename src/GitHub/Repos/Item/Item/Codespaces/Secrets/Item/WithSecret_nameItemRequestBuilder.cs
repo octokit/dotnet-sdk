@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.Item {
         public WithSecret_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/secrets/{secret_name}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a development environment secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets` repository permission to use this endpoint.
+        /// Deletes a development environment secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets` repository permission to use this endpoint.This endpoint does not support fine-grained personal access tokens. For more information about personal access tokens, see &quot;[Managing your personal access tokens](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/repository-secrets#delete-a-repository-secret" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.Item {
             return await RequestAdapter.SendAsync<RepoCodespacesSecret>(requestInfo, RepoCodespacesSecret.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see &quot;[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).&quot;You must authenticate using an accesstoken with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets`repository permission to use this endpoint.
+        /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see &quot;[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).&quot;You must authenticate using an accesstoken with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets`repository permission to use this endpoint.This endpoint does not support fine-grained personal access tokens. For more information about personal access tokens, see &quot;[Managing your personal access tokens](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/repository-secrets#create-or-update-a-repository-secret" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -78,7 +78,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.Item {
             return await RequestAdapter.SendAsync<EmptyObject>(requestInfo, EmptyObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a development environment secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets` repository permission to use this endpoint.
+        /// Deletes a development environment secret in a repository using the secret name. You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets` repository permission to use this endpoint.This endpoint does not support fine-grained personal access tokens. For more information about personal access tokens, see &quot;[Managing your personal access tokens](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic).&quot;
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see &quot;[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).&quot;You must authenticate using an accesstoken with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets`repository permission to use this endpoint.
+        /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see &quot;[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).&quot;You must authenticate using an accesstoken with the `repo` scope to use this endpoint. GitHub Apps must have write access to the `codespaces_secrets`repository permission to use this endpoint.This endpoint does not support fine-grained personal access tokens. For more information about personal access tokens, see &quot;[Managing your personal access tokens](https://docs.github.com/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic).&quot;
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

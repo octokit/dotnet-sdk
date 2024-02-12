@@ -26,14 +26,14 @@ namespace GitHub.Repos.Item.Item.Rulesets.RuleSuites {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RuleSuitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites{?ref*,time_period*,actor_name*,rule_suite_result*,per_page*,page*}", pathParameters) {
+        public RuleSuitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,rule_suite_result*,time_period*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new RuleSuitesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RuleSuitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites{?ref*,time_period*,actor_name*,rule_suite_result*,per_page*,page*}", rawUrl) {
+        public RuleSuitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,rule_suite_result*,time_period*}", rawUrl) {
         }
         /// <summary>
         /// Lists suites of rule evaluations at the repository level.For more information, see &quot;[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets).&quot;

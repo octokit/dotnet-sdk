@@ -18,14 +18,14 @@ namespace GitHub.Orgs.Item.Teams.Item.Members {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/members{?role*,per_page*,page*}", pathParameters) {
+        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/members{?page*,per_page*,role*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new MembersRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/members{?role*,per_page*,page*}", rawUrl) {
+        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/members{?page*,per_page*,role*}", rawUrl) {
         }
         /// <summary>
         /// Team members will include the members of child teams.To list members in a team, the team must be visible to the authenticated user.

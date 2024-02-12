@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Rules.Branches.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithBranchItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rules/branches/{branch}{?per_page*,page*}", pathParameters) {
+        public WithBranchItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rules/branches/{branch}{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new WithBranchItemRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithBranchItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rules/branches/{branch}{?per_page*,page*}", rawUrl) {
+        public WithBranchItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rules/branches/{branch}{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Returns all active rules that apply to the specified branch. The branch does not need to exist; rules that would applyto a branch with that name will be returned. All active rules that apply will be returned, regardless of the levelat which they are configured (e.g. repository or organization). Rules in rulesets with &quot;evaluate&quot; or &quot;disabled&quot;enforcement statuses are not returned.

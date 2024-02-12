@@ -18,14 +18,14 @@ namespace GitHub.User.Followers {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FollowersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/followers{?per_page*,page*}", pathParameters) {
+        public FollowersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/followers{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new FollowersRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FollowersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/followers{?per_page*,page*}", rawUrl) {
+        public FollowersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/followers{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists the people following the authenticated user.

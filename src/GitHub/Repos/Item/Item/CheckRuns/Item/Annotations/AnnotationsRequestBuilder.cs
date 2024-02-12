@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item.Annotations {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnnotationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs/{check_run_id}/annotations{?per_page*,page*}", pathParameters) {
+        public AnnotationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs/{check_run_id}/annotations{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AnnotationsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnnotationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs/{check_run_id}/annotations{?per_page*,page*}", rawUrl) {
+        public AnnotationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs/{check_run_id}/annotations{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists annotations for a check run using the annotation `id`.GitHub Appsmust have the `checks:read` permission on a private repository or pull access toa public repository to get annotations for a check run. OAuth apps and authenticatedusers must have the `repo` scope to get annotations for a check run in a privaterepository.

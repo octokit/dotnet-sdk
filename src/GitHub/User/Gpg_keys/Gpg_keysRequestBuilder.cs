@@ -26,14 +26,14 @@ namespace GitHub.User.Gpg_keys {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Gpg_keysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/gpg_keys{?per_page*,page*}", pathParameters) {
+        public Gpg_keysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/gpg_keys{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new Gpg_keysRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Gpg_keysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/gpg_keys{?per_page*,page*}", rawUrl) {
+        public Gpg_keysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/gpg_keys{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists the current user&apos;s GPG keys. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).

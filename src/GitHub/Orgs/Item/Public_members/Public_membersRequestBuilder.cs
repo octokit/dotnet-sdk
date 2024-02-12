@@ -26,14 +26,14 @@ namespace GitHub.Orgs.Item.Public_members {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Public_membersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/public_members{?per_page*,page*}", pathParameters) {
+        public Public_membersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/public_members{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new Public_membersRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Public_membersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/public_members{?per_page*,page*}", rawUrl) {
+        public Public_membersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/public_members{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Members of an organization can choose to have their membership publicized or not.

@@ -17,14 +17,14 @@ namespace GitHub.Repos.Item.Item.Actions.OrganizationSecrets {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationSecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-secrets{?per_page*,page*}", pathParameters) {
+        public OrganizationSecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-secrets{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new OrganizationSecretsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationSecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-secrets{?per_page*,page*}", rawUrl) {
+        public OrganizationSecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/organization-secrets{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists all organization secrets shared with a repository without revealing their encryptedvalues.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `secrets` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read secrets.

@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Notifications {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/notifications{?all*,participating*,since*,before*,per_page*,page*}", pathParameters) {
+        public NotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/notifications{?all*,before*,page*,participating*,per_page*,since*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new NotificationsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/notifications{?all*,participating*,since*,before*,per_page*,page*}", rawUrl) {
+        public NotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/notifications{?all*,before*,page*,participating*,per_page*,since*}", rawUrl) {
         }
         /// <summary>
         /// Lists all notifications for the current user in the specified repository.

@@ -18,14 +18,14 @@ namespace GitHub.User.Emails {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/emails{?per_page*,page*}", pathParameters) {
+        public EmailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/emails{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new EmailsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/emails{?per_page*,page*}", rawUrl) {
+        public EmailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/emails{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// This endpoint is accessible with the `user` scope.

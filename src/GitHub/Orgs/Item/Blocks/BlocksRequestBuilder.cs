@@ -26,14 +26,14 @@ namespace GitHub.Orgs.Item.Blocks {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BlocksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/blocks{?per_page*,page*}", pathParameters) {
+        public BlocksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/blocks{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new BlocksRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BlocksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/blocks{?per_page*,page*}", rawUrl) {
+        public BlocksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/blocks{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// List the users blocked by an organization.

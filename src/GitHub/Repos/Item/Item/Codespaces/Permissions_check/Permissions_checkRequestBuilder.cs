@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Permissions_checkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/permissions_check{?ref*,devcontainer_path*}", pathParameters) {
+        public Permissions_checkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/permissions_check?devcontainer_path={devcontainer_path}&ref={ref}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new Permissions_checkRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Permissions_checkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/permissions_check{?ref*,devcontainer_path*}", rawUrl) {
+        public Permissions_checkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/permissions_check?devcontainer_path={devcontainer_path}&ref={ref}", rawUrl) {
         }
         /// <summary>
         /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.

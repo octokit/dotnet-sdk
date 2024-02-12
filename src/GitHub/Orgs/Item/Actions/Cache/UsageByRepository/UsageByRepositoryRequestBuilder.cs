@@ -17,14 +17,14 @@ namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageByRepositoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/cache/usage-by-repository{?per_page*,page*}", pathParameters) {
+        public UsageByRepositoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/cache/usage-by-repository{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new UsageByRepositoryRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsageByRepositoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/cache/usage-by-repository{?per_page*,page*}", rawUrl) {
+        public UsageByRepositoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/cache/usage-by-repository{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists repositories and their GitHub Actions cache usage for an organization.The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.You must authenticate using an access token with the `read:org` scope to use this endpoint. GitHub Apps must have the `organization_admistration:read` permission to use this endpoint.

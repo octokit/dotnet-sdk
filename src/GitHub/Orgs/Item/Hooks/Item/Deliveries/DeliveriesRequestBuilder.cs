@@ -26,14 +26,14 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeliveriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/deliveries{?per_page*,cursor*,redelivery*}", pathParameters) {
+        public DeliveriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/deliveries{?cursor*,per_page*,redelivery*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new DeliveriesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeliveriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/deliveries{?per_page*,cursor*,redelivery*}", rawUrl) {
+        public DeliveriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/deliveries{?cursor*,per_page*,redelivery*}", rawUrl) {
         }
         /// <summary>
         /// Returns a list of webhook deliveries for a webhook configured in an organization.

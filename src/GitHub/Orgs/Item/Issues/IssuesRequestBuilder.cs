@@ -18,14 +18,14 @@ namespace GitHub.Orgs.Item.Issues {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IssuesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/issues{?filter*,state*,labels*,sort*,direction*,since*,per_page*,page*}", pathParameters) {
+        public IssuesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/issues{?direction*,filter*,labels*,page*,per_page*,since*,sort*,state*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new IssuesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IssuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/issues{?filter*,state*,labels*,sort*,direction*,since*,per_page*,page*}", rawUrl) {
+        public IssuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/issues{?direction*,filter*,labels*,page*,per_page*,since*,sort*,state*}", rawUrl) {
         }
         /// <summary>
         /// List issues in an organization assigned to the authenticated user.**Note**: GitHub&apos;s REST API considers every pull request an issue, but not every issue is a pull request. For thisreason, &quot;Issues&quot; endpoints may return both issues and pull requests in the response. You can identify pull requests bythe `pull_request` key. Be aware that the `id` of a pull request returned from &quot;Issues&quot; endpoints will be an _issue id_. To find out the pullrequest id, use the &quot;[List pull requests](https://docs.github.com/rest/pulls/pulls#list-pull-requests)&quot; endpoint.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.- **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.- **`application/vnd.github.html+json`**: Returns HTML rendered from the body&apos;s markdown. Response will include `body_html`.- **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.

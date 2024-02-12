@@ -18,14 +18,14 @@ namespace GitHub.User.Subscriptions {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/subscriptions{?per_page*,page*}", pathParameters) {
+        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/subscriptions{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new SubscriptionsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/subscriptions{?per_page*,page*}", rawUrl) {
+        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/subscriptions{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists repositories the authenticated user is watching.

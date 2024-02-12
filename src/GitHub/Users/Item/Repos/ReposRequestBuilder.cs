@@ -18,14 +18,14 @@ namespace GitHub.Users.Item.Repos {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReposRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/repos{?type*,sort*,direction*,per_page*,page*}", pathParameters) {
+        public ReposRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/repos{?direction*,page*,per_page*,sort*,type*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new ReposRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReposRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/repos{?type*,sort*,direction*,per_page*,page*}", rawUrl) {
+        public ReposRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/repos{?direction*,page*,per_page*,sort*,type*}", rawUrl) {
         }
         /// <summary>
         /// Lists public repositories for the specified user.

@@ -18,14 +18,14 @@ namespace GitHub.Networks.Item.Item.Events {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networks/{owner}/{repo}/events{?per_page*,page*}", pathParameters) {
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networks/{owner}/{repo}/events{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new EventsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networks/{owner}/{repo}/events{?per_page*,page*}", rawUrl) {
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networks/{owner}/{repo}/events{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// List public events for a network of repositories

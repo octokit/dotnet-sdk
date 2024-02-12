@@ -26,14 +26,14 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts{?tool_name*,tool_guid*,page*,per_page*,ref*,direction*,sort*,state*,severity*}", pathParameters) {
+        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts{?direction*,page*,per_page*,ref*,severity*,sort*,state*,tool_guid*,tool_name*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AlertsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts{?tool_name*,tool_guid*,page*,per_page*,ref*,direction*,sort*,state*,severity*}", rawUrl) {
+        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts{?direction*,page*,per_page*,ref*,severity*,sort*,state*,tool_guid*,tool_name*}", rawUrl) {
         }
         /// <summary>
         /// Lists code scanning alerts.To use this endpoint, you must use an access token with the `security_events` scope or, for alerts from public repositories only, an access token with the `public_repo` scope.The response includes a `most_recent_instance` object.This provides details of the most recent instance of this alertfor the default branch (or for the specified Git reference if you used `ref` in the request).

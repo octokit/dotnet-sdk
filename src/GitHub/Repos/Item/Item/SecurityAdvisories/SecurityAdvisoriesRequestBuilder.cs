@@ -31,14 +31,14 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityAdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories{?direction*,sort*,before*,after*,per_page*,state*}", pathParameters) {
+        public SecurityAdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new SecurityAdvisoriesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityAdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories{?direction*,sort*,before*,after*,per_page*,state*}", rawUrl) {
+        public SecurityAdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", rawUrl) {
         }
         /// <summary>
         /// Lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permissionin order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.

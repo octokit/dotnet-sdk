@@ -26,27 +26,27 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AutolinksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/autolinks{?page*}", pathParameters) {
+        public AutolinksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/autolinks", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AutolinksRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AutolinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/autolinks{?page*}", rawUrl) {
+        public AutolinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/autolinks", rawUrl) {
         }
         /// <summary>
-        /// This returns a list of autolinks configured for the given repository.Information about autolinks are only available to repository administrators.
-        /// API method documentation <see href="https://docs.github.com/rest/repos/autolinks#list-all-autolinks-of-a-repository" />
+        /// Gets all autolinks that are configured for a repository.Information about autolinks are only available to repository administrators.
+        /// API method documentation <see href="https://docs.github.com/rest/repos/autolinks#get-all-autolinks-of-a-repository" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Autolink>?> GetAsync(Action<RequestConfiguration<AutolinksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Autolink>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
 #nullable restore
 #else
-        public async Task<List<Autolink>> GetAsync(Action<RequestConfiguration<AutolinksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Autolink>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<Autolink>(requestInfo, Autolink.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -74,15 +74,15 @@ namespace GitHub.Repos.Item.Item.Autolinks {
             return await RequestAdapter.SendAsync<Autolink>(requestInfo, Autolink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This returns a list of autolinks configured for the given repository.Information about autolinks are only available to repository administrators.
+        /// Gets all autolinks that are configured for a repository.Information about autolinks are only available to repository administrators.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AutolinksRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AutolinksRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -114,14 +114,6 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AutolinksRequestBuilder WithUrl(string rawUrl) {
             return new AutolinksRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// This returns a list of autolinks configured for the given repository.Information about autolinks are only available to repository administrators.
-        /// </summary>
-        public class AutolinksRequestBuilderGetQueryParameters {
-            /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
-            [QueryParameter("page")]
-            public int? Page { get; set; }
         }
     }
 }

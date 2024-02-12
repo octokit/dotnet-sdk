@@ -17,14 +17,14 @@ namespace GitHub.Users.Item.Starred {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StarredRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/starred{?sort*,direction*,per_page*,page*}", pathParameters) {
+        public StarredRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/starred{?direction*,page*,per_page*,sort*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new StarredRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StarredRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/starred{?sort*,direction*,per_page*,page*}", rawUrl) {
+        public StarredRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/starred{?direction*,page*,per_page*,sort*}", rawUrl) {
         }
         /// <summary>
         /// Lists repositories a user has starred.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.

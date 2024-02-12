@@ -18,14 +18,14 @@ namespace GitHub.Orgs.Item.SecurityAdvisories {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityAdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/security-advisories{?direction*,sort*,before*,after*,per_page*,state*}", pathParameters) {
+        public SecurityAdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new SecurityAdvisoriesRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityAdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/security-advisories{?direction*,sort*,before*,after*,per_page*,state*}", rawUrl) {
+        public SecurityAdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", rawUrl) {
         }
         /// <summary>
         /// Lists repository security advisories for an organization.To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `repository_advisories:write` permission.

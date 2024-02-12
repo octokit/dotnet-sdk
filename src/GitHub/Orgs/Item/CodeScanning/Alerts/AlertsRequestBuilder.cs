@@ -18,14 +18,14 @@ namespace GitHub.Orgs.Item.CodeScanning.Alerts {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/code-scanning/alerts{?tool_name*,tool_guid*,before*,after*,page*,per_page*,direction*,state*,sort*,severity*}", pathParameters) {
+        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/code-scanning/alerts{?after*,before*,direction*,page*,per_page*,severity*,sort*,state*,tool_guid*,tool_name*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new AlertsRequestBuilder and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/code-scanning/alerts{?tool_name*,tool_guid*,before*,after*,page*,per_page*,direction*,state*,sort*,severity*}", rawUrl) {
+        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/code-scanning/alerts{?after*,before*,direction*,page*,per_page*,severity*,sort*,state*,tool_guid*,tool_name*}", rawUrl) {
         }
         /// <summary>
         /// Lists code scanning alerts for the default branch for all eligible repositories in an organization. Eligible repositories are repositories that are owned by organizations that you own or for which you are a security manager. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;To use this endpoint, you must be an owner or security manager for the organization, and you must use an access token with the `repo` scope or `security_events` scope.For public repositories, you may instead use the `public_repo` scope.
