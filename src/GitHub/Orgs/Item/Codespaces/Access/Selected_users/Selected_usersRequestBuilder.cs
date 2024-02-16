@@ -28,7 +28,7 @@ namespace GitHub.Orgs.Item.Codespaces.Access.Selected_users {
         public Selected_usersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/codespaces/access/selected_users", rawUrl) {
         }
         /// <summary>
-        /// Codespaces for the specified users will no longer be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see &quot;[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces).&quot;You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces settings` write permission to use this endpoint.
+        /// Codespaces for the specified users will no longer be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see &quot;[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces).&quot;OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/organizations#remove-users-from-codespaces-access-for-an-organization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -52,7 +52,7 @@ namespace GitHub.Orgs.Item.Codespaces.Access.Selected_users {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Codespaces for the specified users will be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see &quot;[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces).&quot;You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces settings` write permission to use this endpoint.
+        /// Codespaces for the specified users will be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see &quot;[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces).&quot;OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/organizations#add-users-to-codespaces-access-for-an-organization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -76,7 +76,7 @@ namespace GitHub.Orgs.Item.Codespaces.Access.Selected_users {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Codespaces for the specified users will no longer be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see &quot;[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces).&quot;You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces settings` write permission to use this endpoint.
+        /// Codespaces for the specified users will no longer be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see &quot;[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces).&quot;OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +96,7 @@ namespace GitHub.Orgs.Item.Codespaces.Access.Selected_users {
             return requestInfo;
         }
         /// <summary>
-        /// Codespaces for the specified users will be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see &quot;[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces).&quot;You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces settings` write permission to use this endpoint.
+        /// Codespaces for the specified users will be billed to the organization.To use this endpoint, the access settings for the organization must be set to `selected_members`.For information on how to change this setting, see &quot;[Manage access control for organization codespaces](https://docs.github.com/rest/codespaces/organizations#manage-access-control-for-organization-codespaces).&quot;OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

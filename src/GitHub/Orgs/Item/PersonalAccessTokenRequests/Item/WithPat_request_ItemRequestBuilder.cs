@@ -33,7 +33,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item {
         public WithPat_request_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests/{pat_request_id}", rawUrl) {
         }
         /// <summary>
-        /// Approves or denies a pending request to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Approves or denies a pending request to access organization resources via a fine-grained personal access token.Only GitHub Apps can use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/personal-access-tokens#review-a-request-to-access-organization-resources-with-a-fine-grained-personal-access-token" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -57,7 +57,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Approves or denies a pending request to access organization resources via a fine-grained personal access token. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Approves or denies a pending request to access organization resources via a fine-grained personal access token.Only GitHub Apps can use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

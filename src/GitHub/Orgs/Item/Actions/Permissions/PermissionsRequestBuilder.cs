@@ -43,7 +43,7 @@ namespace GitHub.Orgs.Item.Actions.Permissions {
         public PermissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/permissions", rawUrl) {
         }
         /// <summary>
-        /// Gets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
+        /// Gets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/permissions#get-github-actions-permissions-for-an-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace GitHub.Orgs.Item.Actions.Permissions {
             return await RequestAdapter.SendAsync<ActionsOrganizationPermissions>(requestInfo, ActionsOrganizationPermissions.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
+        /// Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/permissions#set-github-actions-permissions-for-an-organization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -77,7 +77,7 @@ namespace GitHub.Orgs.Item.Actions.Permissions {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
+        /// Gets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +93,7 @@ namespace GitHub.Orgs.Item.Actions.Permissions {
             return requestInfo;
         }
         /// <summary>
-        /// Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.You must authenticate using an access token with the `admin:org` scope to use this endpoint. GitHub Apps must have the `administration` organization permission to use this API.
+        /// Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

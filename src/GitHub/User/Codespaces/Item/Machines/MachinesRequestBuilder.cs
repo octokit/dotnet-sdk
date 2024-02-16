@@ -28,7 +28,7 @@ namespace GitHub.User.Codespaces.Item.Machines {
         public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces/{codespace_name}/machines", rawUrl) {
         }
         /// <summary>
-        /// List the machine types a codespace can transition to use.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces_metadata` repository permission to use this endpoint.
+        /// List the machine types a codespace can transition to use.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/machines#list-machine-types-for-a-codespace" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace GitHub.User.Codespaces.Item.Machines {
             return await RequestAdapter.SendAsync<MachinesGetResponse>(requestInfo, MachinesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the machine types a codespace can transition to use.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have read access to the `codespaces_metadata` repository permission to use this endpoint.
+        /// List the machine types a codespace can transition to use.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

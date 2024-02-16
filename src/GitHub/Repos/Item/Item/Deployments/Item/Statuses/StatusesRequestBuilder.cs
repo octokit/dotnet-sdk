@@ -56,7 +56,7 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Users with `push` access can create deployment statuses for a given deployment.GitHub Apps require `read &amp; write` access to &quot;Deployments&quot; and `read-only` access to &quot;Repo contents&quot; (for private repos). OAuth apps require the `repo_deployment` scope.
+        /// Users with `push` access can create deployment statuses for a given deployment.OAuth app tokens and personal access tokens (classic) need the `repo_deployment` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/deployments/statuses#create-a-deployment-status" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -93,7 +93,7 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
             return requestInfo;
         }
         /// <summary>
-        /// Users with `push` access can create deployment statuses for a given deployment.GitHub Apps require `read &amp; write` access to &quot;Deployments&quot; and `read-only` access to &quot;Repo contents&quot; (for private repos). OAuth apps require the `repo_deployment` scope.
+        /// Users with `push` access can create deployment statuses for a given deployment.OAuth app tokens and personal access tokens (classic) need the `repo_deployment` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

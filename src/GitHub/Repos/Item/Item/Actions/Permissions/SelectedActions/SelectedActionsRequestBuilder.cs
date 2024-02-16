@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Actions.Permissions.SelectedActions {
         public SelectedActionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/permissions/selected-actions", rawUrl) {
         }
         /// <summary>
-        /// Gets the settings for selected actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository policy for `allowed_actions` must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).&quot;You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
+        /// Gets the settings for selected actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository policy for `allowed_actions` must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).&quot;OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/permissions#get-allowed-actions-and-reusable-workflows-for-a-repository" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -44,7 +44,7 @@ namespace GitHub.Repos.Item.Item.Actions.Permissions.SelectedActions {
             return await RequestAdapter.SendAsync<GitHub.Models.SelectedActions>(requestInfo, GitHub.Models.SelectedActions.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets the actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository permission policy for `allowed_actions` must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).&quot;You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
+        /// Sets the actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository permission policy for `allowed_actions` must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).&quot;OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/permissions#set-allowed-actions-and-reusable-workflows-for-a-repository" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -62,7 +62,7 @@ namespace GitHub.Repos.Item.Item.Actions.Permissions.SelectedActions {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the settings for selected actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository policy for `allowed_actions` must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).&quot;You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
+        /// Gets the settings for selected actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository policy for `allowed_actions` must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).&quot;OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace GitHub.Repos.Item.Item.Actions.Permissions.SelectedActions {
             return requestInfo;
         }
         /// <summary>
-        /// Sets the actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository permission policy for `allowed_actions` must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).&quot;You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration` repository permission to use this API.
+        /// Sets the actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository permission policy for `allowed_actions` must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository).&quot;OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

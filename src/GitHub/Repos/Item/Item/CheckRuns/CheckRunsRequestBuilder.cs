@@ -36,7 +36,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns {
         public CheckRunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs", rawUrl) {
         }
         /// <summary>
-        /// Creates a new check run for a specific commit in a repository.To create a check run, you must use a GitHub App with the `checks:write` permission. OAuth apps and authenticated users are not able to create a check suite.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+        /// Creates a new check run for a specific commit in a repository.To create a check run, you must use a GitHub App. OAuth apps and authenticated users are not able to create a check suite.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
         /// API method documentation <see href="https://docs.github.com/rest/checks/runs#create-a-check-run" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -54,7 +54,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns {
             return await RequestAdapter.SendAsync<CheckRun>(requestInfo, CheckRun.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new check run for a specific commit in a repository.To create a check run, you must use a GitHub App with the `checks:write` permission. OAuth apps and authenticated users are not able to create a check suite.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+        /// Creates a new check run for a specific commit in a repository.To create a check run, you must use a GitHub App. OAuth apps and authenticated users are not able to create a check suite.In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

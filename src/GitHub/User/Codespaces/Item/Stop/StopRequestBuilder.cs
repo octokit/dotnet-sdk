@@ -28,7 +28,7 @@ namespace GitHub.User.Codespaces.Item.Stop {
         public StopRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces/{codespace_name}/stop", rawUrl) {
         }
         /// <summary>
-        /// Stops a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces_lifecycle_admin` repository permission to use this endpoint.
+        /// Stops a user&apos;s codespace.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#stop-a-codespace-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace GitHub.User.Codespaces.Item.Stop {
             return await RequestAdapter.SendAsync<Codespace>(requestInfo, Codespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Stops a user&apos;s codespace.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces_lifecycle_admin` repository permission to use this endpoint.
+        /// Stops a user&apos;s codespace.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

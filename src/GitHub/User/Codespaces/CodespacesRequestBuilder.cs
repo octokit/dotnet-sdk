@@ -41,7 +41,7 @@ namespace GitHub.User.Codespaces {
         public CodespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces{?page*,per_page*,repository_id*}", rawUrl) {
         }
         /// <summary>
-        /// Lists the authenticated user&apos;s codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have read access to the `codespaces` repository permission.
+        /// Lists the authenticated user&apos;s codespaces.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#list-codespaces-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace GitHub.User.Codespaces {
             return await RequestAdapter.SendAsync<CodespacesGetResponse>(requestInfo, CodespacesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
+        /// Creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#create-a-codespace-for-the-authenticated-user" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -87,7 +87,7 @@ namespace GitHub.User.Codespaces {
             return await RequestAdapter.SendAsync<Codespace>(requestInfo, Codespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the authenticated user&apos;s codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have read access to the `codespaces` repository permission.
+        /// Lists the authenticated user&apos;s codespaces.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,7 +103,7 @@ namespace GitHub.User.Codespaces {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
+        /// Creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -225,7 +225,7 @@ namespace GitHub.User.Codespaces {
             }
         }
         /// <summary>
-        /// Lists the authenticated user&apos;s codespaces.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have read access to the `codespaces` repository permission.
+        /// Lists the authenticated user&apos;s codespaces.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         public class CodespacesRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

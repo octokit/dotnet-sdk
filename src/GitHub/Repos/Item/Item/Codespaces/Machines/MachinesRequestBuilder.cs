@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Machines {
         public MachinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/machines{?client_ip*,location*,ref*}", rawUrl) {
         }
         /// <summary>
-        /// List the machine types available for a given repository based on its configuration.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces_metadata` repository permission to use this endpoint.
+        /// List the machine types available for a given repository based on its configuration.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/machines#list-available-machine-types-for-a-repository" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Machines {
             return await RequestAdapter.SendAsync<MachinesGetResponse>(requestInfo, MachinesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the machine types available for a given repository based on its configuration.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces_metadata` repository permission to use this endpoint.
+        /// List the machine types available for a given repository based on its configuration.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Machines {
             return new MachinesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the machine types available for a given repository based on its configuration.You must authenticate using an access token with the `codespace` scope to use this endpoint.GitHub Apps must have write access to the `codespaces_metadata` repository permission to use this endpoint.
+        /// List the machine types available for a given repository based on its configuration.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         public class MachinesRequestBuilderGetQueryParameters {
             /// <summary>IP for location auto-detection when proxying a request</summary>

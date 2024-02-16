@@ -36,7 +36,7 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces {
         public CodespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/members/{username}/codespaces{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// Lists the codespaces that a member of an organization has for repositories in that organization.You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces` read permission to use this endpoint.
+        /// Lists the codespaces that a member of an organization has for repositories in that organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/organizations#list-codespaces-for-a-user-in-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces {
             return await RequestAdapter.SendAsync<CodespacesGetResponse>(requestInfo, CodespacesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the codespaces that a member of an organization has for repositories in that organization.You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces` read permission to use this endpoint.
+        /// Lists the codespaces that a member of an organization has for repositories in that organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces {
             return new CodespacesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the codespaces that a member of an organization has for repositories in that organization.You must authenticate using an access token with the `admin:org` scope or the `Organization codespaces` read permission to use this endpoint.
+        /// Lists the codespaces that a member of an organization has for repositories in that organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         public class CodespacesRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

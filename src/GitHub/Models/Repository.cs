@@ -364,8 +364,6 @@ namespace GitHub.Models {
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The network_count property</summary>
-        public int? NetworkCount { get; set; }
         /// <summary>The node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -386,14 +384,6 @@ namespace GitHub.Models {
         public int? OpenIssues { get; set; }
         /// <summary>The open_issues_count property</summary>
         public int? OpenIssuesCount { get; set; }
-        /// <summary>A GitHub user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public NullableSimpleUser? Organization { get; set; }
-#nullable restore
-#else
-        public NullableSimpleUser Organization { get; set; }
-#endif
         /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -470,8 +460,6 @@ namespace GitHub.Models {
 #else
         public string StatusesUrl { get; set; }
 #endif
-        /// <summary>The subscribers_count property</summary>
-        public int? SubscribersCount { get; set; }
         /// <summary>The subscribers_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -519,14 +507,6 @@ namespace GitHub.Models {
 #nullable restore
 #else
         public string TempCloneToken { get; set; }
-#endif
-        /// <summary>The template_repository property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public Repository_template_repository? TemplateRepository { get; set; }
-#nullable restore
-#else
-        public Repository_template_repository TemplateRepository { get; set; }
 #endif
         /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -653,12 +633,10 @@ namespace GitHub.Models {
                 {"milestones_url", n => { MilestonesUrl = n.GetStringValue(); } },
                 {"mirror_url", n => { MirrorUrl = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
-                {"network_count", n => { NetworkCount = n.GetIntValue(); } },
                 {"node_id", n => { NodeId = n.GetStringValue(); } },
                 {"notifications_url", n => { NotificationsUrl = n.GetStringValue(); } },
                 {"open_issues", n => { OpenIssues = n.GetIntValue(); } },
                 {"open_issues_count", n => { OpenIssuesCount = n.GetIntValue(); } },
-                {"organization", n => { Organization = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
                 {"owner", n => { Owner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
                 {"permissions", n => { Permissions = n.GetObjectValue<Repository_permissions>(Repository_permissions.CreateFromDiscriminatorValue); } },
                 {"private", n => { Private = n.GetBoolValue(); } },
@@ -673,14 +651,12 @@ namespace GitHub.Models {
                 {"stargazers_url", n => { StargazersUrl = n.GetStringValue(); } },
                 {"starred_at", n => { StarredAt = n.GetStringValue(); } },
                 {"statuses_url", n => { StatusesUrl = n.GetStringValue(); } },
-                {"subscribers_count", n => { SubscribersCount = n.GetIntValue(); } },
                 {"subscribers_url", n => { SubscribersUrl = n.GetStringValue(); } },
                 {"subscription_url", n => { SubscriptionUrl = n.GetStringValue(); } },
                 {"svn_url", n => { SvnUrl = n.GetStringValue(); } },
                 {"tags_url", n => { TagsUrl = n.GetStringValue(); } },
                 {"teams_url", n => { TeamsUrl = n.GetStringValue(); } },
                 {"temp_clone_token", n => { TempCloneToken = n.GetStringValue(); } },
-                {"template_repository", n => { TemplateRepository = n.GetObjectValue<Repository_template_repository>(Repository_template_repository.CreateFromDiscriminatorValue); } },
                 {"topics", n => { Topics = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"trees_url", n => { TreesUrl = n.GetStringValue(); } },
                 {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -760,12 +736,10 @@ namespace GitHub.Models {
             writer.WriteStringValue("milestones_url", MilestonesUrl);
             writer.WriteStringValue("mirror_url", MirrorUrl);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("network_count", NetworkCount);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteStringValue("notifications_url", NotificationsUrl);
             writer.WriteIntValue("open_issues", OpenIssues);
             writer.WriteIntValue("open_issues_count", OpenIssuesCount);
-            writer.WriteObjectValue<NullableSimpleUser>("organization", Organization);
             writer.WriteObjectValue<SimpleUser>("owner", Owner);
             writer.WriteObjectValue<Repository_permissions>("permissions", Permissions);
             writer.WriteBoolValue("private", Private);
@@ -780,14 +754,12 @@ namespace GitHub.Models {
             writer.WriteStringValue("stargazers_url", StargazersUrl);
             writer.WriteStringValue("starred_at", StarredAt);
             writer.WriteStringValue("statuses_url", StatusesUrl);
-            writer.WriteIntValue("subscribers_count", SubscribersCount);
             writer.WriteStringValue("subscribers_url", SubscribersUrl);
             writer.WriteStringValue("subscription_url", SubscriptionUrl);
             writer.WriteStringValue("svn_url", SvnUrl);
             writer.WriteStringValue("tags_url", TagsUrl);
             writer.WriteStringValue("teams_url", TeamsUrl);
             writer.WriteStringValue("temp_clone_token", TempCloneToken);
-            writer.WriteObjectValue<Repository_template_repository>("template_repository", TemplateRepository);
             writer.WriteCollectionOfPrimitiveValues<string>("topics", Topics);
             writer.WriteStringValue("trees_url", TreesUrl);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

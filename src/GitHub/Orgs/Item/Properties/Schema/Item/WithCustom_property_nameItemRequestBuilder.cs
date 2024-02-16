@@ -28,7 +28,7 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item {
         public WithCustom_property_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/properties/schema/{custom_property_name}", rawUrl) {
         }
         /// <summary>
-        /// Removes a custom property that is defined for an organization.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.GitHub Apps must have the `organization_custom_properties:admin` organization permission to use this endpoint.
+        /// Removes a custom property that is defined for an organization.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#remove-a-custom-property-for-an-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a custom property that is defined for an organization.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
+        /// Gets a custom property that is defined for an organization.Organization members can read these properties.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#get-a-custom-property-for-an-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -68,7 +68,7 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item {
             return await RequestAdapter.SendAsync<OrgCustomProperty>(requestInfo, OrgCustomProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new or updates an existing custom property that is defined for an organization.To use this endpoint, the authenticated user must be one of:- An administrator for the organization.- A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.GitHub Apps must have the `organization_custom_properties:admin` organization permission to use this endpoint.
+        /// Creates a new or updates an existing custom property that is defined for an organization.To use this endpoint, the authenticated user must be one of:- An administrator for the organization.- A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#create-or-update-a-custom-property-for-an-organization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item {
             return await RequestAdapter.SendAsync<OrgCustomProperty>(requestInfo, OrgCustomProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes a custom property that is defined for an organization.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.GitHub Apps must have the `organization_custom_properties:admin` organization permission to use this endpoint.
+        /// Removes a custom property that is defined for an organization.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Gets a custom property that is defined for an organization.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
+        /// Gets a custom property that is defined for an organization.Organization members can read these properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new or updates an existing custom property that is defined for an organization.To use this endpoint, the authenticated user must be one of:- An administrator for the organization.- A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.GitHub Apps must have the `organization_custom_properties:admin` organization permission to use this endpoint.
+        /// Creates a new or updates an existing custom property that is defined for an organization.To use this endpoint, the authenticated user must be one of:- An administrator for the organization.- A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

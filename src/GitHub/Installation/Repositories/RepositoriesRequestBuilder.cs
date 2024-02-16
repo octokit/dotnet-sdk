@@ -28,7 +28,7 @@ namespace GitHub.Installation.Repositories {
         public RepositoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/installation/repositories{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// List repositories that an app installation can access.You must use an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+        /// List repositories that an app installation can access.
         /// API method documentation <see href="https://docs.github.com/rest/apps/installations#list-repositories-accessible-to-the-app-installation" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace GitHub.Installation.Repositories {
             return await RequestAdapter.SendAsync<RepositoriesGetResponse>(requestInfo, RepositoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List repositories that an app installation can access.You must use an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+        /// List repositories that an app installation can access.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace GitHub.Installation.Repositories {
             return new RepositoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List repositories that an app installation can access.You must use an [installation access token](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-an-installation) to access this endpoint.
+        /// List repositories that an app installation can access.
         /// </summary>
         public class RepositoriesRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

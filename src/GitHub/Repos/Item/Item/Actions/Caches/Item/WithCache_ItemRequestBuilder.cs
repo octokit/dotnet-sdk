@@ -27,7 +27,7 @@ namespace GitHub.Repos.Item.Item.Actions.Caches.Item {
         public WithCache_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/caches/{cache_id}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a GitHub Actions cache for a repository, using a cache ID.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions:write` permission to use this endpoint.
+        /// Deletes a GitHub Actions cache for a repository, using a cache ID.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/cache#delete-a-github-actions-cache-for-a-repository-using-a-cache-id" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -43,7 +43,7 @@ namespace GitHub.Repos.Item.Item.Actions.Caches.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a GitHub Actions cache for a repository, using a cache ID.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions:write` permission to use this endpoint.
+        /// Deletes a GitHub Actions cache for a repository, using a cache ID.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

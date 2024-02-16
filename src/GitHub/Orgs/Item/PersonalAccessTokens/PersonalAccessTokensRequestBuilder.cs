@@ -36,7 +36,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
         public PersonalAccessTokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens{?direction*,last_used_after*,last_used_before*,owner*,page*,permission*,per_page*,repository*,sort*}", rawUrl) {
         }
         /// <summary>
-        /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources. Only GitHub Apps can call this API,using the `organization_personal_access_tokens: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources.Only GitHub Apps can use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/personal-access-tokens#list-fine-grained-personal-access-tokens-with-access-to-organization-resources" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token&apos;s existing access. Only GitHub Apps can call this API,using the `organization_personal_access_tokens: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token&apos;s existing access.Only GitHub Apps can use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/personal-access-tokens#update-the-access-to-organization-resources-via-fine-grained-personal-access-tokens" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -83,7 +83,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
             return await RequestAdapter.SendAsync<PersonalAccessTokensPostResponse>(requestInfo, PersonalAccessTokensPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources. Only GitHub Apps can call this API,using the `organization_personal_access_tokens: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources.Only GitHub Apps can use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
             return requestInfo;
         }
         /// <summary>
-        /// Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token&apos;s existing access. Only GitHub Apps can call this API,using the `organization_personal_access_tokens: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token&apos;s existing access.Only GitHub Apps can use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +125,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
             return new PersonalAccessTokensRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources. Only GitHub Apps can call this API,using the `organization_personal_access_tokens: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources.Only GitHub Apps can use this endpoint.
         /// </summary>
         public class PersonalAccessTokensRequestBuilderGetQueryParameters {
             /// <summary>The direction to sort the results by.</summary>

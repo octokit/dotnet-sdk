@@ -28,7 +28,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item.Repositories {
         public RepositoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// Lists the repositories a fine-grained personal access token request is requesting access to. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Lists the repositories a fine-grained personal access token request is requesting access to.Only GitHub Apps can use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/personal-access-tokens#list-repositories-requested-to-be-accessed-by-a-fine-grained-personal-access-token" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item.Repositories {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Lists the repositories a fine-grained personal access token request is requesting access to. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Lists the repositories a fine-grained personal access token request is requesting access to.Only GitHub Apps can use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item.Repositories {
             return new RepositoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the repositories a fine-grained personal access token request is requesting access to. Only GitHub Apps can call this API,using the `organization_personal_access_token_requests: read` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Lists the repositories a fine-grained personal access token request is requesting access to.Only GitHub Apps can use this endpoint.
         /// </summary>
         public class RepositoriesRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

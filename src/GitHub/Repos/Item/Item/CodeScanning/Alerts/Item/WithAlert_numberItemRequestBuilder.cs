@@ -33,7 +33,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item {
         public WithAlert_numberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/code-scanning/alerts/{alert_number}", rawUrl) {
         }
         /// <summary>
-        /// Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repositories, the `public_repo` scope also grants permission to read security events on public repositories only.
+        /// Gets a single code scanning alert.OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
         /// API method documentation <see href="https://docs.github.com/rest/code-scanning/code-scanning#get-a-code-scanning-alert" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item {
             return await RequestAdapter.SendAsync<CodeScanningAlert>(requestInfo, CodeScanningAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the status of a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repositories. You can also use tokens with the `public_repo` scope for public repositories only.
+        /// Updates the status of a single code scanning alert.OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
         /// API method documentation <see href="https://docs.github.com/rest/code-scanning/code-scanning#update-a-code-scanning-alert" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -77,7 +77,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item {
             return await RequestAdapter.SendAsync<CodeScanningAlert>(requestInfo, CodeScanningAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repositories, the `public_repo` scope also grants permission to read security events on public repositories only.
+        /// Gets a single code scanning alert.OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +93,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Updates the status of a single code scanning alert. You must use an access token with the `security_events` scope to use this endpoint with private repositories. You can also use tokens with the `public_repo` scope for public repositories only.
+        /// Updates the status of a single code scanning alert.OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

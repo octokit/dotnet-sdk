@@ -28,7 +28,7 @@ namespace GitHub.Repositories.Item.Environments.Item.Variables.Item {
         public WithNameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repositories/{repository_id}/environments/{environment_name}/variables/{name}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an environment variable using the variable name.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `environment:write` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Deletes an environment variable using the variable name.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/variables#delete-an-environment-variable" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -44,7 +44,7 @@ namespace GitHub.Repositories.Item.Environments.Item.Variables.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a specific variable in an environment.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `environments:read` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Gets a specific variable in an environment.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/variables#get-an-environment-variable" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace GitHub.Repositories.Item.Environments.Item.Variables.Item {
             return await RequestAdapter.SendAsync<ActionsVariable>(requestInfo, ActionsVariable.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an environment variable that you can reference in a GitHub Actions workflow.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `environment:write` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Updates an environment variable that you can reference in a GitHub Actions workflow.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/variables#update-an-environment-variable" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -78,7 +78,7 @@ namespace GitHub.Repositories.Item.Environments.Item.Variables.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an environment variable using the variable name.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `environment:write` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Deletes an environment variable using the variable name.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +93,7 @@ namespace GitHub.Repositories.Item.Environments.Item.Variables.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Gets a specific variable in an environment.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `environments:read` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Gets a specific variable in an environment.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,7 +109,7 @@ namespace GitHub.Repositories.Item.Environments.Item.Variables.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Updates an environment variable that you can reference in a GitHub Actions workflow.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `environment:write` repository permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Updates an environment variable that you can reference in a GitHub Actions workflow.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

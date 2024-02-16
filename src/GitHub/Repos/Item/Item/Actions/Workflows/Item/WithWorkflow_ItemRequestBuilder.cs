@@ -53,7 +53,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
         public WithWorkflow_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}", rawUrl) {
         }
         /// <summary>
-        /// Gets a specific workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+        /// Gets a specific workflow. You can replace `workflow_id` with the workflowfile name. For example, you could use `main.yaml`.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/actions/workflows#get-a-workflow" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
             return await RequestAdapter.SendAsync<GitHub.Models.Workflow>(requestInfo, GitHub.Models.Workflow.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a specific workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+        /// Gets a specific workflow. You can replace `workflow_id` with the workflowfile name. For example, you could use `main.yaml`.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

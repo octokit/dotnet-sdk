@@ -36,7 +36,7 @@ namespace GitHub.User.Keys {
         public KeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/keys{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// Lists the public SSH keys for the authenticated user&apos;s GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+        /// Lists the public SSH keys for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/keys#list-public-ssh-keys-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace GitHub.User.Keys {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Adds a public SSH key to the authenticated user&apos;s GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+        /// Adds a public SSH key to the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/keys#create-a-public-ssh-key-for-the-authenticated-user" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace GitHub.User.Keys {
             return await RequestAdapter.SendAsync<Key>(requestInfo, Key.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the public SSH keys for the authenticated user&apos;s GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+        /// Lists the public SSH keys for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace GitHub.User.Keys {
             return requestInfo;
         }
         /// <summary>
-        /// Adds a public SSH key to the authenticated user&apos;s GitHub account. Requires that you are authenticated via Basic Auth, or OAuth with at least `write:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+        /// Adds a public SSH key to the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `write:gpg_key` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace GitHub.User.Keys {
             return new KeysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the public SSH keys for the authenticated user&apos;s GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:public_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+        /// Lists the public SSH keys for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
         /// </summary>
         public class KeysRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

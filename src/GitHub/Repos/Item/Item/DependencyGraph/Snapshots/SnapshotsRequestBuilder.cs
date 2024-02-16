@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         public SnapshotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph/snapshots", rawUrl) {
         }
         /// <summary>
-        /// Create a new snapshot of a repository&apos;s dependencies. You must authenticate using an access token with the `repo` scope to use this endpoint for a repository that the requesting user has access to.
+        /// Create a new snapshot of a repository&apos;s dependencies.The authenticated user must have access to the repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/dependency-graph/dependency-submission#create-a-snapshot-of-dependencies-for-a-repository" />
         /// </summary>
         /// <param name="body">Create a new snapshot of a repository&apos;s dependencies.</param>
@@ -46,7 +46,7 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
             return await RequestAdapter.SendAsync<SnapshotsPostResponse>(requestInfo, SnapshotsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new snapshot of a repository&apos;s dependencies. You must authenticate using an access token with the `repo` scope to use this endpoint for a repository that the requesting user has access to.
+        /// Create a new snapshot of a repository&apos;s dependencies.The authenticated user must have access to the repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">Create a new snapshot of a repository&apos;s dependencies.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

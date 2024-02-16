@@ -35,7 +35,7 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
         public RepositoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/variables/{name}/repositories{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// Lists all repositories that can access an organization variablethat is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Lists all repositories that can access an organization variablethat is available to selected repositories.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// API method documentation <see href="https://docs.github.com/rest/actions/variables#list-selected-repositories-for-an-organization-variable" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
             return await RequestAdapter.SendAsync<RepositoriesGetResponse>(requestInfo, RepositoriesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replaces all repositories for an organization variable that is availableto selected repositories. Organization variables that are available to selectedrepositories have their `visibility` field set to `selected`.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:write` organization permission to use thisendpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Replaces all repositories for an organization variable that is availableto selected repositories. Organization variables that are available to selectedrepositories have their `visibility` field set to `selected`.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// API method documentation <see href="https://docs.github.com/rest/actions/variables#set-selected-repositories-for-an-organization-variable" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -69,7 +69,7 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all repositories that can access an organization variablethat is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Lists all repositories that can access an organization variablethat is available to selected repositories.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
             return requestInfo;
         }
         /// <summary>
-        /// Replaces all repositories for an organization variable that is availableto selected repositories. Organization variables that are available to selectedrepositories have their `visibility` field set to `selected`.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:write` organization permission to use thisendpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Replaces all repositories for an organization variable that is availableto selected repositories. Organization variables that are available to selectedrepositories have their `visibility` field set to `selected`.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
             return new RepositoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all repositories that can access an organization variablethat is available to selected repositories.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:read` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Lists all repositories that can access an organization variablethat is available to selected repositories.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// </summary>
         public class RepositoriesRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

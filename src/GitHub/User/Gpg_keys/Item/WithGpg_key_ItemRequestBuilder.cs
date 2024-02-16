@@ -28,7 +28,7 @@ namespace GitHub.User.Gpg_keys.Item {
         public WithGpg_key_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/gpg_keys/{gpg_key_id}", rawUrl) {
         }
         /// <summary>
-        /// Removes a GPG key from the authenticated user&apos;s GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+        /// Removes a GPG key from the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `admin:gpg_key` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/gpg-keys#delete-a-gpg-key-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace GitHub.User.Gpg_keys.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+        /// View extended details for a single GPG key.OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/gpg-keys#get-a-gpg-key-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace GitHub.User.Gpg_keys.Item {
             return await RequestAdapter.SendAsync<GpgKey>(requestInfo, GpgKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes a GPG key from the authenticated user&apos;s GitHub account. Requires that you are authenticated via Basic Auth or via OAuth with at least `admin:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+        /// Removes a GPG key from the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `admin:gpg_key` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace GitHub.User.Gpg_keys.Item {
             return requestInfo;
         }
         /// <summary>
-        /// View extended details for a single GPG key. Requires that you are authenticated via Basic Auth or via OAuth with at least `read:gpg_key` [scope](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).
+        /// View extended details for a single GPG key.OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -28,7 +28,7 @@ namespace GitHub.User.Codespaces.Secrets.PublicKey {
         public PublicKeyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces/secrets/public-key", rawUrl) {
         }
         /// <summary>
-        /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
+        /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets.The authenticated user must have Codespaces access to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/secrets#get-public-key-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -44,7 +44,7 @@ namespace GitHub.User.Codespaces.Secrets.PublicKey {
             return await RequestAdapter.SendAsync<CodespacesUserPublicKey>(requestInfo, CodespacesUserPublicKey.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have read access to the `codespaces_user_secrets` user permission to use this endpoint.
+        /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets.The authenticated user must have Codespaces access to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

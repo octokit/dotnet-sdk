@@ -28,7 +28,7 @@ namespace GitHub.User.Codespaces.Secrets.Item.Repositories.Item {
         public WithRepository_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces/secrets/{secret_name}/repositories/{repository_id}", rawUrl) {
         }
         /// <summary>
-        /// Removes a repository from the selected repositories for a user&apos;s development environment secret.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have write access to the `codespaces_user_secrets` user permission to use this endpoint.
+        /// Removes a repository from the selected repositories for a user&apos;s development environment secret.The authenticated user must have Codespaces access to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/secrets#remove-a-selected-repository-from-a-user-secret" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace GitHub.User.Codespaces.Secrets.Item.Repositories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a repository to the selected repositories for a user&apos;s development environment secret.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have write access to the `codespaces_user_secrets` user permission and write access to the `codespaces_secrets` repository permission on the referenced repository to use this endpoint.
+        /// Adds a repository to the selected repositories for a user&apos;s development environment secret.The authenticated user must have Codespaces access to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/secrets#add-a-selected-repository-to-a-user-secret" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,7 +72,7 @@ namespace GitHub.User.Codespaces.Secrets.Item.Repositories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes a repository from the selected repositories for a user&apos;s development environment secret.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have write access to the `codespaces_user_secrets` user permission to use this endpoint.
+        /// Removes a repository from the selected repositories for a user&apos;s development environment secret.The authenticated user must have Codespaces access to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +88,7 @@ namespace GitHub.User.Codespaces.Secrets.Item.Repositories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Adds a repository to the selected repositories for a user&apos;s development environment secret.You must authenticate using an access token with the `codespace` or `codespace:secrets` scope to use this endpoint. User must have Codespaces access to use this endpoint.GitHub Apps must have write access to the `codespaces_user_secrets` user permission and write access to the `codespaces_secrets` repository permission on the referenced repository to use this endpoint.
+        /// Adds a repository to the selected repositories for a user&apos;s development environment secret.The authenticated user must have Codespaces access to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `codespace` or `codespace:secrets` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

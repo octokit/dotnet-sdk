@@ -28,7 +28,7 @@ namespace GitHub.User.Emails {
         public EmailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/emails{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// This endpoint is accessible with the `user` scope.
+        /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/emails#delete-an-email-address-for-the-authenticated-user" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -52,7 +52,7 @@ namespace GitHub.User.Emails {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
+        /// Lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/emails#list-email-addresses-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -74,7 +74,7 @@ namespace GitHub.User.Emails {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// This endpoint is accessible with the `user` scope.
+        /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/emails#add-an-email-address-for-the-authenticated-user" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -99,7 +99,7 @@ namespace GitHub.User.Emails {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// This endpoint is accessible with the `user` scope.
+        /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +118,7 @@ namespace GitHub.User.Emails {
             return requestInfo;
         }
         /// <summary>
-        /// Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
+        /// Lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,7 +134,7 @@ namespace GitHub.User.Emails {
             return requestInfo;
         }
         /// <summary>
-        /// This endpoint is accessible with the `user` scope.
+        /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -340,7 +340,7 @@ namespace GitHub.User.Emails {
             }
         }
         /// <summary>
-        /// Lists all of your email addresses, and specifies which one is visible to the public. This endpoint is accessible with the `user:email` scope.
+        /// Lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
         /// </summary>
         public class EmailsRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

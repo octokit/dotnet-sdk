@@ -41,7 +41,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
         public SecurityAdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", rawUrl) {
         }
         /// <summary>
-        /// Lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permissionin order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
+        /// Lists security advisories in a repository.The authenticated user can access unpublished security advisories from a repository if they are a security manager or administrator of that repository, or if they are a collaborator on any security advisory.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
         /// API method documentation <see href="https://docs.github.com/rest/security-advisories/repository-advisories#list-repository-security-advisories" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Creates a new repository security advisory.You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.In order to create a draft repository security advisory, you must be a security manager or administrator of that repository.
+        /// Creates a new repository security advisory.In order to create a draft repository security advisory, the authenticated user must be a security manager or administrator of that repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/security-advisories/repository-advisories#create-a-repository-security-advisory" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
             return await RequestAdapter.SendAsync<RepositoryAdvisory>(requestInfo, RepositoryAdvisory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permissionin order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
+        /// Lists security advisories in a repository.The authenticated user can access unpublished security advisories from a repository if they are a security manager or administrator of that repository, or if they are a collaborator on any security advisory.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +101,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new repository security advisory.You must authenticate using an access token with the `repo` scope or `repository_advisories:write` permission to use this endpoint.In order to create a draft repository security advisory, you must be a security manager or administrator of that repository.
+        /// Creates a new repository security advisory.In order to create a draft repository security advisory, the authenticated user must be a security manager or administrator of that repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +127,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
             return new SecurityAdvisoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists security advisories in a repository.You must authenticate using an access token with the `repo` scope or `repository_advisories:read` permissionin order to get published security advisories in a private repository, or any unpublished security advisories that you have access to.You can access unpublished security advisories from a repository if you are a security manager or administrator of that repository, or if you are a collaborator on any security advisory.
+        /// Lists security advisories in a repository.The authenticated user can access unpublished security advisories from a repository if they are a security manager or administrator of that repository, or if they are a collaborator on any security advisory.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
         /// </summary>
         public class SecurityAdvisoriesRequestBuilderGetQueryParameters {
             /// <summary>A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

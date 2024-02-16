@@ -38,7 +38,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
         public WithCheck_run_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs/{check_run_id}", rawUrl) {
         }
         /// <summary>
-        /// Gets a single check run using its `id`.GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+        /// Gets a single check run using its `id`.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/checks/runs#get-a-check-run" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
             return await RequestAdapter.SendAsync<CheckRun>(requestInfo, CheckRun.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a check run for a specific commit in a repository.To update a check run, you must use a GitHub App with the `checks:write` permission. OAuth apps and authenticated users are not able to update a check run.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+        /// Updates a check run for a specific commit in a repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth apps and personal access tokens (classic) cannot use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/checks/runs#update-a-check-run" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
             return await RequestAdapter.SendAsync<CheckRun>(requestInfo, CheckRun.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a single check run using its `id`.GitHub Apps must have the `checks:read` permission on a private repository or pull access to a public repository to get check runs. OAuth apps and authenticated users must have the `repo` scope to get check runs in a private repository.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+        /// Gets a single check run using its `id`.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,7 +88,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Updates a check run for a specific commit in a repository.To update a check run, you must use a GitHub App with the `checks:write` permission. OAuth apps and authenticated users are not able to update a check run.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+        /// Updates a check run for a specific commit in a repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth apps and personal access tokens (classic) cannot use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -50,7 +50,7 @@ namespace GitHub.User.Repos {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Creates a new repository for the authenticated user.**OAuth scope requirements**When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:*   `public_repo` scope or `repo` scope to create a public repository*   `repo` scope to create a private repository
+        /// Creates a new repository for the authenticated user.OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace GitHub.User.Repos {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new repository for the authenticated user.**OAuth scope requirements**When using [OAuth](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/), authorizations must include:*   `public_repo` scope or `repo` scope to create a public repository*   `repo` scope to create a private repository
+        /// Creates a new repository for the authenticated user.OAuth app tokens and personal access tokens (classic) need the `public_repo` or `repo` scope to create a public repository, and `repo` scope to create a private repository.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

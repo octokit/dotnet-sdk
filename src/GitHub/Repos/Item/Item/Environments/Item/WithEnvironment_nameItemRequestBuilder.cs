@@ -38,7 +38,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
         public WithEnvironment_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}", rawUrl) {
         }
         /// <summary>
-        /// You must authenticate using an access token with the repo scope to use this endpoint.
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/deployments/environments#delete-an-environment" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Note:** To get information about name patterns that branches must match in order to deploy to this environment, see &quot;[Get a deployment branch policy](/rest/deployments/branch-policies#get-a-deployment-branch-policy).&quot;Anyone with read access to the repository can use this endpoint. If therepository is private, you must use an access token with the `repo` scope. GitHubApps must have the `actions:read` permission to use this endpoint.
+        /// **Note:** To get information about name patterns that branches must match in order to deploy to this environment, see &quot;[Get a deployment branch policy](/rest/deployments/branch-policies#get-a-deployment-branch-policy).&quot;Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/deployments/environments#get-an-environment" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
             return await RequestAdapter.SendAsync<EnvironmentObject>(requestInfo, EnvironmentObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see &quot;[Environments](/actions/reference/environments#environment-protection-rules).&quot;**Note:** To create or update name patterns that branches must match in order to deploy to this environment, see &quot;[Deployment branch policies](/rest/deployments/branch-policies).&quot;**Note:** To create or update secrets for an environment, see &quot;[GitHub Actions secrets](/rest/actions/secrets).&quot;You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
+        /// Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see &quot;[Environments](/actions/reference/environments#environment-protection-rules).&quot;**Note:** To create or update name patterns that branches must match in order to deploy to this environment, see &quot;[Deployment branch policies](/rest/deployments/branch-policies).&quot;**Note:** To create or update secrets for an environment, see &quot;[GitHub Actions secrets](/rest/actions/secrets).&quot;OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/deployments/environments#create-or-update-an-environment" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
             return await RequestAdapter.SendAsync<EnvironmentObject>(requestInfo, EnvironmentObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You must authenticate using an access token with the repo scope to use this endpoint.
+        /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// **Note:** To get information about name patterns that branches must match in order to deploy to this environment, see &quot;[Get a deployment branch policy](/rest/deployments/branch-policies#get-a-deployment-branch-policy).&quot;Anyone with read access to the repository can use this endpoint. If therepository is private, you must use an access token with the `repo` scope. GitHubApps must have the `actions:read` permission to use this endpoint.
+        /// **Note:** To get information about name patterns that branches must match in order to deploy to this environment, see &quot;[Get a deployment branch policy](/rest/deployments/branch-policies#get-a-deployment-branch-policy).&quot;Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -122,7 +122,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see &quot;[Environments](/actions/reference/environments#environment-protection-rules).&quot;**Note:** To create or update name patterns that branches must match in order to deploy to this environment, see &quot;[Deployment branch policies](/rest/deployments/branch-policies).&quot;**Note:** To create or update secrets for an environment, see &quot;[GitHub Actions secrets](/rest/actions/secrets).&quot;You must authenticate using an access token with the `repo` scope to use this endpoint. GitHub Apps must have the `administration:write` permission for the repository to use this endpoint.
+        /// Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see &quot;[Environments](/actions/reference/environments#environment-protection-rules).&quot;**Note:** To create or update name patterns that branches must match in order to deploy to this environment, see &quot;[Deployment branch policies](/rest/deployments/branch-policies).&quot;**Note:** To create or update secrets for an environment, see &quot;[GitHub Actions secrets](/rest/actions/secrets).&quot;OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

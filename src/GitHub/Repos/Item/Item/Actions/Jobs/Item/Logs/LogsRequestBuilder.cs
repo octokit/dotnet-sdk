@@ -27,7 +27,7 @@ namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Logs {
         public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/jobs/{job_id}/logs", rawUrl) {
         }
         /// <summary>
-        /// Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Lookfor `Location:` in the response header to find the URL for the download. Anyone with read access to the repository canuse this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps musthave the `actions:read` permission to use this endpoint.
+        /// Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Lookfor `Location:` in the response header to find the URL for the download.Anyone with read access to the repository can use this endpoint.If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/workflow-jobs#download-job-logs-for-a-workflow-run" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -43,7 +43,7 @@ namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Logs {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Lookfor `Location:` in the response header to find the URL for the download. Anyone with read access to the repository canuse this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps musthave the `actions:read` permission to use this endpoint.
+        /// Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Lookfor `Location:` in the response header to find the URL for the download.Anyone with read access to the repository can use this endpoint.If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

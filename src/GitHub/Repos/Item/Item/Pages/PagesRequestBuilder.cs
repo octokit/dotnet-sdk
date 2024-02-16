@@ -43,7 +43,7 @@ namespace GitHub.Repos.Item.Item.Pages {
         public PagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages", rawUrl) {
         }
         /// <summary>
-        /// Deletes a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).To use this endpoint, you must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
+        /// Deletes a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).The authenticated user must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#delete-a-apiname-pages-site" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace GitHub.Repos.Item.Item.Pages {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets information about a GitHub Pages site.A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+        /// Gets information about a GitHub Pages site.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#get-a-apiname-pages-site" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace GitHub.Repos.Item.Item.Pages {
             return await RequestAdapter.SendAsync<Page>(requestInfo, Page.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Configures a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).&quot;To use this endpoint, you must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
+        /// Configures a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).&quot;The authenticated user must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#create-a-apiname-pages-site" />
         /// </summary>
         /// <param name="body">The source branch and directory used to publish your Pages site.</param>
@@ -105,7 +105,7 @@ namespace GitHub.Repos.Item.Item.Pages {
             return await RequestAdapter.SendAsync<Page>(requestInfo, Page.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates information for a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).To use this endpoint, you must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
+        /// Updates information for a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).The authenticated user must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#update-information-about-a-apiname-pages-site" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -128,7 +128,7 @@ namespace GitHub.Repos.Item.Item.Pages {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).To use this endpoint, you must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
+        /// Deletes a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).The authenticated user must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,7 +144,7 @@ namespace GitHub.Repos.Item.Item.Pages {
             return requestInfo;
         }
         /// <summary>
-        /// Gets information about a GitHub Pages site.A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+        /// Gets information about a GitHub Pages site.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -160,7 +160,7 @@ namespace GitHub.Repos.Item.Item.Pages {
             return requestInfo;
         }
         /// <summary>
-        /// Configures a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).&quot;To use this endpoint, you must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
+        /// Configures a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).&quot;The authenticated user must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The source branch and directory used to publish your Pages site.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +179,7 @@ namespace GitHub.Repos.Item.Item.Pages {
             return requestInfo;
         }
         /// <summary>
-        /// Updates information for a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).To use this endpoint, you must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission. A token with the `repo` scope or Pages write permission is required. GitHub Apps must have the `administration:write` and `pages:write` permissions.
+        /// Updates information for a GitHub Pages site. For more information, see &quot;[About GitHub Pages](/github/working-with-github-pages/about-github-pages).The authenticated user must be a repository administrator, maintainer, or have the &apos;manage GitHub Pages settings&apos; permission.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Config {
         public ConfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/hooks/{hook_id}/config", rawUrl) {
         }
         /// <summary>
-        /// Returns the webhook configuration for a repository. To get more information about the webhook, including the `active` state and `events`, use &quot;[Get a repository webhook](/rest/webhooks/repos#get-a-repository-webhook).&quot;Access tokens must have the `read:repo_hook` or `repo` scope, and GitHub Apps must have the `repository_hooks:read` permission.
+        /// Returns the webhook configuration for a repository. To get more information about the webhook, including the `active` state and `events`, use &quot;[Get a repository webhook](/rest/webhooks/repos#get-a-repository-webhook).&quot;OAuth app tokens and personal access tokens (classic) need the `read:repo_hook` or `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/repos/webhooks#get-a-webhook-configuration-for-a-repository" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -44,7 +44,7 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Config {
             return await RequestAdapter.SendAsync<WebhookConfig>(requestInfo, WebhookConfig.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the webhook configuration for a repository. To update more information about the webhook, including the `active` state and `events`, use &quot;[Update a repository webhook](/rest/webhooks/repos#update-a-repository-webhook).&quot;Access tokens must have the `write:repo_hook` or `repo` scope, and GitHub Apps must have the `repository_hooks:write` permission.
+        /// Updates the webhook configuration for a repository. To update more information about the webhook, including the `active` state and `events`, use &quot;[Update a repository webhook](/rest/webhooks/repos#update-a-repository-webhook).&quot;OAuth app tokens and personal access tokens (classic) need the `write:repo_hook` or `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/repos/webhooks#update-a-webhook-configuration-for-a-repository" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -62,7 +62,7 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Config {
             return await RequestAdapter.SendAsync<WebhookConfig>(requestInfo, WebhookConfig.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the webhook configuration for a repository. To get more information about the webhook, including the `active` state and `events`, use &quot;[Get a repository webhook](/rest/webhooks/repos#get-a-repository-webhook).&quot;Access tokens must have the `read:repo_hook` or `repo` scope, and GitHub Apps must have the `repository_hooks:read` permission.
+        /// Returns the webhook configuration for a repository. To get more information about the webhook, including the `active` state and `events`, use &quot;[Get a repository webhook](/rest/webhooks/repos#get-a-repository-webhook).&quot;OAuth app tokens and personal access tokens (classic) need the `read:repo_hook` or `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +78,7 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Config {
             return requestInfo;
         }
         /// <summary>
-        /// Updates the webhook configuration for a repository. To update more information about the webhook, including the `active` state and `events`, use &quot;[Update a repository webhook](/rest/webhooks/repos#update-a-repository-webhook).&quot;Access tokens must have the `write:repo_hook` or `repo` scope, and GitHub Apps must have the `repository_hooks:write` permission.
+        /// Updates the webhook configuration for a repository. To update more information about the webhook, including the `active` state and `events`, use &quot;[Update a repository webhook](/rest/webhooks/repos#update-a-repository-webhook).&quot;OAuth app tokens and personal access tokens (classic) need the `write:repo_hook` or `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

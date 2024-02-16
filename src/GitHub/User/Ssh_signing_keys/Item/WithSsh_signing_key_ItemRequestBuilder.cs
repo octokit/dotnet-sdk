@@ -28,7 +28,7 @@ namespace GitHub.User.Ssh_signing_keys.Item {
         public WithSsh_signing_key_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/ssh_signing_keys/{ssh_signing_key_id}", rawUrl) {
         }
         /// <summary>
-        /// Deletes an SSH signing key from the authenticated user&apos;s GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `admin:ssh_signing_key` scope. For more information, see &quot;[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).&quot;
+        /// Deletes an SSH signing key from the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `admin:ssh_signing_key` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/ssh-signing-keys#delete-an-ssh-signing-key-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace GitHub.User.Ssh_signing_keys.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets extended details for an SSH signing key. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see &quot;[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).&quot;
+        /// Gets extended details for an SSH signing key.OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/ssh-signing-keys#get-an-ssh-signing-key-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace GitHub.User.Ssh_signing_keys.Item {
             return await RequestAdapter.SendAsync<SshSigningKey>(requestInfo, SshSigningKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an SSH signing key from the authenticated user&apos;s GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `admin:ssh_signing_key` scope. For more information, see &quot;[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).&quot;
+        /// Deletes an SSH signing key from the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `admin:ssh_signing_key` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace GitHub.User.Ssh_signing_keys.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Gets extended details for an SSH signing key. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see &quot;[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).&quot;
+        /// Gets extended details for an SSH signing key.OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

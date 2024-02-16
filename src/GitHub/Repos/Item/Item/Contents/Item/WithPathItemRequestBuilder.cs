@@ -72,7 +72,7 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
             return await RequestAdapter.SendAsync<WithPathGetResponse>(requestInfo, WithPathGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new file or replaces an existing file in a repository. You must authenticate using an access token with the `repo` scope to use this endpoint. If you want to modify files in the `.github/workflows` directory, you must authenticate using an access token with the `workflow` scope.**Note:** If you use this endpoint and the &quot;[Delete a file](https://docs.github.com/rest/repos/contents/#delete-a-file)&quot; endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
+        /// Creates a new file or replaces an existing file in a repository.**Note:** If you use this endpoint and the &quot;[Delete a file](https://docs.github.com/rest/repos/contents/#delete-a-file)&quot; endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The `workflow` scope is also required in order to modify files in the `.github/workflows` directory.
         /// API method documentation <see href="https://docs.github.com/rest/repos/contents#create-or-update-file-contents" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -130,7 +130,7 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new file or replaces an existing file in a repository. You must authenticate using an access token with the `repo` scope to use this endpoint. If you want to modify files in the `.github/workflows` directory, you must authenticate using an access token with the `workflow` scope.**Note:** If you use this endpoint and the &quot;[Delete a file](https://docs.github.com/rest/repos/contents/#delete-a-file)&quot; endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
+        /// Creates a new file or replaces an existing file in a repository.**Note:** If you use this endpoint and the &quot;[Delete a file](https://docs.github.com/rest/repos/contents/#delete-a-file)&quot; endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The `workflow` scope is also required in order to modify files in the `.github/workflows` directory.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

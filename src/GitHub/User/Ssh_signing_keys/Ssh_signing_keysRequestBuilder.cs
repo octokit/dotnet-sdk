@@ -36,7 +36,7 @@ namespace GitHub.User.Ssh_signing_keys {
         public Ssh_signing_keysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/ssh_signing_keys{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// Lists the SSH signing keys for the authenticated user&apos;s GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see &quot;[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).&quot;
+        /// Lists the SSH signing keys for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/ssh-signing-keys#list-ssh-signing-keys-for-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace GitHub.User.Ssh_signing_keys {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Creates an SSH signing key for the authenticated user&apos;s GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `write:ssh_signing_key` scope. For more information, see &quot;[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).&quot;
+        /// Creates an SSH signing key for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `write:ssh_signing_key` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/ssh-signing-keys#create-a-ssh-signing-key-for-the-authenticated-user" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace GitHub.User.Ssh_signing_keys {
             return await RequestAdapter.SendAsync<SshSigningKey>(requestInfo, SshSigningKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the SSH signing keys for the authenticated user&apos;s GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see &quot;[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).&quot;
+        /// Lists the SSH signing keys for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace GitHub.User.Ssh_signing_keys {
             return requestInfo;
         }
         /// <summary>
-        /// Creates an SSH signing key for the authenticated user&apos;s GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `write:ssh_signing_key` scope. For more information, see &quot;[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).&quot;
+        /// Creates an SSH signing key for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `write:ssh_signing_key` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace GitHub.User.Ssh_signing_keys {
             return new Ssh_signing_keysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the SSH signing keys for the authenticated user&apos;s GitHub account. You must authenticate with Basic Authentication, or you must authenticate with OAuth with at least `read:ssh_signing_key` scope. For more information, see &quot;[Understanding scopes for OAuth apps](https://docs.github.com/apps/building-oauth-apps/understanding-scopes-for-oauth-apps/).&quot;
+        /// Lists the SSH signing keys for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
         /// </summary>
         public class Ssh_signing_keysRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

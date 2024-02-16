@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.RegistrationToken {
         public RegistrationTokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runners/registration-token", rawUrl) {
         }
         /// <summary>
-        /// Returns a token that you can pass to the `config` script. The tokenexpires after one hour.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.Example using registration token:Configure your self-hosted runner, replacing `TOKEN` with the registration token providedby this endpoint.```config.sh --url https://github.com/octo-org/octo-repo-artifacts --token TOKEN```
+        /// Returns a token that you can pass to the `config` script. The token expires after one hour.For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner:```./config.sh --url https://github.com/octo-org --token TOKEN```Authenticated users must have admin access to the repository to use this endpoint.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/self-hosted-runners#create-a-registration-token-for-a-repository" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -44,7 +44,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.RegistrationToken {
             return await RequestAdapter.SendAsync<AuthenticationToken>(requestInfo, AuthenticationToken.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a token that you can pass to the `config` script. The tokenexpires after one hour.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.Example using registration token:Configure your self-hosted runner, replacing `TOKEN` with the registration token providedby this endpoint.```config.sh --url https://github.com/octo-org/octo-repo-artifacts --token TOKEN```
+        /// Returns a token that you can pass to the `config` script. The token expires after one hour.For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to configure your self-hosted runner:```./config.sh --url https://github.com/octo-org --token TOKEN```Authenticated users must have admin access to the repository to use this endpoint.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

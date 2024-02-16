@@ -27,7 +27,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Artifacts {
         public ArtifactsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}/artifacts{?name*,page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+        /// Lists artifacts for a workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/actions/artifacts#list-workflow-run-artifacts" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -43,7 +43,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Artifacts {
             return await RequestAdapter.SendAsync<ArtifactsGetResponse>(requestInfo, ArtifactsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+        /// Lists artifacts for a workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Artifacts {
             return new ArtifactsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists artifacts for a workflow run. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have the `actions:read` permission to use this endpoint.
+        /// Lists artifacts for a workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         public class ArtifactsRequestBuilderGetQueryParameters {
             /// <summary>The name field of an artifact. When specified, only artifacts with this name will be returned.</summary>

@@ -27,7 +27,7 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories.Item {
         public WithRepository_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/variables/{name}/repositories/{repository_id}", rawUrl) {
         }
         /// <summary>
-        /// Removes a repository from an organization variable that isavailable to selected repositories. Organization variables that are available toselected repositories have their `visibility` field set to `selected`.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:write` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Removes a repository from an organization variable that isavailable to selected repositories. Organization variables that are available toselected repositories have their `visibility` field set to `selected`.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// API method documentation <see href="https://docs.github.com/rest/actions/variables#remove-selected-repository-from-an-organization-variable" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -43,7 +43,7 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a repository to an organization variable that is available to selected repositories.Organization variables that are available to selected repositories have their `visibility` field set to `selected`.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:write` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Adds a repository to an organization variable that is available to selected repositories.Organization variables that are available to selected repositories have their `visibility` field set to `selected`.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/variables#add-selected-repository-to-an-organization-variable" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes a repository from an organization variable that isavailable to selected repositories. Organization variables that are available toselected repositories have their `visibility` field set to `selected`.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:write` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Removes a repository from an organization variable that isavailable to selected repositories. Organization variables that are available toselected repositories have their `visibility` field set to `selected`.Authenticated users must have collaborator access to a repository to create, update, or read variables.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Adds a repository to an organization variable that is available to selected repositories.Organization variables that are available to selected repositories have their `visibility` field set to `selected`.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `organization_actions_variables:write` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read variables.
+        /// Adds a repository to an organization variable that is available to selected repositories.Organization variables that are available to selected repositories have their `visibility` field set to `selected`.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

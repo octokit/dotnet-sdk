@@ -158,7 +158,7 @@ namespace GitHub.User {
         public UserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user", rawUrl) {
         }
         /// <summary>
-        /// If the authenticated user is authenticated with an OAuth token with the `user` scope, then the response lists public and private profile information.If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
+        /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
         /// API method documentation <see href="https://docs.github.com/rest/users/users#get-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -202,7 +202,7 @@ namespace GitHub.User {
             return await RequestAdapter.SendAsync<PrivateUser>(requestInfo, PrivateUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// If the authenticated user is authenticated with an OAuth token with the `user` scope, then the response lists public and private profile information.If the authenticated user is authenticated through OAuth without the `user` scope, then the response lists only public profile information.
+        /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

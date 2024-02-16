@@ -27,7 +27,7 @@ namespace GitHub.Orgs.Item.Item.Item {
         public WithEnablementItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/{security_product}/{enablement}", rawUrl) {
         }
         /// <summary>
-        /// Enables or disables the specified security feature for all eligible repositories in an organization.To use this endpoint, you must be an organization owner or be member of a team with the security manager role.A token with the &apos;write:org&apos; scope is also required.GitHub Apps must have the `organization_administration:write` permission to use this endpoint.For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;
+        /// Enables or disables the specified security feature for all eligible repositories in an organization. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;The authenticated user must be an organization owner or be member of a team with the security manager role to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/orgs#enable-or-disable-a-security-feature-for-an-organization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -45,7 +45,7 @@ namespace GitHub.Orgs.Item.Item.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enables or disables the specified security feature for all eligible repositories in an organization.To use this endpoint, you must be an organization owner or be member of a team with the security manager role.A token with the &apos;write:org&apos; scope is also required.GitHub Apps must have the `organization_administration:write` permission to use this endpoint.For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;
+        /// Enables or disables the specified security feature for all eligible repositories in an organization. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;The authenticated user must be an organization owner or be member of a team with the security manager role to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
