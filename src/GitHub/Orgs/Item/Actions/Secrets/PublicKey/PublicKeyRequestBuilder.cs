@@ -28,7 +28,7 @@ namespace GitHub.Orgs.Item.Actions.Secrets.PublicKey {
         public PublicKeyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/secrets/public-key", rawUrl) {
         }
         /// <summary>
-        /// Gets your public key, which you need to encrypt secrets. You need toencrypt a secret before you can create or update secrets.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `secrets` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+        /// Gets your public key, which you need to encrypt secrets. You need toencrypt a secret before you can create or update secrets.The authenticated user must have collaborator access to a repository to create, update, or read secrets.OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/secrets#get-an-organization-public-key" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -44,7 +44,7 @@ namespace GitHub.Orgs.Item.Actions.Secrets.PublicKey {
             return await RequestAdapter.SendAsync<ActionsPublicKey>(requestInfo, ActionsPublicKey.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets your public key, which you need to encrypt secrets. You need toencrypt a secret before you can create or update secrets.You must authenticate using an access token with the `admin:org` scope to use this endpoint.If the repository is private, you must use an access token with the `repo` scope.GitHub Apps must have the `secrets` organization permission to use this endpoint.Authenticated users must have collaborator access to a repository to create, update, or read secrets.
+        /// Gets your public key, which you need to encrypt secrets. You need toencrypt a secret before you can create or update secrets.The authenticated user must have collaborator access to a repository to create, update, or read secrets.OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

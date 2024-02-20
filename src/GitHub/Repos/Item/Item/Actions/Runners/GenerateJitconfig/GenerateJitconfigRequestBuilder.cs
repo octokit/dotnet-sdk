@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
         public GenerateJitconfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runners/generate-jitconfig", rawUrl) {
         }
         /// <summary>
-        /// Generates a configuration that can be passed to the runner application at startup.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
+        /// Generates a configuration that can be passed to the runner application at startup.The authenticated user must have admin access to the repository.OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-a-repository" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -50,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
             return await RequestAdapter.SendAsync<GenerateJitconfigPostResponse>(requestInfo, GenerateJitconfigPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Generates a configuration that can be passed to the runner application at startup.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `administration` permission for repositories and the `organization_self_hosted_runners` permission for organizations.Authenticated users must have admin access to repositories or organizations, or the `manage_runners:enterprise` scope for enterprises, to use these endpoints.
+        /// Generates a configuration that can be passed to the runner application at startup.The authenticated user must have admin access to the repository.OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.PublicKey {
         public PublicKeyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/secrets/public-key", rawUrl) {
         }
         /// <summary>
-        /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have write access to the `codespaces_secrets` repository permission to use this endpoint.
+        /// Gets your public key, which you need to encrypt secrets. You need toencrypt a secret before you can create or update secrets.Anyone with read access to the repository can use this endpoint.If the repository is private, OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/repository-secrets#get-a-repository-public-key" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -44,7 +44,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.PublicKey {
             return await RequestAdapter.SendAsync<CodespacesPublicKey>(requestInfo, CodespacesPublicKey.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets. Anyone with read access to the repository can use this endpoint. If the repository is private you must use an access token with the `repo` scope. GitHub Apps must have write access to the `codespaces_secrets` repository permission to use this endpoint.
+        /// Gets your public key, which you need to encrypt secrets. You need toencrypt a secret before you can create or update secrets.Anyone with read access to the repository can use this endpoint.If the repository is private, OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

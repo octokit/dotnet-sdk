@@ -36,7 +36,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments {
         public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments", rawUrl) {
         }
         /// <summary>
-        /// Create a GitHub Pages deployment for a repository.Users must have write permissions. GitHub Apps must have the `pages:write` permission to use this endpoint.
+        /// Create a GitHub Pages deployment for a repository.The authenticated user must have write permission to the repository.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#create-a-github-pages-deployment" />
         /// </summary>
         /// <param name="body">The object used to create GitHub Pages deployment</param>
@@ -59,7 +59,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments {
             return await RequestAdapter.SendAsync<PageDeployment>(requestInfo, PageDeployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a GitHub Pages deployment for a repository.Users must have write permissions. GitHub Apps must have the `pages:write` permission to use this endpoint.
+        /// Create a GitHub Pages deployment for a repository.The authenticated user must have write permission to the repository.
         /// </summary>
         /// <param name="body">The object used to create GitHub Pages deployment</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

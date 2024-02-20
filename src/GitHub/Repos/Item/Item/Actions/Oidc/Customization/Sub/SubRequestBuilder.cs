@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Actions.Oidc.Customization.Sub {
         public SubRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/oidc/customization/sub", rawUrl) {
         }
         /// <summary>
-        /// Gets the customization template for an OpenID Connect (OIDC) subject claim.You must authenticate using an access token with the `repo` scope to use thisendpoint. GitHub Apps must have the `organization_administration:read` permission to use this endpoint.
+        /// Gets the customization template for an OpenID Connect (OIDC) subject claim.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/oidc#get-the-customization-template-for-an-oidc-subject-claim-for-a-repository" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace GitHub.Repos.Item.Item.Actions.Oidc.Customization.Sub {
             return await RequestAdapter.SendAsync<OidcCustomSubRepo>(requestInfo, OidcCustomSubRepo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sets the customization template and `opt-in` or `opt-out` flag for an OpenID Connect (OIDC) subject claim for a repository.You must authenticate using an access token with the `repo` scope to use thisendpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
+        /// Sets the customization template and `opt-in` or `opt-out` flag for an OpenID Connect (OIDC) subject claim for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/oidc#set-the-customization-template-for-an-oidc-subject-claim-for-a-repository" />
         /// </summary>
         /// <param name="body">Actions OIDC subject customization for a repository</param>
@@ -71,7 +71,7 @@ namespace GitHub.Repos.Item.Item.Actions.Oidc.Customization.Sub {
             return await RequestAdapter.SendAsync<EmptyObject>(requestInfo, EmptyObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the customization template for an OpenID Connect (OIDC) subject claim.You must authenticate using an access token with the `repo` scope to use thisendpoint. GitHub Apps must have the `organization_administration:read` permission to use this endpoint.
+        /// Gets the customization template for an OpenID Connect (OIDC) subject claim.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace GitHub.Repos.Item.Item.Actions.Oidc.Customization.Sub {
             return requestInfo;
         }
         /// <summary>
-        /// Sets the customization template and `opt-in` or `opt-out` flag for an OpenID Connect (OIDC) subject claim for a repository.You must authenticate using an access token with the `repo` scope to use thisendpoint. GitHub Apps must have the `actions:write` permission to use this endpoint.
+        /// Sets the customization template and `opt-in` or `opt-out` flag for an OpenID Connect (OIDC) subject claim for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">Actions OIDC subject customization for a repository</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

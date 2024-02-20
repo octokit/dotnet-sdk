@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Pages.Builds.Latest {
         public LatestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/builds/latest", rawUrl) {
         }
         /// <summary>
-        /// Gets information about the single most recent build of a GitHub Pages site.A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+        /// Gets information about the single most recent build of a GitHub Pages site.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#get-latest-pages-build" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -44,7 +44,7 @@ namespace GitHub.Repos.Item.Item.Pages.Builds.Latest {
             return await RequestAdapter.SendAsync<PageBuild>(requestInfo, PageBuild.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets information about the single most recent build of a GitHub Pages site.A token with the `repo` scope is required. GitHub Apps must have the `pages:read` permission.
+        /// Gets information about the single most recent build of a GitHub Pages site.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

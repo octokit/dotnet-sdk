@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Rerun {
         public RerunRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/jobs/{job_id}/rerun", rawUrl) {
         }
         /// <summary>
-        /// Re-run a job and its dependent jobs in a workflow run.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions:write` permission to use this endpoint.
+        /// Re-run a job and its dependent jobs in a workflow run.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/workflow-runs#re-run-a-job-from-a-workflow-run" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -49,7 +49,7 @@ namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Rerun {
             return await RequestAdapter.SendAsync<EmptyObject>(requestInfo, EmptyObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Re-run a job and its dependent jobs in a workflow run.You must authenticate using an access token with the `repo` scope to use this endpoint.GitHub Apps must have the `actions:write` permission to use this endpoint.
+        /// Re-run a job and its dependent jobs in a workflow run.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

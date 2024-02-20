@@ -36,7 +36,7 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         public SchemaRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/properties/schema", rawUrl) {
         }
         /// <summary>
-        /// Gets all custom properties defined for an organization.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
+        /// Gets all custom properties defined for an organization.Organization members can read these properties.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace GitHub.Orgs.Item.Properties.Schema {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.GitHub Apps must have the `organization_custom_properties:admin` organization permission to use this endpoint.
+        /// Creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -80,7 +80,7 @@ namespace GitHub.Orgs.Item.Properties.Schema {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Gets all custom properties defined for an organization.Organization members can read these properties.GitHub Apps must have the `organization_custom_properties:read` organization permission to use this endpoint.
+        /// Gets all custom properties defined for an organization.Organization members can read these properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,7 +96,7 @@ namespace GitHub.Orgs.Item.Properties.Schema {
             return requestInfo;
         }
         /// <summary>
-        /// Creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.GitHub Apps must have the `organization_custom_properties:admin` organization permission to use this endpoint.
+        /// Creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

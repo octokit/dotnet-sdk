@@ -28,7 +28,7 @@ namespace GitHub.User.Social_accounts {
         public Social_accountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/social_accounts{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// Deletes one or more social accounts from the authenticated user&apos;s profile. This endpoint is accessible with the `user` scope.
+        /// Deletes one or more social accounts from the authenticated user&apos;s profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/social-accounts#delete-social-accounts-for-the-authenticated-user" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -74,7 +74,7 @@ namespace GitHub.User.Social_accounts {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Add one or more social accounts to the authenticated user&apos;s profile. This endpoint is accessible with the `user` scope.
+        /// Add one or more social accounts to the authenticated user&apos;s profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/social-accounts#add-social-accounts-for-the-authenticated-user" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -99,7 +99,7 @@ namespace GitHub.User.Social_accounts {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Deletes one or more social accounts from the authenticated user&apos;s profile. This endpoint is accessible with the `user` scope.
+        /// Deletes one or more social accounts from the authenticated user&apos;s profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +134,7 @@ namespace GitHub.User.Social_accounts {
             return requestInfo;
         }
         /// <summary>
-        /// Add one or more social accounts to the authenticated user&apos;s profile. This endpoint is accessible with the `user` scope.
+        /// Add one or more social accounts to the authenticated user&apos;s profile.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

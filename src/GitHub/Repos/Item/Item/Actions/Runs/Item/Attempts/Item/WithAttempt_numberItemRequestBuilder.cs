@@ -38,7 +38,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.Item {
         public WithAttempt_numberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}/attempts/{attempt_number}{?exclude_pull_requests*}", rawUrl) {
         }
         /// <summary>
-        /// Gets a specific workflow run attempt. Anyone with read access to the repositorycan use this endpoint. If the repository is private you must use an access tokenwith the `repo` scope. GitHub Apps must have the `actions:read` permission touse this endpoint.
+        /// Gets a specific workflow run attempt.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/actions/workflow-runs#get-a-workflow-run-attempt" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.Item {
             return await RequestAdapter.SendAsync<WorkflowRun>(requestInfo, WorkflowRun.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a specific workflow run attempt. Anyone with read access to the repositorycan use this endpoint. If the repository is private you must use an access tokenwith the `repo` scope. GitHub Apps must have the `actions:read` permission touse this endpoint.
+        /// Gets a specific workflow run attempt.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +77,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.Item {
             return new WithAttempt_numberItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets a specific workflow run attempt. Anyone with read access to the repositorycan use this endpoint. If the repository is private you must use an access tokenwith the `repo` scope. GitHub Apps must have the `actions:read` permission touse this endpoint.
+        /// Gets a specific workflow run attempt.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         public class WithAttempt_numberItemRequestBuilderGetQueryParameters {
             /// <summary>If `true` pull requests are omitted from the response (empty array).</summary>

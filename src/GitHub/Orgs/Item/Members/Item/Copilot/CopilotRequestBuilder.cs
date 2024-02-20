@@ -28,7 +28,7 @@ namespace GitHub.Orgs.Item.Members.Item.Copilot {
         public CopilotRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/members/{username}/copilot", rawUrl) {
         }
         /// <summary>
-        /// **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot Business seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners can view GitHub Copilot seat assignment details for members in their organization. You must authenticate using an access token with the `manage_billing:copilot` scope to use this endpoint.
+        /// **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot Business seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners can view GitHub Copilot seat assignment details for members in their organization.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-business#get-copilot-business-seat-assignment-details-for-a-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -50,7 +50,7 @@ namespace GitHub.Orgs.Item.Members.Item.Copilot {
             return await RequestAdapter.SendAsync<CopilotSeatDetails>(requestInfo, CopilotSeatDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot Business seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners can view GitHub Copilot seat assignment details for members in their organization. You must authenticate using an access token with the `manage_billing:copilot` scope to use this endpoint.
+        /// **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot Business seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners can view GitHub Copilot seat assignment details for members in their organization.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

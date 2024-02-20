@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments.Item.Cancel {
         public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments/{pages_deployment_id}/cancel", rawUrl) {
         }
         /// <summary>
-        /// Cancels a GitHub Pages deployment.Users must have write permissions for the GitHub Pages site. GitHub Apps must have the `pages:write` permission to use this endpoint.
+        /// Cancels a GitHub Pages deployment.The authenticated user must have write permissions for the GitHub Pages site.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -47,7 +47,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments.Item.Cancel {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Cancels a GitHub Pages deployment.Users must have write permissions for the GitHub Pages site. GitHub Apps must have the `pages:write` permission to use this endpoint.
+        /// Cancels a GitHub Pages deployment.The authenticated user must have write permissions for the GitHub Pages site.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

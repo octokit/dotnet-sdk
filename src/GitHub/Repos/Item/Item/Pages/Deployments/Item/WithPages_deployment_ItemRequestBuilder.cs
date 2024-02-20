@@ -33,7 +33,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments.Item {
         public WithPages_deployment_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments/{pages_deployment_id}", rawUrl) {
         }
         /// <summary>
-        /// Gets the current status of a GitHub Pages deployment.Users must have read permission for the GitHub Pages site. GitHub Apps must have the `pages:read` permission.
+        /// Gets the current status of a GitHub Pages deployment.The authenticated user must have read permission for the GitHub Pages site.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#get-the-status-of-a-github-pages-deployment" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments.Item {
             return await RequestAdapter.SendAsync<PagesDeploymentStatus>(requestInfo, PagesDeploymentStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the current status of a GitHub Pages deployment.Users must have read permission for the GitHub Pages site. GitHub Apps must have the `pages:read` permission.
+        /// Gets the current status of a GitHub Pages deployment.The authenticated user must have read permission for the GitHub Pages site.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

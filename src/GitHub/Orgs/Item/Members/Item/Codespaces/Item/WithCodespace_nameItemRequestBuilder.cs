@@ -33,7 +33,7 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces.Item {
         public WithCodespace_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/members/{username}/codespaces/{codespace_name}", rawUrl) {
         }
         /// <summary>
-        /// Deletes a user&apos;s codespace.To use this endpoint you must authenticate using one of the following methods:- An access token with the `admin:org` scope- An access token with write permissions for `Codespaces` on the specific repository and write permissions for `Organization codespaces`
+        /// Deletes a user&apos;s codespace.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/organizations#delete-a-codespace-from-the-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +55,7 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces.Item {
             return await RequestAdapter.SendAsync<WithCodespace_nameDeleteResponse>(requestInfo, WithCodespace_nameDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a user&apos;s codespace.To use this endpoint you must authenticate using one of the following methods:- An access token with the `admin:org` scope- An access token with write permissions for `Codespaces` on the specific repository and write permissions for `Organization codespaces`
+        /// Deletes a user&apos;s codespace.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

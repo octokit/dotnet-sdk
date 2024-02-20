@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check {
         public Permissions_checkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/permissions_check?devcontainer_path={devcontainer_path}&ref={ref}", rawUrl) {
         }
         /// <summary>
-        /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
+        /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#check-if-permissions-defined-by-a-devcontainer-have-been-accepted-by-the-authenticated-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check {
             return await RequestAdapter.SendAsync<CodespacesPermissionsCheckForDevcontainer>(requestInfo, CodespacesPermissionsCheckForDevcontainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
+        /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check {
             return new Permissions_checkRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.You must authenticate using an access token with the `codespace` scope to use this endpoint.To use this endpoint with GitHub Apps:- The app must be authenticated on behalf of the user. For more information, see &quot;[Authenticating with a GitHub App on behalf of a user](https://docs.github.com/apps/creating-github-apps/authenticating-with-a-github-app/authenticating-with-a-github-app-on-behalf-of-a-user).&quot;- The app must have write access to the `codespaces` repository permission.
+        /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
         public class Permissions_checkRequestBuilderGetQueryParameters {
             /// <summary>Path to the devcontainer.json configuration to use for the permission check.</summary>

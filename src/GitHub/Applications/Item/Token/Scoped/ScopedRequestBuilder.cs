@@ -28,7 +28,7 @@ namespace GitHub.Applications.Item.Token.Scoped {
         public ScopedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{client_id}/token/scoped", rawUrl) {
         }
         /// <summary>
-        /// Use a non-scoped user access token to create a repository scoped and/or permission scoped user access token. You can specify which repositories the token can access and which permissions are granted to the token. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App as the username and password. Invalid tokens will return `404 NOT FOUND`.
+        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
         /// API method documentation <see href="https://docs.github.com/rest/apps/apps#create-a-scoped-access-token" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -52,7 +52,7 @@ namespace GitHub.Applications.Item.Token.Scoped {
             return await RequestAdapter.SendAsync<Authorization>(requestInfo, Authorization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use a non-scoped user access token to create a repository scoped and/or permission scoped user access token. You can specify which repositories the token can access and which permissions are granted to the token. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App as the username and password. Invalid tokens will return `404 NOT FOUND`.
+        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

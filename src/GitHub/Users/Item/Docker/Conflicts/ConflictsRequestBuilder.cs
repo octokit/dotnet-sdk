@@ -28,7 +28,7 @@ namespace GitHub.Users.Item.Docker.Conflicts {
         public ConflictsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/docker/conflicts", rawUrl) {
         }
         /// <summary>
-        /// Lists all packages that are in a specific user&apos;s namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.To use this endpoint, you must authenticate using an access token with the `read:packages` scope.
+        /// Lists all packages that are in a specific user&apos;s namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/packages/packages#get-list-of-conflicting-packages-during-docker-migration-for-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,7 +49,7 @@ namespace GitHub.Users.Item.Docker.Conflicts {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Lists all packages that are in a specific user&apos;s namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.To use this endpoint, you must authenticate using an access token with the `read:packages` scope.
+        /// Lists all packages that are in a specific user&apos;s namespace, that the requesting user has access to, and that encountered a conflict during Docker migration.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

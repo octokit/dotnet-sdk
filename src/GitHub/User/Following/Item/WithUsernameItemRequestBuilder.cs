@@ -28,7 +28,7 @@ namespace GitHub.User.Following.Item {
         public WithUsernameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/following/{username}", rawUrl) {
         }
         /// <summary>
-        /// Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+        /// OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/followers#unfollow-a-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace GitHub.User.Following.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Note that you&apos;ll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see &quot;[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).&quot;Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+        /// Note that you&apos;ll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see &quot;[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).&quot;OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/followers#follow-a-user" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,7 +91,7 @@ namespace GitHub.User.Following.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Unfollowing a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+        /// OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace GitHub.User.Following.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Note that you&apos;ll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see &quot;[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).&quot;Following a user requires the user to be logged in and authenticated with basic auth or OAuth with the `user:follow` scope.
+        /// Note that you&apos;ll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see &quot;[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).&quot;OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -33,7 +33,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens.Item {
         public WithPat_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens/{pat_id}", rawUrl) {
         }
         /// <summary>
-        /// Updates the access an organization member has to organization resources via a fine-grained personal access token. Limited to revoking the token&apos;s existing access. Limited to revoking a token&apos;s existing access. Only GitHub Apps can call this API,using the `organization_personal_access_tokens: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Updates the access an organization member has to organization resources via a fine-grained personal access token. Limited to revoking the token&apos;s existing access. Limited to revoking a token&apos;s existing access.Only GitHub Apps can use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/personal-access-tokens#update-the-access-a-fine-grained-personal-access-token-has-to-organization-resources" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -57,7 +57,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the access an organization member has to organization resources via a fine-grained personal access token. Limited to revoking the token&apos;s existing access. Limited to revoking a token&apos;s existing access. Only GitHub Apps can call this API,using the `organization_personal_access_tokens: write` permission.**Note**: Fine-grained PATs are in public beta. Related APIs, events, and functionality are subject to change.
+        /// Updates the access an organization member has to organization resources via a fine-grained personal access token. Limited to revoking the token&apos;s existing access. Limited to revoking a token&apos;s existing access.Only GitHub Apps can use this endpoint.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
