@@ -17,7 +17,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
 #else
         public List<CopilotSeatDetails> Seats { get; set; }
 #endif
-        /// <summary>Total number of Copilot For Business seats for the organization currently being billed.</summary>
+        /// <summary>Total number of Copilot seats for the organization currently being billed.</summary>
         public int? TotalSeats { get; set; }
         /// <summary>
         /// Instantiates a new seatsGetResponse and sets the default values.

@@ -28,8 +28,8 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         public SeatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/copilot/billing/seats{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// **Note**: This endpoint is in beta and is subject to change.Lists all Copilot Business seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization&apos;s Copilot Business subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
-        /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-business#list-all-copilot-business-seat-assignments-for-an-organization" />
+        /// **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization&apos;s Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+        /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-user-management#list-all-copilot-seat-assignments-for-an-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,7 +50,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
             return await RequestAdapter.SendAsync<SeatsGetResponse>(requestInfo, SeatsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Note**: This endpoint is in beta and is subject to change.Lists all Copilot Business seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization&apos;s Copilot Business subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+        /// **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization&apos;s Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
             return new SeatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **Note**: This endpoint is in beta and is subject to change.Lists all Copilot Business seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization&apos;s Copilot Business subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+        /// **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization&apos;s Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// </summary>
         public class SeatsRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
