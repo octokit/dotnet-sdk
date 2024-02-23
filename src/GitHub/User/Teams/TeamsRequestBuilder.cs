@@ -14,14 +14,14 @@ namespace GitHub.User.Teams {
     /// </summary>
     public class TeamsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new TeamsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/teams{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TeamsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,11 @@ namespace GitHub.User.Teams {
         /// List all of the teams across all of the organizations to which the authenticateduser belongs.OAuth app tokens and personal access tokens (classic) need the `user`, `repo`, or `read:org` scope to use this endpoint.When using a fine-grained personal access token, the resource owner of the token must be a single organization, and the response will only include the teams from that organization.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#list-teams-for-the-authenticated-user" />
         /// </summary>
+        /// <returns>A List&lt;TeamFull&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<TeamFull>?> GetAsync(Action<RequestConfiguration<TeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,6 +54,7 @@ namespace GitHub.User.Teams {
         /// <summary>
         /// List all of the teams across all of the organizations to which the authenticateduser belongs.OAuth app tokens and personal access tokens (classic) need the `user`, `repo`, or `read:org` scope to use this endpoint.When using a fine-grained personal access token, the resource owner of the token must be a single organization, and the response will only include the teams from that organization.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +71,7 @@ namespace GitHub.User.Teams {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="TeamsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public TeamsRequestBuilder WithUrl(string rawUrl) {
             return new TeamsRequestBuilder(rawUrl, RequestAdapter);

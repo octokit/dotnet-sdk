@@ -16,20 +16,21 @@ namespace GitHub.Repos.Item.Item.Autolinks {
     public class AutolinksRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.autolinks.item collection</summary>
         /// <param name="position">The unique identifier of the autolink.</param>
+        /// <returns>A <see cref="WithAutolink_ItemRequestBuilder"/></returns>
         public WithAutolink_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("autolink_id", position);
             return new WithAutolink_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AutolinksRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AutolinksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public AutolinksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/autolinks", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AutolinksRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AutolinksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,6 +40,7 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// Gets all autolinks that are configured for a repository.Information about autolinks are only available to repository administrators.
         /// API method documentation <see href="https://docs.github.com/rest/repos/autolinks#get-all-autolinks-of-a-repository" />
         /// </summary>
+        /// <returns>A List&lt;Autolink&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,9 +58,11 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// Users with admin access to the repository can create an autolink.
         /// API method documentation <see href="https://docs.github.com/rest/repos/autolinks#create-an-autolink-reference-for-a-repository" />
         /// </summary>
+        /// <returns>A <see cref="Autolink"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Autolink?> PostAsync(AutolinksPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -76,6 +80,7 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// <summary>
         /// Gets all autolinks that are configured for a repository.Information about autolinks are only available to repository administrators.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +97,7 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// <summary>
         /// Users with admin access to the repository can create an autolink.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,6 +117,7 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="AutolinksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AutolinksRequestBuilder WithUrl(string rawUrl) {
             return new AutolinksRequestBuilder(rawUrl, RequestAdapter);

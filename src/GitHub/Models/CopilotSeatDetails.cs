@@ -45,6 +45,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="CopilotSeatDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CopilotSeatDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -53,6 +54,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assignee", n => { Assignee = n.GetObjectValue<CopilotSeatDetails_assignee>(CopilotSeatDetails_assignee.CreateFromDiscriminatorValue); } },
@@ -79,10 +81,10 @@ namespace GitHub.Models {
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }
         /// <summary>
-        /// Composed type wrapper for classes organization, simpleUser, team
+        /// Composed type wrapper for classes <see cref="Organization"/>, <see cref="SimpleUser"/>, <see cref="Team"/>
         /// </summary>
         public class CopilotSeatDetails_assignee : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type organization</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.Organization"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.Organization? Organization { get; set; }
@@ -90,7 +92,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.Organization Organization { get; set; }
 #endif
-            /// <summary>Composed type representation for type simpleUser</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SimpleUser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SimpleUser? SimpleUser { get; set; }
@@ -98,7 +100,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SimpleUser SimpleUser { get; set; }
 #endif
-            /// <summary>Composed type representation for type team</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.Team"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.Team? Team { get; set; }
@@ -109,6 +111,7 @@ namespace GitHub.Models {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="CopilotSeatDetails_assignee"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static CopilotSeatDetails_assignee CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -128,6 +131,7 @@ namespace GitHub.Models {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(Organization != null) {
                     return Organization.GetFieldDeserializers();

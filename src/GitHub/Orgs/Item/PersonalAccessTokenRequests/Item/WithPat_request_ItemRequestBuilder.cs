@@ -19,14 +19,14 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item {
             new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithPat_request_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithPat_request_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithPat_request_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests/{pat_request_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithPat_request_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithPat_request_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,6 +39,10 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(WithPat_request_PostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -59,6 +63,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item {
         /// <summary>
         /// Approves or denies a pending request to access organization resources via a fine-grained personal access token.Only GitHub Apps can use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,6 +83,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithPat_request_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithPat_request_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithPat_request_ItemRequestBuilder(rawUrl, RequestAdapter);

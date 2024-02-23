@@ -15,20 +15,21 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Users.Item {
     public class WithUsernameItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.orgs.item.organizationRoles.users.item.item collection</summary>
         /// <param name="position">The unique identifier of the role.</param>
+        /// <returns>A <see cref="WithRole_ItemRequestBuilder"/></returns>
         public WithRole_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("role_id", position);
             return new WithRole_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new WithUsernameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithUsernameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/organization-roles/users/{username}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithUsernameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,6 +54,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Users.Item {
         /// <summary>
         /// Revokes all assigned organization roles from a user. For more information on organization roles, see &quot;[Managing people&apos;s access to your organization with roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles).&quot;The authenticated user must be an administrator for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +70,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Users.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithUsernameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithUsernameItemRequestBuilder WithUrl(string rawUrl) {
             return new WithUsernameItemRequestBuilder(rawUrl, RequestAdapter);

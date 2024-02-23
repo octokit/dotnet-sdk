@@ -25,7 +25,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
         public string Url { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new updateBranchPutResponse and sets the default values.
+        /// Instantiates a new <see cref="UpdateBranchPutResponse"/> and sets the default values.
         /// </summary>
         public UpdateBranchPutResponse() {
             AdditionalData = new Dictionary<string, object>();
@@ -33,6 +33,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="UpdateBranchPutResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UpdateBranchPutResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -41,6 +42,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"message", n => { Message = n.GetStringValue(); } },

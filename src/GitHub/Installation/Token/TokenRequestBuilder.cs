@@ -13,14 +13,14 @@ namespace GitHub.Installation.Token {
     /// </summary>
     public class TokenRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new TokenRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TokenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/installation/token", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TokenRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TokenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,6 +45,7 @@ namespace GitHub.Installation.Token {
         /// <summary>
         /// Revokes the installation token you&apos;re using to authenticate as an installation and access this endpoint.Once an installation token is revoked, the token is invalidated and cannot be used. Other endpoints that require the revoked installation token must have a new installation token to work. You can create a new token using the &quot;[Create an installation access token for an app](https://docs.github.com/rest/apps/apps#create-an-installation-access-token-for-an-app)&quot; endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +61,7 @@ namespace GitHub.Installation.Token {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="TokenRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public TokenRequestBuilder WithUrl(string rawUrl) {
             return new TokenRequestBuilder(rawUrl, RequestAdapter);

@@ -14,14 +14,14 @@ namespace GitHub.User.Emails {
     /// </summary>
     public class EmailsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new EmailsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="EmailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public EmailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/emails{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new EmailsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="EmailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,6 +34,10 @@ namespace GitHub.User.Emails {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(EmailsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -55,8 +59,12 @@ namespace GitHub.User.Emails {
         /// Lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/emails#list-email-addresses-for-the-authenticated-user" />
         /// </summary>
+        /// <returns>A List&lt;GitHub.Models.Email&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<GitHub.Models.Email>?> GetAsync(Action<RequestConfiguration<EmailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -77,9 +85,14 @@ namespace GitHub.User.Emails {
         /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/emails#add-an-email-address-for-the-authenticated-user" />
         /// </summary>
+        /// <returns>A List&lt;GitHub.Models.Email&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<GitHub.Models.Email>?> PostAsync(EmailsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -101,6 +114,7 @@ namespace GitHub.User.Emails {
         /// <summary>
         /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +125,7 @@ namespace GitHub.User.Emails {
         public RequestInformation ToDeleteRequestInformation(EmailsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/user/emails", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -120,6 +134,7 @@ namespace GitHub.User.Emails {
         /// <summary>
         /// Lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,6 +151,7 @@ namespace GitHub.User.Emails {
         /// <summary>
         /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +162,7 @@ namespace GitHub.User.Emails {
         public RequestInformation ToPostRequestInformation(EmailsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/user/emails", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -155,15 +171,16 @@ namespace GitHub.User.Emails {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="EmailsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public EmailsRequestBuilder WithUrl(string rawUrl) {
             return new EmailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes emailsDeleteRequestBodyMember1, string
+        /// Composed type wrapper for classes <see cref="EmailsDeleteRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
         public class EmailsDeleteRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type emailsDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.User.Emails.EmailsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.User.Emails.EmailsDeleteRequestBodyMember1? EmailsDeleteRequestBodyEmailsDeleteRequestBodyMember1 { get; set; }
@@ -171,7 +188,7 @@ namespace GitHub.User.Emails {
 #else
             public GitHub.User.Emails.EmailsDeleteRequestBodyMember1 EmailsDeleteRequestBodyEmailsDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type emailsDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.User.Emails.EmailsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.User.Emails.EmailsDeleteRequestBodyMember1? EmailsDeleteRequestBodyMember1 { get; set; }
@@ -179,7 +196,7 @@ namespace GitHub.User.Emails {
 #else
             public GitHub.User.Emails.EmailsDeleteRequestBodyMember1 EmailsDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? EmailsDeleteRequestBodyString { get; set; }
@@ -187,7 +204,7 @@ namespace GitHub.User.Emails {
 #else
             public string EmailsDeleteRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -198,6 +215,7 @@ namespace GitHub.User.Emails {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="EmailsDeleteRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static EmailsDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -220,6 +238,7 @@ namespace GitHub.User.Emails {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(EmailsDeleteRequestBodyEmailsDeleteRequestBodyMember1 != null) {
                     return EmailsDeleteRequestBodyEmailsDeleteRequestBodyMember1.GetFieldDeserializers();
@@ -250,10 +269,10 @@ namespace GitHub.User.Emails {
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes emailsPostRequestBodyMember1, string
+        /// Composed type wrapper for classes <see cref="EmailsPostRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
         public class EmailsPostRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type emailsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.User.Emails.EmailsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.User.Emails.EmailsPostRequestBodyMember1? EmailsPostRequestBodyEmailsPostRequestBodyMember1 { get; set; }
@@ -261,7 +280,7 @@ namespace GitHub.User.Emails {
 #else
             public GitHub.User.Emails.EmailsPostRequestBodyMember1 EmailsPostRequestBodyEmailsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type emailsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.User.Emails.EmailsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.User.Emails.EmailsPostRequestBodyMember1? EmailsPostRequestBodyMember1 { get; set; }
@@ -269,7 +288,7 @@ namespace GitHub.User.Emails {
 #else
             public GitHub.User.Emails.EmailsPostRequestBodyMember1 EmailsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? EmailsPostRequestBodyString { get; set; }
@@ -277,7 +296,7 @@ namespace GitHub.User.Emails {
 #else
             public string EmailsPostRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -288,6 +307,7 @@ namespace GitHub.User.Emails {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="EmailsPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static EmailsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -310,6 +330,7 @@ namespace GitHub.User.Emails {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(EmailsPostRequestBodyEmailsPostRequestBodyMember1 != null) {
                     return EmailsPostRequestBodyEmailsPostRequestBodyMember1.GetFieldDeserializers();

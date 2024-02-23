@@ -16,20 +16,21 @@ namespace GitHub.Orgs.Item.Outside_collaborators {
     public class Outside_collaboratorsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.orgs.item.outside_collaborators.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
+        /// <returns>A <see cref="WithUsernameItemRequestBuilder"/></returns>
         public WithUsernameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("username", position);
             return new WithUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new Outside_collaboratorsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Outside_collaboratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public Outside_collaboratorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/outside_collaborators{?filter*,page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new Outside_collaboratorsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Outside_collaboratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,6 +40,7 @@ namespace GitHub.Orgs.Item.Outside_collaborators {
         /// List all users who are outside collaborators of an organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/outside-collaborators#list-outside-collaborators-for-an-organization" />
         /// </summary>
+        /// <returns>A List&lt;SimpleUser&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +57,7 @@ namespace GitHub.Orgs.Item.Outside_collaborators {
         /// <summary>
         /// List all users who are outside collaborators of an organization.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +74,7 @@ namespace GitHub.Orgs.Item.Outside_collaborators {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="Outside_collaboratorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public Outside_collaboratorsRequestBuilder WithUrl(string rawUrl) {
             return new Outside_collaboratorsRequestBuilder(rawUrl, RequestAdapter);

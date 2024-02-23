@@ -13,20 +13,21 @@ namespace GitHub.Repos.Item.Item.Releases.Tags {
     public class TagsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.releases.tags.item collection</summary>
         /// <param name="position">tag parameter</param>
+        /// <returns>A <see cref="WithTagItemRequestBuilder"/></returns>
         public WithTagItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tag", position);
             return new WithTagItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new TagsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TagsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/tags", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TagsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TagsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

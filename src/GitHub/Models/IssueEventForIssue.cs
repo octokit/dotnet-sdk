@@ -7,10 +7,10 @@ using System.Linq;
 using System;
 namespace GitHub.Models {
     /// <summary>
-    /// Composed type wrapper for classes addedToProjectIssueEvent, assignedIssueEvent, convertedNoteToIssueIssueEvent, demilestonedIssueEvent, labeledIssueEvent, lockedIssueEvent, milestonedIssueEvent, movedColumnInProjectIssueEvent, removedFromProjectIssueEvent, renamedIssueEvent, reviewDismissedIssueEvent, reviewRequestedIssueEvent, reviewRequestRemovedIssueEvent, unassignedIssueEvent, unlabeledIssueEvent
+    /// Composed type wrapper for classes <see cref="AddedToProjectIssueEvent"/>, <see cref="AssignedIssueEvent"/>, <see cref="ConvertedNoteToIssueIssueEvent"/>, <see cref="DemilestonedIssueEvent"/>, <see cref="LabeledIssueEvent"/>, <see cref="LockedIssueEvent"/>, <see cref="MilestonedIssueEvent"/>, <see cref="MovedColumnInProjectIssueEvent"/>, <see cref="RemovedFromProjectIssueEvent"/>, <see cref="RenamedIssueEvent"/>, <see cref="ReviewDismissedIssueEvent"/>, <see cref="ReviewRequestedIssueEvent"/>, <see cref="ReviewRequestRemovedIssueEvent"/>, <see cref="UnassignedIssueEvent"/>, <see cref="UnlabeledIssueEvent"/>
     /// </summary>
     public class IssueEventForIssue : IComposedTypeWrapper, IParsable {
-        /// <summary>Composed type representation for type addedToProjectIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.AddedToProjectIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.AddedToProjectIssueEvent? AddedToProjectIssueEvent { get; set; }
@@ -18,7 +18,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.AddedToProjectIssueEvent AddedToProjectIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type assignedIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.AssignedIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.AssignedIssueEvent? AssignedIssueEvent { get; set; }
@@ -26,7 +26,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.AssignedIssueEvent AssignedIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type convertedNoteToIssueIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.ConvertedNoteToIssueIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.ConvertedNoteToIssueIssueEvent? ConvertedNoteToIssueIssueEvent { get; set; }
@@ -34,7 +34,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.ConvertedNoteToIssueIssueEvent ConvertedNoteToIssueIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type demilestonedIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.DemilestonedIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.DemilestonedIssueEvent? DemilestonedIssueEvent { get; set; }
@@ -42,7 +42,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.DemilestonedIssueEvent DemilestonedIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type labeledIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.LabeledIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.LabeledIssueEvent? LabeledIssueEvent { get; set; }
@@ -50,7 +50,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.LabeledIssueEvent LabeledIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type lockedIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.LockedIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.LockedIssueEvent? LockedIssueEvent { get; set; }
@@ -58,7 +58,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.LockedIssueEvent LockedIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type milestonedIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.MilestonedIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.MilestonedIssueEvent? MilestonedIssueEvent { get; set; }
@@ -66,7 +66,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.MilestonedIssueEvent MilestonedIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type movedColumnInProjectIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.MovedColumnInProjectIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.MovedColumnInProjectIssueEvent? MovedColumnInProjectIssueEvent { get; set; }
@@ -74,7 +74,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.MovedColumnInProjectIssueEvent MovedColumnInProjectIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type removedFromProjectIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RemovedFromProjectIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RemovedFromProjectIssueEvent? RemovedFromProjectIssueEvent { get; set; }
@@ -82,7 +82,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RemovedFromProjectIssueEvent RemovedFromProjectIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type renamedIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RenamedIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RenamedIssueEvent? RenamedIssueEvent { get; set; }
@@ -90,7 +90,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RenamedIssueEvent RenamedIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type reviewDismissedIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.ReviewDismissedIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.ReviewDismissedIssueEvent? ReviewDismissedIssueEvent { get; set; }
@@ -98,7 +98,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.ReviewDismissedIssueEvent ReviewDismissedIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type reviewRequestedIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.ReviewRequestedIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.ReviewRequestedIssueEvent? ReviewRequestedIssueEvent { get; set; }
@@ -106,7 +106,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.ReviewRequestedIssueEvent ReviewRequestedIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type reviewRequestRemovedIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.ReviewRequestRemovedIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.ReviewRequestRemovedIssueEvent? ReviewRequestRemovedIssueEvent { get; set; }
@@ -114,7 +114,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.ReviewRequestRemovedIssueEvent ReviewRequestRemovedIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type unassignedIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.UnassignedIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.UnassignedIssueEvent? UnassignedIssueEvent { get; set; }
@@ -122,7 +122,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.UnassignedIssueEvent UnassignedIssueEvent { get; set; }
 #endif
-        /// <summary>Composed type representation for type unlabeledIssueEvent</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.UnlabeledIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.UnlabeledIssueEvent? UnlabeledIssueEvent { get; set; }
@@ -133,6 +133,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="IssueEventForIssue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static IssueEventForIssue CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -157,6 +158,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             if(AddedToProjectIssueEvent != null || AssignedIssueEvent != null || ConvertedNoteToIssueIssueEvent != null || DemilestonedIssueEvent != null || LabeledIssueEvent != null || LockedIssueEvent != null || MilestonedIssueEvent != null || MovedColumnInProjectIssueEvent != null || RemovedFromProjectIssueEvent != null || RenamedIssueEvent != null || ReviewDismissedIssueEvent != null || ReviewRequestedIssueEvent != null || ReviewRequestRemovedIssueEvent != null || UnassignedIssueEvent != null || UnlabeledIssueEvent != null) {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AddedToProjectIssueEvent, AssignedIssueEvent, ConvertedNoteToIssueIssueEvent, DemilestonedIssueEvent, LabeledIssueEvent, LockedIssueEvent, MilestonedIssueEvent, MovedColumnInProjectIssueEvent, RemovedFromProjectIssueEvent, RenamedIssueEvent, ReviewDismissedIssueEvent, ReviewRequestedIssueEvent, ReviewRequestRemovedIssueEvent, UnassignedIssueEvent, UnlabeledIssueEvent);

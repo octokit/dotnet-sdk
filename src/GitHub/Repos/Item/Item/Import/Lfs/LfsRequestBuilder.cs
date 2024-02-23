@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
     /// </summary>
     public class LfsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new LfsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LfsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LfsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/import/lfs", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new LfsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LfsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,12 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         /// You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This abilityis powered by [Git LFS](https://git-lfs.com).You can learn more about our LFS feature and working with large files [on our helpsite](https://docs.github.com/repositories/working-with-files/managing-large-files).**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// API method documentation <see href="https://docs.github.com/rest/migrations/source-imports#update-git-lfs-preference" />
         /// </summary>
+        /// <returns>A <see cref="GitHub.Models.Import"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="BasicError">When receiving a 503 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,6 +56,7 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         /// <summary>
         /// You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This abilityis powered by [Git LFS](https://git-lfs.com).You can learn more about our LFS feature and working with large files [on our helpsite](https://docs.github.com/repositories/working-with-files/managing-large-files).**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
@@ -73,6 +77,7 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="LfsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
         public LfsRequestBuilder WithUrl(string rawUrl) {

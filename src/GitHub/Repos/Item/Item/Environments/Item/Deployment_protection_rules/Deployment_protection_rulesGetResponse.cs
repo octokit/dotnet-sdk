@@ -20,7 +20,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
         /// <summary>The number of enabled custom deployment protection rules for this environment</summary>
         public int? TotalCount { get; set; }
         /// <summary>
-        /// Instantiates a new deployment_protection_rulesGetResponse and sets the default values.
+        /// Instantiates a new <see cref="Deployment_protection_rulesGetResponse"/> and sets the default values.
         /// </summary>
         public Deployment_protection_rulesGetResponse() {
             AdditionalData = new Dictionary<string, object>();
@@ -28,6 +28,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Deployment_protection_rulesGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Deployment_protection_rulesGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -36,6 +37,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"custom_deployment_protection_rules", n => { CustomDeploymentProtectionRules = n.GetCollectionOfObjectValues<DeploymentProtectionRule>(DeploymentProtectionRule.CreateFromDiscriminatorValue)?.ToList(); } },

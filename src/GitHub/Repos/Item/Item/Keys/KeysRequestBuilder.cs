@@ -16,20 +16,21 @@ namespace GitHub.Repos.Item.Item.Keys {
     public class KeysRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.keys.item collection</summary>
         /// <param name="position">The unique identifier of the key.</param>
+        /// <returns>A <see cref="WithKey_ItemRequestBuilder"/></returns>
         public WithKey_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("key_id", position);
             return new WithKey_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new KeysRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="KeysRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public KeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/keys{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new KeysRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="KeysRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,6 +40,7 @@ namespace GitHub.Repos.Item.Item.Keys {
         /// List deploy keys
         /// API method documentation <see href="https://docs.github.com/rest/deploy-keys/deploy-keys#list-deploy-keys" />
         /// </summary>
+        /// <returns>A List&lt;DeployKey&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,9 +58,11 @@ namespace GitHub.Repos.Item.Item.Keys {
         /// You can create a read-only deploy key.
         /// API method documentation <see href="https://docs.github.com/rest/deploy-keys/deploy-keys#create-a-deploy-key" />
         /// </summary>
+        /// <returns>A <see cref="DeployKey"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<DeployKey?> PostAsync(KeysPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -73,6 +77,7 @@ namespace GitHub.Repos.Item.Item.Keys {
             };
             return await RequestAdapter.SendAsync<DeployKey>(requestInfo, DeployKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +94,7 @@ namespace GitHub.Repos.Item.Item.Keys {
         /// <summary>
         /// You can create a read-only deploy key.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +105,7 @@ namespace GitHub.Repos.Item.Item.Keys {
         public RequestInformation ToPostRequestInformation(KeysPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/keys", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -108,6 +114,7 @@ namespace GitHub.Repos.Item.Item.Keys {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="KeysRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public KeysRequestBuilder WithUrl(string rawUrl) {
             return new KeysRequestBuilder(rawUrl, RequestAdapter);

@@ -15,20 +15,21 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Teams.Item {
     public class WithTeam_slugItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.orgs.item.organizationRoles.teams.item.item collection</summary>
         /// <param name="position">The unique identifier of the role.</param>
+        /// <returns>A <see cref="WithRole_ItemRequestBuilder"/></returns>
         public WithRole_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("role_id", position);
             return new WithRole_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new WithTeam_slugItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithTeam_slugItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithTeam_slugItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/organization-roles/teams/{team_slug}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithTeam_slugItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithTeam_slugItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,6 +54,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Teams.Item {
         /// <summary>
         /// Removes all assigned organization roles from a team. For more information on organization roles, see &quot;[Managing people&apos;s access to your organization with roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles).&quot;The authenticated user must be an administrator for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +70,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Teams.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithTeam_slugItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithTeam_slugItemRequestBuilder WithUrl(string rawUrl) {
             return new WithTeam_slugItemRequestBuilder(rawUrl, RequestAdapter);

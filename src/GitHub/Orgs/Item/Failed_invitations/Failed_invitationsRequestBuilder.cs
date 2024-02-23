@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Failed_invitations {
     /// </summary>
     public class Failed_invitationsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new Failed_invitationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Failed_invitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public Failed_invitationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/failed_invitations{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new Failed_invitationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Failed_invitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,10 @@ namespace GitHub.Orgs.Item.Failed_invitations {
         /// The return hash contains `failed_at` and `failed_reason` fields which represent the time at which the invitation failed and the reason for the failure.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/members#list-failed-organization-invitations" />
         /// </summary>
+        /// <returns>A List&lt;OrganizationInvitation&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<OrganizationInvitation>?> GetAsync(Action<RequestConfiguration<Failed_invitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,6 +52,7 @@ namespace GitHub.Orgs.Item.Failed_invitations {
         /// <summary>
         /// The return hash contains `failed_at` and `failed_reason` fields which represent the time at which the invitation failed and the reason for the failure.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +69,7 @@ namespace GitHub.Orgs.Item.Failed_invitations {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="Failed_invitationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public Failed_invitationsRequestBuilder WithUrl(string rawUrl) {
             return new Failed_invitationsRequestBuilder(rawUrl, RequestAdapter);

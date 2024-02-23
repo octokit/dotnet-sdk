@@ -14,14 +14,14 @@ namespace GitHub.Organizations {
     /// </summary>
     public class OrganizationsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new OrganizationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="OrganizationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public OrganizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations{?per_page*,since*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new OrganizationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="OrganizationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Organizations {
         /// Lists all organizations, in the order that they were created on GitHub.**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/orgs#list-organizations" />
         /// </summary>
+        /// <returns>A List&lt;OrganizationSimple&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +48,7 @@ namespace GitHub.Organizations {
         /// <summary>
         /// Lists all organizations, in the order that they were created on GitHub.**Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +65,7 @@ namespace GitHub.Organizations {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="OrganizationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public OrganizationsRequestBuilder WithUrl(string rawUrl) {
             return new OrganizationsRequestBuilder(rawUrl, RequestAdapter);

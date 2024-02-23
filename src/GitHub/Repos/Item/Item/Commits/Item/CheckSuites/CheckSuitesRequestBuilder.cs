@@ -13,14 +13,14 @@ namespace GitHub.Repos.Item.Item.Commits.Item.CheckSuites {
     /// </summary>
     public class CheckSuitesRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new CheckSuitesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CheckSuitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CheckSuitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/commits/{commits%2Did}/check-suites{?app_id*,check_name*,page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CheckSuitesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CheckSuitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item.CheckSuites {
         /// Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/checks/suites#list-check-suites-for-a-git-reference" />
         /// </summary>
+        /// <returns>A <see cref="CheckSuitesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +46,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item.CheckSuites {
         /// <summary>
         /// Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item.CheckSuites {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CheckSuitesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CheckSuitesRequestBuilder WithUrl(string rawUrl) {
             return new CheckSuitesRequestBuilder(rawUrl, RequestAdapter);

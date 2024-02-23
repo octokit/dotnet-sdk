@@ -21,20 +21,21 @@ namespace GitHub.Orgs.Item.Rulesets {
         }
         /// <summary>Gets an item from the GitHub.orgs.item.rulesets.item collection</summary>
         /// <param name="position">The ID of the ruleset.</param>
+        /// <returns>A <see cref="WithRuleset_ItemRequestBuilder"/></returns>
         public WithRuleset_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ruleset_id", position);
             return new WithRuleset_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new RulesetsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RulesetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RulesetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/rulesets{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RulesetsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RulesetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,8 +45,11 @@ namespace GitHub.Orgs.Item.Rulesets {
         /// Get all the repository rulesets for an organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/rules#get-all-organization-repository-rulesets" />
         /// </summary>
+        /// <returns>A List&lt;RepositoryRuleset&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<RepositoryRuleset>?> GetAsync(Action<RequestConfiguration<RulesetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -65,9 +69,12 @@ namespace GitHub.Orgs.Item.Rulesets {
         /// Create a repository ruleset for an organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/rules#create-an-organization-repository-ruleset" />
         /// </summary>
+        /// <returns>A <see cref="RepositoryRuleset"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<RepositoryRuleset?> PostAsync(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -86,6 +93,7 @@ namespace GitHub.Orgs.Item.Rulesets {
         /// <summary>
         /// Get all the repository rulesets for an organization.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +110,7 @@ namespace GitHub.Orgs.Item.Rulesets {
         /// <summary>
         /// Create a repository ruleset for an organization.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +121,7 @@ namespace GitHub.Orgs.Item.Rulesets {
         public RequestInformation ToPostRequestInformation(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/orgs/{org}/rulesets", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -121,6 +130,7 @@ namespace GitHub.Orgs.Item.Rulesets {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="RulesetsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RulesetsRequestBuilder WithUrl(string rawUrl) {
             return new RulesetsRequestBuilder(rawUrl, RequestAdapter);

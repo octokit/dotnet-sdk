@@ -27,7 +27,7 @@ namespace GitHub.Repos.Item.Item.Keys {
         public string Title { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new keysPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="KeysPostRequestBody"/> and sets the default values.
         /// </summary>
         public KeysPostRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -35,6 +35,7 @@ namespace GitHub.Repos.Item.Item.Keys {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="KeysPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static KeysPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -43,6 +44,7 @@ namespace GitHub.Repos.Item.Item.Keys {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"key", n => { Key = n.GetStringValue(); } },

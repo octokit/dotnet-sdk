@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Rules.Branches.Item {
     /// </summary>
     public class WithBranchItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithBranchItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithBranchItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithBranchItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rules/branches/{branch}{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithBranchItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithBranchItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Repos.Item.Item.Rules.Branches.Item {
         /// Returns all active rules that apply to the specified branch. The branch does not need to exist; rules that would applyto a branch with that name will be returned. All active rules that apply will be returned, regardless of the levelat which they are configured (e.g. repository or organization). Rules in rulesets with &quot;evaluate&quot; or &quot;disabled&quot;enforcement statuses are not returned.
         /// API method documentation <see href="https://docs.github.com/rest/repos/rules#get-rules-for-a-branch" />
         /// </summary>
+        /// <returns>A List&lt;RepositoryRuleDetailed&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +48,7 @@ namespace GitHub.Repos.Item.Item.Rules.Branches.Item {
         /// <summary>
         /// Returns all active rules that apply to the specified branch. The branch does not need to exist; rules that would applyto a branch with that name will be returned. All active rules that apply will be returned, regardless of the levelat which they are configured (e.g. repository or organization). Rules in rulesets with &quot;evaluate&quot; or &quot;disabled&quot;enforcement statuses are not returned.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +65,7 @@ namespace GitHub.Repos.Item.Item.Rules.Branches.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithBranchItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithBranchItemRequestBuilder WithUrl(string rawUrl) {
             return new WithBranchItemRequestBuilder(rawUrl, RequestAdapter);

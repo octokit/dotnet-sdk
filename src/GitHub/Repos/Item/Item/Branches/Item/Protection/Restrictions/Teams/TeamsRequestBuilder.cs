@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
     /// </summary>
     public class TeamsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new TeamsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches/{branch}/protection/restrictions/teams", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TeamsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of a team to push to this branch. You can also remove push access for child teams.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#remove-team-access-restrictions" />
         /// </summary>
+        /// <returns>A List&lt;Team&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Team>?> DeleteAsync(TeamsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -53,8 +55,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists the teams who have push access to this branch. The list includes child teams.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#get-teams-with-access-to-the-protected-branch" />
         /// </summary>
+        /// <returns>A List&lt;Team&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Team>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -73,9 +77,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Grants the specified teams push access for this branch. You can also give push access to child teams.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#add-team-access-restrictions" />
         /// </summary>
+        /// <returns>A List&lt;Team&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Team>?> PostAsync(TeamsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -95,9 +101,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Replaces the list of teams that have push access to this branch. This removes all teams that previously had push access and grants push access to the new list of teams. Team restrictions include child teams.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#set-team-access-restrictions" />
         /// </summary>
+        /// <returns>A List&lt;Team&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Team>?> PutAsync(TeamsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -116,6 +124,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of a team to push to this branch. You can also remove push access for child teams.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,6 +144,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists the teams who have push access to this branch. The list includes child teams.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +161,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Grants the specified teams push access for this branch. You can also give push access to child teams.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -170,6 +181,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Replaces the list of teams that have push access to this branch. This removes all teams that previously had push access and grants push access to the new list of teams. Team restrictions include child teams.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,15 +201,16 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="TeamsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public TeamsRequestBuilder WithUrl(string rawUrl) {
             return new TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes string, teamsDeleteRequestBodyMember1
+        /// Composed type wrapper for classes <see cref="string"/>, <see cref="TeamsDeleteRequestBodyMember1"/>
         /// </summary>
         public class TeamsDeleteRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -205,7 +218,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
 #else
             public string String { get; set; }
 #endif
-            /// <summary>Composed type representation for type teamsDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1? TeamsDeleteRequestBodyMember1 { get; set; }
@@ -213,7 +226,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1 TeamsDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? TeamsDeleteRequestBodyString { get; set; }
@@ -221,7 +234,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
 #else
             public string TeamsDeleteRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type teamsDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1? TeamsDeleteRequestBodyTeamsDeleteRequestBodyMember1 { get; set; }
@@ -232,6 +245,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="TeamsDeleteRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static TeamsDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -254,6 +268,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(TeamsDeleteRequestBodyMember1 != null) {
                     return TeamsDeleteRequestBodyMember1.GetFieldDeserializers();
@@ -284,10 +299,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes string, teamsPostRequestBodyMember1
+        /// Composed type wrapper for classes <see cref="string"/>, <see cref="TeamsPostRequestBodyMember1"/>
         /// </summary>
         public class TeamsPostRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -295,7 +310,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
 #else
             public string String { get; set; }
 #endif
-            /// <summary>Composed type representation for type teamsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1? TeamsPostRequestBodyMember1 { get; set; }
@@ -303,7 +318,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1 TeamsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? TeamsPostRequestBodyString { get; set; }
@@ -311,7 +326,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
 #else
             public string TeamsPostRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type teamsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1? TeamsPostRequestBodyTeamsPostRequestBodyMember1 { get; set; }
@@ -322,6 +337,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="TeamsPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static TeamsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -344,6 +360,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(TeamsPostRequestBodyMember1 != null) {
                     return TeamsPostRequestBodyMember1.GetFieldDeserializers();
@@ -374,10 +391,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes string, teamsPutRequestBodyMember1
+        /// Composed type wrapper for classes <see cref="string"/>, <see cref="TeamsPutRequestBodyMember1"/>
         /// </summary>
         public class TeamsPutRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -385,7 +402,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
 #else
             public string String { get; set; }
 #endif
-            /// <summary>Composed type representation for type teamsPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1? TeamsPutRequestBodyMember1 { get; set; }
@@ -393,7 +410,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1 TeamsPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? TeamsPutRequestBodyString { get; set; }
@@ -401,7 +418,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
 #else
             public string TeamsPutRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type teamsPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1? TeamsPutRequestBodyTeamsPutRequestBodyMember1 { get; set; }
@@ -412,6 +429,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="TeamsPutRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static TeamsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -434,6 +452,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(TeamsPutRequestBodyMember1 != null) {
                     return TeamsPutRequestBodyMember1.GetFieldDeserializers();

@@ -13,20 +13,21 @@ namespace GitHub.Repos.Item {
     public class ReposItemRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item collection</summary>
         /// <param name="position">The name of the repository without the `.git` extension. The name is not case sensitive.</param>
+        /// <returns>A <see cref="OwnerItemRequestBuilder"/></returns>
         public OwnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("Owner%2Did", position);
             return new OwnerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ReposItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ReposItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ReposItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ReposItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ReposItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

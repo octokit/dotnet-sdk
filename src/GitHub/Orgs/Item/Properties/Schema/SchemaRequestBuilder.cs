@@ -16,20 +16,21 @@ namespace GitHub.Orgs.Item.Properties.Schema {
     public class SchemaRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.orgs.item.properties.schema.item collection</summary>
         /// <param name="position">The custom property name. The name is case sensitive.</param>
+        /// <returns>A <see cref="WithCustom_property_nameItemRequestBuilder"/></returns>
         public WithCustom_property_nameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("custom_property_name", position);
             return new WithCustom_property_nameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new SchemaRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SchemaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SchemaRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/properties/schema", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SchemaRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SchemaRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,8 +40,11 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// Gets all custom properties defined for an organization.Organization members can read these properties.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization" />
         /// </summary>
+        /// <returns>A List&lt;OrgCustomProperty&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<OrgCustomProperty>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -60,9 +64,12 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// Creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization" />
         /// </summary>
+        /// <returns>A List&lt;OrgCustomProperty&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<OrgCustomProperty>?> PatchAsync(SchemaPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -82,6 +89,7 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// <summary>
         /// Gets all custom properties defined for an organization.Organization members can read these properties.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +106,7 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// <summary>
         /// Creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,6 +126,7 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="SchemaRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SchemaRequestBuilder WithUrl(string rawUrl) {
             return new SchemaRequestBuilder(rawUrl, RequestAdapter);

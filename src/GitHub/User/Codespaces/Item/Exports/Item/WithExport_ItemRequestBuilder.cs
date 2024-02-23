@@ -14,14 +14,14 @@ namespace GitHub.User.Codespaces.Item.Exports.Item {
     /// </summary>
     public class WithExport_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithExport_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithExport_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithExport_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces/{codespace_name}/exports/{export_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithExport_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithExport_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,10 @@ namespace GitHub.User.Codespaces.Item.Exports.Item {
         /// Gets information about an export of a codespace.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#get-details-about-a-codespace-export" />
         /// </summary>
+        /// <returns>A <see cref="CodespaceExportDetails"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CodespaceExportDetails?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -49,6 +51,7 @@ namespace GitHub.User.Codespaces.Item.Exports.Item {
         /// <summary>
         /// Gets information about an export of a codespace.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +68,7 @@ namespace GitHub.User.Codespaces.Item.Exports.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithExport_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithExport_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithExport_ItemRequestBuilder(rawUrl, RequestAdapter);

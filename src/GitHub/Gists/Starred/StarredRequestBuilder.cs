@@ -14,14 +14,14 @@ namespace GitHub.Gists.Starred {
     /// </summary>
     public class StarredRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new StarredRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="StarredRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public StarredRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists/starred{?page*,per_page*,since*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new StarredRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="StarredRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,11 @@ namespace GitHub.Gists.Starred {
         /// List the authenticated user&apos;s starred gists:
         /// API method documentation <see href="https://docs.github.com/rest/gists/gists#list-starred-gists" />
         /// </summary>
+        /// <returns>A List&lt;BaseGist&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<BaseGist>?> GetAsync(Action<RequestConfiguration<StarredRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,6 +54,7 @@ namespace GitHub.Gists.Starred {
         /// <summary>
         /// List the authenticated user&apos;s starred gists:
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +71,7 @@ namespace GitHub.Gists.Starred {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="StarredRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public StarredRequestBuilder WithUrl(string rawUrl) {
             return new StarredRequestBuilder(rawUrl, RequestAdapter);

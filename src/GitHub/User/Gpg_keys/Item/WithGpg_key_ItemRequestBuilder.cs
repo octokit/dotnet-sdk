@@ -14,14 +14,14 @@ namespace GitHub.User.Gpg_keys.Item {
     /// </summary>
     public class WithGpg_key_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithGpg_key_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithGpg_key_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithGpg_key_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/gpg_keys/{gpg_key_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithGpg_key_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithGpg_key_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,6 +33,10 @@ namespace GitHub.User.Gpg_keys.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -53,8 +57,12 @@ namespace GitHub.User.Gpg_keys.Item {
         /// View extended details for a single GPG key.OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/gpg-keys#get-a-gpg-key-for-the-authenticated-user" />
         /// </summary>
+        /// <returns>A <see cref="GpgKey"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GpgKey?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -73,6 +81,7 @@ namespace GitHub.User.Gpg_keys.Item {
         /// <summary>
         /// Removes a GPG key from the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `admin:gpg_key` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +98,7 @@ namespace GitHub.User.Gpg_keys.Item {
         /// <summary>
         /// View extended details for a single GPG key.OAuth app tokens and personal access tokens (classic) need the `read:gpg_key` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +115,7 @@ namespace GitHub.User.Gpg_keys.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithGpg_key_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithGpg_key_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithGpg_key_ItemRequestBuilder(rawUrl, RequestAdapter);

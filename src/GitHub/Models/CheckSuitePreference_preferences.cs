@@ -17,7 +17,7 @@ namespace GitHub.Models {
         public List<CheckSuitePreference_preferences_auto_trigger_checks> AutoTriggerChecks { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new checkSuitePreference_preferences and sets the default values.
+        /// Instantiates a new <see cref="CheckSuitePreference_preferences"/> and sets the default values.
         /// </summary>
         public CheckSuitePreference_preferences() {
             AdditionalData = new Dictionary<string, object>();
@@ -25,6 +25,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="CheckSuitePreference_preferences"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CheckSuitePreference_preferences CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -33,6 +34,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"auto_trigger_checks", n => { AutoTriggerChecks = n.GetCollectionOfObjectValues<CheckSuitePreference_preferences_auto_trigger_checks>(CheckSuitePreference_preferences_auto_trigger_checks.CreateFromDiscriminatorValue)?.ToList(); } },

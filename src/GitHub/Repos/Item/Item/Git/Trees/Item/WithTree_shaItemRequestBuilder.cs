@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Git.Trees.Item {
     /// </summary>
     public class WithTree_shaItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithTree_shaItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithTree_shaItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithTree_shaItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/git/trees/{tree_sha}{?recursive*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithTree_shaItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithTree_shaItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,11 @@ namespace GitHub.Repos.Item.Item.Git.Trees.Item {
         /// Returns a single tree using the SHA1 value or ref name for that tree.If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.**Note**: The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
         /// API method documentation <see href="https://docs.github.com/rest/git/trees#get-a-tree" />
         /// </summary>
+        /// <returns>A <see cref="GitTree"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GitTree?> GetAsync(Action<RequestConfiguration<WithTree_shaItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,6 +53,7 @@ namespace GitHub.Repos.Item.Item.Git.Trees.Item {
         /// <summary>
         /// Returns a single tree using the SHA1 value or ref name for that tree.If `truncated` is `true` in the response then the number of items in the `tree` array exceeded our maximum limit. If you need to fetch more items, use the non-recursive method of fetching trees, and fetch one sub-tree at a time.**Note**: The limit for the `tree` array is 100,000 entries with a maximum size of 7 MB when using the `recursive` parameter.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +70,7 @@ namespace GitHub.Repos.Item.Item.Git.Trees.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithTree_shaItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithTree_shaItemRequestBuilder WithUrl(string rawUrl) {
             return new WithTree_shaItemRequestBuilder(rawUrl, RequestAdapter);

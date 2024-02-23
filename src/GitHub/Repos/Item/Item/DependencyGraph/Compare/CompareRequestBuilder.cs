@@ -13,20 +13,21 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Compare {
     public class CompareRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.dependencyGraph.compare.item collection</summary>
         /// <param name="position">The base and head Git revisions to compare. The Git revisions will be resolved to commit SHAs. Named revisions will be resolved to their corresponding HEAD commits, and an appropriate merge base will be determined. This parameter expects the format `{base}...{head}`.</param>
+        /// <returns>A <see cref="WithBaseheadItemRequestBuilder"/></returns>
         public WithBaseheadItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("basehead", position);
             return new WithBaseheadItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new CompareRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CompareRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CompareRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph/compare", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CompareRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CompareRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

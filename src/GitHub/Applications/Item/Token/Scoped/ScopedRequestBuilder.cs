@@ -14,14 +14,14 @@ namespace GitHub.Applications.Item.Token.Scoped {
     /// </summary>
     public class ScopedRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ScopedRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ScopedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ScopedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{client_id}/token/scoped", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ScopedRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ScopedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,14 @@ namespace GitHub.Applications.Item.Token.Scoped {
         /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
         /// API method documentation <see href="https://docs.github.com/rest/apps/apps#create-a-scoped-access-token" />
         /// </summary>
+        /// <returns>A <see cref="Authorization"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Authorization?> PostAsync(ScopedPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -54,6 +59,7 @@ namespace GitHub.Applications.Item.Token.Scoped {
         /// <summary>
         /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,6 +79,7 @@ namespace GitHub.Applications.Item.Token.Scoped {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ScopedRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ScopedRequestBuilder WithUrl(string rawUrl) {
             return new ScopedRequestBuilder(rawUrl, RequestAdapter);

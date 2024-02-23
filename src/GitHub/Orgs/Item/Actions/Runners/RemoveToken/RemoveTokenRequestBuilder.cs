@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Actions.Runners.RemoveToken {
     /// </summary>
     public class RemoveTokenRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new RemoveTokenRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RemoveTokenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RemoveTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners/remove-token", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RemoveTokenRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RemoveTokenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Orgs.Item.Actions.Runners.RemoveToken {
         /// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour.For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to remove your self-hosted runner from an organization:```./config.sh remove --token TOKEN```Authenticated users must have admin access to the organization to use this endpoint.OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/self-hosted-runners#create-a-remove-token-for-an-organization" />
         /// </summary>
+        /// <returns>A <see cref="AuthenticationToken"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +47,7 @@ namespace GitHub.Orgs.Item.Actions.Runners.RemoveToken {
         /// <summary>
         /// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour.For example, you can replace `TOKEN` in the following example with the registration token provided by this endpoint to remove your self-hosted runner from an organization:```./config.sh remove --token TOKEN```Authenticated users must have admin access to the organization to use this endpoint.OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,7 @@ namespace GitHub.Orgs.Item.Actions.Runners.RemoveToken {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="RemoveTokenRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RemoveTokenRequestBuilder WithUrl(string rawUrl) {
             return new RemoveTokenRequestBuilder(rawUrl, RequestAdapter);

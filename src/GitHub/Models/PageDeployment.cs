@@ -44,7 +44,7 @@ namespace GitHub.Models {
         public string StatusUrl { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new pageDeployment and sets the default values.
+        /// Instantiates a new <see cref="PageDeployment"/> and sets the default values.
         /// </summary>
         public PageDeployment() {
             AdditionalData = new Dictionary<string, object>();
@@ -52,6 +52,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="PageDeployment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static PageDeployment CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -60,6 +61,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"id", n => { Id = n.GetObjectValue<PageDeployment_id>(PageDeployment_id.CreateFromDiscriminatorValue); } },
@@ -81,12 +83,12 @@ namespace GitHub.Models {
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes integer, string
+        /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
         public class PageDeployment_id : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type integer</summary>
+            /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -97,6 +99,7 @@ namespace GitHub.Models {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="PageDeployment_id"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static PageDeployment_id CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -113,6 +116,7 @@ namespace GitHub.Models {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 return new Dictionary<string, Action<IParseNode>>();
             }

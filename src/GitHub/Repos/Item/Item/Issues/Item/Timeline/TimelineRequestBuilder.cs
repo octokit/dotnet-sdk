@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Timeline {
     /// </summary>
     public class TimelineRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new TimelineRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TimelineRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TimelineRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/timeline{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TimelineRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TimelineRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,11 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Timeline {
         /// List all timeline events for an issue.
         /// API method documentation <see href="https://docs.github.com/rest/issues/timeline#list-timeline-events-for-an-issue" />
         /// </summary>
+        /// <returns>A List&lt;TimelineIssueEvents&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 410 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<TimelineIssueEvents>?> GetAsync(Action<RequestConfiguration<TimelineRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,6 +54,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Timeline {
         /// <summary>
         /// List all timeline events for an issue.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +71,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Timeline {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="TimelineRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public TimelineRequestBuilder WithUrl(string rawUrl) {
             return new TimelineRequestBuilder(rawUrl, RequestAdapter);

@@ -14,14 +14,14 @@ namespace GitHub.Users.Item.Gpg_keys {
     /// </summary>
     public class Gpg_keysRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new Gpg_keysRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Gpg_keysRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public Gpg_keysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/gpg_keys{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new Gpg_keysRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Gpg_keysRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Users.Item.Gpg_keys {
         /// Lists the GPG keys for a user. This information is accessible by anyone.
         /// API method documentation <see href="https://docs.github.com/rest/users/gpg-keys#list-gpg-keys-for-a-user" />
         /// </summary>
+        /// <returns>A List&lt;GpgKey&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +48,7 @@ namespace GitHub.Users.Item.Gpg_keys {
         /// <summary>
         /// Lists the GPG keys for a user. This information is accessible by anyone.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +65,7 @@ namespace GitHub.Users.Item.Gpg_keys {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="Gpg_keysRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public Gpg_keysRequestBuilder WithUrl(string rawUrl) {
             return new Gpg_keysRequestBuilder(rawUrl, RequestAdapter);

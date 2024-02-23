@@ -17,7 +17,7 @@ namespace GitHub.Models {
         /// <summary>The w property</summary>
         public int? W { get; set; }
         /// <summary>
-        /// Instantiates a new contributorActivity_weeks and sets the default values.
+        /// Instantiates a new <see cref="ContributorActivity_weeks"/> and sets the default values.
         /// </summary>
         public ContributorActivity_weeks() {
             AdditionalData = new Dictionary<string, object>();
@@ -25,6 +25,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ContributorActivity_weeks"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ContributorActivity_weeks CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -33,6 +34,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"a", n => { A = n.GetIntValue(); } },

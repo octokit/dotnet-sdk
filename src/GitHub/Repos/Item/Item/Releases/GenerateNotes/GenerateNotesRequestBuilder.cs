@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
     /// </summary>
     public class GenerateNotesRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GenerateNotesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GenerateNotesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GenerateNotesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/generate-notes", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new GenerateNotesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GenerateNotesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,11 @@ namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
         /// Generate a name and body describing a [release](https://docs.github.com/rest/releases/releases#get-a-release). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.
         /// API method documentation <see href="https://docs.github.com/rest/releases/releases#generate-release-notes-content-for-a-release" />
         /// </summary>
+        /// <returns>A <see cref="ReleaseNotesContent"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ReleaseNotesContent?> PostAsync(GenerateNotesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,6 +53,7 @@ namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
         /// <summary>
         /// Generate a name and body describing a [release](https://docs.github.com/rest/releases/releases#get-a-release). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,6 +73,7 @@ namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="GenerateNotesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GenerateNotesRequestBuilder WithUrl(string rawUrl) {
             return new GenerateNotesRequestBuilder(rawUrl, RequestAdapter);

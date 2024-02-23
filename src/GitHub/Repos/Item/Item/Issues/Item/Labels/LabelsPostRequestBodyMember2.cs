@@ -17,7 +17,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         public List<LabelsPostRequestBodyMember2_labels> Labels { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new labelsPostRequestBodyMember2 and sets the default values.
+        /// Instantiates a new <see cref="LabelsPostRequestBodyMember2"/> and sets the default values.
         /// </summary>
         public LabelsPostRequestBodyMember2() {
             AdditionalData = new Dictionary<string, object>();
@@ -25,6 +25,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="LabelsPostRequestBodyMember2"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static LabelsPostRequestBodyMember2 CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -33,6 +34,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"labels", n => { Labels = n.GetCollectionOfObjectValues<LabelsPostRequestBodyMember2_labels>(LabelsPostRequestBodyMember2_labels.CreateFromDiscriminatorValue)?.ToList(); } },

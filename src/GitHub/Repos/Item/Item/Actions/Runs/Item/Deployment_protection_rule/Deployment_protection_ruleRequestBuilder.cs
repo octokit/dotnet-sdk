@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
     /// </summary>
     public class Deployment_protection_ruleRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new Deployment_protection_ruleRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Deployment_protection_ruleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public Deployment_protection_ruleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}/deployment_protection_rule", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new Deployment_protection_ruleRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Deployment_protection_ruleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,6 +48,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
         /// <summary>
         /// Approve or reject custom deployment protection rules provided by a GitHub App for a workflow run. For more information, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;**Note:** GitHub Apps can only review their own custom deployment protection rules.To approve or reject pending deployments that are waiting for review from a specific person or team, see [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`](/rest/actions/workflow-runs#review-pending-deployments-for-a-workflow-run).OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,15 +67,16 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="Deployment_protection_ruleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public Deployment_protection_ruleRequestBuilder WithUrl(string rawUrl) {
             return new Deployment_protection_ruleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes reviewCustomGatesCommentRequired, reviewCustomGatesStateRequired
+        /// Composed type wrapper for classes <see cref="ReviewCustomGatesCommentRequired"/>, <see cref="ReviewCustomGatesStateRequired"/>
         /// </summary>
         public class Deployment_protection_rulePostRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type reviewCustomGatesCommentRequired</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.ReviewCustomGatesCommentRequired"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.ReviewCustomGatesCommentRequired? DeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired { get; set; }
@@ -82,7 +84,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
 #else
             public GitHub.Models.ReviewCustomGatesCommentRequired DeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired { get; set; }
 #endif
-            /// <summary>Composed type representation for type reviewCustomGatesStateRequired</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.ReviewCustomGatesStateRequired"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.ReviewCustomGatesStateRequired? DeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired { get; set; }
@@ -90,7 +92,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
 #else
             public GitHub.Models.ReviewCustomGatesStateRequired DeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired { get; set; }
 #endif
-            /// <summary>Composed type representation for type reviewCustomGatesCommentRequired</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.ReviewCustomGatesCommentRequired"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.ReviewCustomGatesCommentRequired? ReviewCustomGatesCommentRequired { get; set; }
@@ -98,7 +100,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
 #else
             public GitHub.Models.ReviewCustomGatesCommentRequired ReviewCustomGatesCommentRequired { get; set; }
 #endif
-            /// <summary>Composed type representation for type reviewCustomGatesStateRequired</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.ReviewCustomGatesStateRequired"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.ReviewCustomGatesStateRequired? ReviewCustomGatesStateRequired { get; set; }
@@ -109,6 +111,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="Deployment_protection_rulePostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static Deployment_protection_rulePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -122,6 +125,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(DeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired != null || DeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired != null || ReviewCustomGatesCommentRequired != null || ReviewCustomGatesStateRequired != null) {
                     return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired, DeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired, ReviewCustomGatesCommentRequired, ReviewCustomGatesStateRequired);

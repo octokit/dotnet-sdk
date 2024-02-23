@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Preferences {
     /// </summary>
     public class PreferencesRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new PreferencesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PreferencesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PreferencesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-suites/preferences", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PreferencesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PreferencesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Preferences {
         /// Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://docs.github.com/rest/checks/suites#create-a-check-suite).You must have admin permissions in the repository to set preferences for check suites.
         /// API method documentation <see href="https://docs.github.com/rest/checks/suites#update-repository-preferences-for-check-suites" />
         /// </summary>
+        /// <returns>A <see cref="CheckSuitePreference"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,6 +49,7 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Preferences {
         /// <summary>
         /// Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://docs.github.com/rest/checks/suites#create-a-check-suite).You must have admin permissions in the repository to set preferences for check suites.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,6 +69,7 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Preferences {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PreferencesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PreferencesRequestBuilder WithUrl(string rawUrl) {
             return new PreferencesRequestBuilder(rawUrl, RequestAdapter);

@@ -11,7 +11,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
         /// <summary>The ID of the custom app that will be enabled on the environment.</summary>
         public int? IntegrationId { get; set; }
         /// <summary>
-        /// Instantiates a new deployment_protection_rulesPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="Deployment_protection_rulesPostRequestBody"/> and sets the default values.
         /// </summary>
         public Deployment_protection_rulesPostRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -19,6 +19,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Deployment_protection_rulesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Deployment_protection_rulesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -27,6 +28,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"integration_id", n => { IntegrationId = n.GetIntValue(); } },

@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Commits.Item.Statuses {
     /// </summary>
     public class StatusesRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new StatusesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="StatusesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public StatusesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/commits/{commits%2Did}/statuses{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new StatusesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="StatusesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item.Statuses {
         /// Users with pull access in a repository can view commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name. Statuses are returned in reverse chronological order. The first status in the list will be the latest one.This resource is also available via a legacy route: `GET /repos/:owner/:repo/statuses/:ref`.
         /// API method documentation <see href="https://docs.github.com/rest/commits/statuses#list-commit-statuses-for-a-reference" />
         /// </summary>
+        /// <returns>A List&lt;GitHub.Models.Status&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +48,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item.Statuses {
         /// <summary>
         /// Users with pull access in a repository can view commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name. Statuses are returned in reverse chronological order. The first status in the list will be the latest one.This resource is also available via a legacy route: `GET /repos/:owner/:repo/statuses/:ref`.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +65,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item.Statuses {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="StatusesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public StatusesRequestBuilder WithUrl(string rawUrl) {
             return new StatusesRequestBuilder(rawUrl, RequestAdapter);

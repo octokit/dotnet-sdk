@@ -26,14 +26,14 @@ namespace GitHub.Orgs.Item.Settings.Billing {
             new SharedStorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new BillingRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="BillingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public BillingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/settings/billing", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new BillingRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="BillingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
