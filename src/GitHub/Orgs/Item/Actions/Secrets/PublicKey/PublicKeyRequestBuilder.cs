@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Actions.Secrets.PublicKey {
     /// </summary>
     public class PublicKeyRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new PublicKeyRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PublicKeyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PublicKeyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/secrets/public-key", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PublicKeyRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PublicKeyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Orgs.Item.Actions.Secrets.PublicKey {
         /// Gets your public key, which you need to encrypt secrets. You need toencrypt a secret before you can create or update secrets.The authenticated user must have collaborator access to a repository to create, update, or read secrets.OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/secrets#get-an-organization-public-key" />
         /// </summary>
+        /// <returns>A <see cref="ActionsPublicKey"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +47,7 @@ namespace GitHub.Orgs.Item.Actions.Secrets.PublicKey {
         /// <summary>
         /// Gets your public key, which you need to encrypt secrets. You need toencrypt a secret before you can create or update secrets.The authenticated user must have collaborator access to a repository to create, update, or read secrets.OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,7 @@ namespace GitHub.Orgs.Item.Actions.Secrets.PublicKey {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PublicKeyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PublicKeyRequestBuilder WithUrl(string rawUrl) {
             return new PublicKeyRequestBuilder(rawUrl, RequestAdapter);

@@ -16,14 +16,14 @@ namespace GitHub.Networks.Item.Item {
             new EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithRepoItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRepoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithRepoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networks/{owner}/{repo}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithRepoItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRepoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

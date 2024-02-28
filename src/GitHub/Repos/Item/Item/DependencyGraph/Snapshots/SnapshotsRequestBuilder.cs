@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
     /// </summary>
     public class SnapshotsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new SnapshotsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SnapshotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SnapshotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph/snapshots", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SnapshotsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SnapshotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// Create a new snapshot of a repository&apos;s dependencies.The authenticated user must have access to the repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/dependency-graph/dependency-submission#create-a-snapshot-of-dependencies-for-a-repository" />
         /// </summary>
+        /// <returns>A <see cref="SnapshotsPostResponse"/></returns>
         /// <param name="body">Create a new snapshot of a repository&apos;s dependencies.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,6 +49,7 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// <summary>
         /// Create a new snapshot of a repository&apos;s dependencies.The authenticated user must have access to the repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Create a new snapshot of a repository&apos;s dependencies.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,6 +69,7 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="SnapshotsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SnapshotsRequestBuilder WithUrl(string rawUrl) {
             return new SnapshotsRequestBuilder(rawUrl, RequestAdapter);

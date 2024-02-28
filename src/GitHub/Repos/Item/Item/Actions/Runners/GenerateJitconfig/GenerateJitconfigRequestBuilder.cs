@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
     /// </summary>
     public class GenerateJitconfigRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GenerateJitconfigRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GenerateJitconfigRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GenerateJitconfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runners/generate-jitconfig", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new GenerateJitconfigRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GenerateJitconfigRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
         /// Generates a configuration that can be passed to the runner application at startup.The authenticated user must have admin access to the repository.OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/self-hosted-runners#create-configuration-for-a-just-in-time-runner-for-a-repository" />
         /// </summary>
+        /// <returns>A <see cref="GenerateJitconfigPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GenerateJitconfigPostResponse?> PostAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -52,6 +55,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
         /// <summary>
         /// Generates a configuration that can be passed to the runner application at startup.The authenticated user must have admin access to the repository.OAuth tokens and personal access tokens (classic) need the`repo` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,6 +75,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="GenerateJitconfigRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GenerateJitconfigRequestBuilder WithUrl(string rawUrl) {
             return new GenerateJitconfigRequestBuilder(rawUrl, RequestAdapter);

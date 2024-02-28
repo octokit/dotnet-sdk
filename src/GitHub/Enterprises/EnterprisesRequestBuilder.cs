@@ -13,20 +13,21 @@ namespace GitHub.Enterprises {
     public class EnterprisesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.enterprises.item collection</summary>
         /// <param name="position">The slug version of the enterprise name. You can also substitute this value with the enterprise id.</param>
+        /// <returns>A <see cref="WithEnterpriseItemRequestBuilder"/></returns>
         public WithEnterpriseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("enterprise", position);
             return new WithEnterpriseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new EnterprisesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="EnterprisesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public EnterprisesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new EnterprisesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="EnterprisesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

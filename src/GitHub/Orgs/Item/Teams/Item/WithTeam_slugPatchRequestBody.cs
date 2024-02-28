@@ -33,7 +33,7 @@ namespace GitHub.Orgs.Item.Teams.Item {
         /// <summary>The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. When a team is nested, the `privacy` for parent teams cannot be `secret`. The options are:  **For a non-nested team:**   * `secret` - only visible to organization owners and members of this team.   * `closed` - visible to all members of this organization.  **For a parent or child team:**   * `closed` - visible to all members of this organization.</summary>
         public WithTeam_slugPatchRequestBody_privacy? Privacy { get; set; }
         /// <summary>
-        /// Instantiates a new WithTeam_slugPatchRequestBody and sets the default values.
+        /// Instantiates a new <see cref="WithTeam_slugPatchRequestBody"/> and sets the default values.
         /// </summary>
         public WithTeam_slugPatchRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -42,6 +42,7 @@ namespace GitHub.Orgs.Item.Teams.Item {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="WithTeam_slugPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static WithTeam_slugPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -50,6 +51,7 @@ namespace GitHub.Orgs.Item.Teams.Item {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"description", n => { Description = n.GetStringValue(); } },

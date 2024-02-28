@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
     /// </summary>
     public class ContextsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ContextsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ContextsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ContextsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches/{branch}/protection/required_status_checks/contexts", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ContextsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ContextsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#remove-status-check-contexts" />
         /// </summary>
+        /// <returns>A List&lt;string&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<string>?> DeleteAsync(ContextsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -54,8 +57,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#get-all-status-check-contexts" />
         /// </summary>
+        /// <returns>A List&lt;string&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<string>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -74,9 +79,13 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#add-status-check-contexts" />
         /// </summary>
+        /// <returns>A List&lt;string&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<string>?> PostAsync(ContextsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -98,9 +107,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#set-status-check-contexts" />
         /// </summary>
+        /// <returns>A List&lt;string&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<string>?> PutAsync(ContextsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -120,6 +132,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,6 +152,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +169,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,6 +189,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -193,15 +209,16 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ContextsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ContextsRequestBuilder WithUrl(string rawUrl) {
             return new ContextsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes contextsDeleteRequestBodyMember1, string
+        /// Composed type wrapper for classes <see cref="ContextsDeleteRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
         public class ContextsDeleteRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type contextsDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1? ContextsDeleteRequestBodyContextsDeleteRequestBodyMember1 { get; set; }
@@ -209,7 +226,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1 ContextsDeleteRequestBodyContextsDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type contextsDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1? ContextsDeleteRequestBodyMember1 { get; set; }
@@ -217,7 +234,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1 ContextsDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? ContextsDeleteRequestBodyString { get; set; }
@@ -225,7 +242,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public string ContextsDeleteRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -236,6 +253,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="ContextsDeleteRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static ContextsDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -258,6 +276,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(ContextsDeleteRequestBodyContextsDeleteRequestBodyMember1 != null) {
                     return ContextsDeleteRequestBodyContextsDeleteRequestBodyMember1.GetFieldDeserializers();
@@ -288,10 +307,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes contextsPostRequestBodyMember1, string
+        /// Composed type wrapper for classes <see cref="ContextsPostRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
         public class ContextsPostRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type contextsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1? ContextsPostRequestBodyContextsPostRequestBodyMember1 { get; set; }
@@ -299,7 +318,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1 ContextsPostRequestBodyContextsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type contextsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1? ContextsPostRequestBodyMember1 { get; set; }
@@ -307,7 +326,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1 ContextsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? ContextsPostRequestBodyString { get; set; }
@@ -315,7 +334,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public string ContextsPostRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -326,6 +345,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="ContextsPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static ContextsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -348,6 +368,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(ContextsPostRequestBodyContextsPostRequestBodyMember1 != null) {
                     return ContextsPostRequestBodyContextsPostRequestBodyMember1.GetFieldDeserializers();
@@ -378,10 +399,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes contextsPutRequestBodyMember1, string
+        /// Composed type wrapper for classes <see cref="ContextsPutRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
         public class ContextsPutRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type contextsPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1? ContextsPutRequestBodyContextsPutRequestBodyMember1 { get; set; }
@@ -389,7 +410,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1 ContextsPutRequestBodyContextsPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type contextsPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1? ContextsPutRequestBodyMember1 { get; set; }
@@ -397,7 +418,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1 ContextsPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? ContextsPutRequestBodyString { get; set; }
@@ -405,7 +426,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public string ContextsPutRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -416,6 +437,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="ContextsPutRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static ContextsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -438,6 +460,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(ContextsPutRequestBodyContextsPutRequestBodyMember1 != null) {
                     return ContextsPutRequestBodyContextsPutRequestBodyMember1.GetFieldDeserializers();

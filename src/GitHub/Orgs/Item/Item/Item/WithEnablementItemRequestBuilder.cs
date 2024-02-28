@@ -13,14 +13,14 @@ namespace GitHub.Orgs.Item.Item.Item {
     /// </summary>
     public class WithEnablementItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithEnablementItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithEnablementItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithEnablementItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/{security_product}/{enablement}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithEnablementItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithEnablementItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,6 +47,7 @@ namespace GitHub.Orgs.Item.Item.Item {
         /// <summary>
         /// Enables or disables the specified security feature for all eligible repositories in an organization. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;The authenticated user must be an organization owner or be member of a team with the security manager role to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,6 +66,7 @@ namespace GitHub.Orgs.Item.Item.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithEnablementItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithEnablementItemRequestBuilder WithUrl(string rawUrl) {
             return new WithEnablementItemRequestBuilder(rawUrl, RequestAdapter);

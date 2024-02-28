@@ -16,20 +16,21 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
     public class RuleSuitesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.orgs.item.rulesets.ruleSuites.item collection</summary>
         /// <param name="position">The unique identifier of the rule suite result.To get this ID, you can use [GET /repos/{owner}/{repo}/rulesets/rule-suites](https://docs.github.com/rest/repos/rule-suites#list-repository-rule-suites)for repositories and [GET /orgs/{org}/rulesets/rule-suites](https://docs.github.com/rest/orgs/rule-suites#list-organization-rule-suites)for organizations.</param>
+        /// <returns>A <see cref="WithRule_suite_ItemRequestBuilder"/></returns>
         public WithRule_suite_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("rule_suite_id", position);
             return new WithRule_suite_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new RuleSuitesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RuleSuitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RuleSuitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/rulesets/rule-suites{?actor_name*,page*,per_page*,repository_name*,rule_suite_result*,time_period*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RuleSuitesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RuleSuitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,8 +40,11 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
         /// Lists suites of rule evaluations at the organization level.For more information, see &quot;[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/orgs/rule-suites#list-organization-rule-suites" />
         /// </summary>
+        /// <returns>A List&lt;GitHub.Models.RuleSuites&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<GitHub.Models.RuleSuites>?> GetAsync(Action<RequestConfiguration<RuleSuitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -59,6 +63,7 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
         /// <summary>
         /// Lists suites of rule evaluations at the organization level.For more information, see &quot;[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets).&quot;
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +80,7 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="RuleSuitesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RuleSuitesRequestBuilder WithUrl(string rawUrl) {
             return new RuleSuitesRequestBuilder(rawUrl, RequestAdapter);

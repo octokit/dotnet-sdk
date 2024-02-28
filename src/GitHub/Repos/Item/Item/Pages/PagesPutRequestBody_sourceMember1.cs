@@ -22,7 +22,7 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// <summary>The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`.</summary>
         public PagesPutRequestBody_sourceMember1_path? Path { get; set; }
         /// <summary>
-        /// Instantiates a new pagesPutRequestBody_sourceMember1 and sets the default values.
+        /// Instantiates a new <see cref="PagesPutRequestBody_sourceMember1"/> and sets the default values.
         /// </summary>
         public PagesPutRequestBody_sourceMember1() {
             AdditionalData = new Dictionary<string, object>();
@@ -30,6 +30,7 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="PagesPutRequestBody_sourceMember1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static PagesPutRequestBody_sourceMember1 CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -38,6 +39,7 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"branch", n => { Branch = n.GetStringValue(); } },

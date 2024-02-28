@@ -16,20 +16,21 @@ namespace GitHub.Orgs.Item.Migrations {
     public class MigrationsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.orgs.item.migrations.item collection</summary>
         /// <param name="position">The unique identifier of the migration.</param>
+        /// <returns>A <see cref="WithMigration_ItemRequestBuilder"/></returns>
         public WithMigration_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("migration_id", position);
             return new WithMigration_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new MigrationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="MigrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public MigrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/migrations{?exclude*,page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new MigrationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="MigrationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,6 +40,7 @@ namespace GitHub.Orgs.Item.Migrations {
         /// Lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).A list of `repositories` is only returned for export migrations.
         /// API method documentation <see href="https://docs.github.com/rest/migrations/orgs#list-organization-migrations" />
         /// </summary>
+        /// <returns>A List&lt;Migration&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,9 +58,12 @@ namespace GitHub.Orgs.Item.Migrations {
         /// Initiates the generation of a migration archive.
         /// API method documentation <see href="https://docs.github.com/rest/migrations/orgs#start-an-organization-migration" />
         /// </summary>
+        /// <returns>A <see cref="Migration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Migration?> PostAsync(MigrationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -77,6 +82,7 @@ namespace GitHub.Orgs.Item.Migrations {
         /// <summary>
         /// Lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).A list of `repositories` is only returned for export migrations.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +99,7 @@ namespace GitHub.Orgs.Item.Migrations {
         /// <summary>
         /// Initiates the generation of a migration archive.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,7 +110,7 @@ namespace GitHub.Orgs.Item.Migrations {
         public RequestInformation ToPostRequestInformation(MigrationsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/orgs/{org}/migrations", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -112,6 +119,7 @@ namespace GitHub.Orgs.Item.Migrations {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="MigrationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public MigrationsRequestBuilder WithUrl(string rawUrl) {
             return new MigrationsRequestBuilder(rawUrl, RequestAdapter);

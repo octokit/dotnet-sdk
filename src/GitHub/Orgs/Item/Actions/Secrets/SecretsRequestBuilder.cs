@@ -20,20 +20,21 @@ namespace GitHub.Orgs.Item.Actions.Secrets {
         }
         /// <summary>Gets an item from the GitHub.orgs.item.actions.secrets.item collection</summary>
         /// <param name="position">The name of the secret.</param>
+        /// <returns>A <see cref="WithSecret_nameItemRequestBuilder"/></returns>
         public WithSecret_nameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("secret_name", position);
             return new WithSecret_nameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new SecretsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SecretsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/secrets{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new SecretsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="SecretsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,6 +44,7 @@ namespace GitHub.Orgs.Item.Actions.Secrets {
         /// Lists all secrets available in an organization without revealing theirencrypted values.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// API method documentation <see href="https://docs.github.com/rest/actions/secrets#list-organization-secrets" />
         /// </summary>
+        /// <returns>A <see cref="SecretsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,6 +60,7 @@ namespace GitHub.Orgs.Item.Actions.Secrets {
         /// <summary>
         /// Lists all secrets available in an organization without revealing theirencrypted values.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +77,7 @@ namespace GitHub.Orgs.Item.Actions.Secrets {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="SecretsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public SecretsRequestBuilder WithUrl(string rawUrl) {
             return new SecretsRequestBuilder(rawUrl, RequestAdapter);

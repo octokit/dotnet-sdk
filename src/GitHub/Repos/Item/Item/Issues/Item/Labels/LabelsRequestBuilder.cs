@@ -16,20 +16,21 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
     public class LabelsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.issues.item.labels.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="WithNameItemRequestBuilder"/></returns>
         public WithNameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("name", position);
             return new WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new LabelsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LabelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LabelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/labels{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new LabelsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LabelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,6 +42,8 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 410 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -59,8 +62,11 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// Lists all labels for an issue.
         /// API method documentation <see href="https://docs.github.com/rest/issues/labels#list-labels-for-an-issue" />
         /// </summary>
+        /// <returns>A List&lt;Label&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 410 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Label>?> GetAsync(Action<RequestConfiguration<LabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -80,9 +86,13 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// Adds labels to an issue. If you provide an empty array of labels, all labels are removed from the issue. 
         /// API method documentation <see href="https://docs.github.com/rest/issues/labels#add-labels-to-an-issue" />
         /// </summary>
+        /// <returns>A List&lt;Label&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 410 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Label>?> PostAsync(LabelsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -104,9 +114,13 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// Removes any previous labels and sets the new labels for an issue.
         /// API method documentation <see href="https://docs.github.com/rest/issues/labels#set-labels-for-an-issue" />
         /// </summary>
+        /// <returns>A List&lt;Label&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 410 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Label>?> PutAsync(LabelsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -127,6 +141,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// Removes all labels from an issue.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,7 +150,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/labels", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -143,6 +158,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// Lists all labels for an issue.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -159,6 +175,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// Adds labels to an issue. If you provide an empty array of labels, all labels are removed from the issue. 
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,7 +186,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         public RequestInformation ToPostRequestInformation(LabelsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/labels", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -178,6 +195,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// Removes any previous labels and sets the new labels for an issue.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -188,7 +206,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         public RequestInformation ToPutRequestInformation(LabelsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/labels", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -197,15 +215,16 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="LabelsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public LabelsRequestBuilder WithUrl(string rawUrl) {
             return new LabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes labelsPostRequestBodyMember1, labelsPostRequestBodyMember2, labelsPostRequestBodyMember3, string
+        /// Composed type wrapper for classes <see cref="LabelsPostRequestBodyMember1"/>, <see cref="LabelsPostRequestBodyMember2"/>, <see cref="string"/>, List&lt;LabelsPostRequestBodyMember3&gt;
         /// </summary>
         public class LabelsPostRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type labelsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1? LabelsPostRequestBodyLabelsPostRequestBodyMember1 { get; set; }
@@ -213,7 +232,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1 LabelsPostRequestBodyLabelsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPostRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2? LabelsPostRequestBodyLabelsPostRequestBodyMember2 { get; set; }
@@ -221,7 +240,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2 LabelsPostRequestBodyLabelsPostRequestBodyMember2 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPostRequestBodyMember3</summary>
+            /// <summary>Composed type representation for type List&lt;GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public List<GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>? LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
@@ -229,7 +248,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public List<GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> LabelsPostRequestBodyLabelsPostRequestBodyMember3 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1? LabelsPostRequestBodyMember1 { get; set; }
@@ -237,7 +256,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1 LabelsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPostRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2? LabelsPostRequestBodyMember2 { get; set; }
@@ -245,7 +264,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2 LabelsPostRequestBodyMember2 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPostRequestBodyMember3</summary>
+            /// <summary>Composed type representation for type List&lt;GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public List<GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>? LabelsPostRequestBodyMember3 { get; set; }
@@ -253,7 +272,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public List<GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> LabelsPostRequestBodyMember3 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? LabelsPostRequestBodyString { get; set; }
@@ -261,7 +280,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public string LabelsPostRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -272,6 +291,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="LabelsPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static LabelsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -306,6 +326,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(LabelsPostRequestBodyLabelsPostRequestBodyMember1 != null) {
                     return LabelsPostRequestBodyLabelsPostRequestBodyMember1.GetFieldDeserializers();
@@ -354,10 +375,10 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes labelsPutRequestBodyMember1, labelsPutRequestBodyMember2, labelsPutRequestBodyMember3, string
+        /// Composed type wrapper for classes <see cref="LabelsPutRequestBodyMember1"/>, <see cref="LabelsPutRequestBodyMember2"/>, <see cref="string"/>, List&lt;LabelsPutRequestBodyMember3&gt;
         /// </summary>
         public class LabelsPutRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type labelsPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1? LabelsPutRequestBodyLabelsPutRequestBodyMember1 { get; set; }
@@ -365,7 +386,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1 LabelsPutRequestBodyLabelsPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPutRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2? LabelsPutRequestBodyLabelsPutRequestBodyMember2 { get; set; }
@@ -373,7 +394,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2 LabelsPutRequestBodyLabelsPutRequestBodyMember2 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPutRequestBodyMember3</summary>
+            /// <summary>Composed type representation for type List&lt;GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public List<GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>? LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
@@ -381,7 +402,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public List<GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> LabelsPutRequestBodyLabelsPutRequestBodyMember3 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1? LabelsPutRequestBodyMember1 { get; set; }
@@ -389,7 +410,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1 LabelsPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPutRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2? LabelsPutRequestBodyMember2 { get; set; }
@@ -397,7 +418,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2 LabelsPutRequestBodyMember2 { get; set; }
 #endif
-            /// <summary>Composed type representation for type labelsPutRequestBodyMember3</summary>
+            /// <summary>Composed type representation for type List&lt;GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public List<GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>? LabelsPutRequestBodyMember3 { get; set; }
@@ -405,7 +426,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public List<GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> LabelsPutRequestBodyMember3 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? LabelsPutRequestBodyString { get; set; }
@@ -413,7 +434,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
 #else
             public string LabelsPutRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -424,6 +445,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="LabelsPutRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static LabelsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -458,6 +480,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(LabelsPutRequestBodyLabelsPutRequestBodyMember1 != null) {
                     return LabelsPutRequestBodyLabelsPutRequestBodyMember1.GetFieldDeserializers();

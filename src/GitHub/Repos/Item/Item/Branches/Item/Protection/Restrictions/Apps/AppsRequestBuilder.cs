@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
     /// </summary>
     public class AppsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new AppsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public AppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches/{branch}/protection/restrictions/apps", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AppsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of an app to push to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#remove-app-access-restrictions" />
         /// </summary>
+        /// <returns>A List&lt;Integration&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Integration>?> DeleteAsync(AppsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -53,8 +55,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists the GitHub Apps that have push access to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#get-apps-with-access-to-the-protected-branch" />
         /// </summary>
+        /// <returns>A List&lt;Integration&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Integration>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -73,9 +77,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Grants the specified apps push access for this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#add-app-access-restrictions" />
         /// </summary>
+        /// <returns>A List&lt;Integration&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Integration>?> PostAsync(AppsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -95,9 +101,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Replaces the list of apps that have push access to this branch. This removes all apps that previously had push access and grants push access to the new list of apps. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#set-app-access-restrictions" />
         /// </summary>
+        /// <returns>A List&lt;Integration&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Integration>?> PutAsync(AppsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -116,6 +124,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of an app to push to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,6 +144,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists the GitHub Apps that have push access to this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +161,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Grants the specified apps push access for this branch. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -170,6 +181,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Replaces the list of apps that have push access to this branch. This removes all apps that previously had push access and grants push access to the new list of apps. Only GitHub Apps that are installed on the repository and that have been granted write access to the repository contents can be added as authorized actors on a protected branch.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,15 +201,16 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="AppsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AppsRequestBuilder WithUrl(string rawUrl) {
             return new AppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes appsDeleteRequestBodyMember1, string
+        /// Composed type wrapper for classes <see cref="AppsDeleteRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
         public class AppsDeleteRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type appsDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsDeleteRequestBodyMember1? AppsDeleteRequestBodyAppsDeleteRequestBodyMember1 { get; set; }
@@ -205,7 +218,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsDeleteRequestBodyMember1 AppsDeleteRequestBodyAppsDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type appsDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsDeleteRequestBodyMember1? AppsDeleteRequestBodyMember1 { get; set; }
@@ -213,7 +226,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsDeleteRequestBodyMember1 AppsDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? AppsDeleteRequestBodyString { get; set; }
@@ -221,7 +234,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
 #else
             public string AppsDeleteRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -232,6 +245,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="AppsDeleteRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static AppsDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -254,6 +268,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(AppsDeleteRequestBodyAppsDeleteRequestBodyMember1 != null) {
                     return AppsDeleteRequestBodyAppsDeleteRequestBodyMember1.GetFieldDeserializers();
@@ -284,10 +299,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes appsPostRequestBodyMember1, string
+        /// Composed type wrapper for classes <see cref="AppsPostRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
         public class AppsPostRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type appsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1? AppsPostRequestBodyAppsPostRequestBodyMember1 { get; set; }
@@ -295,7 +310,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1 AppsPostRequestBodyAppsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type appsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1? AppsPostRequestBodyMember1 { get; set; }
@@ -303,7 +318,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1 AppsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? AppsPostRequestBodyString { get; set; }
@@ -311,7 +326,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
 #else
             public string AppsPostRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -322,6 +337,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="AppsPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static AppsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -344,6 +360,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(AppsPostRequestBodyAppsPostRequestBodyMember1 != null) {
                     return AppsPostRequestBodyAppsPostRequestBodyMember1.GetFieldDeserializers();
@@ -374,10 +391,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes appsPutRequestBodyMember1, string
+        /// Composed type wrapper for classes <see cref="AppsPutRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
         public class AppsPutRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type appsPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPutRequestBodyMember1? AppsPutRequestBodyAppsPutRequestBodyMember1 { get; set; }
@@ -385,7 +402,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPutRequestBodyMember1 AppsPutRequestBodyAppsPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type appsPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPutRequestBodyMember1? AppsPutRequestBodyMember1 { get; set; }
@@ -393,7 +410,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPutRequestBodyMember1 AppsPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? AppsPutRequestBodyString { get; set; }
@@ -401,7 +418,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
 #else
             public string AppsPutRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -412,6 +429,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="AppsPutRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static AppsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -434,6 +452,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(AppsPutRequestBodyAppsPutRequestBodyMember1 != null) {
                     return AppsPutRequestBodyAppsPutRequestBodyMember1.GetFieldDeserializers();

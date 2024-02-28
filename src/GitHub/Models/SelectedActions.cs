@@ -21,7 +21,7 @@ namespace GitHub.Models {
         /// <summary>Whether actions from GitHub Marketplace verified creators are allowed. Set to `true` to allow all actions by GitHub Marketplace verified creators.</summary>
         public bool? VerifiedAllowed { get; set; }
         /// <summary>
-        /// Instantiates a new selectedActions and sets the default values.
+        /// Instantiates a new <see cref="SelectedActions"/> and sets the default values.
         /// </summary>
         public SelectedActions() {
             AdditionalData = new Dictionary<string, object>();
@@ -29,6 +29,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="SelectedActions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static SelectedActions CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -37,6 +38,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"github_owned_allowed", n => { GithubOwnedAllowed = n.GetBoolValue(); } },

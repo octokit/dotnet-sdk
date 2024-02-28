@@ -16,20 +16,21 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments {
     public class DeploymentsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.pages.deployments.item collection</summary>
         /// <param name="position">The ID of the Pages deployment. You can also give the commit SHA of the deployment.</param>
+        /// <returns>A <see cref="WithPages_deployment_ItemRequestBuilder"/></returns>
         public WithPages_deployment_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("pages_deployment_id", position);
             return new WithPages_deployment_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new DeploymentsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DeploymentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DeploymentsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DeploymentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,9 +40,13 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments {
         /// Create a GitHub Pages deployment for a repository.The authenticated user must have write permission to the repository.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#create-a-github-pages-deployment" />
         /// </summary>
+        /// <returns>A <see cref="PageDeployment"/></returns>
         /// <param name="body">The object used to create GitHub Pages deployment</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 400 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<PageDeployment?> PostAsync(DeploymentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -61,6 +66,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments {
         /// <summary>
         /// Create a GitHub Pages deployment for a repository.The authenticated user must have write permission to the repository.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The object used to create GitHub Pages deployment</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,6 +86,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="DeploymentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public DeploymentsRequestBuilder WithUrl(string rawUrl) {
             return new DeploymentsRequestBuilder(rawUrl, RequestAdapter);

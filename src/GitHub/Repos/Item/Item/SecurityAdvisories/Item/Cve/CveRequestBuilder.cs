@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Cve {
     /// </summary>
     public class CveRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new CveRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CveRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories/{ghsa_id}/cve", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CveRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CveRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,13 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Cve {
         /// If you want a CVE identification number for the security vulnerability in your project, and don&apos;t already have one, you can request a CVE identification number from GitHub. For more information see &quot;[Requesting a CVE identification number](https://docs.github.com/code-security/security-advisories/repository-security-advisories/publishing-a-repository-security-advisory#requesting-a-cve-identification-number-optional).&quot;You may request a CVE for public repositories, but cannot do so for private repositories.In order to request a CVE for a repository security advisory, the authenticated user must be a security manager or administrator of that repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/security-advisories/repository-advisories#request-a-cve-for-a-repository-security-advisory" />
         /// </summary>
+        /// <returns>A <see cref="CvePostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 400 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CvePostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -52,6 +57,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Cve {
         /// <summary>
         /// If you want a CVE identification number for the security vulnerability in your project, and don&apos;t already have one, you can request a CVE identification number from GitHub. For more information see &quot;[Requesting a CVE identification number](https://docs.github.com/code-security/security-advisories/repository-security-advisories/publishing-a-repository-security-advisory#requesting-a-cve-identification-number-optional).&quot;You may request a CVE for public repositories, but cannot do so for private repositories.In order to request a CVE for a repository security advisory, the authenticated user must be a security manager or administrator of that repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:write` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +74,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Cve {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CveRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CveRequestBuilder WithUrl(string rawUrl) {
             return new CveRequestBuilder(rawUrl, RequestAdapter);

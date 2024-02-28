@@ -2,12 +2,12 @@
 using Microsoft.Kiota.Abstractions.Serialization;
 namespace GitHub.Models {
     /// <summary>
-    /// Composed type wrapper for classes double, string
+    /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
     /// </summary>
     public class WebhookConfigInsecureSsl : IComposedTypeWrapper, IParsable {
-        /// <summary>Composed type representation for type double</summary>
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? Double { get; set; }
-        /// <summary>Composed type representation for type string</summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? String { get; set; }
@@ -15,19 +15,19 @@ namespace GitHub.Models {
 #else
         public string String { get; set; }
 #endif
-        /// <summary>Composed type representation for type double</summary>
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? WebhookConfigInsecureSslDouble { get; set; }
-        /// <summary>Composed type representation for type double</summary>
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? WebhookConfigInsecureSslDouble0 { get; set; }
-        /// <summary>Composed type representation for type double</summary>
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? WebhookConfigInsecureSslDouble1 { get; set; }
-        /// <summary>Composed type representation for type double</summary>
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? WebhookConfigInsecureSslDouble2 { get; set; }
-        /// <summary>Composed type representation for type double</summary>
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? WebhookConfigInsecureSslDouble3 { get; set; }
-        /// <summary>Composed type representation for type double</summary>
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? WebhookConfigInsecureSslDouble4 { get; set; }
-        /// <summary>Composed type representation for type string</summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebhookConfigInsecureSslString { get; set; }
@@ -35,7 +35,7 @@ namespace GitHub.Models {
 #else
         public string WebhookConfigInsecureSslString { get; set; }
 #endif
-        /// <summary>Composed type representation for type string</summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebhookConfigInsecureSslString0 { get; set; }
@@ -43,7 +43,7 @@ namespace GitHub.Models {
 #else
         public string WebhookConfigInsecureSslString0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type string</summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebhookConfigInsecureSslString1 { get; set; }
@@ -51,7 +51,7 @@ namespace GitHub.Models {
 #else
         public string WebhookConfigInsecureSslString1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type string</summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebhookConfigInsecureSslString2 { get; set; }
@@ -59,7 +59,7 @@ namespace GitHub.Models {
 #else
         public string WebhookConfigInsecureSslString2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type string</summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebhookConfigInsecureSslString3 { get; set; }
@@ -67,7 +67,7 @@ namespace GitHub.Models {
 #else
         public string WebhookConfigInsecureSslString3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type string</summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebhookConfigInsecureSslString4 { get; set; }
@@ -78,6 +78,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="WebhookConfigInsecureSsl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static WebhookConfigInsecureSsl CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -130,6 +131,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>();
         }

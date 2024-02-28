@@ -13,14 +13,14 @@ namespace GitHub.Search.Topics {
     /// </summary>
     public class TopicsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new TopicsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TopicsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TopicsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/topics?q={q}{&page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TopicsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TopicsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace GitHub.Search.Topics {
         /// Find topics via various criteria. Results are sorted by best match. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). See &quot;[Searching topics](https://docs.github.com/articles/searching-topics/)&quot; for a detailed list of qualifiers.When searching for topics, you can get text match metadata for the topic&apos;s **short\_description**, **description**, **name**, or **display\_name** field when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).For example, if you want to search for topics related to Ruby that are featured on https://github.com/topics. Your query might look like this:`q=ruby+is:featured`This query searches for topics with the keyword `ruby` and limits the results to find only topics that are featured. The topics that are the best match for the query appear first in the search results.
         /// API method documentation <see href="https://docs.github.com/rest/search/search#search-topics" />
         /// </summary>
+        /// <returns>A <see cref="TopicsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +46,7 @@ namespace GitHub.Search.Topics {
         /// <summary>
         /// Find topics via various criteria. Results are sorted by best match. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). See &quot;[Searching topics](https://docs.github.com/articles/searching-topics/)&quot; for a detailed list of qualifiers.When searching for topics, you can get text match metadata for the topic&apos;s **short\_description**, **description**, **name**, or **display\_name** field when you pass the `text-match` media type. For more details about how to receive highlighted search results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).For example, if you want to search for topics related to Ruby that are featured on https://github.com/topics. Your query might look like this:`q=ruby+is:featured`This query searches for topics with the keyword `ruby` and limits the results to find only topics that are featured. The topics that are the best match for the query appear first in the search results.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,7 @@ namespace GitHub.Search.Topics {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="TopicsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public TopicsRequestBuilder WithUrl(string rawUrl) {
             return new TopicsRequestBuilder(rawUrl, RequestAdapter);

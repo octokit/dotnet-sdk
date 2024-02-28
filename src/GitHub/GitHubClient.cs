@@ -194,7 +194,7 @@ namespace GitHub {
             new ZenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new GitHubClient and sets the default values.
+        /// Instantiates a new <see cref="GitHubClient"/> and sets the default values.
         /// </summary>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GitHubClient(IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>()) {
@@ -214,6 +214,7 @@ namespace GitHub {
         /// Get Hypermedia links to resources accessible in GitHub&apos;s REST API
         /// API method documentation <see href="https://docs.github.com/rest/meta/meta#github-api-root" />
         /// </summary>
+        /// <returns>A <see cref="Root"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -229,6 +230,7 @@ namespace GitHub {
         /// <summary>
         /// Get Hypermedia links to resources accessible in GitHub&apos;s REST API
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

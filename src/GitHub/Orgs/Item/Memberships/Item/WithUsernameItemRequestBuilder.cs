@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Memberships.Item {
     /// </summary>
     public class WithUsernameItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithUsernameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithUsernameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/memberships/{username}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithUsernameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,6 +33,8 @@ namespace GitHub.Orgs.Item.Memberships.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,8 +53,11 @@ namespace GitHub.Orgs.Item.Memberships.Item {
         /// In order to get a user&apos;s membership with an organization, the authenticated user must be an organization member. The `state` parameter in the response can be used to identify the user&apos;s membership status.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/members#get-organization-membership-for-a-user" />
         /// </summary>
+        /// <returns>A <see cref="OrgMembership"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<OrgMembership?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -71,9 +76,12 @@ namespace GitHub.Orgs.Item.Memberships.Item {
         /// Only authenticated organization owners can add a member to the organization or update the member&apos;s role.*   If the authenticated user is _adding_ a member to the organization, the invited user will receive an email inviting them to the organization. The user&apos;s [membership status](https://docs.github.com/rest/orgs/members#get-organization-membership-for-a-user) will be `pending` until they accept the invitation.    *   Authenticated users can _update_ a user&apos;s membership by passing the `role` parameter. If the authenticated user changes a member&apos;s role to `admin`, the affected user will receive an email notifying them that they&apos;ve been made an organization owner. If the authenticated user changes an owner&apos;s role to `member`, no email will be sent.**Rate limits**To prevent abuse, the authenticated user is limited to 50 organization invitations per 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/members#set-organization-membership-for-a-user" />
         /// </summary>
+        /// <returns>A <see cref="OrgMembership"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<OrgMembership?> PutAsync(WithUsernamePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -92,6 +100,7 @@ namespace GitHub.Orgs.Item.Memberships.Item {
         /// <summary>
         /// In order to remove a user&apos;s membership with an organization, the authenticated user must be an organization owner.If the specified user is an active member of the organization, this will remove them from the organization. If the specified user has been invited to the organization, this will cancel their invitation. The specified user will receive an email notification in both cases.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +117,7 @@ namespace GitHub.Orgs.Item.Memberships.Item {
         /// <summary>
         /// In order to get a user&apos;s membership with an organization, the authenticated user must be an organization member. The `state` parameter in the response can be used to identify the user&apos;s membership status.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +134,7 @@ namespace GitHub.Orgs.Item.Memberships.Item {
         /// <summary>
         /// Only authenticated organization owners can add a member to the organization or update the member&apos;s role.*   If the authenticated user is _adding_ a member to the organization, the invited user will receive an email inviting them to the organization. The user&apos;s [membership status](https://docs.github.com/rest/orgs/members#get-organization-membership-for-a-user) will be `pending` until they accept the invitation.    *   Authenticated users can _update_ a user&apos;s membership by passing the `role` parameter. If the authenticated user changes a member&apos;s role to `admin`, the affected user will receive an email notifying them that they&apos;ve been made an organization owner. If the authenticated user changes an owner&apos;s role to `member`, no email will be sent.**Rate limits**To prevent abuse, the authenticated user is limited to 50 organization invitations per 24 hour period. If the organization is more than one month old or on a paid plan, the limit is 500 invitations per 24 hour period.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,6 +154,7 @@ namespace GitHub.Orgs.Item.Memberships.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithUsernameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithUsernameItemRequestBuilder WithUrl(string rawUrl) {
             return new WithUsernameItemRequestBuilder(rawUrl, RequestAdapter);

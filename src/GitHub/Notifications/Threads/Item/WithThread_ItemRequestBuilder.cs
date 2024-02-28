@@ -19,14 +19,14 @@ namespace GitHub.Notifications.Threads.Item {
             new SubscriptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithThread_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithThread_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithThread_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/threads/{thread_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithThread_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithThread_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,8 +52,11 @@ namespace GitHub.Notifications.Threads.Item {
         /// Gets information about a notification thread.
         /// API method documentation <see href="https://docs.github.com/rest/activity/notifications#get-a-thread" />
         /// </summary>
+        /// <returns>A <see cref="ThreadObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ThreadObject?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -74,6 +77,7 @@ namespace GitHub.Notifications.Threads.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -90,6 +94,7 @@ namespace GitHub.Notifications.Threads.Item {
         /// <summary>
         /// Marks a thread as &quot;done.&quot; Marking a thread as &quot;done&quot; is equivalent to marking a notification in your notification inbox on GitHub as done: https://github.com/notifications.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +110,7 @@ namespace GitHub.Notifications.Threads.Item {
         /// <summary>
         /// Gets information about a notification thread.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,6 +127,7 @@ namespace GitHub.Notifications.Threads.Item {
         /// <summary>
         /// Marks a thread as &quot;read.&quot; Marking a thread as &quot;read&quot; is equivalent to clicking a notification in your notification inbox on GitHub: https://github.com/notifications.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +144,7 @@ namespace GitHub.Notifications.Threads.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithThread_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithThread_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithThread_ItemRequestBuilder(rawUrl, RequestAdapter);

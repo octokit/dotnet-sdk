@@ -13,14 +13,14 @@ namespace GitHub.Repos.Item.Item.Pulls.Comments.Item.Reactions.Item {
     /// </summary>
     public class WithReaction_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithReaction_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithReaction_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithReaction_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/comments/{comment_id}/reactions/{reaction_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithReaction_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithReaction_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,6 +45,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Comments.Item.Reactions.Item {
         /// <summary>
         /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`Delete a reaction to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +61,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Comments.Item.Reactions.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithReaction_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithReaction_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithReaction_ItemRequestBuilder(rawUrl, RequestAdapter);

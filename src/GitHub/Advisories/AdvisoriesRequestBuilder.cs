@@ -16,20 +16,21 @@ namespace GitHub.Advisories {
     public class AdvisoriesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.advisories.item collection</summary>
         /// <param name="position">The GHSA (GitHub Security Advisory) identifier of the advisory.</param>
+        /// <returns>A <see cref="WithGhsa_ItemRequestBuilder"/></returns>
         public WithGhsa_ItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("ghsa_id", position);
             return new WithGhsa_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AdvisoriesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AdvisoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public AdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/advisories{?affects*,after*,before*,cve_id*,cwes*,direction*,ecosystem*,ghsa_id*,is_withdrawn*,modified*,per_page*,published*,severity*,sort*,type*,updated*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AdvisoriesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AdvisoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,8 +40,11 @@ namespace GitHub.Advisories {
         /// Lists all global security advisories that match the specified parameters. If no other parameters are defined, the request will return only GitHub-reviewed advisories that are not malware.By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see &quot;[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/security-advisories/global-advisories#list-global-security-advisories" />
         /// </summary>
+        /// <returns>A List&lt;GlobalAdvisory&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationErrorSimple">When receiving a 422 status code</exception>
+        /// <exception cref="BasicError">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<GlobalAdvisory>?> GetAsync(Action<RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -59,6 +63,7 @@ namespace GitHub.Advisories {
         /// <summary>
         /// Lists all global security advisories that match the specified parameters. If no other parameters are defined, the request will return only GitHub-reviewed advisories that are not malware.By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see &quot;[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories).&quot;
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +80,7 @@ namespace GitHub.Advisories {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="AdvisoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AdvisoriesRequestBuilder WithUrl(string rawUrl) {
             return new AdvisoriesRequestBuilder(rawUrl, RequestAdapter);

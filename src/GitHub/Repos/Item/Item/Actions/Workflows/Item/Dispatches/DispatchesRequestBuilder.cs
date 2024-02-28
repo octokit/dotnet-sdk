@@ -13,14 +13,14 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
     /// </summary>
     public class DispatchesRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new DispatchesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DispatchesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public DispatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}/dispatches", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DispatchesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DispatchesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,6 +47,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
         /// <summary>
         /// You can use this endpoint to manually trigger a GitHub Actions workflow run. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.You must configure your GitHub Actions workflow to run when the [`workflow_dispatch` webhook](/developers/webhooks-and-events/webhook-events-and-payloads#workflow_dispatch) event occurs. The `inputs` are configured in the workflow file. For more information about how to configure the `workflow_dispatch` event in the workflow file, see &quot;[Events that trigger workflows](/actions/reference/events-that-trigger-workflows#workflow_dispatch).&quot;OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,6 +66,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="DispatchesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public DispatchesRequestBuilder WithUrl(string rawUrl) {
             return new DispatchesRequestBuilder(rawUrl, RequestAdapter);

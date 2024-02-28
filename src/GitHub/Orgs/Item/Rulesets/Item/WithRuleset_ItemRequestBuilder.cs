@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
     /// </summary>
     public class WithRuleset_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithRuleset_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRuleset_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithRuleset_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/rulesets/{ruleset_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithRuleset_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRuleset_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,6 +33,8 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,8 +53,11 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
         /// Get a repository ruleset for an organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/rules#get-an-organization-repository-ruleset" />
         /// </summary>
+        /// <returns>A <see cref="RepositoryRuleset"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<RepositoryRuleset?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -71,9 +76,12 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
         /// Update a ruleset for an organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/rules#update-an-organization-repository-ruleset" />
         /// </summary>
+        /// <returns>A <see cref="RepositoryRuleset"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<RepositoryRuleset?> PutAsync(WithRuleset_PutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -92,6 +100,7 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
         /// <summary>
         /// Delete a ruleset for an organization.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +117,7 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
         /// <summary>
         /// Get a repository ruleset for an organization.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +134,7 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
         /// <summary>
         /// Update a ruleset for an organization.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,6 +154,7 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithRuleset_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithRuleset_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithRuleset_ItemRequestBuilder(rawUrl, RequestAdapter);

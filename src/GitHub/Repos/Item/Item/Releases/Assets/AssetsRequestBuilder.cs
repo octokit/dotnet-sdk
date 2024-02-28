@@ -13,20 +13,21 @@ namespace GitHub.Repos.Item.Item.Releases.Assets {
     public class AssetsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.releases.assets.item collection</summary>
         /// <param name="position">The unique identifier of the asset.</param>
+        /// <returns>A <see cref="WithAsset_ItemRequestBuilder"/></returns>
         public WithAsset_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("asset_id", position);
             return new WithAsset_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AssetsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AssetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public AssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/assets", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AssetsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AssetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

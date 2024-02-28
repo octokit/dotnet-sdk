@@ -61,7 +61,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
         public WithIssue_numberPatchRequestBody_title Title { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new WithIssue_numberPatchRequestBody and sets the default values.
+        /// Instantiates a new <see cref="WithIssue_numberPatchRequestBody"/> and sets the default values.
         /// </summary>
         public WithIssue_numberPatchRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -69,6 +69,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="WithIssue_numberPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static WithIssue_numberPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -77,6 +78,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assignee", n => { Assignee = n.GetStringValue(); } },
@@ -106,12 +108,12 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes integer, string
+        /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
         public class WithIssue_numberPatchRequestBody_milestone : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type integer</summary>
+            /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -122,6 +124,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="WithIssue_numberPatchRequestBody_milestone"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static WithIssue_numberPatchRequestBody_milestone CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -138,6 +141,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -156,12 +160,12 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes integer, string
+        /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
         public class WithIssue_numberPatchRequestBody_title : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type integer</summary>
+            /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -172,6 +176,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="WithIssue_numberPatchRequestBody_title"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static WithIssue_numberPatchRequestBody_title CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -188,6 +193,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 return new Dictionary<string, Action<IParseNode>>();
             }

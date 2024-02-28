@@ -16,14 +16,14 @@ namespace GitHub.Repos.Item.Item.Actions.Cache {
             new UsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new CacheRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CacheRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/cache", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CacheRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CacheRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

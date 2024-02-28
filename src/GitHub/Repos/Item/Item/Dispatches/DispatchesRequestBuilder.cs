@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Dispatches {
     /// </summary>
     public class DispatchesRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new DispatchesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DispatchesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public DispatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dispatches", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new DispatchesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="DispatchesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,6 +34,7 @@ namespace GitHub.Repos.Item.Item.Dispatches {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(DispatchesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,6 +52,7 @@ namespace GitHub.Repos.Item.Item.Dispatches {
         /// <summary>
         /// You can use this endpoint to trigger a webhook event called `repository_dispatch` when you want activity that happens outside of GitHub to trigger a GitHub Actions workflow or GitHub App webhook. You must configure your GitHub Actions workflow or GitHub App to run when the `repository_dispatch` event occurs. For an example `repository_dispatch` webhook payload, see &quot;[RepositoryDispatchEvent](https://docs.github.com/webhooks/event-payloads/#repository_dispatch).&quot;The `client_payload` parameter is available for any extra information that your workflow might need. This parameter is a JSON payload that will be passed on when the webhook event is dispatched. For example, the `client_payload` can include a message that a user would like to send using a GitHub Actions workflow. Or the `client_payload` can be used as a test to debug your workflow.This input example shows how you can use the `client_payload` as a test to debug your workflow.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,6 +72,7 @@ namespace GitHub.Repos.Item.Item.Dispatches {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="DispatchesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public DispatchesRequestBuilder WithUrl(string rawUrl) {
             return new DispatchesRequestBuilder(rawUrl, RequestAdapter);

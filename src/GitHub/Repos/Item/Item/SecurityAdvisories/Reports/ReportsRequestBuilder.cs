@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Reports {
     /// </summary>
     public class ReportsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ReportsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories/reports", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ReportsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,13 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Reports {
         /// Report a security vulnerability to the maintainers of the repository.See &quot;[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)&quot; for more information about private vulnerability reporting.
         /// API method documentation <see href="https://docs.github.com/rest/security-advisories/repository-advisories#privately-report-a-security-vulnerability" />
         /// </summary>
+        /// <returns>A <see cref="RepositoryAdvisory"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<RepositoryAdvisory?> PostAsync(PrivateVulnerabilityReportCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -53,6 +57,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Reports {
         /// <summary>
         /// Report a security vulnerability to the maintainers of the repository.See &quot;[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)&quot; for more information about private vulnerability reporting.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,6 +77,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Reports {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ReportsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ReportsRequestBuilder WithUrl(string rawUrl) {
             return new ReportsRequestBuilder(rawUrl, RequestAdapter);

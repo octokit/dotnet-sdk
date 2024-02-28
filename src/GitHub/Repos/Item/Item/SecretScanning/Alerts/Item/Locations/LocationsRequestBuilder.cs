@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
     /// </summary>
     public class LocationsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new LocationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LocationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/secret-scanning/alerts/{alert_number}/locations{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new LocationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LocationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,10 @@ namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
         /// Lists all locations for a given secret scanning alert for an eligible repository.The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
         /// API method documentation <see href="https://docs.github.com/rest/secret-scanning/secret-scanning#list-locations-for-a-secret-scanning-alert" />
         /// </summary>
+        /// <returns>A List&lt;SecretScanningLocation&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="Locations503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<SecretScanningLocation>?> GetAsync(Action<RequestConfiguration<LocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,6 +52,7 @@ namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
         /// <summary>
         /// Lists all locations for a given secret scanning alert for an eligible repository.The authenticated user must be an administrator for the repository or for the organization that owns the repository to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +69,7 @@ namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="LocationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public LocationsRequestBuilder WithUrl(string rawUrl) {
             return new LocationsRequestBuilder(rawUrl, RequestAdapter);

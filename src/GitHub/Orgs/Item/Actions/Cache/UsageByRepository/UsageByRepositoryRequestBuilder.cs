@@ -13,14 +13,14 @@ namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository {
     /// </summary>
     public class UsageByRepositoryRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new UsageByRepositoryRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UsageByRepositoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public UsageByRepositoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/cache/usage-by-repository{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UsageByRepositoryRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UsageByRepositoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository {
         /// Lists repositories and their GitHub Actions cache usage for an organization.The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization" />
         /// </summary>
+        /// <returns>A <see cref="UsageByRepositoryGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +46,7 @@ namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository {
         /// <summary>
         /// Lists repositories and their GitHub Actions cache usage for an organization.The data fetched using this API is refreshed approximately every 5 minutes, so values returned from this endpoint may take at least 5 minutes to get updated.OAuth tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,7 @@ namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="UsageByRepositoryRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public UsageByRepositoryRequestBuilder WithUrl(string rawUrl) {
             return new UsageByRepositoryRequestBuilder(rawUrl, RequestAdapter);

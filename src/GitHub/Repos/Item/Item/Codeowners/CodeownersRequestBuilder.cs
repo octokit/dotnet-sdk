@@ -16,14 +16,14 @@ namespace GitHub.Repos.Item.Item.Codeowners {
             new ErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new CodeownersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CodeownersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CodeownersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codeowners", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CodeownersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CodeownersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -36,7 +36,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         /// <summary>Whether the most recent push must be approved by someone other than the person who pushed it. Default: `false`.</summary>
         public bool? RequireLastPushApproval { get; set; }
         /// <summary>
-        /// Instantiates a new protectionPutRequestBody_required_pull_request_reviews and sets the default values.
+        /// Instantiates a new <see cref="ProtectionPutRequestBody_required_pull_request_reviews"/> and sets the default values.
         /// </summary>
         public ProtectionPutRequestBody_required_pull_request_reviews() {
             AdditionalData = new Dictionary<string, object>();
@@ -44,6 +44,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ProtectionPutRequestBody_required_pull_request_reviews"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ProtectionPutRequestBody_required_pull_request_reviews CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -52,6 +53,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"bypass_pull_request_allowances", n => { BypassPullRequestAllowances = n.GetObjectValue<ProtectionPutRequestBody_required_pull_request_reviews_bypass_pull_request_allowances>(ProtectionPutRequestBody_required_pull_request_reviews_bypass_pull_request_allowances.CreateFromDiscriminatorValue); } },

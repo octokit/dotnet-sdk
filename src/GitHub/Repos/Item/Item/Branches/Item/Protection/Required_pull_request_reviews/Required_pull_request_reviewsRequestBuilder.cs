@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
     /// </summary>
     public class Required_pull_request_reviewsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new Required_pull_request_reviewsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Required_pull_request_reviewsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public Required_pull_request_reviewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches/{branch}/protection/required_pull_request_reviews", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new Required_pull_request_reviewsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Required_pull_request_reviewsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,6 +33,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,6 +51,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#get-pull-request-review-protection" />
         /// </summary>
+        /// <returns>A <see cref="ProtectedBranchPullRequestReview"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,9 +68,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.**Note**: Passing new arrays of `users` and `teams` replaces their previous values.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#update-pull-request-review-protection" />
         /// </summary>
+        /// <returns>A <see cref="ProtectedBranchPullRequestReview"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ProtectedBranchPullRequestReview?> PatchAsync(Required_pull_request_reviewsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -86,6 +90,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +107,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +124,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.**Note**: Passing new arrays of `users` and `teams` replaces their previous values.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,6 +144,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="Required_pull_request_reviewsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public Required_pull_request_reviewsRequestBuilder WithUrl(string rawUrl) {
             return new Required_pull_request_reviewsRequestBuilder(rawUrl, RequestAdapter);
