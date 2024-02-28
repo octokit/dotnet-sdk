@@ -16,20 +16,21 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Assignees {
     public class AssigneesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.issues.item.assignees.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="WithAssigneeItemRequestBuilder"/></returns>
         public WithAssigneeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("assignee", position);
             return new WithAssigneeItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new AssigneesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AssigneesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public AssigneesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/assignees", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AssigneesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AssigneesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,6 +40,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Assignees {
         /// Removes one or more assignees from an issue.
         /// API method documentation <see href="https://docs.github.com/rest/issues/assignees#remove-assignees-from-an-issue" />
         /// </summary>
+        /// <returns>A <see cref="Issue"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,6 +59,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Assignees {
         /// Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.
         /// API method documentation <see href="https://docs.github.com/rest/issues/assignees#add-assignees-to-an-issue" />
         /// </summary>
+        /// <returns>A <see cref="Issue"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,6 +77,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Assignees {
         /// <summary>
         /// Removes one or more assignees from an issue.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,6 +97,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Assignees {
         /// <summary>
         /// Adds up to 10 assignees to an issue. Users already assigned to an issue are not replaced.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,6 +117,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Assignees {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="AssigneesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AssigneesRequestBuilder WithUrl(string rawUrl) {
             return new AssigneesRequestBuilder(rawUrl, RequestAdapter);

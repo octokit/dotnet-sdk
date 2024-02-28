@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Teams.Item.Invitations {
     /// </summary>
     public class InvitationsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new InvitationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="InvitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public InvitationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/invitations{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new InvitationsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="InvitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Invitations {
         /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/invitations`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/members#list-pending-team-invitations" />
         /// </summary>
+        /// <returns>A List&lt;OrganizationInvitation&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +48,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Invitations {
         /// <summary>
         /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, `hiring_manager`, or `reinstate`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/invitations`.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +65,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Invitations {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="InvitationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public InvitationsRequestBuilder WithUrl(string rawUrl) {
             return new InvitationsRequestBuilder(rawUrl, RequestAdapter);

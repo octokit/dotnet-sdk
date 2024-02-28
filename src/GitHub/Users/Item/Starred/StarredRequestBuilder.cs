@@ -13,14 +13,14 @@ namespace GitHub.Users.Item.Starred {
     /// </summary>
     public class StarredRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new StarredRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="StarredRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public StarredRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/starred{?direction*,page*,per_page*,sort*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new StarredRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="StarredRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace GitHub.Users.Item.Starred {
         /// Lists repositories a user has starred.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
         /// API method documentation <see href="https://docs.github.com/rest/activity/starring#list-repositories-starred-by-a-user" />
         /// </summary>
+        /// <returns>A <see cref="StarredGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +46,7 @@ namespace GitHub.Users.Item.Starred {
         /// <summary>
         /// Lists repositories a user has starred.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,15 +63,16 @@ namespace GitHub.Users.Item.Starred {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="StarredRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public StarredRequestBuilder WithUrl(string rawUrl) {
             return new StarredRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes repository, starredRepository
+        /// Composed type wrapper for classes List&lt;Repository&gt;, List&lt;StarredRepository&gt;
         /// </summary>
         public class StarredGetResponse : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type repository</summary>
+            /// <summary>Composed type representation for type List&lt;GitHub.Users.Item.Starred.Repository&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public List<GitHub.Users.Item.Starred.Repository>? Repository { get; set; }
@@ -77,7 +80,7 @@ namespace GitHub.Users.Item.Starred {
 #else
             public List<GitHub.Users.Item.Starred.Repository> Repository { get; set; }
 #endif
-            /// <summary>Composed type representation for type starredRepository</summary>
+            /// <summary>Composed type representation for type List&lt;GitHub.Users.Item.Starred.StarredRepository&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public List<GitHub.Users.Item.Starred.StarredRepository>? StarredRepository { get; set; }
@@ -88,6 +91,7 @@ namespace GitHub.Users.Item.Starred {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="StarredGetResponse"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static StarredGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -103,6 +107,7 @@ namespace GitHub.Users.Item.Starred {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 return new Dictionary<string, Action<IParseNode>>();
             }

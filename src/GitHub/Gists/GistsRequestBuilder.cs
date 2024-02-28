@@ -26,20 +26,21 @@ namespace GitHub.Gists {
         }
         /// <summary>Gets an item from the GitHub.gists.item collection</summary>
         /// <param name="position">The unique identifier of the gist.</param>
+        /// <returns>A <see cref="WithGist_ItemRequestBuilder"/></returns>
         public WithGist_ItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("gist_id", position);
             return new WithGist_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new GistsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GistsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GistsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gists{?page*,per_page*,since*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new GistsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GistsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,8 +50,10 @@ namespace GitHub.Gists {
         /// Lists the authenticated user&apos;s gists or if called anonymously, this endpoint returns all public gists:
         /// API method documentation <see href="https://docs.github.com/rest/gists/gists#list-gists-for-the-authenticated-user" />
         /// </summary>
+        /// <returns>A List&lt;BaseGist&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<BaseGist>?> GetAsync(Action<RequestConfiguration<GistsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -69,9 +72,13 @@ namespace GitHub.Gists {
         /// Allows you to add a new gist with one or more files.**Note:** Don&apos;t name your files &quot;gistfile&quot; with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
         /// API method documentation <see href="https://docs.github.com/rest/gists/gists#create-a-gist" />
         /// </summary>
+        /// <returns>A <see cref="GistSimple"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<GistSimple?> PostAsync(GistsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -91,6 +98,7 @@ namespace GitHub.Gists {
         /// <summary>
         /// Lists the authenticated user&apos;s gists or if called anonymously, this endpoint returns all public gists:
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +115,7 @@ namespace GitHub.Gists {
         /// <summary>
         /// Allows you to add a new gist with one or more files.**Note:** Don&apos;t name your files &quot;gistfile&quot; with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +126,7 @@ namespace GitHub.Gists {
         public RequestInformation ToPostRequestInformation(GistsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/gists", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -126,6 +135,7 @@ namespace GitHub.Gists {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="GistsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GistsRequestBuilder WithUrl(string rawUrl) {
             return new GistsRequestBuilder(rawUrl, RequestAdapter);

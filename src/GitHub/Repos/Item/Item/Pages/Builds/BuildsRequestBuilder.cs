@@ -21,20 +21,21 @@ namespace GitHub.Repos.Item.Item.Pages.Builds {
         }
         /// <summary>Gets an item from the GitHub.repos.item.item.pages.builds.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="WithBuild_ItemRequestBuilder"/></returns>
         public WithBuild_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("build_id", position);
             return new WithBuild_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new BuildsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="BuildsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public BuildsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/builds{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new BuildsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="BuildsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,6 +45,7 @@ namespace GitHub.Repos.Item.Item.Pages.Builds {
         /// Lists builts of a GitHub Pages site.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#list-apiname-pages-builds" />
         /// </summary>
+        /// <returns>A List&lt;PageBuild&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,6 +63,7 @@ namespace GitHub.Repos.Item.Item.Pages.Builds {
         /// You can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures.Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
         /// API method documentation <see href="https://docs.github.com/rest/pages/pages#request-a-apiname-pages-build" />
         /// </summary>
+        /// <returns>A <see cref="PageBuildStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,6 +79,7 @@ namespace GitHub.Repos.Item.Item.Pages.Builds {
         /// <summary>
         /// Lists builts of a GitHub Pages site.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +96,7 @@ namespace GitHub.Repos.Item.Item.Pages.Builds {
         /// <summary>
         /// You can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures.Build requests are limited to one concurrent build per repository and one concurrent build per requester. If you request a build while another is still in progress, the second request will be queued until the first completes.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +105,7 @@ namespace GitHub.Repos.Item.Item.Pages.Builds {
 #else
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/builds", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -108,6 +113,7 @@ namespace GitHub.Repos.Item.Item.Pages.Builds {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="BuildsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public BuildsRequestBuilder WithUrl(string rawUrl) {
             return new BuildsRequestBuilder(rawUrl, RequestAdapter);

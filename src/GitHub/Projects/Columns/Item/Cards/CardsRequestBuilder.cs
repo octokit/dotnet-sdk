@@ -14,14 +14,14 @@ namespace GitHub.Projects.Columns.Item.Cards {
     /// </summary>
     public class CardsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new CardsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CardsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CardsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/projects/columns/{column_id}/cards{?archived_state*,page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CardsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CardsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,11 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// Lists the project cards in a project.
         /// API method documentation <see href="https://docs.github.com/rest/projects/cards#list-project-cards" />
         /// </summary>
+        /// <returns>A List&lt;ProjectCard&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<ProjectCard>?> GetAsync(Action<RequestConfiguration<CardsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -52,9 +55,13 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// Create a project card
         /// API method documentation <see href="https://docs.github.com/rest/projects/cards#create-a-project-card" />
         /// </summary>
+        /// <returns>A <see cref="ProjectCard"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="ProjectCard503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ProjectCard?> PostAsync(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -74,6 +81,7 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// <summary>
         /// Lists the project cards in a project.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +95,7 @@ namespace GitHub.Projects.Columns.Item.Cards {
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,7 +106,7 @@ namespace GitHub.Projects.Columns.Item.Cards {
         public RequestInformation ToPostRequestInformation(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/projects/columns/{column_id}/cards", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -106,15 +115,16 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CardsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CardsRequestBuilder WithUrl(string rawUrl) {
             return new CardsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes cardsPostRequestBodyMember1, cardsPostRequestBodyMember2
+        /// Composed type wrapper for classes <see cref="CardsPostRequestBodyMember1"/>, <see cref="CardsPostRequestBodyMember2"/>
         /// </summary>
         public class CardsPostRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type cardsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1? CardsPostRequestBodyCardsPostRequestBodyMember1 { get; set; }
@@ -122,7 +132,7 @@ namespace GitHub.Projects.Columns.Item.Cards {
 #else
             public GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1 CardsPostRequestBodyCardsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type cardsPostRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2? CardsPostRequestBodyCardsPostRequestBodyMember2 { get; set; }
@@ -130,7 +140,7 @@ namespace GitHub.Projects.Columns.Item.Cards {
 #else
             public GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2 CardsPostRequestBodyCardsPostRequestBodyMember2 { get; set; }
 #endif
-            /// <summary>Composed type representation for type cardsPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1? CardsPostRequestBodyMember1 { get; set; }
@@ -138,7 +148,7 @@ namespace GitHub.Projects.Columns.Item.Cards {
 #else
             public GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1 CardsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type cardsPostRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2? CardsPostRequestBodyMember2 { get; set; }
@@ -149,6 +159,7 @@ namespace GitHub.Projects.Columns.Item.Cards {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="CardsPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static CardsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -171,6 +182,7 @@ namespace GitHub.Projects.Columns.Item.Cards {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(CardsPostRequestBodyCardsPostRequestBodyMember1 != null) {
                     return CardsPostRequestBodyCardsPostRequestBodyMember1.GetFieldDeserializers();

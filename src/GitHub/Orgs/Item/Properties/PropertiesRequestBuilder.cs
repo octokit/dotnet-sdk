@@ -21,14 +21,14 @@ namespace GitHub.Orgs.Item.Properties {
             new ValuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new PropertiesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PropertiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PropertiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/properties", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PropertiesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PropertiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

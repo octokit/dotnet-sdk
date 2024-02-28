@@ -19,7 +19,7 @@ namespace GitHub.Orgs.Item.Codespaces.Access {
         /// <summary>Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.</summary>
         public AccessPutRequestBody_visibility? Visibility { get; set; }
         /// <summary>
-        /// Instantiates a new accessPutRequestBody and sets the default values.
+        /// Instantiates a new <see cref="AccessPutRequestBody"/> and sets the default values.
         /// </summary>
         public AccessPutRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -27,6 +27,7 @@ namespace GitHub.Orgs.Item.Codespaces.Access {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="AccessPutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static AccessPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -35,6 +36,7 @@ namespace GitHub.Orgs.Item.Codespaces.Access {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"selected_usernames", n => { SelectedUsernames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },

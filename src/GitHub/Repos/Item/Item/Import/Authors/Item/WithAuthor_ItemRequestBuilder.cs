@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Import.Authors.Item {
     /// </summary>
     public class WithAuthor_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithAuthor_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithAuthor_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithAuthor_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/import/authors/{author_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithAuthor_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithAuthor_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,13 @@ namespace GitHub.Repos.Item.Item.Import.Authors.Item {
         /// Update an author&apos;s identity for the import. Your application can continue updating authors any time before you pushnew commits to the repository.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// API method documentation <see href="https://docs.github.com/rest/migrations/source-imports#map-a-commit-author" />
         /// </summary>
+        /// <returns>A <see cref="PorterAuthor"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="BasicError">When receiving a 503 status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +58,7 @@ namespace GitHub.Repos.Item.Item.Import.Authors.Item {
         /// <summary>
         /// Update an author&apos;s identity for the import. Your application can continue updating authors any time before you pushnew commits to the repository.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
@@ -74,6 +79,7 @@ namespace GitHub.Repos.Item.Item.Import.Authors.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithAuthor_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
         public WithAuthor_ItemRequestBuilder WithUrl(string rawUrl) {

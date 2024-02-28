@@ -17,7 +17,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         public List<string> Teams { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new teamsDeleteRequestBodyMember1 and sets the default values.
+        /// Instantiates a new <see cref="TeamsDeleteRequestBodyMember1"/> and sets the default values.
         /// </summary>
         public TeamsDeleteRequestBodyMember1() {
             AdditionalData = new Dictionary<string, object>();
@@ -25,6 +25,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="TeamsDeleteRequestBodyMember1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static TeamsDeleteRequestBodyMember1 CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -33,6 +34,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"teams", n => { Teams = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },

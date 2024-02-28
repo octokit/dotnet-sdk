@@ -14,14 +14,14 @@ namespace GitHub.Search.Issues {
     /// </summary>
     public class IssuesRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new IssuesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="IssuesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public IssuesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search/issues?q={q}{&order*,page*,per_page*,sort*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new IssuesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="IssuesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,12 @@ namespace GitHub.Search.Issues {
         /// Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).When searching for issues, you can get text match metadata for the issue **title**, issue **body**, and issue **comment body** fields when you pass the `text-match` media type. For more details about how to receive highlightedsearch results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).For example, if you want to find the oldest unresolved Python bugs on Windows. Your query might look something like this.`q=windows+label:bug+language:python+state:open&amp;sort=created&amp;order=asc`This query searches for the keyword `windows`, within any open issue that is labeled as `bug`. The search runs across repositories whose primary language is Python. The results are sorted by creation date in ascending order, which means the oldest issues appear first in the search results.**Note:** For requests made by GitHub Apps with a user access token, you can&apos;t retrieve a combination of issues and pull requests in a single query. Requests that don&apos;t include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see &quot;[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/search/search#search-issues-and-pull-requests" />
         /// </summary>
+        /// <returns>A <see cref="IssuesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="Issues503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<IssuesGetResponse?> GetAsync(Action<RequestConfiguration<IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,6 +55,7 @@ namespace GitHub.Search.Issues {
         /// <summary>
         /// Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).When searching for issues, you can get text match metadata for the issue **title**, issue **body**, and issue **comment body** fields when you pass the `text-match` media type. For more details about how to receive highlightedsearch results, see [Text match metadata](https://docs.github.com/rest/search/search#text-match-metadata).For example, if you want to find the oldest unresolved Python bugs on Windows. Your query might look something like this.`q=windows+label:bug+language:python+state:open&amp;sort=created&amp;order=asc`This query searches for the keyword `windows`, within any open issue that is labeled as `bug`. The search runs across repositories whose primary language is Python. The results are sorted by creation date in ascending order, which means the oldest issues appear first in the search results.**Note:** For requests made by GitHub Apps with a user access token, you can&apos;t retrieve a combination of issues and pull requests in a single query. Requests that don&apos;t include the `is:issue` or `is:pull-request` qualifier will receive an HTTP `422 Unprocessable Entity` response. To get results for both issues and pull requests, you must send separate queries for issues and pull requests. For more information about the `is` qualifier, see &quot;[Searching only issues or pull requests](https://docs.github.com/github/searching-for-information-on-github/searching-issues-and-pull-requests#search-only-issues-or-pull-requests).&quot;
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +72,7 @@ namespace GitHub.Search.Issues {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="IssuesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public IssuesRequestBuilder WithUrl(string rawUrl) {
             return new IssuesRequestBuilder(rawUrl, RequestAdapter);

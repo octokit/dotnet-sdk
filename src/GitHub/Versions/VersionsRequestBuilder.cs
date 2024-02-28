@@ -14,14 +14,14 @@ namespace GitHub.Versions {
     /// </summary>
     public class VersionsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new VersionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="VersionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public VersionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/versions", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new VersionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="VersionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,10 @@ namespace GitHub.Versions {
         /// Get all supported GitHub API versions.
         /// API method documentation <see href="https://docs.github.com/rest/meta/meta#get-all-api-versions" />
         /// </summary>
+        /// <returns>A List&lt;Date&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<Date?>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,6 +52,7 @@ namespace GitHub.Versions {
         /// <summary>
         /// Get all supported GitHub API versions.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +69,7 @@ namespace GitHub.Versions {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="VersionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public VersionsRequestBuilder WithUrl(string rawUrl) {
             return new VersionsRequestBuilder(rawUrl, RequestAdapter);

@@ -28,7 +28,7 @@ namespace GitHub.Models {
         public MinimalRepository Repository { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new checkSuitePreference and sets the default values.
+        /// Instantiates a new <see cref="CheckSuitePreference"/> and sets the default values.
         /// </summary>
         public CheckSuitePreference() {
             AdditionalData = new Dictionary<string, object>();
@@ -36,6 +36,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="CheckSuitePreference"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static CheckSuitePreference CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -44,6 +45,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"preferences", n => { Preferences = n.GetObjectValue<CheckSuitePreference_preferences>(CheckSuitePreference_preferences.CreateFromDiscriminatorValue); } },

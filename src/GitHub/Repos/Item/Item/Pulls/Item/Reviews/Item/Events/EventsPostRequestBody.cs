@@ -19,7 +19,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events {
         /// <summary>The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. When you leave this blank, the API returns _HTTP 422 (Unrecognizable entity)_ and sets the review action state to `PENDING`, which means you will need to re-submit the pull request review using a review action.</summary>
         public EventsPostRequestBody_event? Event { get; set; }
         /// <summary>
-        /// Instantiates a new eventsPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="EventsPostRequestBody"/> and sets the default values.
         /// </summary>
         public EventsPostRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -27,6 +27,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="EventsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static EventsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -35,6 +36,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"body", n => { Body = n.GetStringValue(); } },

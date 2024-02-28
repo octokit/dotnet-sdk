@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item {
     /// </summary>
     public class WithUsernameItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithUsernameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithUsernameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/memberships/{username}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithUsernameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,6 +47,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item {
         /// Team members will include the members of child teams.To get a user&apos;s membership with a team, the team must be visible to the authenticated user.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/memberships/{username}`.**Note:**The response contains the `state` of the membership and the member&apos;s `role`.The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/rest/teams/teams#create-a-team).
         /// API method documentation <see href="https://docs.github.com/rest/teams/members#get-team-membership-for-a-user" />
         /// </summary>
+        /// <returns>A <see cref="TeamMembership"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,6 +64,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item {
         /// Adds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.**Note:** When you have team synchronization set up for a team with your organization&apos;s identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team&apos;s membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see &quot;[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).&quot;An organization owner can add someone who is not part of the team&apos;s organization to a team. When an organization owner adds someone to a team who is not an organization member, this endpoint will send an invitation to the person via email. This newly-created membership will be in the &quot;pending&quot; state until the person accepts the invitation, at which point the membership will transition to the &quot;active&quot; state and the user will be added as a member of the team.If the user is already a member of the team, this endpoint will update the role of the team member&apos;s role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/memberships/{username}`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/members#add-or-update-team-membership-for-a-user" />
         /// </summary>
+        /// <returns>A <see cref="TeamMembership"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,6 +82,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item {
         /// <summary>
         /// To remove a membership between a user and a team, the authenticated user must have &apos;admin&apos; permissions to the team or be an owner of the organization that the team is associated with. Removing team membership does not delete the user, it just removes their membership from the team.Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.**Note:** When you have team synchronization set up for a team with your organization&apos;s identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team&apos;s membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see &quot;[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).&quot;**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/memberships/{username}`.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +98,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item {
         /// <summary>
         /// Team members will include the members of child teams.To get a user&apos;s membership with a team, the team must be visible to the authenticated user.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/memberships/{username}`.**Note:**The response contains the `state` of the membership and the member&apos;s `role`.The `role` for organization owners is set to `maintainer`. For more information about `maintainer` roles, see [Create a team](https://docs.github.com/rest/teams/teams#create-a-team).
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +115,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item {
         /// <summary>
         /// Adds an organization member to a team. An authenticated organization owner or team maintainer can add organization members to a team.Team synchronization is available for organizations using GitHub Enterprise Cloud. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.**Note:** When you have team synchronization set up for a team with your organization&apos;s identity provider (IdP), you will see an error if you attempt to use the API for making changes to the team&apos;s membership. If you have access to manage group membership in your IdP, you can manage GitHub team membership through your identity provider, which automatically adds and removes team members in an organization. For more information, see &quot;[Synchronizing teams between your identity provider and GitHub](https://docs.github.com/articles/synchronizing-teams-between-your-identity-provider-and-github/).&quot;An organization owner can add someone who is not part of the team&apos;s organization to a team. When an organization owner adds someone to a team who is not an organization member, this endpoint will send an invitation to the person via email. This newly-created membership will be in the &quot;pending&quot; state until the person accepts the invitation, at which point the membership will transition to the &quot;active&quot; state and the user will be added as a member of the team.If the user is already a member of the team, this endpoint will update the role of the team member&apos;s role. To update the membership of a team member, the authenticated user must be an organization owner or a team maintainer.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PUT /organizations/{org_id}/team/{team_id}/memberships/{username}`.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,6 +135,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithUsernameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithUsernameItemRequestBuilder WithUrl(string rawUrl) {
             return new WithUsernameItemRequestBuilder(rawUrl, RequestAdapter);

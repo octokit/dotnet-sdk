@@ -19,14 +19,14 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
             new LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithMilestone_numberItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithMilestone_numberItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithMilestone_numberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/milestones/{milestone_number}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithMilestone_numberItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithMilestone_numberItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,6 +38,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -55,8 +56,10 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// Gets a milestone using the given milestone number.
         /// API method documentation <see href="https://docs.github.com/rest/issues/milestones#get-a-milestone" />
         /// </summary>
+        /// <returns>A <see cref="Milestone"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Milestone?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -74,6 +77,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// Update a milestone
         /// API method documentation <see href="https://docs.github.com/rest/issues/milestones#update-a-milestone" />
         /// </summary>
+        /// <returns>A <see cref="Milestone"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,6 +95,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// <summary>
         /// Deletes a milestone using the given milestone number.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +112,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// <summary>
         /// Gets a milestone using the given milestone number.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +126,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,6 +146,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithMilestone_numberItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithMilestone_numberItemRequestBuilder WithUrl(string rawUrl) {
             return new WithMilestone_numberItemRequestBuilder(rawUrl, RequestAdapter);

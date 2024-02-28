@@ -15,20 +15,21 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts {
     public class ArtifactsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.artifacts.item collection</summary>
         /// <param name="position">The unique identifier of the artifact.</param>
+        /// <returns>A <see cref="WithArtifact_ItemRequestBuilder"/></returns>
         public WithArtifact_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("artifact_id", position);
             return new WithArtifact_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ArtifactsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ArtifactsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ArtifactsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/artifacts{?name*,page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ArtifactsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ArtifactsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,6 +39,7 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts {
         /// Lists all artifacts for a repository.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/actions/artifacts#list-artifacts-for-a-repository" />
         /// </summary>
+        /// <returns>A <see cref="ArtifactsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,6 +55,7 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts {
         /// <summary>
         /// Lists all artifacts for a repository.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +72,7 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ArtifactsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ArtifactsRequestBuilder WithUrl(string rawUrl) {
             return new ArtifactsRequestBuilder(rawUrl, RequestAdapter);

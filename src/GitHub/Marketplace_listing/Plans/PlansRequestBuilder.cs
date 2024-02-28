@@ -16,20 +16,21 @@ namespace GitHub.Marketplace_listing.Plans {
     public class PlansRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.marketplace_listing.plans.item collection</summary>
         /// <param name="position">The unique identifier of the plan.</param>
+        /// <returns>A <see cref="WithPlan_ItemRequestBuilder"/></returns>
         public WithPlan_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("plan_id", position);
             return new WithPlan_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new PlansRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlansRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public PlansRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/plans{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new PlansRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="PlansRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,8 +40,11 @@ namespace GitHub.Marketplace_listing.Plans {
         /// Lists all plans that are part of your GitHub Marketplace listing.GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/apps/marketplace#list-plans" />
         /// </summary>
+        /// <returns>A List&lt;MarketplaceListingPlan&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<MarketplaceListingPlan>?> GetAsync(Action<RequestConfiguration<PlansRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -59,6 +63,7 @@ namespace GitHub.Marketplace_listing.Plans {
         /// <summary>
         /// Lists all plans that are part of your GitHub Marketplace listing.GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +80,7 @@ namespace GitHub.Marketplace_listing.Plans {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="PlansRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public PlansRequestBuilder WithUrl(string rawUrl) {
             return new PlansRequestBuilder(rawUrl, RequestAdapter);

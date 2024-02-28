@@ -16,14 +16,14 @@ namespace GitHub.Orgs.Item.Actions.Oidc {
             new CustomizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new OidcRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="OidcRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public OidcRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/oidc", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new OidcRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="OidcRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

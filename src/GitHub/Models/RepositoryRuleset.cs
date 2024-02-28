@@ -82,7 +82,7 @@ namespace GitHub.Models {
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
-        /// Instantiates a new repositoryRuleset and sets the default values.
+        /// Instantiates a new <see cref="RepositoryRuleset"/> and sets the default values.
         /// </summary>
         public RepositoryRuleset() {
             AdditionalData = new Dictionary<string, object>();
@@ -90,6 +90,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="RepositoryRuleset"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static RepositoryRuleset CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -98,6 +99,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"bypass_actors", n => { BypassActors = n.GetCollectionOfObjectValues<RepositoryRulesetBypassActor>(RepositoryRulesetBypassActor.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -139,10 +141,10 @@ namespace GitHub.Models {
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes orgRulesetConditions, repositoryRulesetConditions
+        /// Composed type wrapper for classes <see cref="OrgRulesetConditions"/>, <see cref="RepositoryRulesetConditions"/>
         /// </summary>
         public class RepositoryRuleset_conditions : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type orgRulesetConditions</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.OrgRulesetConditions"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.OrgRulesetConditions? OrgRulesetConditions { get; set; }
@@ -150,7 +152,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.OrgRulesetConditions OrgRulesetConditions { get; set; }
 #endif
-            /// <summary>Composed type representation for type repositoryRulesetConditions</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRulesetConditions"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.RepositoryRulesetConditions? RepositoryRulesetConditions { get; set; }
@@ -161,6 +163,7 @@ namespace GitHub.Models {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="RepositoryRuleset_conditions"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static RepositoryRuleset_conditions CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -172,6 +175,7 @@ namespace GitHub.Models {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(OrgRulesetConditions != null || RepositoryRulesetConditions != null) {
                     return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(OrgRulesetConditions, RepositoryRulesetConditions);

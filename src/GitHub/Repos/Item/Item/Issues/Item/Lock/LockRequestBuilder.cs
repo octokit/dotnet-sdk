@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Lock {
     /// </summary>
     public class LockRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new LockRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LockRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LockRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/lock", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new LockRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LockRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -33,6 +33,8 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Lock {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -54,6 +56,10 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Lock {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 410 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PutAsync(LockPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -74,6 +80,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Lock {
         /// <summary>
         /// Users with push access can unlock an issue&apos;s conversation.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +97,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Lock {
         /// <summary>
         /// Users with push access can lock an issue or pull request&apos;s conversation.Note that, if you choose not to pass any parameters, you&apos;ll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see &quot;[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method).&quot;
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,6 +117,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Lock {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="LockRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public LockRequestBuilder WithUrl(string rawUrl) {
             return new LockRequestBuilder(rawUrl, RequestAdapter);

@@ -41,7 +41,7 @@ namespace GitHub.Models {
         public string SHA256RSA { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new apiOverview_ssh_key_fingerprints and sets the default values.
+        /// Instantiates a new <see cref="ApiOverview_ssh_key_fingerprints"/> and sets the default values.
         /// </summary>
         public ApiOverview_ssh_key_fingerprints() {
             AdditionalData = new Dictionary<string, object>();
@@ -49,6 +49,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ApiOverview_ssh_key_fingerprints"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ApiOverview_ssh_key_fingerprints CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -57,6 +58,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"SHA256_DSA", n => { SHA256DSA = n.GetStringValue(); } },

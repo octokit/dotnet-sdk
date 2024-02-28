@@ -13,20 +13,21 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Users {
     public class UsersRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.orgs.item.organizationRoles.users.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
+        /// <returns>A <see cref="WithUsernameItemRequestBuilder"/></returns>
         public WithUsernameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("username", position);
             return new WithUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new UsersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/organization-roles/users", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UsersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

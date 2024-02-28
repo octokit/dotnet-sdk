@@ -52,7 +52,7 @@ namespace GitHub.Applications.Item.Token.Scoped {
         /// <summary>The ID of the user or organization to scope the user access token to. **Required** unless `target` is specified.</summary>
         public int? TargetId { get; set; }
         /// <summary>
-        /// Instantiates a new scopedPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="ScopedPostRequestBody"/> and sets the default values.
         /// </summary>
         public ScopedPostRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -60,6 +60,7 @@ namespace GitHub.Applications.Item.Token.Scoped {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="ScopedPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ScopedPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -68,6 +69,7 @@ namespace GitHub.Applications.Item.Token.Scoped {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"access_token", n => { AccessToken = n.GetStringValue(); } },

@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users {
     /// </summary>
     public class Selected_usersRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new Selected_usersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Selected_usersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public Selected_usersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/copilot/billing/selected_users", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new Selected_usersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Selected_usersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,14 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users {
         /// **Note**: This endpoint is in beta and is subject to change.Cancels the Copilot seat assignment for each user specified.This will cause the specified users to lose access to GitHub Copilot at the end of the current billing cycle, and the organization will not be billed further for those users.For more information about Copilot pricing, see &quot;[Pricing for GitHub Copilot](https://docs.github.com/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot#about-billing-for-github-copilot)&quot;.For more information about disabling access to Copilot Business or Enterprise, see &quot;[Revoking access to GitHub Copilot for specific users in your organization](https://docs.github.com/copilot/managing-copilot/managing-access-for-copilot-in-your-organization#revoking-access-to-github-copilot-for-specific-users-in-your-organization)&quot;.Only organization owners can configure GitHub Copilot in their organization.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-user-management#remove-users-from-the-copilot-subscription-for-an-organization" />
         /// </summary>
+        /// <returns>A <see cref="Selected_usersDeleteResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Selected_usersDeleteResponse?> DeleteAsync(Selected_usersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -55,9 +60,14 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users {
         /// **Note**: This endpoint is in beta and is subject to change.Purchases a GitHub Copilot seat for each user specified.The organization will be billed accordingly. For more information about Copilot pricing, see &quot;[Pricing for GitHub Copilot](https://docs.github.com/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot#about-billing-for-github-copilot)&quot;.Only organization owners can configure GitHub Copilot in their organization.In order for an admin to use this endpoint, the organization must have a Copilot Business or Enterprise subscription and a configured suggestion matching policy.For more information about setting up a Copilot subscription, see &quot;[Setting up a Copilot subscription for your organization](https://docs.github.com/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription-for-your-organization-or-enterprise)&quot;.For more information about setting a suggestion matching policy, see &quot;[Configuring suggestion matching policies for GitHub Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-policies-for-github-copilot-in-your-organization#configuring-suggestion-matching-policies-for-github-copilot-in-your-organization)&quot;.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-user-management#add-users-to-the-copilot-subscription-for-an-organization" />
         /// </summary>
+        /// <returns>A <see cref="Selected_usersPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Selected_usersPostResponse?> PostAsync(Selected_usersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -78,6 +88,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users {
         /// <summary>
         /// **Note**: This endpoint is in beta and is subject to change.Cancels the Copilot seat assignment for each user specified.This will cause the specified users to lose access to GitHub Copilot at the end of the current billing cycle, and the organization will not be billed further for those users.For more information about Copilot pricing, see &quot;[Pricing for GitHub Copilot](https://docs.github.com/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot#about-billing-for-github-copilot)&quot;.For more information about disabling access to Copilot Business or Enterprise, see &quot;[Revoking access to GitHub Copilot for specific users in your organization](https://docs.github.com/copilot/managing-copilot/managing-access-for-copilot-in-your-organization#revoking-access-to-github-copilot-for-specific-users-in-your-organization)&quot;.Only organization owners can configure GitHub Copilot in their organization.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,6 +108,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users {
         /// <summary>
         /// **Note**: This endpoint is in beta and is subject to change.Purchases a GitHub Copilot seat for each user specified.The organization will be billed accordingly. For more information about Copilot pricing, see &quot;[Pricing for GitHub Copilot](https://docs.github.com/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot#about-billing-for-github-copilot)&quot;.Only organization owners can configure GitHub Copilot in their organization.In order for an admin to use this endpoint, the organization must have a Copilot Business or Enterprise subscription and a configured suggestion matching policy.For more information about setting up a Copilot subscription, see &quot;[Setting up a Copilot subscription for your organization](https://docs.github.com/billing/managing-billing-for-github-copilot/managing-your-github-copilot-subscription-for-your-organization-or-enterprise)&quot;.For more information about setting a suggestion matching policy, see &quot;[Configuring suggestion matching policies for GitHub Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-policies-for-github-copilot-in-your-organization#configuring-suggestion-matching-policies-for-github-copilot-in-your-organization)&quot;.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,6 +128,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="Selected_usersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public Selected_usersRequestBuilder WithUrl(string rawUrl) {
             return new Selected_usersRequestBuilder(rawUrl, RequestAdapter);

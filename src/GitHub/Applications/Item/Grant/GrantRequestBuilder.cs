@@ -14,14 +14,14 @@ namespace GitHub.Applications.Item.Grant {
     /// </summary>
     public class GrantRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new GrantRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GrantRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GrantRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications/{client_id}/grant", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new GrantRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="GrantRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,6 +34,7 @@ namespace GitHub.Applications.Item.Grant {
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(GrantDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,6 +52,7 @@ namespace GitHub.Applications.Item.Grant {
         /// <summary>
         /// OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the OAuth application&apos;s `client_id` and `client_secret` as the username and password. You must also provide a valid OAuth `access_token` as an input parameter and the grant for the token&apos;s owner will be deleted.Deleting an application&apos;s grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user&apos;s account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,6 +72,7 @@ namespace GitHub.Applications.Item.Grant {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="GrantRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public GrantRequestBuilder WithUrl(string rawUrl) {
             return new GrantRequestBuilder(rawUrl, RequestAdapter);

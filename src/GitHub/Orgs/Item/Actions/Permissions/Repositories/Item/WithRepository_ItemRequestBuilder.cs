@@ -13,14 +13,14 @@ namespace GitHub.Orgs.Item.Actions.Permissions.Repositories.Item {
     /// </summary>
     public class WithRepository_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithRepository_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRepository_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithRepository_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/permissions/repositories/{repository_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithRepository_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRepository_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,6 +61,7 @@ namespace GitHub.Orgs.Item.Actions.Permissions.Repositories.Item {
         /// <summary>
         /// Removes a repository from the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization).&quot;OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +77,7 @@ namespace GitHub.Orgs.Item.Actions.Permissions.Repositories.Item {
         /// <summary>
         /// Adds a repository to the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be must be configured to `selected`. For more information, see &quot;[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization).&quot;OAuth tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +93,7 @@ namespace GitHub.Orgs.Item.Actions.Permissions.Repositories.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithRepository_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithRepository_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithRepository_ItemRequestBuilder(rawUrl, RequestAdapter);

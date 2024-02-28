@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
     /// </summary>
     public class UsersRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new UsersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches/{branch}/protection/restrictions/users", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UsersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,9 +31,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of a user to push to this branch.| Type    | Description                                                                                                                                   || ------- | --------------------------------------------------------------------------------------------------------------------------------------------- || `array` | Usernames of the people who should no longer have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#remove-user-access-restrictions" />
         /// </summary>
+        /// <returns>A List&lt;SimpleUser&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<SimpleUser>?> DeleteAsync(UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -53,8 +55,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists the people who have push access to this branch.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#get-users-with-access-to-the-protected-branch" />
         /// </summary>
+        /// <returns>A List&lt;SimpleUser&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<SimpleUser>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -73,9 +77,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Grants the specified people push access for this branch.| Type    | Description                                                                                                                   || ------- | ----------------------------------------------------------------------------------------------------------------------------- || `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#add-user-access-restrictions" />
         /// </summary>
+        /// <returns>A List&lt;SimpleUser&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<SimpleUser>?> PostAsync(UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -95,9 +101,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Replaces the list of people that have push access to this branch. This removes all people that previously had push access and grants push access to the new list of people.| Type    | Description                                                                                                                   || ------- | ----------------------------------------------------------------------------------------------------------------------------- || `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#set-user-access-restrictions" />
         /// </summary>
+        /// <returns>A List&lt;SimpleUser&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<SimpleUser>?> PutAsync(UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -116,6 +124,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of a user to push to this branch.| Type    | Description                                                                                                                                   || ------- | --------------------------------------------------------------------------------------------------------------------------------------------- || `array` | Usernames of the people who should no longer have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,6 +144,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists the people who have push access to this branch.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -151,6 +161,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Grants the specified people push access for this branch.| Type    | Description                                                                                                                   || ------- | ----------------------------------------------------------------------------------------------------------------------------- || `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -170,6 +181,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Replaces the list of people that have push access to this branch. This removes all people that previously had push access and grants push access to the new list of people.| Type    | Description                                                                                                                   || ------- | ----------------------------------------------------------------------------------------------------------------------------- || `array` | Usernames for people who can have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,15 +201,16 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="UsersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public UsersRequestBuilder WithUrl(string rawUrl) {
             return new UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes string, usersDeleteRequestBodyMember1
+        /// Composed type wrapper for classes <see cref="string"/>, <see cref="UsersDeleteRequestBodyMember1"/>
         /// </summary>
         public class UsersDeleteRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -205,7 +218,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
 #else
             public string String { get; set; }
 #endif
-            /// <summary>Composed type representation for type usersDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1? UsersDeleteRequestBodyMember1 { get; set; }
@@ -213,7 +226,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1 UsersDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? UsersDeleteRequestBodyString { get; set; }
@@ -221,7 +234,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
 #else
             public string UsersDeleteRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type usersDeleteRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1? UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 { get; set; }
@@ -232,6 +245,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="UsersDeleteRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static UsersDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -254,6 +268,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(UsersDeleteRequestBodyMember1 != null) {
                     return UsersDeleteRequestBodyMember1.GetFieldDeserializers();
@@ -284,10 +299,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes string, usersPostRequestBodyMember1
+        /// Composed type wrapper for classes <see cref="string"/>, <see cref="UsersPostRequestBodyMember1"/>
         /// </summary>
         public class UsersPostRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -295,7 +310,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
 #else
             public string String { get; set; }
 #endif
-            /// <summary>Composed type representation for type usersPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1? UsersPostRequestBodyMember1 { get; set; }
@@ -303,7 +318,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1 UsersPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? UsersPostRequestBodyString { get; set; }
@@ -311,7 +326,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
 #else
             public string UsersPostRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type usersPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1? UsersPostRequestBodyUsersPostRequestBodyMember1 { get; set; }
@@ -322,6 +337,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="UsersPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static UsersPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -344,6 +360,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(UsersPostRequestBodyMember1 != null) {
                     return UsersPostRequestBodyMember1.GetFieldDeserializers();
@@ -374,10 +391,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes string, usersPutRequestBodyMember1
+        /// Composed type wrapper for classes <see cref="string"/>, <see cref="UsersPutRequestBodyMember1"/>
         /// </summary>
         public class UsersPutRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -385,7 +402,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
 #else
             public string String { get; set; }
 #endif
-            /// <summary>Composed type representation for type usersPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1? UsersPutRequestBodyMember1 { get; set; }
@@ -393,7 +410,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
 #else
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1 UsersPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? UsersPutRequestBodyString { get; set; }
@@ -401,7 +418,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
 #else
             public string UsersPutRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type usersPutRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1? UsersPutRequestBodyUsersPutRequestBodyMember1 { get; set; }
@@ -412,6 +429,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="UsersPutRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static UsersPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -434,6 +452,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(UsersPutRequestBodyMember1 != null) {
                     return UsersPutRequestBodyMember1.GetFieldDeserializers();

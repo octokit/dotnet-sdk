@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Members.Item.Copilot {
     /// </summary>
     public class CopilotRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new CopilotRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CopilotRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CopilotRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/members/{username}/copilot", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CopilotRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CopilotRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,13 @@ namespace GitHub.Orgs.Item.Members.Item.Copilot {
         /// **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners can view GitHub Copilot seat assignment details for members in their organization.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-user-management#get-copilot-seat-assignment-details-for-a-user" />
         /// </summary>
+        /// <returns>A <see cref="CopilotSeatDetails"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CopilotSeatDetails?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -52,6 +57,7 @@ namespace GitHub.Orgs.Item.Members.Item.Copilot {
         /// <summary>
         /// **Note**: This endpoint is in beta and is subject to change.Gets the GitHub Copilot seat assignment details for a member of an organization who currently has access to GitHub Copilot.Organization owners can view GitHub Copilot seat assignment details for members in their organization.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +74,7 @@ namespace GitHub.Orgs.Item.Members.Item.Copilot {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CopilotRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CopilotRequestBuilder WithUrl(string rawUrl) {
             return new CopilotRequestBuilder(rawUrl, RequestAdapter);

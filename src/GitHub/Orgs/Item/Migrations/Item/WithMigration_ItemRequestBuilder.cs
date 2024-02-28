@@ -29,14 +29,14 @@ namespace GitHub.Orgs.Item.Migrations.Item {
             new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithMigration_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithMigration_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithMigration_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/migrations/{migration_id}{?exclude*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithMigration_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithMigration_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,8 +46,10 @@ namespace GitHub.Orgs.Item.Migrations.Item {
         /// Fetches the status of a migration.The `state` of a migration can be one of the following values:*   `pending`, which means the migration hasn&apos;t started yet.*   `exporting`, which means the migration is in progress.*   `exported`, which means the migration finished successfully.*   `failed`, which means the migration failed.
         /// API method documentation <see href="https://docs.github.com/rest/migrations/orgs#get-an-organization-migration-status" />
         /// </summary>
+        /// <returns>A <see cref="Migration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Migration?> GetAsync(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -64,6 +66,7 @@ namespace GitHub.Orgs.Item.Migrations.Item {
         /// <summary>
         /// Fetches the status of a migration.The `state` of a migration can be one of the following values:*   `pending`, which means the migration hasn&apos;t started yet.*   `exporting`, which means the migration is in progress.*   `exported`, which means the migration finished successfully.*   `failed`, which means the migration failed.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +83,7 @@ namespace GitHub.Orgs.Item.Migrations.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithMigration_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithMigration_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithMigration_ItemRequestBuilder(rawUrl, RequestAdapter);

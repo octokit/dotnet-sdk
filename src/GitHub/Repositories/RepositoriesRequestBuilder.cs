@@ -16,20 +16,21 @@ namespace GitHub.Repositories {
     public class RepositoriesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repositories.item collection</summary>
         /// <param name="position">The unique identifier of the repository.</param>
+        /// <returns>A <see cref="WithRepository_ItemRequestBuilder"/></returns>
         public WithRepository_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("repository_id", position);
             return new WithRepository_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new RepositoriesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RepositoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RepositoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repositories{?since*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RepositoriesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RepositoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,8 +40,10 @@ namespace GitHub.Repositories {
         /// Lists all public repositories in the order that they were created.Note:- For GitHub Enterprise Server, this endpoint will only list repositories available to all users on the enterprise.- Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of repositories.
         /// API method documentation <see href="https://docs.github.com/rest/repos/repos#list-public-repositories" />
         /// </summary>
+        /// <returns>A List&lt;MinimalRepository&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<MinimalRepository>?> GetAsync(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -58,6 +61,7 @@ namespace GitHub.Repositories {
         /// <summary>
         /// Lists all public repositories in the order that they were created.Note:- For GitHub Enterprise Server, this endpoint will only list repositories available to all users on the enterprise.- Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of repositories.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +78,7 @@ namespace GitHub.Repositories {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="RepositoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RepositoriesRequestBuilder WithUrl(string rawUrl) {
             return new RepositoriesRequestBuilder(rawUrl, RequestAdapter);

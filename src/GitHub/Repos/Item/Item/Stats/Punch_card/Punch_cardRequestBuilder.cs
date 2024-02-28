@@ -13,14 +13,14 @@ namespace GitHub.Repos.Item.Item.Stats.Punch_card {
     /// </summary>
     public class Punch_cardRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new Punch_cardRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Punch_cardRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public Punch_cardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/stats/punch_card", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new Punch_cardRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="Punch_cardRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace GitHub.Repos.Item.Item.Stats.Punch_card {
         /// Each array contains the day number, hour number, and number of commits:*   `0-6`: Sunday - Saturday*   `0-23`: Hour of day*   Number of commitsFor example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
         /// API method documentation <see href="https://docs.github.com/rest/metrics/statistics#get-the-hourly-commit-count-for-each-day" />
         /// </summary>
+        /// <returns>A List&lt;int&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +47,7 @@ namespace GitHub.Repos.Item.Item.Stats.Punch_card {
         /// <summary>
         /// Each array contains the day number, hour number, and number of commits:*   `0-6`: Sunday - Saturday*   `0-23`: Hour of day*   Number of commitsFor example, `[2, 14, 25]` indicates that there were 25 total commits, during the 2:00pm hour on Tuesdays. All times are based on the time zone of individual commits.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,7 @@ namespace GitHub.Repos.Item.Item.Stats.Punch_card {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="Punch_cardRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public Punch_cardRequestBuilder WithUrl(string rawUrl) {
             return new Punch_cardRequestBuilder(rawUrl, RequestAdapter);

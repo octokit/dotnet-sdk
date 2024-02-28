@@ -21,20 +21,21 @@ namespace GitHub.User.Codespaces {
         }
         /// <summary>Gets an item from the GitHub.user.codespaces.item collection</summary>
         /// <param name="position">The name of the codespace.</param>
+        /// <returns>A <see cref="WithCodespace_nameItemRequestBuilder"/></returns>
         public WithCodespace_nameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("codespace_name", position);
             return new WithCodespace_nameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new CodespacesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CodespacesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CodespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces{?page*,per_page*,repository_id*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CodespacesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CodespacesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,8 +45,13 @@ namespace GitHub.User.Codespaces {
         /// Lists the authenticated user&apos;s codespaces.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#list-codespaces-for-the-authenticated-user" />
         /// </summary>
+        /// <returns>A <see cref="CodespacesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CodespacesGetResponse?> GetAsync(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -66,9 +72,14 @@ namespace GitHub.User.Codespaces {
         /// Creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/codespaces#create-a-codespace-for-the-authenticated-user" />
         /// </summary>
+        /// <returns>A <see cref="Codespace"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="Codespace503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Codespace?> PostAsync(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -89,6 +100,7 @@ namespace GitHub.User.Codespaces {
         /// <summary>
         /// Lists the authenticated user&apos;s codespaces.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +117,7 @@ namespace GitHub.User.Codespaces {
         /// <summary>
         /// Creates a new codespace, owned by the authenticated user.This endpoint requires either a `repository_id` OR a `pull_request` but not both.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +128,7 @@ namespace GitHub.User.Codespaces {
         public RequestInformation ToPostRequestInformation(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/user/codespaces", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -124,15 +137,16 @@ namespace GitHub.User.Codespaces {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CodespacesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CodespacesRequestBuilder WithUrl(string rawUrl) {
             return new CodespacesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes codespacesPostRequestBodyMember1, codespacesPostRequestBodyMember2
+        /// Composed type wrapper for classes <see cref="CodespacesPostRequestBodyMember1"/>, <see cref="CodespacesPostRequestBodyMember2"/>
         /// </summary>
         public class CodespacesPostRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type codespacesPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.User.Codespaces.CodespacesPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.User.Codespaces.CodespacesPostRequestBodyMember1? CodespacesPostRequestBodyCodespacesPostRequestBodyMember1 { get; set; }
@@ -140,7 +154,7 @@ namespace GitHub.User.Codespaces {
 #else
             public GitHub.User.Codespaces.CodespacesPostRequestBodyMember1 CodespacesPostRequestBodyCodespacesPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type codespacesPostRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.User.Codespaces.CodespacesPostRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.User.Codespaces.CodespacesPostRequestBodyMember2? CodespacesPostRequestBodyCodespacesPostRequestBodyMember2 { get; set; }
@@ -148,7 +162,7 @@ namespace GitHub.User.Codespaces {
 #else
             public GitHub.User.Codespaces.CodespacesPostRequestBodyMember2 CodespacesPostRequestBodyCodespacesPostRequestBodyMember2 { get; set; }
 #endif
-            /// <summary>Composed type representation for type codespacesPostRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.User.Codespaces.CodespacesPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.User.Codespaces.CodespacesPostRequestBodyMember1? CodespacesPostRequestBodyMember1 { get; set; }
@@ -156,7 +170,7 @@ namespace GitHub.User.Codespaces {
 #else
             public GitHub.User.Codespaces.CodespacesPostRequestBodyMember1 CodespacesPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type codespacesPostRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.User.Codespaces.CodespacesPostRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.User.Codespaces.CodespacesPostRequestBodyMember2? CodespacesPostRequestBodyMember2 { get; set; }
@@ -167,6 +181,7 @@ namespace GitHub.User.Codespaces {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="CodespacesPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static CodespacesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -189,6 +204,7 @@ namespace GitHub.User.Codespaces {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(CodespacesPostRequestBodyCodespacesPostRequestBodyMember1 != null) {
                     return CodespacesPostRequestBodyCodespacesPostRequestBodyMember1.GetFieldDeserializers();

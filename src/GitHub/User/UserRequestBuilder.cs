@@ -144,14 +144,14 @@ namespace GitHub.User {
             new TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new UserRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public UserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new UserRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -161,8 +161,11 @@ namespace GitHub.User {
         /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
         /// API method documentation <see href="https://docs.github.com/rest/users/users#get-the-authenticated-user" />
         /// </summary>
+        /// <returns>A <see cref="UserGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<UserGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -181,9 +184,14 @@ namespace GitHub.User {
         /// **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.
         /// API method documentation <see href="https://docs.github.com/rest/users/users#update-the-authenticated-user" />
         /// </summary>
+        /// <returns>A <see cref="PrivateUser"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<PrivateUser?> PatchAsync(UserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -204,6 +212,7 @@ namespace GitHub.User {
         /// <summary>
         /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -220,6 +229,7 @@ namespace GitHub.User {
         /// <summary>
         /// **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -239,15 +249,16 @@ namespace GitHub.User {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="UserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public UserRequestBuilder WithUrl(string rawUrl) {
             return new UserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes privateUser, publicUser
+        /// Composed type wrapper for classes <see cref="PrivateUser"/>, <see cref="PublicUser"/>
         /// </summary>
         public class UserGetResponse : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type privateUser</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.PrivateUser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.PrivateUser? PrivateUser { get; set; }
@@ -255,7 +266,7 @@ namespace GitHub.User {
 #else
             public GitHub.Models.PrivateUser PrivateUser { get; set; }
 #endif
-            /// <summary>Composed type representation for type publicUser</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.PublicUser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.PublicUser? PublicUser { get; set; }
@@ -266,6 +277,7 @@ namespace GitHub.User {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="UserGetResponse"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static UserGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -282,6 +294,7 @@ namespace GitHub.User {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(PrivateUser != null) {
                     return PrivateUser.GetFieldDeserializers();

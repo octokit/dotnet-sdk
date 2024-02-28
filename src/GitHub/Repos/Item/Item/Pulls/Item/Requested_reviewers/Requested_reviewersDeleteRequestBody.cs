@@ -25,7 +25,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Requested_reviewers {
         public List<string> TeamReviewers { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new requested_reviewersDeleteRequestBody and sets the default values.
+        /// Instantiates a new <see cref="Requested_reviewersDeleteRequestBody"/> and sets the default values.
         /// </summary>
         public Requested_reviewersDeleteRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -33,6 +33,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Requested_reviewers {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Requested_reviewersDeleteRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Requested_reviewersDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -41,6 +42,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Requested_reviewers {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"reviewers", n => { Reviewers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },

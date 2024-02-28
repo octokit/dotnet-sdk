@@ -14,14 +14,14 @@ namespace GitHub.Users.Item.Settings.Billing.Actions {
     /// </summary>
     public class ActionsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ActionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ActionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/settings/billing/actions", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ActionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Users.Item.Settings.Billing.Actions {
         /// Gets the summary of the free and paid GitHub Actions minutes used.Paid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage returned includes any minute multipliers for macOS and Windows runners, and is rounded up to the nearest whole minute. For more information, see &quot;[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)&quot;.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/billing/billing#get-github-actions-billing-for-a-user" />
         /// </summary>
+        /// <returns>A <see cref="ActionsBillingUsage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +47,7 @@ namespace GitHub.Users.Item.Settings.Billing.Actions {
         /// <summary>
         /// Gets the summary of the free and paid GitHub Actions minutes used.Paid minutes only apply to workflows in private repositories that use GitHub-hosted runners. Minutes used is listed for each GitHub-hosted runner operating system. Any job re-runs are also included in the usage. The usage returned includes any minute multipliers for macOS and Windows runners, and is rounded up to the nearest whole minute. For more information, see &quot;[Managing billing for GitHub Actions](https://docs.github.com/github/setting-up-and-managing-billing-and-payments-on-github/managing-billing-for-github-actions)&quot;.OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,7 @@ namespace GitHub.Users.Item.Settings.Billing.Actions {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ActionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ActionsRequestBuilder WithUrl(string rawUrl) {
             return new ActionsRequestBuilder(rawUrl, RequestAdapter);

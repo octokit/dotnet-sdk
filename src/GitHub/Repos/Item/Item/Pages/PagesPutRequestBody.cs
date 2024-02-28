@@ -29,7 +29,7 @@ namespace GitHub.Repos.Item.Item.Pages {
         public PagesPutRequestBody_source Source { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new pagesPutRequestBody and sets the default values.
+        /// Instantiates a new <see cref="PagesPutRequestBody"/> and sets the default values.
         /// </summary>
         public PagesPutRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -37,6 +37,7 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="PagesPutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static PagesPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -45,6 +46,7 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"build_type", n => { BuildType = n.GetEnumValue<PagesPutRequestBody_build_type>(); } },
@@ -66,10 +68,10 @@ namespace GitHub.Repos.Item.Item.Pages {
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes pagesPutRequestBody_sourceMember1, string
+        /// Composed type wrapper for classes <see cref="PagesPutRequestBody_sourceMember1"/>, <see cref="string"/>
         /// </summary>
         public class PagesPutRequestBody_source : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type pagesPutRequestBody_sourceMember1</summary>
+            /// <summary>Composed type representation for type <see cref="PagesPutRequestBody_sourceMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public PagesPutRequestBody_sourceMember1? PagesPutRequestBodySourceMember1 { get; set; }
@@ -77,7 +79,7 @@ namespace GitHub.Repos.Item.Item.Pages {
 #else
             public PagesPutRequestBody_sourceMember1 PagesPutRequestBodySourceMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -88,6 +90,7 @@ namespace GitHub.Repos.Item.Item.Pages {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="PagesPutRequestBody_source"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static PagesPutRequestBody_source CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -103,6 +106,7 @@ namespace GitHub.Repos.Item.Item.Pages {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(PagesPutRequestBodySourceMember1 != null) {
                     return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(PagesPutRequestBodySourceMember1);

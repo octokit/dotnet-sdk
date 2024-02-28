@@ -24,14 +24,14 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
             new RerequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithCheck_run_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithCheck_run_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithCheck_run_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/check-runs/{check_run_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithCheck_run_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithCheck_run_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,6 +41,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
         /// Gets a single check run using its `id`.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/checks/runs#get-a-check-run" />
         /// </summary>
+        /// <returns>A <see cref="CheckRun"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,6 +58,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
         /// Updates a check run for a specific commit in a repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth apps and personal access tokens (classic) cannot use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/checks/runs#update-a-check-run" />
         /// </summary>
+        /// <returns>A <see cref="CheckRun"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,6 +76,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
         /// <summary>
         /// Gets a single check run using its `id`.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +93,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
         /// <summary>
         /// Updates a check run for a specific commit in a repository.**Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.OAuth apps and personal access tokens (classic) cannot use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,15 +113,16 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithCheck_run_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithCheck_run_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithCheck_run_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes WithCheck_run_PatchRequestBodyMember1, WithCheck_run_PatchRequestBodyMember2
+        /// Composed type wrapper for classes <see cref="WithCheck_run_PatchRequestBodyMember1"/>, <see cref="WithCheck_run_PatchRequestBodyMember2"/>
         /// </summary>
         public class WithCheck_run_PatchRequestBody : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type WithCheck_run_PatchRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="WithCheck_run_PatchRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public WithCheck_run_PatchRequestBodyMember1? WithCheckRunPatchRequestBodyMember1 { get; set; }
@@ -125,7 +130,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
 #else
             public WithCheck_run_PatchRequestBodyMember1 WithCheckRunPatchRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type WithCheck_run_PatchRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="WithCheck_run_PatchRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public WithCheck_run_PatchRequestBodyMember2? WithCheckRunPatchRequestBodyMember2 { get; set; }
@@ -133,7 +138,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
 #else
             public WithCheck_run_PatchRequestBodyMember2 WithCheckRunPatchRequestBodyMember2 { get; set; }
 #endif
-            /// <summary>Composed type representation for type WithCheck_run_PatchRequestBodyMember1</summary>
+            /// <summary>Composed type representation for type <see cref="WithCheck_run_PatchRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public WithCheck_run_PatchRequestBodyMember1? WithCheckRunPatchRequestBodyWithCheckRunPatchRequestBodyMember1 { get; set; }
@@ -141,7 +146,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
 #else
             public WithCheck_run_PatchRequestBodyMember1 WithCheckRunPatchRequestBodyWithCheckRunPatchRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type WithCheck_run_PatchRequestBodyMember2</summary>
+            /// <summary>Composed type representation for type <see cref="WithCheck_run_PatchRequestBodyMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public WithCheck_run_PatchRequestBodyMember2? WithCheckRunPatchRequestBodyWithCheckRunPatchRequestBodyMember2 { get; set; }
@@ -152,6 +157,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="WithCheck_run_PatchRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static WithCheck_run_PatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -165,6 +171,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(WithCheckRunPatchRequestBodyMember1 != null || WithCheckRunPatchRequestBodyMember2 != null || WithCheckRunPatchRequestBodyWithCheckRunPatchRequestBodyMember1 != null || WithCheckRunPatchRequestBodyWithCheckRunPatchRequestBodyMember2 != null) {
                     return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WithCheckRunPatchRequestBodyMember1, WithCheckRunPatchRequestBodyMember2, WithCheckRunPatchRequestBodyWithCheckRunPatchRequestBodyMember1, WithCheckRunPatchRequestBodyWithCheckRunPatchRequestBodyMember2);

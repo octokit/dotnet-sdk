@@ -19,7 +19,7 @@ namespace GitHub.Models {
         /// <summary>The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.</summary>
         public SecretScanningLocation_type? Type { get; set; }
         /// <summary>
-        /// Instantiates a new secretScanningLocation and sets the default values.
+        /// Instantiates a new <see cref="SecretScanningLocation"/> and sets the default values.
         /// </summary>
         public SecretScanningLocation() {
             AdditionalData = new Dictionary<string, object>();
@@ -27,6 +27,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="SecretScanningLocation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static SecretScanningLocation CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -35,6 +36,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"details", n => { Details = n.GetObjectValue<SecretScanningLocation_details>(SecretScanningLocation_details.CreateFromDiscriminatorValue); } },
@@ -52,10 +54,10 @@ namespace GitHub.Models {
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes secretScanningLocationCommit, secretScanningLocationDiscussionBody, secretScanningLocationDiscussionComment, secretScanningLocationDiscussionTitle, secretScanningLocationIssueBody, secretScanningLocationIssueComment, secretScanningLocationIssueTitle, secretScanningLocationPullRequestBody, secretScanningLocationPullRequestComment, secretScanningLocationPullRequestReview, secretScanningLocationPullRequestReviewComment, secretScanningLocationPullRequestTitle
+        /// Composed type wrapper for classes <see cref="SecretScanningLocationCommit"/>, <see cref="SecretScanningLocationDiscussionBody"/>, <see cref="SecretScanningLocationDiscussionComment"/>, <see cref="SecretScanningLocationDiscussionTitle"/>, <see cref="SecretScanningLocationIssueBody"/>, <see cref="SecretScanningLocationIssueComment"/>, <see cref="SecretScanningLocationIssueTitle"/>, <see cref="SecretScanningLocationPullRequestBody"/>, <see cref="SecretScanningLocationPullRequestComment"/>, <see cref="SecretScanningLocationPullRequestReview"/>, <see cref="SecretScanningLocationPullRequestReviewComment"/>, <see cref="SecretScanningLocationPullRequestTitle"/>
         /// </summary>
         public class SecretScanningLocation_details : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type secretScanningLocationCommit</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationCommit"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationCommit? SecretScanningLocationCommit { get; set; }
@@ -63,7 +65,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationCommit SecretScanningLocationCommit { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationDiscussionBody</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationDiscussionBody"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationDiscussionBody? SecretScanningLocationDiscussionBody { get; set; }
@@ -71,7 +73,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationDiscussionBody SecretScanningLocationDiscussionBody { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationDiscussionComment</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationDiscussionComment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationDiscussionComment? SecretScanningLocationDiscussionComment { get; set; }
@@ -79,7 +81,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationDiscussionComment SecretScanningLocationDiscussionComment { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationDiscussionTitle</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationDiscussionTitle"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationDiscussionTitle? SecretScanningLocationDiscussionTitle { get; set; }
@@ -87,7 +89,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationDiscussionTitle SecretScanningLocationDiscussionTitle { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationIssueBody</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationIssueBody"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationIssueBody? SecretScanningLocationIssueBody { get; set; }
@@ -95,7 +97,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationIssueBody SecretScanningLocationIssueBody { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationIssueComment</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationIssueComment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationIssueComment? SecretScanningLocationIssueComment { get; set; }
@@ -103,7 +105,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationIssueComment SecretScanningLocationIssueComment { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationIssueTitle</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationIssueTitle"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationIssueTitle? SecretScanningLocationIssueTitle { get; set; }
@@ -111,7 +113,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationIssueTitle SecretScanningLocationIssueTitle { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationPullRequestBody</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationPullRequestBody"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationPullRequestBody? SecretScanningLocationPullRequestBody { get; set; }
@@ -119,7 +121,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationPullRequestBody SecretScanningLocationPullRequestBody { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationPullRequestComment</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationPullRequestComment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationPullRequestComment? SecretScanningLocationPullRequestComment { get; set; }
@@ -127,7 +129,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationPullRequestComment SecretScanningLocationPullRequestComment { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationPullRequestReview</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationPullRequestReview"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationPullRequestReview? SecretScanningLocationPullRequestReview { get; set; }
@@ -135,7 +137,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationPullRequestReview SecretScanningLocationPullRequestReview { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationPullRequestReviewComment</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationPullRequestReviewComment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationPullRequestReviewComment? SecretScanningLocationPullRequestReviewComment { get; set; }
@@ -143,7 +145,7 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationPullRequestReviewComment SecretScanningLocationPullRequestReviewComment { get; set; }
 #endif
-            /// <summary>Composed type representation for type secretScanningLocationPullRequestTitle</summary>
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationPullRequestTitle"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public GitHub.Models.SecretScanningLocationPullRequestTitle? SecretScanningLocationPullRequestTitle { get; set; }
@@ -154,6 +156,7 @@ namespace GitHub.Models {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="SecretScanningLocation_details"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static SecretScanningLocation_details CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -200,6 +203,7 @@ namespace GitHub.Models {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 if(SecretScanningLocationCommit != null) {
                     return SecretScanningLocationCommit.GetFieldDeserializers();

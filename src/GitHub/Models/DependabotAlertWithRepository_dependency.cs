@@ -30,7 +30,7 @@ namespace GitHub.Models {
         /// <summary>The execution scope of the vulnerable dependency.</summary>
         public DependabotAlertWithRepository_dependency_scope? Scope { get; private set; }
         /// <summary>
-        /// Instantiates a new dependabotAlertWithRepository_dependency and sets the default values.
+        /// Instantiates a new <see cref="DependabotAlertWithRepository_dependency"/> and sets the default values.
         /// </summary>
         public DependabotAlertWithRepository_dependency() {
             AdditionalData = new Dictionary<string, object>();
@@ -38,6 +38,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="DependabotAlertWithRepository_dependency"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DependabotAlertWithRepository_dependency CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -46,6 +47,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"manifest_path", n => { ManifestPath = n.GetStringValue(); } },

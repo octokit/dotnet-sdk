@@ -16,20 +16,21 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces {
     public class CodespacesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.orgs.item.members.item.codespaces.item collection</summary>
         /// <param name="position">The name of the codespace.</param>
+        /// <returns>A <see cref="WithCodespace_nameItemRequestBuilder"/></returns>
         public WithCodespace_nameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("codespace_name", position);
             return new WithCodespace_nameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new CodespacesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CodespacesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CodespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/members/{username}/codespaces{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new CodespacesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="CodespacesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,8 +40,13 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces {
         /// Lists the codespaces that a member of an organization has for repositories in that organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/organizations#list-codespaces-for-a-user-in-organization" />
         /// </summary>
+        /// <returns>A <see cref="CodespacesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<CodespacesGetResponse?> GetAsync(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -60,6 +66,7 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces {
         /// <summary>
         /// Lists the codespaces that a member of an organization has for repositories in that organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +83,7 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="CodespacesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public CodespacesRequestBuilder WithUrl(string rawUrl) {
             return new CodespacesRequestBuilder(rawUrl, RequestAdapter);

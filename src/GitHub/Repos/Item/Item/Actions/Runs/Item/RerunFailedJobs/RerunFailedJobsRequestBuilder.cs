@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.RerunFailedJobs {
     /// </summary>
     public class RerunFailedJobsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new RerunFailedJobsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RerunFailedJobsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RerunFailedJobsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}/rerun-failed-jobs", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RerunFailedJobsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RerunFailedJobsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.RerunFailedJobs {
         /// Re-run all of the failed jobs and their dependent jobs in a workflow run using the `id` of the workflow run.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/actions/workflow-runs#re-run-failed-jobs-from-a-workflow-run" />
         /// </summary>
+        /// <returns>A <see cref="EmptyObject"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -48,6 +49,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.RerunFailedJobs {
         /// <summary>
         /// Re-run all of the failed jobs and their dependent jobs in a workflow run using the `id` of the workflow run.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,6 +69,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.RerunFailedJobs {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="RerunFailedJobsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RerunFailedJobsRequestBuilder WithUrl(string rawUrl) {
             return new RerunFailedJobsRequestBuilder(rawUrl, RequestAdapter);

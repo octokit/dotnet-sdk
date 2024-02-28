@@ -16,20 +16,21 @@ namespace GitHub.Licenses {
     public class LicensesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.licenses.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="WithLicenseItemRequestBuilder"/></returns>
         public WithLicenseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("license", position);
             return new WithLicenseItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new LicensesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LicensesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public LicensesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/licenses{?featured*,page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new LicensesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="LicensesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,6 +40,7 @@ namespace GitHub.Licenses {
         /// Lists the most commonly used licenses on GitHub. For more information, see &quot;[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/licenses/licenses#get-all-commonly-used-licenses" />
         /// </summary>
+        /// <returns>A List&lt;LicenseSimple&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +57,7 @@ namespace GitHub.Licenses {
         /// <summary>
         /// Lists the most commonly used licenses on GitHub. For more information, see &quot;[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).&quot;
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +74,7 @@ namespace GitHub.Licenses {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="LicensesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public LicensesRequestBuilder WithUrl(string rawUrl) {
             return new LicensesRequestBuilder(rawUrl, RequestAdapter);

@@ -17,7 +17,7 @@ namespace GitHub.Models {
         public TopicSearchResultItem_related_topic_relation TopicRelation { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new topicSearchResultItem_related and sets the default values.
+        /// Instantiates a new <see cref="TopicSearchResultItem_related"/> and sets the default values.
         /// </summary>
         public TopicSearchResultItem_related() {
             AdditionalData = new Dictionary<string, object>();
@@ -25,6 +25,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="TopicSearchResultItem_related"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static TopicSearchResultItem_related CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -33,6 +34,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"topic_relation", n => { TopicRelation = n.GetObjectValue<TopicSearchResultItem_related_topic_relation>(TopicSearchResultItem_related_topic_relation.CreateFromDiscriminatorValue); } },

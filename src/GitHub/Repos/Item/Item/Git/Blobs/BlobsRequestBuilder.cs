@@ -16,20 +16,21 @@ namespace GitHub.Repos.Item.Item.Git.Blobs {
     public class BlobsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.git.blobs.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="WithFile_shaItemRequestBuilder"/></returns>
         public WithFile_shaItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("file_sha", position);
             return new WithFile_shaItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new BlobsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="BlobsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public BlobsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/git/blobs", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new BlobsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="BlobsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,9 +40,14 @@ namespace GitHub.Repos.Item.Item.Git.Blobs {
         /// Create a blob
         /// API method documentation <see href="https://docs.github.com/rest/git/blobs#create-a-blob" />
         /// </summary>
+        /// <returns>A <see cref="ShortBlob"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 409 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<ShortBlob?> PostAsync(BlobsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -59,6 +65,7 @@ namespace GitHub.Repos.Item.Item.Git.Blobs {
             };
             return await RequestAdapter.SendAsync<ShortBlob>(requestInfo, ShortBlob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,6 +85,7 @@ namespace GitHub.Repos.Item.Item.Git.Blobs {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="BlobsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public BlobsRequestBuilder WithUrl(string rawUrl) {
             return new BlobsRequestBuilder(rawUrl, RequestAdapter);

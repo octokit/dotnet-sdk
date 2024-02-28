@@ -48,7 +48,7 @@ namespace GitHub.Models {
         /// <summary>Whether the repository is private.</summary>
         public bool? Private { get; set; }
         /// <summary>
-        /// Instantiates a new simpleClassroomRepository and sets the default values.
+        /// Instantiates a new <see cref="SimpleClassroomRepository"/> and sets the default values.
         /// </summary>
         public SimpleClassroomRepository() {
             AdditionalData = new Dictionary<string, object>();
@@ -56,6 +56,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="SimpleClassroomRepository"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static SimpleClassroomRepository CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -64,6 +65,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"default_branch", n => { DefaultBranch = n.GetStringValue(); } },

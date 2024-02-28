@@ -17,7 +17,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_teams {
         public List<string> SelectedTeams { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new selected_teamsPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="Selected_teamsPostRequestBody"/> and sets the default values.
         /// </summary>
         public Selected_teamsPostRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -25,6 +25,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_teams {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="Selected_teamsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Selected_teamsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -33,6 +34,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_teams {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"selected_teams", n => { SelectedTeams = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },

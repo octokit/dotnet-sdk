@@ -7,10 +7,10 @@ using System.Linq;
 using System;
 namespace GitHub.Models {
     /// <summary>
-    /// Composed type wrapper for classes repositoryRuleBranchNamePattern, repositoryRuleCommitAuthorEmailPattern, repositoryRuleCommitMessagePattern, repositoryRuleCommitterEmailPattern, repositoryRuleCreation, repositoryRuleDeletion, repositoryRuleNonFastForward, repositoryRulePullRequest, repositoryRuleRequiredDeployments, repositoryRuleRequiredLinearHistory, repositoryRuleRequiredSignatures, repositoryRuleRequiredStatusChecks, repositoryRuleTagNamePattern, repositoryRuleUpdate, repositoryRuleWorkflows
+    /// Composed type wrapper for classes <see cref="RepositoryRuleBranchNamePattern"/>, <see cref="RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="RepositoryRuleCommitMessagePattern"/>, <see cref="RepositoryRuleCommitterEmailPattern"/>, <see cref="RepositoryRuleCreation"/>, <see cref="RepositoryRuleDeletion"/>, <see cref="RepositoryRuleNonFastForward"/>, <see cref="RepositoryRulePullRequest"/>, <see cref="RepositoryRuleRequiredDeployments"/>, <see cref="RepositoryRuleRequiredLinearHistory"/>, <see cref="RepositoryRuleRequiredSignatures"/>, <see cref="RepositoryRuleRequiredStatusChecks"/>, <see cref="RepositoryRuleTagNamePattern"/>, <see cref="RepositoryRuleUpdate"/>, <see cref="RepositoryRuleWorkflows"/>
     /// </summary>
     public class RepositoryRule : IComposedTypeWrapper, IParsable {
-        /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleBranchNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleBranchNamePattern? RepositoryRuleBranchNamePattern { get; set; }
@@ -18,7 +18,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleBranchNamePattern RepositoryRuleBranchNamePattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitAuthorEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleCommitAuthorEmailPattern { get; set; }
@@ -26,7 +26,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleCommitAuthorEmailPattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitMessagePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleCommitMessagePattern { get; set; }
@@ -34,7 +34,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitMessagePattern RepositoryRuleCommitMessagePattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitterEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleCommitterEmailPattern { get; set; }
@@ -42,7 +42,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleCommitterEmailPattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCreation</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCreation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCreation? RepositoryRuleCreation { get; set; }
@@ -50,7 +50,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCreation RepositoryRuleCreation { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleDeletion"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleDeletion? RepositoryRuleDeletion { get; set; }
@@ -58,7 +58,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleDeletion RepositoryRuleDeletion { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleNonFastForward"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleNonFastForward? RepositoryRuleNonFastForward { get; set; }
@@ -66,7 +66,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleNonFastForward RepositoryRuleNonFastForward { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRulePullRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRulePullRequest? RepositoryRulePullRequest { get; set; }
@@ -74,7 +74,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRulePullRequest RepositoryRulePullRequest { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleBranchNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern { get; set; }
@@ -82,7 +82,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleBranchNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern0 { get; set; }
@@ -90,7 +90,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleBranchNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern1 { get; set; }
@@ -98,7 +98,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleBranchNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleBranchNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleBranchNamePattern? RepositoryRuleRepositoryRuleBranchNamePattern2 { get; set; }
@@ -106,7 +106,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitAuthorEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern { get; set; }
@@ -114,7 +114,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitAuthorEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 { get; set; }
@@ -122,7 +122,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitAuthorEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 { get; set; }
@@ -130,7 +130,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitAuthorEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitAuthorEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern? RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 { get; set; }
@@ -138,7 +138,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitAuthorEmailPattern RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitMessagePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern { get; set; }
@@ -146,7 +146,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitMessagePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern0 { get; set; }
@@ -154,7 +154,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitMessagePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern1 { get; set; }
@@ -162,7 +162,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitMessagePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitMessagePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitMessagePattern? RepositoryRuleRepositoryRuleCommitMessagePattern2 { get; set; }
@@ -170,7 +170,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitMessagePattern RepositoryRuleRepositoryRuleCommitMessagePattern2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitterEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern { get; set; }
@@ -178,7 +178,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitterEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern0 { get; set; }
@@ -186,7 +186,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitterEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern1 { get; set; }
@@ -194,7 +194,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCommitterEmailPattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitterEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCommitterEmailPattern? RepositoryRuleRepositoryRuleCommitterEmailPattern2 { get; set; }
@@ -202,7 +202,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCommitterEmailPattern RepositoryRuleRepositoryRuleCommitterEmailPattern2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCreation</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCreation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation { get; set; }
@@ -210,7 +210,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCreation</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCreation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation0 { get; set; }
@@ -218,7 +218,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCreation</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCreation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation1 { get; set; }
@@ -226,7 +226,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleCreation</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCreation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleCreation? RepositoryRuleRepositoryRuleCreation2 { get; set; }
@@ -234,7 +234,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleCreation RepositoryRuleRepositoryRuleCreation2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleDeletion"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion { get; set; }
@@ -242,7 +242,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleDeletion"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion0 { get; set; }
@@ -250,7 +250,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleDeletion"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion1 { get; set; }
@@ -258,7 +258,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleDeletion</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleDeletion"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleDeletion? RepositoryRuleRepositoryRuleDeletion2 { get; set; }
@@ -266,7 +266,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleNonFastForward"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward { get; set; }
@@ -274,7 +274,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleNonFastForward"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward0 { get; set; }
@@ -282,7 +282,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleNonFastForward"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward1 { get; set; }
@@ -290,7 +290,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleNonFastForward</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleNonFastForward"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleNonFastForward? RepositoryRuleRepositoryRuleNonFastForward2 { get; set; }
@@ -298,7 +298,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleNonFastForward RepositoryRuleRepositoryRuleNonFastForward2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRulePullRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest { get; set; }
@@ -306,7 +306,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRulePullRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest0 { get; set; }
@@ -314,7 +314,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRulePullRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest1 { get; set; }
@@ -322,7 +322,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRulePullRequest</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRulePullRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRulePullRequest? RepositoryRuleRepositoryRulePullRequest2 { get; set; }
@@ -330,7 +330,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRulePullRequest RepositoryRuleRepositoryRulePullRequest2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredDeployments"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments { get; set; }
@@ -338,7 +338,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredDeployments"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments0 { get; set; }
@@ -346,7 +346,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredDeployments"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments1 { get; set; }
@@ -354,7 +354,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredDeployments"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRepositoryRuleRequiredDeployments2 { get; set; }
@@ -362,7 +362,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredDeployments RepositoryRuleRepositoryRuleRequiredDeployments2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredLinearHistory"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory { get; set; }
@@ -370,7 +370,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredLinearHistory"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory0 { get; set; }
@@ -378,7 +378,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredLinearHistory"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory1 { get; set; }
@@ -386,7 +386,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredLinearHistory"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRepositoryRuleRequiredLinearHistory2 { get; set; }
@@ -394,7 +394,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRepositoryRuleRequiredLinearHistory2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredSignatures"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures { get; set; }
@@ -402,7 +402,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredSignatures"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures0 { get; set; }
@@ -410,7 +410,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredSignatures"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures1 { get; set; }
@@ -418,7 +418,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredSignatures"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRepositoryRuleRequiredSignatures2 { get; set; }
@@ -426,7 +426,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredSignatures RepositoryRuleRepositoryRuleRequiredSignatures2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredStatusChecks"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks { get; set; }
@@ -434,7 +434,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredStatusChecks"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks0 { get; set; }
@@ -442,7 +442,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredStatusChecks"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks1 { get; set; }
@@ -450,7 +450,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredStatusChecks"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRepositoryRuleRequiredStatusChecks2 { get; set; }
@@ -458,7 +458,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRepositoryRuleRequiredStatusChecks2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleTagNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern { get; set; }
@@ -466,7 +466,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleTagNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern0 { get; set; }
@@ -474,7 +474,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleTagNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern1 { get; set; }
@@ -482,7 +482,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleTagNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleTagNamePattern? RepositoryRuleRepositoryRuleTagNamePattern2 { get; set; }
@@ -490,7 +490,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleTagNamePattern RepositoryRuleRepositoryRuleTagNamePattern2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleUpdate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate { get; set; }
@@ -498,7 +498,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleUpdate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate0 { get; set; }
@@ -506,7 +506,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleUpdate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate1 { get; set; }
@@ -514,7 +514,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleUpdate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleUpdate? RepositoryRuleRepositoryRuleUpdate2 { get; set; }
@@ -522,7 +522,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleUpdate RepositoryRuleRepositoryRuleUpdate2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleWorkflows"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows { get; set; }
@@ -530,7 +530,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleWorkflows"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows0 { get; set; }
@@ -538,7 +538,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows0 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleWorkflows"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows1 { get; set; }
@@ -546,7 +546,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleWorkflows"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleWorkflows? RepositoryRuleRepositoryRuleWorkflows2 { get; set; }
@@ -554,7 +554,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleWorkflows RepositoryRuleRepositoryRuleWorkflows2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredDeployments</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredDeployments"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredDeployments? RepositoryRuleRequiredDeployments { get; set; }
@@ -562,7 +562,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredDeployments RepositoryRuleRequiredDeployments { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredLinearHistory</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredLinearHistory"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredLinearHistory? RepositoryRuleRequiredLinearHistory { get; set; }
@@ -570,7 +570,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredLinearHistory RepositoryRuleRequiredLinearHistory { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredSignatures</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredSignatures"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredSignatures? RepositoryRuleRequiredSignatures { get; set; }
@@ -578,7 +578,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredSignatures RepositoryRuleRequiredSignatures { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleRequiredStatusChecks</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleRequiredStatusChecks"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleRequiredStatusChecks? RepositoryRuleRequiredStatusChecks { get; set; }
@@ -586,7 +586,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleRequiredStatusChecks RepositoryRuleRequiredStatusChecks { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleTagNamePattern</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleTagNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleTagNamePattern? RepositoryRuleTagNamePattern { get; set; }
@@ -594,7 +594,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleTagNamePattern RepositoryRuleTagNamePattern { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleUpdate</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleUpdate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleUpdate? RepositoryRuleUpdate { get; set; }
@@ -602,7 +602,7 @@ namespace GitHub.Models {
 #else
         public GitHub.Models.RepositoryRuleUpdate RepositoryRuleUpdate { get; set; }
 #endif
-        /// <summary>Composed type representation for type repositoryRuleWorkflows</summary>
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleWorkflows"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public GitHub.Models.RepositoryRuleWorkflows? RepositoryRuleWorkflows { get; set; }
@@ -613,6 +613,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="RepositoryRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static RepositoryRule CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -848,6 +849,7 @@ namespace GitHub.Models {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             if(RepositoryRuleBranchNamePattern != null) {
                 return RepositoryRuleBranchNamePattern.GetFieldDeserializers();

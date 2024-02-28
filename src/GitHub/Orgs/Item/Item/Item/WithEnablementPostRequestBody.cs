@@ -11,7 +11,7 @@ namespace GitHub.Orgs.Item.Item.Item {
         /// <summary>CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn&apos;t have default setup already configured. It will not change the query suite on repositories that already have default setup configured.If you don&apos;t specify any `query_suite` in your request, the preferred query suite of the organization will be applied.</summary>
         public WithEnablementPostRequestBody_query_suite? QuerySuite { get; set; }
         /// <summary>
-        /// Instantiates a new WithEnablementPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="WithEnablementPostRequestBody"/> and sets the default values.
         /// </summary>
         public WithEnablementPostRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -19,6 +19,7 @@ namespace GitHub.Orgs.Item.Item.Item {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="WithEnablementPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static WithEnablementPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -27,6 +28,7 @@ namespace GitHub.Orgs.Item.Item.Item {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"query_suite", n => { QuerySuite = n.GetEnumValue<WithEnablementPostRequestBody_query_suite>(); } },

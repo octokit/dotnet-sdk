@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Teams.Item.Teams {
     /// </summary>
     public class TeamsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new TeamsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/teams/{team_slug}/teams{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TeamsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Teams {
         /// Lists the child teams of the team specified by `{team_slug}`.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#list-child-teams" />
         /// </summary>
+        /// <returns>A List&lt;Team&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +48,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Teams {
         /// <summary>
         /// Lists the child teams of the team specified by `{team_slug}`.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +65,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Teams {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="TeamsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public TeamsRequestBuilder WithUrl(string rawUrl) {
             return new TeamsRequestBuilder(rawUrl, RequestAdapter);

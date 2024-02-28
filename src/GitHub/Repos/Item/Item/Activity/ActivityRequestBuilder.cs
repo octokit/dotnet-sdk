@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Activity {
     /// </summary>
     public class ActivityRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ActivityRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ActivityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ActivityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/activity{?activity_type*,actor*,after*,before*,direction*,per_page*,ref*,time_period*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ActivityRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ActivityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,10 @@ namespace GitHub.Repos.Item.Item.Activity {
         /// Lists a detailed history of changes to a repository, such as pushes, merges, force pushes, and branch changes, and associates these changes with commits and users.For more information about viewing repository activity,see &quot;[Viewing activity and data for your repository](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/repos/repos#list-repository-activities" />
         /// </summary>
+        /// <returns>A List&lt;GitHub.Models.Activity&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<GitHub.Models.Activity>?> GetAsync(Action<RequestConfiguration<ActivityRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -50,6 +52,7 @@ namespace GitHub.Repos.Item.Item.Activity {
         /// <summary>
         /// Lists a detailed history of changes to a repository, such as pushes, merges, force pushes, and branch changes, and associates these changes with commits and users.For more information about viewing repository activity,see &quot;[Viewing activity and data for your repository](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository).&quot;
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +69,7 @@ namespace GitHub.Repos.Item.Item.Activity {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ActivityRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ActivityRequestBuilder WithUrl(string rawUrl) {
             return new ActivityRequestBuilder(rawUrl, RequestAdapter);

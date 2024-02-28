@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.Hooks.Item.Config {
     /// </summary>
     public class ConfigRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new ConfigRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ConfigRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ConfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/config", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ConfigRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ConfigRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Config {
         /// Returns the webhook configuration for an organization. To get more information about the webhook, including the `active` state and `events`, use &quot;[Get an organization webhook ](/rest/orgs/webhooks#get-an-organization-webhook).&quot;OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization" />
         /// </summary>
+        /// <returns>A <see cref="WebhookConfig"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +48,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Config {
         /// Updates the webhook configuration for an organization. To update more information about the webhook, including the `active` state and `events`, use &quot;[Update an organization webhook ](/rest/orgs/webhooks#update-an-organization-webhook).&quot;OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization" />
         /// </summary>
+        /// <returns>A <see cref="WebhookConfig"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,6 +66,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Config {
         /// <summary>
         /// Returns the webhook configuration for an organization. To get more information about the webhook, including the `active` state and `events`, use &quot;[Get an organization webhook ](/rest/orgs/webhooks#get-an-organization-webhook).&quot;OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +83,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Config {
         /// <summary>
         /// Updates the webhook configuration for an organization. To update more information about the webhook, including the `active` state and `events`, use &quot;[Update an organization webhook ](/rest/orgs/webhooks#update-an-organization-webhook).&quot;OAuth app tokens and personal access tokens (classic) need the `admin:org_hook` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,6 +103,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Config {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ConfigRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ConfigRequestBuilder WithUrl(string rawUrl) {
             return new ConfigRequestBuilder(rawUrl, RequestAdapter);

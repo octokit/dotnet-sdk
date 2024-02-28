@@ -14,14 +14,14 @@ namespace GitHub.Repos.Item.Item.Stargazers {
     /// </summary>
     public class StargazersRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new StargazersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="StargazersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public StargazersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/stargazers{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new StargazersRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="StargazersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,10 @@ namespace GitHub.Repos.Item.Item.Stargazers {
         /// Lists the people that have starred the repository.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
         /// API method documentation <see href="https://docs.github.com/rest/activity/starring#list-stargazers" />
         /// </summary>
+        /// <returns>A <see cref="StargazersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<StargazersGetResponse?> GetAsync(Action<RequestConfiguration<StargazersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -49,6 +51,7 @@ namespace GitHub.Repos.Item.Item.Stargazers {
         /// <summary>
         /// Lists the people that have starred the repository.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,15 +68,16 @@ namespace GitHub.Repos.Item.Item.Stargazers {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="StargazersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public StargazersRequestBuilder WithUrl(string rawUrl) {
             return new StargazersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes simpleUser, stargazer
+        /// Composed type wrapper for classes List&lt;SimpleUser&gt;, List&lt;Stargazer&gt;
         /// </summary>
         public class StargazersGetResponse : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type simpleUser</summary>
+            /// <summary>Composed type representation for type List&lt;GitHub.Repos.Item.Item.Stargazers.SimpleUser&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public List<GitHub.Repos.Item.Item.Stargazers.SimpleUser>? SimpleUser { get; set; }
@@ -81,7 +85,7 @@ namespace GitHub.Repos.Item.Item.Stargazers {
 #else
             public List<GitHub.Repos.Item.Item.Stargazers.SimpleUser> SimpleUser { get; set; }
 #endif
-            /// <summary>Composed type representation for type stargazer</summary>
+            /// <summary>Composed type representation for type List&lt;GitHub.Repos.Item.Item.Stargazers.Stargazer&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public List<GitHub.Repos.Item.Item.Stargazers.Stargazer>? Stargazer { get; set; }
@@ -92,6 +96,7 @@ namespace GitHub.Repos.Item.Item.Stargazers {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="StargazersGetResponse"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static StargazersGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -107,6 +112,7 @@ namespace GitHub.Repos.Item.Item.Stargazers {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 return new Dictionary<string, Action<IParseNode>>();
             }

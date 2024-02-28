@@ -21,14 +21,14 @@ namespace GitHub.Repositories.Item.Environments.Item {
             new VariablesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithEnvironment_nameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithEnvironment_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithEnvironment_nameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repositories/{repository_id}/environments/{environment_name}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithEnvironment_nameItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithEnvironment_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

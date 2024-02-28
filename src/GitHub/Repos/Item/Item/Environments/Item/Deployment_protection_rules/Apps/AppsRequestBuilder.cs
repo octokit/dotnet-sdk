@@ -13,14 +13,14 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.A
     /// </summary>
     public class AppsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new AppsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public AppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}/deployment_protection_rules/apps{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new AppsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="AppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.A
         /// Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint.For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see &quot;[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)&quot;.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/deployments/protection-rules#list-custom-deployment-rule-integrations-available-for-an-environment" />
         /// </summary>
+        /// <returns>A <see cref="AppsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +46,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.A
         /// <summary>
         /// Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint.For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see &quot;[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)&quot;.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.A
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="AppsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public AppsRequestBuilder WithUrl(string rawUrl) {
             return new AppsRequestBuilder(rawUrl, RequestAdapter);

@@ -33,7 +33,7 @@ namespace GitHub.Gists {
         public GistsPostRequestBody_public Public { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new gistsPostRequestBody and sets the default values.
+        /// Instantiates a new <see cref="GistsPostRequestBody"/> and sets the default values.
         /// </summary>
         public GistsPostRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -41,6 +41,7 @@ namespace GitHub.Gists {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="GistsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static GistsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -49,6 +50,7 @@ namespace GitHub.Gists {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"description", n => { Description = n.GetStringValue(); } },
@@ -68,12 +70,12 @@ namespace GitHub.Gists {
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes boolean, string
+        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="string"/>
         /// </summary>
         public class GistsPostRequestBody_public : IComposedTypeWrapper, IParsable {
-            /// <summary>Composed type representation for type boolean</summary>
+            /// <summary>Composed type representation for type <see cref="bool"/></summary>
             public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type string</summary>
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public string? String { get; set; }
@@ -84,6 +86,7 @@ namespace GitHub.Gists {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
+            /// <returns>A <see cref="GistsPostRequestBody_public"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static GistsPostRequestBody_public CreateFromDiscriminatorValue(IParseNode parseNode) {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -100,6 +103,7 @@ namespace GitHub.Gists {
             /// <summary>
             /// The deserialization information for the current model
             /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
                 return new Dictionary<string, Action<IParseNode>>();
             }

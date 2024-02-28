@@ -13,14 +13,14 @@ namespace GitHub.Users.Item.Following.Item {
     /// </summary>
     public class WithTarget_userItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new WithTarget_userItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithTarget_userItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithTarget_userItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/following/{target_user}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithTarget_userItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithTarget_userItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -42,6 +42,7 @@ namespace GitHub.Users.Item.Following.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +58,7 @@ namespace GitHub.Users.Item.Following.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithTarget_userItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithTarget_userItemRequestBuilder WithUrl(string rawUrl) {
             return new WithTarget_userItemRequestBuilder(rawUrl, RequestAdapter);

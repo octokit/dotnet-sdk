@@ -16,20 +16,21 @@ namespace GitHub.Classrooms {
     public class ClassroomsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.classrooms.item collection</summary>
         /// <param name="position">The unique identifier of the classroom.</param>
+        /// <returns>A <see cref="WithClassroom_ItemRequestBuilder"/></returns>
         public WithClassroom_ItemRequestBuilder this[int position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("classroom_id", position);
             return new WithClassroom_ItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new ClassroomsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ClassroomsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ClassroomsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/classrooms{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new ClassroomsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="ClassroomsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,6 +40,7 @@ namespace GitHub.Classrooms {
         /// Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
         /// API method documentation <see href="https://docs.github.com/rest/classroom/classroom#list-classrooms" />
         /// </summary>
+        /// <returns>A List&lt;SimpleClassroom&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,6 +57,7 @@ namespace GitHub.Classrooms {
         /// <summary>
         /// Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +74,7 @@ namespace GitHub.Classrooms {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="ClassroomsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public ClassroomsRequestBuilder WithUrl(string rawUrl) {
             return new ClassroomsRequestBuilder(rawUrl, RequestAdapter);

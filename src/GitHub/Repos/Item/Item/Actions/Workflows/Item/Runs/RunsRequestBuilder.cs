@@ -13,14 +13,14 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
     /// </summary>
     public class RunsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new RunsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RunsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new RunsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="RunsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -30,6 +30,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
         /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow" />
         /// </summary>
+        /// <returns>A <see cref="RunsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,6 +46,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
         /// <summary>
         /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +63,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="RunsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public RunsRequestBuilder WithUrl(string rawUrl) {
             return new RunsRequestBuilder(rawUrl, RequestAdapter);

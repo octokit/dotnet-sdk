@@ -14,14 +14,14 @@ namespace GitHub.Orgs.Item.OrganizationFineGrainedPermissions {
     /// </summary>
     public class OrganizationFineGrainedPermissionsRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new OrganizationFineGrainedPermissionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="OrganizationFineGrainedPermissionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public OrganizationFineGrainedPermissionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/organization-fine-grained-permissions", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new OrganizationFineGrainedPermissionsRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="OrganizationFineGrainedPermissionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,8 +31,11 @@ namespace GitHub.Orgs.Item.OrganizationFineGrainedPermissions {
         /// Lists the fine-grained permissions that can be used in custom organization roles for an organization. For more information, see &quot;[Managing people&apos;s access to your organization with roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles).&quot;To list the fine-grained permissions that can be used in custom repository roles for an organization, see &quot;[List repository fine-grained permissions for an organization](https://docs.github.com/rest/orgs/organization-roles#list-repository-fine-grained-permissions-for-an-organization).&quot;To use this endpoint, the authenticated user must be one of:- An administrator for the organization.- A user, or a user on a team, with the fine-grained permissions of `read_organization_custom_org_role` in the organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/organization-roles#list-organization-fine-grained-permissions-for-an-organization" />
         /// </summary>
+        /// <returns>A List&lt;OrganizationFineGrainedPermission&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<OrganizationFineGrainedPermission>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -51,6 +54,7 @@ namespace GitHub.Orgs.Item.OrganizationFineGrainedPermissions {
         /// <summary>
         /// Lists the fine-grained permissions that can be used in custom organization roles for an organization. For more information, see &quot;[Managing people&apos;s access to your organization with roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles).&quot;To list the fine-grained permissions that can be used in custom repository roles for an organization, see &quot;[List repository fine-grained permissions for an organization](https://docs.github.com/rest/orgs/organization-roles#list-repository-fine-grained-permissions-for-an-organization).&quot;To use this endpoint, the authenticated user must be one of:- An administrator for the organization.- A user, or a user on a team, with the fine-grained permissions of `read_organization_custom_org_role` in the organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +71,7 @@ namespace GitHub.Orgs.Item.OrganizationFineGrainedPermissions {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="OrganizationFineGrainedPermissionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public OrganizationFineGrainedPermissionsRequestBuilder WithUrl(string rawUrl) {
             return new OrganizationFineGrainedPermissionsRequestBuilder(rawUrl, RequestAdapter);

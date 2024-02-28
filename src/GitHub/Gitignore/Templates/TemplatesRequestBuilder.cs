@@ -15,20 +15,21 @@ namespace GitHub.Gitignore.Templates {
     public class TemplatesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.gitignore.templates.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="WithNameItemRequestBuilder"/></returns>
         public WithNameItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("name", position);
             return new WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
-        /// Instantiates a new TemplatesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public TemplatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/gitignore/templates", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new TemplatesRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="TemplatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,6 +39,7 @@ namespace GitHub.Gitignore.Templates {
         /// List all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
         /// API method documentation <see href="https://docs.github.com/rest/gitignore/gitignore#get-all-gitignore-templates" />
         /// </summary>
+        /// <returns>A List&lt;string&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,6 +56,7 @@ namespace GitHub.Gitignore.Templates {
         /// <summary>
         /// List all templates available to pass as an option when [creating a repository](https://docs.github.com/rest/repos/repos#create-a-repository-for-the-authenticated-user).
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +73,7 @@ namespace GitHub.Gitignore.Templates {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="TemplatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public TemplatesRequestBuilder WithUrl(string rawUrl) {
             return new TemplatesRequestBuilder(rawUrl, RequestAdapter);

@@ -24,14 +24,14 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
             new ReactionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithRelease_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRelease_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithRelease_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/{release_id}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithRelease_ItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithRelease_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,6 +57,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// Gets a public release with the specified release ID.**Note:** This returns an `upload_url` key corresponding to the endpointfor uploading release assets. This key is a hypermedia resource. For more information, see&quot;[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/releases/releases#get-a-release" />
         /// </summary>
+        /// <returns>A <see cref="Release"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,9 +74,11 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// Users with push access to the repository can edit a release.
         /// API method documentation <see href="https://docs.github.com/rest/releases/releases#update-a-release" />
         /// </summary>
+        /// <returns>A <see cref="Release"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Release?> PatchAsync(WithRelease_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -93,6 +96,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// <summary>
         /// Users with push access to the repository can delete a release.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +112,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// <summary>
         /// Gets a public release with the specified release ID.**Note:** This returns an `upload_url` key corresponding to the endpointfor uploading release assets. This key is a hypermedia resource. For more information, see&quot;[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia).&quot;
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +129,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// <summary>
         /// Users with push access to the repository can edit a release.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,6 +149,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="WithRelease_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public WithRelease_ItemRequestBuilder WithUrl(string rawUrl) {
             return new WithRelease_ItemRequestBuilder(rawUrl, RequestAdapter);

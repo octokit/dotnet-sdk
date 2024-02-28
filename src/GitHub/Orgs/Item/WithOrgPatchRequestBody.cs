@@ -121,7 +121,7 @@ namespace GitHub.Orgs.Item {
         /// <summary>Whether contributors to organization repositories are required to sign off on commits they make through GitHub&apos;s web interface.</summary>
         public bool? WebCommitSignoffRequired { get; set; }
         /// <summary>
-        /// Instantiates a new WithOrgPatchRequestBody and sets the default values.
+        /// Instantiates a new <see cref="WithOrgPatchRequestBody"/> and sets the default values.
         /// </summary>
         public WithOrgPatchRequestBody() {
             AdditionalData = new Dictionary<string, object>();
@@ -130,6 +130,7 @@ namespace GitHub.Orgs.Item {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
+        /// <returns>A <see cref="WithOrgPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static WithOrgPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
@@ -138,6 +139,7 @@ namespace GitHub.Orgs.Item {
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
+        /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"advanced_security_enabled_for_new_repositories", n => { AdvancedSecurityEnabledForNewRepositories = n.GetBoolValue(); } },

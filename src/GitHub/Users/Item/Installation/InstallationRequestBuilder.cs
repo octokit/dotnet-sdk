@@ -14,14 +14,14 @@ namespace GitHub.Users.Item.Installation {
     /// </summary>
     public class InstallationRequestBuilder : BaseRequestBuilder {
         /// <summary>
-        /// Instantiates a new InstallationRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="InstallationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public InstallationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/installation", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new InstallationRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="InstallationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,6 +31,7 @@ namespace GitHub.Users.Item.Installation {
         /// Enables an authenticated GitHub App to find the user’s installation information.You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/apps/apps#get-a-user-installation-for-the-authenticated-app" />
         /// </summary>
+        /// <returns>A <see cref="GitHub.Models.Installation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,6 +47,7 @@ namespace GitHub.Users.Item.Installation {
         /// <summary>
         /// Enables an authenticated GitHub App to find the user’s installation information.You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
         /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +64,7 @@ namespace GitHub.Users.Item.Installation {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
+        /// <returns>A <see cref="InstallationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         public InstallationRequestBuilder WithUrl(string rawUrl) {
             return new InstallationRequestBuilder(rawUrl, RequestAdapter);

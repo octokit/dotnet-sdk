@@ -16,14 +16,14 @@ namespace GitHub.AppManifests.Item {
             new ConversionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new WithCodeItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithCodeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public WithCodeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app-manifests/{code}", pathParameters) {
         }
         /// <summary>
-        /// Instantiates a new WithCodeItemRequestBuilder and sets the default values.
+        /// Instantiates a new <see cref="WithCodeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
