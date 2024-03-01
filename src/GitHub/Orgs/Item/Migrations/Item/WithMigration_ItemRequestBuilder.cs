@@ -96,11 +96,11 @@ namespace GitHub.Orgs.Item.Migrations.Item {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("exclude")]
-            public string[]? Exclude { get; set; }
+            public GetExcludeQueryParameterType[]? Exclude { get; set; }
 #nullable restore
 #else
             [QueryParameter("exclude")]
-            public string[] Exclude { get; set; }
+            public GetExcludeQueryParameterType[] Exclude { get; set; }
 #endif
         }
     }

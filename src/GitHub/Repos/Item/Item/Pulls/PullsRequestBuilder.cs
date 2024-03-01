@@ -12,7 +12,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\pulls
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls
     /// </summary>
     public class PullsRequestBuilder : BaseRequestBuilder {
         /// <summary>The comments property</summary>
@@ -32,14 +32,14 @@ namespace GitHub.Repos.Item.Item.Pulls {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PullsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls{?base*,direction*,head*,page*,per_page*,sort*,state*}", pathParameters) {
+        public PullsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pulls{?base*,direction*,head*,page*,per_page*,sort*,state*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="PullsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PullsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls{?base*,direction*,head*,page*,per_page*,sort*,state*}", rawUrl) {
+        public PullsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pulls{?base*,direction*,head*,page*,per_page*,sort*,state*}", rawUrl) {
         }
         /// <summary>
         /// Lists pull requests in a specified repository.Draft pull requests are available in public repositories with GitHubFree and GitHub Free for organizations, GitHub Pro, and legacy per-repository billingplans, and in public and private repositories with GitHub Team and GitHub EnterpriseCloud. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products)in the GitHub Help documentation.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.- **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.- **`application/vnd.github.html+json`**: Returns HTML rendered from the body&apos;s markdown. Response will include `body_html`.- **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.- **`application/vnd.github.diff`**: For more information, see &quot;[git-diff](https://git-scm.com/docs/git-diff)&quot; in the Git documentation. If a diff is corrupt, contact us through the [GitHub Support portal](https://support.github.com/). Include the repository name and pull request ID in your message.- **`application/vnd.github.patch`**: For more information, see &quot;[git-format-patch](https://git-scm.com/docs/git-format-patch)&quot; in the Git documentation.
@@ -119,7 +119,7 @@ namespace GitHub.Repos.Item.Item.Pulls {
         public RequestInformation ToPostRequestInformation(PullsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pulls", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

@@ -23,7 +23,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\runs\{run_id}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}
     /// </summary>
     public class WithRun_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>The approvals property</summary>
@@ -83,14 +83,14 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRun_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}{?exclude_pull_requests*}", pathParameters) {
+        public WithRun_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}{?exclude_pull_requests*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRun_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRun_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}{?exclude_pull_requests*}", rawUrl) {
+        public WithRun_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}{?exclude_pull_requests*}", rawUrl) {
         }
         /// <summary>
         /// Deletes a specific workflow run.Anyone with write access to the repository can use this endpoint.If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -137,7 +137,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/runs/{run_id}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }

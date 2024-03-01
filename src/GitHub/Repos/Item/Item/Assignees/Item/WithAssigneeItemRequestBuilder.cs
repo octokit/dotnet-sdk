@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Assignees.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\assignees\{assignee}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\assignees\{assignee}
     /// </summary>
     public class WithAssigneeItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Assignees.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAssigneeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/assignees/{assignee}", pathParameters) {
+        public WithAssigneeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/assignees/{assignee}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithAssigneeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAssigneeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/assignees/{assignee}", rawUrl) {
+        public WithAssigneeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/assignees/{assignee}", rawUrl) {
         }
         /// <summary>
         /// Checks if a user has permission to be assigned to an issue in this repository.If the `assignee` can be assigned to issues in the repository, a `204` header with no content is returned.Otherwise a `404` status code is returned.

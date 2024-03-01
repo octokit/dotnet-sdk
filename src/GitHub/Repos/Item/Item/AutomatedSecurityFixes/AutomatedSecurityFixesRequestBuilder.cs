@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.AutomatedSecurityFixes {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\automated-security-fixes
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\automated-security-fixes
     /// </summary>
     public class AutomatedSecurityFixesRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.AutomatedSecurityFixes {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AutomatedSecurityFixesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/automated-security-fixes", pathParameters) {
+        public AutomatedSecurityFixesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/automated-security-fixes", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="AutomatedSecurityFixesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AutomatedSecurityFixesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/automated-security-fixes", rawUrl) {
+        public AutomatedSecurityFixesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/automated-security-fixes", rawUrl) {
         }
         /// <summary>
         /// Disables automated security fixes for a repository. The authenticated user must have admin access to the repository. For more information, see &quot;[Configuring automated security fixes](https://docs.github.com/articles/configuring-automated-security-fixes)&quot;.

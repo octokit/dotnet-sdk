@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.DependencyGraph.Compare.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\dependency-graph\compare\{basehead}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph\compare\{basehead}
     /// </summary>
     public class WithBaseheadItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Compare.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithBaseheadItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph/compare/{basehead}{?name*}", pathParameters) {
+        public WithBaseheadItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/dependency-graph/compare/{basehead}{?name*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithBaseheadItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithBaseheadItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/dependency-graph/compare/{basehead}{?name*}", rawUrl) {
+        public WithBaseheadItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/dependency-graph/compare/{basehead}{?name*}", rawUrl) {
         }
         /// <summary>
         /// Gets the diff of the dependency changes between two commits of a repository, based on the changes to the dependency manifests made in those commits.

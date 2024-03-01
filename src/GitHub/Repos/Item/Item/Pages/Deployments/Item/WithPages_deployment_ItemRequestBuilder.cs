@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Pages.Deployments.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\pages\deployments\{pages_deployment_id}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pages\deployments\{pages_deployment_id}
     /// </summary>
     public class WithPages_deployment_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>The cancel property</summary>
@@ -23,14 +23,14 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPages_deployment_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments/{pages_deployment_id}", pathParameters) {
+        public WithPages_deployment_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pages/deployments/{pages_deployment_id}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithPages_deployment_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPages_deployment_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments/{pages_deployment_id}", rawUrl) {
+        public WithPages_deployment_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pages/deployments/{pages_deployment_id}", rawUrl) {
         }
         /// <summary>
         /// Gets the current status of a GitHub Pages deployment.The authenticated user must have read permission for the GitHub Pages site.

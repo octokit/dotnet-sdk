@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Tags.Protection.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\tags\protection\{tag_protection_id}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\tags\protection\{tag_protection_id}
     /// </summary>
     public class WithTag_protection_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Tags.Protection.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTag_protection_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/tags/protection/{tag_protection_id}", pathParameters) {
+        public WithTag_protection_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/tags/protection/{tag_protection_id}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithTag_protection_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTag_protection_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/tags/protection/{tag_protection_id}", rawUrl) {
+        public WithTag_protection_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/tags/protection/{tag_protection_id}", rawUrl) {
         }
         /// <summary>
         /// This deletes a tag protection state for a repository.This endpoint is only available to repository administrators.

@@ -132,11 +132,11 @@ namespace GitHub.Orgs.Item.Migrations {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("exclude")]
-            public string[]? Exclude { get; set; }
+            public GetExcludeQueryParameterType[]? Exclude { get; set; }
 #nullable restore
 #else
             [QueryParameter("exclude")]
-            public string[] Exclude { get; set; }
+            public GetExcludeQueryParameterType[] Exclude { get; set; }
 #endif
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
