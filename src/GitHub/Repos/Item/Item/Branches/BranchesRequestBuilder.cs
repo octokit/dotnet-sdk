@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Branches {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\branches
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches
     /// </summary>
     public class BranchesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.branches.item collection</summary>
@@ -27,14 +27,14 @@ namespace GitHub.Repos.Item.Item.Branches {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches{?page*,per_page*,protected*}", pathParameters) {
+        public BranchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches{?page*,per_page*,protected*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="BranchesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BranchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/branches{?page*,per_page*,protected*}", rawUrl) {
+        public BranchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches{?page*,per_page*,protected*}", rawUrl) {
         }
         /// <summary>
         /// List branches

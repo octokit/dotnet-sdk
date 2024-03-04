@@ -9,7 +9,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Issues.Item.Reactions.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\issues\{issue_number}\reactions\{reaction_id}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\{issue_number}\reactions\{reaction_id}
     /// </summary>
     public class WithReaction_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -17,14 +17,14 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Reactions.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithReaction_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/reactions/{reaction_id}", pathParameters) {
+        public WithReaction_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/reactions/{reaction_id}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithReaction_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithReaction_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/issues/{issue_number}/reactions/{reaction_id}", rawUrl) {
+        public WithReaction_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/issues/{issue_number}/reactions/{reaction_id}", rawUrl) {
         }
         /// <summary>
         /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/issues/:issue_number/reactions/:reaction_id`.Delete a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).

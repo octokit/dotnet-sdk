@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Rerun {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\jobs\{job_id}\rerun
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\jobs\{job_id}\rerun
     /// </summary>
     public class RerunRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Rerun {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RerunRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/jobs/{job_id}/rerun", pathParameters) {
+        public RerunRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/jobs/{job_id}/rerun", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="RerunRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RerunRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/jobs/{job_id}/rerun", rawUrl) {
+        public RerunRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/jobs/{job_id}/rerun", rawUrl) {
         }
         /// <summary>
         /// Re-run a job and its dependent jobs in a workflow run.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.

@@ -12,7 +12,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Environments.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\environments\{environment_name}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}
     /// </summary>
     public class WithEnvironment_nameItemRequestBuilder : BaseRequestBuilder {
         /// <summary>The deployment_protection_rules property</summary>
@@ -28,14 +28,14 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEnvironment_nameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}", pathParameters) {
+        public WithEnvironment_nameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/environments/{environment_name}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithEnvironment_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEnvironment_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/environments/{environment_name}", rawUrl) {
+        public WithEnvironment_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/environments/{environment_name}", rawUrl) {
         }
         /// <summary>
         /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.

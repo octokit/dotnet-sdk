@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Forks {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\security-advisories\{ghsa_id}\forks
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\security-advisories\{ghsa_id}\forks
     /// </summary>
     public class ForksRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Forks {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ForksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories/{ghsa_id}/forks", pathParameters) {
+        public ForksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories/{ghsa_id}/forks", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ForksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ForksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories/{ghsa_id}/forks", rawUrl) {
+        public ForksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories/{ghsa_id}/forks", rawUrl) {
         }
         /// <summary>
         /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.**Note**: Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.

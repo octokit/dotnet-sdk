@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Deployments {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\deployments
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\deployments
     /// </summary>
     public class DeploymentsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.deployments.item collection</summary>
@@ -27,14 +27,14 @@ namespace GitHub.Repos.Item.Item.Deployments {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments{?environment*,page*,per_page*,ref*,sha*,task*}", pathParameters) {
+        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/deployments{?environment*,page*,per_page*,ref*,sha*,task*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="DeploymentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments{?environment*,page*,per_page*,ref*,sha*,task*}", rawUrl) {
+        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/deployments{?environment*,page*,per_page*,ref*,sha*,task*}", rawUrl) {
         }
         /// <summary>
         /// Simple filtering of deployments is available via query parameters:
@@ -108,7 +108,7 @@ namespace GitHub.Repos.Item.Item.Deployments {
         public RequestInformation ToPostRequestInformation(DeploymentsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/deployments", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

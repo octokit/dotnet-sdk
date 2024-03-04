@@ -15,7 +15,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\workflows\{workflow_id}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}
     /// </summary>
     public class WithWorkflow_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>The disable property</summary>
@@ -43,14 +43,14 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithWorkflow_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}", pathParameters) {
+        public WithWorkflow_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithWorkflow_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithWorkflow_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}", rawUrl) {
+        public WithWorkflow_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}", rawUrl) {
         }
         /// <summary>
         /// Gets a specific workflow. You can replace `workflow_id` with the workflowfile name. For example, you could use `main.yaml`.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.

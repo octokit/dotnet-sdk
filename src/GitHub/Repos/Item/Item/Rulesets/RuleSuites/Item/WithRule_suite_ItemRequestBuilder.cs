@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Rulesets.RuleSuites.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\rulesets\rule-suites\{rule_suite_id}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rulesets\rule-suites\{rule_suite_id}
     /// </summary>
     public class WithRule_suite_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Rulesets.RuleSuites.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRule_suite_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites/{rule_suite_id}", pathParameters) {
+        public WithRule_suite_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets/rule-suites/{rule_suite_id}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRule_suite_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRule_suite_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites/{rule_suite_id}", rawUrl) {
+        public WithRule_suite_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets/rule-suites/{rule_suite_id}", rawUrl) {
         }
         /// <summary>
         /// Gets information about a suite of rule evaluations from within a repository.For more information, see &quot;[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets).&quot;

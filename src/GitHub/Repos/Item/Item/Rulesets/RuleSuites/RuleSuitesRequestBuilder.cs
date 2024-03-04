@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Rulesets.RuleSuites {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\rulesets\rule-suites
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rulesets\rule-suites
     /// </summary>
     public class RuleSuitesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.rulesets.ruleSuites.item collection</summary>
@@ -27,14 +27,14 @@ namespace GitHub.Repos.Item.Item.Rulesets.RuleSuites {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RuleSuitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,rule_suite_result*,time_period*}", pathParameters) {
+        public RuleSuitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,rule_suite_result*,time_period*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="RuleSuitesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RuleSuitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,rule_suite_result*,time_period*}", rawUrl) {
+        public RuleSuitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,rule_suite_result*,time_period*}", rawUrl) {
         }
         /// <summary>
         /// Lists suites of rule evaluations at the repository level.For more information, see &quot;[Managing rulesets for a repository](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/managing-rulesets-for-a-repository#viewing-insights-for-rulesets).&quot;

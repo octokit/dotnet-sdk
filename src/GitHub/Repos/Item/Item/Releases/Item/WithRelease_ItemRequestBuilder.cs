@@ -12,7 +12,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Releases.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\releases\{release_id}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\{release_id}
     /// </summary>
     public class WithRelease_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>The assets property</summary>
@@ -28,14 +28,14 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRelease_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/{release_id}", pathParameters) {
+        public WithRelease_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/releases/{release_id}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRelease_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRelease_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/releases/{release_id}", rawUrl) {
+        public WithRelease_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/releases/{release_id}", rawUrl) {
         }
         /// <summary>
         /// Users with push access to the repository can delete a release.

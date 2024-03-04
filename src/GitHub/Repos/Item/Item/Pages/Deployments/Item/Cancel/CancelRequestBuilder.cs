@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Pages.Deployments.Item.Cancel {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\pages\deployments\{pages_deployment_id}\cancel
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pages\deployments\{pages_deployment_id}\cancel
     /// </summary>
     public class CancelRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments.Item.Cancel {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CancelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments/{pages_deployment_id}/cancel", pathParameters) {
+        public CancelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pages/deployments/{pages_deployment_id}/cancel", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="CancelRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pages/deployments/{pages_deployment_id}/cancel", rawUrl) {
+        public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pages/deployments/{pages_deployment_id}/cancel", rawUrl) {
         }
         /// <summary>
         /// Cancels a GitHub Pages deployment.The authenticated user must have write permissions for the GitHub Pages site.

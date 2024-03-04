@@ -9,7 +9,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Logs {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\jobs\{job_id}\logs
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\jobs\{job_id}\logs
     /// </summary>
     public class LogsRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -17,14 +17,14 @@ namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Logs {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/jobs/{job_id}/logs", pathParameters) {
+        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/jobs/{job_id}/logs", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="LogsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/jobs/{job_id}/logs", rawUrl) {
+        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/jobs/{job_id}/logs", rawUrl) {
         }
         /// <summary>
         /// Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Lookfor `Location:` in the response header to find the URL for the download.Anyone with read access to the repository can use this endpoint.If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.

@@ -11,7 +11,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Caches {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\caches
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\caches
     /// </summary>
     public class CachesRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.caches.item collection</summary>
@@ -27,14 +27,14 @@ namespace GitHub.Repos.Item.Item.Actions.Caches {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CachesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/caches{?direction*,key*,page*,per_page*,ref*,sort*}", pathParameters) {
+        public CachesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/caches{?direction*,key*,page*,per_page*,ref*,sort*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="CachesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CachesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/caches{?direction*,key*,page*,per_page*,ref*,sort*}", rawUrl) {
+        public CachesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/caches{?direction*,key*,page*,per_page*,ref*,sort*}", rawUrl) {
         }
         /// <summary>
         /// Deletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -82,7 +82,7 @@ namespace GitHub.Repos.Item.Item.Actions.Caches {
 #else
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<CachesRequestBuilderDeleteQueryParameters>> requestConfiguration = default) {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/caches?key={key}{&ref*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/caches?key={key}{&ref*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

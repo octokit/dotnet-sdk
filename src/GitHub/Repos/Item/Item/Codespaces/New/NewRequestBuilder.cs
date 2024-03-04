@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Codespaces.New {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\codespaces\new
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\new
     /// </summary>
     public class NewRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Codespaces.New {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/new{?client_ip*,ref*}", pathParameters) {
+        public NewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/new{?client_ip*,ref*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="NewRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces/new{?client_ip*,ref*}", rawUrl) {
+        public NewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/new{?client_ip*,ref*}", rawUrl) {
         }
         /// <summary>
         /// Gets the default attributes for codespaces created by the user with the repository.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.

@@ -13,11 +13,11 @@ namespace GitHub.Repos {
     public class ReposRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item collection</summary>
         /// <param name="position">The account owner of the repository. The name is not case sensitive.</param>
-        /// <returns>A <see cref="ReposItemRequestBuilder"/></returns>
-        public ReposItemRequestBuilder this[string position] { get {
+        /// <returns>A <see cref="OwnerItemRequestBuilder"/></returns>
+        public OwnerItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("repos%2Did", position);
-            return new ReposItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("owner%2Did", position);
+            return new OwnerItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new <see cref="ReposRequestBuilder"/> and sets the default values.

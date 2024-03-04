@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Contents.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\contents\{path}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\contents\{path}
     /// </summary>
     public class WithPathItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPathItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/contents/{path}{?ref*}", pathParameters) {
+        public WithPathItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/contents/{path}{?ref*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithPathItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPathItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/contents/{path}{?ref*}", rawUrl) {
+        public WithPathItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/contents/{path}{?ref*}", rawUrl) {
         }
         /// <summary>
         /// Deletes a file in a repository.You can provide an additional `committer` parameter, which is an object containing information about the committer. Or, you can provide an `author` parameter, which is an object containing information about the author.The `author` section is optional and is filled in with the `committer` information if omitted. If the `committer` information is omitted, the authenticated user&apos;s information is used.You must provide values for both `name` and `email`, whether you choose to use `author` or `committer`. Otherwise, you&apos;ll receive a `422` status code.**Note:** If you use this endpoint and the &quot;[Create or update file contents](https://docs.github.com/rest/repos/contents/#create-or-update-file-contents)&quot; endpoint in parallel, the concurrent requests will conflict and you will receive errors. You must use these endpoints serially instead.
@@ -120,7 +120,7 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
         public RequestInformation ToDeleteRequestInformation(WithPathDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/contents/{path}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/contents/{path}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -157,7 +157,7 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
         public RequestInformation ToPutRequestInformation(WithPathPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/contents/{path}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/contents/{path}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

@@ -13,7 +13,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\pulls\{pull_number}\reviews\{review_id}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\{pull_number}\reviews\{review_id}
     /// </summary>
     public class WithReview_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>The comments property</summary>
@@ -33,14 +33,14 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithReview_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/{pull_number}/reviews/{review_id}", pathParameters) {
+        public WithReview_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pulls/{pull_number}/reviews/{review_id}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithReview_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithReview_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/pulls/{pull_number}/reviews/{review_id}", rawUrl) {
+        public WithReview_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/pulls/{pull_number}/reviews/{review_id}", rawUrl) {
         }
         /// <summary>
         /// Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.- **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.- **`application/vnd.github-commitcomment.html+json`**: Returns HTML rendered from the body&apos;s markdown. Response will include `body_html`.- **`application/vnd.github-commitcomment.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.

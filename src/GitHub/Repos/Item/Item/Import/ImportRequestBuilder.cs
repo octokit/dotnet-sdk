@@ -13,7 +13,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Import {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\import
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\import
     /// </summary>
     public class ImportRequestBuilder : BaseRequestBuilder {
         /// <summary>The authors property</summary>
@@ -36,14 +36,14 @@ namespace GitHub.Repos.Item.Item.Import {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/import", pathParameters) {
+        public ImportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/import", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="ImportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/import", rawUrl) {
+        public ImportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/import", rawUrl) {
         }
         /// <summary>
         /// Stop an import for a repository.**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).

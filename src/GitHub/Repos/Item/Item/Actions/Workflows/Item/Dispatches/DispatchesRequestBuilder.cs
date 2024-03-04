@@ -9,7 +9,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\actions\workflows\{workflow_id}\dispatches
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}\dispatches
     /// </summary>
     public class DispatchesRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -17,14 +17,14 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DispatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}/dispatches", pathParameters) {
+        public DispatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}/dispatches", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="DispatchesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DispatchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/actions/workflows/{workflow_id}/dispatches", rawUrl) {
+        public DispatchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}/dispatches", rawUrl) {
         }
         /// <summary>
         /// You can use this endpoint to manually trigger a GitHub Actions workflow run. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.You must configure your GitHub Actions workflow to run when the [`workflow_dispatch` webhook](/developers/webhooks-and-events/webhook-events-and-payloads#workflow_dispatch) event occurs. The `inputs` are configured in the workflow file. For more information about how to configure the `workflow_dispatch` event in the workflow file, see &quot;[Events that trigger workflows](/actions/reference/events-that-trigger-workflows#workflow_dispatch).&quot;OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.

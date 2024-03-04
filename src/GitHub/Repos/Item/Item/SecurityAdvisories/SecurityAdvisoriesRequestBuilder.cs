@@ -12,7 +12,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.SecurityAdvisories {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\security-advisories
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\security-advisories
     /// </summary>
     public class SecurityAdvisoriesRequestBuilder : BaseRequestBuilder {
         /// <summary>The reports property</summary>
@@ -32,14 +32,14 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityAdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", pathParameters) {
+        public SecurityAdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="SecurityAdvisoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityAdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", rawUrl) {
+        public SecurityAdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", rawUrl) {
         }
         /// <summary>
         /// Lists security advisories in a repository.The authenticated user can access unpublished security advisories from a repository if they are a security manager or administrator of that repository, or if they are a collaborator on any security advisory.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
@@ -123,7 +123,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
         public RequestInformation ToPostRequestInformation(RepositoryAdvisoryCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/security-advisories", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

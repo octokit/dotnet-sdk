@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Repos.Item.Item.Community {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\community
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\community
     /// </summary>
     public class CommunityRequestBuilder : BaseRequestBuilder {
         /// <summary>The profile property</summary>
@@ -20,14 +20,14 @@ namespace GitHub.Repos.Item.Item.Community {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommunityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/community", pathParameters) {
+        public CommunityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/community", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="CommunityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommunityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/community", rawUrl) {
+        public CommunityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/community", rawUrl) {
         }
     }
 }

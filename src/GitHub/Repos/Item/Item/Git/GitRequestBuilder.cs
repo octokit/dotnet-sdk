@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System;
 namespace GitHub.Repos.Item.Item.Git {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\git
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git
     /// </summary>
     public class GitRequestBuilder : BaseRequestBuilder {
         /// <summary>The blobs property</summary>
@@ -50,14 +50,14 @@ namespace GitHub.Repos.Item.Item.Git {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/git", pathParameters) {
+        public GitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/git", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="GitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/git", rawUrl) {
+        public GitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/git", rawUrl) {
         }
     }
 }

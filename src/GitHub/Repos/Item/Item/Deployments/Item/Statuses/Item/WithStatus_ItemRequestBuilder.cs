@@ -10,7 +10,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses.Item {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\deployments\{deployment_id}\statuses\{status_id}
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\deployments\{deployment_id}\statuses\{status_id}
     /// </summary>
     public class WithStatus_ItemRequestBuilder : BaseRequestBuilder {
         /// <summary>
@@ -18,14 +18,14 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithStatus_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments/{deployment_id}/statuses/{status_id}", pathParameters) {
+        public WithStatus_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/deployments/{deployment_id}/statuses/{status_id}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithStatus_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithStatus_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/deployments/{deployment_id}/statuses/{status_id}", rawUrl) {
+        public WithStatus_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/deployments/{deployment_id}/statuses/{status_id}", rawUrl) {
         }
         /// <summary>
         /// Users with pull access can view a deployment status for a deployment:

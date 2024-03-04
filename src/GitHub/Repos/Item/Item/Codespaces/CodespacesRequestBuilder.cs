@@ -15,7 +15,7 @@ using System.Threading;
 using System;
 namespace GitHub.Repos.Item.Item.Codespaces {
     /// <summary>
-    /// Builds and executes requests for operations under \repos\{repos-id}\{Owner-id}\codespaces
+    /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces
     /// </summary>
     public class CodespacesRequestBuilder : BaseRequestBuilder {
         /// <summary>The devcontainers property</summary>
@@ -43,14 +43,14 @@ namespace GitHub.Repos.Item.Item.Codespaces {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CodespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces{?page*,per_page*}", pathParameters) {
+        public CodespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces{?page*,per_page*}", pathParameters) {
         }
         /// <summary>
         /// Instantiates a new <see cref="CodespacesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CodespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces{?page*,per_page*}", rawUrl) {
+        public CodespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
         /// Lists the codespaces associated to a specified repository and the authenticated user.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
@@ -141,7 +141,7 @@ namespace GitHub.Repos.Item.Item.Codespaces {
         public RequestInformation ToPostRequestInformation(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{repos%2Did}/{Owner%2Did}/codespaces", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
