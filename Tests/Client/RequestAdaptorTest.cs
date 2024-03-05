@@ -1,7 +1,9 @@
 using GitHub.Octokit.Authentication;
 using GitHub.Octokit.Client;
-using NSubstitute;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
 using Xunit;
+using Moq;
 
 public class RequestAdapterTests
 {
@@ -16,7 +18,7 @@ public class RequestAdapterTests
     [Fact]
     public void Creates_RequestAdaptor_With_GenericHttpClient()
     {
-        var httpClient = Substitute.For<HttpClient>();
+        var httpClient = new HttpClient();
         var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen", "JRRTOLKIEN"), httpClient);
         Assert.NotNull(requestAdapter);
     }

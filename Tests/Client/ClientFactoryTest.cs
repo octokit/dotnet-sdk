@@ -1,5 +1,11 @@
 using GitHub.Octokit.Client;
+using GitHub.Octokit.Client.Middleware;
 using Xunit;
+using Moq;
+
+
+public class TestHandler1 : DelegatingHandler { }
+public class TestHandler2 : DelegatingHandler { }
 
 public class ClientFactoryTests
 {
@@ -19,4 +25,50 @@ public class ClientFactoryTests
         Assert.Equal(TimeSpan.FromSeconds(5), clientFactory.Timeout);
     }
 
+    [Fact]
+    public void Create_Returns_NonNullHttpClient()
+    {
+        HttpMessageHandler handler = new HttpClientHandler();
+        var client = ClientFactory.Create(handler);
+        Assert.NotNull(client);
+    }
+
+    [Fact]
+    public void CreateDefaultHandlers_Returns_Expected_Handlers()
+    {
+        var handlers = ClientFactory.CreateDefaultHandlers();
+        Assert.Contains(handlers, h => h is APIVersionHandler);
+        Assert.Contains(handlers, h => h is UserAgentHandler);
+    }
+
+  // ChainHandlersCollectionAndGetFirstLink
+    [Fact]
+    public void ChainHandlersCollectionAndGetFirstLink_ChainsHandlersCorrectly()
+    {
+        // Arrange
+        var handlers = new DelegatingHandler[]
+        {
+            new TestHandler1(),
+            new TestHandler2()
+        };
+
+        // Act
+        var firstHandler = ClientFactory.ChainHandlersCollectionAndGetFirstLink(null, handlers);
+
+        // Assert
+        Assert.IsType<TestHandler1>(firstHandler);
+        Assert.IsType<TestHandler2>(firstHandler.InnerHandler);
+    }
+
+
+    // GetDefaultHttpMessageHandler
+    [Fact]
+    public void GetDefaultHttpMessageHandler_Returns_NonNullHttpMessageHandler()
+    {
+        var handler = ClientFactory.GetDefaultHttpMessageHandler();
+        Assert.NotNull(handler);
+    }
+
 }
+
+
