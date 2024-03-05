@@ -2,6 +2,8 @@
 using GitHub.Models;
 using GitHub.Repos.Item.Item.Environments.Item.DeploymentBranchPolicies;
 using GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules;
+using GitHub.Repos.Item.Item.Environments.Item.Secrets;
+using GitHub.Repos.Item.Item.Environments.Item.Variables;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -22,6 +24,14 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
         /// <summary>The deploymentBranchPolicies property</summary>
         public DeploymentBranchPoliciesRequestBuilder DeploymentBranchPolicies { get =>
             new DeploymentBranchPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The secrets property</summary>
+        public SecretsRequestBuilder Secrets { get =>
+            new SecretsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The variables property</summary>
+        public VariablesRequestBuilder Variables { get =>
+            new VariablesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithEnvironment_nameItemRequestBuilder"/> and sets the default values.
