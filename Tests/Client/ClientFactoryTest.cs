@@ -1,7 +1,6 @@
 using GitHub.Octokit.Client;
 using GitHub.Octokit.Client.Middleware;
 using Xunit;
-using Moq;
 
 
 public class TestHandler1 : DelegatingHandler { }
@@ -41,7 +40,7 @@ public class ClientFactoryTests
         Assert.Contains(handlers, h => h is UserAgentHandler);
     }
 
-  // ChainHandlersCollectionAndGetFirstLink
+    // ChainHandlersCollectionAndGetFirstLink
     [Fact]
     public void ChainHandlersCollectionAndGetFirstLink_ChainsHandlersCorrectly()
     {

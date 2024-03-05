@@ -1,9 +1,6 @@
 using GitHub.Octokit.Authentication;
 using GitHub.Octokit.Client;
-using Microsoft.Kiota.Abstractions;
-using Microsoft.Kiota.Abstractions.Authentication;
 using Xunit;
-using Moq;
 
 public class RequestAdapterTests
 {
