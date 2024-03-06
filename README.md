@@ -59,6 +59,12 @@ Currently this project is fairly simple (we hope it can stay that way).  All of 
  - **Middleware** - this represents object and handlers that can mutate the request and are "injected" into the request/response flow.
  - **Octokit** - types which represent request/response objects
 
+## Testing
+
+- Run tests: `dotnet test`
+- Run coverage: `dotnet test /p:CollectCoverage=true`
+
+
 ## More details on this SDK and repo
 
 - [Code of conduct](Docs/CODE_OF_CONDUCT.md)
