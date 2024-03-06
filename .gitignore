@@ -108,3 +108,4 @@ node_modules/
 testresults/
 [Tt]est[Rr]esult*/
 **/coverage.json
+coverage/*

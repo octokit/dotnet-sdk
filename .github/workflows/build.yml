@@ -28,12 +28,12 @@ jobs:
         run: dotnet build --no-incremental /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=../key.snk
 
       - name: Test SDK
-        run: dotnet test  -p:CollectCoverage=true -p:CoverletOutput=TestResults/ -p:CoverletOutputFormat=opencover -p:ExcludeByFile="**/GitHub/**/*.cs"
+        run: dotnet test --configuration Release --verbosity normal --collect:"XPlat Code Coverage" --results-directory ./coverage -p:ExcludeByFile="**/GitHub/**/*.cs" 
 
       - name: Code Coverage Report
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
-          filename: './test/TestResults/coverage.opencover.xml'
+          filename: 'coverage/**/coverage.opencover.xml'
           badge: true
           fail_below_min: true
           format: markdown
