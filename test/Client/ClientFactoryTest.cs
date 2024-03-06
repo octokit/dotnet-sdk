@@ -44,17 +44,12 @@ public class ClientFactoryTests
     [Fact]
     public void ChainHandlersCollectionAndGetFirstLink_ChainsHandlersCorrectly()
     {
-        // Arrange
         var handlers = new DelegatingHandler[]
         {
             new TestHandler1(),
             new TestHandler2()
         };
-
-        // Act
         var firstHandler = ClientFactory.ChainHandlersCollectionAndGetFirstLink(null, handlers);
-
-        // Assert
         Assert.IsType<TestHandler1>(firstHandler);
         Assert.IsType<TestHandler2>(firstHandler.InnerHandler);
     }
