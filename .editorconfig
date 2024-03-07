@@ -152,7 +152,7 @@ csharp_space_between_parentheses = false
 csharp_space_between_square_brackets = false
 
 # License header
-file_header_template = Copyright (c) GitHub 2023 — Licensed as MIT.
+file_header_template = Copyright (c) GitHub 2023-2024 - Licensed as MIT.
 
 # C++ Files
 [*.{cpp,h,in}]

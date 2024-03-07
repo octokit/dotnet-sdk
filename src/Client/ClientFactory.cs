@@ -1,4 +1,4 @@
-// Copyright (c) GitHub 2023 - Licensed as MIT.
+// Copyright (c) GitHub 2023-2024 - Licensed as MIT.
 
 using System.Net;
 using GitHub.Octokit.Client.Middleware;
