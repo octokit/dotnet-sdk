@@ -15,9 +15,9 @@
     <Authors>GitHub</Authors>
     <PackageTags>GitHub API Octokit dotnet-core</PackageTags>
     <RepositoryUrl>https://github.com/octokit/dotnet-sdk</RepositoryUrl>
-		<PackageProjectUrl>https://github.com/octokit/dotnet-sdk</PackageProjectUrl>
-		<PackageIcon>octokit.png</PackageIcon>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/octokit/dotnet-sdk</PackageProjectUrl>
+    <PackageIcon>octokit.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>NugetREADME.md</PackageReadmeFile>
     <Copyright>Copyright (c) GitHub 2023-2024</Copyright>
   </PropertyGroup>

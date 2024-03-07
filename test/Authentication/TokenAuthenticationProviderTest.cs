@@ -1,3 +1,5 @@
+// Copyright (c) GitHub 2023-2024 - Licensed as MIT.
+
 using GitHub.Octokit.Authentication;
 using Microsoft.Kiota.Abstractions;
 using Xunit;

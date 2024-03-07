@@ -1,14 +1,14 @@
+// Copyright (c) GitHub 2023-2024 - Licensed as MIT.
+
 using GitHub.Octokit.Client;
 using GitHub.Octokit.Client.Middleware;
 using Xunit;
-
 
 public class TestHandler1 : DelegatingHandler { }
 public class TestHandler2 : DelegatingHandler { }
 
 public class ClientFactoryTests
 {
-
     [Fact]
     public void Creates_Client_With_Default_Timeout()
     {
@@ -59,7 +59,4 @@ public class ClientFactoryTests
         var handler = ClientFactory.GetDefaultHttpMessageHandler();
         Assert.NotNull(handler);
     }
-
 }
-
-

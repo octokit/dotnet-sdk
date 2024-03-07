@@ -1,4 +1,4 @@
-// Copyright (c) GitHub 2023-2024 — Licensed as MIT.
+// Copyright (c) GitHub 2023-2024 - Licensed as MIT.
 
 using GitHub.Octokit.Authentication;
 using GitHub.Octokit.Client;
@@ -6,7 +6,6 @@ using Xunit;
 
 public class RequestAdapterTests
 {
-
     [Fact]
     public void Creates_RequestAdaptor_With_Defaults()
     {
@@ -29,5 +28,4 @@ public class RequestAdapterTests
         var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen", "JRRTOLKIEN"), clientFactory);
         Assert.NotNull(requestAdapter);
     }
-
 }
