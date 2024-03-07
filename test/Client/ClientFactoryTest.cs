@@ -40,7 +40,6 @@ public class ClientFactoryTests
         Assert.Contains(handlers, h => h is UserAgentHandler);
     }
 
-    // ChainHandlersCollectionAndGetFirstLink
     [Fact]
     public void ChainHandlersCollectionAndGetFirstLink_ChainsHandlersCorrectly()
     {
@@ -54,8 +53,6 @@ public class ClientFactoryTests
         Assert.IsType<TestHandler2>(firstHandler.InnerHandler);
     }
 
-
-    // GetDefaultHttpMessageHandler
     [Fact]
     public void GetDefaultHttpMessageHandler_Returns_NonNullHttpMessageHandler()
     {
