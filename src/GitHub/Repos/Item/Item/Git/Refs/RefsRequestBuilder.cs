@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Git.Refs {
     /// </summary>
     public class RefsRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.git.refs.item collection</summary>
-        /// <param name="position">The name of the reference to update (for example, `heads/featureA`). Can be a branch name (`heads/BRANCH_NAME`) or tag name (`tags/TAG_NAME`). For more information, see &quot;[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)&quot; in the Git documentation.</param>
+        /// <param name="position">The Git reference. For more information, see &quot;[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)&quot; in the Git documentation.</param>
         /// <returns>A <see cref="WithRefItemRequestBuilder"/></returns>
         public WithRefItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

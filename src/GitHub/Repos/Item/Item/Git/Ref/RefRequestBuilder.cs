@@ -12,7 +12,7 @@ namespace GitHub.Repos.Item.Item.Git.Ref {
     /// </summary>
     public class RefRequestBuilder : BaseRequestBuilder {
         /// <summary>Gets an item from the GitHub.repos.item.item.git.ref.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The Git reference. For more information, see &quot;[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)&quot; in the Git documentation.</param>
         /// <returns>A <see cref="WithRefItemRequestBuilder"/></returns>
         public WithRefItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);

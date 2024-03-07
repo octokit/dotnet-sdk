@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item.Git.Refs.Item {
         public WithRefItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/git/refs/{ref}", rawUrl) {
         }
         /// <summary>
-        /// Delete a reference
+        /// Deletes the provided reference.
         /// API method documentation <see href="https://docs.github.com/rest/git/refs#delete-a-reference" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace GitHub.Repos.Item.Item.Git.Refs.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a reference
+        /// Updates the provided reference to point to a new SHA. For more information, see &quot;[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)&quot; in the Git documentation.
         /// API method documentation <see href="https://docs.github.com/rest/git/refs#update-a-reference" />
         /// </summary>
         /// <returns>A <see cref="GitRef"/></returns>
@@ -70,6 +70,9 @@ namespace GitHub.Repos.Item.Item.Git.Refs.Item {
             };
             return await RequestAdapter.SendAsync<GitRef>(requestInfo, GitRef.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Deletes the provided reference.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,6 +87,9 @@ namespace GitHub.Repos.Item.Item.Git.Refs.Item {
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// Updates the provided reference to point to a new SHA. For more information, see &quot;[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)&quot; in the Git documentation.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
