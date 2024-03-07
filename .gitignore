@@ -104,9 +104,8 @@ node_modules/
 # Local History for Visual Studio Code
 .history/
 
-# Windows Installer files from build outputs
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
+# Tests / Coverage
+testresults/
+[Tt]est[Rr]esult*/
+**/coverage.json
+coverage/*

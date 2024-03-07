@@ -36,8 +36,8 @@ public class TokenAuthenticationProvider : IAuthenticationProvider
     /// <exception cref="ArgumentNullException"></exception>
     public TokenAuthenticationProvider(string clientId, string token)
     {
-        ArgumentNullException.ThrowIfNullOrEmpty(clientId);
-        ArgumentNullException.ThrowIfNullOrEmpty(token);
+        ArgumentException.ThrowIfNullOrEmpty(clientId);
+        ArgumentException.ThrowIfNullOrEmpty(token);
 
         ClientId = clientId;
         Token = token;
@@ -52,10 +52,10 @@ public class TokenAuthenticationProvider : IAuthenticationProvider
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     /// <exception cref="ArgumentNullException"></exception>
-    public Task AuthenticateRequestAsync(RequestInformation request, Dictionary<string, object>? additionalAuthenticationContext = null, CancellationToken cancellationToken = default)
+    public Task AuthenticateRequestAsync(RequestInformation? request, Dictionary<string, object>? additionalAuthenticationContext = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(request);
-        ArgumentNullException.ThrowIfNullOrEmpty(Token);
+        ArgumentException.ThrowIfNullOrEmpty(Token);
 
         if (!request.Headers.ContainsKey(AuthorizationHeaderKey))
         {

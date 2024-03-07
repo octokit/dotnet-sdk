@@ -8,7 +8,7 @@ namespace GitHub.Octokit.Client.Middleware;
 /// <summary>
 /// Represents a handler that adds the API version header to outgoing HTTP requests.
 /// </summary>
-class APIVersionHandler(APIVersionOptions? apiVersionOptions = null) : DelegatingHandler
+public class APIVersionHandler(APIVersionOptions? apiVersionOptions = null) : DelegatingHandler
 {
     private const string ApiVersionHeaderKey = "X-GitHub-Api-Version";
 
