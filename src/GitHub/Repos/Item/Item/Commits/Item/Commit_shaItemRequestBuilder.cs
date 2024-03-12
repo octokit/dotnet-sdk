@@ -70,6 +70,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item {
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="BasicError">When receiving a 409 status code</exception>
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
         /// <exception cref="BasicError">When receiving a 500 status code</exception>
         /// <exception cref="Commit503Error">When receiving a 503 status code</exception>
@@ -83,6 +84,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"404", BasicError.CreateFromDiscriminatorValue},
+                {"409", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationError.CreateFromDiscriminatorValue},
                 {"500", BasicError.CreateFromDiscriminatorValue},
                 {"503", Commit503Error.CreateFromDiscriminatorValue},
