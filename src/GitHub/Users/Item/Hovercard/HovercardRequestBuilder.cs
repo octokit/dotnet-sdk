@@ -28,7 +28,7 @@ namespace GitHub.Users.Item.Hovercard {
         public HovercardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/hovercard{?subject_id*,subject_type*}", rawUrl) {
         }
         /// <summary>
-        /// Provides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.The `subject_type` and `subject_id` parameters provide context for the person&apos;s hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository via cURL, it would look like this:```shell curl -u username:token  https://api.github.com/users/octocat/hovercard?subject_type=repository&amp;subject_id=1300192```OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// Provides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.  The `subject_type` and `subject_id` parameters provide context for the person&apos;s hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository, you would use a `subject_type` value of `repository` and a `subject_id` value of `1300192` (the ID of the `Spoon-Knife` repository).OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/users/users#get-contextual-information-for-a-user" />
         /// </summary>
         /// <returns>A <see cref="GitHub.Models.Hovercard"/></returns>
@@ -51,7 +51,7 @@ namespace GitHub.Users.Item.Hovercard {
             return await RequestAdapter.SendAsync<GitHub.Models.Hovercard>(requestInfo, GitHub.Models.Hovercard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.The `subject_type` and `subject_id` parameters provide context for the person&apos;s hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository via cURL, it would look like this:```shell curl -u username:token  https://api.github.com/users/octocat/hovercard?subject_type=repository&amp;subject_id=1300192```OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// Provides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.  The `subject_type` and `subject_id` parameters provide context for the person&apos;s hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository, you would use a `subject_type` value of `repository` and a `subject_id` value of `1300192` (the ID of the `Spoon-Knife` repository).OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +76,7 @@ namespace GitHub.Users.Item.Hovercard {
             return new HovercardRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Provides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.The `subject_type` and `subject_id` parameters provide context for the person&apos;s hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository via cURL, it would look like this:```shell curl -u username:token  https://api.github.com/users/octocat/hovercard?subject_type=repository&amp;subject_id=1300192```OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// Provides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.  The `subject_type` and `subject_id` parameters provide context for the person&apos;s hovercard, which returns more information than without the parameters. For example, if you wanted to find out more about `octocat` who owns the `Spoon-Knife` repository, you would use a `subject_type` value of `repository` and a `subject_id` value of `1300192` (the ID of the `Spoon-Knife` repository).OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
         public class HovercardRequestBuilderGetQueryParameters {
             /// <summary>Uses the ID for the `subject_type` you specified. **Required** when using `subject_type`.</summary>

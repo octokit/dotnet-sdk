@@ -103,7 +103,7 @@ namespace GitHub.Models {
         public bool? Rerequestable { get; set; }
         /// <summary>The runs_rerequestable property</summary>
         public bool? RunsRerequestable { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.</summary>
         public CheckSuite_status? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

@@ -127,7 +127,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub can set a status of `waiting` or `requested`.</summary>
+            /// <summary>Returns workflow runs with the check run `status` or `conclusion` that you specify. For example, a conclusion can be `success` or a status can be `in_progress`. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.</summary>
             [QueryParameter("status")]
             public GetStatusQueryParameterType? Status { get; set; }
         }
