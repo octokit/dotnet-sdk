@@ -107,7 +107,7 @@ namespace GitHub.Models {
 #endif
         /// <summary>The started_at property</summary>
         public DateTimeOffset? StartedAt { get; set; }
-        /// <summary>The phase of the lifecycle that the check is currently in.</summary>
+        /// <summary>The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.</summary>
         public CheckRun_status? Status { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

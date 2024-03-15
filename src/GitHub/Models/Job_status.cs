@@ -12,5 +12,9 @@ namespace GitHub.Models {
         Completed,
         [EnumMember(Value = "waiting")]
         Waiting,
+        [EnumMember(Value = "requested")]
+        Requested,
+        [EnumMember(Value = "pending")]
+        Pending,
     }
 }
