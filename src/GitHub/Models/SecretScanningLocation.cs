@@ -54,7 +54,7 @@ namespace GitHub.Models {
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="SecretScanningLocationCommit"/>, <see cref="SecretScanningLocationDiscussionBody"/>, <see cref="SecretScanningLocationDiscussionComment"/>, <see cref="SecretScanningLocationDiscussionTitle"/>, <see cref="SecretScanningLocationIssueBody"/>, <see cref="SecretScanningLocationIssueComment"/>, <see cref="SecretScanningLocationIssueTitle"/>, <see cref="SecretScanningLocationPullRequestBody"/>, <see cref="SecretScanningLocationPullRequestComment"/>, <see cref="SecretScanningLocationPullRequestReview"/>, <see cref="SecretScanningLocationPullRequestReviewComment"/>, <see cref="SecretScanningLocationPullRequestTitle"/>
+        /// Composed type wrapper for classes <see cref="SecretScanningLocationCommit"/>, <see cref="SecretScanningLocationDiscussionBody"/>, <see cref="SecretScanningLocationDiscussionComment"/>, <see cref="SecretScanningLocationDiscussionTitle"/>, <see cref="SecretScanningLocationIssueBody"/>, <see cref="SecretScanningLocationIssueComment"/>, <see cref="SecretScanningLocationIssueTitle"/>, <see cref="SecretScanningLocationPullRequestBody"/>, <see cref="SecretScanningLocationPullRequestComment"/>, <see cref="SecretScanningLocationPullRequestReview"/>, <see cref="SecretScanningLocationPullRequestReviewComment"/>, <see cref="SecretScanningLocationPullRequestTitle"/>, <see cref="SecretScanningLocationWikiCommit"/>
         /// </summary>
         public class SecretScanningLocation_details : IComposedTypeWrapper, IParsable {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationCommit"/></summary>
@@ -153,6 +153,14 @@ namespace GitHub.Models {
 #else
             public GitHub.Models.SecretScanningLocationPullRequestTitle SecretScanningLocationPullRequestTitle { get; set; }
 #endif
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationWikiCommit"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Models.SecretScanningLocationWikiCommit? SecretScanningLocationWikiCommit { get; set; }
+#nullable restore
+#else
+            public GitHub.Models.SecretScanningLocationWikiCommit SecretScanningLocationWikiCommit { get; set; }
+#endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
@@ -198,6 +206,9 @@ namespace GitHub.Models {
                 else if("secret-scanning-location-pull-request-title".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
                     result.SecretScanningLocationPullRequestTitle = new GitHub.Models.SecretScanningLocationPullRequestTitle();
                 }
+                else if("secret-scanning-location-wiki-commit".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                    result.SecretScanningLocationWikiCommit = new GitHub.Models.SecretScanningLocationWikiCommit();
+                }
                 return result;
             }
             /// <summary>
@@ -240,6 +251,9 @@ namespace GitHub.Models {
                 }
                 else if(SecretScanningLocationPullRequestTitle != null) {
                     return SecretScanningLocationPullRequestTitle.GetFieldDeserializers();
+                }
+                else if(SecretScanningLocationWikiCommit != null) {
+                    return SecretScanningLocationWikiCommit.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -284,6 +298,9 @@ namespace GitHub.Models {
                 }
                 else if(SecretScanningLocationPullRequestTitle != null) {
                     writer.WriteObjectValue<GitHub.Models.SecretScanningLocationPullRequestTitle>(null, SecretScanningLocationPullRequestTitle);
+                }
+                else if(SecretScanningLocationWikiCommit != null) {
+                    writer.WriteObjectValue<GitHub.Models.SecretScanningLocationWikiCommit>(null, SecretScanningLocationWikiCommit);
                 }
             }
         }

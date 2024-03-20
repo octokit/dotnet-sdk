@@ -6,6 +6,8 @@ namespace GitHub.Models {
     public enum SecretScanningLocation_type {
         [EnumMember(Value = "commit")]
         Commit,
+        [EnumMember(Value = "wiki_commit")]
+        Wiki_commit,
         [EnumMember(Value = "issue_title")]
         Issue_title,
         [EnumMember(Value = "issue_body")]
