@@ -28,7 +28,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries.Item.Attempts {
         public AttemptsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts", rawUrl) {
         }
         /// <summary>
-        /// Redeliver a delivery for a webhook configured in an organization.
+        /// Redeliver a delivery for a webhook configured in an organization.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#redeliver-a-delivery-for-an-organization-webhook" />
         /// </summary>
         /// <returns>A <see cref="AttemptsPostResponse"/></returns>
@@ -51,7 +51,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries.Item.Attempts {
             return await RequestAdapter.SendAsync<AttemptsPostResponse>(requestInfo, AttemptsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Redeliver a delivery for a webhook configured in an organization.
+        /// Redeliver a delivery for a webhook configured in an organization.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

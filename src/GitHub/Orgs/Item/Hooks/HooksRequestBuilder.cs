@@ -37,7 +37,7 @@ namespace GitHub.Orgs.Item.Hooks {
         public HooksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/hooks{?page*,per_page*}", rawUrl) {
         }
         /// <summary>
-        /// List organization webhooks
+        /// You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#list-organization-webhooks" />
         /// </summary>
         /// <returns>A List&lt;OrgHook&gt;</returns>
@@ -59,7 +59,7 @@ namespace GitHub.Orgs.Item.Hooks {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Here&apos;s how you can create a hook that posts payloads in JSON format:
+        /// Create a hook that posts payloads in JSON format.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#create-an-organization-webhook" />
         /// </summary>
         /// <returns>A <see cref="OrgHook"/></returns>
@@ -83,6 +83,9 @@ namespace GitHub.Orgs.Item.Hooks {
             };
             return await RequestAdapter.SendAsync<OrgHook>(requestInfo, OrgHook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +101,7 @@ namespace GitHub.Orgs.Item.Hooks {
             return requestInfo;
         }
         /// <summary>
-        /// Here&apos;s how you can create a hook that posts payloads in JSON format:
+        /// Create a hook that posts payloads in JSON format.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +129,7 @@ namespace GitHub.Orgs.Item.Hooks {
             return new HooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List organization webhooks
+        /// You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
         public class HooksRequestBuilderGetQueryParameters {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
