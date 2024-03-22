@@ -113,6 +113,7 @@ namespace GitHub.Models {
         public string GistsUrl { get; set; }
 #endif
         /// <summary>The hub_url property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HubUrl { get; set; }

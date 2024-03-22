@@ -28,7 +28,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Pings {
         public PingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/hooks/{hook_id}/pings", rawUrl) {
         }
         /// <summary>
-        /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
+        /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)to be sent to the hook.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#ping-an-organization-webhook" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Pings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
+        /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)to be sent to the hook.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
