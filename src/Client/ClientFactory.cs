@@ -15,6 +15,7 @@ public static class ClientFactory
         [
             new APIVersionHandler(),
             new UserAgentHandler(),
+            new RateLimitHandler(),
         ]);
 
     /// <summary>

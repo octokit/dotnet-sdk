@@ -38,6 +38,7 @@ public class ClientFactoryTests
         var handlers = ClientFactory.CreateDefaultHandlers();
         Assert.Contains(handlers, h => h is APIVersionHandler);
         Assert.Contains(handlers, h => h is UserAgentHandler);
+        Assert.Contains(handlers, h => h is RateLimitHandler);
     }
 
     [Fact]
