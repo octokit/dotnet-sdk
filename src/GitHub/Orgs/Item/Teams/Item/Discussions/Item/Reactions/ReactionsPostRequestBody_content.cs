@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Reactions {
     /// <summary>The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the team discussion.</summary>
-    public enum ReactionsPostRequestBody_content {
+    public enum ReactionsPostRequestBody_content
+    {
         [EnumMember(Value = "+1")]
         Plus_1,
         [EnumMember(Value = "-1")]

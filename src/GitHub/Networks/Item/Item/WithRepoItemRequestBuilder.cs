@@ -10,24 +10,28 @@ namespace GitHub.Networks.Item.Item {
     /// <summary>
     /// Builds and executes requests for operations under \networks\{owner}\{repo}
     /// </summary>
-    public class WithRepoItemRequestBuilder : BaseRequestBuilder {
+    public class WithRepoItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The events property</summary>
-        public EventsRequestBuilder Events { get =>
-            new EventsRequestBuilder(PathParameters, RequestAdapter);
+        public EventsRequestBuilder Events
+        {
+            get => new EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRepoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRepoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networks/{owner}/{repo}", pathParameters) {
+        public WithRepoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networks/{owner}/{repo}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRepoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRepoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networks/{owner}/{repo}", rawUrl) {
+        public WithRepoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/networks/{owner}/{repo}", rawUrl)
+        {
         }
     }
 }

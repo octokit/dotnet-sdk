@@ -12,20 +12,23 @@ namespace GitHub.Enterprises.Item.SecretScanning.Alerts {
     /// <summary>
     /// Builds and executes requests for operations under \enterprises\{enterprise}\secret-scanning\alerts
     /// </summary>
-    public class AlertsRequestBuilder : BaseRequestBuilder {
+    public class AlertsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="AlertsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/alerts{?after*,before*,direction*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", pathParameters) {
+        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/alerts{?after*,before*,direction*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AlertsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/alerts{?after*,before*,direction*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", rawUrl) {
+        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/alerts{?after*,before*,direction*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists secret scanning alerts for eligible repositories in an enterprise, from newest to oldest.Alerts are only returned for organizations in the enterprise for which the authenticated user is an organization owner or a [security manager](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).The authenticated user must be a member of the enterprise in order to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope or `security_events` scope to use this endpoint.
@@ -38,13 +41,16 @@ namespace GitHub.Enterprises.Item.SecretScanning.Alerts {
         /// <exception cref="Alerts503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<OrganizationSecretScanningAlert>?> GetAsync(Action<RequestConfiguration<AlertsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<OrganizationSecretScanningAlert>?> GetAsync(Action<RequestConfiguration<AlertsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<OrganizationSecretScanningAlert>> GetAsync(Action<RequestConfiguration<AlertsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<OrganizationSecretScanningAlert>> GetAsync(Action<RequestConfiguration<AlertsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"503", Alerts503Error.CreateFromDiscriminatorValue},
             };
@@ -58,10 +64,12 @@ namespace GitHub.Enterprises.Item.SecretScanning.Alerts {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AlertsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AlertsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AlertsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AlertsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -73,13 +81,15 @@ namespace GitHub.Enterprises.Item.SecretScanning.Alerts {
         /// </summary>
         /// <returns>A <see cref="AlertsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AlertsRequestBuilder WithUrl(string rawUrl) {
+        public AlertsRequestBuilder WithUrl(string rawUrl)
+        {
             return new AlertsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists secret scanning alerts for eligible repositories in an enterprise, from newest to oldest.Alerts are only returned for organizations in the enterprise for which the authenticated user is an organization owner or a [security manager](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).The authenticated user must be a member of the enterprise in order to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope or `security_events` scope to use this endpoint.
         /// </summary>
-        public class AlertsRequestBuilderGetQueryParameters {
+        public class AlertsRequestBuilderGetQueryParameters 
+        {
             /// <summary>A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

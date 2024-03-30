@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.Teams.Item.Discussions {
-    public class DiscussionsPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class DiscussionsPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The discussion post&apos;s body text.</summary>
@@ -29,7 +30,8 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions {
         /// <summary>
         /// Instantiates a new <see cref="DiscussionsPostRequestBody"/> and sets the default values.
         /// </summary>
-        public DiscussionsPostRequestBody() {
+        public DiscussionsPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -37,7 +39,8 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions {
         /// </summary>
         /// <returns>A <see cref="DiscussionsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DiscussionsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DiscussionsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DiscussionsPostRequestBody();
         }
@@ -45,8 +48,10 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"body", n => { Body = n.GetStringValue(); } },
                 {"private", n => { Private = n.GetBoolValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
@@ -56,7 +61,8 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
             writer.WriteBoolValue("private", Private);

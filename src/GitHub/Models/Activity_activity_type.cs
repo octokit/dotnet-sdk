@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The type of the activity that was performed.</summary>
-    public enum Activity_activity_type {
+    public enum Activity_activity_type
+    {
         [EnumMember(Value = "push")]
         Push,
         [EnumMember(Value = "force_push")]

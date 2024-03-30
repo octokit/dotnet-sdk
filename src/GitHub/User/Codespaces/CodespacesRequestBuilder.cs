@@ -14,32 +14,40 @@ namespace GitHub.User.Codespaces {
     /// <summary>
     /// Builds and executes requests for operations under \user\codespaces
     /// </summary>
-    public class CodespacesRequestBuilder : BaseRequestBuilder {
+    public class CodespacesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The secrets property</summary>
-        public SecretsRequestBuilder Secrets { get =>
-            new SecretsRequestBuilder(PathParameters, RequestAdapter);
+        public SecretsRequestBuilder Secrets
+        {
+            get => new SecretsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the GitHub.user.codespaces.item collection</summary>
         /// <param name="position">The name of the codespace.</param>
         /// <returns>A <see cref="WithCodespace_nameItemRequestBuilder"/></returns>
-        public WithCodespace_nameItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("codespace_name", position);
-            return new WithCodespace_nameItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithCodespace_nameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("codespace_name", position);
+                return new WithCodespace_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="CodespacesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CodespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces{?page*,per_page*,repository_id*}", pathParameters) {
+        public CodespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces{?page*,per_page*,repository_id*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CodespacesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CodespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces{?page*,per_page*,repository_id*}", rawUrl) {
+        public CodespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/codespaces{?page*,per_page*,repository_id*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists the authenticated user&apos;s codespaces.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
@@ -54,13 +62,16 @@ namespace GitHub.User.Codespaces {
         /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CodespacesGetResponse?> GetAsync(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CodespacesGetResponse?> GetAsync(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<CodespacesGetResponse> GetAsync(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CodespacesGetResponse> GetAsync(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -82,14 +93,17 @@ namespace GitHub.User.Codespaces {
         /// <exception cref="Codespace503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Codespace?> PostAsync(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Codespace?> PostAsync(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Codespace> PostAsync(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Codespace> PostAsync(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -104,10 +118,12 @@ namespace GitHub.User.Codespaces {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CodespacesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -122,10 +138,12 @@ namespace GitHub.User.Codespaces {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(CodespacesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/user/codespaces", PathParameters);
@@ -139,13 +157,15 @@ namespace GitHub.User.Codespaces {
         /// </summary>
         /// <returns>A <see cref="CodespacesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CodespacesRequestBuilder WithUrl(string rawUrl) {
+        public CodespacesRequestBuilder WithUrl(string rawUrl)
+        {
             return new CodespacesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="CodespacesPostRequestBodyMember1"/>, <see cref="CodespacesPostRequestBodyMember2"/>
         /// </summary>
-        public class CodespacesPostRequestBody : IComposedTypeWrapper, IParsable {
+        public class CodespacesPostRequestBody : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="GitHub.User.Codespaces.CodespacesPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,20 +203,25 @@ namespace GitHub.User.Codespaces {
             /// </summary>
             /// <returns>A <see cref="CodespacesPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static CodespacesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static CodespacesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new CodespacesPostRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.CodespacesPostRequestBodyCodespacesPostRequestBodyMember1 = new GitHub.User.Codespaces.CodespacesPostRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.CodespacesPostRequestBodyCodespacesPostRequestBodyMember2 = new GitHub.User.Codespaces.CodespacesPostRequestBodyMember2();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.CodespacesPostRequestBodyMember1 = new GitHub.User.Codespaces.CodespacesPostRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.CodespacesPostRequestBodyMember2 = new GitHub.User.Codespaces.CodespacesPostRequestBodyMember2();
                 }
                 return result;
@@ -205,17 +230,22 @@ namespace GitHub.User.Codespaces {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(CodespacesPostRequestBodyCodespacesPostRequestBodyMember1 != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(CodespacesPostRequestBodyCodespacesPostRequestBodyMember1 != null)
+                {
                     return CodespacesPostRequestBodyCodespacesPostRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(CodespacesPostRequestBodyCodespacesPostRequestBodyMember2 != null) {
+                else if(CodespacesPostRequestBodyCodespacesPostRequestBodyMember2 != null)
+                {
                     return CodespacesPostRequestBodyCodespacesPostRequestBodyMember2.GetFieldDeserializers();
                 }
-                else if(CodespacesPostRequestBodyMember1 != null) {
+                else if(CodespacesPostRequestBodyMember1 != null)
+                {
                     return CodespacesPostRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(CodespacesPostRequestBodyMember2 != null) {
+                else if(CodespacesPostRequestBodyMember2 != null)
+                {
                     return CodespacesPostRequestBodyMember2.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -224,18 +254,23 @@ namespace GitHub.User.Codespaces {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(CodespacesPostRequestBodyCodespacesPostRequestBodyMember1 != null) {
+                if(CodespacesPostRequestBodyCodespacesPostRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.User.Codespaces.CodespacesPostRequestBodyMember1>(null, CodespacesPostRequestBodyCodespacesPostRequestBodyMember1);
                 }
-                else if(CodespacesPostRequestBodyCodespacesPostRequestBodyMember2 != null) {
+                else if(CodespacesPostRequestBodyCodespacesPostRequestBodyMember2 != null)
+                {
                     writer.WriteObjectValue<GitHub.User.Codespaces.CodespacesPostRequestBodyMember2>(null, CodespacesPostRequestBodyCodespacesPostRequestBodyMember2);
                 }
-                else if(CodespacesPostRequestBodyMember1 != null) {
+                else if(CodespacesPostRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.User.Codespaces.CodespacesPostRequestBodyMember1>(null, CodespacesPostRequestBodyMember1);
                 }
-                else if(CodespacesPostRequestBodyMember2 != null) {
+                else if(CodespacesPostRequestBodyMember2 != null)
+                {
                     writer.WriteObjectValue<GitHub.User.Codespaces.CodespacesPostRequestBodyMember2>(null, CodespacesPostRequestBodyMember2);
                 }
             }
@@ -243,7 +278,8 @@ namespace GitHub.User.Codespaces {
         /// <summary>
         /// Lists the authenticated user&apos;s codespaces.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
-        public class CodespacesRequestBuilderGetQueryParameters {
+        public class CodespacesRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

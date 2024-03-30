@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Teams.Item.Members {
-    public enum GetRoleQueryParameterType {
+    public enum GetRoleQueryParameterType
+    {
         [EnumMember(Value = "member")]
         Member,
         [EnumMember(Value = "maintainer")]

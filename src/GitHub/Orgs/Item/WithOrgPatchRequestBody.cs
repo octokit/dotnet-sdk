@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item {
-    public class WithOrgPatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class WithOrgPatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether GitHub Advanced Security is automatically enabled for new repositories.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.</summary>
@@ -123,7 +124,8 @@ namespace GitHub.Orgs.Item {
         /// <summary>
         /// Instantiates a new <see cref="WithOrgPatchRequestBody"/> and sets the default values.
         /// </summary>
-        public WithOrgPatchRequestBody() {
+        public WithOrgPatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
             DefaultRepositoryPermission = WithOrgPatchRequestBody_default_repository_permission.Read;
         }
@@ -132,7 +134,8 @@ namespace GitHub.Orgs.Item {
         /// </summary>
         /// <returns>A <see cref="WithOrgPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithOrgPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithOrgPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithOrgPatchRequestBody();
         }
@@ -140,8 +143,10 @@ namespace GitHub.Orgs.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"advanced_security_enabled_for_new_repositories", n => { AdvancedSecurityEnabledForNewRepositories = n.GetBoolValue(); } },
                 {"billing_email", n => { BillingEmail = n.GetStringValue(); } },
                 {"blog", n => { Blog = n.GetStringValue(); } },
@@ -177,7 +182,8 @@ namespace GitHub.Orgs.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("advanced_security_enabled_for_new_repositories", AdvancedSecurityEnabledForNewRepositories);
             writer.WriteStringValue("billing_email", BillingEmail);

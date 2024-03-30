@@ -12,32 +12,38 @@ namespace GitHub.Marketplace_listing {
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing
     /// </summary>
-    public class Marketplace_listingRequestBuilder : BaseRequestBuilder {
+    public class Marketplace_listingRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The accounts property</summary>
-        public AccountsRequestBuilder Accounts { get =>
-            new AccountsRequestBuilder(PathParameters, RequestAdapter);
+        public AccountsRequestBuilder Accounts
+        {
+            get => new AccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The plans property</summary>
-        public PlansRequestBuilder Plans { get =>
-            new PlansRequestBuilder(PathParameters, RequestAdapter);
+        public PlansRequestBuilder Plans
+        {
+            get => new PlansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stubbed property</summary>
-        public StubbedRequestBuilder Stubbed { get =>
-            new StubbedRequestBuilder(PathParameters, RequestAdapter);
+        public StubbedRequestBuilder Stubbed
+        {
+            get => new StubbedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="Marketplace_listingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Marketplace_listingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing", pathParameters) {
+        public Marketplace_listingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="Marketplace_listingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Marketplace_listingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing", rawUrl) {
+        public Marketplace_listingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing", rawUrl)
+        {
         }
     }
 }

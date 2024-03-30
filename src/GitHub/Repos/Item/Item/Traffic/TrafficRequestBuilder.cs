@@ -12,32 +12,38 @@ namespace GitHub.Repos.Item.Item.Traffic {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\traffic
     /// </summary>
-    public class TrafficRequestBuilder : BaseRequestBuilder {
+    public class TrafficRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The clones property</summary>
-        public ClonesRequestBuilder Clones { get =>
-            new ClonesRequestBuilder(PathParameters, RequestAdapter);
+        public ClonesRequestBuilder Clones
+        {
+            get => new ClonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The popular property</summary>
-        public PopularRequestBuilder Popular { get =>
-            new PopularRequestBuilder(PathParameters, RequestAdapter);
+        public PopularRequestBuilder Popular
+        {
+            get => new PopularRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The views property</summary>
-        public ViewsRequestBuilder Views { get =>
-            new ViewsRequestBuilder(PathParameters, RequestAdapter);
+        public ViewsRequestBuilder Views
+        {
+            get => new ViewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="TrafficRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrafficRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/traffic", pathParameters) {
+        public TrafficRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/traffic", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TrafficRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrafficRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/traffic", rawUrl) {
+        public TrafficRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/traffic", rawUrl)
+        {
         }
     }
 }

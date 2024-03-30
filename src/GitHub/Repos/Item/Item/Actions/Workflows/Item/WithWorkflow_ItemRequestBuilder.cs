@@ -17,40 +17,48 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}
     /// </summary>
-    public class WithWorkflow_ItemRequestBuilder : BaseRequestBuilder {
+    public class WithWorkflow_ItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The disable property</summary>
-        public DisableRequestBuilder Disable { get =>
-            new DisableRequestBuilder(PathParameters, RequestAdapter);
+        public DisableRequestBuilder Disable
+        {
+            get => new DisableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dispatches property</summary>
-        public DispatchesRequestBuilder Dispatches { get =>
-            new DispatchesRequestBuilder(PathParameters, RequestAdapter);
+        public DispatchesRequestBuilder Dispatches
+        {
+            get => new DispatchesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The enable property</summary>
-        public EnableRequestBuilder Enable { get =>
-            new EnableRequestBuilder(PathParameters, RequestAdapter);
+        public EnableRequestBuilder Enable
+        {
+            get => new EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The runs property</summary>
-        public RunsRequestBuilder Runs { get =>
-            new RunsRequestBuilder(PathParameters, RequestAdapter);
+        public RunsRequestBuilder Runs
+        {
+            get => new RunsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timing property</summary>
-        public TimingRequestBuilder Timing { get =>
-            new TimingRequestBuilder(PathParameters, RequestAdapter);
+        public TimingRequestBuilder Timing
+        {
+            get => new TimingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithWorkflow_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithWorkflow_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}", pathParameters) {
+        public WithWorkflow_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithWorkflow_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithWorkflow_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}", rawUrl) {
+        public WithWorkflow_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets a specific workflow. You can replace `workflow_id` with the workflowfile name. For example, you could use `main.yaml`.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
@@ -61,10 +69,12 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GitHub.Models.Workflow?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GitHub.Models.Workflow?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GitHub.Models.Workflow> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GitHub.Models.Workflow> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<GitHub.Models.Workflow>(requestInfo, GitHub.Models.Workflow.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -76,10 +86,12 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -91,7 +103,8 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
         /// </summary>
         /// <returns>A <see cref="WithWorkflow_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithWorkflow_ItemRequestBuilder WithUrl(string rawUrl) {
+        public WithWorkflow_ItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithWorkflow_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

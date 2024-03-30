@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// A GitHub App that is providing a custom deployment protection rule.
     /// </summary>
-    public class CustomDeploymentRuleApp : IAdditionalDataHolder, IParsable {
+    public class CustomDeploymentRuleApp : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The unique identifier of the deployment protection rule integration.</summary>
@@ -40,7 +41,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="CustomDeploymentRuleApp"/> and sets the default values.
         /// </summary>
-        public CustomDeploymentRuleApp() {
+        public CustomDeploymentRuleApp()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -48,7 +50,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="CustomDeploymentRuleApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomDeploymentRuleApp CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static CustomDeploymentRuleApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CustomDeploymentRuleApp();
         }
@@ -56,8 +59,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"id", n => { Id = n.GetIntValue(); } },
                 {"integration_url", n => { IntegrationUrl = n.GetStringValue(); } },
                 {"node_id", n => { NodeId = n.GetStringValue(); } },
@@ -68,7 +73,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("integration_url", IntegrationUrl);

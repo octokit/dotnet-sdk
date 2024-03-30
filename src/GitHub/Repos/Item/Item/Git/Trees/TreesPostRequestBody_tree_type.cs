@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Git.Trees {
     /// <summary>Either `blob`, `tree`, or `commit`.</summary>
-    public enum TreesPostRequestBody_tree_type {
+    public enum TreesPostRequestBody_tree_type
+    {
         [EnumMember(Value = "blob")]
         Blob,
         [EnumMember(Value = "tree")]

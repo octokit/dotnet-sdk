@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The outcome of the job.</summary>
-    public enum Job_conclusion {
+    public enum Job_conclusion
+    {
         [EnumMember(Value = "success")]
         Success,
         [EnumMember(Value = "failure")]

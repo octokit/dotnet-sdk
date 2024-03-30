@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Environments.Item {
-    public class WithEnvironment_namePutRequestBody : IParsable {
+    public class WithEnvironment_namePutRequestBody : IParsable 
+    {
         /// <summary>The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,7 +33,8 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
         /// </summary>
         /// <returns>A <see cref="WithEnvironment_namePutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithEnvironment_namePutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithEnvironment_namePutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithEnvironment_namePutRequestBody();
         }
@@ -40,8 +42,10 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"deployment_branch_policy", n => { DeploymentBranchPolicy = n.GetObjectValue<DeploymentBranchPolicySettings>(DeploymentBranchPolicySettings.CreateFromDiscriminatorValue); } },
                 {"prevent_self_review", n => { PreventSelfReview = n.GetBoolValue(); } },
                 {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<WithEnvironment_namePutRequestBody_reviewers>(WithEnvironment_namePutRequestBody_reviewers.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -52,7 +56,8 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<DeploymentBranchPolicySettings>("deployment_branch_policy", DeploymentBranchPolicy);
             writer.WriteBoolValue("prevent_self_review", PreventSelfReview);

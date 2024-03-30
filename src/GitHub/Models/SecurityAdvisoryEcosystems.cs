@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The package&apos;s language or package management ecosystem.</summary>
-    public enum SecurityAdvisoryEcosystems {
+    public enum SecurityAdvisoryEcosystems
+    {
         [EnumMember(Value = "rubygems")]
         Rubygems,
         [EnumMember(Value = "npm")]

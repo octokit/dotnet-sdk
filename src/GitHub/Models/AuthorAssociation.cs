@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>How the author is associated with the repository.</summary>
-    public enum AuthorAssociation {
+    public enum AuthorAssociation
+    {
         [EnumMember(Value = "COLLABORATOR")]
         COLLABORATOR,
         [EnumMember(Value = "CONTRIBUTOR")]

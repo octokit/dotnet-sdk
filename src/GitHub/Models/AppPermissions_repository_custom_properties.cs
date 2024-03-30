@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.</summary>
-    public enum AppPermissions_repository_custom_properties {
+    public enum AppPermissions_repository_custom_properties
+    {
         [EnumMember(Value = "read")]
         Read,
         [EnumMember(Value = "write")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum PagesHttpsCertificate_state {
+    public enum PagesHttpsCertificate_state
+    {
         [EnumMember(Value = "new")]
         New,
         [EnumMember(Value = "authorization_created")]

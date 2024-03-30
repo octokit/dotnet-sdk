@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The level of permission to grant the access token to manage the profile settings belonging to a user.</summary>
-    public enum AppPermissions_profile {
+    public enum AppPermissions_profile
+    {
         [EnumMember(Value = "write")]
         Write,
     }

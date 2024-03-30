@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Autolinks {
-    public class AutolinksPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class AutolinksPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this autolink reference matches alphanumeric characters. If true, the `&lt;num&gt;` parameter of the `url_template` matches alphanumeric characters `A-Z` (case insensitive), `0-9`, and `-`. If false, this autolink reference only matches numeric characters.</summary>
@@ -29,7 +30,8 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// <summary>
         /// Instantiates a new <see cref="AutolinksPostRequestBody"/> and sets the default values.
         /// </summary>
-        public AutolinksPostRequestBody() {
+        public AutolinksPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -37,7 +39,8 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// </summary>
         /// <returns>A <see cref="AutolinksPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AutolinksPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AutolinksPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AutolinksPostRequestBody();
         }
@@ -45,8 +48,10 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"is_alphanumeric", n => { IsAlphanumeric = n.GetBoolValue(); } },
                 {"key_prefix", n => { KeyPrefix = n.GetStringValue(); } },
                 {"url_template", n => { UrlTemplate = n.GetStringValue(); } },
@@ -56,7 +61,8 @@ namespace GitHub.Repos.Item.Item.Autolinks {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_alphanumeric", IsAlphanumeric);
             writer.WriteStringValue("key_prefix", KeyPrefix);

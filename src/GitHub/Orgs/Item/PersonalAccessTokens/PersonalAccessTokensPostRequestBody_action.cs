@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.PersonalAccessTokens {
     /// <summary>Action to apply to the fine-grained personal access token.</summary>
-    public enum PersonalAccessTokensPostRequestBody_action {
+    public enum PersonalAccessTokensPostRequestBody_action
+    {
         [EnumMember(Value = "revoke")]
         Revoke,
     }

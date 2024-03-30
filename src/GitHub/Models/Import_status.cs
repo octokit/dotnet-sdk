@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum Import_status {
+    public enum Import_status
+    {
         [EnumMember(Value = "auth")]
         Auth,
         [EnumMember(Value = "error")]

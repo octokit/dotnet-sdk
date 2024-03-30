@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Git.Refs {
-    public class RefsPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class RefsPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn&apos;t start with &apos;refs&apos; and have at least two slashes, it will be rejected.</summary>
@@ -27,7 +28,8 @@ namespace GitHub.Repos.Item.Item.Git.Refs {
         /// <summary>
         /// Instantiates a new <see cref="RefsPostRequestBody"/> and sets the default values.
         /// </summary>
-        public RefsPostRequestBody() {
+        public RefsPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +37,8 @@ namespace GitHub.Repos.Item.Item.Git.Refs {
         /// </summary>
         /// <returns>A <see cref="RefsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RefsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RefsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RefsPostRequestBody();
         }
@@ -43,8 +46,10 @@ namespace GitHub.Repos.Item.Item.Git.Refs {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"ref", n => { Ref = n.GetStringValue(); } },
                 {"sha", n => { Sha = n.GetStringValue(); } },
             };
@@ -53,7 +58,8 @@ namespace GitHub.Repos.Item.Item.Git.Refs {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ref", Ref);
             writer.WriteStringValue("sha", Sha);

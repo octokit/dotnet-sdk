@@ -13,28 +13,35 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Analyses {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\analyses
     /// </summary>
-    public class AnalysesRequestBuilder : BaseRequestBuilder {
+    public class AnalysesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.repos.item.item.codeScanning.analyses.item collection</summary>
         /// <param name="position">The ID of the analysis, as returned from the `GET /repos/{owner}/{repo}/code-scanning/analyses` operation.</param>
         /// <returns>A <see cref="WithAnalysis_ItemRequestBuilder"/></returns>
-        public WithAnalysis_ItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("analysis_id", position);
-            return new WithAnalysis_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithAnalysis_ItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("analysis_id", position);
+                return new WithAnalysis_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="AnalysesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnalysesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses{?direction*,page*,per_page*,ref*,sarif_id*,sort*,tool_guid*,tool_name*}", pathParameters) {
+        public AnalysesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses{?direction*,page*,per_page*,ref*,sarif_id*,sort*,tool_guid*,tool_name*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AnalysesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnalysesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses{?direction*,page*,per_page*,ref*,sarif_id*,sort*,tool_guid*,tool_name*}", rawUrl) {
+        public AnalysesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses{?direction*,page*,per_page*,ref*,sarif_id*,sort*,tool_guid*,tool_name*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists the details of all code scanning analyses for a repository,starting with the most recent.The response is paginated and you can use the `page` and `per_page` parametersto list the analyses you&apos;re interested in.By default 30 analyses are listed per page.The `rules_count` field in the response give the number of rulesthat were run in the analysis.For very old analyses this data is not available,and `0` is returned in this field.**Deprecation notice**:The `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
@@ -48,13 +55,16 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Analyses {
         /// <exception cref="Analyses503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<CodeScanningAnalysis>?> GetAsync(Action<RequestConfiguration<AnalysesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<CodeScanningAnalysis>?> GetAsync(Action<RequestConfiguration<AnalysesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<CodeScanningAnalysis>> GetAsync(Action<RequestConfiguration<AnalysesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<CodeScanningAnalysis>> GetAsync(Action<RequestConfiguration<AnalysesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"503", Analyses503Error.CreateFromDiscriminatorValue},
@@ -69,10 +79,12 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Analyses {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AnalysesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AnalysesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AnalysesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AnalysesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -84,13 +96,15 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Analyses {
         /// </summary>
         /// <returns>A <see cref="AnalysesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AnalysesRequestBuilder WithUrl(string rawUrl) {
+        public AnalysesRequestBuilder WithUrl(string rawUrl)
+        {
             return new AnalysesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists the details of all code scanning analyses for a repository,starting with the most recent.The response is paginated and you can use the `page` and `per_page` parametersto list the analyses you&apos;re interested in.By default 30 analyses are listed per page.The `rules_count` field in the response give the number of rulesthat were run in the analysis.For very old analyses this data is not available,and `0` is returned in this field.**Deprecation notice**:The `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
         /// </summary>
-        public class AnalysesRequestBuilderGetQueryParameters {
+        public class AnalysesRequestBuilderGetQueryParameters 
+        {
             /// <summary>The direction to sort the results by.</summary>
             [QueryParameter("direction")]
             public GetDirectionQueryParameterType? Direction { get; set; }

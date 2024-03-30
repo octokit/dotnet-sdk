@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.Requested_reviewers {
-    public class Requested_reviewersDeleteRequestBody : IAdditionalDataHolder, IParsable {
+    public class Requested_reviewersDeleteRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An array of user `login`s that will be removed.</summary>
@@ -27,7 +28,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Requested_reviewers {
         /// <summary>
         /// Instantiates a new <see cref="Requested_reviewersDeleteRequestBody"/> and sets the default values.
         /// </summary>
-        public Requested_reviewersDeleteRequestBody() {
+        public Requested_reviewersDeleteRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +37,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Requested_reviewers {
         /// </summary>
         /// <returns>A <see cref="Requested_reviewersDeleteRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Requested_reviewersDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Requested_reviewersDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Requested_reviewersDeleteRequestBody();
         }
@@ -43,8 +46,10 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Requested_reviewers {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"reviewers", n => { Reviewers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"team_reviewers", n => { TeamReviewers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -53,7 +58,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Requested_reviewers {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("reviewers", Reviewers);
             writer.WriteCollectionOfPrimitiveValues<string>("team_reviewers", TeamReviewers);

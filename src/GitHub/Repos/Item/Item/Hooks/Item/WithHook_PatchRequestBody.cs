@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Hooks.Item {
-    public class WithHook_PatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class WithHook_PatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.</summary>
         public bool? Active { get; set; }
         /// <summary>Determines a list of events to be added to the list of events that the Hook triggers for.</summary>
@@ -46,7 +47,8 @@ namespace GitHub.Repos.Item.Item.Hooks.Item {
         /// <summary>
         /// Instantiates a new <see cref="WithHook_PatchRequestBody"/> and sets the default values.
         /// </summary>
-        public WithHook_PatchRequestBody() {
+        public WithHook_PatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -54,7 +56,8 @@ namespace GitHub.Repos.Item.Item.Hooks.Item {
         /// </summary>
         /// <returns>A <see cref="WithHook_PatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithHook_PatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithHook_PatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithHook_PatchRequestBody();
         }
@@ -62,8 +65,10 @@ namespace GitHub.Repos.Item.Item.Hooks.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"active", n => { Active = n.GetBoolValue(); } },
                 {"add_events", n => { AddEvents = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"config", n => { Config = n.GetObjectValue<WebhookConfig>(WebhookConfig.CreateFromDiscriminatorValue); } },
@@ -75,7 +80,8 @@ namespace GitHub.Repos.Item.Item.Hooks.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteCollectionOfPrimitiveValues<string>("add_events", AddEvents);

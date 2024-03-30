@@ -16,48 +16,58 @@ namespace GitHub.Search {
     /// <summary>
     /// Builds and executes requests for operations under \search
     /// </summary>
-    public class SearchRequestBuilder : BaseRequestBuilder {
+    public class SearchRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The code property</summary>
-        public CodeRequestBuilder Code { get =>
-            new CodeRequestBuilder(PathParameters, RequestAdapter);
+        public CodeRequestBuilder Code
+        {
+            get => new CodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The commits property</summary>
-        public CommitsRequestBuilder Commits { get =>
-            new CommitsRequestBuilder(PathParameters, RequestAdapter);
+        public CommitsRequestBuilder Commits
+        {
+            get => new CommitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The issues property</summary>
-        public IssuesRequestBuilder Issues { get =>
-            new IssuesRequestBuilder(PathParameters, RequestAdapter);
+        public IssuesRequestBuilder Issues
+        {
+            get => new IssuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The labels property</summary>
-        public LabelsRequestBuilder Labels { get =>
-            new LabelsRequestBuilder(PathParameters, RequestAdapter);
+        public LabelsRequestBuilder Labels
+        {
+            get => new LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repositories property</summary>
-        public RepositoriesRequestBuilder Repositories { get =>
-            new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
+        public RepositoriesRequestBuilder Repositories
+        {
+            get => new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The topics property</summary>
-        public TopicsRequestBuilder Topics { get =>
-            new TopicsRequestBuilder(PathParameters, RequestAdapter);
+        public TopicsRequestBuilder Topics
+        {
+            get => new TopicsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
-        public UsersRequestBuilder Users { get =>
-            new UsersRequestBuilder(PathParameters, RequestAdapter);
+        public UsersRequestBuilder Users
+        {
+            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="SearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search", pathParameters) {
+        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search", rawUrl) {
+        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search", rawUrl)
+        {
         }
     }
 }

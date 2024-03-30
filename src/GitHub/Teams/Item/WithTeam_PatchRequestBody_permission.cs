@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Teams.Item {
     /// <summary>**Deprecated**. The permission that new repositories will be added to the team with when none is specified.</summary>
-    public enum WithTeam_PatchRequestBody_permission {
+    public enum WithTeam_PatchRequestBody_permission
+    {
         [EnumMember(Value = "pull")]
         Pull,
         [EnumMember(Value = "push")]

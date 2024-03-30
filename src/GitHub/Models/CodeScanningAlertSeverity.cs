@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>Severity of a code scanning alert.</summary>
-    public enum CodeScanningAlertSeverity {
+    public enum CodeScanningAlertSeverity
+    {
         [EnumMember(Value = "critical")]
         Critical,
         [EnumMember(Value = "high")]

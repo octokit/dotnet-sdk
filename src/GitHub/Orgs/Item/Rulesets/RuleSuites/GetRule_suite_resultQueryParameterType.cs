@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
-    public enum GetRule_suite_resultQueryParameterType {
+    public enum GetRule_suite_resultQueryParameterType
+    {
         [EnumMember(Value = "pass")]
         Pass,
         [EnumMember(Value = "fail")]

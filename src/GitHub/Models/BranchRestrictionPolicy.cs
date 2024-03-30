@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Branch Restriction Policy
     /// </summary>
-    public class BranchRestrictionPolicy : IAdditionalDataHolder, IParsable {
+    public class BranchRestrictionPolicy : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The apps property</summary>
@@ -70,7 +71,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="BranchRestrictionPolicy"/> and sets the default values.
         /// </summary>
-        public BranchRestrictionPolicy() {
+        public BranchRestrictionPolicy()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -78,7 +80,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="BranchRestrictionPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BranchRestrictionPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static BranchRestrictionPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new BranchRestrictionPolicy();
         }
@@ -86,8 +89,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"apps", n => { Apps = n.GetCollectionOfObjectValues<BranchRestrictionPolicy_apps>(BranchRestrictionPolicy_apps.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"apps_url", n => { AppsUrl = n.GetStringValue(); } },
                 {"teams", n => { Teams = n.GetCollectionOfObjectValues<BranchRestrictionPolicy_teams>(BranchRestrictionPolicy_teams.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -101,7 +106,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<BranchRestrictionPolicy_apps>("apps", Apps);
             writer.WriteStringValue("apps_url", AppsUrl);

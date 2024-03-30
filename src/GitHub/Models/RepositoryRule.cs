@@ -9,7 +9,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Composed type wrapper for classes <see cref="RepositoryRuleBranchNamePattern"/>, <see cref="RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="RepositoryRuleCommitMessagePattern"/>, <see cref="RepositoryRuleCommitterEmailPattern"/>, <see cref="RepositoryRuleCreation"/>, <see cref="RepositoryRuleDeletion"/>, <see cref="RepositoryRuleNonFastForward"/>, <see cref="RepositoryRulePullRequest"/>, <see cref="RepositoryRuleRequiredDeployments"/>, <see cref="RepositoryRuleRequiredLinearHistory"/>, <see cref="RepositoryRuleRequiredSignatures"/>, <see cref="RepositoryRuleRequiredStatusChecks"/>, <see cref="RepositoryRuleTagNamePattern"/>, <see cref="RepositoryRuleUpdate"/>, <see cref="RepositoryRuleWorkflows"/>
     /// </summary>
-    public class RepositoryRule : IComposedTypeWrapper, IParsable {
+    public class RepositoryRule : IComposedTypeWrapper, IParsable 
+    {
         /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleBranchNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -615,233 +616,309 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="RepositoryRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RepositoryRule CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RepositoryRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new RepositoryRule();
-            if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleBranchNamePattern = new GitHub.Models.RepositoryRuleBranchNamePattern();
             }
-            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleCommitAuthorEmailPattern = new GitHub.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
-            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleCommitMessagePattern = new GitHub.Models.RepositoryRuleCommitMessagePattern();
             }
-            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleCommitterEmailPattern = new GitHub.Models.RepositoryRuleCommitterEmailPattern();
             }
-            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleCreation = new GitHub.Models.RepositoryRuleCreation();
             }
-            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleDeletion = new GitHub.Models.RepositoryRuleDeletion();
             }
-            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleNonFastForward = new GitHub.Models.RepositoryRuleNonFastForward();
             }
-            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRulePullRequest = new GitHub.Models.RepositoryRulePullRequest();
             }
-            else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleBranchNamePattern = new GitHub.Models.RepositoryRuleBranchNamePattern();
             }
-            else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleBranchNamePattern0 = new GitHub.Models.RepositoryRuleBranchNamePattern();
             }
-            else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleBranchNamePattern1 = new GitHub.Models.RepositoryRuleBranchNamePattern();
             }
-            else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleBranchNamePattern2 = new GitHub.Models.RepositoryRuleBranchNamePattern();
             }
-            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern = new GitHub.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
-            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 = new GitHub.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
-            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 = new GitHub.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
-            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 = new GitHub.Models.RepositoryRuleCommitAuthorEmailPattern();
             }
-            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitMessagePattern = new GitHub.Models.RepositoryRuleCommitMessagePattern();
             }
-            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitMessagePattern0 = new GitHub.Models.RepositoryRuleCommitMessagePattern();
             }
-            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitMessagePattern1 = new GitHub.Models.RepositoryRuleCommitMessagePattern();
             }
-            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-commit-message-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitMessagePattern2 = new GitHub.Models.RepositoryRuleCommitMessagePattern();
             }
-            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitterEmailPattern = new GitHub.Models.RepositoryRuleCommitterEmailPattern();
             }
-            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitterEmailPattern0 = new GitHub.Models.RepositoryRuleCommitterEmailPattern();
             }
-            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitterEmailPattern1 = new GitHub.Models.RepositoryRuleCommitterEmailPattern();
             }
-            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-committer-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCommitterEmailPattern2 = new GitHub.Models.RepositoryRuleCommitterEmailPattern();
             }
-            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCreation = new GitHub.Models.RepositoryRuleCreation();
             }
-            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCreation0 = new GitHub.Models.RepositoryRuleCreation();
             }
-            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCreation1 = new GitHub.Models.RepositoryRuleCreation();
             }
-            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-creation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleCreation2 = new GitHub.Models.RepositoryRuleCreation();
             }
-            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleDeletion = new GitHub.Models.RepositoryRuleDeletion();
             }
-            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleDeletion0 = new GitHub.Models.RepositoryRuleDeletion();
             }
-            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleDeletion1 = new GitHub.Models.RepositoryRuleDeletion();
             }
-            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleDeletion2 = new GitHub.Models.RepositoryRuleDeletion();
             }
-            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleNonFastForward = new GitHub.Models.RepositoryRuleNonFastForward();
             }
-            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleNonFastForward0 = new GitHub.Models.RepositoryRuleNonFastForward();
             }
-            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleNonFastForward1 = new GitHub.Models.RepositoryRuleNonFastForward();
             }
-            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleNonFastForward2 = new GitHub.Models.RepositoryRuleNonFastForward();
             }
-            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRulePullRequest = new GitHub.Models.RepositoryRulePullRequest();
             }
-            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRulePullRequest0 = new GitHub.Models.RepositoryRulePullRequest();
             }
-            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRulePullRequest1 = new GitHub.Models.RepositoryRulePullRequest();
             }
-            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-pull-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRulePullRequest2 = new GitHub.Models.RepositoryRulePullRequest();
             }
-            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredDeployments = new GitHub.Models.RepositoryRuleRequiredDeployments();
             }
-            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredDeployments0 = new GitHub.Models.RepositoryRuleRequiredDeployments();
             }
-            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredDeployments1 = new GitHub.Models.RepositoryRuleRequiredDeployments();
             }
-            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredDeployments2 = new GitHub.Models.RepositoryRuleRequiredDeployments();
             }
-            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredLinearHistory = new GitHub.Models.RepositoryRuleRequiredLinearHistory();
             }
-            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredLinearHistory0 = new GitHub.Models.RepositoryRuleRequiredLinearHistory();
             }
-            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredLinearHistory1 = new GitHub.Models.RepositoryRuleRequiredLinearHistory();
             }
-            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredLinearHistory2 = new GitHub.Models.RepositoryRuleRequiredLinearHistory();
             }
-            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredSignatures = new GitHub.Models.RepositoryRuleRequiredSignatures();
             }
-            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredSignatures0 = new GitHub.Models.RepositoryRuleRequiredSignatures();
             }
-            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredSignatures1 = new GitHub.Models.RepositoryRuleRequiredSignatures();
             }
-            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredSignatures2 = new GitHub.Models.RepositoryRuleRequiredSignatures();
             }
-            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredStatusChecks = new GitHub.Models.RepositoryRuleRequiredStatusChecks();
             }
-            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredStatusChecks0 = new GitHub.Models.RepositoryRuleRequiredStatusChecks();
             }
-            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredStatusChecks1 = new GitHub.Models.RepositoryRuleRequiredStatusChecks();
             }
-            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleRequiredStatusChecks2 = new GitHub.Models.RepositoryRuleRequiredStatusChecks();
             }
-            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleTagNamePattern = new GitHub.Models.RepositoryRuleTagNamePattern();
             }
-            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleTagNamePattern0 = new GitHub.Models.RepositoryRuleTagNamePattern();
             }
-            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleTagNamePattern1 = new GitHub.Models.RepositoryRuleTagNamePattern();
             }
-            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleTagNamePattern2 = new GitHub.Models.RepositoryRuleTagNamePattern();
             }
-            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleUpdate = new GitHub.Models.RepositoryRuleUpdate();
             }
-            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleUpdate0 = new GitHub.Models.RepositoryRuleUpdate();
             }
-            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleUpdate1 = new GitHub.Models.RepositoryRuleUpdate();
             }
-            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleUpdate2 = new GitHub.Models.RepositoryRuleUpdate();
             }
-            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleWorkflows = new GitHub.Models.RepositoryRuleWorkflows();
             }
-            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleWorkflows0 = new GitHub.Models.RepositoryRuleWorkflows();
             }
-            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleWorkflows1 = new GitHub.Models.RepositoryRuleWorkflows();
             }
-            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRepositoryRuleWorkflows2 = new GitHub.Models.RepositoryRuleWorkflows();
             }
-            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-deployments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRequiredDeployments = new GitHub.Models.RepositoryRuleRequiredDeployments();
             }
-            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-linear-history".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRequiredLinearHistory = new GitHub.Models.RepositoryRuleRequiredLinearHistory();
             }
-            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-signatures".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRequiredSignatures = new GitHub.Models.RepositoryRuleRequiredSignatures();
             }
-            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-required-status-checks".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleRequiredStatusChecks = new GitHub.Models.RepositoryRuleRequiredStatusChecks();
             }
-            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-tag-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleTagNamePattern = new GitHub.Models.RepositoryRuleTagNamePattern();
             }
-            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-update".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleUpdate = new GitHub.Models.RepositoryRuleUpdate();
             }
-            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+            else if("repository-rule-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
                 result.RepositoryRuleWorkflows = new GitHub.Models.RepositoryRuleWorkflows();
             }
             return result;
@@ -850,230 +927,306 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            if(RepositoryRuleBranchNamePattern != null) {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            if(RepositoryRuleBranchNamePattern != null)
+            {
                 return RepositoryRuleBranchNamePattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleCommitAuthorEmailPattern != null) {
+            else if(RepositoryRuleCommitAuthorEmailPattern != null)
+            {
                 return RepositoryRuleCommitAuthorEmailPattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleCommitMessagePattern != null) {
+            else if(RepositoryRuleCommitMessagePattern != null)
+            {
                 return RepositoryRuleCommitMessagePattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleCommitterEmailPattern != null) {
+            else if(RepositoryRuleCommitterEmailPattern != null)
+            {
                 return RepositoryRuleCommitterEmailPattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleCreation != null) {
+            else if(RepositoryRuleCreation != null)
+            {
                 return RepositoryRuleCreation.GetFieldDeserializers();
             }
-            else if(RepositoryRuleDeletion != null) {
+            else if(RepositoryRuleDeletion != null)
+            {
                 return RepositoryRuleDeletion.GetFieldDeserializers();
             }
-            else if(RepositoryRuleNonFastForward != null) {
+            else if(RepositoryRuleNonFastForward != null)
+            {
                 return RepositoryRuleNonFastForward.GetFieldDeserializers();
             }
-            else if(RepositoryRulePullRequest != null) {
+            else if(RepositoryRulePullRequest != null)
+            {
                 return RepositoryRulePullRequest.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleBranchNamePattern != null) {
+            else if(RepositoryRuleRepositoryRuleBranchNamePattern != null)
+            {
                 return RepositoryRuleRepositoryRuleBranchNamePattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleBranchNamePattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleBranchNamePattern0 != null)
+            {
                 return RepositoryRuleRepositoryRuleBranchNamePattern0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleBranchNamePattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleBranchNamePattern1 != null)
+            {
                 return RepositoryRuleRepositoryRuleBranchNamePattern1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleBranchNamePattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleBranchNamePattern2 != null)
+            {
                 return RepositoryRuleRepositoryRuleBranchNamePattern2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern != null) {
+            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitAuthorEmailPattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitMessagePattern != null) {
+            else if(RepositoryRuleRepositoryRuleCommitMessagePattern != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitMessagePattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitMessagePattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitMessagePattern0 != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitMessagePattern0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitMessagePattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitMessagePattern1 != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitMessagePattern1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitMessagePattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitMessagePattern2 != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitMessagePattern2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern != null) {
+            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitterEmailPattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern0 != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitterEmailPattern0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern1 != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitterEmailPattern1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern2 != null)
+            {
                 return RepositoryRuleRepositoryRuleCommitterEmailPattern2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCreation != null) {
+            else if(RepositoryRuleRepositoryRuleCreation != null)
+            {
                 return RepositoryRuleRepositoryRuleCreation.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCreation0 != null) {
+            else if(RepositoryRuleRepositoryRuleCreation0 != null)
+            {
                 return RepositoryRuleRepositoryRuleCreation0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCreation1 != null) {
+            else if(RepositoryRuleRepositoryRuleCreation1 != null)
+            {
                 return RepositoryRuleRepositoryRuleCreation1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleCreation2 != null) {
+            else if(RepositoryRuleRepositoryRuleCreation2 != null)
+            {
                 return RepositoryRuleRepositoryRuleCreation2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleDeletion != null) {
+            else if(RepositoryRuleRepositoryRuleDeletion != null)
+            {
                 return RepositoryRuleRepositoryRuleDeletion.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleDeletion0 != null) {
+            else if(RepositoryRuleRepositoryRuleDeletion0 != null)
+            {
                 return RepositoryRuleRepositoryRuleDeletion0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleDeletion1 != null) {
+            else if(RepositoryRuleRepositoryRuleDeletion1 != null)
+            {
                 return RepositoryRuleRepositoryRuleDeletion1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleDeletion2 != null) {
+            else if(RepositoryRuleRepositoryRuleDeletion2 != null)
+            {
                 return RepositoryRuleRepositoryRuleDeletion2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleNonFastForward != null) {
+            else if(RepositoryRuleRepositoryRuleNonFastForward != null)
+            {
                 return RepositoryRuleRepositoryRuleNonFastForward.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleNonFastForward0 != null) {
+            else if(RepositoryRuleRepositoryRuleNonFastForward0 != null)
+            {
                 return RepositoryRuleRepositoryRuleNonFastForward0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleNonFastForward1 != null) {
+            else if(RepositoryRuleRepositoryRuleNonFastForward1 != null)
+            {
                 return RepositoryRuleRepositoryRuleNonFastForward1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleNonFastForward2 != null) {
+            else if(RepositoryRuleRepositoryRuleNonFastForward2 != null)
+            {
                 return RepositoryRuleRepositoryRuleNonFastForward2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRulePullRequest != null) {
+            else if(RepositoryRuleRepositoryRulePullRequest != null)
+            {
                 return RepositoryRuleRepositoryRulePullRequest.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRulePullRequest0 != null) {
+            else if(RepositoryRuleRepositoryRulePullRequest0 != null)
+            {
                 return RepositoryRuleRepositoryRulePullRequest0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRulePullRequest1 != null) {
+            else if(RepositoryRuleRepositoryRulePullRequest1 != null)
+            {
                 return RepositoryRuleRepositoryRulePullRequest1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRulePullRequest2 != null) {
+            else if(RepositoryRuleRepositoryRulePullRequest2 != null)
+            {
                 return RepositoryRuleRepositoryRulePullRequest2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredDeployments != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredDeployments != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredDeployments.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredDeployments0 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredDeployments0 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredDeployments0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredDeployments1 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredDeployments1 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredDeployments1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredDeployments2 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredDeployments2 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredDeployments2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredLinearHistory.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory0 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory0 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredLinearHistory0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory1 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory1 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredLinearHistory1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory2 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory2 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredLinearHistory2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredSignatures != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredSignatures != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredSignatures.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredSignatures0 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredSignatures0 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredSignatures0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredSignatures1 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredSignatures1 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredSignatures1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredSignatures2 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredSignatures2 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredSignatures2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredStatusChecks.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks0 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks0 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredStatusChecks0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks1 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks1 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredStatusChecks1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks2 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks2 != null)
+            {
                 return RepositoryRuleRepositoryRuleRequiredStatusChecks2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleTagNamePattern != null) {
+            else if(RepositoryRuleRepositoryRuleTagNamePattern != null)
+            {
                 return RepositoryRuleRepositoryRuleTagNamePattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleTagNamePattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleTagNamePattern0 != null)
+            {
                 return RepositoryRuleRepositoryRuleTagNamePattern0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleTagNamePattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleTagNamePattern1 != null)
+            {
                 return RepositoryRuleRepositoryRuleTagNamePattern1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleTagNamePattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleTagNamePattern2 != null)
+            {
                 return RepositoryRuleRepositoryRuleTagNamePattern2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleUpdate != null) {
+            else if(RepositoryRuleRepositoryRuleUpdate != null)
+            {
                 return RepositoryRuleRepositoryRuleUpdate.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleUpdate0 != null) {
+            else if(RepositoryRuleRepositoryRuleUpdate0 != null)
+            {
                 return RepositoryRuleRepositoryRuleUpdate0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleUpdate1 != null) {
+            else if(RepositoryRuleRepositoryRuleUpdate1 != null)
+            {
                 return RepositoryRuleRepositoryRuleUpdate1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleUpdate2 != null) {
+            else if(RepositoryRuleRepositoryRuleUpdate2 != null)
+            {
                 return RepositoryRuleRepositoryRuleUpdate2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleWorkflows != null) {
+            else if(RepositoryRuleRepositoryRuleWorkflows != null)
+            {
                 return RepositoryRuleRepositoryRuleWorkflows.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleWorkflows0 != null) {
+            else if(RepositoryRuleRepositoryRuleWorkflows0 != null)
+            {
                 return RepositoryRuleRepositoryRuleWorkflows0.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleWorkflows1 != null) {
+            else if(RepositoryRuleRepositoryRuleWorkflows1 != null)
+            {
                 return RepositoryRuleRepositoryRuleWorkflows1.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRepositoryRuleWorkflows2 != null) {
+            else if(RepositoryRuleRepositoryRuleWorkflows2 != null)
+            {
                 return RepositoryRuleRepositoryRuleWorkflows2.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRequiredDeployments != null) {
+            else if(RepositoryRuleRequiredDeployments != null)
+            {
                 return RepositoryRuleRequiredDeployments.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRequiredLinearHistory != null) {
+            else if(RepositoryRuleRequiredLinearHistory != null)
+            {
                 return RepositoryRuleRequiredLinearHistory.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRequiredSignatures != null) {
+            else if(RepositoryRuleRequiredSignatures != null)
+            {
                 return RepositoryRuleRequiredSignatures.GetFieldDeserializers();
             }
-            else if(RepositoryRuleRequiredStatusChecks != null) {
+            else if(RepositoryRuleRequiredStatusChecks != null)
+            {
                 return RepositoryRuleRequiredStatusChecks.GetFieldDeserializers();
             }
-            else if(RepositoryRuleTagNamePattern != null) {
+            else if(RepositoryRuleTagNamePattern != null)
+            {
                 return RepositoryRuleTagNamePattern.GetFieldDeserializers();
             }
-            else if(RepositoryRuleUpdate != null) {
+            else if(RepositoryRuleUpdate != null)
+            {
                 return RepositoryRuleUpdate.GetFieldDeserializers();
             }
-            else if(RepositoryRuleWorkflows != null) {
+            else if(RepositoryRuleWorkflows != null)
+            {
                 return RepositoryRuleWorkflows.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
@@ -1082,231 +1235,307 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(RepositoryRuleBranchNamePattern != null) {
+            if(RepositoryRuleBranchNamePattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleBranchNamePattern);
             }
-            else if(RepositoryRuleCommitAuthorEmailPattern != null) {
+            else if(RepositoryRuleCommitAuthorEmailPattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleCommitAuthorEmailPattern);
             }
-            else if(RepositoryRuleCommitMessagePattern != null) {
+            else if(RepositoryRuleCommitMessagePattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleCommitMessagePattern);
             }
-            else if(RepositoryRuleCommitterEmailPattern != null) {
+            else if(RepositoryRuleCommitterEmailPattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleCommitterEmailPattern);
             }
-            else if(RepositoryRuleCreation != null) {
+            else if(RepositoryRuleCreation != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCreation>(null, RepositoryRuleCreation);
             }
-            else if(RepositoryRuleDeletion != null) {
+            else if(RepositoryRuleDeletion != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleDeletion>(null, RepositoryRuleDeletion);
             }
-            else if(RepositoryRuleNonFastForward != null) {
+            else if(RepositoryRuleNonFastForward != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleNonFastForward);
             }
-            else if(RepositoryRulePullRequest != null) {
+            else if(RepositoryRulePullRequest != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRulePullRequest>(null, RepositoryRulePullRequest);
             }
-            else if(RepositoryRuleRepositoryRuleBranchNamePattern != null) {
+            else if(RepositoryRuleRepositoryRuleBranchNamePattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern);
             }
-            else if(RepositoryRuleRepositoryRuleBranchNamePattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleBranchNamePattern0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern0);
             }
-            else if(RepositoryRuleRepositoryRuleBranchNamePattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleBranchNamePattern1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern1);
             }
-            else if(RepositoryRuleRepositoryRuleBranchNamePattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleBranchNamePattern2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern2);
             }
-            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern != null) {
+            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern);
             }
-            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern0);
             }
-            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern1);
             }
-            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleRepositoryRuleCommitAuthorEmailPattern2);
             }
-            else if(RepositoryRuleRepositoryRuleCommitMessagePattern != null) {
+            else if(RepositoryRuleRepositoryRuleCommitMessagePattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern);
             }
-            else if(RepositoryRuleRepositoryRuleCommitMessagePattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitMessagePattern0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern0);
             }
-            else if(RepositoryRuleRepositoryRuleCommitMessagePattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitMessagePattern1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern1);
             }
-            else if(RepositoryRuleRepositoryRuleCommitMessagePattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitMessagePattern2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitMessagePattern>(null, RepositoryRuleRepositoryRuleCommitMessagePattern2);
             }
-            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern != null) {
+            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern);
             }
-            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern0);
             }
-            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern1);
             }
-            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleCommitterEmailPattern2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitterEmailPattern>(null, RepositoryRuleRepositoryRuleCommitterEmailPattern2);
             }
-            else if(RepositoryRuleRepositoryRuleCreation != null) {
+            else if(RepositoryRuleRepositoryRuleCreation != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation);
             }
-            else if(RepositoryRuleRepositoryRuleCreation0 != null) {
+            else if(RepositoryRuleRepositoryRuleCreation0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation0);
             }
-            else if(RepositoryRuleRepositoryRuleCreation1 != null) {
+            else if(RepositoryRuleRepositoryRuleCreation1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation1);
             }
-            else if(RepositoryRuleRepositoryRuleCreation2 != null) {
+            else if(RepositoryRuleRepositoryRuleCreation2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCreation>(null, RepositoryRuleRepositoryRuleCreation2);
             }
-            else if(RepositoryRuleRepositoryRuleDeletion != null) {
+            else if(RepositoryRuleRepositoryRuleDeletion != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion);
             }
-            else if(RepositoryRuleRepositoryRuleDeletion0 != null) {
+            else if(RepositoryRuleRepositoryRuleDeletion0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion0);
             }
-            else if(RepositoryRuleRepositoryRuleDeletion1 != null) {
+            else if(RepositoryRuleRepositoryRuleDeletion1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion1);
             }
-            else if(RepositoryRuleRepositoryRuleDeletion2 != null) {
+            else if(RepositoryRuleRepositoryRuleDeletion2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion2);
             }
-            else if(RepositoryRuleRepositoryRuleNonFastForward != null) {
+            else if(RepositoryRuleRepositoryRuleNonFastForward != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward);
             }
-            else if(RepositoryRuleRepositoryRuleNonFastForward0 != null) {
+            else if(RepositoryRuleRepositoryRuleNonFastForward0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward0);
             }
-            else if(RepositoryRuleRepositoryRuleNonFastForward1 != null) {
+            else if(RepositoryRuleRepositoryRuleNonFastForward1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward1);
             }
-            else if(RepositoryRuleRepositoryRuleNonFastForward2 != null) {
+            else if(RepositoryRuleRepositoryRuleNonFastForward2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleRepositoryRuleNonFastForward2);
             }
-            else if(RepositoryRuleRepositoryRulePullRequest != null) {
+            else if(RepositoryRuleRepositoryRulePullRequest != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest);
             }
-            else if(RepositoryRuleRepositoryRulePullRequest0 != null) {
+            else if(RepositoryRuleRepositoryRulePullRequest0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest0);
             }
-            else if(RepositoryRuleRepositoryRulePullRequest1 != null) {
+            else if(RepositoryRuleRepositoryRulePullRequest1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest1);
             }
-            else if(RepositoryRuleRepositoryRulePullRequest2 != null) {
+            else if(RepositoryRuleRepositoryRulePullRequest2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRulePullRequest>(null, RepositoryRuleRepositoryRulePullRequest2);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredDeployments != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredDeployments != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredDeployments0 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredDeployments0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments0);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredDeployments1 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredDeployments1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments1);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredDeployments2 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredDeployments2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRepositoryRuleRequiredDeployments2);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory0 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory0);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory1 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory1);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory2 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredLinearHistory2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRepositoryRuleRequiredLinearHistory2);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredSignatures != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredSignatures != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredSignatures0 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredSignatures0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures0);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredSignatures1 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredSignatures1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures1);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredSignatures2 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredSignatures2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRepositoryRuleRequiredSignatures2);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks0 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks0);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks1 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks1);
             }
-            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks2 != null) {
+            else if(RepositoryRuleRepositoryRuleRequiredStatusChecks2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRepositoryRuleRequiredStatusChecks2);
             }
-            else if(RepositoryRuleRepositoryRuleTagNamePattern != null) {
+            else if(RepositoryRuleRepositoryRuleTagNamePattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern);
             }
-            else if(RepositoryRuleRepositoryRuleTagNamePattern0 != null) {
+            else if(RepositoryRuleRepositoryRuleTagNamePattern0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern0);
             }
-            else if(RepositoryRuleRepositoryRuleTagNamePattern1 != null) {
+            else if(RepositoryRuleRepositoryRuleTagNamePattern1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern1);
             }
-            else if(RepositoryRuleRepositoryRuleTagNamePattern2 != null) {
+            else if(RepositoryRuleRepositoryRuleTagNamePattern2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleRepositoryRuleTagNamePattern2);
             }
-            else if(RepositoryRuleRepositoryRuleUpdate != null) {
+            else if(RepositoryRuleRepositoryRuleUpdate != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate);
             }
-            else if(RepositoryRuleRepositoryRuleUpdate0 != null) {
+            else if(RepositoryRuleRepositoryRuleUpdate0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate0);
             }
-            else if(RepositoryRuleRepositoryRuleUpdate1 != null) {
+            else if(RepositoryRuleRepositoryRuleUpdate1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate1);
             }
-            else if(RepositoryRuleRepositoryRuleUpdate2 != null) {
+            else if(RepositoryRuleRepositoryRuleUpdate2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleUpdate>(null, RepositoryRuleRepositoryRuleUpdate2);
             }
-            else if(RepositoryRuleRepositoryRuleWorkflows != null) {
+            else if(RepositoryRuleRepositoryRuleWorkflows != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows);
             }
-            else if(RepositoryRuleRepositoryRuleWorkflows0 != null) {
+            else if(RepositoryRuleRepositoryRuleWorkflows0 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows0);
             }
-            else if(RepositoryRuleRepositoryRuleWorkflows1 != null) {
+            else if(RepositoryRuleRepositoryRuleWorkflows1 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows1);
             }
-            else if(RepositoryRuleRepositoryRuleWorkflows2 != null) {
+            else if(RepositoryRuleRepositoryRuleWorkflows2 != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleWorkflows>(null, RepositoryRuleRepositoryRuleWorkflows2);
             }
-            else if(RepositoryRuleRequiredDeployments != null) {
+            else if(RepositoryRuleRequiredDeployments != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredDeployments>(null, RepositoryRuleRequiredDeployments);
             }
-            else if(RepositoryRuleRequiredLinearHistory != null) {
+            else if(RepositoryRuleRequiredLinearHistory != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredLinearHistory>(null, RepositoryRuleRequiredLinearHistory);
             }
-            else if(RepositoryRuleRequiredSignatures != null) {
+            else if(RepositoryRuleRequiredSignatures != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredSignatures>(null, RepositoryRuleRequiredSignatures);
             }
-            else if(RepositoryRuleRequiredStatusChecks != null) {
+            else if(RepositoryRuleRequiredStatusChecks != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleRequiredStatusChecks>(null, RepositoryRuleRequiredStatusChecks);
             }
-            else if(RepositoryRuleTagNamePattern != null) {
+            else if(RepositoryRuleTagNamePattern != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleTagNamePattern>(null, RepositoryRuleTagNamePattern);
             }
-            else if(RepositoryRuleUpdate != null) {
+            else if(RepositoryRuleUpdate != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleUpdate>(null, RepositoryRuleUpdate);
             }
-            else if(RepositoryRuleWorkflows != null) {
+            else if(RepositoryRuleWorkflows != null)
+            {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleWorkflows>(null, RepositoryRuleWorkflows);
             }
         }

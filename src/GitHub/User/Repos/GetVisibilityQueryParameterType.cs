@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.User.Repos {
-    public enum GetVisibilityQueryParameterType {
+    public enum GetVisibilityQueryParameterType
+    {
         [EnumMember(Value = "all")]
         All,
         [EnumMember(Value = "public")]

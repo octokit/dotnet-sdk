@@ -8,7 +8,8 @@ namespace GitHub.Repos.Item.Item.Pages {
     /// <summary>
     /// The source branch and directory used to publish your Pages site.
     /// </summary>
-    public class PagesPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class PagesPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The process in which the Page will be built. Possible values are `&quot;legacy&quot;` and `&quot;workflow&quot;`.</summary>
@@ -24,7 +25,8 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// <summary>
         /// Instantiates a new <see cref="PagesPostRequestBody"/> and sets the default values.
         /// </summary>
-        public PagesPostRequestBody() {
+        public PagesPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -32,7 +34,8 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// </summary>
         /// <returns>A <see cref="PagesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PagesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PagesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PagesPostRequestBody();
         }
@@ -40,8 +43,10 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"build_type", n => { BuildType = n.GetEnumValue<PagesPostRequestBody_build_type>(); } },
                 {"source", n => { Source = n.GetObjectValue<PagesPostRequestBody_source>(PagesPostRequestBody_source.CreateFromDiscriminatorValue); } },
             };
@@ -50,7 +55,8 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<PagesPostRequestBody_build_type>("build_type", BuildType);
             writer.WriteObjectValue<PagesPostRequestBody_source>("source", Source);

@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Details for the vulnerable dependency.
     /// </summary>
-    public class DependabotAlert_dependency : IAdditionalDataHolder, IParsable {
+    public class DependabotAlert_dependency : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The full path to the dependency manifest file, relative to the root of the repository.</summary>
@@ -32,7 +33,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="DependabotAlert_dependency"/> and sets the default values.
         /// </summary>
-        public DependabotAlert_dependency() {
+        public DependabotAlert_dependency()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -40,7 +42,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="DependabotAlert_dependency"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DependabotAlert_dependency CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DependabotAlert_dependency CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DependabotAlert_dependency();
         }
@@ -48,8 +51,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"manifest_path", n => { ManifestPath = n.GetStringValue(); } },
                 {"package", n => { Package = n.GetObjectValue<DependabotAlertPackage>(DependabotAlertPackage.CreateFromDiscriminatorValue); } },
                 {"scope", n => { Scope = n.GetEnumValue<DependabotAlert_dependency_scope>(); } },
@@ -59,7 +64,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteAdditionalData(AdditionalData);
         }

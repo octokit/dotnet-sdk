@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.</summary>
-    public enum InteractionGroup {
+    public enum InteractionGroup
+    {
         [EnumMember(Value = "existing_users")]
         Existing_users,
         [EnumMember(Value = "contributors_only")]

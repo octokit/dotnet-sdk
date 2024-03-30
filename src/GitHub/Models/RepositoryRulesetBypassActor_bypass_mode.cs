@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests.</summary>
-    public enum RepositoryRulesetBypassActor_bypass_mode {
+    public enum RepositoryRulesetBypassActor_bypass_mode
+    {
         [EnumMember(Value = "always")]
         Always,
         [EnumMember(Value = "pull_request")]

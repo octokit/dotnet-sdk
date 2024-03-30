@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum PackageVersion_metadata_package_type {
+    public enum PackageVersion_metadata_package_type
+    {
         [EnumMember(Value = "npm")]
         Npm,
         [EnumMember(Value = "maven")]

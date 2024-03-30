@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
-    public class GenerateNotesPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class GenerateNotesPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at &apos;.github/release.yml&apos; or &apos;.github/release.yaml&apos; will be used. If that is not present, the default configuration will be used.</summary>
@@ -43,7 +44,8 @@ namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
         /// <summary>
         /// Instantiates a new <see cref="GenerateNotesPostRequestBody"/> and sets the default values.
         /// </summary>
-        public GenerateNotesPostRequestBody() {
+        public GenerateNotesPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -51,7 +53,8 @@ namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
         /// </summary>
         /// <returns>A <see cref="GenerateNotesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GenerateNotesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GenerateNotesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GenerateNotesPostRequestBody();
         }
@@ -59,8 +62,10 @@ namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"configuration_file_path", n => { ConfigurationFilePath = n.GetStringValue(); } },
                 {"previous_tag_name", n => { PreviousTagName = n.GetStringValue(); } },
                 {"tag_name", n => { TagName = n.GetStringValue(); } },
@@ -71,7 +76,8 @@ namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("configuration_file_path", ConfigurationFilePath);
             writer.WriteStringValue("previous_tag_name", PreviousTagName);

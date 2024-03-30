@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
     /// <summary>Action to apply to the requests.</summary>
-    public enum PersonalAccessTokenRequestsPostRequestBody_action {
+    public enum PersonalAccessTokenRequestsPostRequestBody_action
+    {
         [EnumMember(Value = "approve")]
         Approve,
         [EnumMember(Value = "deny")]

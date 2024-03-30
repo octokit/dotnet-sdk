@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum RepositoryRulePullRequest_type {
+    public enum RepositoryRulePullRequest_type
+    {
         [EnumMember(Value = "pull_request")]
         Pull_request,
     }

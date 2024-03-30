@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Git.Trees {
     /// <summary>The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.</summary>
-    public enum TreesPostRequestBody_tree_mode {
+    public enum TreesPostRequestBody_tree_mode
+    {
         [EnumMember(Value = "100644")]
         OneZeroZeroSixFourFour,
         [EnumMember(Value = "100755")]

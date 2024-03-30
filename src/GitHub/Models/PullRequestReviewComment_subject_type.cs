@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The level at which the comment is targeted, can be a diff line or a file.</summary>
-    public enum PullRequestReviewComment_subject_type {
+    public enum PullRequestReviewComment_subject_type
+    {
         [EnumMember(Value = "line")]
         Line,
         [EnumMember(Value = "file")]

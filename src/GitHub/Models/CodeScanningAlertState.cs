@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>State of a code scanning alert.</summary>
-    public enum CodeScanningAlertState {
+    public enum CodeScanningAlertState
+    {
         [EnumMember(Value = "open")]
         Open,
         [EnumMember(Value = "dismissed")]

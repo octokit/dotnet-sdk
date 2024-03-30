@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
-    public class UpdateBranchPutRequestBody : IAdditionalDataHolder, IParsable {
+    public class UpdateBranchPutRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expected SHA of the pull request&apos;s HEAD ref. This is the most recent commit on the pull request&apos;s branch. If the expected SHA does not match the pull request&apos;s HEAD, you will receive a `422 Unprocessable Entity` status. You can use the &quot;[List commits](https://docs.github.com/rest/commits/commits#list-commits)&quot; endpoint to find the most recent commit SHA. Default: SHA of the pull request&apos;s current HEAD ref.</summary>
@@ -19,7 +20,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
         /// <summary>
         /// Instantiates a new <see cref="UpdateBranchPutRequestBody"/> and sets the default values.
         /// </summary>
-        public UpdateBranchPutRequestBody() {
+        public UpdateBranchPutRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
         /// </summary>
         /// <returns>A <see cref="UpdateBranchPutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateBranchPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static UpdateBranchPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new UpdateBranchPutRequestBody();
         }
@@ -35,8 +38,10 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"expected_head_sha", n => { ExpectedHeadSha = n.GetStringValue(); } },
             };
         }
@@ -44,7 +49,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("expected_head_sha", ExpectedHeadSha);
             writer.WriteAdditionalData(AdditionalData);

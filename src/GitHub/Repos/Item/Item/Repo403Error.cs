@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item {
-    public class Repo403Error : ApiException, IAdditionalDataHolder, IParsable {
+    public class Repo403Error : ApiException, IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The documentation_url property</summary>
@@ -28,7 +29,8 @@ namespace GitHub.Repos.Item.Item {
         /// <summary>
         /// Instantiates a new <see cref="Repo403Error"/> and sets the default values.
         /// </summary>
-        public Repo403Error() {
+        public Repo403Error()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -36,7 +38,8 @@ namespace GitHub.Repos.Item.Item {
         /// </summary>
         /// <returns>A <see cref="Repo403Error"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Repo403Error CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Repo403Error CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Repo403Error();
         }
@@ -44,8 +47,10 @@ namespace GitHub.Repos.Item.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
                 {"message", n => { MessageEscaped = n.GetStringValue(); } },
             };
@@ -54,7 +59,8 @@ namespace GitHub.Repos.Item.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("documentation_url", DocumentationUrl);
             writer.WriteStringValue("message", MessageEscaped);

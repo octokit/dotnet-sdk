@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks {
-    public class Required_status_checksPatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class Required_status_checksPatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of status checks to require in order to merge into this branch.</summary>
@@ -30,7 +31,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// <summary>
         /// Instantiates a new <see cref="Required_status_checksPatchRequestBody"/> and sets the default values.
         /// </summary>
-        public Required_status_checksPatchRequestBody() {
+        public Required_status_checksPatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -38,7 +40,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// </summary>
         /// <returns>A <see cref="Required_status_checksPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Required_status_checksPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Required_status_checksPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Required_status_checksPatchRequestBody();
         }
@@ -46,8 +49,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"checks", n => { Checks = n.GetCollectionOfObjectValues<Required_status_checksPatchRequestBody_checks>(Required_status_checksPatchRequestBody_checks.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"contexts", n => { Contexts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"strict", n => { Strict = n.GetBoolValue(); } },
@@ -57,7 +62,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<Required_status_checksPatchRequestBody_checks>("checks", Checks);
             writer.WriteCollectionOfPrimitiveValues<string>("contexts", Contexts);

@@ -10,28 +10,35 @@ namespace GitHub.Repos.Item.Item.Compare {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\compare
     /// </summary>
-    public class CompareRequestBuilder : BaseRequestBuilder {
+    public class CompareRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.repos.item.item.compare.item collection</summary>
         /// <param name="position">The base branch and head branch to compare. This parameter expects the format `BASE...HEAD`. Both must be branch names in `repo`. To compare with a branch that exists in a different repository in the same network as `repo`, the `basehead` parameter expects the format `USERNAME:BASE...USERNAME:HEAD`.</param>
         /// <returns>A <see cref="WithBaseheadItemRequestBuilder"/></returns>
-        public WithBaseheadItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("basehead", position);
-            return new WithBaseheadItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithBaseheadItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("basehead", position);
+                return new WithBaseheadItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="CompareRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompareRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/compare", pathParameters) {
+        public CompareRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/compare", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CompareRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CompareRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/compare", rawUrl) {
+        public CompareRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/compare", rawUrl)
+        {
         }
     }
 }

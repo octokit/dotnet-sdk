@@ -14,28 +14,33 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\attempts\{attempt_number}
     /// </summary>
-    public class WithAttempt_numberItemRequestBuilder : BaseRequestBuilder {
+    public class WithAttempt_numberItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The jobs property</summary>
-        public JobsRequestBuilder Jobs { get =>
-            new JobsRequestBuilder(PathParameters, RequestAdapter);
+        public JobsRequestBuilder Jobs
+        {
+            get => new JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logs property</summary>
-        public LogsRequestBuilder Logs { get =>
-            new LogsRequestBuilder(PathParameters, RequestAdapter);
+        public LogsRequestBuilder Logs
+        {
+            get => new LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithAttempt_numberItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAttempt_numberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}/attempts/{attempt_number}{?exclude_pull_requests*}", pathParameters) {
+        public WithAttempt_numberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}/attempts/{attempt_number}{?exclude_pull_requests*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithAttempt_numberItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAttempt_numberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}/attempts/{attempt_number}{?exclude_pull_requests*}", rawUrl) {
+        public WithAttempt_numberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}/attempts/{attempt_number}{?exclude_pull_requests*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets a specific workflow run attempt.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
@@ -46,10 +51,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkflowRun?> GetAsync(Action<RequestConfiguration<WithAttempt_numberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkflowRun?> GetAsync(Action<RequestConfiguration<WithAttempt_numberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WorkflowRun> GetAsync(Action<RequestConfiguration<WithAttempt_numberItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkflowRun> GetAsync(Action<RequestConfiguration<WithAttempt_numberItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<WorkflowRun>(requestInfo, WorkflowRun.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -61,10 +68,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithAttempt_numberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithAttempt_numberItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithAttempt_numberItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithAttempt_numberItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -76,13 +85,15 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.Item {
         /// </summary>
         /// <returns>A <see cref="WithAttempt_numberItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithAttempt_numberItemRequestBuilder WithUrl(string rawUrl) {
+        public WithAttempt_numberItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithAttempt_numberItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets a specific workflow run attempt.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
-        public class WithAttempt_numberItemRequestBuilderGetQueryParameters {
+        public class WithAttempt_numberItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>If `true` pull requests are omitted from the response (empty array).</summary>
             [QueryParameter("exclude_pull_requests")]
             public bool? ExcludePullRequests { get; set; }

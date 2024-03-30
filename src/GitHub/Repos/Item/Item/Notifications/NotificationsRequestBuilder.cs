@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.Notifications {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\notifications
     /// </summary>
-    public class NotificationsRequestBuilder : BaseRequestBuilder {
+    public class NotificationsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="NotificationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/notifications{?all*,before*,page*,participating*,per_page*,since*}", pathParameters) {
+        public NotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/notifications{?all*,before*,page*,participating*,per_page*,since*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="NotificationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/notifications{?all*,before*,page*,participating*,per_page*,since*}", rawUrl) {
+        public NotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/notifications{?all*,before*,page*,participating*,per_page*,since*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists all notifications for the current user in the specified repository.
@@ -36,10 +39,12 @@ namespace GitHub.Repos.Item.Item.Notifications {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<ThreadObject>?> GetAsync(Action<RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<ThreadObject>?> GetAsync(Action<RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<ThreadObject>> GetAsync(Action<RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<ThreadObject>> GetAsync(Action<RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<ThreadObject>(requestInfo, ThreadObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -55,10 +60,12 @@ namespace GitHub.Repos.Item.Item.Notifications {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<NotificationsPutResponse?> PutAsync(NotificationsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<NotificationsPutResponse?> PutAsync(NotificationsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<NotificationsPutResponse> PutAsync(NotificationsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<NotificationsPutResponse> PutAsync(NotificationsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
@@ -71,10 +78,12 @@ namespace GitHub.Repos.Item.Item.Notifications {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NotificationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -89,10 +98,12 @@ namespace GitHub.Repos.Item.Item.Notifications {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(NotificationsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(NotificationsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(NotificationsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(NotificationsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/notifications", PathParameters);
@@ -106,13 +117,15 @@ namespace GitHub.Repos.Item.Item.Notifications {
         /// </summary>
         /// <returns>A <see cref="NotificationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public NotificationsRequestBuilder WithUrl(string rawUrl) {
+        public NotificationsRequestBuilder WithUrl(string rawUrl)
+        {
             return new NotificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all notifications for the current user in the specified repository.
         /// </summary>
-        public class NotificationsRequestBuilderGetQueryParameters {
+        public class NotificationsRequestBuilderGetQueryParameters 
+        {
             /// <summary>If `true`, show notifications marked as read.</summary>
             [QueryParameter("all")]
             public bool? All { get; set; }

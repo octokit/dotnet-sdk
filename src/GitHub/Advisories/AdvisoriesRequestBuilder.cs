@@ -13,28 +13,35 @@ namespace GitHub.Advisories {
     /// <summary>
     /// Builds and executes requests for operations under \advisories
     /// </summary>
-    public class AdvisoriesRequestBuilder : BaseRequestBuilder {
+    public class AdvisoriesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.advisories.item collection</summary>
         /// <param name="position">The GHSA (GitHub Security Advisory) identifier of the advisory.</param>
         /// <returns>A <see cref="WithGhsa_ItemRequestBuilder"/></returns>
-        public WithGhsa_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("ghsa_id", position);
-            return new WithGhsa_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithGhsa_ItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("ghsa_id", position);
+                return new WithGhsa_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="AdvisoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/advisories{?affects*,after*,before*,cve_id*,cwes*,direction*,ecosystem*,ghsa_id*,is_withdrawn*,modified*,per_page*,published*,severity*,sort*,type*,updated*}", pathParameters) {
+        public AdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/advisories{?affects*,after*,before*,cve_id*,cwes*,direction*,ecosystem*,ghsa_id*,is_withdrawn*,modified*,per_page*,published*,severity*,sort*,type*,updated*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AdvisoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/advisories{?affects*,after*,before*,cve_id*,cwes*,direction*,ecosystem*,ghsa_id*,is_withdrawn*,modified*,per_page*,published*,severity*,sort*,type*,updated*}", rawUrl) {
+        public AdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/advisories{?affects*,after*,before*,cve_id*,cwes*,direction*,ecosystem*,ghsa_id*,is_withdrawn*,modified*,per_page*,published*,severity*,sort*,type*,updated*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists all global security advisories that match the specified parameters. If no other parameters are defined, the request will return only GitHub-reviewed advisories that are not malware.By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see &quot;[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories).&quot;
@@ -47,13 +54,16 @@ namespace GitHub.Advisories {
         /// <exception cref="BasicError">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<GlobalAdvisory>?> GetAsync(Action<RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GlobalAdvisory>?> GetAsync(Action<RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<GlobalAdvisory>> GetAsync(Action<RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<GlobalAdvisory>> GetAsync(Action<RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
                 {"429", BasicError.CreateFromDiscriminatorValue},
             };
@@ -67,10 +77,12 @@ namespace GitHub.Advisories {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AdvisoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -82,13 +94,15 @@ namespace GitHub.Advisories {
         /// </summary>
         /// <returns>A <see cref="AdvisoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AdvisoriesRequestBuilder WithUrl(string rawUrl) {
+        public AdvisoriesRequestBuilder WithUrl(string rawUrl)
+        {
             return new AdvisoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all global security advisories that match the specified parameters. If no other parameters are defined, the request will return only GitHub-reviewed advisories that are not malware.By default, all responses will exclude advisories for malware, because malware are not standard vulnerabilities. To list advisories for malware, you must include the `type` parameter in your request, with the value `malware`. For more information about the different types of security advisories, see &quot;[About the GitHub Advisory database](https://docs.github.com/code-security/security-advisories/global-security-advisories/about-the-github-advisory-database#about-types-of-security-advisories).&quot;
         /// </summary>
-        public class AdvisoriesRequestBuilderGetQueryParameters {
+        public class AdvisoriesRequestBuilderGetQueryParameters 
+        {
             /// <summary>If specified, only return advisories that affect any of `package` or `package@version`. A maximum of 1000 packages can be specified.If the query parameter causes the URL to exceed the maximum URL length supported by your client, you must specify fewer packages.Example: `affects=package1,package2@1.0.0,package3@^2.0.0` or `affects[]=package1&amp;affects[]=package2@1.0.0`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,7 +158,7 @@ namespace GitHub.Advisories {
             public GetDirectionQueryParameterType? Direction { get; set; }
             /// <summary>If specified, only advisories for these ecosystems will be returned.</summary>
             [QueryParameter("ecosystem")]
-            public GetEcosystemQueryParameterType? Ecosystem { get; set; }
+            public SecurityAdvisoryEcosystems? Ecosystem { get; set; }
             /// <summary>If specified, only advisories with this GHSA (GitHub Security Advisory) identifier will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

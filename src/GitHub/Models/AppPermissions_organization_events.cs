@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The level of permission to grant the access token to view events triggered by an activity in an organization.</summary>
-    public enum AppPermissions_organization_events {
+    public enum AppPermissions_organization_events
+    {
         [EnumMember(Value = "read")]
         Read,
     }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum RepositoryRuleRequiredStatusChecks_type {
+    public enum RepositoryRuleRequiredStatusChecks_type
+    {
         [EnumMember(Value = "required_status_checks")]
         Required_status_checks,
     }

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class ApiOverview_domains : IAdditionalDataHolder, IParsable {
+    public class ApiOverview_domains : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,7 +52,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="ApiOverview_domains"/> and sets the default values.
         /// </summary>
-        public ApiOverview_domains() {
+        public ApiOverview_domains()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -59,7 +61,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="ApiOverview_domains"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApiOverview_domains CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ApiOverview_domains CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ApiOverview_domains();
         }
@@ -67,8 +70,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"codespaces", n => { Codespaces = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"copilot", n => { Copilot = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -80,7 +85,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("actions", Actions);
             writer.WriteCollectionOfPrimitiveValues<string>("codespaces", Codespaces);

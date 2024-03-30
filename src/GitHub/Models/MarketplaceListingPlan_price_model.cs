@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum MarketplaceListingPlan_price_model {
+    public enum MarketplaceListingPlan_price_model
+    {
         [EnumMember(Value = "FREE")]
         FREE,
         [EnumMember(Value = "FLAT_RATE")]

@@ -13,24 +13,28 @@ namespace GitHub.Users.Item.Received_events {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\received_events
     /// </summary>
-    public class Received_eventsRequestBuilder : BaseRequestBuilder {
+    public class Received_eventsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The public property</summary>
-        public PublicRequestBuilder Public { get =>
-            new PublicRequestBuilder(PathParameters, RequestAdapter);
+        public PublicRequestBuilder Public
+        {
+            get => new PublicRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="Received_eventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Received_eventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/received_events{?page*,per_page*}", pathParameters) {
+        public Received_eventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/received_events{?page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="Received_eventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Received_eventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/received_events{?page*,per_page*}", rawUrl) {
+        public Received_eventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/received_events{?page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
@@ -41,10 +45,12 @@ namespace GitHub.Users.Item.Received_events {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Event>?> GetAsync(Action<RequestConfiguration<Received_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Event>?> GetAsync(Action<RequestConfiguration<Received_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<Event>> GetAsync(Action<RequestConfiguration<Received_eventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Event>> GetAsync(Action<RequestConfiguration<Received_eventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -57,10 +63,12 @@ namespace GitHub.Users.Item.Received_events {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Received_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Received_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Received_eventsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Received_eventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -72,13 +80,15 @@ namespace GitHub.Users.Item.Received_events {
         /// </summary>
         /// <returns>A <see cref="Received_eventsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Received_eventsRequestBuilder WithUrl(string rawUrl) {
+        public Received_eventsRequestBuilder WithUrl(string rawUrl)
+        {
             return new Received_eventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
         /// </summary>
-        public class Received_eventsRequestBuilderGetQueryParameters {
+        public class Received_eventsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

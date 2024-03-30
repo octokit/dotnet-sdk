@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum Workflow_state {
+    public enum Workflow_state
+    {
         [EnumMember(Value = "active")]
         Active,
         [EnumMember(Value = "deleted")]

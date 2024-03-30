@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Contents.Item {
-    public class WithPathDeleteRequestBody : IAdditionalDataHolder, IParsable {
+    public class WithPathDeleteRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>object containing information about the author.</summary>
@@ -51,7 +52,8 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
         /// <summary>
         /// Instantiates a new <see cref="WithPathDeleteRequestBody"/> and sets the default values.
         /// </summary>
-        public WithPathDeleteRequestBody() {
+        public WithPathDeleteRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -59,7 +61,8 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
         /// </summary>
         /// <returns>A <see cref="WithPathDeleteRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithPathDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithPathDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithPathDeleteRequestBody();
         }
@@ -67,8 +70,10 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"author", n => { Author = n.GetObjectValue<WithPathDeleteRequestBody_author>(WithPathDeleteRequestBody_author.CreateFromDiscriminatorValue); } },
                 {"branch", n => { Branch = n.GetStringValue(); } },
                 {"committer", n => { Committer = n.GetObjectValue<WithPathDeleteRequestBody_committer>(WithPathDeleteRequestBody_committer.CreateFromDiscriminatorValue); } },
@@ -80,7 +85,8 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<WithPathDeleteRequestBody_author>("author", Author);
             writer.WriteStringValue("branch", Branch);

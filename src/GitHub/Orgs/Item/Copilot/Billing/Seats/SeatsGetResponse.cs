@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
-    public class SeatsGetResponse : IAdditionalDataHolder, IParsable {
+    public class SeatsGetResponse : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The seats property</summary>
@@ -22,7 +23,8 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         /// <summary>
         /// Instantiates a new <see cref="SeatsGetResponse"/> and sets the default values.
         /// </summary>
-        public SeatsGetResponse() {
+        public SeatsGetResponse()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -30,7 +32,8 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         /// </summary>
         /// <returns>A <see cref="SeatsGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SeatsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SeatsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SeatsGetResponse();
         }
@@ -38,8 +41,10 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"seats", n => { Seats = n.GetCollectionOfObjectValues<CopilotSeatDetails>(CopilotSeatDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"total_seats", n => { TotalSeats = n.GetIntValue(); } },
             };
@@ -48,7 +53,8 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<CopilotSeatDetails>("seats", Seats);
             writer.WriteIntValue("total_seats", TotalSeats);

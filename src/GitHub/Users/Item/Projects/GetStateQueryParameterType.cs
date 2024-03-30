@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Users.Item.Projects {
-    public enum GetStateQueryParameterType {
+    public enum GetStateQueryParameterType
+    {
         [EnumMember(Value = "open")]
         Open,
         [EnumMember(Value = "closed")]

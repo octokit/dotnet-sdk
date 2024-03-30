@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Rulesets {
     /// <summary>The target of the ruleset.</summary>
-    public enum RulesetsPostRequestBody_target {
+    public enum RulesetsPostRequestBody_target
+    {
         [EnumMember(Value = "branch")]
         Branch,
         [EnumMember(Value = "tag")]

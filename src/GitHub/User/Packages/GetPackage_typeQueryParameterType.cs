@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.User.Packages {
-    public enum GetPackage_typeQueryParameterType {
+    public enum GetPackage_typeQueryParameterType
+    {
         [EnumMember(Value = "npm")]
         Npm,
         [EnumMember(Value = "maven")]

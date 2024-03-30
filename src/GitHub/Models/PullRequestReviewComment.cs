@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Pull Request Review Comments are comments on a portion of the Pull Request&apos;s diff.
     /// </summary>
-    public class PullRequestReviewComment : IAdditionalDataHolder, IParsable {
+    public class PullRequestReviewComment : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How the author is associated with the repository.</summary>
@@ -156,7 +157,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="PullRequestReviewComment"/> and sets the default values.
         /// </summary>
-        public PullRequestReviewComment() {
+        public PullRequestReviewComment()
+        {
             AdditionalData = new Dictionary<string, object>();
             Side = PullRequestReviewComment_side.RIGHT;
             StartSide = PullRequestReviewComment_start_side.RIGHT;
@@ -166,7 +168,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="PullRequestReviewComment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PullRequestReviewComment CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PullRequestReviewComment CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PullRequestReviewComment();
         }
@@ -174,8 +177,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
                 {"body", n => { Body = n.GetStringValue(); } },
                 {"body_html", n => { BodyHtml = n.GetStringValue(); } },
@@ -211,7 +216,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AuthorAssociation>("author_association", AuthorAssociation);
             writer.WriteStringValue("body", Body);

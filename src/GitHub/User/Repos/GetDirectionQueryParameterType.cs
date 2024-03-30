@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.User.Repos {
-    public enum GetDirectionQueryParameterType {
+    public enum GetDirectionQueryParameterType
+    {
         [EnumMember(Value = "asc")]
         Asc,
         [EnumMember(Value = "desc")]

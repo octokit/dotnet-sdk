@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.User.Email.Visibility {
-    public class VisibilityPatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class VisibilityPatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes whether an email is publicly visible.</summary>
@@ -13,7 +14,8 @@ namespace GitHub.User.Email.Visibility {
         /// <summary>
         /// Instantiates a new <see cref="VisibilityPatchRequestBody"/> and sets the default values.
         /// </summary>
-        public VisibilityPatchRequestBody() {
+        public VisibilityPatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -21,7 +23,8 @@ namespace GitHub.User.Email.Visibility {
         /// </summary>
         /// <returns>A <see cref="VisibilityPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VisibilityPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static VisibilityPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new VisibilityPatchRequestBody();
         }
@@ -29,8 +32,10 @@ namespace GitHub.User.Email.Visibility {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"visibility", n => { Visibility = n.GetEnumValue<VisibilityPatchRequestBody_visibility>(); } },
             };
         }
@@ -38,7 +43,8 @@ namespace GitHub.User.Email.Visibility {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<VisibilityPatchRequestBody_visibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);

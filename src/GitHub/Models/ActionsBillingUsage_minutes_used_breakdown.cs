@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class ActionsBillingUsage_minutes_used_breakdown : IAdditionalDataHolder, IParsable {
+    public class ActionsBillingUsage_minutes_used_breakdown : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total minutes used on macOS runner machines.</summary>
@@ -41,7 +42,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="ActionsBillingUsage_minutes_used_breakdown"/> and sets the default values.
         /// </summary>
-        public ActionsBillingUsage_minutes_used_breakdown() {
+        public ActionsBillingUsage_minutes_used_breakdown()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -49,7 +51,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="ActionsBillingUsage_minutes_used_breakdown"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ActionsBillingUsage_minutes_used_breakdown CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ActionsBillingUsage_minutes_used_breakdown CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ActionsBillingUsage_minutes_used_breakdown();
         }
@@ -57,8 +60,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"MACOS", n => { MACOS = n.GetIntValue(); } },
                 {"macos_12_core", n => { Macos12Core = n.GetIntValue(); } },
                 {"total", n => { Total = n.GetIntValue(); } },
@@ -80,7 +85,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("MACOS", MACOS);
             writer.WriteIntValue("macos_12_core", Macos12Core);

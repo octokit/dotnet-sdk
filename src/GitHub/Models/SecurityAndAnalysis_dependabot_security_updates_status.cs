@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The enablement status of Dependabot security updates for the repository.</summary>
-    public enum SecurityAndAnalysis_dependabot_security_updates_status {
+    public enum SecurityAndAnalysis_dependabot_security_updates_status
+    {
         [EnumMember(Value = "enabled")]
         Enabled,
         [EnumMember(Value = "disabled")]

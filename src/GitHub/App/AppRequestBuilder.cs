@@ -15,32 +15,38 @@ namespace GitHub.App {
     /// <summary>
     /// Builds and executes requests for operations under \app
     /// </summary>
-    public class AppRequestBuilder : BaseRequestBuilder {
+    public class AppRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The hook property</summary>
-        public HookRequestBuilder Hook { get =>
-            new HookRequestBuilder(PathParameters, RequestAdapter);
+        public HookRequestBuilder Hook
+        {
+            get => new HookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The installationRequests property</summary>
-        public InstallationRequestsRequestBuilder InstallationRequests { get =>
-            new InstallationRequestsRequestBuilder(PathParameters, RequestAdapter);
+        public InstallationRequestsRequestBuilder InstallationRequests
+        {
+            get => new InstallationRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The installations property</summary>
-        public InstallationsRequestBuilder Installations { get =>
-            new InstallationsRequestBuilder(PathParameters, RequestAdapter);
+        public InstallationsRequestBuilder Installations
+        {
+            get => new InstallationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="AppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app", pathParameters) {
+        public AppRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app", rawUrl) {
+        public AppRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app", rawUrl)
+        {
         }
         /// <summary>
         /// Returns the GitHub App associated with the authentication credentials used. To see how many app installations are associated with this GitHub App, see the `installations_count` in the response. For more details about your app&apos;s installations, see the &quot;[List installations for the authenticated app](https://docs.github.com/rest/apps/apps#list-installations-for-the-authenticated-app)&quot; endpoint.You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
@@ -51,10 +57,12 @@ namespace GitHub.App {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Integration?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Integration?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Integration> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Integration> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<Integration>(requestInfo, Integration.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -66,10 +74,12 @@ namespace GitHub.App {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -81,7 +91,8 @@ namespace GitHub.App {
         /// </summary>
         /// <returns>A <see cref="AppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AppRequestBuilder WithUrl(string rawUrl) {
+        public AppRequestBuilder WithUrl(string rawUrl)
+        {
             return new AppRequestBuilder(rawUrl, RequestAdapter);
         }
     }

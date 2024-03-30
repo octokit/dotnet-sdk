@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The severity of the advisory.</summary>
-    public enum DependabotAlertSecurityAdvisory_severity {
+    public enum DependabotAlertSecurityAdvisory_severity
+    {
         [EnumMember(Value = "low")]
         Low,
         [EnumMember(Value = "medium")]

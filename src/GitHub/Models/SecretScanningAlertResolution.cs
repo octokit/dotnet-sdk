@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>**Required when the `state` is `resolved`.** The reason for resolving the alert.</summary>
-    public enum SecretScanningAlertResolution {
+    public enum SecretScanningAlertResolution
+    {
         [EnumMember(Value = "false_positive")]
         False_positive,
         [EnumMember(Value = "wont_fix")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Marketplace_listing.Plans.Item.Accounts {
-    public enum GetSortQueryParameterType {
+    public enum GetSortQueryParameterType
+    {
         [EnumMember(Value = "created")]
         Created,
         [EnumMember(Value = "updated")]

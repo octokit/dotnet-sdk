@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The token status as of the latest validity check.</summary>
-    public enum SecretScanningAlert_validity {
+    public enum SecretScanningAlert_validity
+    {
         [EnumMember(Value = "active")]
         Active,
         [EnumMember(Value = "inactive")]

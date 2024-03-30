@@ -16,44 +16,55 @@ namespace GitHub.Orgs.Item.Actions.Runners {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\runners
     /// </summary>
-    public class RunnersRequestBuilder : BaseRequestBuilder {
+    public class RunnersRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The downloads property</summary>
-        public DownloadsRequestBuilder Downloads { get =>
-            new DownloadsRequestBuilder(PathParameters, RequestAdapter);
+        public DownloadsRequestBuilder Downloads
+        {
+            get => new DownloadsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateJitconfig property</summary>
-        public GenerateJitconfigRequestBuilder GenerateJitconfig { get =>
-            new GenerateJitconfigRequestBuilder(PathParameters, RequestAdapter);
+        public GenerateJitconfigRequestBuilder GenerateJitconfig
+        {
+            get => new GenerateJitconfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The registrationToken property</summary>
-        public RegistrationTokenRequestBuilder RegistrationToken { get =>
-            new RegistrationTokenRequestBuilder(PathParameters, RequestAdapter);
+        public RegistrationTokenRequestBuilder RegistrationToken
+        {
+            get => new RegistrationTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The removeToken property</summary>
-        public RemoveTokenRequestBuilder RemoveToken { get =>
-            new RemoveTokenRequestBuilder(PathParameters, RequestAdapter);
+        public RemoveTokenRequestBuilder RemoveToken
+        {
+            get => new RemoveTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the GitHub.orgs.item.actions.runners.item collection</summary>
         /// <param name="position">Unique identifier of the self-hosted runner.</param>
         /// <returns>A <see cref="WithRunner_ItemRequestBuilder"/></returns>
-        public WithRunner_ItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("runner_id", position);
-            return new WithRunner_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithRunner_ItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("runner_id", position);
+                return new WithRunner_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="RunnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners{?name*,page*,per_page*}", pathParameters) {
+        public RunnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners{?name*,page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RunnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners{?name*,page*,per_page*}", rawUrl) {
+        public RunnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners{?name*,page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists all self-hosted runners configured in an organization.Authenticated users must have admin access to the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
@@ -64,10 +75,12 @@ namespace GitHub.Orgs.Item.Actions.Runners {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RunnersGetResponse?> GetAsync(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RunnersGetResponse?> GetAsync(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<RunnersGetResponse> GetAsync(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RunnersGetResponse> GetAsync(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<RunnersGetResponse>(requestInfo, RunnersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -79,10 +92,12 @@ namespace GitHub.Orgs.Item.Actions.Runners {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -94,13 +109,15 @@ namespace GitHub.Orgs.Item.Actions.Runners {
         /// </summary>
         /// <returns>A <see cref="RunnersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RunnersRequestBuilder WithUrl(string rawUrl) {
+        public RunnersRequestBuilder WithUrl(string rawUrl)
+        {
             return new RunnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all self-hosted runners configured in an organization.Authenticated users must have admin access to the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// </summary>
-        public class RunnersRequestBuilderGetQueryParameters {
+        public class RunnersRequestBuilderGetQueryParameters 
+        {
             /// <summary>The name of a self-hosted runner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

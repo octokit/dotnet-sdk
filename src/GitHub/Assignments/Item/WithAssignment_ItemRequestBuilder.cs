@@ -14,28 +14,33 @@ namespace GitHub.Assignments.Item {
     /// <summary>
     /// Builds and executes requests for operations under \assignments\{assignment_id}
     /// </summary>
-    public class WithAssignment_ItemRequestBuilder : BaseRequestBuilder {
+    public class WithAssignment_ItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The accepted_assignments property</summary>
-        public Accepted_assignmentsRequestBuilder Accepted_assignments { get =>
-            new Accepted_assignmentsRequestBuilder(PathParameters, RequestAdapter);
+        public Accepted_assignmentsRequestBuilder Accepted_assignments
+        {
+            get => new Accepted_assignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The grades property</summary>
-        public GradesRequestBuilder Grades { get =>
-            new GradesRequestBuilder(PathParameters, RequestAdapter);
+        public GradesRequestBuilder Grades
+        {
+            get => new GradesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithAssignment_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAssignment_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assignments/{assignment_id}", pathParameters) {
+        public WithAssignment_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assignments/{assignment_id}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithAssignment_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAssignment_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assignments/{assignment_id}", rawUrl) {
+        public WithAssignment_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/assignments/{assignment_id}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets a GitHub Classroom assignment. Assignment will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
@@ -47,13 +52,16 @@ namespace GitHub.Assignments.Item {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ClassroomAssignment?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ClassroomAssignment?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ClassroomAssignment> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ClassroomAssignment> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ClassroomAssignment>(requestInfo, ClassroomAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -65,10 +73,12 @@ namespace GitHub.Assignments.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -80,7 +90,8 @@ namespace GitHub.Assignments.Item {
         /// </summary>
         /// <returns>A <see cref="WithAssignment_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithAssignment_ItemRequestBuilder WithUrl(string rawUrl) {
+        public WithAssignment_ItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithAssignment_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

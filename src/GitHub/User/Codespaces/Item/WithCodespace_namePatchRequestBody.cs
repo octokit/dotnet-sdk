@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.User.Codespaces.Item {
-    public class WithCodespace_namePatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class WithCodespace_namePatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Display name for this codespace</summary>
@@ -35,7 +36,8 @@ namespace GitHub.User.Codespaces.Item {
         /// <summary>
         /// Instantiates a new <see cref="WithCodespace_namePatchRequestBody"/> and sets the default values.
         /// </summary>
-        public WithCodespace_namePatchRequestBody() {
+        public WithCodespace_namePatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -43,7 +45,8 @@ namespace GitHub.User.Codespaces.Item {
         /// </summary>
         /// <returns>A <see cref="WithCodespace_namePatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithCodespace_namePatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithCodespace_namePatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithCodespace_namePatchRequestBody();
         }
@@ -51,8 +54,10 @@ namespace GitHub.User.Codespaces.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"display_name", n => { DisplayName = n.GetStringValue(); } },
                 {"machine", n => { Machine = n.GetStringValue(); } },
                 {"recent_folders", n => { RecentFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -62,7 +67,8 @@ namespace GitHub.User.Codespaces.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("machine", Machine);

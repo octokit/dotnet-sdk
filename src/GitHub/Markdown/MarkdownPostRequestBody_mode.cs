@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Markdown {
     /// <summary>The rendering mode.</summary>
-    public enum MarkdownPostRequestBody_mode {
+    public enum MarkdownPostRequestBody_mode
+    {
         [EnumMember(Value = "markdown")]
         Markdown,
         [EnumMember(Value = "gfm")]

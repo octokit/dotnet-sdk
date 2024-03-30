@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Activity {
-    public enum GetTime_periodQueryParameterType {
+    public enum GetTime_periodQueryParameterType
+    {
         [EnumMember(Value = "day")]
         Day,
         [EnumMember(Value = "week")]

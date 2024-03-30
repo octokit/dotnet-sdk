@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The merge method to use.</summary>
-    public enum AutoMerge_merge_method {
+    public enum AutoMerge_merge_method
+    {
         [EnumMember(Value = "merge")]
         Merge,
         [EnumMember(Value = "squash")]

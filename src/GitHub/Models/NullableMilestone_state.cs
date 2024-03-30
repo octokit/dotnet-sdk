@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The state of the milestone.</summary>
-    public enum NullableMilestone_state {
+    public enum NullableMilestone_state
+    {
         [EnumMember(Value = "open")]
         Open,
         [EnumMember(Value = "closed")]

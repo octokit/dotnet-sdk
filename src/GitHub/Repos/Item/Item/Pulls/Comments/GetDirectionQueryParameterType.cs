@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Comments {
-    public enum GetDirectionQueryParameterType {
+    public enum GetDirectionQueryParameterType
+    {
         [EnumMember(Value = "asc")]
         Asc,
         [EnumMember(Value = "desc")]

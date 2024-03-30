@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class ValidationError_errors : IAdditionalDataHolder, IParsable {
+    public class ValidationError_errors : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The code property</summary>
@@ -53,7 +54,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="ValidationError_errors"/> and sets the default values.
         /// </summary>
-        public ValidationError_errors() {
+        public ValidationError_errors()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -61,7 +63,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="ValidationError_errors"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ValidationError_errors CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ValidationError_errors CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ValidationError_errors();
         }
@@ -69,8 +72,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"code", n => { Code = n.GetStringValue(); } },
                 {"field", n => { Field = n.GetStringValue(); } },
                 {"index", n => { Index = n.GetIntValue(); } },
@@ -83,7 +88,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("field", Field);
@@ -96,7 +102,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        public class ValidationError_errors_value : IComposedTypeWrapper, IParsable {
+        public class ValidationError_errors_value : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }
             /// <summary>Composed type representation for type <see cref="string"/></summary>
@@ -112,14 +119,17 @@ namespace GitHub.Models {
             /// </summary>
             /// <returns>A <see cref="ValidationError_errors_value"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static ValidationError_errors_value CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static ValidationError_errors_value CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new ValidationError_errors_value();
-                if(parseNode.GetIntValue() is int integerValue) {
+                if(parseNode.GetIntValue() is int integerValue)
+                {
                     result.Integer = integerValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue) {
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
                     result.String = stringValue;
                 }
                 return result;
@@ -128,19 +138,23 @@ namespace GitHub.Models {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(Integer != null) {
+                if(Integer != null)
+                {
                     writer.WriteIntValue(null, Integer);
                 }
-                else if(String != null) {
+                else if(String != null)
+                {
                     writer.WriteStringValue(null, String);
                 }
             }

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
-    public class MergePutRequestBody : IAdditionalDataHolder, IParsable {
+    public class MergePutRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Extra detail to append to automatic commit message.</summary>
@@ -37,7 +38,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
         /// <summary>
         /// Instantiates a new <see cref="MergePutRequestBody"/> and sets the default values.
         /// </summary>
-        public MergePutRequestBody() {
+        public MergePutRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -45,7 +47,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
         /// </summary>
         /// <returns>A <see cref="MergePutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MergePutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static MergePutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MergePutRequestBody();
         }
@@ -53,8 +56,10 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"commit_message", n => { CommitMessage = n.GetStringValue(); } },
                 {"commit_title", n => { CommitTitle = n.GetStringValue(); } },
                 {"merge_method", n => { MergeMethod = n.GetEnumValue<MergePutRequestBody_merge_method>(); } },
@@ -65,7 +70,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("commit_message", CommitMessage);
             writer.WriteStringValue("commit_title", CommitTitle);

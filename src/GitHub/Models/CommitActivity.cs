@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Commit Activity
     /// </summary>
-    public class CommitActivity : IAdditionalDataHolder, IParsable {
+    public class CommitActivity : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The days property</summary>
@@ -26,7 +27,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="CommitActivity"/> and sets the default values.
         /// </summary>
-        public CommitActivity() {
+        public CommitActivity()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -34,7 +36,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="CommitActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CommitActivity CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static CommitActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CommitActivity();
         }
@@ -42,8 +45,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"days", n => { Days = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
                 {"total", n => { Total = n.GetIntValue(); } },
                 {"week", n => { Week = n.GetIntValue(); } },
@@ -53,7 +58,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("days", Days);
             writer.WriteIntValue("total", Total);

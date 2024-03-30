@@ -13,24 +13,28 @@ namespace GitHub.User.Marketplace_purchases {
     /// <summary>
     /// Builds and executes requests for operations under \user\marketplace_purchases
     /// </summary>
-    public class Marketplace_purchasesRequestBuilder : BaseRequestBuilder {
+    public class Marketplace_purchasesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The stubbed property</summary>
-        public StubbedRequestBuilder Stubbed { get =>
-            new StubbedRequestBuilder(PathParameters, RequestAdapter);
+        public StubbedRequestBuilder Stubbed
+        {
+            get => new StubbedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="Marketplace_purchasesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Marketplace_purchasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/marketplace_purchases{?page*,per_page*}", pathParameters) {
+        public Marketplace_purchasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/marketplace_purchases{?page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="Marketplace_purchasesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Marketplace_purchasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/marketplace_purchases{?page*,per_page*}", rawUrl) {
+        public Marketplace_purchasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/marketplace_purchases{?page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists the active subscriptions for the authenticated user.
@@ -43,13 +47,16 @@ namespace GitHub.User.Marketplace_purchases {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<UserMarketplacePurchase>?> GetAsync(Action<RequestConfiguration<Marketplace_purchasesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<UserMarketplacePurchase>?> GetAsync(Action<RequestConfiguration<Marketplace_purchasesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<UserMarketplacePurchase>> GetAsync(Action<RequestConfiguration<Marketplace_purchasesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<UserMarketplacePurchase>> GetAsync(Action<RequestConfiguration<Marketplace_purchasesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
@@ -63,10 +70,12 @@ namespace GitHub.User.Marketplace_purchases {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Marketplace_purchasesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Marketplace_purchasesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Marketplace_purchasesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Marketplace_purchasesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -78,13 +87,15 @@ namespace GitHub.User.Marketplace_purchases {
         /// </summary>
         /// <returns>A <see cref="Marketplace_purchasesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Marketplace_purchasesRequestBuilder WithUrl(string rawUrl) {
+        public Marketplace_purchasesRequestBuilder WithUrl(string rawUrl)
+        {
             return new Marketplace_purchasesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists the active subscriptions for the authenticated user.
         /// </summary>
-        public class Marketplace_purchasesRequestBuilderGetQueryParameters {
+        public class Marketplace_purchasesRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

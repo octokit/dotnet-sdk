@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.</summary>
-    public enum RepositoryAdvisoryUpdate_severity {
+    public enum RepositoryAdvisoryUpdate_severity
+    {
         [EnumMember(Value = "critical")]
         Critical,
         [EnumMember(Value = "high")]

@@ -13,32 +13,40 @@ namespace GitHub.Repos.Item.Item.Actions.Secrets {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\secrets
     /// </summary>
-    public class SecretsRequestBuilder : BaseRequestBuilder {
+    public class SecretsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The publicKey property</summary>
-        public PublicKeyRequestBuilder PublicKey { get =>
-            new PublicKeyRequestBuilder(PathParameters, RequestAdapter);
+        public PublicKeyRequestBuilder PublicKey
+        {
+            get => new PublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.secrets.item collection</summary>
         /// <param name="position">The name of the secret.</param>
         /// <returns>A <see cref="WithSecret_nameItemRequestBuilder"/></returns>
-        public WithSecret_nameItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("secret_name", position);
-            return new WithSecret_nameItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithSecret_nameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("secret_name", position);
+                return new WithSecret_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="SecretsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/secrets{?page*,per_page*}", pathParameters) {
+        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/secrets{?page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SecretsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/secrets{?page*,per_page*}", rawUrl) {
+        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/secrets{?page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists all secrets available in a repository without revealing their encryptedvalues.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -49,10 +57,12 @@ namespace GitHub.Repos.Item.Item.Actions.Secrets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SecretsGetResponse?> GetAsync(Action<RequestConfiguration<SecretsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SecretsGetResponse?> GetAsync(Action<RequestConfiguration<SecretsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SecretsGetResponse> GetAsync(Action<RequestConfiguration<SecretsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SecretsGetResponse> GetAsync(Action<RequestConfiguration<SecretsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<SecretsGetResponse>(requestInfo, SecretsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -64,10 +74,12 @@ namespace GitHub.Repos.Item.Item.Actions.Secrets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecretsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecretsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecretsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecretsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -79,13 +91,15 @@ namespace GitHub.Repos.Item.Item.Actions.Secrets {
         /// </summary>
         /// <returns>A <see cref="SecretsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SecretsRequestBuilder WithUrl(string rawUrl) {
+        public SecretsRequestBuilder WithUrl(string rawUrl)
+        {
             return new SecretsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all secrets available in a repository without revealing their encryptedvalues.Authenticated users must have collaborator access to a repository to create, update, or read secrets.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
-        public class SecretsRequestBuilderGetQueryParameters {
+        public class SecretsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

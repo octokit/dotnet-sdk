@@ -10,28 +10,35 @@ namespace GitHub.Orgs.Item.SecurityManagers.Teams {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\security-managers\teams
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder {
+    public class TeamsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.orgs.item.securityManagers.teams.item collection</summary>
         /// <param name="position">The slug of the team name.</param>
         /// <returns>A <see cref="WithTeam_slugItemRequestBuilder"/></returns>
-        public WithTeam_slugItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("team_slug", position);
-            return new WithTeam_slugItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithTeam_slugItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("team_slug", position);
+                return new WithTeam_slugItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/security-managers/teams", pathParameters) {
+        public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/security-managers/teams", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/security-managers/teams", rawUrl) {
+        public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/security-managers/teams", rawUrl)
+        {
         }
     }
 }

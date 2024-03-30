@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class GpgKey_subkeys : IAdditionalDataHolder, IParsable {
+    public class GpgKey_subkeys : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The can_certify property</summary>
@@ -70,10 +71,19 @@ namespace GitHub.Models {
 #endif
         /// <summary>The revoked property</summary>
         public bool? Revoked { get; set; }
+        /// <summary>The subkeys property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Subkeys { get; set; }
+#nullable restore
+#else
+        public UntypedNode Subkeys { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="GpgKey_subkeys"/> and sets the default values.
         /// </summary>
-        public GpgKey_subkeys() {
+        public GpgKey_subkeys()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -81,7 +91,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="GpgKey_subkeys"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GpgKey_subkeys CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GpgKey_subkeys CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GpgKey_subkeys();
         }
@@ -89,8 +100,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"can_certify", n => { CanCertify = n.GetBoolValue(); } },
                 {"can_encrypt_comms", n => { CanEncryptComms = n.GetBoolValue(); } },
                 {"can_encrypt_storage", n => { CanEncryptStorage = n.GetBoolValue(); } },
@@ -104,13 +117,15 @@ namespace GitHub.Models {
                 {"public_key", n => { PublicKey = n.GetStringValue(); } },
                 {"raw_key", n => { RawKey = n.GetStringValue(); } },
                 {"revoked", n => { Revoked = n.GetBoolValue(); } },
+                {"subkeys", n => { Subkeys = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("can_certify", CanCertify);
             writer.WriteBoolValue("can_encrypt_comms", CanEncryptComms);
@@ -125,6 +140,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("public_key", PublicKey);
             writer.WriteStringValue("raw_key", RawKey);
             writer.WriteBoolValue("revoked", Revoked);
+            writer.WriteObjectValue<UntypedNode>("subkeys", Subkeys);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Porter Author
     /// </summary>
-    public class PorterAuthor : IAdditionalDataHolder, IParsable {
+    public class PorterAuthor : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The email property</summary>
@@ -64,7 +65,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="PorterAuthor"/> and sets the default values.
         /// </summary>
-        public PorterAuthor() {
+        public PorterAuthor()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -72,7 +74,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="PorterAuthor"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PorterAuthor CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PorterAuthor CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PorterAuthor();
         }
@@ -80,8 +83,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetIntValue(); } },
                 {"import_url", n => { ImportUrl = n.GetStringValue(); } },
@@ -95,7 +100,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteIntValue("id", Id);

@@ -10,24 +10,28 @@ namespace GitHub.Repos.Item.Item.Rules {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rules
     /// </summary>
-    public class RulesRequestBuilder : BaseRequestBuilder {
+    public class RulesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The branches property</summary>
-        public BranchesRequestBuilder Branches { get =>
-            new BranchesRequestBuilder(PathParameters, RequestAdapter);
+        public BranchesRequestBuilder Branches
+        {
+            get => new BranchesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="RulesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rules", pathParameters) {
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rules", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RulesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rules", rawUrl) {
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rules", rawUrl)
+        {
         }
     }
 }

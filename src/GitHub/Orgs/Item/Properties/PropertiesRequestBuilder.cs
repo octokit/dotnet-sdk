@@ -11,28 +11,33 @@ namespace GitHub.Orgs.Item.Properties {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\properties
     /// </summary>
-    public class PropertiesRequestBuilder : BaseRequestBuilder {
+    public class PropertiesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The schema property</summary>
-        public SchemaRequestBuilder Schema { get =>
-            new SchemaRequestBuilder(PathParameters, RequestAdapter);
+        public SchemaRequestBuilder Schema
+        {
+            get => new SchemaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The values property</summary>
-        public ValuesRequestBuilder Values { get =>
-            new ValuesRequestBuilder(PathParameters, RequestAdapter);
+        public ValuesRequestBuilder Values
+        {
+            get => new ValuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="PropertiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PropertiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/properties", pathParameters) {
+        public PropertiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/properties", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PropertiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PropertiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/properties", rawUrl) {
+        public PropertiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/properties", rawUrl)
+        {
         }
     }
 }

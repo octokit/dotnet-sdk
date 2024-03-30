@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The process in which the Page will be built.</summary>
-    public enum Page_build_type {
+    public enum Page_build_type
+    {
         [EnumMember(Value = "legacy")]
         Legacy,
         [EnumMember(Value = "workflow")]

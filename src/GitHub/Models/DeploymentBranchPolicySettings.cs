@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
     /// </summary>
-    public class DeploymentBranchPolicySettings : IAdditionalDataHolder, IParsable {
+    public class DeploymentBranchPolicySettings : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether only branches that match the specified name patterns can deploy to this environment.  If `custom_branch_policies` is `true`, `protected_branches` must be `false`; if `custom_branch_policies` is `false`, `protected_branches` must be `true`.</summary>
@@ -18,7 +19,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="DeploymentBranchPolicySettings"/> and sets the default values.
         /// </summary>
-        public DeploymentBranchPolicySettings() {
+        public DeploymentBranchPolicySettings()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -26,7 +28,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="DeploymentBranchPolicySettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeploymentBranchPolicySettings CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DeploymentBranchPolicySettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeploymentBranchPolicySettings();
         }
@@ -34,8 +37,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"custom_branch_policies", n => { CustomBranchPolicies = n.GetBoolValue(); } },
                 {"protected_branches", n => { ProtectedBranches = n.GetBoolValue(); } },
             };
@@ -44,7 +49,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("custom_branch_policies", CustomBranchPolicies);
             writer.WriteBoolValue("protected_branches", ProtectedBranches);

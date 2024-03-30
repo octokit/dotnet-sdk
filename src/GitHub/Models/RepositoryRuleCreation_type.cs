@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum RepositoryRuleCreation_type {
+    public enum RepositoryRuleCreation_type
+    {
         [EnumMember(Value = "creation")]
         Creation,
     }

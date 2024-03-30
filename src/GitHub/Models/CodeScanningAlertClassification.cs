@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>A classification of the file. For example to identify it as generated.</summary>
-    public enum CodeScanningAlertClassification {
+    public enum CodeScanningAlertClassification
+    {
         [EnumMember(Value = "source")]
         Source,
         [EnumMember(Value = "generated")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Collaborators {
-    public enum GetPermissionQueryParameterType {
+    public enum GetPermissionQueryParameterType
+    {
         [EnumMember(Value = "pull")]
         Pull,
         [EnumMember(Value = "triage")]
