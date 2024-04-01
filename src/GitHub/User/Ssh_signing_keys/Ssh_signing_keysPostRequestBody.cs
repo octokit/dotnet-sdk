@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.User.Ssh_signing_keys {
-    public class Ssh_signing_keysPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class Ssh_signing_keysPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The public SSH key to add to your GitHub account. For more information, see &quot;[Checking for existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys).&quot;</summary>
@@ -27,7 +28,8 @@ namespace GitHub.User.Ssh_signing_keys {
         /// <summary>
         /// Instantiates a new <see cref="Ssh_signing_keysPostRequestBody"/> and sets the default values.
         /// </summary>
-        public Ssh_signing_keysPostRequestBody() {
+        public Ssh_signing_keysPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +37,8 @@ namespace GitHub.User.Ssh_signing_keys {
         /// </summary>
         /// <returns>A <see cref="Ssh_signing_keysPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Ssh_signing_keysPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Ssh_signing_keysPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Ssh_signing_keysPostRequestBody();
         }
@@ -43,8 +46,10 @@ namespace GitHub.User.Ssh_signing_keys {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"key", n => { Key = n.GetStringValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
             };
@@ -53,7 +58,8 @@ namespace GitHub.User.Ssh_signing_keys {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("title", Title);

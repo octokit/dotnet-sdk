@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
-    public enum GetStatusQueryParameterType {
+    public enum GetStatusQueryParameterType
+    {
         [EnumMember(Value = "completed")]
         Completed,
         [EnumMember(Value = "action_required")]

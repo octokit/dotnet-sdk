@@ -13,28 +13,35 @@ namespace GitHub.Projects.Item.Collaborators {
     /// <summary>
     /// Builds and executes requests for operations under \projects\{project_id}\collaborators
     /// </summary>
-    public class CollaboratorsRequestBuilder : BaseRequestBuilder {
+    public class CollaboratorsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.projects.item.collaborators.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
         /// <returns>A <see cref="WithUsernameItemRequestBuilder"/></returns>
-        public WithUsernameItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("username", position);
-            return new WithUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithUsernameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("username", position);
+                return new WithUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="CollaboratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CollaboratorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/projects/{project_id}/collaborators{?affiliation*,page*,per_page*}", pathParameters) {
+        public CollaboratorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/projects/{project_id}/collaborators{?affiliation*,page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CollaboratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CollaboratorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/projects/{project_id}/collaborators{?affiliation*,page*,per_page*}", rawUrl) {
+        public CollaboratorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/projects/{project_id}/collaborators{?affiliation*,page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
@@ -49,13 +56,16 @@ namespace GitHub.Projects.Item.Collaborators {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SimpleUser>?> GetAsync(Action<RequestConfiguration<CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>?> GetAsync(Action<RequestConfiguration<CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<SimpleUser>> GetAsync(Action<RequestConfiguration<CollaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>> GetAsync(Action<RequestConfiguration<CollaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -71,10 +81,12 @@ namespace GitHub.Projects.Item.Collaborators {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CollaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CollaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -86,13 +98,15 @@ namespace GitHub.Projects.Item.Collaborators {
         /// </summary>
         /// <returns>A <see cref="CollaboratorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CollaboratorsRequestBuilder WithUrl(string rawUrl) {
+        public CollaboratorsRequestBuilder WithUrl(string rawUrl)
+        {
             return new CollaboratorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
         /// </summary>
-        public class CollaboratorsRequestBuilderGetQueryParameters {
+        public class CollaboratorsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Filters the collaborators by their affiliation. `outside` means outside collaborators of a project that are not a member of the project&apos;s organization. `direct` means collaborators with permissions to a project, regardless of organization membership status. `all` means all collaborators the authenticated user can see.</summary>
             [QueryParameter("affiliation")]
             public GetAffiliationQueryParameterType? Affiliation { get; set; }

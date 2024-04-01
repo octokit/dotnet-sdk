@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The level of permission to grant the access token to manage just a single file.</summary>
-    public enum AppPermissions_single_file {
+    public enum AppPermissions_single_file
+    {
         [EnumMember(Value = "read")]
         Read,
         [EnumMember(Value = "write")]

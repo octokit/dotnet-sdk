@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\import\lfs
     /// </summary>
-    public class LfsRequestBuilder : BaseRequestBuilder {
+    public class LfsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="LfsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LfsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/import/lfs", pathParameters) {
+        public LfsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/import/lfs", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LfsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LfsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/import/lfs", rawUrl) {
+        public LfsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/import/lfs", rawUrl)
+        {
         }
         /// <summary>
         /// You can import repositories from Subversion, Mercurial, and TFS that include files larger than 100MB. This abilityis powered by [Git LFS](https://git-lfs.com).You can learn more about our LFS feature and working with large files [on our helpsite](https://docs.github.com/repositories/working-with-files/managing-large-files).**Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
@@ -40,14 +43,17 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GitHub.Models.Import?> PatchAsync(LfsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GitHub.Models.Import?> PatchAsync(LfsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GitHub.Models.Import> PatchAsync(LfsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GitHub.Models.Import> PatchAsync(LfsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"422", ValidationError.CreateFromDiscriminatorValue},
                 {"503", BasicError.CreateFromDiscriminatorValue},
             };
@@ -62,10 +68,12 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(LfsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(LfsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(LfsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(LfsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
@@ -80,7 +88,8 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         /// <returns>A <see cref="LfsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public LfsRequestBuilder WithUrl(string rawUrl) {
+        public LfsRequestBuilder WithUrl(string rawUrl)
+        {
             return new LfsRequestBuilder(rawUrl, RequestAdapter);
         }
     }

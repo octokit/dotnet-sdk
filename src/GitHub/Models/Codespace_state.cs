@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>State of this codespace.</summary>
-    public enum Codespace_state {
+    public enum Codespace_state
+    {
         [EnumMember(Value = "Unknown")]
         Unknown,
         [EnumMember(Value = "Created")]

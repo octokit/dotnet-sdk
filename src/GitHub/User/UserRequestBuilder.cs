@@ -38,124 +38,153 @@ namespace GitHub.User {
     /// <summary>
     /// Builds and executes requests for operations under \user
     /// </summary>
-    public class UserRequestBuilder : BaseRequestBuilder {
+    public class UserRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The blocks property</summary>
-        public BlocksRequestBuilder Blocks { get =>
-            new BlocksRequestBuilder(PathParameters, RequestAdapter);
+        public BlocksRequestBuilder Blocks
+        {
+            get => new BlocksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codespaces property</summary>
-        public CodespacesRequestBuilder Codespaces { get =>
-            new CodespacesRequestBuilder(PathParameters, RequestAdapter);
+        public CodespacesRequestBuilder Codespaces
+        {
+            get => new CodespacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The docker property</summary>
-        public DockerRequestBuilder Docker { get =>
-            new DockerRequestBuilder(PathParameters, RequestAdapter);
+        public DockerRequestBuilder Docker
+        {
+            get => new DockerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The email property</summary>
-        public EmailRequestBuilder Email { get =>
-            new EmailRequestBuilder(PathParameters, RequestAdapter);
+        public EmailRequestBuilder Email
+        {
+            get => new EmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The emails property</summary>
-        public EmailsRequestBuilder Emails { get =>
-            new EmailsRequestBuilder(PathParameters, RequestAdapter);
+        public EmailsRequestBuilder Emails
+        {
+            get => new EmailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The followers property</summary>
-        public FollowersRequestBuilder Followers { get =>
-            new FollowersRequestBuilder(PathParameters, RequestAdapter);
+        public FollowersRequestBuilder Followers
+        {
+            get => new FollowersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The following property</summary>
-        public FollowingRequestBuilder Following { get =>
-            new FollowingRequestBuilder(PathParameters, RequestAdapter);
+        public FollowingRequestBuilder Following
+        {
+            get => new FollowingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The gpg_keys property</summary>
-        public Gpg_keysRequestBuilder Gpg_keys { get =>
-            new Gpg_keysRequestBuilder(PathParameters, RequestAdapter);
+        public Gpg_keysRequestBuilder Gpg_keys
+        {
+            get => new Gpg_keysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The installations property</summary>
-        public InstallationsRequestBuilder Installations { get =>
-            new InstallationsRequestBuilder(PathParameters, RequestAdapter);
+        public InstallationsRequestBuilder Installations
+        {
+            get => new InstallationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The interactionLimits property</summary>
-        public InteractionLimitsRequestBuilder InteractionLimits { get =>
-            new InteractionLimitsRequestBuilder(PathParameters, RequestAdapter);
+        public InteractionLimitsRequestBuilder InteractionLimits
+        {
+            get => new InteractionLimitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The issues property</summary>
-        public IssuesRequestBuilder Issues { get =>
-            new IssuesRequestBuilder(PathParameters, RequestAdapter);
+        public IssuesRequestBuilder Issues
+        {
+            get => new IssuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
-        public KeysRequestBuilder Keys { get =>
-            new KeysRequestBuilder(PathParameters, RequestAdapter);
+        public KeysRequestBuilder Keys
+        {
+            get => new KeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The marketplace_purchases property</summary>
-        public Marketplace_purchasesRequestBuilder Marketplace_purchases { get =>
-            new Marketplace_purchasesRequestBuilder(PathParameters, RequestAdapter);
+        public Marketplace_purchasesRequestBuilder Marketplace_purchases
+        {
+            get => new Marketplace_purchasesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The memberships property</summary>
-        public MembershipsRequestBuilder Memberships { get =>
-            new MembershipsRequestBuilder(PathParameters, RequestAdapter);
+        public MembershipsRequestBuilder Memberships
+        {
+            get => new MembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The migrations property</summary>
-        public MigrationsRequestBuilder Migrations { get =>
-            new MigrationsRequestBuilder(PathParameters, RequestAdapter);
+        public MigrationsRequestBuilder Migrations
+        {
+            get => new MigrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The orgs property</summary>
-        public OrgsRequestBuilder Orgs { get =>
-            new OrgsRequestBuilder(PathParameters, RequestAdapter);
+        public OrgsRequestBuilder Orgs
+        {
+            get => new OrgsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The packages property</summary>
-        public PackagesRequestBuilder Packages { get =>
-            new PackagesRequestBuilder(PathParameters, RequestAdapter);
+        public PackagesRequestBuilder Packages
+        {
+            get => new PackagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The projects property</summary>
-        public ProjectsRequestBuilder Projects { get =>
-            new ProjectsRequestBuilder(PathParameters, RequestAdapter);
+        public ProjectsRequestBuilder Projects
+        {
+            get => new ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The public_emails property</summary>
-        public Public_emailsRequestBuilder Public_emails { get =>
-            new Public_emailsRequestBuilder(PathParameters, RequestAdapter);
+        public Public_emailsRequestBuilder Public_emails
+        {
+            get => new Public_emailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repos property</summary>
-        public ReposRequestBuilder Repos { get =>
-            new ReposRequestBuilder(PathParameters, RequestAdapter);
+        public ReposRequestBuilder Repos
+        {
+            get => new ReposRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repository_invitations property</summary>
-        public Repository_invitationsRequestBuilder Repository_invitations { get =>
-            new Repository_invitationsRequestBuilder(PathParameters, RequestAdapter);
+        public Repository_invitationsRequestBuilder Repository_invitations
+        {
+            get => new Repository_invitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The social_accounts property</summary>
-        public Social_accountsRequestBuilder Social_accounts { get =>
-            new Social_accountsRequestBuilder(PathParameters, RequestAdapter);
+        public Social_accountsRequestBuilder Social_accounts
+        {
+            get => new Social_accountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ssh_signing_keys property</summary>
-        public Ssh_signing_keysRequestBuilder Ssh_signing_keys { get =>
-            new Ssh_signing_keysRequestBuilder(PathParameters, RequestAdapter);
+        public Ssh_signing_keysRequestBuilder Ssh_signing_keys
+        {
+            get => new Ssh_signing_keysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The starred property</summary>
-        public StarredRequestBuilder Starred { get =>
-            new StarredRequestBuilder(PathParameters, RequestAdapter);
+        public StarredRequestBuilder Starred
+        {
+            get => new StarredRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subscriptions property</summary>
-        public SubscriptionsRequestBuilder Subscriptions { get =>
-            new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        public SubscriptionsRequestBuilder Subscriptions
+        {
+            get => new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
-        public TeamsRequestBuilder Teams { get =>
-            new TeamsRequestBuilder(PathParameters, RequestAdapter);
+        public TeamsRequestBuilder Teams
+        {
+            get => new TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user", pathParameters) {
+        public UserRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user", rawUrl) {
+        public UserRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user", rawUrl)
+        {
         }
         /// <summary>
         /// OAuth app tokens and personal access tokens (classic) need the `user` scope in order for the response to include private profile information.
@@ -168,13 +197,16 @@ namespace GitHub.User {
         /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<UserGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<UserGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
             };
@@ -194,14 +226,17 @@ namespace GitHub.User {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrivateUser?> PatchAsync(UserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivateUser?> PatchAsync(UserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<PrivateUser> PatchAsync(UserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivateUser> PatchAsync(UserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -216,10 +251,12 @@ namespace GitHub.User {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -234,10 +271,12 @@ namespace GitHub.User {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(UserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(UserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(UserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(UserPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
@@ -251,13 +290,15 @@ namespace GitHub.User {
         /// </summary>
         /// <returns>A <see cref="UserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserRequestBuilder WithUrl(string rawUrl) {
+        public UserRequestBuilder WithUrl(string rawUrl)
+        {
             return new UserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="PrivateUser"/>, <see cref="PublicUser"/>
         /// </summary>
-        public class UserGetResponse : IComposedTypeWrapper, IParsable {
+        public class UserGetResponse : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.PrivateUser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -279,14 +320,17 @@ namespace GitHub.User {
             /// </summary>
             /// <returns>A <see cref="UserGetResponse"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static UserGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static UserGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new UserGetResponse();
-                if("private-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("private-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.PrivateUser = new GitHub.Models.PrivateUser();
                 }
-                else if("public-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("public-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.PublicUser = new GitHub.Models.PublicUser();
                 }
                 return result;
@@ -295,11 +339,14 @@ namespace GitHub.User {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(PrivateUser != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(PrivateUser != null)
+                {
                     return PrivateUser.GetFieldDeserializers();
                 }
-                else if(PublicUser != null) {
+                else if(PublicUser != null)
+                {
                     return PublicUser.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -308,12 +355,15 @@ namespace GitHub.User {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(PrivateUser != null) {
+                if(PrivateUser != null)
+                {
                     writer.WriteObjectValue<GitHub.Models.PrivateUser>(null, PrivateUser);
                 }
-                else if(PublicUser != null) {
+                else if(PublicUser != null)
+                {
                     writer.WriteObjectValue<GitHub.Models.PublicUser>(null, PublicUser);
                 }
             }

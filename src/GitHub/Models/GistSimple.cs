@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Gist Simple
     /// </summary>
-    public class GistSimple : IAdditionalDataHolder, IParsable {
+    public class GistSimple : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The comments property</summary>
@@ -166,7 +167,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="GistSimple"/> and sets the default values.
         /// </summary>
-        public GistSimple() {
+        public GistSimple()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -174,7 +176,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="GistSimple"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GistSimple CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GistSimple CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GistSimple();
         }
@@ -182,8 +185,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"comments", n => { Comments = n.GetIntValue(); } },
                 {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
                 {"commits_url", n => { CommitsUrl = n.GetStringValue(); } },
@@ -211,7 +216,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("comments", Comments);
             writer.WriteStringValue("comments_url", CommentsUrl);

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.</summary>
-    public enum OrgMembership_state {
+    public enum OrgMembership_state
+    {
         [EnumMember(Value = "active")]
         Active,
         [EnumMember(Value = "pending")]

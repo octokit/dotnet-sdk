@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Content Traffic
     /// </summary>
-    public class ContentTraffic : IAdditionalDataHolder, IParsable {
+    public class ContentTraffic : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
@@ -34,7 +35,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="ContentTraffic"/> and sets the default values.
         /// </summary>
-        public ContentTraffic() {
+        public ContentTraffic()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -42,7 +44,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="ContentTraffic"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ContentTraffic CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ContentTraffic CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ContentTraffic();
         }
@@ -50,8 +53,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"count", n => { Count = n.GetIntValue(); } },
                 {"path", n => { Path = n.GetStringValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
@@ -62,7 +67,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("path", Path);

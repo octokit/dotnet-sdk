@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// The GitHub Pages deployment status.
     /// </summary>
-    public class PageDeployment : IAdditionalDataHolder, IParsable {
+    public class PageDeployment : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.</summary>
@@ -46,7 +47,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="PageDeployment"/> and sets the default values.
         /// </summary>
-        public PageDeployment() {
+        public PageDeployment()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -54,7 +56,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="PageDeployment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PageDeployment CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PageDeployment CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PageDeployment();
         }
@@ -62,8 +65,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"id", n => { Id = n.GetObjectValue<PageDeployment_id>(PageDeployment_id.CreateFromDiscriminatorValue); } },
                 {"page_url", n => { PageUrl = n.GetStringValue(); } },
                 {"preview_url", n => { PreviewUrl = n.GetStringValue(); } },
@@ -74,7 +79,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<PageDeployment_id>("id", Id);
             writer.WriteStringValue("page_url", PageUrl);
@@ -85,7 +91,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        public class PageDeployment_id : IComposedTypeWrapper, IParsable {
+        public class PageDeployment_id : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }
             /// <summary>Composed type representation for type <see cref="string"/></summary>
@@ -101,14 +108,17 @@ namespace GitHub.Models {
             /// </summary>
             /// <returns>A <see cref="PageDeployment_id"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static PageDeployment_id CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static PageDeployment_id CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new PageDeployment_id();
-                if(parseNode.GetIntValue() is int integerValue) {
+                if(parseNode.GetIntValue() is int integerValue)
+                {
                     result.Integer = integerValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue) {
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
                     result.String = stringValue;
                 }
                 return result;
@@ -117,19 +127,23 @@ namespace GitHub.Models {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(Integer != null) {
+                if(Integer != null)
+                {
                     writer.WriteIntValue(null, Integer);
                 }
-                else if(String != null) {
+                else if(String != null)
+                {
                     writer.WriteStringValue(null, String);
                 }
             }

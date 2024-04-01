@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Users.Item.Hovercard {
-    public enum GetSubject_typeQueryParameterType {
+    public enum GetSubject_typeQueryParameterType
+    {
         [EnumMember(Value = "organization")]
         Organization,
         [EnumMember(Value = "repository")]

@@ -8,7 +8,8 @@ namespace GitHub.Repos.Item.Item.Git.Tags {
     /// <summary>
     /// An object with information about the individual creating the tag.
     /// </summary>
-    public class TagsPostRequestBody_tagger : IAdditionalDataHolder, IParsable {
+    public class TagsPostRequestBody_tagger : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When this object was tagged. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
@@ -32,7 +33,8 @@ namespace GitHub.Repos.Item.Item.Git.Tags {
         /// <summary>
         /// Instantiates a new <see cref="TagsPostRequestBody_tagger"/> and sets the default values.
         /// </summary>
-        public TagsPostRequestBody_tagger() {
+        public TagsPostRequestBody_tagger()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -40,7 +42,8 @@ namespace GitHub.Repos.Item.Item.Git.Tags {
         /// </summary>
         /// <returns>A <see cref="TagsPostRequestBody_tagger"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TagsPostRequestBody_tagger CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static TagsPostRequestBody_tagger CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TagsPostRequestBody_tagger();
         }
@@ -48,8 +51,10 @@ namespace GitHub.Repos.Item.Item.Git.Tags {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -59,7 +64,8 @@ namespace GitHub.Repos.Item.Item.Git.Tags {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("date", Date);
             writer.WriteStringValue("email", Email);

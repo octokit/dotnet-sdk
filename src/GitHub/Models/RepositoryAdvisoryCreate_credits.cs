@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class RepositoryAdvisoryCreate_credits : IParsable {
+    public class RepositoryAdvisoryCreate_credits : IParsable 
+    {
         /// <summary>The username of the user credited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,7 +22,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="RepositoryAdvisoryCreate_credits"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RepositoryAdvisoryCreate_credits CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RepositoryAdvisoryCreate_credits CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RepositoryAdvisoryCreate_credits();
         }
@@ -29,8 +31,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"login", n => { Login = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<SecurityAdvisoryCreditTypes>(); } },
             };
@@ -39,7 +43,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("login", Login);
             writer.WriteEnumValue<SecurityAdvisoryCreditTypes>("type", Type);

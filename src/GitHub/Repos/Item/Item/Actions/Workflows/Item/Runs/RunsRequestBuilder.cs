@@ -11,20 +11,23 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}\runs
     /// </summary>
-    public class RunsRequestBuilder : BaseRequestBuilder {
+    public class RunsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="RunsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", pathParameters) {
+        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RunsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", rawUrl) {
+        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/workflows/{workflow_id}/runs{?actor*,branch*,check_suite_id*,created*,event*,exclude_pull_requests*,head_sha*,page*,per_page*,status*}", rawUrl)
+        {
         }
         /// <summary>
         /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
@@ -35,10 +38,12 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RunsGetResponse?> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RunsGetResponse?> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<RunsGetResponse> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RunsGetResponse> GetAsync(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<RunsGetResponse>(requestInfo, RunsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -50,10 +55,12 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -65,13 +72,15 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
         /// </summary>
         /// <returns>A <see cref="RunsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RunsRequestBuilder WithUrl(string rawUrl) {
+        public RunsRequestBuilder WithUrl(string rawUrl)
+        {
             return new RunsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
-        public class RunsRequestBuilderGetQueryParameters {
+        public class RunsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Returns someone&apos;s workflow runs. Use the login for the user who created the `push` associated with the check suite or workflow run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
-    public enum GetTime_periodQueryParameterType {
+    public enum GetTime_periodQueryParameterType
+    {
         [EnumMember(Value = "hour")]
         Hour,
         [EnumMember(Value = "day")]

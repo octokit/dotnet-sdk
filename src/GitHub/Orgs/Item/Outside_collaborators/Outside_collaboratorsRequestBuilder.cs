@@ -13,28 +13,35 @@ namespace GitHub.Orgs.Item.Outside_collaborators {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\outside_collaborators
     /// </summary>
-    public class Outside_collaboratorsRequestBuilder : BaseRequestBuilder {
+    public class Outside_collaboratorsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.orgs.item.outside_collaborators.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
         /// <returns>A <see cref="WithUsernameItemRequestBuilder"/></returns>
-        public WithUsernameItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("username", position);
-            return new WithUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithUsernameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("username", position);
+                return new WithUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="Outside_collaboratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Outside_collaboratorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/outside_collaborators{?filter*,page*,per_page*}", pathParameters) {
+        public Outside_collaboratorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/outside_collaborators{?filter*,page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="Outside_collaboratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Outside_collaboratorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/outside_collaborators{?filter*,page*,per_page*}", rawUrl) {
+        public Outside_collaboratorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/outside_collaborators{?filter*,page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// List all users who are outside collaborators of an organization.
@@ -45,10 +52,12 @@ namespace GitHub.Orgs.Item.Outside_collaborators {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SimpleUser>?> GetAsync(Action<RequestConfiguration<Outside_collaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>?> GetAsync(Action<RequestConfiguration<Outside_collaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<SimpleUser>> GetAsync(Action<RequestConfiguration<Outside_collaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>> GetAsync(Action<RequestConfiguration<Outside_collaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -61,10 +70,12 @@ namespace GitHub.Orgs.Item.Outside_collaborators {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Outside_collaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Outside_collaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Outside_collaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Outside_collaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -76,13 +87,15 @@ namespace GitHub.Orgs.Item.Outside_collaborators {
         /// </summary>
         /// <returns>A <see cref="Outside_collaboratorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Outside_collaboratorsRequestBuilder WithUrl(string rawUrl) {
+        public Outside_collaboratorsRequestBuilder WithUrl(string rawUrl)
+        {
             return new Outside_collaboratorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all users who are outside collaborators of an organization.
         /// </summary>
-        public class Outside_collaboratorsRequestBuilderGetQueryParameters {
+        public class Outside_collaboratorsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Filter the list of outside collaborators. `2fa_disabled` means that only outside collaborators without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled will be returned.</summary>
             [QueryParameter("filter")]
             public GetFilterQueryParameterType? Filter { get; set; }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Advisories {
-    public enum GetTypeQueryParameterType {
+    public enum GetTypeQueryParameterType
+    {
         [EnumMember(Value = "reviewed")]
         Reviewed,
         [EnumMember(Value = "malware")]

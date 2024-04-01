@@ -11,28 +11,33 @@ namespace GitHub.Marketplace_listing.Stubbed {
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\stubbed
     /// </summary>
-    public class StubbedRequestBuilder : BaseRequestBuilder {
+    public class StubbedRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The accounts property</summary>
-        public AccountsRequestBuilder Accounts { get =>
-            new AccountsRequestBuilder(PathParameters, RequestAdapter);
+        public AccountsRequestBuilder Accounts
+        {
+            get => new AccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The plans property</summary>
-        public PlansRequestBuilder Plans { get =>
-            new PlansRequestBuilder(PathParameters, RequestAdapter);
+        public PlansRequestBuilder Plans
+        {
+            get => new PlansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="StubbedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StubbedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed", pathParameters) {
+        public StubbedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="StubbedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StubbedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed", rawUrl) {
+        public StubbedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed", rawUrl)
+        {
         }
     }
 }

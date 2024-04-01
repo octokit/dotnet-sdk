@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The status of the most recent build of the Page.</summary>
-    public enum Page_status {
+    public enum Page_status
+    {
         [EnumMember(Value = "built")]
         Built,
         [EnumMember(Value = "building")]

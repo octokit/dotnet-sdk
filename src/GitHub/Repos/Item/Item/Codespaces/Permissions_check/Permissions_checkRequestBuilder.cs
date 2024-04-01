@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\permissions_check
     /// </summary>
-    public class Permissions_checkRequestBuilder : BaseRequestBuilder {
+    public class Permissions_checkRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="Permissions_checkRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Permissions_checkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/permissions_check?devcontainer_path={devcontainer_path}&ref={ref}", pathParameters) {
+        public Permissions_checkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/permissions_check?devcontainer_path={devcontainer_path}&ref={ref}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="Permissions_checkRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Permissions_checkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/permissions_check?devcontainer_path={devcontainer_path}&ref={ref}", rawUrl) {
+        public Permissions_checkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/permissions_check?devcontainer_path={devcontainer_path}&ref={ref}", rawUrl)
+        {
         }
         /// <summary>
         /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
@@ -41,13 +44,16 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check {
         /// <exception cref="CodespacesPermissionsCheckForDevcontainer503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CodespacesPermissionsCheckForDevcontainer?> GetAsync(Action<RequestConfiguration<Permissions_checkRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CodespacesPermissionsCheckForDevcontainer?> GetAsync(Action<RequestConfiguration<Permissions_checkRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<CodespacesPermissionsCheckForDevcontainer> GetAsync(Action<RequestConfiguration<Permissions_checkRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CodespacesPermissionsCheckForDevcontainer> GetAsync(Action<RequestConfiguration<Permissions_checkRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -63,10 +69,12 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Permissions_checkRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Permissions_checkRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Permissions_checkRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Permissions_checkRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -78,13 +86,15 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check {
         /// </summary>
         /// <returns>A <see cref="Permissions_checkRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Permissions_checkRequestBuilder WithUrl(string rawUrl) {
+        public Permissions_checkRequestBuilder WithUrl(string rawUrl)
+        {
             return new Permissions_checkRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
-        public class Permissions_checkRequestBuilderGetQueryParameters {
+        public class Permissions_checkRequestBuilderGetQueryParameters 
+        {
             /// <summary>Path to the devcontainer.json configuration to use for the permission check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

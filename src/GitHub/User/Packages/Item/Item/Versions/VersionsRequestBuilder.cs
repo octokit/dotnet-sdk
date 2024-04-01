@@ -13,28 +13,35 @@ namespace GitHub.User.Packages.Item.Item.Versions {
     /// <summary>
     /// Builds and executes requests for operations under \user\packages\{package_type}\{package_name}\versions
     /// </summary>
-    public class VersionsRequestBuilder : BaseRequestBuilder {
+    public class VersionsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.user.packages.item.item.versions.item collection</summary>
         /// <param name="position">Unique identifier of the package version.</param>
         /// <returns>A <see cref="WithPackage_version_ItemRequestBuilder"/></returns>
-        public WithPackage_version_ItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("package_version_id", position);
-            return new WithPackage_version_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithPackage_version_ItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("package_version_id", position);
+                return new WithPackage_version_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="VersionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/packages/{package_type}/{package_name}/versions{?page*,per_page*,state*}", pathParameters) {
+        public VersionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/packages/{package_type}/{package_name}/versions{?page*,per_page*,state*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="VersionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/packages/{package_type}/{package_name}/versions{?page*,per_page*,state*}", rawUrl) {
+        public VersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/packages/{package_type}/{package_name}/versions{?page*,per_page*,state*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists package versions for a package owned by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
@@ -48,13 +55,16 @@ namespace GitHub.User.Packages.Item.Item.Versions {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<PackageVersion>?> GetAsync(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<PackageVersion>?> GetAsync(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<PackageVersion>> GetAsync(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<PackageVersion>> GetAsync(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -69,10 +79,12 @@ namespace GitHub.User.Packages.Item.Item.Versions {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<VersionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -84,13 +96,15 @@ namespace GitHub.User.Packages.Item.Item.Versions {
         /// </summary>
         /// <returns>A <see cref="VersionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public VersionsRequestBuilder WithUrl(string rawUrl) {
+        public VersionsRequestBuilder WithUrl(string rawUrl)
+        {
             return new VersionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists package versions for a package owned by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
         /// </summary>
-        public class VersionsRequestBuilderGetQueryParameters {
+        public class VersionsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

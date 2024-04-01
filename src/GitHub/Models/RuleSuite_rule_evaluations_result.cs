@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The result of the evaluation of the individual rule.</summary>
-    public enum RuleSuite_rule_evaluations_result {
+    public enum RuleSuite_rule_evaluations_result
+    {
         [EnumMember(Value = "pass")]
         Pass,
         [EnumMember(Value = "fail")]

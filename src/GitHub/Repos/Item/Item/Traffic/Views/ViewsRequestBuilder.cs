@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.Traffic.Views {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\traffic\views
     /// </summary>
-    public class ViewsRequestBuilder : BaseRequestBuilder {
+    public class ViewsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="ViewsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/traffic/views{?per*}", pathParameters) {
+        public ViewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/traffic/views{?per*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ViewsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/traffic/views{?per*}", rawUrl) {
+        public ViewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/traffic/views{?per*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get the total number of views and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
@@ -37,13 +40,16 @@ namespace GitHub.Repos.Item.Item.Traffic.Views {
         /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ViewTraffic?> GetAsync(Action<RequestConfiguration<ViewsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ViewTraffic?> GetAsync(Action<RequestConfiguration<ViewsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ViewTraffic> GetAsync(Action<RequestConfiguration<ViewsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ViewTraffic> GetAsync(Action<RequestConfiguration<ViewsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ViewTraffic>(requestInfo, ViewTraffic.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -55,10 +61,12 @@ namespace GitHub.Repos.Item.Item.Traffic.Views {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ViewsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ViewsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ViewsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ViewsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -70,13 +78,15 @@ namespace GitHub.Repos.Item.Item.Traffic.Views {
         /// </summary>
         /// <returns>A <see cref="ViewsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ViewsRequestBuilder WithUrl(string rawUrl) {
+        public ViewsRequestBuilder WithUrl(string rawUrl)
+        {
             return new ViewsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the total number of views and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
         /// </summary>
-        public class ViewsRequestBuilderGetQueryParameters {
+        public class ViewsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The time frame to display results for.</summary>
             [QueryParameter("per")]
             public GetPerQueryParameterType? Per { get; set; }

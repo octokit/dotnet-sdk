@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Gists {
-    public class GistsPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class GistsPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Description of the gist</summary>
@@ -35,7 +36,8 @@ namespace GitHub.Gists {
         /// <summary>
         /// Instantiates a new <see cref="GistsPostRequestBody"/> and sets the default values.
         /// </summary>
-        public GistsPostRequestBody() {
+        public GistsPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -43,7 +45,8 @@ namespace GitHub.Gists {
         /// </summary>
         /// <returns>A <see cref="GistsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GistsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GistsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GistsPostRequestBody();
         }
@@ -51,8 +54,10 @@ namespace GitHub.Gists {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"files", n => { Files = n.GetObjectValue<GistsPostRequestBody_files>(GistsPostRequestBody_files.CreateFromDiscriminatorValue); } },
                 {"public", n => { Public = n.GetObjectValue<GistsPostRequestBody_public>(GistsPostRequestBody_public.CreateFromDiscriminatorValue); } },
@@ -62,7 +67,8 @@ namespace GitHub.Gists {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<GistsPostRequestBody_files>("files", Files);
@@ -72,7 +78,8 @@ namespace GitHub.Gists {
         /// <summary>
         /// Composed type wrapper for classes <see cref="bool"/>, <see cref="string"/>
         /// </summary>
-        public class GistsPostRequestBody_public : IComposedTypeWrapper, IParsable {
+        public class GistsPostRequestBody_public : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="bool"/></summary>
             public bool? Boolean { get; set; }
             /// <summary>Composed type representation for type <see cref="string"/></summary>
@@ -88,14 +95,17 @@ namespace GitHub.Gists {
             /// </summary>
             /// <returns>A <see cref="GistsPostRequestBody_public"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static GistsPostRequestBody_public CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static GistsPostRequestBody_public CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new GistsPostRequestBody_public();
-                if(parseNode.GetBoolValue() is bool booleanValue) {
+                if(parseNode.GetBoolValue() is bool booleanValue)
+                {
                     result.Boolean = booleanValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue) {
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
                     result.String = stringValue;
                 }
                 return result;
@@ -104,19 +114,23 @@ namespace GitHub.Gists {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null) {
+                if(Boolean != null)
+                {
                     writer.WriteBoolValue(null, Boolean);
                 }
-                else if(String != null) {
+                else if(String != null)
+                {
                     writer.WriteStringValue(null, String);
                 }
             }

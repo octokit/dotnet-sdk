@@ -14,32 +14,40 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\security-advisories
     /// </summary>
-    public class SecurityAdvisoriesRequestBuilder : BaseRequestBuilder {
+    public class SecurityAdvisoriesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The reports property</summary>
-        public ReportsRequestBuilder Reports { get =>
-            new ReportsRequestBuilder(PathParameters, RequestAdapter);
+        public ReportsRequestBuilder Reports
+        {
+            get => new ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the GitHub.repos.item.item.securityAdvisories.item collection</summary>
         /// <param name="position">The GHSA (GitHub Security Advisory) identifier of the advisory.</param>
         /// <returns>A <see cref="WithGhsa_ItemRequestBuilder"/></returns>
-        public WithGhsa_ItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("ghsa_id", position);
-            return new WithGhsa_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithGhsa_ItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("ghsa_id", position);
+                return new WithGhsa_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="SecurityAdvisoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityAdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", pathParameters) {
+        public SecurityAdvisoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SecurityAdvisoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecurityAdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", rawUrl) {
+        public SecurityAdvisoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories{?after*,before*,direction*,per_page*,sort*,state*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists security advisories in a repository.The authenticated user can access unpublished security advisories from a repository if they are a security manager or administrator of that repository, or if they are a collaborator on any security advisory.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
@@ -52,13 +60,16 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<RepositoryAdvisory>?> GetAsync(Action<RequestConfiguration<SecurityAdvisoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RepositoryAdvisory>?> GetAsync(Action<RequestConfiguration<SecurityAdvisoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<RepositoryAdvisory>> GetAsync(Action<RequestConfiguration<SecurityAdvisoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RepositoryAdvisory>> GetAsync(Action<RequestConfiguration<SecurityAdvisoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"400", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
@@ -78,14 +89,17 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RepositoryAdvisory?> PostAsync(RepositoryAdvisoryCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RepositoryAdvisory?> PostAsync(RepositoryAdvisoryCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<RepositoryAdvisory> PostAsync(RepositoryAdvisoryCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RepositoryAdvisory> PostAsync(RepositoryAdvisoryCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationError.CreateFromDiscriminatorValue},
@@ -99,10 +113,12 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecurityAdvisoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecurityAdvisoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecurityAdvisoriesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SecurityAdvisoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -117,10 +133,12 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(RepositoryAdvisoryCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(RepositoryAdvisoryCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(RepositoryAdvisoryCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(RepositoryAdvisoryCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/security-advisories", PathParameters);
@@ -134,13 +152,15 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories {
         /// </summary>
         /// <returns>A <see cref="SecurityAdvisoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SecurityAdvisoriesRequestBuilder WithUrl(string rawUrl) {
+        public SecurityAdvisoriesRequestBuilder WithUrl(string rawUrl)
+        {
             return new SecurityAdvisoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists security advisories in a repository.The authenticated user can access unpublished security advisories from a repository if they are a security manager or administrator of that repository, or if they are a collaborator on any security advisory.OAuth app tokens and personal access tokens (classic) need the `repo` or `repository_advisories:read` scope to to get a published security advisory in a private repository, or any unpublished security advisory that the authenticated user has access to.
         /// </summary>
-        public class SecurityAdvisoriesRequestBuilderGetQueryParameters {
+        public class SecurityAdvisoriesRequestBuilderGetQueryParameters 
+        {
             /// <summary>A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

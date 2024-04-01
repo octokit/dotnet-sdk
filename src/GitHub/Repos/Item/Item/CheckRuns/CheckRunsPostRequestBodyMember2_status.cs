@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.CheckRuns {
-    public enum CheckRunsPostRequestBodyMember2_status {
+    public enum CheckRunsPostRequestBodyMember2_status
+    {
         [EnumMember(Value = "queued")]
         Queued,
         [EnumMember(Value = "in_progress")]

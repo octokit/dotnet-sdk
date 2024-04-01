@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class RuleSuite_rule_evaluations_rule_source : IAdditionalDataHolder, IParsable {
+    public class RuleSuite_rule_evaluations_rule_source : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the rule source.</summary>
@@ -29,7 +30,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="RuleSuite_rule_evaluations_rule_source"/> and sets the default values.
         /// </summary>
-        public RuleSuite_rule_evaluations_rule_source() {
+        public RuleSuite_rule_evaluations_rule_source()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -37,7 +39,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="RuleSuite_rule_evaluations_rule_source"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RuleSuite_rule_evaluations_rule_source CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RuleSuite_rule_evaluations_rule_source CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RuleSuite_rule_evaluations_rule_source();
         }
@@ -45,8 +48,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"id", n => { Id = n.GetIntValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
@@ -56,7 +61,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);

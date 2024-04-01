@@ -10,24 +10,28 @@ namespace GitHub.Orgs.Item.Actions.Oidc.Customization {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\oidc\customization
     /// </summary>
-    public class CustomizationRequestBuilder : BaseRequestBuilder {
+    public class CustomizationRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The sub property</summary>
-        public SubRequestBuilder Sub { get =>
-            new SubRequestBuilder(PathParameters, RequestAdapter);
+        public SubRequestBuilder Sub
+        {
+            get => new SubRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="CustomizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomizationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/oidc/customization", pathParameters) {
+        public CustomizationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/oidc/customization", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CustomizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CustomizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/oidc/customization", rawUrl) {
+        public CustomizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/oidc/customization", rawUrl)
+        {
         }
     }
 }

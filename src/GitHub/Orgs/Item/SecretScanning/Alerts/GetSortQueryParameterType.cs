@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.SecretScanning.Alerts {
-    public enum GetSortQueryParameterType {
+    public enum GetSortQueryParameterType
+    {
         [EnumMember(Value = "created")]
         Created,
         [EnumMember(Value = "updated")]

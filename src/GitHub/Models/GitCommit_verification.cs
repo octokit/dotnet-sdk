@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class GitCommit_verification : IAdditionalDataHolder, IParsable {
+    public class GitCommit_verification : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The payload property</summary>
@@ -37,7 +38,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="GitCommit_verification"/> and sets the default values.
         /// </summary>
-        public GitCommit_verification() {
+        public GitCommit_verification()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -45,7 +47,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="GitCommit_verification"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GitCommit_verification CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GitCommit_verification CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GitCommit_verification();
         }
@@ -53,8 +56,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"payload", n => { Payload = n.GetStringValue(); } },
                 {"reason", n => { Reason = n.GetStringValue(); } },
                 {"signature", n => { Signature = n.GetStringValue(); } },
@@ -65,7 +70,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("payload", Payload);
             writer.WriteStringValue("reason", Reason);

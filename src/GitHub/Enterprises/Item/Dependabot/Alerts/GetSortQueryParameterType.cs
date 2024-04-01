@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Enterprises.Item.Dependabot.Alerts {
-    public enum GetSortQueryParameterType {
+    public enum GetSortQueryParameterType
+    {
         [EnumMember(Value = "created")]
         Created,
         [EnumMember(Value = "updated")]

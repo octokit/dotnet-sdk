@@ -12,20 +12,23 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens.Item.Repositories {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\personal-access-tokens\{pat_id}\repositories
     /// </summary>
-    public class RepositoriesRequestBuilder : BaseRequestBuilder {
+    public class RepositoriesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="RepositoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RepositoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens/{pat_id}/repositories{?page*,per_page*}", pathParameters) {
+        public RepositoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens/{pat_id}/repositories{?page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RepositoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RepositoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens/{pat_id}/repositories{?page*,per_page*}", rawUrl) {
+        public RepositoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens/{pat_id}/repositories{?page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists the repositories a fine-grained personal access token has access to.Only GitHub Apps can use this endpoint.
@@ -39,13 +42,16 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens.Item.Repositories {
         /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<MinimalRepository>?> GetAsync(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<MinimalRepository>?> GetAsync(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<MinimalRepository>> GetAsync(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<MinimalRepository>> GetAsync(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"500", BasicError.CreateFromDiscriminatorValue},
@@ -60,10 +66,12 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens.Item.Repositories {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RepositoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -75,13 +83,15 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens.Item.Repositories {
         /// </summary>
         /// <returns>A <see cref="RepositoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RepositoriesRequestBuilder WithUrl(string rawUrl) {
+        public RepositoriesRequestBuilder WithUrl(string rawUrl)
+        {
             return new RepositoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists the repositories a fine-grained personal access token has access to.Only GitHub Apps can use this endpoint.
         /// </summary>
-        public class RepositoriesRequestBuilderGetQueryParameters {
+        public class RepositoriesRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

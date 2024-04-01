@@ -12,20 +12,23 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\copilot\billing\seats
     /// </summary>
-    public class SeatsRequestBuilder : BaseRequestBuilder {
+    public class SeatsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SeatsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SeatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/copilot/billing/seats{?page*,per_page*}", pathParameters) {
+        public SeatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/copilot/billing/seats{?page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SeatsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SeatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/copilot/billing/seats{?page*,per_page*}", rawUrl) {
+        public SeatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/copilot/billing/seats{?page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization&apos;s Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
@@ -40,13 +43,16 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SeatsGetResponse?> GetAsync(Action<RequestConfiguration<SeatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SeatsGetResponse?> GetAsync(Action<RequestConfiguration<SeatsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SeatsGetResponse> GetAsync(Action<RequestConfiguration<SeatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SeatsGetResponse> GetAsync(Action<RequestConfiguration<SeatsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -61,10 +67,12 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeatsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeatsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeatsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SeatsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -76,13 +84,15 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         /// </summary>
         /// <returns>A <see cref="SeatsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SeatsRequestBuilder WithUrl(string rawUrl) {
+        public SeatsRequestBuilder WithUrl(string rawUrl)
+        {
             return new SeatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// **Note**: This endpoint is in beta and is subject to change.Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).Only organization owners can configure and view details about the organization&apos;s Copilot Business or Enterprise subscription.OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
         /// </summary>
-        public class SeatsRequestBuilderGetQueryParameters {
+        public class SeatsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

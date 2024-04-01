@@ -10,28 +10,35 @@ namespace GitHub.Repos.Item.Item.Zipball {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\zipball
     /// </summary>
-    public class ZipballRequestBuilder : BaseRequestBuilder {
+    public class ZipballRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.repos.item.item.zipball.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="WithRefItemRequestBuilder"/></returns>
-        public WithRefItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("ref", position);
-            return new WithRefItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithRefItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("ref", position);
+                return new WithRefItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="ZipballRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ZipballRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/zipball", pathParameters) {
+        public ZipballRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/zipball", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="ZipballRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ZipballRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/zipball", rawUrl) {
+        public ZipballRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/zipball", rawUrl)
+        {
         }
     }
 }

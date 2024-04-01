@@ -15,32 +15,38 @@ namespace GitHub.User.Migrations.Item {
     /// <summary>
     /// Builds and executes requests for operations under \user\migrations\{migration_id}
     /// </summary>
-    public class WithMigration_ItemRequestBuilder : BaseRequestBuilder {
+    public class WithMigration_ItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The archive property</summary>
-        public ArchiveRequestBuilder Archive { get =>
-            new ArchiveRequestBuilder(PathParameters, RequestAdapter);
+        public ArchiveRequestBuilder Archive
+        {
+            get => new ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repos property</summary>
-        public ReposRequestBuilder Repos { get =>
-            new ReposRequestBuilder(PathParameters, RequestAdapter);
+        public ReposRequestBuilder Repos
+        {
+            get => new ReposRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repositories property</summary>
-        public RepositoriesRequestBuilder Repositories { get =>
-            new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
+        public RepositoriesRequestBuilder Repositories
+        {
+            get => new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithMigration_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithMigration_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/migrations/{migration_id}{?exclude*}", pathParameters) {
+        public WithMigration_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/migrations/{migration_id}{?exclude*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithMigration_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithMigration_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/migrations/{migration_id}{?exclude*}", rawUrl) {
+        public WithMigration_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/migrations/{migration_id}{?exclude*}", rawUrl)
+        {
         }
         /// <summary>
         /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:*   `pending` - the migration hasn&apos;t started yet.*   `exporting` - the migration is in progress.*   `exported` - the migration finished successfully.*   `failed` - the migration failed.Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
@@ -54,13 +60,16 @@ namespace GitHub.User.Migrations.Item {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Migration?> GetAsync(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Migration?> GetAsync(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<Migration> GetAsync(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<Migration> GetAsync(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -74,10 +83,12 @@ namespace GitHub.User.Migrations.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -89,13 +100,15 @@ namespace GitHub.User.Migrations.Item {
         /// </summary>
         /// <returns>A <see cref="WithMigration_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithMigration_ItemRequestBuilder WithUrl(string rawUrl) {
+        public WithMigration_ItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithMigration_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:*   `pending` - the migration hasn&apos;t started yet.*   `exporting` - the migration is in progress.*   `exported` - the migration finished successfully.*   `failed` - the migration failed.Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
         /// </summary>
-        public class WithMigration_ItemRequestBuilderGetQueryParameters {
+        public class WithMigration_ItemRequestBuilderGetQueryParameters 
+        {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("exclude")]

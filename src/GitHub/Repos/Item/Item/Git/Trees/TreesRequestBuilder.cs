@@ -13,28 +13,35 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git\trees
     /// </summary>
-    public class TreesRequestBuilder : BaseRequestBuilder {
+    public class TreesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.repos.item.item.git.trees.item collection</summary>
         /// <param name="position">The SHA1 value or ref (branch or tag) name of the tree.</param>
         /// <returns>A <see cref="WithTree_shaItemRequestBuilder"/></returns>
-        public WithTree_shaItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("tree_sha", position);
-            return new WithTree_shaItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithTree_shaItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("tree_sha", position);
+                return new WithTree_shaItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="TreesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TreesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/git/trees", pathParameters) {
+        public TreesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/git/trees", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TreesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TreesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/git/trees", rawUrl) {
+        public TreesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/git/trees", rawUrl)
+        {
         }
         /// <summary>
         /// The tree creation API accepts nested entries. If you specify both a tree and a nested path modifying that tree, this endpoint will overwrite the contents of the tree with the new path contents, and create a new tree structure.If you use this endpoint to add, delete, or modify the file contents in a tree, you will need to commit the tree and then update a branch to point to the commit. For more information see &quot;[Create a commit](https://docs.github.com/rest/git/commits#create-a-commit)&quot; and &quot;[Update a reference](https://docs.github.com/rest/git/refs#update-a-reference).&quot;Returns an error if you try to delete a file that does not exist.
@@ -50,14 +57,17 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GitTree?> PostAsync(TreesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GitTree?> PostAsync(TreesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GitTree> PostAsync(TreesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GitTree> PostAsync(TreesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"409", BasicError.CreateFromDiscriminatorValue},
@@ -73,10 +83,12 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TreesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(TreesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TreesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(TreesPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -90,7 +102,8 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
         /// </summary>
         /// <returns>A <see cref="TreesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TreesRequestBuilder WithUrl(string rawUrl) {
+        public TreesRequestBuilder WithUrl(string rawUrl)
+        {
             return new TreesRequestBuilder(rawUrl, RequestAdapter);
         }
     }

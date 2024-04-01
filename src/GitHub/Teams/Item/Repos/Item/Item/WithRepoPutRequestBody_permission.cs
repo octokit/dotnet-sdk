@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Teams.Item.Repos.Item.Item {
     /// <summary>The permission to grant the team on this repository. If no permission is specified, the team&apos;s `permission` attribute will be used to determine what permission to grant the team on this repository.</summary>
-    public enum WithRepoPutRequestBody_permission {
+    public enum WithRepoPutRequestBody_permission
+    {
         [EnumMember(Value = "pull")]
         Pull,
         [EnumMember(Value = "push")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Repos {
-    public enum GetTypeQueryParameterType {
+    public enum GetTypeQueryParameterType
+    {
         [EnumMember(Value = "all")]
         All,
         [EnumMember(Value = "public")]

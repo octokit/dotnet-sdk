@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Custom property defined on an organization
     /// </summary>
-    public class OrgCustomProperty : IAdditionalDataHolder, IParsable {
+    public class OrgCustomProperty : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An ordered list of the allowed values of the property.The property can have up to 200 allowed values.</summary>
@@ -52,7 +53,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="OrgCustomProperty"/> and sets the default values.
         /// </summary>
-        public OrgCustomProperty() {
+        public OrgCustomProperty()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -60,7 +62,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="OrgCustomProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OrgCustomProperty CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static OrgCustomProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new OrgCustomProperty();
         }
@@ -68,8 +71,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"allowed_values", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"default_value", n => { DefaultValue = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
@@ -83,7 +88,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_values", AllowedValues);
             writer.WriteStringValue("default_value", DefaultValue);

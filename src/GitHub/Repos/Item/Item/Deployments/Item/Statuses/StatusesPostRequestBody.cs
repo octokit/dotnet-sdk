@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
-    public class StatusesPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class StatusesPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Adds a new `inactive` status to all prior non-transient, non-production environment deployments with the same repository and `environment` name as the created status&apos;s deployment. An `inactive` status is only added to deployments that had a `success` state. Default: `true`</summary>
@@ -55,7 +56,8 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
         /// <summary>
         /// Instantiates a new <see cref="StatusesPostRequestBody"/> and sets the default values.
         /// </summary>
-        public StatusesPostRequestBody() {
+        public StatusesPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -63,7 +65,8 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
         /// </summary>
         /// <returns>A <see cref="StatusesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static StatusesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static StatusesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new StatusesPostRequestBody();
         }
@@ -71,8 +74,10 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"auto_inactive", n => { AutoInactive = n.GetBoolValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"environment", n => { Environment = n.GetStringValue(); } },
@@ -86,7 +91,8 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_inactive", AutoInactive);
             writer.WriteStringValue("description", Description);

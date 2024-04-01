@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Details for the advisory pertaining to the Common Vulnerability Scoring System.
     /// </summary>
-    public class DependabotAlertSecurityAdvisory_cvss : IParsable {
+    public class DependabotAlertSecurityAdvisory_cvss : IParsable 
+    {
         /// <summary>The overall CVSS score of the advisory.</summary>
         public double? Score { get; private set; }
         /// <summary>The full CVSS vector string for the advisory.</summary>
@@ -24,7 +25,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="DependabotAlertSecurityAdvisory_cvss"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DependabotAlertSecurityAdvisory_cvss CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DependabotAlertSecurityAdvisory_cvss CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DependabotAlertSecurityAdvisory_cvss();
         }
@@ -32,8 +34,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"score", n => { Score = n.GetDoubleValue(); } },
                 {"vector_string", n => { VectorString = n.GetStringValue(); } },
             };
@@ -42,7 +46,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
         }
     }

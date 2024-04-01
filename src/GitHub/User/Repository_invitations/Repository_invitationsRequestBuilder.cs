@@ -13,28 +13,35 @@ namespace GitHub.User.Repository_invitations {
     /// <summary>
     /// Builds and executes requests for operations under \user\repository_invitations
     /// </summary>
-    public class Repository_invitationsRequestBuilder : BaseRequestBuilder {
+    public class Repository_invitationsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.user.repository_invitations.item collection</summary>
         /// <param name="position">The unique identifier of the invitation.</param>
         /// <returns>A <see cref="WithInvitation_ItemRequestBuilder"/></returns>
-        public WithInvitation_ItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("invitation_id", position);
-            return new WithInvitation_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithInvitation_ItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("invitation_id", position);
+                return new WithInvitation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="Repository_invitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Repository_invitationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repository_invitations{?page*,per_page*}", pathParameters) {
+        public Repository_invitationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repository_invitations{?page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="Repository_invitationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Repository_invitationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repository_invitations{?page*,per_page*}", rawUrl) {
+        public Repository_invitationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/repository_invitations{?page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
@@ -48,13 +55,16 @@ namespace GitHub.User.Repository_invitations {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<RepositoryInvitation>?> GetAsync(Action<RequestConfiguration<Repository_invitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RepositoryInvitation>?> GetAsync(Action<RequestConfiguration<Repository_invitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<RepositoryInvitation>> GetAsync(Action<RequestConfiguration<Repository_invitationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RepositoryInvitation>> GetAsync(Action<RequestConfiguration<Repository_invitationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -69,10 +79,12 @@ namespace GitHub.User.Repository_invitations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Repository_invitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Repository_invitationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Repository_invitationsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Repository_invitationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -84,13 +96,15 @@ namespace GitHub.User.Repository_invitations {
         /// </summary>
         /// <returns>A <see cref="Repository_invitationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Repository_invitationsRequestBuilder WithUrl(string rawUrl) {
+        public Repository_invitationsRequestBuilder WithUrl(string rawUrl)
+        {
             return new Repository_invitationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
         /// </summary>
-        public class Repository_invitationsRequestBuilderGetQueryParameters {
+        public class Repository_invitationsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

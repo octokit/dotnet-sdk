@@ -10,24 +10,28 @@ namespace GitHub.Repos.Item.Item.Actions.Cache {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\cache
     /// </summary>
-    public class CacheRequestBuilder : BaseRequestBuilder {
+    public class CacheRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The usage property</summary>
-        public UsageRequestBuilder Usage { get =>
-            new UsageRequestBuilder(PathParameters, RequestAdapter);
+        public UsageRequestBuilder Usage
+        {
+            get => new UsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="CacheRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/cache", pathParameters) {
+        public CacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/cache", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CacheRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/cache", rawUrl) {
+        public CacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/cache", rawUrl)
+        {
         }
     }
 }

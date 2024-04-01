@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.</summary>
-    public enum ActionsWorkflowAccessToRepository_access_level {
+    public enum ActionsWorkflowAccessToRepository_access_level
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "user")]

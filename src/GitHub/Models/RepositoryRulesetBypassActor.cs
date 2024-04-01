@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// An actor that can bypass rules in a ruleset
     /// </summary>
-    public class RepositoryRulesetBypassActor : IAdditionalDataHolder, IParsable {
+    public class RepositoryRulesetBypassActor : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`.</summary>
         public int? ActorId { get; set; }
         /// <summary>The type of actor that can bypass a ruleset</summary>
@@ -20,7 +21,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="RepositoryRulesetBypassActor"/> and sets the default values.
         /// </summary>
-        public RepositoryRulesetBypassActor() {
+        public RepositoryRulesetBypassActor()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -28,7 +30,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="RepositoryRulesetBypassActor"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RepositoryRulesetBypassActor CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RepositoryRulesetBypassActor CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RepositoryRulesetBypassActor();
         }
@@ -36,8 +39,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"actor_id", n => { ActorId = n.GetIntValue(); } },
                 {"actor_type", n => { ActorType = n.GetEnumValue<RepositoryRulesetBypassActor_actor_type>(); } },
                 {"bypass_mode", n => { BypassMode = n.GetEnumValue<RepositoryRulesetBypassActor_bypass_mode>(); } },
@@ -47,7 +52,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("actor_id", ActorId);
             writer.WriteEnumValue<RepositoryRulesetBypassActor_actor_type>("actor_type", ActorType);

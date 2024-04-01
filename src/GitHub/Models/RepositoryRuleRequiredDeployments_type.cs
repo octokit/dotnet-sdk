@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum RepositoryRuleRequiredDeployments_type {
+    public enum RepositoryRuleRequiredDeployments_type
+    {
         [EnumMember(Value = "required_deployments")]
         Required_deployments,
     }

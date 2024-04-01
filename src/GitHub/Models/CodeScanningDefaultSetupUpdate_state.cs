@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The desired state of code scanning default setup.</summary>
-    public enum CodeScanningDefaultSetupUpdate_state {
+    public enum CodeScanningDefaultSetupUpdate_state
+    {
         [EnumMember(Value = "configured")]
         Configured,
         [EnumMember(Value = "not-configured")]

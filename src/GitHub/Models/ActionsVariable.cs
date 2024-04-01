@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class ActionsVariable : IAdditionalDataHolder, IParsable {
+    public class ActionsVariable : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time at which the variable was created, in ISO 8601 format&apos;:&apos; YYYY-MM-DDTHH:MM:SSZ.</summary>
@@ -31,7 +32,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="ActionsVariable"/> and sets the default values.
         /// </summary>
-        public ActionsVariable() {
+        public ActionsVariable()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -39,7 +41,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="ActionsVariable"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ActionsVariable CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ActionsVariable CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ActionsVariable();
         }
@@ -47,8 +50,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -59,7 +64,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("name", Name);

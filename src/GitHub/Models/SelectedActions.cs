@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class SelectedActions : IAdditionalDataHolder, IParsable {
+    public class SelectedActions : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.</summary>
@@ -23,7 +24,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="SelectedActions"/> and sets the default values.
         /// </summary>
-        public SelectedActions() {
+        public SelectedActions()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -31,7 +33,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="SelectedActions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SelectedActions CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SelectedActions CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SelectedActions();
         }
@@ -39,8 +42,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"github_owned_allowed", n => { GithubOwnedAllowed = n.GetBoolValue(); } },
                 {"patterns_allowed", n => { PatternsAllowed = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"verified_allowed", n => { VerifiedAllowed = n.GetBoolValue(); } },
@@ -50,7 +55,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("github_owned_allowed", GithubOwnedAllowed);
             writer.WriteCollectionOfPrimitiveValues<string>("patterns_allowed", PatternsAllowed);

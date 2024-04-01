@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Import {
     /// <summary>The type of version control system you are migrating from.</summary>
-    public enum ImportPatchRequestBody_vcs {
+    public enum ImportPatchRequestBody_vcs
+    {
         [EnumMember(Value = "subversion")]
         Subversion,
         [EnumMember(Value = "tfvc")]

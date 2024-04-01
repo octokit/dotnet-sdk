@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Review Request Removed Issue Event
     /// </summary>
-    public class ReviewRequestRemovedIssueEvent : IAdditionalDataHolder, IParsable {
+    public class ReviewRequestRemovedIssueEvent : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +105,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="ReviewRequestRemovedIssueEvent"/> and sets the default values.
         /// </summary>
-        public ReviewRequestRemovedIssueEvent() {
+        public ReviewRequestRemovedIssueEvent()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -112,7 +114,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="ReviewRequestRemovedIssueEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ReviewRequestRemovedIssueEvent CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ReviewRequestRemovedIssueEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ReviewRequestRemovedIssueEvent();
         }
@@ -120,8 +123,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
                 {"commit_id", n => { CommitId = n.GetStringValue(); } },
                 {"commit_url", n => { CommitUrl = n.GetStringValue(); } },
@@ -140,7 +145,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<SimpleUser>("actor", Actor);
             writer.WriteStringValue("commit_id", CommitId);

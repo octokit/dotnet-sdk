@@ -19,55 +19,65 @@ namespace GitHub.Teams.Item {
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}
     /// </summary>
-    public class WithTeam_ItemRequestBuilder : BaseRequestBuilder {
+    public class WithTeam_ItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The discussions property</summary>
         [Obsolete("")]
-        public DiscussionsRequestBuilder Discussions { get =>
-            new DiscussionsRequestBuilder(PathParameters, RequestAdapter);
+        public DiscussionsRequestBuilder Discussions
+        {
+            get => new DiscussionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The invitations property</summary>
         [Obsolete("")]
-        public InvitationsRequestBuilder Invitations { get =>
-            new InvitationsRequestBuilder(PathParameters, RequestAdapter);
+        public InvitationsRequestBuilder Invitations
+        {
+            get => new InvitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The members property</summary>
         [Obsolete("")]
-        public MembersRequestBuilder Members { get =>
-            new MembersRequestBuilder(PathParameters, RequestAdapter);
+        public MembersRequestBuilder Members
+        {
+            get => new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The memberships property</summary>
         [Obsolete("")]
-        public MembershipsRequestBuilder Memberships { get =>
-            new MembershipsRequestBuilder(PathParameters, RequestAdapter);
+        public MembershipsRequestBuilder Memberships
+        {
+            get => new MembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The projects property</summary>
         [Obsolete("")]
-        public ProjectsRequestBuilder Projects { get =>
-            new ProjectsRequestBuilder(PathParameters, RequestAdapter);
+        public ProjectsRequestBuilder Projects
+        {
+            get => new ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repos property</summary>
         [Obsolete("")]
-        public ReposRequestBuilder Repos { get =>
-            new ReposRequestBuilder(PathParameters, RequestAdapter);
+        public ReposRequestBuilder Repos
+        {
+            get => new ReposRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
         [Obsolete("")]
-        public GitHub.Teams.Item.Teams.TeamsRequestBuilder Teams { get =>
-            new GitHub.Teams.Item.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
+        public GitHub.Teams.Item.Teams.TeamsRequestBuilder Teams
+        {
+            get => new GitHub.Teams.Item.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithTeam_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTeam_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team_id}", pathParameters) {
+        public WithTeam_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team_id}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithTeam_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTeam_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team_id}", rawUrl) {
+        public WithTeam_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/teams/{team_id}", rawUrl)
+        {
         }
         /// <summary>
         /// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Delete a team](https://docs.github.com/rest/teams/teams#delete-a-team) endpoint.To delete a team, the authenticated user must be an organization owner or team maintainer.If you are an organization owner, deleting a parent team will delete all of its child teams as well.
@@ -80,13 +90,16 @@ namespace GitHub.Teams.Item {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationError.CreateFromDiscriminatorValue},
             };
@@ -103,13 +116,16 @@ namespace GitHub.Teams.Item {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamFull?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamFull?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TeamFull> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamFull> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TeamFull>(requestInfo, TeamFull.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -128,14 +144,17 @@ namespace GitHub.Teams.Item {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamFull?> PatchAsync(WithTeam_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamFull?> PatchAsync(WithTeam_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<TeamFull> PatchAsync(WithTeam_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<TeamFull> PatchAsync(WithTeam_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationError.CreateFromDiscriminatorValue},
@@ -150,10 +169,12 @@ namespace GitHub.Teams.Item {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -168,10 +189,12 @@ namespace GitHub.Teams.Item {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -187,10 +210,12 @@ namespace GitHub.Teams.Item {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WithTeam_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(WithTeam_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WithTeam_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(WithTeam_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
@@ -205,7 +230,8 @@ namespace GitHub.Teams.Item {
         /// <returns>A <see cref="WithTeam_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public WithTeam_ItemRequestBuilder WithUrl(string rawUrl) {
+        public WithTeam_ItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithTeam_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

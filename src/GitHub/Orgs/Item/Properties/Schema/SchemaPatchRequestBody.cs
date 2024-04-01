@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.Properties.Schema {
-    public class SchemaPatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class SchemaPatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The array of custom properties to create or update.</summary>
@@ -20,7 +21,8 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// <summary>
         /// Instantiates a new <see cref="SchemaPatchRequestBody"/> and sets the default values.
         /// </summary>
-        public SchemaPatchRequestBody() {
+        public SchemaPatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -28,7 +30,8 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// </summary>
         /// <returns>A <see cref="SchemaPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SchemaPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SchemaPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SchemaPatchRequestBody();
         }
@@ -36,8 +39,10 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"properties", n => { Properties = n.GetCollectionOfObjectValues<OrgCustomProperty>(OrgCustomProperty.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -45,7 +50,8 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<OrgCustomProperty>("properties", Properties);
             writer.WriteAdditionalData(AdditionalData);

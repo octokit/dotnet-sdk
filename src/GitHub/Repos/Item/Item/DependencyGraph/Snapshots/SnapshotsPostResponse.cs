@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
-    public class SnapshotsPostResponse : IAdditionalDataHolder, IParsable {
+    public class SnapshotsPostResponse : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time at which the snapshot was created.</summary>
@@ -37,7 +38,8 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// <summary>
         /// Instantiates a new <see cref="SnapshotsPostResponse"/> and sets the default values.
         /// </summary>
-        public SnapshotsPostResponse() {
+        public SnapshotsPostResponse()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -45,7 +47,8 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// </summary>
         /// <returns>A <see cref="SnapshotsPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SnapshotsPostResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SnapshotsPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SnapshotsPostResponse();
         }
@@ -53,8 +56,10 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"created_at", n => { CreatedAt = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetIntValue(); } },
                 {"message", n => { Message = n.GetStringValue(); } },
@@ -65,7 +70,8 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteIntValue("id", Id);

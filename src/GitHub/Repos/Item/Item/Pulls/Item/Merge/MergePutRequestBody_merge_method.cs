@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
     /// <summary>The merge method to use.</summary>
-    public enum MergePutRequestBody_merge_method {
+    public enum MergePutRequestBody_merge_method
+    {
         [EnumMember(Value = "merge")]
         Merge,
         [EnumMember(Value = "squash")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Dependabot.Alerts {
-    public enum GetScopeQueryParameterType {
+    public enum GetScopeQueryParameterType
+    {
         [EnumMember(Value = "development")]
         Development,
         [EnumMember(Value = "runtime")]

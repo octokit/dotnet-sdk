@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Import {
-    public class ImportPatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class ImportPatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>For a tfvc import, the name of the project that is being imported.</summary>
@@ -37,7 +38,8 @@ namespace GitHub.Repos.Item.Item.Import {
         /// <summary>
         /// Instantiates a new <see cref="ImportPatchRequestBody"/> and sets the default values.
         /// </summary>
-        public ImportPatchRequestBody() {
+        public ImportPatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -45,7 +47,8 @@ namespace GitHub.Repos.Item.Item.Import {
         /// </summary>
         /// <returns>A <see cref="ImportPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ImportPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ImportPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ImportPatchRequestBody();
         }
@@ -53,8 +56,10 @@ namespace GitHub.Repos.Item.Item.Import {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"tfvc_project", n => { TfvcProject = n.GetStringValue(); } },
                 {"vcs", n => { Vcs = n.GetEnumValue<ImportPatchRequestBody_vcs>(); } },
                 {"vcs_password", n => { VcsPassword = n.GetStringValue(); } },
@@ -65,7 +70,8 @@ namespace GitHub.Repos.Item.Item.Import {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("tfvc_project", TfvcProject);
             writer.WriteEnumValue<ImportPatchRequestBody_vcs>("vcs", Vcs);

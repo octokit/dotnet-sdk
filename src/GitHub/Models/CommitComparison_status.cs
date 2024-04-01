@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum CommitComparison_status {
+    public enum CommitComparison_status
+    {
         [EnumMember(Value = "diverged")]
         Diverged,
         [EnumMember(Value = "ahead")]

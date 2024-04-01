@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Runner Application
     /// </summary>
-    public class RunnerApplication : IAdditionalDataHolder, IParsable {
+    public class RunnerApplication : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The architecture property</summary>
@@ -62,7 +63,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="RunnerApplication"/> and sets the default values.
         /// </summary>
-        public RunnerApplication() {
+        public RunnerApplication()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -70,7 +72,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="RunnerApplication"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RunnerApplication CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RunnerApplication CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RunnerApplication();
         }
@@ -78,8 +81,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"architecture", n => { Architecture = n.GetStringValue(); } },
                 {"download_url", n => { DownloadUrl = n.GetStringValue(); } },
                 {"filename", n => { Filename = n.GetStringValue(); } },
@@ -92,7 +97,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("architecture", Architecture);
             writer.WriteStringValue("download_url", DownloadUrl);

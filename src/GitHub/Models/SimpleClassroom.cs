@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// A GitHub Classroom classroom
     /// </summary>
-    public class SimpleClassroom : IAdditionalDataHolder, IParsable {
+    public class SimpleClassroom : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Returns whether classroom is archived or not.</summary>
@@ -34,7 +35,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="SimpleClassroom"/> and sets the default values.
         /// </summary>
-        public SimpleClassroom() {
+        public SimpleClassroom()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -42,7 +44,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="SimpleClassroom"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SimpleClassroom CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SimpleClassroom CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SimpleClassroom();
         }
@@ -50,8 +53,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"archived", n => { Archived = n.GetBoolValue(); } },
                 {"id", n => { Id = n.GetIntValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -62,7 +67,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("archived", Archived);
             writer.WriteIntValue("id", Id);

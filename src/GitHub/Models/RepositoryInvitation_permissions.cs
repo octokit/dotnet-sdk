@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The permission associated with the invitation.</summary>
-    public enum RepositoryInvitation_permissions {
+    public enum RepositoryInvitation_permissions
+    {
         [EnumMember(Value = "read")]
         Read,
         [EnumMember(Value = "write")]

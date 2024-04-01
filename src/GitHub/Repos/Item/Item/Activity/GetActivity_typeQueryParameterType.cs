@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Activity {
-    public enum GetActivity_typeQueryParameterType {
+    public enum GetActivity_typeQueryParameterType
+    {
         [EnumMember(Value = "push")]
         Push,
         [EnumMember(Value = "force_push")]

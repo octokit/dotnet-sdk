@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum RepositoryRuleCommitterEmailPattern_type {
+    public enum RepositoryRuleCommitterEmailPattern_type
+    {
         [EnumMember(Value = "committer_email_pattern")]
         Committer_email_pattern,
     }

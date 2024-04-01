@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Milestones {
     /// <summary>The state of the milestone. Either `open` or `closed`.</summary>
-    public enum MilestonesPostRequestBody_state {
+    public enum MilestonesPostRequestBody_state
+    {
         [EnumMember(Value = "open")]
         Open,
         [EnumMember(Value = "closed")]

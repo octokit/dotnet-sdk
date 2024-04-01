@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Represents a &apos;discussion_title&apos; secret scanning location type. This location type shows that a secret was detected in the title of a discussion.
     /// </summary>
-    public class SecretScanningLocationDiscussionTitle : IAdditionalDataHolder, IParsable {
+    public class SecretScanningLocationDiscussionTitle : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The URL to the discussion where the secret was detected.</summary>
@@ -22,7 +23,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="SecretScanningLocationDiscussionTitle"/> and sets the default values.
         /// </summary>
-        public SecretScanningLocationDiscussionTitle() {
+        public SecretScanningLocationDiscussionTitle()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -30,7 +32,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="SecretScanningLocationDiscussionTitle"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SecretScanningLocationDiscussionTitle CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SecretScanningLocationDiscussionTitle CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SecretScanningLocationDiscussionTitle();
         }
@@ -38,8 +41,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"discussion_title_url", n => { DiscussionTitleUrl = n.GetStringValue(); } },
             };
         }
@@ -47,7 +52,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("discussion_title_url", DiscussionTitleUrl);
             writer.WriteAdditionalData(AdditionalData);

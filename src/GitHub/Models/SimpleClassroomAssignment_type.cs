@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>Whether it&apos;s a Group Assignment or Individual Assignment.</summary>
-    public enum SimpleClassroomAssignment_type {
+    public enum SimpleClassroomAssignment_type
+    {
         [EnumMember(Value = "individual")]
         Individual,
         [EnumMember(Value = "group")]

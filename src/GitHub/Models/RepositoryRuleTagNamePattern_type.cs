@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum RepositoryRuleTagNamePattern_type {
+    public enum RepositoryRuleTagNamePattern_type
+    {
         [EnumMember(Value = "tag_name_pattern")]
         Tag_name_pattern,
     }

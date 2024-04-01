@@ -12,20 +12,23 @@ namespace GitHub.App.InstallationRequests {
     /// <summary>
     /// Builds and executes requests for operations under \app\installation-requests
     /// </summary>
-    public class InstallationRequestsRequestBuilder : BaseRequestBuilder {
+    public class InstallationRequestsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="InstallationRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstallationRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/installation-requests{?page*,per_page*}", pathParameters) {
+        public InstallationRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/installation-requests{?page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="InstallationRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstallationRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/installation-requests{?page*,per_page*}", rawUrl) {
+        public InstallationRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app/installation-requests{?page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists all the pending installation requests for the authenticated GitHub App.
@@ -37,13 +40,16 @@ namespace GitHub.App.InstallationRequests {
         /// <exception cref="BasicError">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<IntegrationInstallationRequest>?> GetAsync(Action<RequestConfiguration<InstallationRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<IntegrationInstallationRequest>?> GetAsync(Action<RequestConfiguration<InstallationRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<IntegrationInstallationRequest>> GetAsync(Action<RequestConfiguration<InstallationRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<IntegrationInstallationRequest>> GetAsync(Action<RequestConfiguration<InstallationRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<IntegrationInstallationRequest>(requestInfo, IntegrationInstallationRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -56,10 +62,12 @@ namespace GitHub.App.InstallationRequests {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstallationRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstallationRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstallationRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InstallationRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -71,13 +79,15 @@ namespace GitHub.App.InstallationRequests {
         /// </summary>
         /// <returns>A <see cref="InstallationRequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InstallationRequestsRequestBuilder WithUrl(string rawUrl) {
+        public InstallationRequestsRequestBuilder WithUrl(string rawUrl)
+        {
             return new InstallationRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all the pending installation requests for the authenticated GitHub App.
         /// </summary>
-        public class InstallationRequestsRequestBuilderGetQueryParameters {
+        public class InstallationRequestsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

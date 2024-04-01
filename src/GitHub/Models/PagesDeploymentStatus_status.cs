@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The current status of the deployment.</summary>
-    public enum PagesDeploymentStatus_status {
+    public enum PagesDeploymentStatus_status
+    {
         [EnumMember(Value = "deployment_in_progress")]
         Deployment_in_progress,
         [EnumMember(Value = "syncing_files")]

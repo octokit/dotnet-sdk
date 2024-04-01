@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class Commit_commit : IAdditionalDataHolder, IParsable {
+    public class Commit_commit : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Metaproperties for Git author/committer information.</summary>
@@ -61,7 +62,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="Commit_commit"/> and sets the default values.
         /// </summary>
-        public Commit_commit() {
+        public Commit_commit()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -69,7 +71,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="Commit_commit"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Commit_commit CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Commit_commit CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Commit_commit();
         }
@@ -77,8 +80,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"author", n => { Author = n.GetObjectValue<NullableGitUser>(NullableGitUser.CreateFromDiscriminatorValue); } },
                 {"comment_count", n => { CommentCount = n.GetIntValue(); } },
                 {"committer", n => { Committer = n.GetObjectValue<NullableGitUser>(NullableGitUser.CreateFromDiscriminatorValue); } },
@@ -92,7 +97,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<NullableGitUser>("author", Author);
             writer.WriteIntValue("comment_count", CommentCount);

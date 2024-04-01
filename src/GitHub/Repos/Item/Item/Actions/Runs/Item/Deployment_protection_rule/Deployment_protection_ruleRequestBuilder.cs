@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\deployment_protection_rule
     /// </summary>
-    public class Deployment_protection_ruleRequestBuilder : BaseRequestBuilder {
+    public class Deployment_protection_ruleRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="Deployment_protection_ruleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Deployment_protection_ruleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}/deployment_protection_rule", pathParameters) {
+        public Deployment_protection_ruleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}/deployment_protection_rule", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="Deployment_protection_ruleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Deployment_protection_ruleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}/deployment_protection_rule", rawUrl) {
+        public Deployment_protection_ruleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}/deployment_protection_rule", rawUrl)
+        {
         }
         /// <summary>
         /// Approve or reject custom deployment protection rules provided by a GitHub App for a workflow run. For more information, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;**Note:** GitHub Apps can only review their own custom deployment protection rules.To approve or reject pending deployments that are waiting for review from a specific person or team, see [`POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments`](/rest/actions/workflow-runs#review-pending-deployments-for-a-workflow-run).OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
@@ -36,10 +39,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Deployment_protection_rulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Deployment_protection_rulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PostAsync(Deployment_protection_rulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Deployment_protection_rulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -53,10 +58,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Deployment_protection_rulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Deployment_protection_rulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Deployment_protection_rulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Deployment_protection_rulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -69,13 +76,15 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
         /// </summary>
         /// <returns>A <see cref="Deployment_protection_ruleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Deployment_protection_ruleRequestBuilder WithUrl(string rawUrl) {
+        public Deployment_protection_ruleRequestBuilder WithUrl(string rawUrl)
+        {
             return new Deployment_protection_ruleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="ReviewCustomGatesCommentRequired"/>, <see cref="ReviewCustomGatesStateRequired"/>
         /// </summary>
-        public class Deployment_protection_rulePostRequestBody : IComposedTypeWrapper, IParsable {
+        public class Deployment_protection_rulePostRequestBody : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.ReviewCustomGatesCommentRequired"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,7 +122,8 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
             /// </summary>
             /// <returns>A <see cref="Deployment_protection_rulePostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static Deployment_protection_rulePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static Deployment_protection_rulePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new Deployment_protection_rulePostRequestBody();
                 result.DeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired = new GitHub.Models.ReviewCustomGatesCommentRequired();
@@ -126,8 +136,10 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(DeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired != null || DeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired != null || ReviewCustomGatesCommentRequired != null || ReviewCustomGatesStateRequired != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(DeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired != null || DeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired != null || ReviewCustomGatesCommentRequired != null || ReviewCustomGatesStateRequired != null)
+                {
                     return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired, DeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired, ReviewCustomGatesCommentRequired, ReviewCustomGatesStateRequired);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -136,7 +148,8 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<GitHub.Models.ReviewCustomGatesCommentRequired>(null, DeploymentProtectionRulePostRequestBodyReviewCustomGatesCommentRequired, DeploymentProtectionRulePostRequestBodyReviewCustomGatesStateRequired, ReviewCustomGatesCommentRequired, ReviewCustomGatesStateRequired);
             }

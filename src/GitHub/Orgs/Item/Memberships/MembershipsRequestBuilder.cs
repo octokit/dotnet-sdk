@@ -10,28 +10,35 @@ namespace GitHub.Orgs.Item.Memberships {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\memberships
     /// </summary>
-    public class MembershipsRequestBuilder : BaseRequestBuilder {
+    public class MembershipsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.orgs.item.memberships.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
         /// <returns>A <see cref="WithUsernameItemRequestBuilder"/></returns>
-        public WithUsernameItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("username", position);
-            return new WithUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithUsernameItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("username", position);
+                return new WithUsernameItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="MembershipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembershipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/memberships", pathParameters) {
+        public MembershipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/memberships", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MembershipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembershipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/memberships", rawUrl) {
+        public MembershipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/memberships", rawUrl)
+        {
         }
     }
 }

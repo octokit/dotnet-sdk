@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.</summary>
-    public enum CheckSuite_status {
+    public enum CheckSuite_status
+    {
         [EnumMember(Value = "queued")]
         Queued,
         [EnumMember(Value = "in_progress")]

@@ -8,7 +8,8 @@ namespace GitHub.Repos.Item.Item {
     /// <summary>
     /// Specify which security and analysis features to enable or disable for the repository.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request:`{ &quot;security_and_analysis&quot;: {&quot;advanced_security&quot;: { &quot;status&quot;: &quot;enabled&quot; } } }`.You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
     /// </summary>
-    public class RepoPatchRequestBody_security_and_analysis : IAdditionalDataHolder, IParsable {
+    public class RepoPatchRequestBody_security_and_analysis : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see &quot;[About GitHub Advanced Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security).&quot;</summary>
@@ -38,7 +39,8 @@ namespace GitHub.Repos.Item.Item {
         /// <summary>
         /// Instantiates a new <see cref="RepoPatchRequestBody_security_and_analysis"/> and sets the default values.
         /// </summary>
-        public RepoPatchRequestBody_security_and_analysis() {
+        public RepoPatchRequestBody_security_and_analysis()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -46,7 +48,8 @@ namespace GitHub.Repos.Item.Item {
         /// </summary>
         /// <returns>A <see cref="RepoPatchRequestBody_security_and_analysis"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RepoPatchRequestBody_security_and_analysis CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RepoPatchRequestBody_security_and_analysis CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RepoPatchRequestBody_security_and_analysis();
         }
@@ -54,8 +57,10 @@ namespace GitHub.Repos.Item.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"advanced_security", n => { AdvancedSecurity = n.GetObjectValue<RepoPatchRequestBody_security_and_analysis_advanced_security>(RepoPatchRequestBody_security_and_analysis_advanced_security.CreateFromDiscriminatorValue); } },
                 {"secret_scanning", n => { SecretScanning = n.GetObjectValue<RepoPatchRequestBody_security_and_analysis_secret_scanning>(RepoPatchRequestBody_security_and_analysis_secret_scanning.CreateFromDiscriminatorValue); } },
                 {"secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetObjectValue<RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection>(RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection.CreateFromDiscriminatorValue); } },
@@ -65,7 +70,8 @@ namespace GitHub.Repos.Item.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<RepoPatchRequestBody_security_and_analysis_advanced_security>("advanced_security", AdvancedSecurity);
             writer.WriteObjectValue<RepoPatchRequestBody_security_and_analysis_secret_scanning>("secret_scanning", SecretScanning);

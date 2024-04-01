@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Search.Code {
-    public enum GetSortQueryParameterType {
+    public enum GetSortQueryParameterType
+    {
         [EnumMember(Value = "indexed")]
         Indexed,
     }

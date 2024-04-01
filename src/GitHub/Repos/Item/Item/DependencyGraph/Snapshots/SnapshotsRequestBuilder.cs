@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph\snapshots
     /// </summary>
-    public class SnapshotsRequestBuilder : BaseRequestBuilder {
+    public class SnapshotsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="SnapshotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SnapshotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/dependency-graph/snapshots", pathParameters) {
+        public SnapshotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/dependency-graph/snapshots", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SnapshotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SnapshotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/dependency-graph/snapshots", rawUrl) {
+        public SnapshotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/dependency-graph/snapshots", rawUrl)
+        {
         }
         /// <summary>
         /// Create a new snapshot of a repository&apos;s dependencies.The authenticated user must have access to the repository.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -37,10 +40,12 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SnapshotsPostResponse?> PostAsync(Snapshot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SnapshotsPostResponse?> PostAsync(Snapshot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<SnapshotsPostResponse> PostAsync(Snapshot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<SnapshotsPostResponse> PostAsync(Snapshot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -54,10 +59,12 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Snapshot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Snapshot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Snapshot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(Snapshot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -71,7 +78,8 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         /// </summary>
         /// <returns>A <see cref="SnapshotsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SnapshotsRequestBuilder WithUrl(string rawUrl) {
+        public SnapshotsRequestBuilder WithUrl(string rawUrl)
+        {
             return new SnapshotsRequestBuilder(rawUrl, RequestAdapter);
         }
     }

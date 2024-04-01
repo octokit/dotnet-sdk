@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Projects.Item.Collaborators.Item {
     /// <summary>The permission to grant the collaborator.</summary>
-    public enum WithUsernamePutRequestBody_permission {
+    public enum WithUsernamePutRequestBody_permission
+    {
         [EnumMember(Value = "read")]
         Read,
         [EnumMember(Value = "write")]

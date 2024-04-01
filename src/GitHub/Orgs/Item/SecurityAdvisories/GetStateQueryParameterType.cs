@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.SecurityAdvisories {
-    public enum GetStateQueryParameterType {
+    public enum GetStateQueryParameterType
+    {
         [EnumMember(Value = "triage")]
         Triage,
         [EnumMember(Value = "draft")]

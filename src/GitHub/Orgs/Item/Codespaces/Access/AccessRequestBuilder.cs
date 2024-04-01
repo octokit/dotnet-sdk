@@ -13,25 +13,29 @@ namespace GitHub.Orgs.Item.Codespaces.Access {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\codespaces\access
     /// </summary>
-    public class AccessRequestBuilder : BaseRequestBuilder {
+    public class AccessRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The selected_users property</summary>
         [Obsolete("")]
-        public Selected_usersRequestBuilder Selected_users { get =>
-            new Selected_usersRequestBuilder(PathParameters, RequestAdapter);
+        public Selected_usersRequestBuilder Selected_users
+        {
+            get => new Selected_usersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="AccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/codespaces/access", pathParameters) {
+        public AccessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/codespaces/access", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/codespaces/access", rawUrl) {
+        public AccessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/codespaces/access", rawUrl)
+        {
         }
         /// <summary>
         /// Sets which users can access codespaces in an organization. This is synonymous with granting or revoking codespaces access permissions for users according to the visibility.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
@@ -46,14 +50,17 @@ namespace GitHub.Orgs.Item.Codespaces.Access {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(AccessPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PutAsync(AccessPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task PutAsync(AccessPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task PutAsync(AccessPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationError.CreateFromDiscriminatorValue},
                 {"500", BasicError.CreateFromDiscriminatorValue},
@@ -69,10 +76,12 @@ namespace GitHub.Orgs.Item.Codespaces.Access {
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(AccessPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(AccessPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(AccessPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(AccessPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
@@ -87,7 +96,8 @@ namespace GitHub.Orgs.Item.Codespaces.Access {
         /// <returns>A <see cref="AccessRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public AccessRequestBuilder WithUrl(string rawUrl) {
+        public AccessRequestBuilder WithUrl(string rawUrl)
+        {
             return new AccessRequestBuilder(rawUrl, RequestAdapter);
         }
     }

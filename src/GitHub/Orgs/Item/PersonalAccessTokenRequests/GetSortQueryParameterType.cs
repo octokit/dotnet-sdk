@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
-    public enum GetSortQueryParameterType {
+    public enum GetSortQueryParameterType
+    {
         [EnumMember(Value = "created_at")]
         Created_at,
     }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum ContentSymlink_type {
+    public enum ContentSymlink_type
+    {
         [EnumMember(Value = "symlink")]
         Symlink,
     }

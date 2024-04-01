@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Issue Event Rename
     /// </summary>
-    public class IssueEventRename : IAdditionalDataHolder, IParsable {
+    public class IssueEventRename : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The from property</summary>
@@ -30,7 +31,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="IssueEventRename"/> and sets the default values.
         /// </summary>
-        public IssueEventRename() {
+        public IssueEventRename()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -38,7 +40,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="IssueEventRename"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IssueEventRename CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static IssueEventRename CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IssueEventRename();
         }
@@ -46,8 +49,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"from", n => { From = n.GetStringValue(); } },
                 {"to", n => { To = n.GetStringValue(); } },
             };
@@ -56,7 +61,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("from", From);
             writer.WriteStringValue("to", To);

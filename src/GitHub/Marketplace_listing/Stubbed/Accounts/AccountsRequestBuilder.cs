@@ -10,28 +10,35 @@ namespace GitHub.Marketplace_listing.Stubbed.Accounts {
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\stubbed\accounts
     /// </summary>
-    public class AccountsRequestBuilder : BaseRequestBuilder {
+    public class AccountsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.marketplace_listing.stubbed.accounts.item collection</summary>
         /// <param name="position">account_id parameter</param>
         /// <returns>A <see cref="WithAccount_ItemRequestBuilder"/></returns>
-        public WithAccount_ItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("account_id", position);
-            return new WithAccount_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithAccount_ItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("account_id", position);
+                return new WithAccount_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="AccountsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed/accounts", pathParameters) {
+        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed/accounts", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AccountsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed/accounts", rawUrl) {
+        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed/accounts", rawUrl)
+        {
         }
     }
 }

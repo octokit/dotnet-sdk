@@ -10,28 +10,35 @@ namespace GitHub.Orgs {
     /// <summary>
     /// Builds and executes requests for operations under \orgs
     /// </summary>
-    public class OrgsRequestBuilder : BaseRequestBuilder {
+    public class OrgsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.orgs.item collection</summary>
         /// <param name="position">The organization name. The name is not case sensitive.</param>
         /// <returns>A <see cref="WithOrgItemRequestBuilder"/></returns>
-        public WithOrgItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("org", position);
-            return new WithOrgItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithOrgItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("org", position);
+                return new WithOrgItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="OrgsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrgsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs", pathParameters) {
+        public OrgsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="OrgsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrgsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs", rawUrl) {
+        public OrgsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs", rawUrl)
+        {
         }
     }
 }

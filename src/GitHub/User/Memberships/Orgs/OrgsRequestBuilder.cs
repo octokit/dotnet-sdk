@@ -13,28 +13,35 @@ namespace GitHub.User.Memberships.Orgs {
     /// <summary>
     /// Builds and executes requests for operations under \user\memberships\orgs
     /// </summary>
-    public class OrgsRequestBuilder : BaseRequestBuilder {
+    public class OrgsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.user.memberships.orgs.item collection</summary>
         /// <param name="position">The organization name. The name is not case sensitive.</param>
         /// <returns>A <see cref="WithOrgItemRequestBuilder"/></returns>
-        public WithOrgItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("org", position);
-            return new WithOrgItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithOrgItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("org", position);
+                return new WithOrgItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="OrgsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrgsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/memberships/orgs{?page*,per_page*,state*}", pathParameters) {
+        public OrgsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/memberships/orgs{?page*,per_page*,state*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="OrgsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrgsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/memberships/orgs{?page*,per_page*,state*}", rawUrl) {
+        public OrgsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/memberships/orgs{?page*,per_page*,state*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists all of the authenticated user&apos;s organization memberships.
@@ -48,13 +55,16 @@ namespace GitHub.User.Memberships.Orgs {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<OrgMembership>?> GetAsync(Action<RequestConfiguration<OrgsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<OrgMembership>?> GetAsync(Action<RequestConfiguration<OrgsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<OrgMembership>> GetAsync(Action<RequestConfiguration<OrgsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<OrgMembership>> GetAsync(Action<RequestConfiguration<OrgsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationError.CreateFromDiscriminatorValue},
@@ -69,10 +79,12 @@ namespace GitHub.User.Memberships.Orgs {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OrgsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OrgsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OrgsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OrgsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -84,13 +96,15 @@ namespace GitHub.User.Memberships.Orgs {
         /// </summary>
         /// <returns>A <see cref="OrgsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OrgsRequestBuilder WithUrl(string rawUrl) {
+        public OrgsRequestBuilder WithUrl(string rawUrl)
+        {
             return new OrgsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all of the authenticated user&apos;s organization memberships.
         /// </summary>
-        public class OrgsRequestBuilderGetQueryParameters {
+        public class OrgsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

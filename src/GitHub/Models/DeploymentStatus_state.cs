@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The state of the status.</summary>
-    public enum DeploymentStatus_state {
+    public enum DeploymentStatus_state
+    {
         [EnumMember(Value = "error")]
         Error,
         [EnumMember(Value = "failure")]

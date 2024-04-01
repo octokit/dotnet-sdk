@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>Whether this rule targets a branch or tag</summary>
-    public enum DeploymentBranchPolicyNamePatternWithType_type {
+    public enum DeploymentBranchPolicyNamePatternWithType_type
+    {
         [EnumMember(Value = "branch")]
         Branch,
         [EnumMember(Value = "tag")]

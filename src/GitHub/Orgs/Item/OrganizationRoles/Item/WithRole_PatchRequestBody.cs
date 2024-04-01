@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.OrganizationRoles.Item {
-    public class WithRole_PatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class WithRole_PatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A short description about the intended usage of this role or what permissions it grants.</summary>
@@ -35,7 +36,8 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Item {
         /// <summary>
         /// Instantiates a new <see cref="WithRole_PatchRequestBody"/> and sets the default values.
         /// </summary>
-        public WithRole_PatchRequestBody() {
+        public WithRole_PatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -43,7 +45,8 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Item {
         /// </summary>
         /// <returns>A <see cref="WithRole_PatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithRole_PatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithRole_PatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithRole_PatchRequestBody();
         }
@@ -51,8 +54,10 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -62,7 +67,8 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);

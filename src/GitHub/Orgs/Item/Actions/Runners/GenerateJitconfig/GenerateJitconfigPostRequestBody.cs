@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
-    public class GenerateJitconfigPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class GenerateJitconfigPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The names of the custom labels to add to the runner. **Minimum items**: 1. **Maximum items**: 100.</summary>
@@ -37,7 +38,8 @@ namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
         /// <summary>
         /// Instantiates a new <see cref="GenerateJitconfigPostRequestBody"/> and sets the default values.
         /// </summary>
-        public GenerateJitconfigPostRequestBody() {
+        public GenerateJitconfigPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
             WorkFolder = "_work";
         }
@@ -46,7 +48,8 @@ namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
         /// </summary>
         /// <returns>A <see cref="GenerateJitconfigPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GenerateJitconfigPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static GenerateJitconfigPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GenerateJitconfigPostRequestBody();
         }
@@ -54,8 +57,10 @@ namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"runner_group_id", n => { RunnerGroupId = n.GetIntValue(); } },
@@ -66,7 +71,8 @@ namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteStringValue("name", Name);

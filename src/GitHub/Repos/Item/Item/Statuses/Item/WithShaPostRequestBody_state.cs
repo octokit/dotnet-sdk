@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Statuses.Item {
     /// <summary>The state of the status.</summary>
-    public enum WithShaPostRequestBody_state {
+    public enum WithShaPostRequestBody_state
+    {
         [EnumMember(Value = "error")]
         Error,
         [EnumMember(Value = "failure")]

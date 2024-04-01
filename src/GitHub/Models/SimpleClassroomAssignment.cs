@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// A GitHub Classroom assignment
     /// </summary>
-    public class SimpleClassroomAssignment : IAdditionalDataHolder, IParsable {
+    public class SimpleClassroomAssignment : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>The number of students that have accepted the assignment.</summary>
         public int? Accepted { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -86,7 +87,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="SimpleClassroomAssignment"/> and sets the default values.
         /// </summary>
-        public SimpleClassroomAssignment() {
+        public SimpleClassroomAssignment()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -94,7 +96,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="SimpleClassroomAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SimpleClassroomAssignment CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static SimpleClassroomAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SimpleClassroomAssignment();
         }
@@ -102,8 +105,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"accepted", n => { Accepted = n.GetIntValue(); } },
                 {"classroom", n => { Classroom = n.GetObjectValue<SimpleClassroom>(SimpleClassroom.CreateFromDiscriminatorValue); } },
                 {"deadline", n => { Deadline = n.GetDateTimeOffsetValue(); } },
@@ -128,7 +133,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("accepted", Accepted);
             writer.WriteObjectValue<SimpleClassroom>("classroom", Classroom);

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Invitations.Item {
     /// <summary>The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.</summary>
-    public enum WithInvitation_PatchRequestBody_permissions {
+    public enum WithInvitation_PatchRequestBody_permissions
+    {
         [EnumMember(Value = "read")]
         Read,
         [EnumMember(Value = "write")]

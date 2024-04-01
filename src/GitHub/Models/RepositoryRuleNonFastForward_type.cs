@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum RepositoryRuleNonFastForward_type {
+    public enum RepositoryRuleNonFastForward_type
+    {
         [EnumMember(Value = "non_fast_forward")]
         Non_fast_forward,
     }

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews {
-    public class ReviewsPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class ReviewsPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>**Required** when using `REQUEST_CHANGES` or `COMMENT` for the `event` parameter. The body text of the pull request review.</summary>
@@ -37,7 +38,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews {
         /// <summary>
         /// Instantiates a new <see cref="ReviewsPostRequestBody"/> and sets the default values.
         /// </summary>
-        public ReviewsPostRequestBody() {
+        public ReviewsPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -45,7 +47,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews {
         /// </summary>
         /// <returns>A <see cref="ReviewsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ReviewsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ReviewsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ReviewsPostRequestBody();
         }
@@ -53,8 +56,10 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"body", n => { Body = n.GetStringValue(); } },
                 {"comments", n => { Comments = n.GetCollectionOfObjectValues<ReviewsPostRequestBody_comments>(ReviewsPostRequestBody_comments.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"commit_id", n => { CommitId = n.GetStringValue(); } },
@@ -65,7 +70,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
             writer.WriteCollectionOfObjectValues<ReviewsPostRequestBody_comments>("comments", Comments);

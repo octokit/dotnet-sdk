@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The initally assigned location of a new codespace.</summary>
-    public enum CodespaceWithFullRepository_location {
+    public enum CodespaceWithFullRepository_location
+    {
         [EnumMember(Value = "EastUs")]
         EastUs,
         [EnumMember(Value = "SouthEastAsia")]

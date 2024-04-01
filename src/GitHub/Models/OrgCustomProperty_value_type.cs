@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The type of the value for the property</summary>
-    public enum OrgCustomProperty_value_type {
+    public enum OrgCustomProperty_value_type
+    {
         [EnumMember(Value = "string")]
         String,
         [EnumMember(Value = "single_select")]

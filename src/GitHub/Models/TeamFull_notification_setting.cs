@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The notification setting the team has set</summary>
-    public enum TeamFull_notification_setting {
+    public enum TeamFull_notification_setting
+    {
         [EnumMember(Value = "notifications_enabled")]
         Notifications_enabled,
         [EnumMember(Value = "notifications_disabled")]

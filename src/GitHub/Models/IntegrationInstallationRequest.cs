@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Request to install an integration on a target
     /// </summary>
-    public class IntegrationInstallationRequest : IAdditionalDataHolder, IParsable {
+    public class IntegrationInstallationRequest : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,7 +43,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="IntegrationInstallationRequest"/> and sets the default values.
         /// </summary>
-        public IntegrationInstallationRequest() {
+        public IntegrationInstallationRequest()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -50,7 +52,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="IntegrationInstallationRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IntegrationInstallationRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static IntegrationInstallationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IntegrationInstallationRequest();
         }
@@ -58,8 +61,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"account", n => { Account = n.GetObjectValue<IntegrationInstallationRequest_account>(IntegrationInstallationRequest_account.CreateFromDiscriminatorValue); } },
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 {"id", n => { Id = n.GetIntValue(); } },
@@ -71,7 +76,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<IntegrationInstallationRequest_account>("account", Account);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
@@ -83,7 +89,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Composed type wrapper for classes <see cref="Enterprise"/>, <see cref="SimpleUser"/>
         /// </summary>
-        public class IntegrationInstallationRequest_account : IComposedTypeWrapper, IParsable {
+        public class IntegrationInstallationRequest_account : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.Enterprise"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,7 +112,8 @@ namespace GitHub.Models {
             /// </summary>
             /// <returns>A <see cref="IntegrationInstallationRequest_account"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static IntegrationInstallationRequest_account CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static IntegrationInstallationRequest_account CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new IntegrationInstallationRequest_account();
                 result.Enterprise = new GitHub.Models.Enterprise();
@@ -116,8 +124,10 @@ namespace GitHub.Models {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(Enterprise != null || SimpleUser != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(Enterprise != null || SimpleUser != null)
+                {
                     return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(Enterprise, SimpleUser);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -126,7 +136,8 @@ namespace GitHub.Models {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<GitHub.Models.Enterprise>(null, Enterprise, SimpleUser);
             }

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Git.Tags {
-    public class TagsPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class TagsPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The tag message.</summary>
@@ -45,7 +46,8 @@ namespace GitHub.Repos.Item.Item.Git.Tags {
         /// <summary>
         /// Instantiates a new <see cref="TagsPostRequestBody"/> and sets the default values.
         /// </summary>
-        public TagsPostRequestBody() {
+        public TagsPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -53,7 +55,8 @@ namespace GitHub.Repos.Item.Item.Git.Tags {
         /// </summary>
         /// <returns>A <see cref="TagsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TagsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static TagsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TagsPostRequestBody();
         }
@@ -61,8 +64,10 @@ namespace GitHub.Repos.Item.Item.Git.Tags {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"message", n => { Message = n.GetStringValue(); } },
                 {"object", n => { Object = n.GetStringValue(); } },
                 {"tag", n => { Tag = n.GetStringValue(); } },
@@ -74,7 +79,8 @@ namespace GitHub.Repos.Item.Item.Git.Tags {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("object", Object);

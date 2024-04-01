@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The state of the user&apos;s acceptance of the credit.</summary>
-    public enum RepositoryAdvisoryCredit_state {
+    public enum RepositoryAdvisoryCredit_state
+    {
         [EnumMember(Value = "accepted")]
         Accepted,
         [EnumMember(Value = "declined")]

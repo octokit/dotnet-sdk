@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>Describe whether all repositories have been selected or there&apos;s a selection involved</summary>
-    public enum AuthenticationToken_repository_selection {
+    public enum AuthenticationToken_repository_selection
+    {
         [EnumMember(Value = "all")]
         All,
         [EnumMember(Value = "selected")]

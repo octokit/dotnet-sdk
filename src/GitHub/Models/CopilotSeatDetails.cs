@@ -9,7 +9,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Information about a Copilot Business seat assignment for a user, team, or organization.
     /// </summary>
-    public class CopilotSeatDetails : IParsable {
+    public class CopilotSeatDetails : IParsable 
+    {
         /// <summary>The assignee that has been granted access to GitHub Copilot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,7 +48,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="CopilotSeatDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CopilotSeatDetails CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static CopilotSeatDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CopilotSeatDetails();
         }
@@ -55,8 +57,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"assignee", n => { Assignee = n.GetObjectValue<CopilotSeatDetails_assignee>(CopilotSeatDetails_assignee.CreateFromDiscriminatorValue); } },
                 {"assigning_team", n => { AssigningTeam = n.GetObjectValue<Team>(Team.CreateFromDiscriminatorValue); } },
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -70,7 +74,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<CopilotSeatDetails_assignee>("assignee", Assignee);
             writer.WriteObjectValue<Team>("assigning_team", AssigningTeam);
@@ -83,7 +88,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Composed type wrapper for classes <see cref="Organization"/>, <see cref="SimpleUser"/>, <see cref="Team"/>
         /// </summary>
-        public class CopilotSeatDetails_assignee : IComposedTypeWrapper, IParsable {
+        public class CopilotSeatDetails_assignee : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.Organization"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,17 +119,21 @@ namespace GitHub.Models {
             /// </summary>
             /// <returns>A <see cref="CopilotSeatDetails_assignee"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static CopilotSeatDetails_assignee CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static CopilotSeatDetails_assignee CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new CopilotSeatDetails_assignee();
-                if("organization".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("organization".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.Organization = new GitHub.Models.Organization();
                 }
-                else if("simple-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("simple-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.SimpleUser = new GitHub.Models.SimpleUser();
                 }
-                else if("team".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("team".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.Team = new GitHub.Models.Team();
                 }
                 return result;
@@ -132,14 +142,18 @@ namespace GitHub.Models {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(Organization != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(Organization != null)
+                {
                     return Organization.GetFieldDeserializers();
                 }
-                else if(SimpleUser != null) {
+                else if(SimpleUser != null)
+                {
                     return SimpleUser.GetFieldDeserializers();
                 }
-                else if(Team != null) {
+                else if(Team != null)
+                {
                     return Team.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -148,15 +162,19 @@ namespace GitHub.Models {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(Organization != null) {
+                if(Organization != null)
+                {
                     writer.WriteObjectValue<GitHub.Models.Organization>(null, Organization);
                 }
-                else if(SimpleUser != null) {
+                else if(SimpleUser != null)
+                {
                     writer.WriteObjectValue<GitHub.Models.SimpleUser>(null, SimpleUser);
                 }
-                else if(Team != null) {
+                else if(Team != null)
+                {
                     writer.WriteObjectValue<GitHub.Models.Team>(null, Team);
                 }
             }

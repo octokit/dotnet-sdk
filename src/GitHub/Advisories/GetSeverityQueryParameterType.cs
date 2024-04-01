@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Advisories {
-    public enum GetSeverityQueryParameterType {
+    public enum GetSeverityQueryParameterType
+    {
         [EnumMember(Value = "unknown")]
         Unknown,
         [EnumMember(Value = "low")]

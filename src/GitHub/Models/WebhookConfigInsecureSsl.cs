@@ -4,7 +4,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
     /// </summary>
-    public class WebhookConfigInsecureSsl : IComposedTypeWrapper, IParsable {
+    public class WebhookConfigInsecureSsl : IComposedTypeWrapper, IParsable 
+    {
         /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? Double { get; set; }
         /// <summary>Composed type representation for type <see cref="string"/></summary>
@@ -80,50 +81,65 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="WebhookConfigInsecureSsl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WebhookConfigInsecureSsl CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WebhookConfigInsecureSsl CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new WebhookConfigInsecureSsl();
-            if(parseNode.GetDoubleValue() is double doubleValue) {
+            if(parseNode.GetDoubleValue() is double doubleValue)
+            {
                 result.Double = doubleValue;
             }
-            else if(parseNode.GetStringValue() is string stringValue) {
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
                 result.String = stringValue;
             }
-            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDoubleValue) {
+            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDoubleValue)
+            {
                 result.WebhookConfigInsecureSslDouble = webhookConfigInsecureSslDoubleValue;
             }
-            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble0Value) {
+            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble0Value)
+            {
                 result.WebhookConfigInsecureSslDouble0 = webhookConfigInsecureSslDouble0Value;
             }
-            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble1Value) {
+            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble1Value)
+            {
                 result.WebhookConfigInsecureSslDouble1 = webhookConfigInsecureSslDouble1Value;
             }
-            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble2Value) {
+            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble2Value)
+            {
                 result.WebhookConfigInsecureSslDouble2 = webhookConfigInsecureSslDouble2Value;
             }
-            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble3Value) {
+            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble3Value)
+            {
                 result.WebhookConfigInsecureSslDouble3 = webhookConfigInsecureSslDouble3Value;
             }
-            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble4Value) {
+            else if(parseNode.GetDoubleValue() is double webhookConfigInsecureSslDouble4Value)
+            {
                 result.WebhookConfigInsecureSslDouble4 = webhookConfigInsecureSslDouble4Value;
             }
-            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslStringValue) {
+            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslStringValue)
+            {
                 result.WebhookConfigInsecureSslString = webhookConfigInsecureSslStringValue;
             }
-            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString0Value) {
+            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString0Value)
+            {
                 result.WebhookConfigInsecureSslString0 = webhookConfigInsecureSslString0Value;
             }
-            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString1Value) {
+            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString1Value)
+            {
                 result.WebhookConfigInsecureSslString1 = webhookConfigInsecureSslString1Value;
             }
-            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString2Value) {
+            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString2Value)
+            {
                 result.WebhookConfigInsecureSslString2 = webhookConfigInsecureSslString2Value;
             }
-            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString3Value) {
+            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString3Value)
+            {
                 result.WebhookConfigInsecureSslString3 = webhookConfigInsecureSslString3Value;
             }
-            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString4Value) {
+            else if(parseNode.GetStringValue() is string webhookConfigInsecureSslString4Value)
+            {
                 result.WebhookConfigInsecureSslString4 = webhookConfigInsecureSslString4Value;
             }
             return result;
@@ -132,55 +148,71 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(Double != null) {
+            if(Double != null)
+            {
                 writer.WriteDoubleValue(null, Double);
             }
-            else if(String != null) {
+            else if(String != null)
+            {
                 writer.WriteStringValue(null, String);
             }
-            else if(WebhookConfigInsecureSslDouble != null) {
+            else if(WebhookConfigInsecureSslDouble != null)
+            {
                 writer.WriteDoubleValue(null, WebhookConfigInsecureSslDouble);
             }
-            else if(WebhookConfigInsecureSslDouble0 != null) {
+            else if(WebhookConfigInsecureSslDouble0 != null)
+            {
                 writer.WriteDoubleValue(null, WebhookConfigInsecureSslDouble0);
             }
-            else if(WebhookConfigInsecureSslDouble1 != null) {
+            else if(WebhookConfigInsecureSslDouble1 != null)
+            {
                 writer.WriteDoubleValue(null, WebhookConfigInsecureSslDouble1);
             }
-            else if(WebhookConfigInsecureSslDouble2 != null) {
+            else if(WebhookConfigInsecureSslDouble2 != null)
+            {
                 writer.WriteDoubleValue(null, WebhookConfigInsecureSslDouble2);
             }
-            else if(WebhookConfigInsecureSslDouble3 != null) {
+            else if(WebhookConfigInsecureSslDouble3 != null)
+            {
                 writer.WriteDoubleValue(null, WebhookConfigInsecureSslDouble3);
             }
-            else if(WebhookConfigInsecureSslDouble4 != null) {
+            else if(WebhookConfigInsecureSslDouble4 != null)
+            {
                 writer.WriteDoubleValue(null, WebhookConfigInsecureSslDouble4);
             }
-            else if(WebhookConfigInsecureSslString != null) {
+            else if(WebhookConfigInsecureSslString != null)
+            {
                 writer.WriteStringValue(null, WebhookConfigInsecureSslString);
             }
-            else if(WebhookConfigInsecureSslString0 != null) {
+            else if(WebhookConfigInsecureSslString0 != null)
+            {
                 writer.WriteStringValue(null, WebhookConfigInsecureSslString0);
             }
-            else if(WebhookConfigInsecureSslString1 != null) {
+            else if(WebhookConfigInsecureSslString1 != null)
+            {
                 writer.WriteStringValue(null, WebhookConfigInsecureSslString1);
             }
-            else if(WebhookConfigInsecureSslString2 != null) {
+            else if(WebhookConfigInsecureSslString2 != null)
+            {
                 writer.WriteStringValue(null, WebhookConfigInsecureSslString2);
             }
-            else if(WebhookConfigInsecureSslString3 != null) {
+            else if(WebhookConfigInsecureSslString3 != null)
+            {
                 writer.WriteStringValue(null, WebhookConfigInsecureSslString3);
             }
-            else if(WebhookConfigInsecureSslString4 != null) {
+            else if(WebhookConfigInsecureSslString4 != null)
+            {
                 writer.WriteStringValue(null, WebhookConfigInsecureSslString4);
             }
         }

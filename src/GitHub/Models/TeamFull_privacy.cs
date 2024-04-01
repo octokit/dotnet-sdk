@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The level of privacy this team should have</summary>
-    public enum TeamFull_privacy {
+    public enum TeamFull_privacy
+    {
         [EnumMember(Value = "closed")]
         Closed,
         [EnumMember(Value = "secret")]

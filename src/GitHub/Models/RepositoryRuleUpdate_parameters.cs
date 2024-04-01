@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class RepositoryRuleUpdate_parameters : IAdditionalDataHolder, IParsable {
+    public class RepositoryRuleUpdate_parameters : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Branch can pull changes from its upstream repository</summary>
@@ -13,7 +14,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="RepositoryRuleUpdate_parameters"/> and sets the default values.
         /// </summary>
-        public RepositoryRuleUpdate_parameters() {
+        public RepositoryRuleUpdate_parameters()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -21,7 +23,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="RepositoryRuleUpdate_parameters"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RepositoryRuleUpdate_parameters CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RepositoryRuleUpdate_parameters CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RepositoryRuleUpdate_parameters();
         }
@@ -29,8 +32,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"update_allows_fetch_and_merge", n => { UpdateAllowsFetchAndMerge = n.GetBoolValue(); } },
             };
         }
@@ -38,7 +43,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("update_allows_fetch_and_merge", UpdateAllowsFetchAndMerge);
             writer.WriteAdditionalData(AdditionalData);

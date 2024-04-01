@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum RepositoryRuleUpdate_type {
+    public enum RepositoryRuleUpdate_type
+    {
         [EnumMember(Value = "update")]
         Update,
     }

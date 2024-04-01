@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The policy that controls the repositories in the organization that are allowed to run GitHub Actions.</summary>
-    public enum EnabledRepositories {
+    public enum EnabledRepositories
+    {
         [EnumMember(Value = "all")]
         All,
         [EnumMember(Value = "none")]

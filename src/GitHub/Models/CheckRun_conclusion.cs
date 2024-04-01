@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum CheckRun_conclusion {
+    public enum CheckRun_conclusion
+    {
         [EnumMember(Value = "success")]
         Success,
         [EnumMember(Value = "failure")]
