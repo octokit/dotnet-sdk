@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.CheckRuns.Item {
-    public enum WithCheck_run_PatchRequestBodyMember1_status {
+    public enum WithCheck_run_PatchRequestBodyMember1_status
+    {
         [EnumMember(Value = "completed")]
         Completed,
     }

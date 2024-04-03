@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Users.Item.Repos {
-    public enum GetSortQueryParameterType {
+    public enum GetSortQueryParameterType
+    {
         [EnumMember(Value = "created")]
         Created,
         [EnumMember(Value = "updated")]

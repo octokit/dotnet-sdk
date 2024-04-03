@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The state of the advisory.</summary>
-    public enum RepositoryAdvisoryUpdate_state {
+    public enum RepositoryAdvisoryUpdate_state
+    {
         [EnumMember(Value = "published")]
         Published,
         [EnumMember(Value = "closed")]

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>Type of repository selection requested.</summary>
-    public enum OrganizationProgrammaticAccessGrant_repository_selection {
+    public enum OrganizationProgrammaticAccessGrant_repository_selection
+    {
         [EnumMember(Value = "none")]
         None,
         [EnumMember(Value = "all")]

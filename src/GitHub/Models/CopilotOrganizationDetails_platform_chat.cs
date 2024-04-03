@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The organization policy for allowing or disallowing organization members to use Copilot features within github.com.</summary>
-    public enum CopilotOrganizationDetails_platform_chat {
+    public enum CopilotOrganizationDetails_platform_chat
+    {
         [EnumMember(Value = "enabled")]
         Enabled,
         [EnumMember(Value = "disabled")]

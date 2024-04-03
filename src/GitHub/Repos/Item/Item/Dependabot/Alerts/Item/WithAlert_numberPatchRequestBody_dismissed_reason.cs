@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Dependabot.Alerts.Item {
     /// <summary>**Required when `state` is `dismissed`.** A reason for dismissing the alert.</summary>
-    public enum WithAlert_numberPatchRequestBody_dismissed_reason {
+    public enum WithAlert_numberPatchRequestBody_dismissed_reason
+    {
         [EnumMember(Value = "fix_started")]
         Fix_started,
         [EnumMember(Value = "inaccurate")]

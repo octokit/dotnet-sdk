@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Issues.Item.Lock {
     /// <summary>The reason for locking the issue or pull request conversation. Lock will fail if you don&apos;t use one of these reasons:   * `off-topic`   * `too heated`   * `resolved`   * `spam`</summary>
-    public enum LockPutRequestBody_lock_reason {
+    public enum LockPutRequestBody_lock_reason
+    {
         [EnumMember(Value = "off-topic")]
         OffTopic,
         [EnumMember(Value = "too heated")]

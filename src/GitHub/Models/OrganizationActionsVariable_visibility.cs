@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>Visibility of a variable</summary>
-    public enum OrganizationActionsVariable_visibility {
+    public enum OrganizationActionsVariable_visibility
+    {
         [EnumMember(Value = "all")]
         All,
         [EnumMember(Value = "private")]

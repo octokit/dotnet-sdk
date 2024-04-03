@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.PersonalAccessTokens {
-    public class PersonalAccessTokensPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class PersonalAccessTokensPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Action to apply to the fine-grained personal access token.</summary>
         public PersonalAccessTokensPostRequestBody_action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -21,7 +22,8 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
         /// <summary>
         /// Instantiates a new <see cref="PersonalAccessTokensPostRequestBody"/> and sets the default values.
         /// </summary>
-        public PersonalAccessTokensPostRequestBody() {
+        public PersonalAccessTokensPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -29,7 +31,8 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
         /// </summary>
         /// <returns>A <see cref="PersonalAccessTokensPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PersonalAccessTokensPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PersonalAccessTokensPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PersonalAccessTokensPostRequestBody();
         }
@@ -37,8 +40,10 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"action", n => { Action = n.GetEnumValue<PersonalAccessTokensPostRequestBody_action>(); } },
                 {"pat_ids", n => { PatIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
             };
@@ -47,7 +52,8 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<PersonalAccessTokensPostRequestBody_action>("action", Action);
             writer.WriteCollectionOfPrimitiveValues<int?>("pat_ids", PatIds);

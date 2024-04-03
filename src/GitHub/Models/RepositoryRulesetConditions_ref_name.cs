@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class RepositoryRulesetConditions_ref_name : IAdditionalDataHolder, IParsable {
+    public class RepositoryRulesetConditions_ref_name : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Array of ref names or patterns to exclude. The condition will not pass if any of these patterns match.</summary>
@@ -27,7 +28,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="RepositoryRulesetConditions_ref_name"/> and sets the default values.
         /// </summary>
-        public RepositoryRulesetConditions_ref_name() {
+        public RepositoryRulesetConditions_ref_name()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +37,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="RepositoryRulesetConditions_ref_name"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RepositoryRulesetConditions_ref_name CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RepositoryRulesetConditions_ref_name CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RepositoryRulesetConditions_ref_name();
         }
@@ -43,8 +46,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"exclude", n => { Exclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"include", n => { Include = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -53,7 +58,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("exclude", Exclude);
             writer.WriteCollectionOfPrimitiveValues<string>("include", Include);

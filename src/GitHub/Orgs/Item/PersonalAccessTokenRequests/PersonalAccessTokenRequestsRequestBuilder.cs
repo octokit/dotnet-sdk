@@ -13,28 +13,35 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\personal-access-token-requests
     /// </summary>
-    public class PersonalAccessTokenRequestsRequestBuilder : BaseRequestBuilder {
+    public class PersonalAccessTokenRequestsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.orgs.item.personalAccessTokenRequests.item collection</summary>
         /// <param name="position">Unique identifier of the request for access via fine-grained personal access token.</param>
         /// <returns>A <see cref="WithPat_request_ItemRequestBuilder"/></returns>
-        public WithPat_request_ItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("pat_request_id", position);
-            return new WithPat_request_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithPat_request_ItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("pat_request_id", position);
+                return new WithPat_request_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="PersonalAccessTokenRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonalAccessTokenRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?direction*,last_used_after*,last_used_before*,owner*,page*,per_page*,permission*,repository*,sort*}", pathParameters) {
+        public PersonalAccessTokenRequestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?direction*,last_used_after*,last_used_before*,owner*,page*,per_page*,permission*,repository*,sort*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PersonalAccessTokenRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonalAccessTokenRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?direction*,last_used_after*,last_used_before*,owner*,page*,per_page*,permission*,repository*,sort*}", rawUrl) {
+        public PersonalAccessTokenRequestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-token-requests{?direction*,last_used_after*,last_used_before*,owner*,page*,per_page*,permission*,repository*,sort*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists requests from organization members to access organization resources with a fine-grained personal access token.Only GitHub Apps can use this endpoint.
@@ -49,13 +56,16 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
         /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<OrganizationProgrammaticAccessGrantRequest>?> GetAsync(Action<RequestConfiguration<PersonalAccessTokenRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<OrganizationProgrammaticAccessGrantRequest>?> GetAsync(Action<RequestConfiguration<PersonalAccessTokenRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<OrganizationProgrammaticAccessGrantRequest>> GetAsync(Action<RequestConfiguration<PersonalAccessTokenRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<OrganizationProgrammaticAccessGrantRequest>> GetAsync(Action<RequestConfiguration<PersonalAccessTokenRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationError.CreateFromDiscriminatorValue},
@@ -78,14 +88,17 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
         /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PersonalAccessTokenRequestsPostResponse?> PostAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PersonalAccessTokenRequestsPostResponse?> PostAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<PersonalAccessTokenRequestsPostResponse> PostAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<PersonalAccessTokenRequestsPostResponse> PostAsync(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationError.CreateFromDiscriminatorValue},
@@ -100,10 +113,12 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonalAccessTokenRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonalAccessTokenRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonalAccessTokenRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PersonalAccessTokenRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -118,10 +133,12 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(PersonalAccessTokenRequestsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/orgs/{org}/personal-access-token-requests", PathParameters);
@@ -135,13 +152,15 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
         /// </summary>
         /// <returns>A <see cref="PersonalAccessTokenRequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PersonalAccessTokenRequestsRequestBuilder WithUrl(string rawUrl) {
+        public PersonalAccessTokenRequestsRequestBuilder WithUrl(string rawUrl)
+        {
             return new PersonalAccessTokenRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists requests from organization members to access organization resources with a fine-grained personal access token.Only GitHub Apps can use this endpoint.
         /// </summary>
-        public class PersonalAccessTokenRequestsRequestBuilderGetQueryParameters {
+        public class PersonalAccessTokenRequestsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The direction to sort the results by.</summary>
             [QueryParameter("direction")]
             public GetDirectionQueryParameterType? Direction { get; set; }

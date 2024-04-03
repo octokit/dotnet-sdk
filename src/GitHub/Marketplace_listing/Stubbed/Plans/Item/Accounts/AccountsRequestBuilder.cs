@@ -12,20 +12,23 @@ namespace GitHub.Marketplace_listing.Stubbed.Plans.Item.Accounts {
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\stubbed\plans\{plan_id}\accounts
     /// </summary>
-    public class AccountsRequestBuilder : BaseRequestBuilder {
+    public class AccountsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="AccountsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed/plans/{plan_id}/accounts{?direction*,page*,per_page*,sort*}", pathParameters) {
+        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed/plans/{plan_id}/accounts{?direction*,page*,per_page*,sort*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="AccountsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed/plans/{plan_id}/accounts{?direction*,page*,per_page*,sort*}", rawUrl) {
+        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/marketplace_listing/stubbed/plans/{plan_id}/accounts{?direction*,page*,per_page*,sort*}", rawUrl)
+        {
         }
         /// <summary>
         /// Returns repository and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won&apos;t be processed until the end of their billing cycle, you will also see the upcoming pending change.GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
@@ -37,13 +40,16 @@ namespace GitHub.Marketplace_listing.Stubbed.Plans.Item.Accounts {
         /// <exception cref="BasicError">When receiving a 401 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<MarketplacePurchase>?> GetAsync(Action<RequestConfiguration<AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<MarketplacePurchase>?> GetAsync(Action<RequestConfiguration<AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<MarketplacePurchase>> GetAsync(Action<RequestConfiguration<AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<MarketplacePurchase>> GetAsync(Action<RequestConfiguration<AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<MarketplacePurchase>(requestInfo, MarketplacePurchase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -56,10 +62,12 @@ namespace GitHub.Marketplace_listing.Stubbed.Plans.Item.Accounts {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AccountsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AccountsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -71,13 +79,15 @@ namespace GitHub.Marketplace_listing.Stubbed.Plans.Item.Accounts {
         /// </summary>
         /// <returns>A <see cref="AccountsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AccountsRequestBuilder WithUrl(string rawUrl) {
+        public AccountsRequestBuilder WithUrl(string rawUrl)
+        {
             return new AccountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Returns repository and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won&apos;t be processed until the end of their billing cycle, you will also see the upcoming pending change.GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) with their client ID and client secret to access this endpoint.
         /// </summary>
-        public class AccountsRequestBuilderGetQueryParameters {
+        public class AccountsRequestBuilderGetQueryParameters 
+        {
             /// <summary>To return the oldest accounts first, set to `asc`. Ignored without the `sort` parameter.</summary>
             [QueryParameter("direction")]
             public GetDirectionQueryParameterType? Direction { get; set; }

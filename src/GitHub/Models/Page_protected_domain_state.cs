@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The state if the domain is verified</summary>
-    public enum Page_protected_domain_state {
+    public enum Page_protected_domain_state
+    {
         [EnumMember(Value = "pending")]
         Pending,
         [EnumMember(Value = "verified")]

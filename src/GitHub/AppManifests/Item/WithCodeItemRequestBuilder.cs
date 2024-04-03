@@ -10,24 +10,28 @@ namespace GitHub.AppManifests.Item {
     /// <summary>
     /// Builds and executes requests for operations under \app-manifests\{code}
     /// </summary>
-    public class WithCodeItemRequestBuilder : BaseRequestBuilder {
+    public class WithCodeItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The conversions property</summary>
-        public ConversionsRequestBuilder Conversions { get =>
-            new ConversionsRequestBuilder(PathParameters, RequestAdapter);
+        public ConversionsRequestBuilder Conversions
+        {
+            get => new ConversionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithCodeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCodeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app-manifests/{code}", pathParameters) {
+        public WithCodeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app-manifests/{code}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithCodeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCodeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app-manifests/{code}", rawUrl) {
+        public WithCodeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/app-manifests/{code}", rawUrl)
+        {
         }
     }
 }

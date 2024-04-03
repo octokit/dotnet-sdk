@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\restrictions\teams
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder {
+    public class TeamsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches/{branch}/protection/restrictions/teams", pathParameters) {
+        public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches/{branch}/protection/restrictions/teams", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches/{branch}/protection/restrictions/teams", rawUrl) {
+        public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches/{branch}/protection/restrictions/teams", rawUrl)
+        {
         }
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of a team to push to this branch. You can also remove push access for child teams.
@@ -38,14 +41,17 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Team>?> DeleteAsync(TeamsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Team>?> DeleteAsync(TeamsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<Team>> DeleteAsync(TeamsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Team>> DeleteAsync(TeamsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Team>(requestInfo, Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -61,13 +67,16 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Team>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Team>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<Team>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Team>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Team>(requestInfo, Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -84,14 +93,17 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Team>?> PostAsync(TeamsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Team>?> PostAsync(TeamsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<Team>> PostAsync(TeamsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Team>> PostAsync(TeamsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Team>(requestInfo, Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -108,14 +120,17 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Team>?> PutAsync(TeamsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Team>?> PutAsync(TeamsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<Team>> PutAsync(TeamsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Team>> PutAsync(TeamsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Team>(requestInfo, Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -129,10 +144,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(TeamsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(TeamsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(TeamsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(TeamsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -148,10 +165,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -166,10 +185,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(TeamsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(TeamsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(TeamsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(TeamsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -186,10 +207,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(TeamsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(TeamsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(TeamsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(TeamsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
@@ -203,13 +226,15 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// </summary>
         /// <returns>A <see cref="TeamsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TeamsRequestBuilder WithUrl(string rawUrl) {
+        public TeamsRequestBuilder WithUrl(string rawUrl)
+        {
             return new TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="TeamsDeleteRequestBodyMember1"/>
         /// </summary>
-        public class TeamsDeleteRequestBody : IComposedTypeWrapper, IParsable {
+        public class TeamsDeleteRequestBody : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -247,20 +272,25 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// </summary>
             /// <returns>A <see cref="TeamsDeleteRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static TeamsDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static TeamsDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new TeamsDeleteRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.TeamsDeleteRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.TeamsDeleteRequestBodyTeamsDeleteRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string stringValue) {
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetStringValue() is string teamsDeleteRequestBodyStringValue) {
+                else if(parseNode.GetStringValue() is string teamsDeleteRequestBodyStringValue)
+                {
                     result.TeamsDeleteRequestBodyString = teamsDeleteRequestBodyStringValue;
                 }
                 return result;
@@ -269,11 +299,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(TeamsDeleteRequestBodyMember1 != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(TeamsDeleteRequestBodyMember1 != null)
+                {
                     return TeamsDeleteRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(TeamsDeleteRequestBodyTeamsDeleteRequestBodyMember1 != null) {
+                else if(TeamsDeleteRequestBodyTeamsDeleteRequestBodyMember1 != null)
+                {
                     return TeamsDeleteRequestBodyTeamsDeleteRequestBodyMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -282,18 +315,23 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(TeamsDeleteRequestBodyMember1 != null) {
+                if(TeamsDeleteRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1>(null, TeamsDeleteRequestBodyMember1);
                 }
-                else if(TeamsDeleteRequestBodyTeamsDeleteRequestBodyMember1 != null) {
+                else if(TeamsDeleteRequestBodyTeamsDeleteRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1>(null, TeamsDeleteRequestBodyTeamsDeleteRequestBodyMember1);
                 }
-                else if(String != null) {
+                else if(String != null)
+                {
                     writer.WriteStringValue(null, String);
                 }
-                else if(TeamsDeleteRequestBodyString != null) {
+                else if(TeamsDeleteRequestBodyString != null)
+                {
                     writer.WriteStringValue(null, TeamsDeleteRequestBodyString);
                 }
             }
@@ -301,7 +339,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="TeamsPostRequestBodyMember1"/>
         /// </summary>
-        public class TeamsPostRequestBody : IComposedTypeWrapper, IParsable {
+        public class TeamsPostRequestBody : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -339,20 +378,25 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// </summary>
             /// <returns>A <see cref="TeamsPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static TeamsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static TeamsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new TeamsPostRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.TeamsPostRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.TeamsPostRequestBodyTeamsPostRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string stringValue) {
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetStringValue() is string teamsPostRequestBodyStringValue) {
+                else if(parseNode.GetStringValue() is string teamsPostRequestBodyStringValue)
+                {
                     result.TeamsPostRequestBodyString = teamsPostRequestBodyStringValue;
                 }
                 return result;
@@ -361,11 +405,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(TeamsPostRequestBodyMember1 != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(TeamsPostRequestBodyMember1 != null)
+                {
                     return TeamsPostRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(TeamsPostRequestBodyTeamsPostRequestBodyMember1 != null) {
+                else if(TeamsPostRequestBodyTeamsPostRequestBodyMember1 != null)
+                {
                     return TeamsPostRequestBodyTeamsPostRequestBodyMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -374,18 +421,23 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(TeamsPostRequestBodyMember1 != null) {
+                if(TeamsPostRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1>(null, TeamsPostRequestBodyMember1);
                 }
-                else if(TeamsPostRequestBodyTeamsPostRequestBodyMember1 != null) {
+                else if(TeamsPostRequestBodyTeamsPostRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1>(null, TeamsPostRequestBodyTeamsPostRequestBodyMember1);
                 }
-                else if(String != null) {
+                else if(String != null)
+                {
                     writer.WriteStringValue(null, String);
                 }
-                else if(TeamsPostRequestBodyString != null) {
+                else if(TeamsPostRequestBodyString != null)
+                {
                     writer.WriteStringValue(null, TeamsPostRequestBodyString);
                 }
             }
@@ -393,7 +445,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="TeamsPutRequestBodyMember1"/>
         /// </summary>
-        public class TeamsPutRequestBody : IComposedTypeWrapper, IParsable {
+        public class TeamsPutRequestBody : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -431,20 +484,25 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// </summary>
             /// <returns>A <see cref="TeamsPutRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static TeamsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static TeamsPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new TeamsPutRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.TeamsPutRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.TeamsPutRequestBodyTeamsPutRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string stringValue) {
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetStringValue() is string teamsPutRequestBodyStringValue) {
+                else if(parseNode.GetStringValue() is string teamsPutRequestBodyStringValue)
+                {
                     result.TeamsPutRequestBodyString = teamsPutRequestBodyStringValue;
                 }
                 return result;
@@ -453,11 +511,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(TeamsPutRequestBodyMember1 != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(TeamsPutRequestBodyMember1 != null)
+                {
                     return TeamsPutRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(TeamsPutRequestBodyTeamsPutRequestBodyMember1 != null) {
+                else if(TeamsPutRequestBodyTeamsPutRequestBodyMember1 != null)
+                {
                     return TeamsPutRequestBodyTeamsPutRequestBodyMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -466,18 +527,23 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(TeamsPutRequestBodyMember1 != null) {
+                if(TeamsPutRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1>(null, TeamsPutRequestBodyMember1);
                 }
-                else if(TeamsPutRequestBodyTeamsPutRequestBodyMember1 != null) {
+                else if(TeamsPutRequestBodyTeamsPutRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1>(null, TeamsPutRequestBodyTeamsPutRequestBodyMember1);
                 }
-                else if(String != null) {
+                else if(String != null)
+                {
                     writer.WriteStringValue(null, String);
                 }
-                else if(TeamsPutRequestBodyString != null) {
+                else if(TeamsPutRequestBodyString != null)
+                {
                     writer.WriteStringValue(null, TeamsPutRequestBodyString);
                 }
             }

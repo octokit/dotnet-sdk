@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.User.Issues {
-    public enum GetFilterQueryParameterType {
+    public enum GetFilterQueryParameterType
+    {
         [EnumMember(Value = "assigned")]
         Assigned,
         [EnumMember(Value = "created")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns {
-    public enum GetStatusQueryParameterType {
+    public enum GetStatusQueryParameterType
+    {
         [EnumMember(Value = "queued")]
         Queued,
         [EnumMember(Value = "in_progress")]

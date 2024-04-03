@@ -14,32 +14,40 @@ namespace GitHub.Repos.Item.Item.Rulesets {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rulesets
     /// </summary>
-    public class RulesetsRequestBuilder : BaseRequestBuilder {
+    public class RulesetsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The ruleSuites property</summary>
-        public RuleSuitesRequestBuilder RuleSuites { get =>
-            new RuleSuitesRequestBuilder(PathParameters, RequestAdapter);
+        public RuleSuitesRequestBuilder RuleSuites
+        {
+            get => new RuleSuitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the GitHub.repos.item.item.rulesets.item collection</summary>
         /// <param name="position">The ID of the ruleset.</param>
         /// <returns>A <see cref="WithRuleset_ItemRequestBuilder"/></returns>
-        public WithRuleset_ItemRequestBuilder this[int position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("ruleset_id", position);
-            return new WithRuleset_ItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithRuleset_ItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("ruleset_id", position);
+                return new WithRuleset_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="RulesetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets{?includes_parents*,page*,per_page*}", pathParameters) {
+        public RulesetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets{?includes_parents*,page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RulesetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets{?includes_parents*,page*,per_page*}", rawUrl) {
+        public RulesetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets{?includes_parents*,page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// Get all the rulesets for a repository.
@@ -52,13 +60,16 @@ namespace GitHub.Repos.Item.Item.Rulesets {
         /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<RepositoryRuleset>?> GetAsync(Action<RequestConfiguration<RulesetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RepositoryRuleset>?> GetAsync(Action<RequestConfiguration<RulesetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<RepositoryRuleset>> GetAsync(Action<RequestConfiguration<RulesetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<RepositoryRuleset>> GetAsync(Action<RequestConfiguration<RulesetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"500", BasicError.CreateFromDiscriminatorValue},
             };
@@ -77,14 +88,17 @@ namespace GitHub.Repos.Item.Item.Rulesets {
         /// <exception cref="BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RepositoryRuleset?> PostAsync(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RepositoryRuleset?> PostAsync(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<RepositoryRuleset> PostAsync(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<RepositoryRuleset> PostAsync(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"500", BasicError.CreateFromDiscriminatorValue},
             };
@@ -97,10 +111,12 @@ namespace GitHub.Repos.Item.Item.Rulesets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RulesetsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RulesetsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RulesetsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RulesetsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -115,10 +131,12 @@ namespace GitHub.Repos.Item.Item.Rulesets {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(RulesetsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets", PathParameters);
@@ -132,13 +150,15 @@ namespace GitHub.Repos.Item.Item.Rulesets {
         /// </summary>
         /// <returns>A <see cref="RulesetsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RulesetsRequestBuilder WithUrl(string rawUrl) {
+        public RulesetsRequestBuilder WithUrl(string rawUrl)
+        {
             return new RulesetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get all the rulesets for a repository.
         /// </summary>
-        public class RulesetsRequestBuilderGetQueryParameters {
+        public class RulesetsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Include rulesets configured at higher levels that apply to this repository</summary>
             [QueryParameter("includes_parents")]
             public bool? IncludesParents { get; set; }

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum DiffEntry_status {
+    public enum DiffEntry_status
+    {
         [EnumMember(Value = "added")]
         Added,
         [EnumMember(Value = "removed")]

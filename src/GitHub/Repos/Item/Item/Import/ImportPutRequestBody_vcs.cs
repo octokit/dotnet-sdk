@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Import {
     /// <summary>The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.</summary>
-    public enum ImportPutRequestBody_vcs {
+    public enum ImportPutRequestBody_vcs
+    {
         [EnumMember(Value = "subversion")]
         Subversion,
         [EnumMember(Value = "git")]

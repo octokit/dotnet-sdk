@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The operator to use for matching.</summary>
-    public enum RepositoryRuleTagNamePattern_parameters_operator {
+    public enum RepositoryRuleTagNamePattern_parameters_operator
+    {
         [EnumMember(Value = "starts_with")]
         Starts_with,
         [EnumMember(Value = "ends_with")]

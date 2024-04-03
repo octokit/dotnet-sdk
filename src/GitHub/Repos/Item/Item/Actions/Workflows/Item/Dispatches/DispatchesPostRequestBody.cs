@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
-    public class DispatchesPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class DispatchesPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.</summary>
@@ -27,7 +28,8 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
         /// <summary>
         /// Instantiates a new <see cref="DispatchesPostRequestBody"/> and sets the default values.
         /// </summary>
-        public DispatchesPostRequestBody() {
+        public DispatchesPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +37,8 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
         /// </summary>
         /// <returns>A <see cref="DispatchesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DispatchesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DispatchesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DispatchesPostRequestBody();
         }
@@ -43,8 +46,10 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"inputs", n => { Inputs = n.GetObjectValue<DispatchesPostRequestBody_inputs>(DispatchesPostRequestBody_inputs.CreateFromDiscriminatorValue); } },
                 {"ref", n => { Ref = n.GetStringValue(); } },
             };
@@ -53,7 +58,8 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<DispatchesPostRequestBody_inputs>("inputs", Inputs);
             writer.WriteStringValue("ref", Ref);

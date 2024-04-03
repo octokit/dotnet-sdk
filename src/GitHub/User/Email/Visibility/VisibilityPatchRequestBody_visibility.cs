@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.User.Email.Visibility {
     /// <summary>Denotes whether an email is publicly visible.</summary>
-    public enum VisibilityPatchRequestBody_visibility {
+    public enum VisibilityPatchRequestBody_visibility
+    {
         [EnumMember(Value = "public")]
         Public,
         [EnumMember(Value = "private")]

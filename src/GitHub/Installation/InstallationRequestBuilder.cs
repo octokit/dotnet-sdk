@@ -11,28 +11,33 @@ namespace GitHub.Installation {
     /// <summary>
     /// Builds and executes requests for operations under \installation
     /// </summary>
-    public class InstallationRequestBuilder : BaseRequestBuilder {
+    public class InstallationRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The repositories property</summary>
-        public RepositoriesRequestBuilder Repositories { get =>
-            new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
+        public RepositoriesRequestBuilder Repositories
+        {
+            get => new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The token property</summary>
-        public TokenRequestBuilder Token { get =>
-            new TokenRequestBuilder(PathParameters, RequestAdapter);
+        public TokenRequestBuilder Token
+        {
+            get => new TokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="InstallationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstallationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/installation", pathParameters) {
+        public InstallationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/installation", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="InstallationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstallationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/installation", rawUrl) {
+        public InstallationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/installation", rawUrl)
+        {
         }
     }
 }

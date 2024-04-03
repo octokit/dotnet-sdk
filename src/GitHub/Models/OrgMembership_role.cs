@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The user&apos;s membership type in the organization.</summary>
-    public enum OrgMembership_role {
+    public enum OrgMembership_role
+    {
         [EnumMember(Value = "admin")]
         Admin,
         [EnumMember(Value = "member")]

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Tags.Protection {
-    public class ProtectionPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class ProtectionPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An optional glob pattern to match against when enforcing tag protection.</summary>
@@ -19,7 +20,8 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
         /// <summary>
         /// Instantiates a new <see cref="ProtectionPostRequestBody"/> and sets the default values.
         /// </summary>
-        public ProtectionPostRequestBody() {
+        public ProtectionPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
         /// </summary>
         /// <returns>A <see cref="ProtectionPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProtectionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ProtectionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ProtectionPostRequestBody();
         }
@@ -35,8 +38,10 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"pattern", n => { Pattern = n.GetStringValue(); } },
             };
         }
@@ -44,7 +49,8 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("pattern", Pattern);
             writer.WriteAdditionalData(AdditionalData);

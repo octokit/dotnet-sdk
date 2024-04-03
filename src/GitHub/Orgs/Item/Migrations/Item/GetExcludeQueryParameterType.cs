@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Migrations.Item {
     /// <summary>Allowed values that can be passed to the exclude param.</summary>
-    public enum GetExcludeQueryParameterType {
+    public enum GetExcludeQueryParameterType
+    {
         [EnumMember(Value = "repositories")]
         Repositories,
     }

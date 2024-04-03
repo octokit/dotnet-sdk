@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The type of reviewer.</summary>
-    public enum DeploymentReviewerType {
+    public enum DeploymentReviewerType
+    {
         [EnumMember(Value = "User")]
         User,
         [EnumMember(Value = "Team")]

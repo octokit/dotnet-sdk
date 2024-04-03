@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum SecurityAndAnalysis_secret_scanning_push_protection_status {
+    public enum SecurityAndAnalysis_secret_scanning_push_protection_status
+    {
         [EnumMember(Value = "enabled")]
         Enabled,
         [EnumMember(Value = "disabled")]

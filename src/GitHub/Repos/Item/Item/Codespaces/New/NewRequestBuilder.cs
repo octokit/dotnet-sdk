@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.Codespaces.New {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\new
     /// </summary>
-    public class NewRequestBuilder : BaseRequestBuilder {
+    public class NewRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="NewRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/new{?client_ip*,ref*}", pathParameters) {
+        public NewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/new{?client_ip*,ref*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="NewRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/new{?client_ip*,ref*}", rawUrl) {
+        public NewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/codespaces/new{?client_ip*,ref*}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets the default attributes for codespaces created by the user with the repository.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
@@ -39,13 +42,16 @@ namespace GitHub.Repos.Item.Item.Codespaces.New {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<NewGetResponse?> GetAsync(Action<RequestConfiguration<NewRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<NewGetResponse?> GetAsync(Action<RequestConfiguration<NewRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<NewGetResponse> GetAsync(Action<RequestConfiguration<NewRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<NewGetResponse> GetAsync(Action<RequestConfiguration<NewRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
@@ -59,10 +65,12 @@ namespace GitHub.Repos.Item.Item.Codespaces.New {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NewRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NewRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NewRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NewRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -74,13 +82,15 @@ namespace GitHub.Repos.Item.Item.Codespaces.New {
         /// </summary>
         /// <returns>A <see cref="NewRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public NewRequestBuilder WithUrl(string rawUrl) {
+        public NewRequestBuilder WithUrl(string rawUrl)
+        {
             return new NewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets the default attributes for codespaces created by the user with the repository.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
-        public class NewRequestBuilderGetQueryParameters {
+        public class NewRequestBuilderGetQueryParameters 
+        {
             /// <summary>An alternative IP for default location auto-detection, such as when proxying a request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

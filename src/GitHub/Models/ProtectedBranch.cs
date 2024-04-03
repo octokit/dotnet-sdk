@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Branch protections protect branches
     /// </summary>
-    public class ProtectedBranch : IAdditionalDataHolder, IParsable {
+    public class ProtectedBranch : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allow_deletions property</summary>
@@ -118,7 +119,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="ProtectedBranch"/> and sets the default values.
         /// </summary>
-        public ProtectedBranch() {
+        public ProtectedBranch()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -126,7 +128,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="ProtectedBranch"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProtectedBranch CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ProtectedBranch CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ProtectedBranch();
         }
@@ -134,8 +137,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"allow_deletions", n => { AllowDeletions = n.GetObjectValue<ProtectedBranch_allow_deletions>(ProtectedBranch_allow_deletions.CreateFromDiscriminatorValue); } },
                 {"allow_force_pushes", n => { AllowForcePushes = n.GetObjectValue<ProtectedBranch_allow_force_pushes>(ProtectedBranch_allow_force_pushes.CreateFromDiscriminatorValue); } },
                 {"allow_fork_syncing", n => { AllowForkSyncing = n.GetObjectValue<ProtectedBranch_allow_fork_syncing>(ProtectedBranch_allow_fork_syncing.CreateFromDiscriminatorValue); } },
@@ -155,7 +160,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<ProtectedBranch_allow_deletions>("allow_deletions", AllowDeletions);
             writer.WriteObjectValue<ProtectedBranch_allow_force_pushes>("allow_force_pushes", AllowForcePushes);

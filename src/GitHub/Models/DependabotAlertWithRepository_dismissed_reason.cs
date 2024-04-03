@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The reason that the alert was dismissed.</summary>
-    public enum DependabotAlertWithRepository_dismissed_reason {
+    public enum DependabotAlertWithRepository_dismissed_reason
+    {
         [EnumMember(Value = "fix_started")]
         Fix_started,
         [EnumMember(Value = "inaccurate")]

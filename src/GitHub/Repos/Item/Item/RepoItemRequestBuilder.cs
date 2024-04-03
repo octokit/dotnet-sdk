@@ -77,280 +77,348 @@ namespace GitHub.Repos.Item.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}
     /// </summary>
-    public class RepoItemRequestBuilder : BaseRequestBuilder {
+    public class RepoItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The actions property</summary>
-        public ActionsRequestBuilder Actions { get =>
-            new ActionsRequestBuilder(PathParameters, RequestAdapter);
+        public ActionsRequestBuilder Actions
+        {
+            get => new ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The activity property</summary>
-        public ActivityRequestBuilder Activity { get =>
-            new ActivityRequestBuilder(PathParameters, RequestAdapter);
+        public ActivityRequestBuilder Activity
+        {
+            get => new ActivityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The assignees property</summary>
-        public AssigneesRequestBuilder Assignees { get =>
-            new AssigneesRequestBuilder(PathParameters, RequestAdapter);
+        public AssigneesRequestBuilder Assignees
+        {
+            get => new AssigneesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The autolinks property</summary>
-        public AutolinksRequestBuilder Autolinks { get =>
-            new AutolinksRequestBuilder(PathParameters, RequestAdapter);
+        public AutolinksRequestBuilder Autolinks
+        {
+            get => new AutolinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The automatedSecurityFixes property</summary>
-        public AutomatedSecurityFixesRequestBuilder AutomatedSecurityFixes { get =>
-            new AutomatedSecurityFixesRequestBuilder(PathParameters, RequestAdapter);
+        public AutomatedSecurityFixesRequestBuilder AutomatedSecurityFixes
+        {
+            get => new AutomatedSecurityFixesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The branches property</summary>
-        public BranchesRequestBuilder Branches { get =>
-            new BranchesRequestBuilder(PathParameters, RequestAdapter);
+        public BranchesRequestBuilder Branches
+        {
+            get => new BranchesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The checkRuns property</summary>
-        public CheckRunsRequestBuilder CheckRuns { get =>
-            new CheckRunsRequestBuilder(PathParameters, RequestAdapter);
+        public CheckRunsRequestBuilder CheckRuns
+        {
+            get => new CheckRunsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The checkSuites property</summary>
-        public CheckSuitesRequestBuilder CheckSuites { get =>
-            new CheckSuitesRequestBuilder(PathParameters, RequestAdapter);
+        public CheckSuitesRequestBuilder CheckSuites
+        {
+            get => new CheckSuitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codeowners property</summary>
-        public CodeownersRequestBuilder Codeowners { get =>
-            new CodeownersRequestBuilder(PathParameters, RequestAdapter);
+        public CodeownersRequestBuilder Codeowners
+        {
+            get => new CodeownersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codeScanning property</summary>
-        public CodeScanningRequestBuilder CodeScanning { get =>
-            new CodeScanningRequestBuilder(PathParameters, RequestAdapter);
+        public CodeScanningRequestBuilder CodeScanning
+        {
+            get => new CodeScanningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codespaces property</summary>
-        public CodespacesRequestBuilder Codespaces { get =>
-            new CodespacesRequestBuilder(PathParameters, RequestAdapter);
+        public CodespacesRequestBuilder Codespaces
+        {
+            get => new CodespacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The collaborators property</summary>
-        public CollaboratorsRequestBuilder Collaborators { get =>
-            new CollaboratorsRequestBuilder(PathParameters, RequestAdapter);
+        public CollaboratorsRequestBuilder Collaborators
+        {
+            get => new CollaboratorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The comments property</summary>
-        public CommentsRequestBuilder Comments { get =>
-            new CommentsRequestBuilder(PathParameters, RequestAdapter);
+        public CommentsRequestBuilder Comments
+        {
+            get => new CommentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The commits property</summary>
-        public CommitsRequestBuilder Commits { get =>
-            new CommitsRequestBuilder(PathParameters, RequestAdapter);
+        public CommitsRequestBuilder Commits
+        {
+            get => new CommitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The community property</summary>
-        public CommunityRequestBuilder Community { get =>
-            new CommunityRequestBuilder(PathParameters, RequestAdapter);
+        public CommunityRequestBuilder Community
+        {
+            get => new CommunityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The compare property</summary>
-        public CompareRequestBuilder Compare { get =>
-            new CompareRequestBuilder(PathParameters, RequestAdapter);
+        public CompareRequestBuilder Compare
+        {
+            get => new CompareRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The contents property</summary>
-        public ContentsRequestBuilder Contents { get =>
-            new ContentsRequestBuilder(PathParameters, RequestAdapter);
+        public ContentsRequestBuilder Contents
+        {
+            get => new ContentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The contributors property</summary>
-        public ContributorsRequestBuilder Contributors { get =>
-            new ContributorsRequestBuilder(PathParameters, RequestAdapter);
+        public ContributorsRequestBuilder Contributors
+        {
+            get => new ContributorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dependabot property</summary>
-        public DependabotRequestBuilder Dependabot { get =>
-            new DependabotRequestBuilder(PathParameters, RequestAdapter);
+        public DependabotRequestBuilder Dependabot
+        {
+            get => new DependabotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dependencyGraph property</summary>
-        public DependencyGraphRequestBuilder DependencyGraph { get =>
-            new DependencyGraphRequestBuilder(PathParameters, RequestAdapter);
+        public DependencyGraphRequestBuilder DependencyGraph
+        {
+            get => new DependencyGraphRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deployments property</summary>
-        public DeploymentsRequestBuilder Deployments { get =>
-            new DeploymentsRequestBuilder(PathParameters, RequestAdapter);
+        public DeploymentsRequestBuilder Deployments
+        {
+            get => new DeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dispatches property</summary>
-        public DispatchesRequestBuilder Dispatches { get =>
-            new DispatchesRequestBuilder(PathParameters, RequestAdapter);
+        public DispatchesRequestBuilder Dispatches
+        {
+            get => new DispatchesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The environments property</summary>
-        public EnvironmentsRequestBuilder Environments { get =>
-            new EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
+        public EnvironmentsRequestBuilder Environments
+        {
+            get => new EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
-        public EventsRequestBuilder Events { get =>
-            new EventsRequestBuilder(PathParameters, RequestAdapter);
+        public EventsRequestBuilder Events
+        {
+            get => new EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The forks property</summary>
-        public ForksRequestBuilder Forks { get =>
-            new ForksRequestBuilder(PathParameters, RequestAdapter);
+        public ForksRequestBuilder Forks
+        {
+            get => new ForksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generate property</summary>
-        public GenerateRequestBuilder Generate { get =>
-            new GenerateRequestBuilder(PathParameters, RequestAdapter);
+        public GenerateRequestBuilder Generate
+        {
+            get => new GenerateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The git property</summary>
-        public GitRequestBuilder Git { get =>
-            new GitRequestBuilder(PathParameters, RequestAdapter);
+        public GitRequestBuilder Git
+        {
+            get => new GitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The hooks property</summary>
-        public HooksRequestBuilder Hooks { get =>
-            new HooksRequestBuilder(PathParameters, RequestAdapter);
+        public HooksRequestBuilder Hooks
+        {
+            get => new HooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The import property</summary>
-        public ImportRequestBuilder Import { get =>
-            new ImportRequestBuilder(PathParameters, RequestAdapter);
+        public ImportRequestBuilder Import
+        {
+            get => new ImportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The installation property</summary>
-        public InstallationRequestBuilder Installation { get =>
-            new InstallationRequestBuilder(PathParameters, RequestAdapter);
+        public InstallationRequestBuilder Installation
+        {
+            get => new InstallationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The interactionLimits property</summary>
-        public InteractionLimitsRequestBuilder InteractionLimits { get =>
-            new InteractionLimitsRequestBuilder(PathParameters, RequestAdapter);
+        public InteractionLimitsRequestBuilder InteractionLimits
+        {
+            get => new InteractionLimitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The invitations property</summary>
-        public InvitationsRequestBuilder Invitations { get =>
-            new InvitationsRequestBuilder(PathParameters, RequestAdapter);
+        public InvitationsRequestBuilder Invitations
+        {
+            get => new InvitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The issues property</summary>
-        public IssuesRequestBuilder Issues { get =>
-            new IssuesRequestBuilder(PathParameters, RequestAdapter);
+        public IssuesRequestBuilder Issues
+        {
+            get => new IssuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
-        public KeysRequestBuilder Keys { get =>
-            new KeysRequestBuilder(PathParameters, RequestAdapter);
+        public KeysRequestBuilder Keys
+        {
+            get => new KeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The labels property</summary>
-        public LabelsRequestBuilder Labels { get =>
-            new LabelsRequestBuilder(PathParameters, RequestAdapter);
+        public LabelsRequestBuilder Labels
+        {
+            get => new LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The languages property</summary>
-        public LanguagesRequestBuilder Languages { get =>
-            new LanguagesRequestBuilder(PathParameters, RequestAdapter);
+        public LanguagesRequestBuilder Languages
+        {
+            get => new LanguagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The license property</summary>
-        public LicenseRequestBuilder License { get =>
-            new LicenseRequestBuilder(PathParameters, RequestAdapter);
+        public LicenseRequestBuilder License
+        {
+            get => new LicenseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The merges property</summary>
-        public MergesRequestBuilder Merges { get =>
-            new MergesRequestBuilder(PathParameters, RequestAdapter);
+        public MergesRequestBuilder Merges
+        {
+            get => new MergesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mergeUpstream property</summary>
-        public MergeUpstreamRequestBuilder MergeUpstream { get =>
-            new MergeUpstreamRequestBuilder(PathParameters, RequestAdapter);
+        public MergeUpstreamRequestBuilder MergeUpstream
+        {
+            get => new MergeUpstreamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The milestones property</summary>
-        public MilestonesRequestBuilder Milestones { get =>
-            new MilestonesRequestBuilder(PathParameters, RequestAdapter);
+        public MilestonesRequestBuilder Milestones
+        {
+            get => new MilestonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The notifications property</summary>
-        public NotificationsRequestBuilder Notifications { get =>
-            new NotificationsRequestBuilder(PathParameters, RequestAdapter);
+        public NotificationsRequestBuilder Notifications
+        {
+            get => new NotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pages property</summary>
-        public PagesRequestBuilder Pages { get =>
-            new PagesRequestBuilder(PathParameters, RequestAdapter);
+        public PagesRequestBuilder Pages
+        {
+            get => new PagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The privateVulnerabilityReporting property</summary>
-        public PrivateVulnerabilityReportingRequestBuilder PrivateVulnerabilityReporting { get =>
-            new PrivateVulnerabilityReportingRequestBuilder(PathParameters, RequestAdapter);
+        public PrivateVulnerabilityReportingRequestBuilder PrivateVulnerabilityReporting
+        {
+            get => new PrivateVulnerabilityReportingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The projects property</summary>
-        public ProjectsRequestBuilder Projects { get =>
-            new ProjectsRequestBuilder(PathParameters, RequestAdapter);
+        public ProjectsRequestBuilder Projects
+        {
+            get => new ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The properties property</summary>
-        public PropertiesRequestBuilder Properties { get =>
-            new PropertiesRequestBuilder(PathParameters, RequestAdapter);
+        public PropertiesRequestBuilder Properties
+        {
+            get => new PropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pulls property</summary>
-        public PullsRequestBuilder Pulls { get =>
-            new PullsRequestBuilder(PathParameters, RequestAdapter);
+        public PullsRequestBuilder Pulls
+        {
+            get => new PullsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The readme property</summary>
-        public ReadmeRequestBuilder Readme { get =>
-            new ReadmeRequestBuilder(PathParameters, RequestAdapter);
+        public ReadmeRequestBuilder Readme
+        {
+            get => new ReadmeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The releases property</summary>
-        public ReleasesRequestBuilder Releases { get =>
-            new ReleasesRequestBuilder(PathParameters, RequestAdapter);
+        public ReleasesRequestBuilder Releases
+        {
+            get => new ReleasesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
-        public RulesRequestBuilder Rules { get =>
-            new RulesRequestBuilder(PathParameters, RequestAdapter);
+        public RulesRequestBuilder Rules
+        {
+            get => new RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rulesets property</summary>
-        public RulesetsRequestBuilder Rulesets { get =>
-            new RulesetsRequestBuilder(PathParameters, RequestAdapter);
+        public RulesetsRequestBuilder Rulesets
+        {
+            get => new RulesetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secretScanning property</summary>
-        public SecretScanningRequestBuilder SecretScanning { get =>
-            new SecretScanningRequestBuilder(PathParameters, RequestAdapter);
+        public SecretScanningRequestBuilder SecretScanning
+        {
+            get => new SecretScanningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The securityAdvisories property</summary>
-        public SecurityAdvisoriesRequestBuilder SecurityAdvisories { get =>
-            new SecurityAdvisoriesRequestBuilder(PathParameters, RequestAdapter);
+        public SecurityAdvisoriesRequestBuilder SecurityAdvisories
+        {
+            get => new SecurityAdvisoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stargazers property</summary>
-        public StargazersRequestBuilder Stargazers { get =>
-            new StargazersRequestBuilder(PathParameters, RequestAdapter);
+        public StargazersRequestBuilder Stargazers
+        {
+            get => new StargazersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stats property</summary>
-        public StatsRequestBuilder Stats { get =>
-            new StatsRequestBuilder(PathParameters, RequestAdapter);
+        public StatsRequestBuilder Stats
+        {
+            get => new StatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The statuses property</summary>
-        public StatusesRequestBuilder Statuses { get =>
-            new StatusesRequestBuilder(PathParameters, RequestAdapter);
+        public StatusesRequestBuilder Statuses
+        {
+            get => new StatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subscribers property</summary>
-        public SubscribersRequestBuilder Subscribers { get =>
-            new SubscribersRequestBuilder(PathParameters, RequestAdapter);
+        public SubscribersRequestBuilder Subscribers
+        {
+            get => new SubscribersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subscription property</summary>
-        public SubscriptionRequestBuilder Subscription { get =>
-            new SubscriptionRequestBuilder(PathParameters, RequestAdapter);
+        public SubscriptionRequestBuilder Subscription
+        {
+            get => new SubscriptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tags property</summary>
-        public TagsRequestBuilder Tags { get =>
-            new TagsRequestBuilder(PathParameters, RequestAdapter);
+        public TagsRequestBuilder Tags
+        {
+            get => new TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tarball property</summary>
-        public TarballRequestBuilder Tarball { get =>
-            new TarballRequestBuilder(PathParameters, RequestAdapter);
+        public TarballRequestBuilder Tarball
+        {
+            get => new TarballRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
-        public TeamsRequestBuilder Teams { get =>
-            new TeamsRequestBuilder(PathParameters, RequestAdapter);
+        public TeamsRequestBuilder Teams
+        {
+            get => new TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The topics property</summary>
-        public TopicsRequestBuilder Topics { get =>
-            new TopicsRequestBuilder(PathParameters, RequestAdapter);
+        public TopicsRequestBuilder Topics
+        {
+            get => new TopicsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The traffic property</summary>
-        public TrafficRequestBuilder Traffic { get =>
-            new TrafficRequestBuilder(PathParameters, RequestAdapter);
+        public TrafficRequestBuilder Traffic
+        {
+            get => new TrafficRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transfer property</summary>
-        public TransferRequestBuilder Transfer { get =>
-            new TransferRequestBuilder(PathParameters, RequestAdapter);
+        public TransferRequestBuilder Transfer
+        {
+            get => new TransferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The vulnerabilityAlerts property</summary>
-        public VulnerabilityAlertsRequestBuilder VulnerabilityAlerts { get =>
-            new VulnerabilityAlertsRequestBuilder(PathParameters, RequestAdapter);
+        public VulnerabilityAlertsRequestBuilder VulnerabilityAlerts
+        {
+            get => new VulnerabilityAlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zipball property</summary>
-        public ZipballRequestBuilder Zipball { get =>
-            new ZipballRequestBuilder(PathParameters, RequestAdapter);
+        public ZipballRequestBuilder Zipball
+        {
+            get => new ZipballRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="RepoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RepoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}", pathParameters) {
+        public RepoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="RepoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RepoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}", rawUrl) {
+        public RepoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}", rawUrl)
+        {
         }
         /// <summary>
         /// Deleting a repository requires admin access.If an organization owner has configured the organization to prevent members from deleting organization-ownedrepositories, you will get a `403 Forbidden` response.OAuth app tokens and personal access tokens (classic) need the `delete_repo` scope to use this endpoint.
@@ -362,13 +430,16 @@ namespace GitHub.Repos.Item.Item {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", Repo403Error.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
@@ -385,13 +456,16 @@ namespace GitHub.Repos.Item.Item {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FullRepository?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FullRepository?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<FullRepository> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FullRepository> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
@@ -410,14 +484,17 @@ namespace GitHub.Repos.Item.Item {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FullRepository?> PatchAsync(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FullRepository?> PatchAsync(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<FullRepository> PatchAsync(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<FullRepository> PatchAsync(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationError.CreateFromDiscriminatorValue},
@@ -431,10 +508,12 @@ namespace GitHub.Repos.Item.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -448,10 +527,12 @@ namespace GitHub.Repos.Item.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -466,10 +547,12 @@ namespace GitHub.Repos.Item.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPatchRequestInformation(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
@@ -483,7 +566,8 @@ namespace GitHub.Repos.Item.Item {
         /// </summary>
         /// <returns>A <see cref="RepoItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RepoItemRequestBuilder WithUrl(string rawUrl) {
+        public RepoItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new RepoItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

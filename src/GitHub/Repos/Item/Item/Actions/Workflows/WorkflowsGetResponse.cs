@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Workflows {
-    public class WorkflowsGetResponse : IAdditionalDataHolder, IParsable {
+    public class WorkflowsGetResponse : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total_count property</summary>
@@ -22,7 +23,8 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows {
         /// <summary>
         /// Instantiates a new <see cref="WorkflowsGetResponse"/> and sets the default values.
         /// </summary>
-        public WorkflowsGetResponse() {
+        public WorkflowsGetResponse()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -30,7 +32,8 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows {
         /// </summary>
         /// <returns>A <see cref="WorkflowsGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkflowsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WorkflowsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WorkflowsGetResponse();
         }
@@ -38,8 +41,10 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"total_count", n => { TotalCount = n.GetIntValue(); } },
                 {"workflows", n => { Workflows = n.GetCollectionOfObjectValues<GitHub.Models.Workflow>(GitHub.Models.Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -48,7 +53,8 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("total_count", TotalCount);
             writer.WriteCollectionOfObjectValues<GitHub.Models.Workflow>("workflows", Workflows);

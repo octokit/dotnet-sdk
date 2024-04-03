@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_reviews {
-    public class Required_pull_request_reviewsPatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class Required_pull_request_reviewsPatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow specific users, teams, or apps to bypass pull request requirements.</summary>
@@ -35,7 +36,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// <summary>
         /// Instantiates a new <see cref="Required_pull_request_reviewsPatchRequestBody"/> and sets the default values.
         /// </summary>
-        public Required_pull_request_reviewsPatchRequestBody() {
+        public Required_pull_request_reviewsPatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -43,7 +45,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// </summary>
         /// <returns>A <see cref="Required_pull_request_reviewsPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Required_pull_request_reviewsPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Required_pull_request_reviewsPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Required_pull_request_reviewsPatchRequestBody();
         }
@@ -51,8 +54,10 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"bypass_pull_request_allowances", n => { BypassPullRequestAllowances = n.GetObjectValue<Required_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances>(Required_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances.CreateFromDiscriminatorValue); } },
                 {"dismiss_stale_reviews", n => { DismissStaleReviews = n.GetBoolValue(); } },
                 {"dismissal_restrictions", n => { DismissalRestrictions = n.GetObjectValue<Required_pull_request_reviewsPatchRequestBody_dismissal_restrictions>(Required_pull_request_reviewsPatchRequestBody_dismissal_restrictions.CreateFromDiscriminatorValue); } },
@@ -65,7 +70,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Required_pull_request_reviewsPatchRequestBody_bypass_pull_request_allowances>("bypass_pull_request_allowances", BypassPullRequestAllowances);
             writer.WriteObjectValue<Required_pull_request_reviewsPatchRequestBody_dismissal_restrictions>("dismissal_restrictions", DismissalRestrictions);

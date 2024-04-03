@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Details about the codespace&apos;s git repository.
     /// </summary>
-    public class Codespace_git_status : IAdditionalDataHolder, IParsable {
+    public class Codespace_git_status : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of commits the local repository is ahead of the remote.</summary>
@@ -30,7 +31,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="Codespace_git_status"/> and sets the default values.
         /// </summary>
-        public Codespace_git_status() {
+        public Codespace_git_status()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -38,7 +40,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="Codespace_git_status"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Codespace_git_status CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static Codespace_git_status CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Codespace_git_status();
         }
@@ -46,8 +49,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"ahead", n => { Ahead = n.GetIntValue(); } },
                 {"behind", n => { Behind = n.GetIntValue(); } },
                 {"has_uncommitted_changes", n => { HasUncommittedChanges = n.GetBoolValue(); } },
@@ -59,7 +64,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("ahead", Ahead);
             writer.WriteIntValue("behind", Behind);

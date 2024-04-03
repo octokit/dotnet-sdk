@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The type of credit the user is receiving.</summary>
-    public enum SecurityAdvisoryCreditTypes {
+    public enum SecurityAdvisoryCreditTypes
+    {
         [EnumMember(Value = "analyst")]
         Analyst,
         [EnumMember(Value = "finder")]

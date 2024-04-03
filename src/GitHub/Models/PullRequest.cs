@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Pull requests let you tell others about changes you&apos;ve pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
     /// </summary>
-    public class PullRequest : IAdditionalDataHolder, IParsable {
+    public class PullRequest : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>The active_lock_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -278,7 +279,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="PullRequest"/> and sets the default values.
         /// </summary>
-        public PullRequest() {
+        public PullRequest()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -286,7 +288,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="PullRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PullRequest CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static PullRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new PullRequest();
         }
@@ -294,8 +297,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"active_lock_reason", n => { ActiveLockReason = n.GetStringValue(); } },
                 {"additions", n => { Additions = n.GetIntValue(); } },
                 {"assignee", n => { Assignee = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
@@ -350,7 +355,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("active_lock_reason", ActiveLockReason);
             writer.WriteIntValue("additions", Additions);

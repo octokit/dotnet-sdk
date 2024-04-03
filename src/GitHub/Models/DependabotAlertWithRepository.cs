@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// A Dependabot alert.
     /// </summary>
-    public class DependabotAlertWithRepository : IParsable {
+    public class DependabotAlertWithRepository : IParsable 
+    {
         /// <summary>The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
         public DateTimeOffset? AutoDismissedAt { get; private set; }
         /// <summary>The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
@@ -94,7 +95,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="DependabotAlertWithRepository"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DependabotAlertWithRepository CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static DependabotAlertWithRepository CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DependabotAlertWithRepository();
         }
@@ -102,8 +104,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"auto_dismissed_at", n => { AutoDismissedAt = n.GetDateTimeOffsetValue(); } },
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 {"dependency", n => { Dependency = n.GetObjectValue<DependabotAlertWithRepository_dependency>(DependabotAlertWithRepository_dependency.CreateFromDiscriminatorValue); } },
@@ -126,7 +130,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<NullableSimpleUser>("dismissed_by", DismissedBy);
             writer.WriteStringValue("dismissed_comment", DismissedComment);

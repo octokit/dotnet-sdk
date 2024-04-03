@@ -10,28 +10,35 @@ namespace GitHub.Repos.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}
     /// </summary>
-    public class OwnerItemRequestBuilder : BaseRequestBuilder {
+    public class OwnerItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.repos.item.item collection</summary>
         /// <param name="position">The name of the repository without the `.git` extension. The name is not case sensitive.</param>
         /// <returns>A <see cref="RepoItemRequestBuilder"/></returns>
-        public RepoItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("repo%2Did", position);
-            return new RepoItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public RepoItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("repo%2Did", position);
+                return new RepoItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="OwnerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OwnerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}", pathParameters) {
+        public OwnerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="OwnerItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OwnerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}", rawUrl) {
+        public OwnerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}", rawUrl)
+        {
         }
     }
 }

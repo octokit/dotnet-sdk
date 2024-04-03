@@ -14,28 +14,33 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-suites\{check_suite_id}
     /// </summary>
-    public class WithCheck_suite_ItemRequestBuilder : BaseRequestBuilder {
+    public class WithCheck_suite_ItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The checkRuns property</summary>
-        public CheckRunsRequestBuilder CheckRuns { get =>
-            new CheckRunsRequestBuilder(PathParameters, RequestAdapter);
+        public CheckRunsRequestBuilder CheckRuns
+        {
+            get => new CheckRunsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rerequest property</summary>
-        public RerequestRequestBuilder Rerequest { get =>
-            new RerequestRequestBuilder(PathParameters, RequestAdapter);
+        public RerequestRequestBuilder Rerequest
+        {
+            get => new RerequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithCheck_suite_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCheck_suite_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/check-suites/{check_suite_id}", pathParameters) {
+        public WithCheck_suite_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/check-suites/{check_suite_id}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithCheck_suite_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCheck_suite_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/check-suites/{check_suite_id}", rawUrl) {
+        public WithCheck_suite_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/check-suites/{check_suite_id}", rawUrl)
+        {
         }
         /// <summary>
         /// Gets a single check suite using its `id`.**Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
@@ -46,10 +51,12 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CheckSuite?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CheckSuite?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<CheckSuite> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<CheckSuite> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<CheckSuite>(requestInfo, CheckSuite.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -61,10 +68,12 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -76,7 +85,8 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item {
         /// </summary>
         /// <returns>A <see cref="WithCheck_suite_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithCheck_suite_ItemRequestBuilder WithUrl(string rawUrl) {
+        public WithCheck_suite_ItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithCheck_suite_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }

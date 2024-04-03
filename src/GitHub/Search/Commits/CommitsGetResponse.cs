@@ -6,7 +6,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Search.Commits {
-    public class CommitsGetResponse : IAdditionalDataHolder, IParsable {
+    public class CommitsGetResponse : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The incomplete_results property</summary>
@@ -24,7 +25,8 @@ namespace GitHub.Search.Commits {
         /// <summary>
         /// Instantiates a new <see cref="CommitsGetResponse"/> and sets the default values.
         /// </summary>
-        public CommitsGetResponse() {
+        public CommitsGetResponse()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -32,7 +34,8 @@ namespace GitHub.Search.Commits {
         /// </summary>
         /// <returns>A <see cref="CommitsGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CommitsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static CommitsGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CommitsGetResponse();
         }
@@ -40,8 +43,10 @@ namespace GitHub.Search.Commits {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"incomplete_results", n => { IncompleteResults = n.GetBoolValue(); } },
                 {"items", n => { Items = n.GetCollectionOfObjectValues<CommitSearchResultItem>(CommitSearchResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"total_count", n => { TotalCount = n.GetIntValue(); } },
@@ -51,7 +56,8 @@ namespace GitHub.Search.Commits {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("incomplete_results", IncompleteResults);
             writer.WriteCollectionOfObjectValues<CommitSearchResultItem>("items", Items);

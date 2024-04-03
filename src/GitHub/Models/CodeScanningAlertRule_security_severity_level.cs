@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The security severity of the alert.</summary>
-    public enum CodeScanningAlertRule_security_severity_level {
+    public enum CodeScanningAlertRule_security_severity_level
+    {
         [EnumMember(Value = "low")]
         Low,
         [EnumMember(Value = "medium")]

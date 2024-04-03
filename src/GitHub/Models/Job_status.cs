@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The phase of the lifecycle that the job is currently in.</summary>
-    public enum Job_status {
+    public enum Job_status
+    {
         [EnumMember(Value = "queued")]
         Queued,
         [EnumMember(Value = "in_progress")]
@@ -12,5 +13,9 @@ namespace GitHub.Models {
         Completed,
         [EnumMember(Value = "waiting")]
         Waiting,
+        [EnumMember(Value = "requested")]
+        Requested,
+        [EnumMember(Value = "pending")]
+        Pending,
     }
 }

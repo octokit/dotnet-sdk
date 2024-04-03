@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Import.Lfs {
-    public class LfsPatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class LfsPatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.</summary>
@@ -13,7 +14,8 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         /// <summary>
         /// Instantiates a new <see cref="LfsPatchRequestBody"/> and sets the default values.
         /// </summary>
-        public LfsPatchRequestBody() {
+        public LfsPatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -21,7 +23,8 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         /// </summary>
         /// <returns>A <see cref="LfsPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LfsPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static LfsPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new LfsPatchRequestBody();
         }
@@ -29,8 +32,10 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"use_lfs", n => { UseLfs = n.GetEnumValue<LfsPatchRequestBody_use_lfs>(); } },
             };
         }
@@ -38,7 +43,8 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<LfsPatchRequestBody_use_lfs>("use_lfs", UseLfs);
             writer.WriteAdditionalData(AdditionalData);

@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.Teams.Item.Repos.Item.Item {
-    public class WithRepoPutRequestBody : IAdditionalDataHolder, IParsable {
+    public class WithRepoPutRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The permission to grant the team on this repository. We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any. If no permission is specified, the team&apos;s `permission` attribute will be used to determine what permission to grant the team on this repository.</summary>
@@ -19,7 +20,8 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos.Item.Item {
         /// <summary>
         /// Instantiates a new <see cref="WithRepoPutRequestBody"/> and sets the default values.
         /// </summary>
-        public WithRepoPutRequestBody() {
+        public WithRepoPutRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
             Permission = "push";
         }
@@ -28,7 +30,8 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos.Item.Item {
         /// </summary>
         /// <returns>A <see cref="WithRepoPutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithRepoPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithRepoPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithRepoPutRequestBody();
         }
@@ -36,8 +39,10 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos.Item.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"permission", n => { Permission = n.GetStringValue(); } },
             };
         }
@@ -45,7 +50,8 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos.Item.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("permission", Permission);
             writer.WriteAdditionalData(AdditionalData);

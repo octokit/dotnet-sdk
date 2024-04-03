@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
-    public class RepositoriesPutRequestBody : IAdditionalDataHolder, IParsable {
+    public class RepositoriesPutRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The IDs of the repositories that can access the organization variable.</summary>
@@ -19,7 +20,8 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
         /// <summary>
         /// Instantiates a new <see cref="RepositoriesPutRequestBody"/> and sets the default values.
         /// </summary>
-        public RepositoriesPutRequestBody() {
+        public RepositoriesPutRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -27,7 +29,8 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
         /// </summary>
         /// <returns>A <see cref="RepositoriesPutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RepositoriesPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RepositoriesPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RepositoriesPutRequestBody();
         }
@@ -35,8 +38,10 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"selected_repository_ids", n => { SelectedRepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
             };
         }
@@ -44,7 +49,8 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("selected_repository_ids", SelectedRepositoryIds);
             writer.WriteAdditionalData(AdditionalData);

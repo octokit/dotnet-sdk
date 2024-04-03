@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Dependabot.Secrets.Item {
-    public class WithSecret_namePutRequestBody : IAdditionalDataHolder, IParsable {
+    public class WithSecret_namePutRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get a repository public key](https://docs.github.com/rest/dependabot/secrets#get-a-repository-public-key) endpoint.</summary>
@@ -27,7 +28,8 @@ namespace GitHub.Repos.Item.Item.Dependabot.Secrets.Item {
         /// <summary>
         /// Instantiates a new <see cref="WithSecret_namePutRequestBody"/> and sets the default values.
         /// </summary>
-        public WithSecret_namePutRequestBody() {
+        public WithSecret_namePutRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +37,8 @@ namespace GitHub.Repos.Item.Item.Dependabot.Secrets.Item {
         /// </summary>
         /// <returns>A <see cref="WithSecret_namePutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithSecret_namePutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithSecret_namePutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithSecret_namePutRequestBody();
         }
@@ -43,8 +46,10 @@ namespace GitHub.Repos.Item.Item.Dependabot.Secrets.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"encrypted_value", n => { EncryptedValue = n.GetStringValue(); } },
                 {"key_id", n => { KeyId = n.GetStringValue(); } },
             };
@@ -53,7 +58,8 @@ namespace GitHub.Repos.Item.Item.Dependabot.Secrets.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("encrypted_value", EncryptedValue);
             writer.WriteStringValue("key_id", KeyId);

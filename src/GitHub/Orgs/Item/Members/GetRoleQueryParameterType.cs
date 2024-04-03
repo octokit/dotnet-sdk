@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Members {
-    public enum GetRoleQueryParameterType {
+    public enum GetRoleQueryParameterType
+    {
         [EnumMember(Value = "all")]
         All,
         [EnumMember(Value = "admin")]

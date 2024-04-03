@@ -10,24 +10,28 @@ namespace GitHub.Users.Item.Settings {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\settings
     /// </summary>
-    public class SettingsRequestBuilder : BaseRequestBuilder {
+    public class SettingsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The billing property</summary>
-        public BillingRequestBuilder Billing { get =>
-            new BillingRequestBuilder(PathParameters, RequestAdapter);
+        public BillingRequestBuilder Billing
+        {
+            get => new BillingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="SettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/settings", pathParameters) {
+        public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/settings", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="SettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/settings", rawUrl) {
+        public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/settings", rawUrl)
+        {
         }
     }
 }

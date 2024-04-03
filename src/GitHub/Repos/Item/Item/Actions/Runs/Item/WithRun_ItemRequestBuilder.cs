@@ -25,72 +25,88 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}
     /// </summary>
-    public class WithRun_ItemRequestBuilder : BaseRequestBuilder {
+    public class WithRun_ItemRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The approvals property</summary>
-        public ApprovalsRequestBuilder Approvals { get =>
-            new ApprovalsRequestBuilder(PathParameters, RequestAdapter);
+        public ApprovalsRequestBuilder Approvals
+        {
+            get => new ApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The approve property</summary>
-        public ApproveRequestBuilder Approve { get =>
-            new ApproveRequestBuilder(PathParameters, RequestAdapter);
+        public ApproveRequestBuilder Approve
+        {
+            get => new ApproveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The artifacts property</summary>
-        public ArtifactsRequestBuilder Artifacts { get =>
-            new ArtifactsRequestBuilder(PathParameters, RequestAdapter);
+        public ArtifactsRequestBuilder Artifacts
+        {
+            get => new ArtifactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The attempts property</summary>
-        public AttemptsRequestBuilder Attempts { get =>
-            new AttemptsRequestBuilder(PathParameters, RequestAdapter);
+        public AttemptsRequestBuilder Attempts
+        {
+            get => new AttemptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cancel property</summary>
-        public CancelRequestBuilder Cancel { get =>
-            new CancelRequestBuilder(PathParameters, RequestAdapter);
+        public CancelRequestBuilder Cancel
+        {
+            get => new CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deployment_protection_rule property</summary>
-        public Deployment_protection_ruleRequestBuilder Deployment_protection_rule { get =>
-            new Deployment_protection_ruleRequestBuilder(PathParameters, RequestAdapter);
+        public Deployment_protection_ruleRequestBuilder Deployment_protection_rule
+        {
+            get => new Deployment_protection_ruleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The forceCancel property</summary>
-        public ForceCancelRequestBuilder ForceCancel { get =>
-            new ForceCancelRequestBuilder(PathParameters, RequestAdapter);
+        public ForceCancelRequestBuilder ForceCancel
+        {
+            get => new ForceCancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The jobs property</summary>
-        public JobsRequestBuilder Jobs { get =>
-            new JobsRequestBuilder(PathParameters, RequestAdapter);
+        public JobsRequestBuilder Jobs
+        {
+            get => new JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logs property</summary>
-        public LogsRequestBuilder Logs { get =>
-            new LogsRequestBuilder(PathParameters, RequestAdapter);
+        public LogsRequestBuilder Logs
+        {
+            get => new LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pending_deployments property</summary>
-        public Pending_deploymentsRequestBuilder Pending_deployments { get =>
-            new Pending_deploymentsRequestBuilder(PathParameters, RequestAdapter);
+        public Pending_deploymentsRequestBuilder Pending_deployments
+        {
+            get => new Pending_deploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rerun property</summary>
-        public RerunRequestBuilder Rerun { get =>
-            new RerunRequestBuilder(PathParameters, RequestAdapter);
+        public RerunRequestBuilder Rerun
+        {
+            get => new RerunRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rerunFailedJobs property</summary>
-        public RerunFailedJobsRequestBuilder RerunFailedJobs { get =>
-            new RerunFailedJobsRequestBuilder(PathParameters, RequestAdapter);
+        public RerunFailedJobsRequestBuilder RerunFailedJobs
+        {
+            get => new RerunFailedJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timing property</summary>
-        public TimingRequestBuilder Timing { get =>
-            new TimingRequestBuilder(PathParameters, RequestAdapter);
+        public TimingRequestBuilder Timing
+        {
+            get => new TimingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRun_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRun_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}{?exclude_pull_requests*}", pathParameters) {
+        public WithRun_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}{?exclude_pull_requests*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="WithRun_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRun_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}{?exclude_pull_requests*}", rawUrl) {
+        public WithRun_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}{?exclude_pull_requests*}", rawUrl)
+        {
         }
         /// <summary>
         /// Deletes a specific workflow run.Anyone with write access to the repository can use this endpoint.If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -100,10 +116,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
@@ -117,10 +135,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkflowRun?> GetAsync(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkflowRun?> GetAsync(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<WorkflowRun> GetAsync(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkflowRun> GetAsync(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             return await RequestAdapter.SendAsync<WorkflowRun>(requestInfo, WorkflowRun.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -132,10 +152,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/actions/runs/{run_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -148,10 +170,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -163,13 +187,15 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         /// </summary>
         /// <returns>A <see cref="WithRun_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithRun_ItemRequestBuilder WithUrl(string rawUrl) {
+        public WithRun_ItemRequestBuilder WithUrl(string rawUrl)
+        {
             return new WithRun_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets a specific workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
-        public class WithRun_ItemRequestBuilderGetQueryParameters {
+        public class WithRun_ItemRequestBuilderGetQueryParameters 
+        {
             /// <summary>If `true` pull requests are omitted from the response (empty array).</summary>
             [QueryParameter("exclude_pull_requests")]
             public bool? ExcludePullRequests { get; set; }

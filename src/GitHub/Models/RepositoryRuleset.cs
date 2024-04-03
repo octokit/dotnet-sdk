@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// A set of rules to apply when specified conditions are met.
     /// </summary>
-    public class RepositoryRuleset : IAdditionalDataHolder, IParsable {
+    public class RepositoryRuleset : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The actors that can bypass the rules in this ruleset</summary>
@@ -84,7 +85,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="RepositoryRuleset"/> and sets the default values.
         /// </summary>
-        public RepositoryRuleset() {
+        public RepositoryRuleset()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -92,7 +94,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="RepositoryRuleset"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RepositoryRuleset CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RepositoryRuleset CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RepositoryRuleset();
         }
@@ -100,8 +103,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"bypass_actors", n => { BypassActors = n.GetCollectionOfObjectValues<RepositoryRulesetBypassActor>(RepositoryRulesetBypassActor.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"conditions", n => { Conditions = n.GetObjectValue<RepositoryRuleset_conditions>(RepositoryRuleset_conditions.CreateFromDiscriminatorValue); } },
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -122,7 +127,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<RepositoryRulesetBypassActor>("bypass_actors", BypassActors);
             writer.WriteObjectValue<RepositoryRuleset_conditions>("conditions", Conditions);
@@ -143,7 +149,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Composed type wrapper for classes <see cref="OrgRulesetConditions"/>, <see cref="RepositoryRulesetConditions"/>
         /// </summary>
-        public class RepositoryRuleset_conditions : IComposedTypeWrapper, IParsable {
+        public class RepositoryRuleset_conditions : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.OrgRulesetConditions"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,7 +172,8 @@ namespace GitHub.Models {
             /// </summary>
             /// <returns>A <see cref="RepositoryRuleset_conditions"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static RepositoryRuleset_conditions CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static RepositoryRuleset_conditions CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new RepositoryRuleset_conditions();
                 result.OrgRulesetConditions = new GitHub.Models.OrgRulesetConditions();
@@ -176,8 +184,10 @@ namespace GitHub.Models {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(OrgRulesetConditions != null || RepositoryRulesetConditions != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(OrgRulesetConditions != null || RepositoryRulesetConditions != null)
+                {
                     return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(OrgRulesetConditions, RepositoryRulesetConditions);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -186,7 +196,8 @@ namespace GitHub.Models {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<GitHub.Models.OrgRulesetConditions>(null, OrgRulesetConditions, RepositoryRulesetConditions);
             }

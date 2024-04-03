@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Milestones.Item {
-    public class WithMilestone_numberPatchRequestBody : IAdditionalDataHolder, IParsable {
+    public class WithMilestone_numberPatchRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A description of the milestone.</summary>
@@ -31,7 +32,8 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// <summary>
         /// Instantiates a new <see cref="WithMilestone_numberPatchRequestBody"/> and sets the default values.
         /// </summary>
-        public WithMilestone_numberPatchRequestBody() {
+        public WithMilestone_numberPatchRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
             State = WithMilestone_numberPatchRequestBody_state.Open;
         }
@@ -40,7 +42,8 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// </summary>
         /// <returns>A <see cref="WithMilestone_numberPatchRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithMilestone_numberPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithMilestone_numberPatchRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithMilestone_numberPatchRequestBody();
         }
@@ -48,8 +51,10 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"due_on", n => { DueOn = n.GetDateTimeOffsetValue(); } },
                 {"state", n => { State = n.GetEnumValue<WithMilestone_numberPatchRequestBody_state>(); } },
@@ -60,7 +65,8 @@ namespace GitHub.Repos.Item.Item.Milestones.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("due_on", DueOn);

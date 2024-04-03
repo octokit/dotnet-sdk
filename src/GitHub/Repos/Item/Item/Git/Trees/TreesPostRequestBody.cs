@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Git.Trees {
-    public class TreesPostRequestBody : IAdditionalDataHolder, IParsable {
+    public class TreesPostRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The SHA1 of an existing Git tree object which will be used as the base for the new tree. If provided, a new Git tree object will be created from entries in the Git tree object pointed to by `base_tree` and entries defined in the `tree` parameter. Entries defined in the `tree` parameter will overwrite items from `base_tree` with the same `path`. If you&apos;re creating new changes on a branch, then normally you&apos;d set `base_tree` to the SHA1 of the Git tree object of the current latest commit on the branch you&apos;re working on.If not provided, GitHub will create a new Git tree object from only the entries defined in the `tree` parameter. If you create a new commit pointing to such a tree, then all files which were a part of the parent commit&apos;s tree and were not defined in the `tree` parameter will be listed as deleted by the new commit.</summary>
@@ -27,7 +28,8 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
         /// <summary>
         /// Instantiates a new <see cref="TreesPostRequestBody"/> and sets the default values.
         /// </summary>
-        public TreesPostRequestBody() {
+        public TreesPostRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -35,7 +37,8 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
         /// </summary>
         /// <returns>A <see cref="TreesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TreesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static TreesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TreesPostRequestBody();
         }
@@ -43,8 +46,10 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"base_tree", n => { BaseTree = n.GetStringValue(); } },
                 {"tree", n => { Tree = n.GetCollectionOfObjectValues<TreesPostRequestBody_tree>(TreesPostRequestBody_tree.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -53,7 +58,8 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("base_tree", BaseTree);
             writer.WriteCollectionOfObjectValues<TreesPostRequestBody_tree>("tree", Tree);

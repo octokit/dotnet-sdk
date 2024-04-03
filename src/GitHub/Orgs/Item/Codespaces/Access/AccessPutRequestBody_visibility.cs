@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Codespaces.Access {
     /// <summary>Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.</summary>
-    public enum AccessPutRequestBody_visibility {
+    public enum AccessPutRequestBody_visibility
+    {
         [EnumMember(Value = "disabled")]
         Disabled,
         [EnumMember(Value = "selected_members")]

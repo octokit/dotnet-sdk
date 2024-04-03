@@ -12,32 +12,38 @@ namespace GitHub.Orgs.Item.Settings.Billing {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\settings\billing
     /// </summary>
-    public class BillingRequestBuilder : BaseRequestBuilder {
+    public class BillingRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The actions property</summary>
-        public ActionsRequestBuilder Actions { get =>
-            new ActionsRequestBuilder(PathParameters, RequestAdapter);
+        public ActionsRequestBuilder Actions
+        {
+            get => new ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The packages property</summary>
-        public PackagesRequestBuilder Packages { get =>
-            new PackagesRequestBuilder(PathParameters, RequestAdapter);
+        public PackagesRequestBuilder Packages
+        {
+            get => new PackagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sharedStorage property</summary>
-        public SharedStorageRequestBuilder SharedStorage { get =>
-            new SharedStorageRequestBuilder(PathParameters, RequestAdapter);
+        public SharedStorageRequestBuilder SharedStorage
+        {
+            get => new SharedStorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="BillingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BillingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/settings/billing", pathParameters) {
+        public BillingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/settings/billing", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="BillingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BillingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/settings/billing", rawUrl) {
+        public BillingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/settings/billing", rawUrl)
+        {
         }
     }
 }

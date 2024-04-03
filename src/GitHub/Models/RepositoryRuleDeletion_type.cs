@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    public enum RepositoryRuleDeletion_type {
+    public enum RepositoryRuleDeletion_type
+    {
         [EnumMember(Value = "deletion")]
         Deletion,
     }

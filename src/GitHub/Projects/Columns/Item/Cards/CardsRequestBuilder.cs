@@ -12,20 +12,23 @@ namespace GitHub.Projects.Columns.Item.Cards {
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns\{column_id}\cards
     /// </summary>
-    public class CardsRequestBuilder : BaseRequestBuilder {
+    public class CardsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="CardsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CardsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/projects/columns/{column_id}/cards{?archived_state*,page*,per_page*}", pathParameters) {
+        public CardsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/projects/columns/{column_id}/cards{?archived_state*,page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CardsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CardsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/projects/columns/{column_id}/cards{?archived_state*,page*,per_page*}", rawUrl) {
+        public CardsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/projects/columns/{column_id}/cards{?archived_state*,page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists the project cards in a project.
@@ -38,13 +41,16 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<ProjectCard>?> GetAsync(Action<RequestConfiguration<CardsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<ProjectCard>?> GetAsync(Action<RequestConfiguration<CardsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<ProjectCard>> GetAsync(Action<RequestConfiguration<CardsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<ProjectCard>> GetAsync(Action<RequestConfiguration<CardsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
             };
@@ -64,14 +70,17 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// <exception cref="ProjectCard503Error">When receiving a 503 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProjectCard?> PostAsync(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProjectCard?> PostAsync(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<ProjectCard> PostAsync(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<ProjectCard> PostAsync(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"503", ProjectCard503Error.CreateFromDiscriminatorValue},
@@ -85,10 +94,12 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CardsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CardsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CardsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CardsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -100,10 +111,12 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/projects/columns/{column_id}/cards", PathParameters);
@@ -117,13 +130,15 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// </summary>
         /// <returns>A <see cref="CardsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CardsRequestBuilder WithUrl(string rawUrl) {
+        public CardsRequestBuilder WithUrl(string rawUrl)
+        {
             return new CardsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="CardsPostRequestBodyMember1"/>, <see cref="CardsPostRequestBodyMember2"/>
         /// </summary>
-        public class CardsPostRequestBody : IComposedTypeWrapper, IParsable {
+        public class CardsPostRequestBody : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,20 +176,25 @@ namespace GitHub.Projects.Columns.Item.Cards {
             /// </summary>
             /// <returns>A <see cref="CardsPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static CardsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static CardsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new CardsPostRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.CardsPostRequestBodyCardsPostRequestBodyMember1 = new GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.CardsPostRequestBodyCardsPostRequestBodyMember2 = new GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.CardsPostRequestBodyMember1 = new GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.CardsPostRequestBodyMember2 = new GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2();
                 }
                 return result;
@@ -183,17 +203,22 @@ namespace GitHub.Projects.Columns.Item.Cards {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(CardsPostRequestBodyCardsPostRequestBodyMember1 != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(CardsPostRequestBodyCardsPostRequestBodyMember1 != null)
+                {
                     return CardsPostRequestBodyCardsPostRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(CardsPostRequestBodyCardsPostRequestBodyMember2 != null) {
+                else if(CardsPostRequestBodyCardsPostRequestBodyMember2 != null)
+                {
                     return CardsPostRequestBodyCardsPostRequestBodyMember2.GetFieldDeserializers();
                 }
-                else if(CardsPostRequestBodyMember1 != null) {
+                else if(CardsPostRequestBodyMember1 != null)
+                {
                     return CardsPostRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(CardsPostRequestBodyMember2 != null) {
+                else if(CardsPostRequestBodyMember2 != null)
+                {
                     return CardsPostRequestBodyMember2.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -202,18 +227,23 @@ namespace GitHub.Projects.Columns.Item.Cards {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(CardsPostRequestBodyCardsPostRequestBodyMember1 != null) {
+                if(CardsPostRequestBodyCardsPostRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1>(null, CardsPostRequestBodyCardsPostRequestBodyMember1);
                 }
-                else if(CardsPostRequestBodyCardsPostRequestBodyMember2 != null) {
+                else if(CardsPostRequestBodyCardsPostRequestBodyMember2 != null)
+                {
                     writer.WriteObjectValue<GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2>(null, CardsPostRequestBodyCardsPostRequestBodyMember2);
                 }
-                else if(CardsPostRequestBodyMember1 != null) {
+                else if(CardsPostRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1>(null, CardsPostRequestBodyMember1);
                 }
-                else if(CardsPostRequestBodyMember2 != null) {
+                else if(CardsPostRequestBodyMember2 != null)
+                {
                     writer.WriteObjectValue<GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2>(null, CardsPostRequestBodyMember2);
                 }
             }
@@ -221,7 +251,8 @@ namespace GitHub.Projects.Columns.Item.Cards {
         /// <summary>
         /// Lists the project cards in a project.
         /// </summary>
-        public class CardsRequestBuilderGetQueryParameters {
+        public class CardsRequestBuilderGetQueryParameters 
+        {
             /// <summary>Filters the project cards that are returned by the card&apos;s state.</summary>
             [QueryParameter("archived_state")]
             public GetArchived_stateQueryParameterType? ArchivedState { get; set; }

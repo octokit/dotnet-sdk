@@ -9,7 +9,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Composed type wrapper for classes <see cref="AddedToProjectIssueEvent"/>, <see cref="ConvertedNoteToIssueIssueEvent"/>, <see cref="DemilestonedIssueEvent"/>, <see cref="LabeledIssueEvent"/>, <see cref="LockedIssueEvent"/>, <see cref="MilestonedIssueEvent"/>, <see cref="MovedColumnInProjectIssueEvent"/>, <see cref="RemovedFromProjectIssueEvent"/>, <see cref="RenamedIssueEvent"/>, <see cref="ReviewDismissedIssueEvent"/>, <see cref="ReviewRequestedIssueEvent"/>, <see cref="ReviewRequestRemovedIssueEvent"/>, <see cref="StateChangeIssueEvent"/>, <see cref="TimelineAssignedIssueEvent"/>, <see cref="TimelineCommentEvent"/>, <see cref="TimelineCommitCommentedEvent"/>, <see cref="TimelineCommittedEvent"/>, <see cref="TimelineCrossReferencedEvent"/>, <see cref="TimelineLineCommentedEvent"/>, <see cref="TimelineReviewedEvent"/>, <see cref="TimelineUnassignedIssueEvent"/>, <see cref="UnlabeledIssueEvent"/>
     /// </summary>
-    public class TimelineIssueEvents : IComposedTypeWrapper, IParsable {
+    public class TimelineIssueEvents : IComposedTypeWrapper, IParsable 
+    {
         /// <summary>Composed type representation for type <see cref="GitHub.Models.AddedToProjectIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -191,7 +192,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="TimelineIssueEvents"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TimelineIssueEvents CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static TimelineIssueEvents CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var result = new TimelineIssueEvents();
             result.AddedToProjectIssueEvent = new GitHub.Models.AddedToProjectIssueEvent();
@@ -222,8 +224,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            if(AddedToProjectIssueEvent != null || ConvertedNoteToIssueIssueEvent != null || DemilestonedIssueEvent != null || LabeledIssueEvent != null || LockedIssueEvent != null || MilestonedIssueEvent != null || MovedColumnInProjectIssueEvent != null || RemovedFromProjectIssueEvent != null || RenamedIssueEvent != null || ReviewDismissedIssueEvent != null || ReviewRequestedIssueEvent != null || ReviewRequestRemovedIssueEvent != null || StateChangeIssueEvent != null || TimelineAssignedIssueEvent != null || TimelineCommentEvent != null || TimelineCommitCommentedEvent != null || TimelineCommittedEvent != null || TimelineCrossReferencedEvent != null || TimelineLineCommentedEvent != null || TimelineReviewedEvent != null || TimelineUnassignedIssueEvent != null || UnlabeledIssueEvent != null) {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            if(AddedToProjectIssueEvent != null || ConvertedNoteToIssueIssueEvent != null || DemilestonedIssueEvent != null || LabeledIssueEvent != null || LockedIssueEvent != null || MilestonedIssueEvent != null || MovedColumnInProjectIssueEvent != null || RemovedFromProjectIssueEvent != null || RenamedIssueEvent != null || ReviewDismissedIssueEvent != null || ReviewRequestedIssueEvent != null || ReviewRequestRemovedIssueEvent != null || StateChangeIssueEvent != null || TimelineAssignedIssueEvent != null || TimelineCommentEvent != null || TimelineCommitCommentedEvent != null || TimelineCommittedEvent != null || TimelineCrossReferencedEvent != null || TimelineLineCommentedEvent != null || TimelineReviewedEvent != null || TimelineUnassignedIssueEvent != null || UnlabeledIssueEvent != null)
+            {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AddedToProjectIssueEvent, ConvertedNoteToIssueIssueEvent, DemilestonedIssueEvent, LabeledIssueEvent, LockedIssueEvent, MilestonedIssueEvent, MovedColumnInProjectIssueEvent, RemovedFromProjectIssueEvent, RenamedIssueEvent, ReviewDismissedIssueEvent, ReviewRequestedIssueEvent, ReviewRequestRemovedIssueEvent, StateChangeIssueEvent, TimelineAssignedIssueEvent, TimelineCommentEvent, TimelineCommitCommentedEvent, TimelineCommittedEvent, TimelineCrossReferencedEvent, TimelineLineCommentedEvent, TimelineReviewedEvent, TimelineUnassignedIssueEvent, UnlabeledIssueEvent);
             }
             return new Dictionary<string, Action<IParseNode>>();
@@ -232,7 +236,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<GitHub.Models.AddedToProjectIssueEvent>(null, AddedToProjectIssueEvent, ConvertedNoteToIssueIssueEvent, DemilestonedIssueEvent, LabeledIssueEvent, LockedIssueEvent, MilestonedIssueEvent, MovedColumnInProjectIssueEvent, RemovedFromProjectIssueEvent, RenamedIssueEvent, ReviewDismissedIssueEvent, ReviewRequestedIssueEvent, ReviewRequestRemovedIssueEvent, StateChangeIssueEvent, TimelineAssignedIssueEvent, TimelineCommentEvent, TimelineCommitCommentedEvent, TimelineCommittedEvent, TimelineCrossReferencedEvent, TimelineLineCommentedEvent, TimelineReviewedEvent, TimelineUnassignedIssueEvent, UnlabeledIssueEvent);
         }

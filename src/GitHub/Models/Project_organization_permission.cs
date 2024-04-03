@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The baseline permission that all organization members have on this project. Only present if owner is an organization.</summary>
-    public enum Project_organization_permission {
+    public enum Project_organization_permission
+    {
         [EnumMember(Value = "read")]
         Read,
         [EnumMember(Value = "write")]

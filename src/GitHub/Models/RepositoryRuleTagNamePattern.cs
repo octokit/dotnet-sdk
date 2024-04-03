@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// Parameters to be used for the tag_name_pattern rule
     /// </summary>
-    public class RepositoryRuleTagNamePattern : IAdditionalDataHolder, IParsable {
+    public class RepositoryRuleTagNamePattern : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The parameters property</summary>
@@ -24,7 +25,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="RepositoryRuleTagNamePattern"/> and sets the default values.
         /// </summary>
-        public RepositoryRuleTagNamePattern() {
+        public RepositoryRuleTagNamePattern()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -32,7 +34,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="RepositoryRuleTagNamePattern"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RepositoryRuleTagNamePattern CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static RepositoryRuleTagNamePattern CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new RepositoryRuleTagNamePattern();
         }
@@ -40,8 +43,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleTagNamePattern_parameters>(RepositoryRuleTagNamePattern_parameters.CreateFromDiscriminatorValue); } },
                 {"type", n => { Type = n.GetEnumValue<RepositoryRuleTagNamePattern_type>(); } },
             };
@@ -50,7 +55,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<RepositoryRuleTagNamePattern_parameters>("parameters", Parameters);
             writer.WriteEnumValue<RepositoryRuleTagNamePattern_type>("type", Type);

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The type of label. Read-only labels are applied automatically when the runner is configured.</summary>
-    public enum RunnerLabel_type {
+    public enum RunnerLabel_type
+    {
         [EnumMember(Value = "read-only")]
         ReadOnly,
         [EnumMember(Value = "custom")]

@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.User.Memberships.Orgs {
-    public enum GetStateQueryParameterType {
+    public enum GetStateQueryParameterType
+    {
         [EnumMember(Value = "active")]
         Active,
         [EnumMember(Value = "pending")]

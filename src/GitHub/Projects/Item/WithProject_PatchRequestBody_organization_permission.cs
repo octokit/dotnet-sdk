@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Projects.Item {
     /// <summary>The baseline permission that all organization members have on this project</summary>
-    public enum WithProject_PatchRequestBody_organization_permission {
+    public enum WithProject_PatchRequestBody_organization_permission
+    {
         [EnumMember(Value = "read")]
         Read,
         [EnumMember(Value = "write")]

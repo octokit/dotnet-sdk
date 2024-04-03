@@ -13,28 +13,35 @@ namespace GitHub.Licenses {
     /// <summary>
     /// Builds and executes requests for operations under \licenses
     /// </summary>
-    public class LicensesRequestBuilder : BaseRequestBuilder {
+    public class LicensesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.licenses.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="WithLicenseItemRequestBuilder"/></returns>
-        public WithLicenseItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("license", position);
-            return new WithLicenseItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithLicenseItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("license", position);
+                return new WithLicenseItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="LicensesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LicensesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/licenses{?featured*,page*,per_page*}", pathParameters) {
+        public LicensesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/licenses{?featured*,page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="LicensesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LicensesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/licenses{?featured*,page*,per_page*}", rawUrl) {
+        public LicensesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/licenses{?featured*,page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists the most commonly used licenses on GitHub. For more information, see &quot;[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).&quot;
@@ -45,10 +52,12 @@ namespace GitHub.Licenses {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<LicenseSimple>?> GetAsync(Action<RequestConfiguration<LicensesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<LicenseSimple>?> GetAsync(Action<RequestConfiguration<LicensesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<LicenseSimple>> GetAsync(Action<RequestConfiguration<LicensesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<LicenseSimple>> GetAsync(Action<RequestConfiguration<LicensesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<LicenseSimple>(requestInfo, LicenseSimple.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -61,10 +70,12 @@ namespace GitHub.Licenses {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LicensesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LicensesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LicensesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<LicensesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -76,13 +87,15 @@ namespace GitHub.Licenses {
         /// </summary>
         /// <returns>A <see cref="LicensesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LicensesRequestBuilder WithUrl(string rawUrl) {
+        public LicensesRequestBuilder WithUrl(string rawUrl)
+        {
             return new LicensesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists the most commonly used licenses on GitHub. For more information, see &quot;[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).&quot;
         /// </summary>
-        public class LicensesRequestBuilderGetQueryParameters {
+        public class LicensesRequestBuilderGetQueryParameters 
+        {
             [QueryParameter("featured")]
             public bool? Featured { get; set; }
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

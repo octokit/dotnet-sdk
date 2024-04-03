@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Projects.Columns.Item.Cards {
-    public enum GetArchived_stateQueryParameterType {
+    public enum GetArchived_stateQueryParameterType
+    {
         [EnumMember(Value = "all")]
         All,
         [EnumMember(Value = "archived")]

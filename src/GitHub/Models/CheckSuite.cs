@@ -8,7 +8,8 @@ namespace GitHub.Models {
     /// <summary>
     /// A suite of checks performed on the code of a given code change
     /// </summary>
-    public class CheckSuite : IAdditionalDataHolder, IParsable {
+    public class CheckSuite : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The after property</summary>
@@ -103,7 +104,7 @@ namespace GitHub.Models {
         public bool? Rerequestable { get; set; }
         /// <summary>The runs_rerequestable property</summary>
         public bool? RunsRerequestable { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.</summary>
         public CheckSuite_status? Status { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -118,7 +119,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="CheckSuite"/> and sets the default values.
         /// </summary>
-        public CheckSuite() {
+        public CheckSuite()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -126,7 +128,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="CheckSuite"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CheckSuite CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static CheckSuite CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CheckSuite();
         }
@@ -134,8 +137,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"after", n => { After = n.GetStringValue(); } },
                 {"app", n => { App = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
                 {"before", n => { Before = n.GetStringValue(); } },
@@ -161,7 +166,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("after", After);
             writer.WriteObjectValue<NullableIntegration>("app", App);

@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The reaction to use</summary>
-    public enum Reaction_content {
+    public enum Reaction_content
+    {
         [EnumMember(Value = "+1")]
         Plus_1,
         [EnumMember(Value = "-1")]

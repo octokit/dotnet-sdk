@@ -2,7 +2,8 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Invitations {
-    public enum GetInvitation_sourceQueryParameterType {
+    public enum GetInvitation_sourceQueryParameterType
+    {
         [EnumMember(Value = "all")]
         All,
         [EnumMember(Value = "member")]

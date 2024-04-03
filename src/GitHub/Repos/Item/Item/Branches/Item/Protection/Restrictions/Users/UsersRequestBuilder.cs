@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\restrictions\users
     /// </summary>
-    public class UsersRequestBuilder : BaseRequestBuilder {
+    public class UsersRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="UsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches/{branch}/protection/restrictions/users", pathParameters) {
+        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches/{branch}/protection/restrictions/users", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="UsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches/{branch}/protection/restrictions/users", rawUrl) {
+        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/branches/{branch}/protection/restrictions/users", rawUrl)
+        {
         }
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Removes the ability of a user to push to this branch.| Type    | Description                                                                                                                                   || ------- | --------------------------------------------------------------------------------------------------------------------------------------------- || `array` | Usernames of the people who should no longer have push access. **Note**: The list of users, apps, and teams in total is limited to 100 items. |
@@ -38,14 +41,17 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SimpleUser>?> DeleteAsync(UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>?> DeleteAsync(UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<SimpleUser>> DeleteAsync(UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>> DeleteAsync(UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -61,13 +67,16 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SimpleUser>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<SimpleUser>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -84,14 +93,17 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SimpleUser>?> PostAsync(UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>?> PostAsync(UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<SimpleUser>> PostAsync(UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>> PostAsync(UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -108,14 +120,17 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <exception cref="ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<SimpleUser>?> PutAsync(UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>?> PutAsync(UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<SimpleUser>> PutAsync(UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<SimpleUser>> PutAsync(UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
@@ -129,10 +144,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToDeleteRequestInformation(UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -148,10 +165,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -166,10 +185,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -186,10 +207,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPutRequestInformation(UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
@@ -203,13 +226,15 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// </summary>
         /// <returns>A <see cref="UsersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UsersRequestBuilder WithUrl(string rawUrl) {
+        public UsersRequestBuilder WithUrl(string rawUrl)
+        {
             return new UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="UsersDeleteRequestBodyMember1"/>
         /// </summary>
-        public class UsersDeleteRequestBody : IComposedTypeWrapper, IParsable {
+        public class UsersDeleteRequestBody : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -247,20 +272,25 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// </summary>
             /// <returns>A <see cref="UsersDeleteRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static UsersDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static UsersDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new UsersDeleteRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.UsersDeleteRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string stringValue) {
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetStringValue() is string usersDeleteRequestBodyStringValue) {
+                else if(parseNode.GetStringValue() is string usersDeleteRequestBodyStringValue)
+                {
                     result.UsersDeleteRequestBodyString = usersDeleteRequestBodyStringValue;
                 }
                 return result;
@@ -269,11 +299,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(UsersDeleteRequestBodyMember1 != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(UsersDeleteRequestBodyMember1 != null)
+                {
                     return UsersDeleteRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 != null) {
+                else if(UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 != null)
+                {
                     return UsersDeleteRequestBodyUsersDeleteRequestBodyMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -282,18 +315,23 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(UsersDeleteRequestBodyMember1 != null) {
+                if(UsersDeleteRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1>(null, UsersDeleteRequestBodyMember1);
                 }
-                else if(UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 != null) {
+                else if(UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1>(null, UsersDeleteRequestBodyUsersDeleteRequestBodyMember1);
                 }
-                else if(String != null) {
+                else if(String != null)
+                {
                     writer.WriteStringValue(null, String);
                 }
-                else if(UsersDeleteRequestBodyString != null) {
+                else if(UsersDeleteRequestBodyString != null)
+                {
                     writer.WriteStringValue(null, UsersDeleteRequestBodyString);
                 }
             }
@@ -301,7 +339,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="UsersPostRequestBodyMember1"/>
         /// </summary>
-        public class UsersPostRequestBody : IComposedTypeWrapper, IParsable {
+        public class UsersPostRequestBody : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -339,20 +378,25 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// </summary>
             /// <returns>A <see cref="UsersPostRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static UsersPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static UsersPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new UsersPostRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.UsersPostRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.UsersPostRequestBodyUsersPostRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string stringValue) {
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetStringValue() is string usersPostRequestBodyStringValue) {
+                else if(parseNode.GetStringValue() is string usersPostRequestBodyStringValue)
+                {
                     result.UsersPostRequestBodyString = usersPostRequestBodyStringValue;
                 }
                 return result;
@@ -361,11 +405,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(UsersPostRequestBodyMember1 != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(UsersPostRequestBodyMember1 != null)
+                {
                     return UsersPostRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(UsersPostRequestBodyUsersPostRequestBodyMember1 != null) {
+                else if(UsersPostRequestBodyUsersPostRequestBodyMember1 != null)
+                {
                     return UsersPostRequestBodyUsersPostRequestBodyMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -374,18 +421,23 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(UsersPostRequestBodyMember1 != null) {
+                if(UsersPostRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1>(null, UsersPostRequestBodyMember1);
                 }
-                else if(UsersPostRequestBodyUsersPostRequestBodyMember1 != null) {
+                else if(UsersPostRequestBodyUsersPostRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1>(null, UsersPostRequestBodyUsersPostRequestBodyMember1);
                 }
-                else if(String != null) {
+                else if(String != null)
+                {
                     writer.WriteStringValue(null, String);
                 }
-                else if(UsersPostRequestBodyString != null) {
+                else if(UsersPostRequestBodyString != null)
+                {
                     writer.WriteStringValue(null, UsersPostRequestBodyString);
                 }
             }
@@ -393,7 +445,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="UsersPutRequestBodyMember1"/>
         /// </summary>
-        public class UsersPutRequestBody : IComposedTypeWrapper, IParsable {
+        public class UsersPutRequestBody : IComposedTypeWrapper, IParsable 
+        {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -431,20 +484,25 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// </summary>
             /// <returns>A <see cref="UsersPutRequestBody"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static UsersPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+            public static UsersPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new UsersPutRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.UsersPutRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase)) {
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.UsersPutRequestBodyUsersPutRequestBodyMember1 = new GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string stringValue) {
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetStringValue() is string usersPutRequestBodyStringValue) {
+                else if(parseNode.GetStringValue() is string usersPutRequestBodyStringValue)
+                {
                     result.UsersPutRequestBodyString = usersPutRequestBodyStringValue;
                 }
                 return result;
@@ -453,11 +511,14 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// The deserialization information for the current model
             /// </summary>
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-                if(UsersPutRequestBodyMember1 != null) {
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(UsersPutRequestBodyMember1 != null)
+                {
                     return UsersPutRequestBodyMember1.GetFieldDeserializers();
                 }
-                else if(UsersPutRequestBodyUsersPutRequestBodyMember1 != null) {
+                else if(UsersPutRequestBodyUsersPutRequestBodyMember1 != null)
+                {
                     return UsersPutRequestBodyUsersPutRequestBodyMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
@@ -466,18 +527,23 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
             /// Serializes information the current object
             /// </summary>
             /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer) {
+            public virtual void Serialize(ISerializationWriter writer)
+            {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(UsersPutRequestBodyMember1 != null) {
+                if(UsersPutRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1>(null, UsersPutRequestBodyMember1);
                 }
-                else if(UsersPutRequestBodyUsersPutRequestBodyMember1 != null) {
+                else if(UsersPutRequestBodyUsersPutRequestBodyMember1 != null)
+                {
                     writer.WriteObjectValue<GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1>(null, UsersPutRequestBodyUsersPutRequestBodyMember1);
                 }
-                else if(String != null) {
+                else if(String != null)
+                {
                     writer.WriteStringValue(null, String);
                 }
-                else if(UsersPutRequestBodyString != null) {
+                else if(UsersPutRequestBodyString != null)
+                {
                     writer.WriteStringValue(null, UsersPutRequestBodyString);
                 }
             }

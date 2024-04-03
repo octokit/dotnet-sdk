@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Issues.Comments.Item.Reactions {
     /// <summary>The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.</summary>
-    public enum ReactionsPostRequestBody_content {
+    public enum ReactionsPostRequestBody_content
+    {
         [EnumMember(Value = "+1")]
         Plus_1,
         [EnumMember(Value = "-1")]

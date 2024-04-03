@@ -12,20 +12,23 @@ namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\runners\generate-jitconfig
     /// </summary>
-    public class GenerateJitconfigRequestBuilder : BaseRequestBuilder {
+    public class GenerateJitconfigRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="GenerateJitconfigRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenerateJitconfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners/generate-jitconfig", pathParameters) {
+        public GenerateJitconfigRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners/generate-jitconfig", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="GenerateJitconfigRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GenerateJitconfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners/generate-jitconfig", rawUrl) {
+        public GenerateJitconfigRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/actions/runners/generate-jitconfig", rawUrl)
+        {
         }
         /// <summary>
         /// Generates a configuration that can be passed to the runner application at startup.The authenticated user must have admin access to the organization.OAuth tokens and personal access tokens (classic) need the`admin:org` scope to use this endpoint. If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -39,14 +42,17 @@ namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
         /// <exception cref="ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GenerateJitconfigPostResponse?> PostAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GenerateJitconfigPostResponse?> PostAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<GenerateJitconfigPostResponse> PostAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<GenerateJitconfigPostResponse> PostAsync(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"404", BasicError.CreateFromDiscriminatorValue},
                 {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
             };
@@ -60,10 +66,12 @@ namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(GenerateJitconfigPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -77,7 +85,8 @@ namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
         /// </summary>
         /// <returns>A <see cref="GenerateJitconfigRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GenerateJitconfigRequestBuilder WithUrl(string rawUrl) {
+        public GenerateJitconfigRequestBuilder WithUrl(string rawUrl)
+        {
             return new GenerateJitconfigRequestBuilder(rawUrl, RequestAdapter);
         }
     }

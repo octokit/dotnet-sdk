@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.Outside_collaborators.Item {
-    public class WithUsernamePutRequestBody : IAdditionalDataHolder, IParsable {
+    public class WithUsernamePutRequestBody : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.</summary>
@@ -13,7 +14,8 @@ namespace GitHub.Orgs.Item.Outside_collaborators.Item {
         /// <summary>
         /// Instantiates a new <see cref="WithUsernamePutRequestBody"/> and sets the default values.
         /// </summary>
-        public WithUsernamePutRequestBody() {
+        public WithUsernamePutRequestBody()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -21,7 +23,8 @@ namespace GitHub.Orgs.Item.Outside_collaborators.Item {
         /// </summary>
         /// <returns>A <see cref="WithUsernamePutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WithUsernamePutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static WithUsernamePutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new WithUsernamePutRequestBody();
         }
@@ -29,8 +32,10 @@ namespace GitHub.Orgs.Item.Outside_collaborators.Item {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"async", n => { Async = n.GetBoolValue(); } },
             };
         }
@@ -38,7 +43,8 @@ namespace GitHub.Orgs.Item.Outside_collaborators.Item {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("async", Async);
             writer.WriteAdditionalData(AdditionalData);

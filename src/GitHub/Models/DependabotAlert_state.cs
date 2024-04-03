@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>The state of the Dependabot alert.</summary>
-    public enum DependabotAlert_state {
+    public enum DependabotAlert_state
+    {
         [EnumMember(Value = "auto_dismissed")]
         Auto_dismissed,
         [EnumMember(Value = "dismissed")]

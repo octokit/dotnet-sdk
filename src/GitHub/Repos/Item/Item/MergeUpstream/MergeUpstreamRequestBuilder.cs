@@ -12,20 +12,23 @@ namespace GitHub.Repos.Item.Item.MergeUpstream {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\merge-upstream
     /// </summary>
-    public class MergeUpstreamRequestBuilder : BaseRequestBuilder {
+    public class MergeUpstreamRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>
         /// Instantiates a new <see cref="MergeUpstreamRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MergeUpstreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/merge-upstream", pathParameters) {
+        public MergeUpstreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/merge-upstream", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="MergeUpstreamRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MergeUpstreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/merge-upstream", rawUrl) {
+        public MergeUpstreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/merge-upstream", rawUrl)
+        {
         }
         /// <summary>
         /// Sync a branch of a forked repository to keep it up-to-date with the upstream repository.
@@ -37,10 +40,12 @@ namespace GitHub.Repos.Item.Item.MergeUpstream {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MergedUpstream?> PostAsync(MergeUpstreamPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MergedUpstream?> PostAsync(MergeUpstreamPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<MergedUpstream> PostAsync(MergeUpstreamPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<MergedUpstream> PostAsync(MergeUpstreamPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
@@ -54,10 +59,12 @@ namespace GitHub.Repos.Item.Item.MergeUpstream {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MergeUpstreamPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(MergeUpstreamPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MergeUpstreamPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToPostRequestInformation(MergeUpstreamPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -71,7 +78,8 @@ namespace GitHub.Repos.Item.Item.MergeUpstream {
         /// </summary>
         /// <returns>A <see cref="MergeUpstreamRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MergeUpstreamRequestBuilder WithUrl(string rawUrl) {
+        public MergeUpstreamRequestBuilder WithUrl(string rawUrl)
+        {
             return new MergeUpstreamRequestBuilder(rawUrl, RequestAdapter);
         }
     }

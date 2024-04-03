@@ -14,40 +14,48 @@ namespace GitHub.Repos.Item.Item.CodeScanning {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning
     /// </summary>
-    public class CodeScanningRequestBuilder : BaseRequestBuilder {
+    public class CodeScanningRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The alerts property</summary>
-        public AlertsRequestBuilder Alerts { get =>
-            new AlertsRequestBuilder(PathParameters, RequestAdapter);
+        public AlertsRequestBuilder Alerts
+        {
+            get => new AlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The analyses property</summary>
-        public AnalysesRequestBuilder Analyses { get =>
-            new AnalysesRequestBuilder(PathParameters, RequestAdapter);
+        public AnalysesRequestBuilder Analyses
+        {
+            get => new AnalysesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codeql property</summary>
-        public CodeqlRequestBuilder Codeql { get =>
-            new CodeqlRequestBuilder(PathParameters, RequestAdapter);
+        public CodeqlRequestBuilder Codeql
+        {
+            get => new CodeqlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaultSetup property</summary>
-        public DefaultSetupRequestBuilder DefaultSetup { get =>
-            new DefaultSetupRequestBuilder(PathParameters, RequestAdapter);
+        public DefaultSetupRequestBuilder DefaultSetup
+        {
+            get => new DefaultSetupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sarifs property</summary>
-        public SarifsRequestBuilder Sarifs { get =>
-            new SarifsRequestBuilder(PathParameters, RequestAdapter);
+        public SarifsRequestBuilder Sarifs
+        {
+            get => new SarifsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="CodeScanningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CodeScanningRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning", pathParameters) {
+        public CodeScanningRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="CodeScanningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CodeScanningRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning", rawUrl) {
+        public CodeScanningRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning", rawUrl)
+        {
         }
     }
 }

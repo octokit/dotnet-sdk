@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Actions.Variables {
     /// <summary>The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.</summary>
-    public enum VariablesPostRequestBody_visibility {
+    public enum VariablesPostRequestBody_visibility
+    {
         [EnumMember(Value = "all")]
         All,
         [EnumMember(Value = "private")]

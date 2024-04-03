@@ -13,24 +13,28 @@ namespace GitHub.Repos.Item.Item.Tags {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\tags
     /// </summary>
-    public class TagsRequestBuilder : BaseRequestBuilder {
+    public class TagsRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>The protection property</summary>
-        public ProtectionRequestBuilder Protection { get =>
-            new ProtectionRequestBuilder(PathParameters, RequestAdapter);
+        public ProtectionRequestBuilder Protection
+        {
+            get => new ProtectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="TagsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/tags{?page*,per_page*}", pathParameters) {
+        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/tags{?page*,per_page*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="TagsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/tags{?page*,per_page*}", rawUrl) {
+        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/tags{?page*,per_page*}", rawUrl)
+        {
         }
         /// <summary>
         /// List repository tags
@@ -41,10 +45,12 @@ namespace GitHub.Repos.Item.Item.Tags {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Tag>?> GetAsync(Action<RequestConfiguration<TagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Tag>?> GetAsync(Action<RequestConfiguration<TagsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<Tag>> GetAsync(Action<RequestConfiguration<TagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Tag>> GetAsync(Action<RequestConfiguration<TagsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var collectionResult = await RequestAdapter.SendCollectionAsync<Tag>(requestInfo, Tag.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
@@ -54,10 +60,12 @@ namespace GitHub.Repos.Item.Item.Tags {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TagsRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TagsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TagsRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TagsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -69,13 +77,15 @@ namespace GitHub.Repos.Item.Item.Tags {
         /// </summary>
         /// <returns>A <see cref="TagsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TagsRequestBuilder WithUrl(string rawUrl) {
+        public TagsRequestBuilder WithUrl(string rawUrl)
+        {
             return new TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List repository tags
         /// </summary>
-        public class TagsRequestBuilderGetQueryParameters {
+        public class TagsRequestBuilderGetQueryParameters 
+        {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

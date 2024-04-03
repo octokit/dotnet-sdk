@@ -13,28 +13,35 @@ namespace GitHub.Users.Item.Packages {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\packages
     /// </summary>
-    public class PackagesRequestBuilder : BaseRequestBuilder {
+    public class PackagesRequestBuilder : BaseRequestBuilder 
+    {
         /// <summary>Gets an item from the GitHub.users.item.packages.item collection</summary>
         /// <param name="position">The type of supported package. Packages in GitHub&apos;s Gradle registry have the type `maven`. Docker images pushed to GitHub&apos;s Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub&apos;s Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.</param>
         /// <returns>A <see cref="WithPackage_typeItemRequestBuilder"/></returns>
-        public WithPackage_typeItemRequestBuilder this[string position] { get {
-            var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("package_type", position);
-            return new WithPackage_typeItemRequestBuilder(urlTplParams, RequestAdapter);
-        } }
+        public WithPackage_typeItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("package_type", position);
+                return new WithPackage_typeItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="PackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PackagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/packages?package_type={package_type}{&page*,per_page*,visibility*}", pathParameters) {
+        public PackagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/packages?package_type={package_type}{&page*,per_page*,visibility*}", pathParameters)
+        {
         }
         /// <summary>
         /// Instantiates a new <see cref="PackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PackagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/packages?package_type={package_type}{&page*,per_page*,visibility*}", rawUrl) {
+        public PackagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/packages?package_type={package_type}{&page*,per_page*,visibility*}", rawUrl)
+        {
         }
         /// <summary>
         /// Lists all packages in a user&apos;s namespace for which the requesting user has access.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
@@ -47,13 +54,16 @@ namespace GitHub.Users.Item.Packages {
         /// <exception cref="BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Package>?> GetAsync(Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Package>?> GetAsync(Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #nullable restore
 #else
-        public async Task<List<Package>> GetAsync(Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default) {
+        public async Task<List<Package>> GetAsync(Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
                 {"401", BasicError.CreateFromDiscriminatorValue},
                 {"403", BasicError.CreateFromDiscriminatorValue},
             };
@@ -67,10 +77,12 @@ namespace GitHub.Users.Item.Packages {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
@@ -82,13 +94,15 @@ namespace GitHub.Users.Item.Packages {
         /// </summary>
         /// <returns>A <see cref="PackagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PackagesRequestBuilder WithUrl(string rawUrl) {
+        public PackagesRequestBuilder WithUrl(string rawUrl)
+        {
             return new PackagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all packages in a user&apos;s namespace for which the requesting user has access.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
         /// </summary>
-        public class PackagesRequestBuilderGetQueryParameters {
+        public class PackagesRequestBuilderGetQueryParameters 
+        {
             /// <summary>The type of supported package. Packages in GitHub&apos;s Gradle registry have the type `maven`. Docker images pushed to GitHub&apos;s Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub&apos;s Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.</summary>
             [QueryParameter("package_type")]
             public GetPackage_typeQueryParameterType? PackageType { get; set; }

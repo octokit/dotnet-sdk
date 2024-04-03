@@ -3,7 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
     /// <summary>The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.</summary>
-    public enum StatusesPostRequestBody_state {
+    public enum StatusesPostRequestBody_state
+    {
         [EnumMember(Value = "error")]
         Error,
         [EnumMember(Value = "failure")]

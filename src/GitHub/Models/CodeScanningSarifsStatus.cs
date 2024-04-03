@@ -5,7 +5,8 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
-    public class CodeScanningSarifsStatus : IAdditionalDataHolder, IParsable {
+    public class CodeScanningSarifsStatus : IAdditionalDataHolder, IParsable 
+    {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The REST API URL for getting the analyses associated with the upload.</summary>
@@ -29,7 +30,8 @@ namespace GitHub.Models {
         /// <summary>
         /// Instantiates a new <see cref="CodeScanningSarifsStatus"/> and sets the default values.
         /// </summary>
-        public CodeScanningSarifsStatus() {
+        public CodeScanningSarifsStatus()
+        {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
@@ -37,7 +39,8 @@ namespace GitHub.Models {
         /// </summary>
         /// <returns>A <see cref="CodeScanningSarifsStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CodeScanningSarifsStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static CodeScanningSarifsStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CodeScanningSarifsStatus();
         }
@@ -45,8 +48,10 @@ namespace GitHub.Models {
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>> {
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        {
+            return new Dictionary<string, Action<IParseNode>>
+            {
                 {"analyses_url", n => { AnalysesUrl = n.GetStringValue(); } },
                 {"errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"processing_status", n => { ProcessingStatus = n.GetEnumValue<CodeScanningSarifsStatus_processing_status>(); } },
@@ -56,7 +61,8 @@ namespace GitHub.Models {
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer) {
+        public virtual void Serialize(ISerializationWriter writer)
+        {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<CodeScanningSarifsStatus_processing_status>("processing_status", ProcessingStatus);
             writer.WriteAdditionalData(AdditionalData);
