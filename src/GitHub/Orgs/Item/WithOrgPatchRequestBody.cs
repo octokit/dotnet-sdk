@@ -43,7 +43,7 @@ namespace GitHub.Orgs.Item {
         public bool? DependabotSecurityUpdatesEnabledForNewRepositories { get; set; }
         /// <summary>Whether dependency graph is automatically enabled for new repositories.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.</summary>
         public bool? DependencyGraphEnabledForNewRepositories { get; set; }
-        /// <summary>The description of the company.</summary>
+        /// <summary>The description of the company. The maximum size is 160 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
