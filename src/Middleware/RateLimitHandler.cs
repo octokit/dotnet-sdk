@@ -41,8 +41,16 @@ public class RateLimitHandlerOptions : IRateLimitHandlerOptions
         {
             return RateLimitType.Secondary;
         }
+        if (rateLimitRemaining == "0")
+        {
+            return RateLimitType.Primary;
+        }
+        else
+        {
+            return RateLimitType.None;
+        }
 
-        return rateLimitRemaining == "0" ? RateLimitType.Primary : RateLimitType.None;
+        // return rateLimitRemaining == "0" ? RateLimitType.Primary : RateLimitType.None;
     };
 }
 
