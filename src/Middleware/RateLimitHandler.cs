@@ -2,14 +2,14 @@ namespace GitHub.Octokit.Client.Middleware;
 
 public enum RateLimitType
 {
-  None,
-  Primary,
-  Secondary
+    None,
+    Primary,
+    Secondary
 }
 
 public interface IRateLimitHandlerOptions
 {
-  Func<HttpRequestMessage, HttpResponseMessage, RateLimitType> IsRateLimited { get; }
+    Func<HttpRequestMessage, HttpResponseMessage, RateLimitType> IsRateLimited { get; }
 }
 
 
@@ -18,32 +18,32 @@ public interface IRateLimitHandlerOptions
 /// </summary>
 public class RateLimitHandlerOptions : IRateLimitHandlerOptions
 {
-  /// <summary>
-  /// Gets the function that determines if the request is rate limited.
-  /// The function should return the type of rate limit that is applied to the request.
-  /// If the request is not rate limited, the function should return <see cref="RateLimitType.None"/>.
-  /// </summary>
-  public Func<HttpRequestMessage, HttpResponseMessage, RateLimitType> IsRateLimited => (request, response) =>
-  {
-
-    if (response.StatusCode != System.Net.HttpStatusCode.TooManyRequests
-      && response.StatusCode != System.Net.HttpStatusCode.Forbidden)
+    /// <summary>
+    /// Gets the function that determines if the request is rate limited.
+    /// The function should return the type of rate limit that is applied to the request.
+    /// If the request is not rate limited, the function should return <see cref="RateLimitType.None"/>.
+    /// </summary>
+    public Func<HttpRequestMessage, HttpResponseMessage, RateLimitType> IsRateLimited => (request, response) =>
     {
-      return RateLimitType.None;
-    }
 
-    var retryAfter = response.Headers.RetryAfter;
-    var rateLimitRemaining = response.Headers.Contains("X-RateLimit-Remaining")
-      ? response.Headers.GetValues("X-RateLimit-Remaining").FirstOrDefault()
-      : null;
+        if (response.StatusCode != System.Net.HttpStatusCode.TooManyRequests
+        && response.StatusCode != System.Net.HttpStatusCode.Forbidden)
+        {
+            return RateLimitType.None;
+        }
 
-    if (retryAfter != null && rateLimitRemaining != "0")
-    {
-      return RateLimitType.Secondary;
-    }
+        var retryAfter = response.Headers.RetryAfter;
+        var rateLimitRemaining = response.Headers.Contains("X-RateLimit-Remaining")
+        ? response.Headers.GetValues("X-RateLimit-Remaining").FirstOrDefault()
+        : null;
 
-    return rateLimitRemaining == "0" ? RateLimitType.Primary : RateLimitType.None;
-  };
+        if (retryAfter != null && rateLimitRemaining != "0")
+        {
+            return RateLimitType.Secondary;
+        }
+
+        return rateLimitRemaining == "0" ? RateLimitType.Primary : RateLimitType.None;
+    };
 }
 
 /// <summary>
@@ -53,87 +53,87 @@ public class RateLimitHandlerOptions : IRateLimitHandlerOptions
 /// </summary>
 public class RateLimitHandler : DelegatingHandler
 {
-  private readonly IRateLimitHandlerOptions _options;
+    private readonly IRateLimitHandlerOptions _options;
 
-  /// <summary>
-  ///  Initializes a new instance of the <see cref="RateLimitHandler"/> class.
-  /// </summary>
-  /// <param name="options"></param>
-  public RateLimitHandler(IRateLimitHandlerOptions? options = null)
-  {
-    _options = options ?? new RateLimitHandlerOptions();
-  }
-
-  /// <summary>
-  /// Sends an HTTP request to the inner handler to send to the server as an asynchronous operation.
-  /// This method will check if the request is rate limited and will handle the rate limiting accordingly.
-  /// If the request is rate limited, the handler will wait for the specified duration and retry the request.
-  /// </summary>
-  /// <param name="request"></param>
-  /// <param name="cancellationToken"></param>
-  /// <returns></returns>
-  protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-  {
-    var response = await base.SendAsync(request, cancellationToken);
-    var rateLimit = _options.IsRateLimited(request, response);
-
-    if (rateLimit != RateLimitType.None)
+    /// <summary>
+    ///  Initializes a new instance of the <see cref="RateLimitHandler"/> class.
+    /// </summary>
+    /// <param name="options"></param>
+    public RateLimitHandler(IRateLimitHandlerOptions? options = null)
     {
-      // Handle rate limiting (retry logic)
-      var retryAfterDuration = ParseRateLimit(response);
-      if (retryAfterDuration.HasValue && retryAfterDuration.Value.TotalSeconds > 0)
-      {
-        await Task.Delay(retryAfterDuration.Value, cancellationToken);
-        // Retry the request
-        response = await base.SendAsync(request, cancellationToken);
-      }
+        _options = options ?? new RateLimitHandlerOptions();
     }
 
-    return response;
-  }
-
-  /// <summary>
-  /// Parses the rate limit from the response.
-  /// This method will parse the rate limit from the response and return the duration to wait before retrying the request.
-  /// If the response does not contain a rate limit, this method will return null.
-  /// </summary>
-  /// <param name="response"></param>
-  /// <returns></returns>
-  private TimeSpan? ParseRateLimit(HttpResponseMessage response)
-  {
-    // There might need to be additional rate limit concerns that need to be evaluated here
-    return ParseRetryAfterHeader(response);
-  }
-
-  /// <summary>
-  /// Parses the Retry-After header from the response.
-  /// This method will parse the Retry-After header from the response and return the duration to wait before retrying the request.
-  /// If the response does not contain a Retry-After header, this method will return null.
-  /// </summary>
-  /// <param name="response"></param>
-  /// <returns></returns>
-  private TimeSpan? ParseRetryAfterHeader(HttpResponseMessage response)
-  {
-    // First, check if the RetryAfter header exists and is not null.
-    if (response.Headers.RetryAfter != null)
+    /// <summary>
+    /// Sends an HTTP request to the inner handler to send to the server as an asynchronous operation.
+    /// This method will check if the request is rate limited and will handle the rate limiting accordingly.
+    /// If the request is rate limited, the handler will wait for the specified duration and retry the request.
+    /// </summary>
+    /// <param name="request"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-      var retryAfter = response.Headers.RetryAfter;
+        var response = await base.SendAsync(request, cancellationToken);
+        var rateLimit = _options.IsRateLimited(request, response);
 
-      // If there's a Delta value, use it directly.
-      if (retryAfter.Delta.HasValue)
-      {
-        return retryAfter.Delta;
-      }
-      // If there's a Date value, calculate the difference from now.
-      else if (retryAfter.Date.HasValue)
-      {
-        var retryAfterTimeSpan = retryAfter.Date.Value.UtcDateTime - DateTime.UtcNow;
-        // Ensure the TimeSpan is positive; otherwise, return null.
-        return retryAfterTimeSpan.Ticks > 0 ? retryAfterTimeSpan : null;
-      }
+        if (rateLimit != RateLimitType.None)
+        {
+            // Handle rate limiting (retry logic)
+            var retryAfterDuration = ParseRateLimit(response);
+            if (retryAfterDuration.HasValue && retryAfterDuration.Value.TotalSeconds > 0)
+            {
+                await Task.Delay(retryAfterDuration.Value, cancellationToken);
+                // Retry the request
+                response = await base.SendAsync(request, cancellationToken);
+            }
+        }
+
+        return response;
     }
 
-    // If RetryAfter is null or none of the conditions are met, return null.
-    return null;
-  }
+    /// <summary>
+    /// Parses the rate limit from the response.
+    /// This method will parse the rate limit from the response and return the duration to wait before retrying the request.
+    /// If the response does not contain a rate limit, this method will return null.
+    /// </summary>
+    /// <param name="response"></param>
+    /// <returns></returns>
+    private TimeSpan? ParseRateLimit(HttpResponseMessage response)
+    {
+        // There might need to be additional rate limit concerns that need to be evaluated here
+        return ParseRetryAfterHeader(response);
+    }
+
+    /// <summary>
+    /// Parses the Retry-After header from the response.
+    /// This method will parse the Retry-After header from the response and return the duration to wait before retrying the request.
+    /// If the response does not contain a Retry-After header, this method will return null.
+    /// </summary>
+    /// <param name="response"></param>
+    /// <returns></returns>
+    private TimeSpan? ParseRetryAfterHeader(HttpResponseMessage response)
+    {
+        // First, check if the RetryAfter header exists and is not null.
+        if (response.Headers.RetryAfter != null)
+        {
+            var retryAfter = response.Headers.RetryAfter;
+
+            // If there's a Delta value, use it directly.
+            if (retryAfter.Delta.HasValue)
+            {
+                return retryAfter.Delta;
+            }
+            // If there's a Date value, calculate the difference from now.
+            else if (retryAfter.Date.HasValue)
+            {
+                var retryAfterTimeSpan = retryAfter.Date.Value.UtcDateTime - DateTime.UtcNow;
+                // Ensure the TimeSpan is positive; otherwise, return null.
+                return retryAfterTimeSpan.Ticks > 0 ? retryAfterTimeSpan : null;
+            }
+        }
+
+        // If RetryAfter is null or none of the conditions are met, return null.
+        return null;
+    }
 }

@@ -1,12 +1,12 @@
+using System.Net;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 using GitHub.Octokit.Client;
 using GitHub.Octokit.Client.Middleware;
-using Xunit;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Moq;
 using Moq.Protected;
-using System.Net;
-using System.Threading;
+using Xunit;
 
 public class RateLimitHandlerTests
 {
