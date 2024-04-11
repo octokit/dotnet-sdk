@@ -5,13 +5,13 @@ namespace GitHub.Models {
     /// <summary>The type of actor that can bypass a ruleset</summary>
     public enum RepositoryRulesetBypassActor_actor_type
     {
-        [EnumMember(Value = "RepositoryRole")]
-        RepositoryRole,
-        [EnumMember(Value = "Team")]
-        Team,
         [EnumMember(Value = "Integration")]
         Integration,
         [EnumMember(Value = "OrganizationAdmin")]
         OrganizationAdmin,
+        [EnumMember(Value = "RepositoryRole")]
+        RepositoryRole,
+        [EnumMember(Value = "Team")]
+        Team,
     }
 }
