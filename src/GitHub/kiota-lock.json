@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "1CBD92757590402E3F7E5F24220D43AAA7D3E9476B84D3E651A182B1E278EA0EDADDE28AB5473A38B01A7367CDDA060B372A1631B4C1C98B6E06F1DF139D7CF5",
+  "descriptionHash": "BCBB3EBFF291241E01FAD8E0C6FB250C6A33437D878C8B72E69A75E886CAD1B05A1633435433950DF918B0E06B173044E905A79A8137E2086C4A88A34F8865BA",
   "descriptionLocation": "../../../source-generator/schemas/downloaded.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.13.0-preview.202403280001",
+  "kiotaVersion": "1.13.0",
   "clientClassName": "GitHubClient",
   "clientNamespaceName": "GitHub",
   "language": "CSharp",

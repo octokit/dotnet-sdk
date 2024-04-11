@@ -23,10 +23,10 @@ namespace GitHub.Models {
         /// <summary>Default value of the property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultValue { get; set; }
+        public OrgCustomProperty_default_value? DefaultValue { get; set; }
 #nullable restore
 #else
-        public string DefaultValue { get; set; }
+        public OrgCustomProperty_default_value DefaultValue { get; set; }
 #endif
         /// <summary>Short description of the property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +76,7 @@ namespace GitHub.Models {
             return new Dictionary<string, Action<IParseNode>>
             {
                 {"allowed_values", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"default_value", n => { DefaultValue = n.GetStringValue(); } },
+                {"default_value", n => { DefaultValue = n.GetObjectValue<OrgCustomProperty_default_value>(OrgCustomProperty_default_value.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"property_name", n => { PropertyName = n.GetStringValue(); } },
                 {"required", n => { Required = n.GetBoolValue(); } },
@@ -92,13 +92,63 @@ namespace GitHub.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_values", AllowedValues);
-            writer.WriteStringValue("default_value", DefaultValue);
+            writer.WriteObjectValue<OrgCustomProperty_default_value>("default_value", DefaultValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("property_name", PropertyName);
             writer.WriteBoolValue("required", Required);
             writer.WriteEnumValue<OrgCustomProperty_values_editable_by>("values_editable_by", ValuesEditableBy);
             writer.WriteEnumValue<OrgCustomProperty_value_type>("value_type", ValueType);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="string"/>
+        /// </summary>
+        public class OrgCustomProperty_default_value : IComposedTypeWrapper, IParsable 
+        {
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="OrgCustomProperty_default_value"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static OrgCustomProperty_default_value CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new OrgCustomProperty_default_value();
+                if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
         }
     }
 }
