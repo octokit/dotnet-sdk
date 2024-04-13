@@ -19,7 +19,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Analyses.Item {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAnalysis_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses/{analysis_id}", pathParameters)
+        public WithAnalysis_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses/{analysis_id}{?confirm_delete*}", pathParameters)
         {
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Analyses.Item {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithAnalysis_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses/{analysis_id}", rawUrl)
+        public WithAnalysis_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses/{analysis_id}{?confirm_delete*}", rawUrl)
         {
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Analyses.Item {
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<WithAnalysis_ItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/code-scanning/analyses/{analysis_id}{?confirm_delete*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
