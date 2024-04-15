@@ -19,7 +19,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item.Assets {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/releases/{release_id}/assets{?page*,per_page*}", pathParameters)
+        public AssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/releases/{release_id}/assets?name={name}{&label*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -27,7 +27,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item.Assets {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/releases/{release_id}/assets{?page*,per_page*}", rawUrl)
+        public AssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/releases/{release_id}/assets?name={name}{&label*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item.Assets {
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AssetsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/releases/{release_id}/assets{?page*,per_page*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
