@@ -1,3 +1,6 @@
+using System.Net;
+using Microsoft.Kiota.Abstractions;
+
 namespace GitHub.Octokit.Client.Middleware;
 
 public enum RateLimitType
@@ -87,13 +90,25 @@ public class RateLimitHandler : DelegatingHandler
 
         if (rateLimit != RateLimitType.None)
         {
-            // Handle rate limiting (retry logic)
-            var retryAfterDuration = ParseRateLimit(response);
-            if (retryAfterDuration.HasValue && retryAfterDuration.Value.TotalSeconds > 0)
+            if (rateLimit == RateLimitType.Primary)
             {
-                await Task.Delay(retryAfterDuration.Value, cancellationToken);
-                // Retry the request
-                response = await base.SendAsync(request, cancellationToken);
+                // Handle primary rate limiting (abort logic)
+                // We should think about making an error factory to handle this
+                // * Returns proper error message and status code
+                // * Does a header pass through
+
+                throw await GetInnerExceptionAsync(response);
+            }
+            else if (rateLimit == RateLimitType.Secondary) {
+            
+            // Handle rate limiting (retry logic)
+                var retryAfterDuration = ParseRateLimit(response);
+                if (retryAfterDuration.HasValue && retryAfterDuration.Value.TotalSeconds > 0)
+                {
+                    await Task.Delay(retryAfterDuration.Value, cancellationToken);
+                    // Retry the request
+                    response = await base.SendAsync(request, cancellationToken);
+                }
             }
         }
 
@@ -143,5 +158,26 @@ public class RateLimitHandler : DelegatingHandler
 
         // If RetryAfter is null or none of the conditions are met, return null.
         return null;
+    }
+
+    // Sourced from: https://github.com/microsoft/kiota-http-dotnet/blob/main/src/Middleware/RetryHandler.cs#L236
+    // This should be hoisted out unto aerror factory
+    // This method is used to get the inner exception from the response
+    private static async Task<Exception> GetInnerExceptionAsync(HttpResponseMessage response)
+    {
+        string? errorMessage = null;
+
+        // Drain response content to free connections. Need to perform this
+        // before retry attempt and before the TooManyRetries ServiceException.
+        if(response.Content != null)
+        {
+            errorMessage = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        }
+
+        return new ApiException($"HTTP request failed with status code: {response.StatusCode}.{errorMessage}")
+        {
+            ResponseStatusCode = (int)response.StatusCode,
+            ResponseHeaders = response.Headers.ToDictionary(header => header.Key, header => header.Value),
+        };
     }
 }
