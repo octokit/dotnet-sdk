@@ -64,6 +64,8 @@ public class RateLimitHandlerOptions : IRateLimitHandlerOptions
 /// </summary>
 public class RateLimitHandler : DelegatingHandler
 {
+    public const string XRateLimitResetHeaderKey = "X-RateLimit-Reset";
+
     private readonly IRateLimitHandlerOptions _options;
 
     /// <summary>
@@ -90,25 +92,26 @@ public class RateLimitHandler : DelegatingHandler
 
         if (rateLimit != RateLimitType.None)
         {
+            var retryAfterDuration = ParseRateLimit(response);
             if (rateLimit == RateLimitType.Primary)
             {
-                // Handle primary rate limiting (abort logic)
-                // We should think about making an error factory to handle this
-                // * Returns proper error message and status code
-                // * Does a header pass through
+                Console.WriteLine($"Primary rate limit (reset: {response.Headers.GetValues(XRateLimitResetHeaderKey).FirstOrDefault()}) exceeded. " +
+                    $"Sleeping for {retryAfterDuration?.TotalSeconds} seconds before retrying.");
 
-                throw await GetInnerExceptionAsync(response);
+                // TODO(kfcampbell): log additional information about rate limits, like we do in go-sdk
+                // log.Printf("Rate limit information: %s: %s, %s: %s, %s: %s\n",
+                // headers.XRateLimitLimitKey, resp.Header.Get(headers.XRateLimitLimitKey), headers.XRateLimitUsedKey,
+                // resp.Header.Get(headers.XRateLimitUsedKey), headers.XRateLimitResourceKey, resp.Header.Get(headers.XRateLimitResourceKey))
             }
-            else if (rateLimit == RateLimitType.Secondary) {
-            
-            // Handle rate limiting (retry logic)
-                var retryAfterDuration = ParseRateLimit(response);
-                if (retryAfterDuration.HasValue && retryAfterDuration.Value.TotalSeconds > 0)
-                {
-                    await Task.Delay(retryAfterDuration.Value, cancellationToken);
-                    // Retry the request
-                    response = await base.SendAsync(request, cancellationToken);
-                }
+            else if (rateLimit == RateLimitType.Secondary)
+            {
+                Console.WriteLine($"Abuse detection mechanism (secondary rate limit) triggered. " +
+                    $"Sleeping for {retryAfterDuration?.TotalSeconds} seconds before retrying.");
+            }
+            if (retryAfterDuration.HasValue && retryAfterDuration.Value.TotalSeconds > 0)
+            {
+                await Task.Delay(retryAfterDuration.Value, cancellationToken);
+                response = await base.SendAsync(request, cancellationToken);
             }
         }
 
@@ -119,13 +122,30 @@ public class RateLimitHandler : DelegatingHandler
     /// Parses the rate limit from the response.
     /// This method will parse the rate limit from the response and return the duration to wait before retrying the request.
     /// If the response does not contain a rate limit, this method will return null.
+    /// Note that "Retry-After" headers correspond to secondary rate limits and
+    /// "x-ratelimit-reset" headers to primary rate limits.
+    /// Docs for rate limit headers:
+    /// https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api?apiVersion=2022-11-28#handle-rate-limit-errors-appropriately
     /// </summary>
     /// <param name="response"></param>
     /// <returns></returns>
     private TimeSpan? ParseRateLimit(HttpResponseMessage response)
     {
-        // There might need to be additional rate limit concerns that need to be evaluated here
-        return ParseRetryAfterHeader(response);
+        // "If the retry-after response header is present, you should not retry
+        // your request until after that many seconds has elapsed."
+        // (see docs link above)
+        if (response.Headers.RetryAfter != null)
+        {
+            return ParseRetryAfterHeader(response);
+        }
+        // "If the retry-after response header is present, you should not retry
+        // your request until after that many seconds has elapsed."
+        // (see docs link above)
+        else if (response.Headers.Contains(XRateLimitResetHeaderKey))
+        {
+            return ParseXRateLimitReset(response);
+        }
+        return null;
     }
 
     /// <summary>
@@ -137,47 +157,40 @@ public class RateLimitHandler : DelegatingHandler
     /// <returns></returns>
     private TimeSpan? ParseRetryAfterHeader(HttpResponseMessage response)
     {
-        // First, check if the RetryAfter header exists and is not null.
         if (response.Headers.RetryAfter != null)
         {
             var retryAfter = response.Headers.RetryAfter;
 
-            // If there's a Delta value, use it directly.
             if (retryAfter.Delta.HasValue)
             {
                 return retryAfter.Delta;
             }
-            // If there's a Date value, calculate the difference from now.
             else if (retryAfter.Date.HasValue)
             {
                 var retryAfterTimeSpan = retryAfter.Date.Value.UtcDateTime - DateTime.UtcNow;
-                // Ensure the TimeSpan is positive; otherwise, return null.
                 return retryAfterTimeSpan.Ticks > 0 ? retryAfterTimeSpan : null;
             }
         }
 
-        // If RetryAfter is null or none of the conditions are met, return null.
         return null;
     }
 
-    // Sourced from: https://github.com/microsoft/kiota-http-dotnet/blob/main/src/Middleware/RetryHandler.cs#L236
-    // This should be hoisted out unto aerror factory
-    // This method is used to get the inner exception from the response
-    private static async Task<Exception> GetInnerExceptionAsync(HttpResponseMessage response)
+    /// <summary>
+    /// ParseXRateLimitReset returns a TimeSpan that corresponds to the time until the given
+    /// X-RateLimit-Reset header value. If the header is not present or the
+    /// value cannot be parsed into a valid TimeSpan, the method will return null.
+    /// </summary>
+    /// <param name="response"></param>
+    /// <returns></returns> <summary>
+    private TimeSpan? ParseXRateLimitReset(HttpResponseMessage response)
     {
-        string? errorMessage = null;
-
-        // Drain response content to free connections. Need to perform this
-        // before retry attempt and before the TooManyRetries ServiceException.
-        if(response.Content != null)
+        var rateLimitReset = response.Headers.GetValues(XRateLimitResetHeaderKey).FirstOrDefault();
+        if (rateLimitReset != null && long.TryParse(rateLimitReset, out var rateLimitResetValue))
         {
-            errorMessage = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var rateLimitResetDateTime = DateTimeOffset.FromUnixTimeSeconds(rateLimitResetValue);
+            var rateLimitResetTimeSpan = rateLimitResetDateTime.UtcDateTime - DateTime.UtcNow;
+            return rateLimitResetTimeSpan.Ticks > 0 ? rateLimitResetTimeSpan : null;
         }
-
-        return new ApiException($"HTTP request failed with status code: {response.StatusCode}.{errorMessage}")
-        {
-            ResponseStatusCode = (int)response.StatusCode,
-            ResponseHeaders = response.Headers.ToDictionary(header => header.Key, header => header.Value),
-        };
+        return null;
     }
 }
