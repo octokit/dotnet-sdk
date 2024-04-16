@@ -95,6 +95,7 @@ public class RateLimitHandler : DelegatingHandler
             var retryAfterDuration = ParseRateLimit(response);
             if (rateLimit == RateLimitType.Primary)
             {
+                // TODO(kfcampbell): investigate ways to do logging/notifications in a .NET library
                 Console.WriteLine($"Primary rate limit (reset: {response.Headers.GetValues(XRateLimitResetHeaderKey).FirstOrDefault()}) exceeded. " +
                     $"Sleeping for {retryAfterDuration?.TotalSeconds} seconds before retrying.");
 
