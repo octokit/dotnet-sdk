@@ -29,8 +29,8 @@ public class RateLimitHandlerOptions : IRateLimitHandlerOptions
     public Func<HttpRequestMessage, HttpResponseMessage, RateLimitType> IsRateLimited => (request, response) =>
     {
 
-        if (response.StatusCode != System.Net.HttpStatusCode.TooManyRequests
-        && response.StatusCode != System.Net.HttpStatusCode.Forbidden)
+        if (response.StatusCode != HttpStatusCode.TooManyRequests
+        && response.StatusCode != HttpStatusCode.Forbidden)
         {
             return RateLimitType.None;
         }
@@ -64,7 +64,11 @@ public class RateLimitHandlerOptions : IRateLimitHandlerOptions
 /// </summary>
 public class RateLimitHandler : DelegatingHandler
 {
-    public const string XRateLimitResetHeaderKey = "X-RateLimit-Reset";
+    public const string XRateLimitRemainingKey = "X-RateLimit-Remaining";
+    public const string XRateLimitResetKey = "X-RateLimit-Reset";
+    public const string XRateLimitLimitKey = "X-RateLimit-Limit";
+    public const string XRateLimitUsedHeaderKey = "X-RateLimit-Used";
+    public const string XRateLimitResourceKey = "X-RateLimit-Resource";
 
     private readonly IRateLimitHandlerOptions _options;
 
@@ -96,13 +100,12 @@ public class RateLimitHandler : DelegatingHandler
             if (rateLimit == RateLimitType.Primary)
             {
                 // TODO(kfcampbell): investigate ways to do logging/notifications in a .NET library
-                Console.WriteLine($"Primary rate limit (reset: {response.Headers.GetValues(XRateLimitResetHeaderKey).FirstOrDefault()}) exceeded. " +
+                Console.WriteLine($"Primary rate limit (reset: {response.Headers.GetValues(XRateLimitResetKey).FirstOrDefault()}) exceeded. " +
                     $"Sleeping for {retryAfterDuration?.TotalSeconds} seconds before retrying.");
 
-                // TODO(kfcampbell): log additional information about rate limits, like we do in go-sdk
-                // log.Printf("Rate limit information: %s: %s, %s: %s, %s: %s\n",
-                // headers.XRateLimitLimitKey, resp.Header.Get(headers.XRateLimitLimitKey), headers.XRateLimitUsedKey,
-                // resp.Header.Get(headers.XRateLimitUsedKey), headers.XRateLimitResourceKey, resp.Header.Get(headers.XRateLimitResourceKey))
+                Console.WriteLine($"Rate limit information: {XRateLimitLimitKey}: {response.Headers.GetValues(XRateLimitLimitKey).FirstOrDefault()}, " +
+                    $"{XRateLimitUsedHeaderKey}: {response.Headers.GetValues(XRateLimitUsedHeaderKey).FirstOrDefault()}, " +
+                    $"{XRateLimitResourceKey}: {response.Headers.GetValues(XRateLimitResourceKey).FirstOrDefault()}");
             }
             else if (rateLimit == RateLimitType.Secondary)
             {
@@ -142,7 +145,7 @@ public class RateLimitHandler : DelegatingHandler
         // "If the retry-after response header is present, you should not retry
         // your request until after that many seconds has elapsed."
         // (see docs link above)
-        else if (response.Headers.Contains(XRateLimitResetHeaderKey))
+        else if (response.Headers.Contains(XRateLimitResetKey))
         {
             return ParseXRateLimitReset(response);
         }
@@ -161,7 +164,6 @@ public class RateLimitHandler : DelegatingHandler
         if (response.Headers.RetryAfter != null)
         {
             var retryAfter = response.Headers.RetryAfter;
-
             if (retryAfter.Delta.HasValue)
             {
                 return retryAfter.Delta;
@@ -185,7 +187,8 @@ public class RateLimitHandler : DelegatingHandler
     /// <returns></returns> <summary>
     private TimeSpan? ParseXRateLimitReset(HttpResponseMessage response)
     {
-        var rateLimitReset = response.Headers.GetValues(XRateLimitResetHeaderKey).FirstOrDefault();
+        // TODO(kfcampbell): can this be cleaned up/prettified/extra-validated?
+        var rateLimitReset = response.Headers.GetValues(XRateLimitResetKey).FirstOrDefault();
         if (rateLimitReset != null && long.TryParse(rateLimitReset, out var rateLimitResetValue))
         {
             var rateLimitResetDateTime = DateTimeOffset.FromUnixTimeSeconds(rateLimitResetValue);
