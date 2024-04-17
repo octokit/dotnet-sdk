@@ -19,6 +19,9 @@ jobs:
         with:
           dotnet-version: '8.x.x'
 
+      - name: Restore solution
+        run: dotnet restore
+
       - name: Format
         run: dotnet format --verify-no-changes
 
