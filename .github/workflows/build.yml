@@ -19,6 +19,9 @@ jobs:
         with:
           dotnet-version: '8.x.x'
 
+      - name: Build main project
+        run: dotnet build src/GitHub.Octokit.SDK.csproj
+
       - name: Restore solution
         run: dotnet restore
 
