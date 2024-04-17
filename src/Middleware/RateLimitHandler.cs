@@ -101,7 +101,7 @@ public class RateLimitHandler : DelegatingHandler
             {
                 // TODO(kfcampbell): investigate ways to do logging/notifications in a .NET library
                 Console.WriteLine($"Primary rate limit (reset: {response.Headers.GetValues(XRateLimitResetKey).FirstOrDefault()}) exceeded. " +
-                    $"Sleeping for {retryAfterDuration?.TotalSeconds} seconds before retrying.");
+                    $"Sleeping for {retryAfterDuration?.TotalSeconds ?? 0} seconds before retrying.");
 
                 Console.WriteLine($"Rate limit information: {XRateLimitLimitKey}: {response.Headers.GetValues(XRateLimitLimitKey).FirstOrDefault()}, " +
                     $"{XRateLimitUsedHeaderKey}: {response.Headers.GetValues(XRateLimitUsedHeaderKey).FirstOrDefault()}, " +
@@ -110,13 +110,17 @@ public class RateLimitHandler : DelegatingHandler
             else if (rateLimit == RateLimitType.Secondary)
             {
                 Console.WriteLine($"Abuse detection mechanism (secondary rate limit) triggered. " +
-                    $"Sleeping for {retryAfterDuration?.TotalSeconds} seconds before retrying.");
+                    $"Sleeping for {retryAfterDuration?.TotalSeconds ?? 0} seconds before retrying.");
             }
             if (retryAfterDuration.HasValue && retryAfterDuration.Value.TotalSeconds > 0)
             {
                 await Task.Delay(retryAfterDuration.Value, cancellationToken);
-                response = await base.SendAsync(request, cancellationToken);
             }
+            else
+            {
+                Console.WriteLine($"Could not parse a valid time to wait for rate limit reset (parsed {retryAfterDuration?.TotalSeconds ?? 0} seconds). Retrying request immediately.");
+            }
+            response = await SendAsync(request, cancellationToken);
         }
 
         return response;

@@ -12,7 +12,7 @@ var gitHubClient = new GitHubClient(adapter);
 for (var i = 0; i < 1000; i++)
 {
     var response = await gitHubClient.Zen.GetAsync();
-    Console.WriteLine($"Response: {response}");
+    Console.WriteLine($"Response {i}: {response}");
 }
 
 // var requests = new List<Task<string?>>();
