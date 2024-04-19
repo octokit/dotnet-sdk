@@ -6,8 +6,12 @@ namespace GitHub.Repos.Item.Item.Pages {
     public enum PagesPutRequestBody_sourceMember1_path
     {
         [EnumMember(Value = "/")]
+        #pragma warning disable CS1591
         Slash,
+        #pragma warning restore CS1591
         [EnumMember(Value = "/docs")]
+        #pragma warning disable CS1591
         Docs,
+        #pragma warning restore CS1591
     }
 }

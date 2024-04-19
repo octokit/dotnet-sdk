@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum PullRequestWebhook_squash_merge_commit_title
     {
         [EnumMember(Value = "PR_TITLE")]
+        #pragma warning disable CS1591
         PR_TITLE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "COMMIT_OR_PR_TITLE")]
+        #pragma warning disable CS1591
         COMMIT_OR_PR_TITLE,
+        #pragma warning restore CS1591
     }
 }

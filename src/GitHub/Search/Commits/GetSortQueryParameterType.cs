@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Search.Commits {
+    #pragma warning disable CS1591
     public enum GetSortQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "author-date")]
+        #pragma warning disable CS1591
         AuthorDate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "committer-date")]
+        #pragma warning disable CS1591
         CommitterDate,
+        #pragma warning restore CS1591
     }
 }

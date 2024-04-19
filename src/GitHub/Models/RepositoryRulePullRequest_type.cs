@@ -2,9 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum RepositoryRulePullRequest_type
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "pull_request")]
+        #pragma warning disable CS1591
         Pull_request,
+        #pragma warning restore CS1591
     }
 }

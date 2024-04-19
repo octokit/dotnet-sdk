@@ -6,8 +6,12 @@ namespace GitHub.Markdown {
     public enum MarkdownPostRequestBody_mode
     {
         [EnumMember(Value = "markdown")]
+        #pragma warning disable CS1591
         Markdown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "gfm")]
+        #pragma warning disable CS1591
         Gfm,
+        #pragma warning restore CS1591
     }
 }

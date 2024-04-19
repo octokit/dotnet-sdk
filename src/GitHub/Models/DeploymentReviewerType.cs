@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum DeploymentReviewerType
     {
         [EnumMember(Value = "User")]
+        #pragma warning disable CS1591
         User,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Team")]
+        #pragma warning disable CS1591
         Team,
+        #pragma warning restore CS1591
     }
 }

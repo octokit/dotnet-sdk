@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum MarketplaceListingPlan_price_model
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "FREE")]
+        #pragma warning disable CS1591
         FREE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "FLAT_RATE")]
+        #pragma warning disable CS1591
         FLAT_RATE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PER_UNIT")]
+        #pragma warning disable CS1591
         PER_UNIT,
+        #pragma warning restore CS1591
     }
 }

@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum AppPermissions_organization_secrets
     {
         [EnumMember(Value = "read")]
+        #pragma warning disable CS1591
         Read,
+        #pragma warning restore CS1591
         [EnumMember(Value = "write")]
+        #pragma warning disable CS1591
         Write,
+        #pragma warning restore CS1591
     }
 }

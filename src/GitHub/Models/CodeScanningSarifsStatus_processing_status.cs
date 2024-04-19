@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum CodeScanningSarifsStatus_processing_status
     {
         [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
         Pending,
+        #pragma warning restore CS1591
         [EnumMember(Value = "complete")]
+        #pragma warning disable CS1591
         Complete,
+        #pragma warning restore CS1591
         [EnumMember(Value = "failed")]
+        #pragma warning disable CS1591
         Failed,
+        #pragma warning restore CS1591
     }
 }

@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Forks {
+    #pragma warning disable CS1591
     public enum GetSortQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "newest")]
+        #pragma warning disable CS1591
         Newest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "oldest")]
+        #pragma warning disable CS1591
         Oldest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stargazers")]
+        #pragma warning disable CS1591
         Stargazers,
+        #pragma warning restore CS1591
         [EnumMember(Value = "watchers")]
+        #pragma warning disable CS1591
         Watchers,
+        #pragma warning restore CS1591
     }
 }

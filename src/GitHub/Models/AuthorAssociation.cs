@@ -6,20 +6,36 @@ namespace GitHub.Models {
     public enum AuthorAssociation
     {
         [EnumMember(Value = "COLLABORATOR")]
+        #pragma warning disable CS1591
         COLLABORATOR,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CONTRIBUTOR")]
+        #pragma warning disable CS1591
         CONTRIBUTOR,
+        #pragma warning restore CS1591
         [EnumMember(Value = "FIRST_TIMER")]
+        #pragma warning disable CS1591
         FIRST_TIMER,
+        #pragma warning restore CS1591
         [EnumMember(Value = "FIRST_TIME_CONTRIBUTOR")]
+        #pragma warning disable CS1591
         FIRST_TIME_CONTRIBUTOR,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MANNEQUIN")]
+        #pragma warning disable CS1591
         MANNEQUIN,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MEMBER")]
+        #pragma warning disable CS1591
         MEMBER,
+        #pragma warning restore CS1591
         [EnumMember(Value = "NONE")]
+        #pragma warning disable CS1591
         NONE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "OWNER")]
+        #pragma warning disable CS1591
         OWNER,
+        #pragma warning restore CS1591
     }
 }

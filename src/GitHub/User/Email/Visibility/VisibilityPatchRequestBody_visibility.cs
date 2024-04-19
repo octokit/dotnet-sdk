@@ -6,8 +6,12 @@ namespace GitHub.User.Email.Visibility {
     public enum VisibilityPatchRequestBody_visibility
     {
         [EnumMember(Value = "public")]
+        #pragma warning disable CS1591
         Public,
+        #pragma warning restore CS1591
         [EnumMember(Value = "private")]
+        #pragma warning disable CS1591
         Private,
+        #pragma warning restore CS1591
     }
 }

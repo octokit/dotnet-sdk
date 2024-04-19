@@ -6,10 +6,16 @@ namespace GitHub.Repos.Item.Item.Issues.Item {
     public enum WithIssue_numberPatchRequestBody_state_reason
     {
         [EnumMember(Value = "completed")]
+        #pragma warning disable CS1591
         Completed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "not_planned")]
+        #pragma warning disable CS1591
         Not_planned,
+        #pragma warning restore CS1591
         [EnumMember(Value = "reopened")]
+        #pragma warning disable CS1591
         Reopened,
+        #pragma warning restore CS1591
     }
 }

@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum DependencyGraphDiff_scope
     {
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "runtime")]
+        #pragma warning disable CS1591
         Runtime,
+        #pragma warning restore CS1591
         [EnumMember(Value = "development")]
+        #pragma warning disable CS1591
         Development,
+        #pragma warning restore CS1591
     }
 }

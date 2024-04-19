@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum EnvironmentApprovals_state
     {
         [EnumMember(Value = "approved")]
+        #pragma warning disable CS1591
         Approved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rejected")]
+        #pragma warning disable CS1591
         Rejected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
         Pending,
+        #pragma warning restore CS1591
     }
 }

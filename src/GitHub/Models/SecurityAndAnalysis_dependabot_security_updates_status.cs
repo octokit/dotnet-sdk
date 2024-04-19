@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum SecurityAndAnalysis_dependabot_security_updates_status
     {
         [EnumMember(Value = "enabled")]
+        #pragma warning disable CS1591
         Enabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled")]
+        #pragma warning disable CS1591
         Disabled,
+        #pragma warning restore CS1591
     }
 }

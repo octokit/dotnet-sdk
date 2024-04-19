@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum TeamMembership_role
     {
         [EnumMember(Value = "member")]
+        #pragma warning disable CS1591
         Member,
+        #pragma warning restore CS1591
         [EnumMember(Value = "maintainer")]
+        #pragma warning disable CS1591
         Maintainer,
+        #pragma warning restore CS1591
     }
 }

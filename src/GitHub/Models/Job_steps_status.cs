@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum Job_steps_status
     {
         [EnumMember(Value = "queued")]
+        #pragma warning disable CS1591
         Queued,
+        #pragma warning restore CS1591
         [EnumMember(Value = "in_progress")]
+        #pragma warning disable CS1591
         In_progress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "completed")]
+        #pragma warning disable CS1591
         Completed,
+        #pragma warning restore CS1591
     }
 }

@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Comments {
+    #pragma warning disable CS1591
     public enum GetSortQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "created")]
+        #pragma warning disable CS1591
         Created,
+        #pragma warning restore CS1591
         [EnumMember(Value = "updated")]
+        #pragma warning disable CS1591
         Updated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "created_at")]
+        #pragma warning disable CS1591
         Created_at,
+        #pragma warning restore CS1591
     }
 }

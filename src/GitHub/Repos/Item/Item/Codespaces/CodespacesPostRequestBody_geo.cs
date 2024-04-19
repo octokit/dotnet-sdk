@@ -6,12 +6,20 @@ namespace GitHub.Repos.Item.Item.Codespaces {
     public enum CodespacesPostRequestBody_geo
     {
         [EnumMember(Value = "EuropeWest")]
+        #pragma warning disable CS1591
         EuropeWest,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SoutheastAsia")]
+        #pragma warning disable CS1591
         SoutheastAsia,
+        #pragma warning restore CS1591
         [EnumMember(Value = "UsEast")]
+        #pragma warning disable CS1591
         UsEast,
+        #pragma warning restore CS1591
         [EnumMember(Value = "UsWest")]
+        #pragma warning disable CS1591
         UsWest,
+        #pragma warning restore CS1591
     }
 }

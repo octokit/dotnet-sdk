@@ -2,25 +2,45 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum CheckSuite_conclusion
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "success")]
+        #pragma warning disable CS1591
         Success,
+        #pragma warning restore CS1591
         [EnumMember(Value = "failure")]
+        #pragma warning disable CS1591
         Failure,
+        #pragma warning restore CS1591
         [EnumMember(Value = "neutral")]
+        #pragma warning disable CS1591
         Neutral,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cancelled")]
+        #pragma warning disable CS1591
         Cancelled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "skipped")]
+        #pragma warning disable CS1591
         Skipped,
+        #pragma warning restore CS1591
         [EnumMember(Value = "timed_out")]
+        #pragma warning disable CS1591
         Timed_out,
+        #pragma warning restore CS1591
         [EnumMember(Value = "action_required")]
+        #pragma warning disable CS1591
         Action_required,
+        #pragma warning restore CS1591
         [EnumMember(Value = "startup_failure")]
+        #pragma warning disable CS1591
         Startup_failure,
+        #pragma warning restore CS1591
         [EnumMember(Value = "stale")]
+        #pragma warning disable CS1591
         Stale,
+        #pragma warning restore CS1591
     }
 }

@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum NullableCodespaceMachine_prebuild_availability
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ready")]
+        #pragma warning disable CS1591
         Ready,
+        #pragma warning restore CS1591
         [EnumMember(Value = "in_progress")]
+        #pragma warning disable CS1591
         In_progress,
+        #pragma warning restore CS1591
     }
 }

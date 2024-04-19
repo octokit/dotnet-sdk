@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum SimpleClassroomAssignment_type
     {
         [EnumMember(Value = "individual")]
+        #pragma warning disable CS1591
         Individual,
+        #pragma warning restore CS1591
         [EnumMember(Value = "group")]
+        #pragma warning disable CS1591
         Group,
+        #pragma warning restore CS1591
     }
 }

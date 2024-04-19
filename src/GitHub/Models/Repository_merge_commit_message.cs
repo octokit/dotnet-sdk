@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum Repository_merge_commit_message
     {
         [EnumMember(Value = "PR_BODY")]
+        #pragma warning disable CS1591
         PR_BODY,
+        #pragma warning restore CS1591
         [EnumMember(Value = "PR_TITLE")]
+        #pragma warning disable CS1591
         PR_TITLE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "BLANK")]
+        #pragma warning disable CS1591
         BLANK,
+        #pragma warning restore CS1591
     }
 }

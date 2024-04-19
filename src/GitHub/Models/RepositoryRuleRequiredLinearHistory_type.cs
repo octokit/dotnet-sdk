@@ -2,9 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum RepositoryRuleRequiredLinearHistory_type
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "required_linear_history")]
+        #pragma warning disable CS1591
         Required_linear_history,
+        #pragma warning restore CS1591
     }
 }
