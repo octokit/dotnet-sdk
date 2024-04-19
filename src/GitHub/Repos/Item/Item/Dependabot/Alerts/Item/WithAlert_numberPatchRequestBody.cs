@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Dependabot.Alerts.Item {
+    #pragma warning disable CS1591
     public class WithAlert_numberPatchRequestBody : IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>An optional comment associated with dismissing the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

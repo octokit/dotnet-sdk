@@ -2,39 +2,73 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum Import_status
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "auth")]
+        #pragma warning disable CS1591
         Auth,
+        #pragma warning restore CS1591
         [EnumMember(Value = "error")]
+        #pragma warning disable CS1591
         Error,
+        #pragma warning restore CS1591
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "detecting")]
+        #pragma warning disable CS1591
         Detecting,
+        #pragma warning restore CS1591
         [EnumMember(Value = "choose")]
+        #pragma warning disable CS1591
         Choose,
+        #pragma warning restore CS1591
         [EnumMember(Value = "auth_failed")]
+        #pragma warning disable CS1591
         Auth_failed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "importing")]
+        #pragma warning disable CS1591
         Importing,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mapping")]
+        #pragma warning disable CS1591
         Mapping,
+        #pragma warning restore CS1591
         [EnumMember(Value = "waiting_to_push")]
+        #pragma warning disable CS1591
         Waiting_to_push,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pushing")]
+        #pragma warning disable CS1591
         Pushing,
+        #pragma warning restore CS1591
         [EnumMember(Value = "complete")]
+        #pragma warning disable CS1591
         Complete,
+        #pragma warning restore CS1591
         [EnumMember(Value = "setup")]
+        #pragma warning disable CS1591
         Setup,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
         [EnumMember(Value = "detection_found_multiple")]
+        #pragma warning disable CS1591
         Detection_found_multiple,
+        #pragma warning restore CS1591
         [EnumMember(Value = "detection_found_nothing")]
+        #pragma warning disable CS1591
         Detection_found_nothing,
+        #pragma warning restore CS1591
         [EnumMember(Value = "detection_needs_auth")]
+        #pragma warning disable CS1591
         Detection_needs_auth,
+        #pragma warning restore CS1591
     }
 }

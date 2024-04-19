@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum RepositoryAdvisory_identifiers_type
     {
         [EnumMember(Value = "CVE")]
+        #pragma warning disable CS1591
         CVE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "GHSA")]
+        #pragma warning disable CS1591
         GHSA,
+        #pragma warning restore CS1591
     }
 }

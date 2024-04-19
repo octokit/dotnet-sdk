@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.User.Social_accounts {
+    #pragma warning disable CS1591
     public class Social_accountsPostRequestBody : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Full URLs for the social media profiles to add.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

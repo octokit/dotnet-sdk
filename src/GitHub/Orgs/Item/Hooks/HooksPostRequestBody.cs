@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.Hooks {
+    #pragma warning disable CS1591
     public class HooksPostRequestBody : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.</summary>
         public bool? Active { get; set; }

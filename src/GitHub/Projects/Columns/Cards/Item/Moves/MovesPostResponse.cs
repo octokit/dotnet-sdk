@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Projects.Columns.Cards.Item.Moves {
+    #pragma warning disable CS1591
     public class MovesPostResponse : IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

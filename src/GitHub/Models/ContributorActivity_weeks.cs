@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public class ContributorActivity_weeks : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The a property</summary>
         public int? A { get; set; }

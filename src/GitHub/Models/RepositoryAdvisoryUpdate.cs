@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public class RepositoryAdvisoryUpdate : IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>A list of team slugs which have been granted write access to the advisory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

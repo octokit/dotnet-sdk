@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum RepositoryRuleEnforcement
     {
         [EnumMember(Value = "disabled")]
+        #pragma warning disable CS1591
         Disabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
         [EnumMember(Value = "evaluate")]
+        #pragma warning disable CS1591
         Evaluate,
+        #pragma warning restore CS1591
     }
 }

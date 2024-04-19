@@ -6,12 +6,20 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Lock {
     public enum LockPutRequestBody_lock_reason
     {
         [EnumMember(Value = "off-topic")]
+        #pragma warning disable CS1591
         OffTopic,
+        #pragma warning restore CS1591
         [EnumMember(Value = "too heated")]
+        #pragma warning disable CS1591
         TooHeated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "resolved")]
+        #pragma warning disable CS1591
         Resolved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "spam")]
+        #pragma warning disable CS1591
         Spam,
+        #pragma warning restore CS1591
     }
 }

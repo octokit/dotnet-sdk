@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum Installation_repository_selection
     {
         [EnumMember(Value = "all")]
+        #pragma warning disable CS1591
         All,
+        #pragma warning restore CS1591
         [EnumMember(Value = "selected")]
+        #pragma warning disable CS1591
         Selected,
+        #pragma warning restore CS1591
     }
 }

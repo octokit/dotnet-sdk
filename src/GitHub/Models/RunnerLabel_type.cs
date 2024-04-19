@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum RunnerLabel_type
     {
         [EnumMember(Value = "read-only")]
+        #pragma warning disable CS1591
         ReadOnly,
+        #pragma warning restore CS1591
         [EnumMember(Value = "custom")]
+        #pragma warning disable CS1591
         Custom,
+        #pragma warning restore CS1591
     }
 }

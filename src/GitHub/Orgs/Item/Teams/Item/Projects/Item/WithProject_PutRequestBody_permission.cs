@@ -6,10 +6,16 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects.Item {
     public enum WithProject_PutRequestBody_permission
     {
         [EnumMember(Value = "read")]
+        #pragma warning disable CS1591
         Read,
+        #pragma warning restore CS1591
         [EnumMember(Value = "write")]
+        #pragma warning disable CS1591
         Write,
+        #pragma warning restore CS1591
         [EnumMember(Value = "admin")]
+        #pragma warning disable CS1591
         Admin,
+        #pragma warning restore CS1591
     }
 }

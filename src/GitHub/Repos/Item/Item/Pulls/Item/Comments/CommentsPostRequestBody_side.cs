@@ -6,8 +6,12 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Comments {
     public enum CommentsPostRequestBody_side
     {
         [EnumMember(Value = "LEFT")]
+        #pragma warning disable CS1591
         LEFT,
+        #pragma warning restore CS1591
         [EnumMember(Value = "RIGHT")]
+        #pragma warning disable CS1591
         RIGHT,
+        #pragma warning restore CS1591
     }
 }

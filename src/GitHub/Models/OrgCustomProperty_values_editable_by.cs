@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum OrgCustomProperty_values_editable_by
     {
         [EnumMember(Value = "org_actors")]
+        #pragma warning disable CS1591
         Org_actors,
+        #pragma warning restore CS1591
         [EnumMember(Value = "org_and_repo_actors")]
+        #pragma warning disable CS1591
         Org_and_repo_actors,
+        #pragma warning restore CS1591
     }
 }

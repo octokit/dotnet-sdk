@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum OrgMembership_role
     {
         [EnumMember(Value = "admin")]
+        #pragma warning disable CS1591
         Admin,
+        #pragma warning restore CS1591
         [EnumMember(Value = "member")]
+        #pragma warning disable CS1591
         Member,
+        #pragma warning restore CS1591
         [EnumMember(Value = "billing_manager")]
+        #pragma warning disable CS1591
         Billing_manager,
+        #pragma warning restore CS1591
     }
 }

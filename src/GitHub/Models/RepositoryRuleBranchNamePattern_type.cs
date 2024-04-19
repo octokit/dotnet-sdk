@@ -2,9 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum RepositoryRuleBranchNamePattern_type
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "branch_name_pattern")]
+        #pragma warning disable CS1591
         Branch_name_pattern,
+        #pragma warning restore CS1591
     }
 }

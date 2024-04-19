@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum RepositoryRuleset_source_type
     {
         [EnumMember(Value = "Repository")]
+        #pragma warning disable CS1591
         Repository,
+        #pragma warning restore CS1591
         [EnumMember(Value = "Organization")]
+        #pragma warning disable CS1591
         Organization,
+        #pragma warning restore CS1591
     }
 }

@@ -6,8 +6,12 @@ namespace GitHub.Orgs.Item.Item.Item {
     public enum WithEnablementPostRequestBody_query_suite
     {
         [EnumMember(Value = "default")]
+        #pragma warning disable CS1591
         Default,
+        #pragma warning restore CS1591
         [EnumMember(Value = "extended")]
+        #pragma warning disable CS1591
         Extended,
+        #pragma warning restore CS1591
     }
 }

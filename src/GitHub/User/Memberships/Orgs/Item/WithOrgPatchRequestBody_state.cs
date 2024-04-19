@@ -6,6 +6,8 @@ namespace GitHub.User.Memberships.Orgs.Item {
     public enum WithOrgPatchRequestBody_state
     {
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
     }
 }

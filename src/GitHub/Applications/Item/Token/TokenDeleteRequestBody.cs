@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Applications.Item.Token {
+    #pragma warning disable CS1591
     public class TokenDeleteRequestBody : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The OAuth access token used to authenticate to the GitHub API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Activity {
+    #pragma warning disable CS1591
     public enum GetActivity_typeQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "push")]
+        #pragma warning disable CS1591
         Push,
+        #pragma warning restore CS1591
         [EnumMember(Value = "force_push")]
+        #pragma warning disable CS1591
         Force_push,
+        #pragma warning restore CS1591
         [EnumMember(Value = "branch_creation")]
+        #pragma warning disable CS1591
         Branch_creation,
+        #pragma warning restore CS1591
         [EnumMember(Value = "branch_deletion")]
+        #pragma warning disable CS1591
         Branch_deletion,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pr_merge")]
+        #pragma warning disable CS1591
         Pr_merge,
+        #pragma warning restore CS1591
         [EnumMember(Value = "merge_queue_merge")]
+        #pragma warning disable CS1591
         Merge_queue_merge,
+        #pragma warning restore CS1591
     }
 }

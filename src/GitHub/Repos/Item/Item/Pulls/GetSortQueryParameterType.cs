@@ -2,15 +2,25 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls {
+    #pragma warning disable CS1591
     public enum GetSortQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "created")]
+        #pragma warning disable CS1591
         Created,
+        #pragma warning restore CS1591
         [EnumMember(Value = "updated")]
+        #pragma warning disable CS1591
         Updated,
+        #pragma warning restore CS1591
         [EnumMember(Value = "popularity")]
+        #pragma warning disable CS1591
         Popularity,
+        #pragma warning restore CS1591
         [EnumMember(Value = "long-running")]
+        #pragma warning disable CS1591
         LongRunning,
+        #pragma warning restore CS1591
     }
 }

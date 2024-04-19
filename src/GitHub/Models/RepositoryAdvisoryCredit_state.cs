@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum RepositoryAdvisoryCredit_state
     {
         [EnumMember(Value = "accepted")]
+        #pragma warning disable CS1591
         Accepted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "declined")]
+        #pragma warning disable CS1591
         Declined,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
         Pending,
+        #pragma warning restore CS1591
     }
 }

@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum OrganizationProgrammaticAccessGrantRequest_repository_selection
     {
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
         [EnumMember(Value = "all")]
+        #pragma warning disable CS1591
         All,
+        #pragma warning restore CS1591
         [EnumMember(Value = "subset")]
+        #pragma warning disable CS1591
         Subset,
+        #pragma warning restore CS1591
     }
 }

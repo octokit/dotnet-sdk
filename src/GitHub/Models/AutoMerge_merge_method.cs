@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum AutoMerge_merge_method
     {
         [EnumMember(Value = "merge")]
+        #pragma warning disable CS1591
         Merge,
+        #pragma warning restore CS1591
         [EnumMember(Value = "squash")]
+        #pragma warning disable CS1591
         Squash,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rebase")]
+        #pragma warning disable CS1591
         Rebase,
+        #pragma warning restore CS1591
     }
 }

@@ -6,8 +6,12 @@ namespace GitHub.Orgs.Item.Memberships.Item {
     public enum WithUsernamePutRequestBody_role
     {
         [EnumMember(Value = "admin")]
+        #pragma warning disable CS1591
         Admin,
+        #pragma warning restore CS1591
         [EnumMember(Value = "member")]
+        #pragma warning disable CS1591
         Member,
+        #pragma warning restore CS1591
     }
 }

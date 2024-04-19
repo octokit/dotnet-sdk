@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum RepositoryRuleset_current_user_can_bypass
     {
         [EnumMember(Value = "always")]
+        #pragma warning disable CS1591
         Always,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pull_requests_only")]
+        #pragma warning disable CS1591
         Pull_requests_only,
+        #pragma warning restore CS1591
         [EnumMember(Value = "never")]
+        #pragma warning disable CS1591
         Never,
+        #pragma warning restore CS1591
     }
 }

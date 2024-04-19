@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.User.Social_accounts {
+    #pragma warning disable CS1591
     public class Social_accountsDeleteRequestBody : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Full URLs for the social media profiles to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

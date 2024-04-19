@@ -6,8 +6,12 @@ namespace GitHub.Orgs.Item.Teams.Item {
     public enum WithTeam_slugPatchRequestBody_privacy
     {
         [EnumMember(Value = "secret")]
+        #pragma warning disable CS1591
         Secret,
+        #pragma warning restore CS1591
         [EnumMember(Value = "closed")]
+        #pragma warning disable CS1591
         Closed,
+        #pragma warning restore CS1591
     }
 }
