@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public class Snapshot_job : IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Correlator provides a key that is used to group snapshots submitted over time. Only the &quot;latest&quot; submitted snapshot for a given combination of `job.correlator` and `detector.name` will be considered when calculating a repository&apos;s current dependencies. Correlator should be as unique as it takes to distinguish all detection runs for a given &quot;wave&quot; of CI workflow you run. If you&apos;re using GitHub Actions, a good default value for this could be the environment variables GITHUB_WORKFLOW and GITHUB_JOB concatenated together. If you&apos;re using a build matrix, then you&apos;ll also need to add additional key(s) to distinguish between each submission inside a matrix variation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

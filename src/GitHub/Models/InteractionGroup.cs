@@ -6,10 +6,16 @@ namespace GitHub.Models {
     public enum InteractionGroup
     {
         [EnumMember(Value = "existing_users")]
+        #pragma warning disable CS1591
         Existing_users,
+        #pragma warning restore CS1591
         [EnumMember(Value = "contributors_only")]
+        #pragma warning disable CS1591
         Contributors_only,
+        #pragma warning restore CS1591
         [EnumMember(Value = "collaborators_only")]
+        #pragma warning disable CS1591
         Collaborators_only,
+        #pragma warning restore CS1591
     }
 }

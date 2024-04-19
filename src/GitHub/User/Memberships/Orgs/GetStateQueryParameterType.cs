@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.User.Memberships.Orgs {
+    #pragma warning disable CS1591
     public enum GetStateQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
         Pending,
+        #pragma warning restore CS1591
     }
 }

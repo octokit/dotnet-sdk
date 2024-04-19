@@ -6,8 +6,12 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
     public enum WithRuleset_PutRequestBody_target
     {
         [EnumMember(Value = "branch")]
+        #pragma warning disable CS1591
         Branch,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tag")]
+        #pragma warning disable CS1591
         Tag,
+        #pragma warning restore CS1591
     }
 }

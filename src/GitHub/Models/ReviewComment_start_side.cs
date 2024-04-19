@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum ReviewComment_start_side
     {
         [EnumMember(Value = "LEFT")]
+        #pragma warning disable CS1591
         LEFT,
+        #pragma warning restore CS1591
         [EnumMember(Value = "RIGHT")]
+        #pragma warning disable CS1591
         RIGHT,
+        #pragma warning restore CS1591
     }
 }

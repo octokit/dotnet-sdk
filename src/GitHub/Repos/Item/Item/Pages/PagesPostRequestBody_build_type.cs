@@ -6,8 +6,12 @@ namespace GitHub.Repos.Item.Item.Pages {
     public enum PagesPostRequestBody_build_type
     {
         [EnumMember(Value = "legacy")]
+        #pragma warning disable CS1591
         Legacy,
+        #pragma warning restore CS1591
         [EnumMember(Value = "workflow")]
+        #pragma warning disable CS1591
         Workflow,
+        #pragma warning restore CS1591
     }
 }

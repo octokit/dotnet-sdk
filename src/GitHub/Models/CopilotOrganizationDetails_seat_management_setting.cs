@@ -6,12 +6,20 @@ namespace GitHub.Models {
     public enum CopilotOrganizationDetails_seat_management_setting
     {
         [EnumMember(Value = "assign_all")]
+        #pragma warning disable CS1591
         Assign_all,
+        #pragma warning restore CS1591
         [EnumMember(Value = "assign_selected")]
+        #pragma warning disable CS1591
         Assign_selected,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled")]
+        #pragma warning disable CS1591
         Disabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unconfigured")]
+        #pragma warning disable CS1591
         Unconfigured,
+        #pragma warning restore CS1591
     }
 }

@@ -2,9 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum RepositoryRuleCommitAuthorEmailPattern_type
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "commit_author_email_pattern")]
+        #pragma warning disable CS1591
         Commit_author_email_pattern,
+        #pragma warning restore CS1591
     }
 }

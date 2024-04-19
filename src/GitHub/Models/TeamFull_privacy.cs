@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum TeamFull_privacy
     {
         [EnumMember(Value = "closed")]
+        #pragma warning disable CS1591
         Closed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "secret")]
+        #pragma warning disable CS1591
         Secret,
+        #pragma warning restore CS1591
     }
 }

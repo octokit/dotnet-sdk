@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Hooks.Item.Config {
+    #pragma warning disable CS1591
     public class ConfigPatchRequestBody : IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

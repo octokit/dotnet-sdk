@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum OrgCustomProperty_value_type
     {
         [EnumMember(Value = "string")]
+        #pragma warning disable CS1591
         String,
+        #pragma warning restore CS1591
         [EnumMember(Value = "single_select")]
+        #pragma warning disable CS1591
         Single_select,
+        #pragma warning restore CS1591
     }
 }

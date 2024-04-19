@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum TeamMembership_state
     {
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
         [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
         Pending,
+        #pragma warning restore CS1591
     }
 }

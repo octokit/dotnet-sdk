@@ -6,12 +6,20 @@ namespace GitHub.Repos.Item.Item.Import {
     public enum ImportPutRequestBody_vcs
     {
         [EnumMember(Value = "subversion")]
+        #pragma warning disable CS1591
         Subversion,
+        #pragma warning restore CS1591
         [EnumMember(Value = "git")]
+        #pragma warning disable CS1591
         Git,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mercurial")]
+        #pragma warning disable CS1591
         Mercurial,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tfvc")]
+        #pragma warning disable CS1591
         Tfvc,
+        #pragma warning restore CS1591
     }
 }

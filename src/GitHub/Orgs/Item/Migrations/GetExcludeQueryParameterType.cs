@@ -6,6 +6,8 @@ namespace GitHub.Orgs.Item.Migrations {
     public enum GetExcludeQueryParameterType
     {
         [EnumMember(Value = "repositories")]
+        #pragma warning disable CS1591
         Repositories,
+        #pragma warning restore CS1591
     }
 }

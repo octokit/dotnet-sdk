@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum CodeScanningDefaultSetupUpdate_state
     {
         [EnumMember(Value = "configured")]
+        #pragma warning disable CS1591
         Configured,
+        #pragma warning restore CS1591
         [EnumMember(Value = "not-configured")]
+        #pragma warning disable CS1591
         NotConfigured,
+        #pragma warning restore CS1591
     }
 }

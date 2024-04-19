@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum RuleSuite_rule_evaluations_result
     {
         [EnumMember(Value = "pass")]
+        #pragma warning disable CS1591
         Pass,
+        #pragma warning restore CS1591
         [EnumMember(Value = "fail")]
+        #pragma warning disable CS1591
         Fail,
+        #pragma warning restore CS1591
     }
 }

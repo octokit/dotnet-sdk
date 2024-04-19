@@ -6,10 +6,16 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events {
     public enum EventsPostRequestBody_event
     {
         [EnumMember(Value = "APPROVE")]
+        #pragma warning disable CS1591
         APPROVE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "REQUEST_CHANGES")]
+        #pragma warning disable CS1591
         REQUEST_CHANGES,
+        #pragma warning restore CS1591
         [EnumMember(Value = "COMMENT")]
+        #pragma warning disable CS1591
         COMMENT,
+        #pragma warning restore CS1591
     }
 }

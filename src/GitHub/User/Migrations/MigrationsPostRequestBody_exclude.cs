@@ -6,6 +6,8 @@ namespace GitHub.User.Migrations {
     public enum MigrationsPostRequestBody_exclude
     {
         [EnumMember(Value = "repositories")]
+        #pragma warning disable CS1591
         Repositories,
+        #pragma warning restore CS1591
     }
 }

@@ -2,9 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum RepositoryRuleRequiredDeployments_type
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "required_deployments")]
+        #pragma warning disable CS1591
         Required_deployments,
+        #pragma warning restore CS1591
     }
 }

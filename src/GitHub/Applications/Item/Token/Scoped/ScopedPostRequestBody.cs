@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Applications.Item.Token.Scoped {
+    #pragma warning disable CS1591
     public class ScopedPostRequestBody : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The access token used to authenticate to the GitHub API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

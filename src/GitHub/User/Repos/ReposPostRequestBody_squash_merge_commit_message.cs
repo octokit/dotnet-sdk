@@ -6,10 +6,16 @@ namespace GitHub.User.Repos {
     public enum ReposPostRequestBody_squash_merge_commit_message
     {
         [EnumMember(Value = "PR_BODY")]
+        #pragma warning disable CS1591
         PR_BODY,
+        #pragma warning restore CS1591
         [EnumMember(Value = "COMMIT_MESSAGES")]
+        #pragma warning disable CS1591
         COMMIT_MESSAGES,
+        #pragma warning restore CS1591
         [EnumMember(Value = "BLANK")]
+        #pragma warning disable CS1591
         BLANK,
+        #pragma warning restore CS1591
     }
 }

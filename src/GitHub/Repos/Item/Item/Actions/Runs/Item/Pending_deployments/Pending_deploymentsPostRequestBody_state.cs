@@ -6,8 +6,12 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments {
     public enum Pending_deploymentsPostRequestBody_state
     {
         [EnumMember(Value = "approved")]
+        #pragma warning disable CS1591
         Approved,
+        #pragma warning restore CS1591
         [EnumMember(Value = "rejected")]
+        #pragma warning disable CS1591
         Rejected,
+        #pragma warning restore CS1591
     }
 }

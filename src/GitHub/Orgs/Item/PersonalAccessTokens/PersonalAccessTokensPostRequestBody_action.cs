@@ -6,6 +6,8 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
     public enum PersonalAccessTokensPostRequestBody_action
     {
         [EnumMember(Value = "revoke")]
+        #pragma warning disable CS1591
         Revoke,
+        #pragma warning restore CS1591
     }
 }

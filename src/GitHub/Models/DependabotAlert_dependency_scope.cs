@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum DependabotAlert_dependency_scope
     {
         [EnumMember(Value = "development")]
+        #pragma warning disable CS1591
         Development,
+        #pragma warning restore CS1591
         [EnumMember(Value = "runtime")]
+        #pragma warning disable CS1591
         Runtime,
+        #pragma warning restore CS1591
     }
 }

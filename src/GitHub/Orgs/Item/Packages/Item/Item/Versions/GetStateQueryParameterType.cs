@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Packages.Item.Item.Versions {
+    #pragma warning disable CS1591
     public enum GetStateQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deleted")]
+        #pragma warning disable CS1591
         Deleted,
+        #pragma warning restore CS1591
     }
 }

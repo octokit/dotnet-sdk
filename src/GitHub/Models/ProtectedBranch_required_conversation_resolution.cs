@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public class ProtectedBranch_required_conversation_resolution : IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
