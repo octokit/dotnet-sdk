@@ -394,4 +394,52 @@ public class RateLimitHandlerSubclass : RateLimitHandler
 
         Assert.Equal(1, timeToWait?.TotalHours);
     }
+
+    [Fact]
+    public void ParseRetryAfterHeader_NullRetryAfter_ReturnsNull()
+    {
+        var response = new HttpResponseMessage();
+        var artificialNow = new DateTime(2000, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+        var timeToWait = ParseRetryAfterHeader(response, artificialNow);
+
+        Assert.Null(timeToWait);
+    }
+
+    [Fact]
+    public void ParseRetryAfterHeader_WithDateTime_ReturnsCorrectTime()
+    {
+        var response = new HttpResponseMessage();
+        var artificialFuture = new DateTime(2000, 1, 1, 1, 0, 0, DateTimeKind.Utc);
+        response.Headers.RetryAfter = new RetryConditionHeaderValue(artificialFuture);
+        var artificialNow = new DateTime(2000, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+        var timeToWait = ParseRetryAfterHeader(response, artificialNow);
+
+        Assert.Equal(1, timeToWait?.TotalHours);
+    }
+
+    [Fact]
+    public void ParseXRateLimitReset_NullXRateLimitResetKey_ReturnsNull()
+    {
+        var response = new HttpResponseMessage();
+        response.Headers.Add(XRateLimitResetKey, "");
+        var artificialNow = new DateTime(2000, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+        var timeToWait = ParseXRateLimitReset(response, artificialNow);
+
+        Assert.Null(timeToWait);
+    }
+
+    [Fact]
+    public void ParseXRateLimitReset_WithXRateLimitResetKey_ReturnsCorrectTime()
+    {
+        var response = new HttpResponseMessage();
+        response.Headers.Add(XRateLimitResetKey, "946688400"); // one hour past the millenium
+        var artificialNow = new DateTime(2000, 1, 1, 0, 0, 0, DateTimeKind.Utc); // 946684800 in unix epoch time
+
+        var timeToWait = ParseXRateLimitReset(response, artificialNow);
+
+        Assert.Equal(1, timeToWait?.TotalHours);
+    }
 }
