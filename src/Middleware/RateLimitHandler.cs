@@ -96,7 +96,7 @@ public class RateLimitHandler : DelegatingHandler
 
         if (rateLimit != RateLimitType.None)
         {
-            var retryAfterDuration = ParseRateLimit(response);
+            var retryAfterDuration = ParseRateLimit(response, DateTime.UtcNow);
             if (rateLimit == RateLimitType.Primary)
             {
                 // TODO(kfcampbell): investigate ways to do logging/notifications in a .NET library
@@ -137,21 +137,21 @@ public class RateLimitHandler : DelegatingHandler
     /// </summary>
     /// <param name="response"></param>
     /// <returns></returns>
-    private TimeSpan? ParseRateLimit(HttpResponseMessage response)
+    private TimeSpan? ParseRateLimit(HttpResponseMessage response, DateTime utcNow)
     {
         // "If the retry-after response header is present, you should not retry
         // your request until after that many seconds has elapsed."
         // (see docs link above)
         if (response.Headers.RetryAfter != null)
         {
-            return ParseRetryAfterHeader(response);
+            return ParseRetryAfterHeader(response, utcNow);
         }
         // "If the retry-after response header is present, you should not retry
         // your request until after that many seconds has elapsed."
         // (see docs link above)
         else if (response.Headers.Contains(XRateLimitResetKey))
         {
-            return ParseXRateLimitReset(response);
+            return ParseXRateLimitReset(response, utcNow);
         }
         return null;
     }
@@ -163,7 +163,7 @@ public class RateLimitHandler : DelegatingHandler
     /// </summary>
     /// <param name="response"></param>
     /// <returns></returns>
-    private TimeSpan? ParseRetryAfterHeader(HttpResponseMessage response)
+    private TimeSpan? ParseRetryAfterHeader(HttpResponseMessage response, DateTime utcNow)
     {
         if (response.Headers.RetryAfter != null)
         {
@@ -174,7 +174,7 @@ public class RateLimitHandler : DelegatingHandler
             }
             else if (retryAfter.Date.HasValue)
             {
-                var retryAfterTimeSpan = retryAfter.Date.Value.UtcDateTime - DateTime.UtcNow;
+                var retryAfterTimeSpan = retryAfter.Date.Value.UtcDateTime - utcNow;
                 return retryAfterTimeSpan.Ticks > 0 ? retryAfterTimeSpan : null;
             }
         }
@@ -189,14 +189,14 @@ public class RateLimitHandler : DelegatingHandler
     /// </summary>
     /// <param name="response"></param>
     /// <returns></returns> <summary>
-    private TimeSpan? ParseXRateLimitReset(HttpResponseMessage response)
+    private TimeSpan? ParseXRateLimitReset(HttpResponseMessage response, DateTime utcNow)
     {
         // TODO(kfcampbell): can this be cleaned up/prettified/extra-validated?
         var rateLimitReset = response.Headers.GetValues(XRateLimitResetKey).FirstOrDefault();
         if (rateLimitReset != null && long.TryParse(rateLimitReset, out var rateLimitResetValue))
         {
             var rateLimitResetDateTime = DateTimeOffset.FromUnixTimeSeconds(rateLimitResetValue);
-            var rateLimitResetTimeSpan = rateLimitResetDateTime.UtcDateTime - DateTime.UtcNow;
+            var rateLimitResetTimeSpan = rateLimitResetDateTime.UtcDateTime - utcNow;
             return rateLimitResetTimeSpan.Ticks > 0 ? rateLimitResetTimeSpan : null;
         }
         return null;
