@@ -11,7 +11,7 @@ public class UserAgentOptions : IRequestOption
 {
     /// <summary>
     /// Gets or sets the product name used in the user agent request header.
-    /// Defaults to <c>"dotnet-sdk"</c>.
+    /// Defaults to <c>"GitHub.Octokit.dotnet-sdk"</c>.
     /// </summary>
     public string ProductName { get; set; } = "GitHub.Octokit.dotnet-sdk";
 
