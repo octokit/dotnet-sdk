@@ -129,10 +129,10 @@ namespace GitHub.Models {
         /// <summary>The products and respective version ranges affected by the advisory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GlobalAdvisory_vulnerabilities>? Vulnerabilities { get; set; }
+        public List<Vulnerability>? Vulnerabilities { get; set; }
 #nullable restore
 #else
-        public List<GlobalAdvisory_vulnerabilities> Vulnerabilities { get; set; }
+        public List<Vulnerability> Vulnerabilities { get; set; }
 #endif
         /// <summary>The date and time of when the advisory was withdrawn, in ISO 8601 format.</summary>
         public DateTimeOffset? WithdrawnAt { get; private set; }
@@ -173,7 +173,7 @@ namespace GitHub.Models {
                 {"type", n => { Type = n.GetEnumValue<GlobalAdvisory_type>(); } },
                 {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 {"url", n => { Url = n.GetStringValue(); } },
-                {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<GlobalAdvisory_vulnerabilities>(GlobalAdvisory_vulnerabilities.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<Vulnerability>(Vulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"withdrawn_at", n => { WithdrawnAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -191,7 +191,7 @@ namespace GitHub.Models {
             writer.WriteEnumValue<GlobalAdvisory_severity>("severity", Severity);
             writer.WriteStringValue("source_code_location", SourceCodeLocation);
             writer.WriteStringValue("summary", Summary);
-            writer.WriteCollectionOfObjectValues<GlobalAdvisory_vulnerabilities>("vulnerabilities", Vulnerabilities);
+            writer.WriteCollectionOfObjectValues<Vulnerability>("vulnerabilities", Vulnerabilities);
         }
     }
 }
