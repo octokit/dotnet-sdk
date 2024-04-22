@@ -1,4 +1,5 @@
 using System.Net;
+using System.Net.Http.Headers;
 using GitHub.Octokit.Client;
 using GitHub.Octokit.Client.Middleware;
 using Moq;
@@ -353,5 +354,44 @@ public class RateLimitHandlerTests
         // TODO: Act & Assert
         // await Assert.ThrowsAsync<Exception>(() => httpClient.SendAsync(new HttpRequestMessage()));
         await Task.Run(() => Assert.NotNull(httpClient));
+    }
+}
+
+// Test Specific Subclass used for testing the private internals of RateLimitHandler
+public class RateLimitHandlerSubclass : RateLimitHandler
+{
+    [Fact]
+    public void ParseRateLimit_EmptyHeaders_ReturnsNull()
+    {
+        var response = new HttpResponseMessage();
+
+        var limit = ParseRateLimit(response, DateTime.Now);
+
+        Assert.Null(limit);
+    }
+
+    [Fact]
+    public void ParseRateLimit_WithRetryAfter_ReturnsCorrectTime()
+    {
+        var response = new HttpResponseMessage();
+        var artificialFuture = new DateTime(2000, 1, 1, 1, 0, 0, DateTimeKind.Utc);
+        response.Headers.RetryAfter = new RetryConditionHeaderValue(artificialFuture);
+        var artificialNow = new DateTime(2000, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+        var timeToWait = ParseRateLimit(response, artificialNow);
+
+        Assert.Equal(1, timeToWait?.TotalHours);
+    }
+
+    [Fact]
+    public void ParseRateLimit_WithXRateLimitResetKey_ReturnsCorrectTime()
+    {
+        var response = new HttpResponseMessage();
+        response.Headers.Add(XRateLimitResetKey, "946688400"); // one hour past the millenium
+        var artificialNow = new DateTime(2000, 1, 1, 0, 0, 0, DateTimeKind.Utc); // 946684800 in unix epoch time
+
+        var timeToWait = ParseRateLimit(response, artificialNow);
+
+        Assert.Equal(1, timeToWait?.TotalHours);
     }
 }

@@ -67,8 +67,9 @@ public class RateLimitHandler : DelegatingHandler
     public const string XRateLimitRemainingKey = "X-RateLimit-Remaining";
     public const string XRateLimitResetKey = "X-RateLimit-Reset";
     public const string XRateLimitLimitKey = "X-RateLimit-Limit";
-    public const string XRateLimitUsedHeaderKey = "X-RateLimit-Used";
+    public const string XRateLimitUsedKey = "X-RateLimit-Used";
     public const string XRateLimitResourceKey = "X-RateLimit-Resource";
+    public const string RetryAfterKey =  "Retry-After";
 
     private readonly IRateLimitHandlerOptions _options;
 
@@ -104,7 +105,7 @@ public class RateLimitHandler : DelegatingHandler
                     $"Sleeping for {retryAfterDuration?.TotalSeconds ?? 0} seconds before retrying.");
 
                 Console.WriteLine($"Rate limit information: {XRateLimitLimitKey}: {response.Headers.GetValues(XRateLimitLimitKey).FirstOrDefault()}, " +
-                    $"{XRateLimitUsedHeaderKey}: {response.Headers.GetValues(XRateLimitUsedHeaderKey).FirstOrDefault()}, " +
+                    $"{XRateLimitUsedKey}: {response.Headers.GetValues(XRateLimitUsedKey).FirstOrDefault()}, " +
                     $"{XRateLimitResourceKey}: {response.Headers.GetValues(XRateLimitResourceKey).FirstOrDefault()}");
             }
             else if (rateLimit == RateLimitType.Secondary)
@@ -137,7 +138,7 @@ public class RateLimitHandler : DelegatingHandler
     /// </summary>
     /// <param name="response"></param>
     /// <returns></returns>
-    private TimeSpan? ParseRateLimit(HttpResponseMessage response, DateTime utcNow)
+    protected TimeSpan? ParseRateLimit(HttpResponseMessage response, DateTime utcNow)
     {
         // "If the retry-after response header is present, you should not retry
         // your request until after that many seconds has elapsed."
@@ -146,9 +147,9 @@ public class RateLimitHandler : DelegatingHandler
         {
             return ParseRetryAfterHeader(response, utcNow);
         }
-        // "If the retry-after response header is present, you should not retry
-        // your request until after that many seconds has elapsed."
-        // (see docs link above)
+        // If the x-ratelimit-remaining header is 0, you should not make another
+        // request until after the time specified by the x-ratelimit-reset header.
+        // The x-ratelimit-reset header is in UTC epoch seconds.
         else if (response.Headers.Contains(XRateLimitResetKey))
         {
             return ParseXRateLimitReset(response, utcNow);
@@ -163,7 +164,7 @@ public class RateLimitHandler : DelegatingHandler
     /// </summary>
     /// <param name="response"></param>
     /// <returns></returns>
-    private TimeSpan? ParseRetryAfterHeader(HttpResponseMessage response, DateTime utcNow)
+    protected TimeSpan? ParseRetryAfterHeader(HttpResponseMessage response, DateTime utcNow)
     {
         if (response.Headers.RetryAfter != null)
         {
@@ -189,7 +190,7 @@ public class RateLimitHandler : DelegatingHandler
     /// </summary>
     /// <param name="response"></param>
     /// <returns></returns> <summary>
-    private TimeSpan? ParseXRateLimitReset(HttpResponseMessage response, DateTime utcNow)
+    protected TimeSpan? ParseXRateLimitReset(HttpResponseMessage response, DateTime utcNow)
     {
         // TODO(kfcampbell): can this be cleaned up/prettified/extra-validated?
         var rateLimitReset = response.Headers.GetValues(XRateLimitResetKey).FirstOrDefault();
