@@ -65,7 +65,7 @@ public class RateLimitHandler : DelegatingHandler
     public const string XRateLimitLimitKey = "X-RateLimit-Limit";
     public const string XRateLimitUsedKey = "X-RateLimit-Used";
     public const string XRateLimitResourceKey = "X-RateLimit-Resource";
-    public const string RetryAfterKey =  "Retry-After";
+    public const string RetryAfterKey = "Retry-After";
 
     private readonly IRateLimitHandlerOptions _options;
 
