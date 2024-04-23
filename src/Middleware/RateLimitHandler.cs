@@ -50,7 +50,6 @@ public class RateLimitHandlerOptions : IRateLimitHandlerOptions
         {
             return RateLimitType.None;
         }
-        // return rateLimitRemaining == "0" ? RateLimitType.Primary : RateLimitType.None;
     };
 }
 
@@ -176,7 +175,6 @@ public class RateLimitHandler : DelegatingHandler
                 return retryAfterTimeSpan.Ticks > 0 ? retryAfterTimeSpan : null;
             }
         }
-
         return null;
     }
 
@@ -189,7 +187,6 @@ public class RateLimitHandler : DelegatingHandler
     /// <returns></returns> <summary>
     protected TimeSpan? ParseXRateLimitReset(HttpResponseMessage response, DateTime utcNow)
     {
-        // TODO(kfcampbell): can this be cleaned up/prettified/extra-validated?
         var rateLimitReset = response.Headers.GetValues(XRateLimitResetKey).FirstOrDefault();
         if (rateLimitReset != null && long.TryParse(rateLimitReset, out var rateLimitResetValue))
         {

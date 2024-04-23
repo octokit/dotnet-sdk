@@ -1,3 +1,6 @@
+// Much of this RateLimitHandlerTest code has been adapted from the
+// MockRedirectHandler code written by our colleagues at Kiota. Please see:
+// https://github.com/microsoft/kiota-http-dotnet/blob/6397579b16ba841048a3263a710f6c282c8a1c53/Microsoft.Kiota.Http.HttpClientLibrary.Tests/Mocks/MockRedirectHandler.cs
 public class MockRateLimitHandler : HttpMessageHandler
 {
     private HttpResponseMessage? Response1
