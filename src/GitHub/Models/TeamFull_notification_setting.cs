@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum TeamFull_notification_setting
     {
         [EnumMember(Value = "notifications_enabled")]
+        #pragma warning disable CS1591
         Notifications_enabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "notifications_disabled")]
+        #pragma warning disable CS1591
         Notifications_disabled,
+        #pragma warning restore CS1591
     }
 }

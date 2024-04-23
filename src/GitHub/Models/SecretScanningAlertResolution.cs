@@ -6,12 +6,20 @@ namespace GitHub.Models {
     public enum SecretScanningAlertResolution
     {
         [EnumMember(Value = "false_positive")]
+        #pragma warning disable CS1591
         False_positive,
+        #pragma warning restore CS1591
         [EnumMember(Value = "wont_fix")]
+        #pragma warning disable CS1591
         Wont_fix,
+        #pragma warning restore CS1591
         [EnumMember(Value = "revoked")]
+        #pragma warning disable CS1591
         Revoked,
+        #pragma warning restore CS1591
         [EnumMember(Value = "used_in_tests")]
+        #pragma warning disable CS1591
         Used_in_tests,
+        #pragma warning restore CS1591
     }
 }

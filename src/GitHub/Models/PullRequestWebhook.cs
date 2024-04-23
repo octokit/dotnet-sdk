@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public class PullRequestWebhook : PullRequest, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Whether to allow auto-merge for pull requests.</summary>
         public bool? AllowAutoMerge { get; set; }

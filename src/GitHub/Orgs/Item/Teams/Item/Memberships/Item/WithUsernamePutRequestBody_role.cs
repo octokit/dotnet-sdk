@@ -6,8 +6,12 @@ namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item {
     public enum WithUsernamePutRequestBody_role
     {
         [EnumMember(Value = "member")]
+        #pragma warning disable CS1591
         Member,
+        #pragma warning restore CS1591
         [EnumMember(Value = "maintainer")]
+        #pragma warning disable CS1591
         Maintainer,
+        #pragma warning restore CS1591
     }
 }

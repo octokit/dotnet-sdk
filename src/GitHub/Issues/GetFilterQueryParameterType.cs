@@ -2,19 +2,33 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Issues {
+    #pragma warning disable CS1591
     public enum GetFilterQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "assigned")]
+        #pragma warning disable CS1591
         Assigned,
+        #pragma warning restore CS1591
         [EnumMember(Value = "created")]
+        #pragma warning disable CS1591
         Created,
+        #pragma warning restore CS1591
         [EnumMember(Value = "mentioned")]
+        #pragma warning disable CS1591
         Mentioned,
+        #pragma warning restore CS1591
         [EnumMember(Value = "subscribed")]
+        #pragma warning disable CS1591
         Subscribed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "repos")]
+        #pragma warning disable CS1591
         Repos,
+        #pragma warning restore CS1591
         [EnumMember(Value = "all")]
+        #pragma warning disable CS1591
         All,
+        #pragma warning restore CS1591
     }
 }

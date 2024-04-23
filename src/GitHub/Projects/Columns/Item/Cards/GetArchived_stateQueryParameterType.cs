@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Projects.Columns.Item.Cards {
+    #pragma warning disable CS1591
     public enum GetArchived_stateQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "all")]
+        #pragma warning disable CS1591
         All,
+        #pragma warning restore CS1591
         [EnumMember(Value = "archived")]
+        #pragma warning disable CS1591
         Archived,
+        #pragma warning restore CS1591
         [EnumMember(Value = "not_archived")]
+        #pragma warning disable CS1591
         Not_archived,
+        #pragma warning restore CS1591
     }
 }

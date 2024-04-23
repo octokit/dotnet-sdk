@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.PersonalAccessTokens {
+    #pragma warning disable CS1591
     public class PersonalAccessTokensPostRequestBody : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Action to apply to the fine-grained personal access token.</summary>
         public PersonalAccessTokensPostRequestBody_action? Action { get; set; }

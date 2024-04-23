@@ -6,10 +6,16 @@ namespace GitHub.Repos.Item.Item.Releases {
     public enum ReleasesPostRequestBody_make_latest
     {
         [EnumMember(Value = "true")]
+        #pragma warning disable CS1591
         True,
+        #pragma warning restore CS1591
         [EnumMember(Value = "false")]
+        #pragma warning disable CS1591
         False,
+        #pragma warning restore CS1591
         [EnumMember(Value = "legacy")]
+        #pragma warning disable CS1591
         Legacy,
+        #pragma warning restore CS1591
     }
 }

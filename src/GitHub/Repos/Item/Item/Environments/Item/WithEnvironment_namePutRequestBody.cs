@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item.Environments.Item {
+    #pragma warning disable CS1591
     public class WithEnvironment_namePutRequestBody : IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

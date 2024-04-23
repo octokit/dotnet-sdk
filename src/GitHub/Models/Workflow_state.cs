@@ -2,17 +2,29 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum Workflow_state
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
         Active,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deleted")]
+        #pragma warning disable CS1591
         Deleted,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled_fork")]
+        #pragma warning disable CS1591
         Disabled_fork,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled_inactivity")]
+        #pragma warning disable CS1591
         Disabled_inactivity,
+        #pragma warning restore CS1591
         [EnumMember(Value = "disabled_manually")]
+        #pragma warning disable CS1591
         Disabled_manually,
+        #pragma warning restore CS1591
     }
 }

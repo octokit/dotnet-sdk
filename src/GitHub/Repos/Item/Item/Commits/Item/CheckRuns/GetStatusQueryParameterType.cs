@@ -2,13 +2,21 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Commits.Item.CheckRuns {
+    #pragma warning disable CS1591
     public enum GetStatusQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "queued")]
+        #pragma warning disable CS1591
         Queued,
+        #pragma warning restore CS1591
         [EnumMember(Value = "in_progress")]
+        #pragma warning disable CS1591
         In_progress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "completed")]
+        #pragma warning disable CS1591
         Completed,
+        #pragma warning restore CS1591
     }
 }

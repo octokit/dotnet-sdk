@@ -6,8 +6,12 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
     public enum LfsPatchRequestBody_use_lfs
     {
         [EnumMember(Value = "opt_in")]
+        #pragma warning disable CS1591
         Opt_in,
+        #pragma warning restore CS1591
         [EnumMember(Value = "opt_out")]
+        #pragma warning disable CS1591
         Opt_out,
+        #pragma warning restore CS1591
     }
 }

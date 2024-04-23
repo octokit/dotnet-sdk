@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum CodeScanningAlertSetState
     {
         [EnumMember(Value = "open")]
+        #pragma warning disable CS1591
         Open,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dismissed")]
+        #pragma warning disable CS1591
         Dismissed,
+        #pragma warning restore CS1591
     }
 }

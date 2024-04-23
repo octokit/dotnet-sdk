@@ -6,14 +6,24 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
     public enum TreesPostRequestBody_tree_mode
     {
         [EnumMember(Value = "100644")]
+        #pragma warning disable CS1591
         OneZeroZeroSixFourFour,
+        #pragma warning restore CS1591
         [EnumMember(Value = "100755")]
+        #pragma warning disable CS1591
         OneZeroZeroSevenFiveFive,
+        #pragma warning restore CS1591
         [EnumMember(Value = "040000")]
+        #pragma warning disable CS1591
         ZeroFourZeroZeroZeroZero,
+        #pragma warning restore CS1591
         [EnumMember(Value = "160000")]
+        #pragma warning disable CS1591
         OneSixZeroZeroZeroZero,
+        #pragma warning restore CS1591
         [EnumMember(Value = "120000")]
+        #pragma warning disable CS1591
         OneTwoZeroZeroZeroZero,
+        #pragma warning restore CS1591
     }
 }

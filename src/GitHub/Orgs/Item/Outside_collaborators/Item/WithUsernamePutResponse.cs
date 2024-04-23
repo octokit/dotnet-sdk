@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Orgs.Item.Outside_collaborators.Item {
+    #pragma warning disable CS1591
     public class WithUsernamePutResponse : IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

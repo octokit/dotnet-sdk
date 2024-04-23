@@ -2,11 +2,17 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Members {
+    #pragma warning disable CS1591
     public enum GetFilterQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "2fa_disabled")]
+        #pragma warning disable CS1591
         Twofa_disabled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "all")]
+        #pragma warning disable CS1591
         All,
+        #pragma warning restore CS1591
     }
 }

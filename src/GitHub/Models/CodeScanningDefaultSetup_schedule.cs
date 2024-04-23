@@ -6,6 +6,8 @@ namespace GitHub.Models {
     public enum CodeScanningDefaultSetup_schedule
     {
         [EnumMember(Value = "weekly")]
+        #pragma warning disable CS1591
         Weekly,
+        #pragma warning restore CS1591
     }
 }

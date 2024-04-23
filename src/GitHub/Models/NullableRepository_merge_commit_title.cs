@@ -6,8 +6,12 @@ namespace GitHub.Models {
     public enum NullableRepository_merge_commit_title
     {
         [EnumMember(Value = "PR_TITLE")]
+        #pragma warning disable CS1591
         PR_TITLE,
+        #pragma warning restore CS1591
         [EnumMember(Value = "MERGE_MESSAGE")]
+        #pragma warning disable CS1591
         MERGE_MESSAGE,
+        #pragma warning restore CS1591
     }
 }

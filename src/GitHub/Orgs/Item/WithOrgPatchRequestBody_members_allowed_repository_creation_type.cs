@@ -6,10 +6,16 @@ namespace GitHub.Orgs.Item {
     public enum WithOrgPatchRequestBody_members_allowed_repository_creation_type
     {
         [EnumMember(Value = "all")]
+        #pragma warning disable CS1591
         All,
+        #pragma warning restore CS1591
         [EnumMember(Value = "private")]
+        #pragma warning disable CS1591
         Private,
+        #pragma warning restore CS1591
         [EnumMember(Value = "none")]
+        #pragma warning disable CS1591
         None,
+        #pragma warning restore CS1591
     }
 }

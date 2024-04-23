@@ -2,9 +2,13 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public enum RepositoryRuleCreation_type
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "creation")]
+        #pragma warning disable CS1591
         Creation,
+        #pragma warning restore CS1591
     }
 }

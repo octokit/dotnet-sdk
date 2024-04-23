@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System;
 namespace GitHub.Models {
+    #pragma warning disable CS1591
     public class RepositoryAdvisory_submission : IAdditionalDataHolder, IParsable 
+    #pragma warning restore CS1591
     {
         /// <summary>Whether a private vulnerability report was accepted by the repository&apos;s administrators.</summary>
         public bool? Accepted { get; private set; }

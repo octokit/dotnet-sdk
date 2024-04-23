@@ -6,14 +6,24 @@ namespace GitHub.Models {
     public enum GlobalAdvisory_severity
     {
         [EnumMember(Value = "critical")]
+        #pragma warning disable CS1591
         Critical,
+        #pragma warning restore CS1591
         [EnumMember(Value = "high")]
+        #pragma warning disable CS1591
         High,
+        #pragma warning restore CS1591
         [EnumMember(Value = "medium")]
+        #pragma warning disable CS1591
         Medium,
+        #pragma warning restore CS1591
         [EnumMember(Value = "low")]
+        #pragma warning disable CS1591
         Low,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
+        #pragma warning disable CS1591
         Unknown,
+        #pragma warning restore CS1591
     }
 }

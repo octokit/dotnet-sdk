@@ -6,24 +6,44 @@ namespace GitHub.Models {
     public enum SecurityAdvisoryCreditTypes
     {
         [EnumMember(Value = "analyst")]
+        #pragma warning disable CS1591
         Analyst,
+        #pragma warning restore CS1591
         [EnumMember(Value = "finder")]
+        #pragma warning disable CS1591
         Finder,
+        #pragma warning restore CS1591
         [EnumMember(Value = "reporter")]
+        #pragma warning disable CS1591
         Reporter,
+        #pragma warning restore CS1591
         [EnumMember(Value = "coordinator")]
+        #pragma warning disable CS1591
         Coordinator,
+        #pragma warning restore CS1591
         [EnumMember(Value = "remediation_developer")]
+        #pragma warning disable CS1591
         Remediation_developer,
+        #pragma warning restore CS1591
         [EnumMember(Value = "remediation_reviewer")]
+        #pragma warning disable CS1591
         Remediation_reviewer,
+        #pragma warning restore CS1591
         [EnumMember(Value = "remediation_verifier")]
+        #pragma warning disable CS1591
         Remediation_verifier,
+        #pragma warning restore CS1591
         [EnumMember(Value = "tool")]
+        #pragma warning disable CS1591
         Tool,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sponsor")]
+        #pragma warning disable CS1591
         Sponsor,
+        #pragma warning restore CS1591
         [EnumMember(Value = "other")]
+        #pragma warning disable CS1591
         Other,
+        #pragma warning restore CS1591
     }
 }

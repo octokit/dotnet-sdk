@@ -6,10 +6,16 @@ namespace GitHub.Orgs.Item.Teams.Item {
     public enum WithTeam_slugPatchRequestBody_permission
     {
         [EnumMember(Value = "pull")]
+        #pragma warning disable CS1591
         Pull,
+        #pragma warning restore CS1591
         [EnumMember(Value = "push")]
+        #pragma warning disable CS1591
         Push,
+        #pragma warning restore CS1591
         [EnumMember(Value = "admin")]
+        #pragma warning disable CS1591
         Admin,
+        #pragma warning restore CS1591
     }
 }

@@ -6,8 +6,12 @@ namespace GitHub.Repos.Item.Item.Pulls.Item {
     public enum WithPull_numberPatchRequestBody_state
     {
         [EnumMember(Value = "open")]
+        #pragma warning disable CS1591
         Open,
+        #pragma warning restore CS1591
         [EnumMember(Value = "closed")]
+        #pragma warning disable CS1591
         Closed,
+        #pragma warning restore CS1591
     }
 }

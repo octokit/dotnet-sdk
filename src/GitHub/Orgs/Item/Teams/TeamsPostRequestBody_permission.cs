@@ -6,8 +6,12 @@ namespace GitHub.Orgs.Item.Teams {
     public enum TeamsPostRequestBody_permission
     {
         [EnumMember(Value = "pull")]
+        #pragma warning disable CS1591
         Pull,
+        #pragma warning restore CS1591
         [EnumMember(Value = "push")]
+        #pragma warning disable CS1591
         Push,
+        #pragma warning restore CS1591
     }
 }

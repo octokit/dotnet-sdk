@@ -2,17 +2,29 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Invitations {
+    #pragma warning disable CS1591
     public enum GetRoleQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "all")]
+        #pragma warning disable CS1591
         All,
+        #pragma warning restore CS1591
         [EnumMember(Value = "admin")]
+        #pragma warning disable CS1591
         Admin,
+        #pragma warning restore CS1591
         [EnumMember(Value = "direct_member")]
+        #pragma warning disable CS1591
         Direct_member,
+        #pragma warning restore CS1591
         [EnumMember(Value = "billing_manager")]
+        #pragma warning disable CS1591
         Billing_manager,
+        #pragma warning restore CS1591
         [EnumMember(Value = "hiring_manager")]
+        #pragma warning disable CS1591
         Hiring_manager,
+        #pragma warning restore CS1591
     }
 }

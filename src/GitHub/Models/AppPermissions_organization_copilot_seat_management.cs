@@ -6,6 +6,8 @@ namespace GitHub.Models {
     public enum AppPermissions_organization_copilot_seat_management
     {
         [EnumMember(Value = "write")]
+        #pragma warning disable CS1591
         Write,
+        #pragma warning restore CS1591
     }
 }

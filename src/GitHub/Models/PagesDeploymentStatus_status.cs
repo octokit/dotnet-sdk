@@ -6,26 +6,48 @@ namespace GitHub.Models {
     public enum PagesDeploymentStatus_status
     {
         [EnumMember(Value = "deployment_in_progress")]
+        #pragma warning disable CS1591
         Deployment_in_progress,
+        #pragma warning restore CS1591
         [EnumMember(Value = "syncing_files")]
+        #pragma warning disable CS1591
         Syncing_files,
+        #pragma warning restore CS1591
         [EnumMember(Value = "finished_file_sync")]
+        #pragma warning disable CS1591
         Finished_file_sync,
+        #pragma warning restore CS1591
         [EnumMember(Value = "updating_pages")]
+        #pragma warning disable CS1591
         Updating_pages,
+        #pragma warning restore CS1591
         [EnumMember(Value = "purging_cdn")]
+        #pragma warning disable CS1591
         Purging_cdn,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment_cancelled")]
+        #pragma warning disable CS1591
         Deployment_cancelled,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment_failed")]
+        #pragma warning disable CS1591
         Deployment_failed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment_content_failed")]
+        #pragma warning disable CS1591
         Deployment_content_failed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment_attempt_error")]
+        #pragma warning disable CS1591
         Deployment_attempt_error,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment_lost")]
+        #pragma warning disable CS1591
         Deployment_lost,
+        #pragma warning restore CS1591
         [EnumMember(Value = "succeed")]
+        #pragma warning disable CS1591
         Succeed,
+        #pragma warning restore CS1591
     }
 }
