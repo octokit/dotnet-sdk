@@ -19,11 +19,6 @@ jobs:
         with:
           dotnet-version: '8.x.x'
 
-      # This is a temporary step. Since the CLI references the main project locally, the main
-      # project must be built first. When the CLI is removed, this may be removed as well.
-      - name: Build main project
-        run: dotnet build src/GitHub.Octokit.SDK.csproj
-
       - name: Format
         run: dotnet format --verify-no-changes
 
