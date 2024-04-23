@@ -1,9 +1,6 @@
 using System.Net;
 using System.Net.Http.Headers;
-using GitHub.Octokit.Client;
 using GitHub.Octokit.Client.Middleware;
-using Moq;
-using Moq.Protected;
 using Newtonsoft.Json;
 using Xunit;
 
@@ -184,7 +181,7 @@ public class RateLimitHandlerTests : IDisposable
 		""origin-when-cross-origin, strict-origin-when-cross-origin""
 	],
 	""Retry-After"": [
-		""60""
+		""5""
 	],
 	""Server"": [
 		""nginx/1.18.0 (Ubuntu)""
@@ -428,34 +425,6 @@ public class RateLimitHandlerTests : IDisposable
         var result = rateLimitHandlerOptions.IsRateLimited(request, response);
 
         Assert.Equal(RateLimitType.Secondary, result);
-    }
-
-    [Fact]
-    public async Task SendAsync_ThrowsRateLimitExceededException_WhenRateLimitIsExceeded()
-    {
-        // Arrange
-        var handlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
-        handlerMock.Protected()
-           .Setup<Task<HttpResponseMessage>>(
-              "SendAsync",
-              ItExpr.IsAny<HttpRequestMessage>(),
-              ItExpr.IsAny<CancellationToken>())
-           .ReturnsAsync(new HttpResponseMessage()
-           {
-               StatusCode = (HttpStatusCode)429, // Too Many Requests
-           })
-           .Verifiable();
-
-        var rateLimitHandler = new RateLimitHandler()
-        {
-            InnerHandler = handlerMock.Object
-        };
-
-        var httpClient = ClientFactory.Create(rateLimitHandler);
-
-        // TODO: Act & Assert
-        // await Assert.ThrowsAsync<Exception>(() => httpClient.SendAsync(new HttpRequestMessage()));
-        await Task.Run(() => Assert.NotNull(httpClient));
     }
 }
 
