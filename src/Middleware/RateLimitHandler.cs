@@ -1,5 +1,4 @@
 using System.Net;
-using Microsoft.Kiota.Abstractions;
 
 namespace GitHub.Octokit.Client.Middleware;
 
@@ -15,7 +14,6 @@ public interface IRateLimitHandlerOptions
     Func<HttpRequestMessage, HttpResponseMessage, RateLimitType> IsRateLimited { get; }
 }
 
-
 /// <summary>
 /// Represents the options for the rate limit handler.
 /// </summary>
@@ -28,7 +26,6 @@ public class RateLimitHandlerOptions : IRateLimitHandlerOptions
     /// </summary>
     public Func<HttpRequestMessage, HttpResponseMessage, RateLimitType> IsRateLimited => (request, response) =>
     {
-
         if (response.StatusCode != HttpStatusCode.TooManyRequests
         && response.StatusCode != HttpStatusCode.Forbidden)
         {

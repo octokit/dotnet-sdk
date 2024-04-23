@@ -7,7 +7,7 @@ using Moq.Protected;
 using Newtonsoft.Json;
 using Xunit;
 
-public class RateLimitHandlerTests
+public class RateLimitHandlerTests : IDisposable
 {
 
     // paired with 200 status code
@@ -212,6 +212,112 @@ public class RateLimitHandlerTests
 	]
 }";
 
+    private readonly MockRateLimitHandler _testHttpMessageHandler;
+    private readonly RateLimitHandler _rateLimitHandler;
+    private readonly HttpMessageInvoker _invoker;
+
+    // Much of this RateLimitHandlerTest code has been adapted from the
+    // RetryHandlerTests code written by our colleagues at Kiota. Please see:
+    // https://github.com/microsoft/kiota-http-dotnet/blob/6397579b16ba841048a3263a710f6c282c8a1c53/Microsoft.Kiota.Http.HttpClientLibrary.Tests/Middleware/RetryHandlerTests.cs
+    public RateLimitHandlerTests()
+    {
+        _testHttpMessageHandler = new MockRateLimitHandler();
+        _rateLimitHandler = new RateLimitHandler
+        {
+            InnerHandler = _testHttpMessageHandler
+        };
+        _invoker = new HttpMessageInvoker(_rateLimitHandler);
+    }
+
+    public void Dispose()
+    {
+        _invoker.Dispose();
+        GC.SuppressFinalize(this);
+    }
+
+    [Fact]
+    public async Task OkStatusShouldPassThrough()
+    {
+        var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "http://example.org/foo");
+        var expectedResponse = new HttpResponseMessage(HttpStatusCode.OK);
+
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(happyPathTestHeaders);
+
+        if (headersDictionary != null)
+        {
+            foreach (var header in headersDictionary)
+            {
+                expectedResponse.Headers.TryAddWithoutValidation(header.Key, header.Value);
+            }
+        }
+
+        _testHttpMessageHandler.SetHttpResponse(expectedResponse);
+
+        var response = await _invoker.SendAsync(httpRequestMessage, new CancellationToken());
+
+        Assert.Same(response, expectedResponse);
+        Assert.NotNull(response.RequestMessage);
+        Assert.Same(response.RequestMessage, httpRequestMessage);
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    [Theory]
+    [InlineData(HttpStatusCode.TooManyRequests)]  // 429
+    [InlineData(HttpStatusCode.Forbidden)] // 403
+    public async Task ShouldRetryWithPrimaryRateLimitedHeaders(HttpStatusCode statusCode)
+    {
+        var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "http://example.org/foo");
+        var firstResponse = new HttpResponseMessage(statusCode);
+
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(primaryRateLimitHeaders);
+
+        if (headersDictionary != null)
+        {
+            foreach (var header in headersDictionary)
+            {
+                firstResponse.Headers.TryAddWithoutValidation(header.Key, header.Value);
+            }
+        }
+
+        var expectedResponse = new HttpResponseMessage(HttpStatusCode.OK);
+        this._testHttpMessageHandler.SetHttpResponse(firstResponse, expectedResponse);
+
+        var response = await _invoker.SendAsync(httpRequestMessage, new CancellationToken());
+
+        Assert.Same(response, expectedResponse);
+        Assert.NotNull(response.RequestMessage);
+        Assert.NotNull(response.RequestMessage.Headers);
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
+    [Theory]
+    [InlineData(HttpStatusCode.TooManyRequests)]  // 429
+    [InlineData(HttpStatusCode.Forbidden)] // 403
+    public async Task ShouldRetryWithSecondaryRateLimitedHeaders(HttpStatusCode statusCode)
+    {
+        var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "http://example.org/foo");
+        var firstResponse = new HttpResponseMessage(statusCode);
+
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(secondaryRateLimitHeaders);
+
+        if (headersDictionary != null)
+        {
+            foreach (var header in headersDictionary)
+            {
+                firstResponse.Headers.TryAddWithoutValidation(header.Key, header.Value);
+            }
+        }
+
+        var expectedResponse = new HttpResponseMessage(HttpStatusCode.OK);
+        this._testHttpMessageHandler.SetHttpResponse(firstResponse, expectedResponse);
+
+        var response = await _invoker.SendAsync(httpRequestMessage, new CancellationToken());
+
+        Assert.Same(response, expectedResponse);
+        Assert.NotNull(response.RequestMessage);
+        Assert.NotNull(response.RequestMessage.Headers);
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
 
     [Fact]
     public void IsRateLimited_200Response_NoRateLimitReturned()
@@ -221,7 +327,6 @@ public class RateLimitHandlerTests
         var rateLimitHandlerOptions = new RateLimitHandlerOptions();
 
         var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(happyPathTestHeaders);
-
 
         if (headersDictionary != null)
         {
@@ -268,7 +373,6 @@ public class RateLimitHandlerTests
 
         var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(primaryRateLimitHeaders);
 
-
         if (headersDictionary != null)
         {
             foreach (var header in headersDictionary)
@@ -291,7 +395,6 @@ public class RateLimitHandlerTests
 
         var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(secondaryRateLimitHeaders);
 
-
         if (headersDictionary != null)
         {
             foreach (var header in headersDictionary)
@@ -313,7 +416,6 @@ public class RateLimitHandlerTests
         var rateLimitHandlerOptions = new RateLimitHandlerOptions();
 
         var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(secondaryRateLimitHeaders);
-
 
         if (headersDictionary != null)
         {
