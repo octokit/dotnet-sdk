@@ -49,7 +49,7 @@ namespace GitHub.Orgs.Item.Hooks.Item {
         {
         }
         /// <summary>
-        /// You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#delete-an-organization-webhook" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,7 +72,7 @@ namespace GitHub.Orgs.Item.Hooks.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a webhook configured in an organization. To get only the webhook`config` properties, see &quot;[Get a webhook configuration for an organization](/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization). You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// Returns a webhook configured in an organization. To get only the webhook`config` properties, see &quot;[Get a webhook configuration for an organization](/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization).You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#get-an-organization-webhook" />
         /// </summary>
         /// <returns>A <see cref="OrgHook"/></returns>
@@ -96,7 +96,7 @@ namespace GitHub.Orgs.Item.Hooks.Item {
             return await RequestAdapter.SendAsync<OrgHook>(requestInfo, OrgHook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a webhook configured in an organization. When you update a webhook,the `secret` will be overwritten. If you previously had a `secret` set, you mustprovide the same `secret` or set a new `secret` or the secret will be removed. Ifyou are only updating individual webhook `config` properties, use &quot;[Update a webhookconfiguration for an organization](/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization)&quot;. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// Updates a webhook configured in an organization. When you update a webhook,the `secret` will be overwritten. If you previously had a `secret` set, you mustprovide the same `secret` or set a new `secret` or the secret will be removed. Ifyou are only updating individual webhook `config` properties, use &quot;[Update a webhookconfiguration for an organization](/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization)&quot;.You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#update-an-organization-webhook" />
         /// </summary>
         /// <returns>A <see cref="OrgHook"/></returns>
@@ -124,7 +124,7 @@ namespace GitHub.Orgs.Item.Hooks.Item {
             return await RequestAdapter.SendAsync<OrgHook>(requestInfo, OrgHook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +143,7 @@ namespace GitHub.Orgs.Item.Hooks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Returns a webhook configured in an organization. To get only the webhook`config` properties, see &quot;[Get a webhook configuration for an organization](/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization). You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// Returns a webhook configured in an organization. To get only the webhook`config` properties, see &quot;[Get a webhook configuration for an organization](/rest/orgs/webhooks#get-a-webhook-configuration-for-an-organization).You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +162,7 @@ namespace GitHub.Orgs.Item.Hooks.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Updates a webhook configured in an organization. When you update a webhook,the `secret` will be overwritten. If you previously had a `secret` set, you mustprovide the same `secret` or set a new `secret` or the secret will be removed. Ifyou are only updating individual webhook `config` properties, use &quot;[Update a webhookconfiguration for an organization](/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization)&quot;. You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// Updates a webhook configured in an organization. When you update a webhook,the `secret` will be overwritten. If you previously had a `secret` set, you mustprovide the same `secret` or set a new `secret` or the secret will be removed. Ifyou are only updating individual webhook `config` properties, use &quot;[Update a webhookconfiguration for an organization](/rest/orgs/webhooks#update-a-webhook-configuration-for-an-organization)&quot;.You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

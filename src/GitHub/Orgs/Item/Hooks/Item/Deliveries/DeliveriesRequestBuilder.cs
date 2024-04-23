@@ -44,7 +44,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries {
         {
         }
         /// <summary>
-        /// Returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// Returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/webhooks#list-deliveries-for-an-organization-webhook" />
         /// </summary>
         /// <returns>A List&lt;HookDeliveryItem&gt;</returns>
@@ -71,7 +71,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// Returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +99,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries {
             return new DeliveriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint. OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or edit webhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
+        /// Returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
         public class DeliveriesRequestBuilderGetQueryParameters 
         {
