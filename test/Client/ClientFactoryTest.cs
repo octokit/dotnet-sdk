@@ -39,6 +39,10 @@ public class ClientFactoryTests
         Assert.Contains(handlers, h => h is APIVersionHandler);
         Assert.Contains(handlers, h => h is UserAgentHandler);
         Assert.Contains(handlers, h => h is RateLimitHandler);
+
+        // Assert that the Kiota retry handler and redirect handler are present as well
+        Assert.Contains(handlers, h => h is Microsoft.Kiota.Http.HttpClientLibrary.Middleware.RetryHandler);
+        Assert.Contains(handlers, h => h is Microsoft.Kiota.Http.HttpClientLibrary.Middleware.RedirectHandler);
     }
 
     [Fact]
