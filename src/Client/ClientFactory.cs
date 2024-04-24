@@ -2,6 +2,7 @@
 
 using System.Net;
 using GitHub.Octokit.Client.Middleware;
+using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace GitHub.Octokit.Client;
 
@@ -39,7 +40,13 @@ public static class ClientFactory
     /// Creates a list of default delegating handlers for the Octokit client.
     /// </summary>
     /// <returns>A list of default delegating handlers.</returns>
-    public static IList<DelegatingHandler> CreateDefaultHandlers() => s_handlers.Value;
+    public static IList<DelegatingHandler> CreateDefaultHandlers()
+    {
+        var defaultHandlers = s_handlers.Value;
+        var kiotaDefaultHandlers = KiotaClientFactory.CreateDefaultHandlers();
+
+        return kiotaDefaultHandlers.Concat(defaultHandlers).ToList();
+    }
 
     /// <summary>
     /// Chains a collection of <see cref="DelegatingHandler"/> instances and returns the first link in the chain.
