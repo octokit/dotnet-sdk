@@ -7,10 +7,42 @@ using System.Linq;
 using System;
 namespace GitHub.Models {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="RepositoryRuleBranchNamePattern"/>, <see cref="RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="RepositoryRuleCommitMessagePattern"/>, <see cref="RepositoryRuleCommitterEmailPattern"/>, <see cref="RepositoryRuleCreation"/>, <see cref="RepositoryRuleDeletion"/>, <see cref="RepositoryRuleNonFastForward"/>, <see cref="RepositoryRulePullRequest"/>, <see cref="RepositoryRuleRequiredDeployments"/>, <see cref="RepositoryRuleRequiredLinearHistory"/>, <see cref="RepositoryRuleRequiredSignatures"/>, <see cref="RepositoryRuleRequiredStatusChecks"/>, <see cref="RepositoryRuleTagNamePattern"/>, <see cref="RepositoryRuleUpdate"/>, <see cref="RepositoryRuleWorkflows"/>
+    /// Composed type wrapper for classes <see cref="File_extension_restriction"/>, <see cref="File_path_restriction"/>, <see cref="Max_file_path_length"/>, <see cref="Max_file_size"/>, <see cref="RepositoryRuleBranchNamePattern"/>, <see cref="RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="RepositoryRuleCommitMessagePattern"/>, <see cref="RepositoryRuleCommitterEmailPattern"/>, <see cref="RepositoryRuleCreation"/>, <see cref="RepositoryRuleDeletion"/>, <see cref="RepositoryRuleNonFastForward"/>, <see cref="RepositoryRulePullRequest"/>, <see cref="RepositoryRuleRequiredDeployments"/>, <see cref="RepositoryRuleRequiredLinearHistory"/>, <see cref="RepositoryRuleRequiredSignatures"/>, <see cref="RepositoryRuleRequiredStatusChecks"/>, <see cref="RepositoryRuleTagNamePattern"/>, <see cref="RepositoryRuleUpdate"/>, <see cref="RepositoryRuleWorkflows"/>
     /// </summary>
     public class RepositoryRule : IComposedTypeWrapper, IParsable 
     {
+        /// <summary>Composed type representation for type <see cref="File_extension_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_extension_restriction? FileExtensionRestriction { get; set; }
+#nullable restore
+#else
+        public File_extension_restriction FileExtensionRestriction { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="File_path_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_path_restriction? FilePathRestriction { get; set; }
+#nullable restore
+#else
+        public File_path_restriction FilePathRestriction { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_path_length"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_path_length? MaxFilePathLength { get; set; }
+#nullable restore
+#else
+        public Max_file_path_length MaxFilePathLength { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_size"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_size? MaxFileSize { get; set; }
+#nullable restore
+#else
+        public Max_file_size MaxFileSize { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleBranchNamePattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +90,134 @@ namespace GitHub.Models {
 #nullable restore
 #else
         public GitHub.Models.RepositoryRuleDeletion RepositoryRuleDeletion { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="File_extension_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_extension_restriction? RepositoryRuleFileExtensionRestriction { get; set; }
+#nullable restore
+#else
+        public File_extension_restriction RepositoryRuleFileExtensionRestriction { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="File_extension_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_extension_restriction? RepositoryRuleFileExtensionRestriction0 { get; set; }
+#nullable restore
+#else
+        public File_extension_restriction RepositoryRuleFileExtensionRestriction0 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="File_extension_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_extension_restriction? RepositoryRuleFileExtensionRestriction1 { get; set; }
+#nullable restore
+#else
+        public File_extension_restriction RepositoryRuleFileExtensionRestriction1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="File_extension_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_extension_restriction? RepositoryRuleFileExtensionRestriction2 { get; set; }
+#nullable restore
+#else
+        public File_extension_restriction RepositoryRuleFileExtensionRestriction2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="File_path_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_path_restriction? RepositoryRuleFilePathRestriction { get; set; }
+#nullable restore
+#else
+        public File_path_restriction RepositoryRuleFilePathRestriction { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="File_path_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_path_restriction? RepositoryRuleFilePathRestriction0 { get; set; }
+#nullable restore
+#else
+        public File_path_restriction RepositoryRuleFilePathRestriction0 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="File_path_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_path_restriction? RepositoryRuleFilePathRestriction1 { get; set; }
+#nullable restore
+#else
+        public File_path_restriction RepositoryRuleFilePathRestriction1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="File_path_restriction"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public File_path_restriction? RepositoryRuleFilePathRestriction2 { get; set; }
+#nullable restore
+#else
+        public File_path_restriction RepositoryRuleFilePathRestriction2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_path_length"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_path_length? RepositoryRuleMaxFilePathLength { get; set; }
+#nullable restore
+#else
+        public Max_file_path_length RepositoryRuleMaxFilePathLength { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_path_length"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_path_length? RepositoryRuleMaxFilePathLength0 { get; set; }
+#nullable restore
+#else
+        public Max_file_path_length RepositoryRuleMaxFilePathLength0 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_path_length"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_path_length? RepositoryRuleMaxFilePathLength1 { get; set; }
+#nullable restore
+#else
+        public Max_file_path_length RepositoryRuleMaxFilePathLength1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_path_length"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_path_length? RepositoryRuleMaxFilePathLength2 { get; set; }
+#nullable restore
+#else
+        public Max_file_path_length RepositoryRuleMaxFilePathLength2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_size"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_size? RepositoryRuleMaxFileSize { get; set; }
+#nullable restore
+#else
+        public Max_file_size RepositoryRuleMaxFileSize { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_size"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_size? RepositoryRuleMaxFileSize0 { get; set; }
+#nullable restore
+#else
+        public Max_file_size RepositoryRuleMaxFileSize0 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_size"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_size? RepositoryRuleMaxFileSize1 { get; set; }
+#nullable restore
+#else
+        public Max_file_size RepositoryRuleMaxFileSize1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Max_file_size"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Max_file_size? RepositoryRuleMaxFileSize2 { get; set; }
+#nullable restore
+#else
+        public Max_file_size RepositoryRuleMaxFileSize2 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleNonFastForward"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -621,7 +781,23 @@ namespace GitHub.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new RepositoryRule();
-            if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FileExtensionRestriction = new File_extension_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FilePathRestriction = new File_path_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MaxFilePathLength = new Max_file_path_length();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MaxFileSize = new Max_file_size();
+            }
+            else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RepositoryRuleBranchNamePattern = new GitHub.Models.RepositoryRuleBranchNamePattern();
             }
@@ -644,6 +820,70 @@ namespace GitHub.Models {
             else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RepositoryRuleDeletion = new GitHub.Models.RepositoryRuleDeletion();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleFileExtensionRestriction = new File_extension_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleFileExtensionRestriction0 = new File_extension_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleFileExtensionRestriction1 = new File_extension_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleFileExtensionRestriction2 = new File_extension_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleFilePathRestriction = new File_path_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleFilePathRestriction0 = new File_path_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleFilePathRestriction1 = new File_path_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleFilePathRestriction2 = new File_path_restriction();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleMaxFilePathLength = new Max_file_path_length();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleMaxFilePathLength0 = new Max_file_path_length();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleMaxFilePathLength1 = new Max_file_path_length();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleMaxFilePathLength2 = new Max_file_path_length();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleMaxFileSize = new Max_file_size();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleMaxFileSize0 = new Max_file_size();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleMaxFileSize1 = new Max_file_size();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleMaxFileSize2 = new Max_file_size();
             }
             else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -929,7 +1169,23 @@ namespace GitHub.Models {
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RepositoryRuleBranchNamePattern != null)
+            if(FileExtensionRestriction != null)
+            {
+                return FileExtensionRestriction.GetFieldDeserializers();
+            }
+            else if(FilePathRestriction != null)
+            {
+                return FilePathRestriction.GetFieldDeserializers();
+            }
+            else if(MaxFilePathLength != null)
+            {
+                return MaxFilePathLength.GetFieldDeserializers();
+            }
+            else if(MaxFileSize != null)
+            {
+                return MaxFileSize.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleBranchNamePattern != null)
             {
                 return RepositoryRuleBranchNamePattern.GetFieldDeserializers();
             }
@@ -952,6 +1208,70 @@ namespace GitHub.Models {
             else if(RepositoryRuleDeletion != null)
             {
                 return RepositoryRuleDeletion.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleFileExtensionRestriction != null)
+            {
+                return RepositoryRuleFileExtensionRestriction.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleFileExtensionRestriction0 != null)
+            {
+                return RepositoryRuleFileExtensionRestriction0.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleFileExtensionRestriction1 != null)
+            {
+                return RepositoryRuleFileExtensionRestriction1.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleFileExtensionRestriction2 != null)
+            {
+                return RepositoryRuleFileExtensionRestriction2.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleFilePathRestriction != null)
+            {
+                return RepositoryRuleFilePathRestriction.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleFilePathRestriction0 != null)
+            {
+                return RepositoryRuleFilePathRestriction0.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleFilePathRestriction1 != null)
+            {
+                return RepositoryRuleFilePathRestriction1.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleFilePathRestriction2 != null)
+            {
+                return RepositoryRuleFilePathRestriction2.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleMaxFilePathLength != null)
+            {
+                return RepositoryRuleMaxFilePathLength.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleMaxFilePathLength0 != null)
+            {
+                return RepositoryRuleMaxFilePathLength0.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleMaxFilePathLength1 != null)
+            {
+                return RepositoryRuleMaxFilePathLength1.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleMaxFilePathLength2 != null)
+            {
+                return RepositoryRuleMaxFilePathLength2.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleMaxFileSize != null)
+            {
+                return RepositoryRuleMaxFileSize.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleMaxFileSize0 != null)
+            {
+                return RepositoryRuleMaxFileSize0.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleMaxFileSize1 != null)
+            {
+                return RepositoryRuleMaxFileSize1.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleMaxFileSize2 != null)
+            {
+                return RepositoryRuleMaxFileSize2.GetFieldDeserializers();
             }
             else if(RepositoryRuleNonFastForward != null)
             {
@@ -1238,7 +1558,23 @@ namespace GitHub.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(RepositoryRuleBranchNamePattern != null)
+            if(FileExtensionRestriction != null)
+            {
+                writer.WriteObjectValue<File_extension_restriction>(null, FileExtensionRestriction);
+            }
+            else if(FilePathRestriction != null)
+            {
+                writer.WriteObjectValue<File_path_restriction>(null, FilePathRestriction);
+            }
+            else if(MaxFilePathLength != null)
+            {
+                writer.WriteObjectValue<Max_file_path_length>(null, MaxFilePathLength);
+            }
+            else if(MaxFileSize != null)
+            {
+                writer.WriteObjectValue<Max_file_size>(null, MaxFileSize);
+            }
+            else if(RepositoryRuleBranchNamePattern != null)
             {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleBranchNamePattern);
             }
@@ -1261,6 +1597,70 @@ namespace GitHub.Models {
             else if(RepositoryRuleDeletion != null)
             {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleDeletion>(null, RepositoryRuleDeletion);
+            }
+            else if(RepositoryRuleFileExtensionRestriction != null)
+            {
+                writer.WriteObjectValue<File_extension_restriction>(null, RepositoryRuleFileExtensionRestriction);
+            }
+            else if(RepositoryRuleFileExtensionRestriction0 != null)
+            {
+                writer.WriteObjectValue<File_extension_restriction>(null, RepositoryRuleFileExtensionRestriction0);
+            }
+            else if(RepositoryRuleFileExtensionRestriction1 != null)
+            {
+                writer.WriteObjectValue<File_extension_restriction>(null, RepositoryRuleFileExtensionRestriction1);
+            }
+            else if(RepositoryRuleFileExtensionRestriction2 != null)
+            {
+                writer.WriteObjectValue<File_extension_restriction>(null, RepositoryRuleFileExtensionRestriction2);
+            }
+            else if(RepositoryRuleFilePathRestriction != null)
+            {
+                writer.WriteObjectValue<File_path_restriction>(null, RepositoryRuleFilePathRestriction);
+            }
+            else if(RepositoryRuleFilePathRestriction0 != null)
+            {
+                writer.WriteObjectValue<File_path_restriction>(null, RepositoryRuleFilePathRestriction0);
+            }
+            else if(RepositoryRuleFilePathRestriction1 != null)
+            {
+                writer.WriteObjectValue<File_path_restriction>(null, RepositoryRuleFilePathRestriction1);
+            }
+            else if(RepositoryRuleFilePathRestriction2 != null)
+            {
+                writer.WriteObjectValue<File_path_restriction>(null, RepositoryRuleFilePathRestriction2);
+            }
+            else if(RepositoryRuleMaxFilePathLength != null)
+            {
+                writer.WriteObjectValue<Max_file_path_length>(null, RepositoryRuleMaxFilePathLength);
+            }
+            else if(RepositoryRuleMaxFilePathLength0 != null)
+            {
+                writer.WriteObjectValue<Max_file_path_length>(null, RepositoryRuleMaxFilePathLength0);
+            }
+            else if(RepositoryRuleMaxFilePathLength1 != null)
+            {
+                writer.WriteObjectValue<Max_file_path_length>(null, RepositoryRuleMaxFilePathLength1);
+            }
+            else if(RepositoryRuleMaxFilePathLength2 != null)
+            {
+                writer.WriteObjectValue<Max_file_path_length>(null, RepositoryRuleMaxFilePathLength2);
+            }
+            else if(RepositoryRuleMaxFileSize != null)
+            {
+                writer.WriteObjectValue<Max_file_size>(null, RepositoryRuleMaxFileSize);
+            }
+            else if(RepositoryRuleMaxFileSize0 != null)
+            {
+                writer.WriteObjectValue<Max_file_size>(null, RepositoryRuleMaxFileSize0);
+            }
+            else if(RepositoryRuleMaxFileSize1 != null)
+            {
+                writer.WriteObjectValue<Max_file_size>(null, RepositoryRuleMaxFileSize1);
+            }
+            else if(RepositoryRuleMaxFileSize2 != null)
+            {
+                writer.WriteObjectValue<Max_file_size>(null, RepositoryRuleMaxFileSize2);
             }
             else if(RepositoryRuleNonFastForward != null)
             {

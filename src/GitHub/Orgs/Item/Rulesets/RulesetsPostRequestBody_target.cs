@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.Rulesets {
-    /// <summary>The target of the ruleset.</summary>
+    /// <summary>The target of the ruleset**Note**: The `push` target is in beta and is subject to change.</summary>
     public enum RulesetsPostRequestBody_target
     {
         [EnumMember(Value = "branch")]
@@ -12,6 +12,10 @@ namespace GitHub.Orgs.Item.Rulesets {
         [EnumMember(Value = "tag")]
         #pragma warning disable CS1591
         Tag,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "push")]
+        #pragma warning disable CS1591
+        Push,
         #pragma warning restore CS1591
     }
 }
