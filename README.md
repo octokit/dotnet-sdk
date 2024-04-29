@@ -36,6 +36,12 @@ foreach (var pullRequest in pullRequests)
 > [!IMPORTANT]
 > This SDK is not yet stable. Breaking changes may occur at any time.
 
+### Authentication
+
+Currently, this SDK supports both [Personal Access Tokens (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) and [fine-grained Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#fine-grained-personal-access-tokens).
+
+Future work is planned for the SDK to support [GitHub Apps](https://docs.github.com/en/apps/overview) authentication as well.
+
 ## Why a generated SDK?
 
 We want to...
