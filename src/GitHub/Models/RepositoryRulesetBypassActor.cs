@@ -10,13 +10,13 @@ namespace GitHub.Models {
     /// </summary>
     public class RepositoryRulesetBypassActor : IAdditionalDataHolder, IParsable 
     {
-        /// <summary>The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`.</summary>
+        /// <summary>The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.</summary>
         public int? ActorId { get; set; }
-        /// <summary>The type of actor that can bypass a ruleset</summary>
+        /// <summary>The type of actor that can bypass a ruleset.</summary>
         public RepositoryRulesetBypassActor_actor_type? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests.</summary>
+        /// <summary>When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.</summary>
         public RepositoryRulesetBypassActor_bypass_mode? BypassMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="RepositoryRulesetBypassActor"/> and sets the default values.
