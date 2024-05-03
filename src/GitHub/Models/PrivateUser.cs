@@ -156,6 +156,14 @@ namespace GitHub.Models {
 #else
         public string NodeId { get; set; }
 #endif
+        /// <summary>The notification_email property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NotificationEmail { get; set; }
+#nullable restore
+#else
+        public string NotificationEmail { get; set; }
+#endif
         /// <summary>The organizations_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -295,6 +303,7 @@ namespace GitHub.Models {
                 {"login", n => { Login = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"notification_email", n => { NotificationEmail = n.GetStringValue(); } },
                 {"organizations_url", n => { OrganizationsUrl = n.GetStringValue(); } },
                 {"owned_private_repos", n => { OwnedPrivateRepos = n.GetIntValue(); } },
                 {"plan", n => { Plan = n.GetObjectValue<PrivateUser_plan>(PrivateUser_plan.CreateFromDiscriminatorValue); } },
@@ -346,6 +355,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("login", Login);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("node_id", NodeId);
+            writer.WriteStringValue("notification_email", NotificationEmail);
             writer.WriteStringValue("organizations_url", OrganizationsUrl);
             writer.WriteIntValue("owned_private_repos", OwnedPrivateRepos);
             writer.WriteObjectValue<PrivateUser_plan>("plan", Plan);
