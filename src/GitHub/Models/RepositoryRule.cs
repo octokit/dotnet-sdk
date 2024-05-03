@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace GitHub.Models {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="File_extension_restriction"/>, <see cref="File_path_restriction"/>, <see cref="Max_file_path_length"/>, <see cref="Max_file_size"/>, <see cref="RepositoryRuleBranchNamePattern"/>, <see cref="RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="RepositoryRuleCommitMessagePattern"/>, <see cref="RepositoryRuleCommitterEmailPattern"/>, <see cref="RepositoryRuleCreation"/>, <see cref="RepositoryRuleDeletion"/>, <see cref="RepositoryRuleNonFastForward"/>, <see cref="RepositoryRulePullRequest"/>, <see cref="RepositoryRuleRequiredDeployments"/>, <see cref="RepositoryRuleRequiredLinearHistory"/>, <see cref="RepositoryRuleRequiredSignatures"/>, <see cref="RepositoryRuleRequiredStatusChecks"/>, <see cref="RepositoryRuleTagNamePattern"/>, <see cref="RepositoryRuleUpdate"/>, <see cref="RepositoryRuleWorkflows"/>
+    /// Composed type wrapper for classes <see cref="File_extension_restriction"/>, <see cref="File_path_restriction"/>, <see cref="Max_file_path_length"/>, <see cref="Max_file_size"/>, <see cref="RepositoryRuleBranchNamePattern"/>, <see cref="RepositoryRuleCodeScanning"/>, <see cref="RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="RepositoryRuleCommitMessagePattern"/>, <see cref="RepositoryRuleCommitterEmailPattern"/>, <see cref="RepositoryRuleCreation"/>, <see cref="RepositoryRuleDeletion"/>, <see cref="RepositoryRuleNonFastForward"/>, <see cref="RepositoryRulePullRequest"/>, <see cref="RepositoryRuleRequiredDeployments"/>, <see cref="RepositoryRuleRequiredLinearHistory"/>, <see cref="RepositoryRuleRequiredSignatures"/>, <see cref="RepositoryRuleRequiredStatusChecks"/>, <see cref="RepositoryRuleTagNamePattern"/>, <see cref="RepositoryRuleUpdate"/>, <see cref="RepositoryRuleWorkflows"/>
     /// </summary>
     public class RepositoryRule : IComposedTypeWrapper, IParsable 
     {
@@ -50,6 +50,14 @@ namespace GitHub.Models {
 #nullable restore
 #else
         public GitHub.Models.RepositoryRuleBranchNamePattern RepositoryRuleBranchNamePattern { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCodeScanning"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleCodeScanning? RepositoryRuleCodeScanning { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleCodeScanning RepositoryRuleCodeScanning { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitAuthorEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -266,6 +274,38 @@ namespace GitHub.Models {
 #nullable restore
 #else
         public GitHub.Models.RepositoryRuleBranchNamePattern RepositoryRuleRepositoryRuleBranchNamePattern2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCodeScanning"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleCodeScanning? RepositoryRuleRepositoryRuleCodeScanning { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleCodeScanning RepositoryRuleRepositoryRuleCodeScanning { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCodeScanning"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleCodeScanning? RepositoryRuleRepositoryRuleCodeScanning0 { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleCodeScanning RepositoryRuleRepositoryRuleCodeScanning0 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCodeScanning"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleCodeScanning? RepositoryRuleRepositoryRuleCodeScanning1 { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleCodeScanning RepositoryRuleRepositoryRuleCodeScanning1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCodeScanning"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleCodeScanning? RepositoryRuleRepositoryRuleCodeScanning2 { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleCodeScanning RepositoryRuleRepositoryRuleCodeScanning2 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleCommitAuthorEmailPattern"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -801,6 +841,10 @@ namespace GitHub.Models {
             {
                 result.RepositoryRuleBranchNamePattern = new GitHub.Models.RepositoryRuleBranchNamePattern();
             }
+            else if("repository-rule-code-scanning".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleCodeScanning = new GitHub.Models.RepositoryRuleCodeScanning();
+            }
             else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RepositoryRuleCommitAuthorEmailPattern = new GitHub.Models.RepositoryRuleCommitAuthorEmailPattern();
@@ -908,6 +952,22 @@ namespace GitHub.Models {
             else if("repository-rule-branch-name-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RepositoryRuleRepositoryRuleBranchNamePattern2 = new GitHub.Models.RepositoryRuleBranchNamePattern();
+            }
+            else if("repository-rule-code-scanning".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleRepositoryRuleCodeScanning = new GitHub.Models.RepositoryRuleCodeScanning();
+            }
+            else if("repository-rule-code-scanning".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleRepositoryRuleCodeScanning0 = new GitHub.Models.RepositoryRuleCodeScanning();
+            }
+            else if("repository-rule-code-scanning".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleRepositoryRuleCodeScanning1 = new GitHub.Models.RepositoryRuleCodeScanning();
+            }
+            else if("repository-rule-code-scanning".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleRepositoryRuleCodeScanning2 = new GitHub.Models.RepositoryRuleCodeScanning();
             }
             else if("repository-rule-commit-author-email-pattern".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -1189,6 +1249,10 @@ namespace GitHub.Models {
             {
                 return RepositoryRuleBranchNamePattern.GetFieldDeserializers();
             }
+            else if(RepositoryRuleCodeScanning != null)
+            {
+                return RepositoryRuleCodeScanning.GetFieldDeserializers();
+            }
             else if(RepositoryRuleCommitAuthorEmailPattern != null)
             {
                 return RepositoryRuleCommitAuthorEmailPattern.GetFieldDeserializers();
@@ -1296,6 +1360,22 @@ namespace GitHub.Models {
             else if(RepositoryRuleRepositoryRuleBranchNamePattern2 != null)
             {
                 return RepositoryRuleRepositoryRuleBranchNamePattern2.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleRepositoryRuleCodeScanning != null)
+            {
+                return RepositoryRuleRepositoryRuleCodeScanning.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleRepositoryRuleCodeScanning0 != null)
+            {
+                return RepositoryRuleRepositoryRuleCodeScanning0.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleRepositoryRuleCodeScanning1 != null)
+            {
+                return RepositoryRuleRepositoryRuleCodeScanning1.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleRepositoryRuleCodeScanning2 != null)
+            {
+                return RepositoryRuleRepositoryRuleCodeScanning2.GetFieldDeserializers();
             }
             else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern != null)
             {
@@ -1578,6 +1658,10 @@ namespace GitHub.Models {
             {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleBranchNamePattern);
             }
+            else if(RepositoryRuleCodeScanning != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleCodeScanning>(null, RepositoryRuleCodeScanning);
+            }
             else if(RepositoryRuleCommitAuthorEmailPattern != null)
             {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleCommitAuthorEmailPattern>(null, RepositoryRuleCommitAuthorEmailPattern);
@@ -1685,6 +1769,22 @@ namespace GitHub.Models {
             else if(RepositoryRuleRepositoryRuleBranchNamePattern2 != null)
             {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleBranchNamePattern>(null, RepositoryRuleRepositoryRuleBranchNamePattern2);
+            }
+            else if(RepositoryRuleRepositoryRuleCodeScanning != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleCodeScanning>(null, RepositoryRuleRepositoryRuleCodeScanning);
+            }
+            else if(RepositoryRuleRepositoryRuleCodeScanning0 != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleCodeScanning>(null, RepositoryRuleRepositoryRuleCodeScanning0);
+            }
+            else if(RepositoryRuleRepositoryRuleCodeScanning1 != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleCodeScanning>(null, RepositoryRuleRepositoryRuleCodeScanning1);
+            }
+            else if(RepositoryRuleRepositoryRuleCodeScanning2 != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleCodeScanning>(null, RepositoryRuleRepositoryRuleCodeScanning2);
             }
             else if(RepositoryRuleRepositoryRuleCommitAuthorEmailPattern != null)
             {
