@@ -1,9 +1,7 @@
 ﻿using System.Text.Json;
-using System.Text.Json.Serialization;
 using GitHub;
 using GitHub.Octokit.Authentication;
 using GitHub.Octokit.Client;
-using Org.BouncyCastle.Ocsp;
 
 // Use GitHubJwt library to create the GitHubApp Jwt Token using our private certificate PEM file
 var generator = new GitHubJwt.GitHubJwtFactory(
