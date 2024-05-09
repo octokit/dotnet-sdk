@@ -1,7 +1,3 @@
-
-
-using System.Linq;
-using System.Runtime.InteropServices;
 using GitHub.Octokit.Authentication;
 
 namespace GitHub.Octokit.Client;
@@ -113,6 +109,7 @@ public class ClientBuilder
         if (authType == AuthType.PersonalAccessToken)
         {
             // build a token auth client
+            token = Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "";
         }
         else if (authType == AuthType.GitHubApp)
         {
@@ -131,11 +128,13 @@ public class ClientBuilder
     public enum AuthType
     {
         PersonalAccessToken,
-        GitHubApp
+        GitHubApp,
+        Unauthenticated
     }
 
     // TODO(kfcampbell): flesh this out further and test it
-    private AuthType GetAuthType()
+    // how to differentiate between an unauthenticated client and a client with misconfigured auth?
+    public AuthType GetAuthType()
     {
         // if token auth is configured and app ID isn't, build a token auth client
         if (!string.IsNullOrEmpty(_options.PersonalAccessToken)
@@ -153,11 +152,25 @@ public class ClientBuilder
         {
             return AuthType.GitHubApp;
         }
-        // if some other combination of options is set, throw an error
+        // if nothing is configured, return unauthenticated
         else if (string.IsNullOrEmpty(_options.PersonalAccessToken)
+            && string.IsNullOrEmpty(_options.GitHubAppPemFilePath)
+            && _options.GitHubAppID == 0
+            && _options.GitHubAppInstallationID == 0)
+        {
+            return AuthType.Unauthenticated;
+        }
+        // if some other combination of options is set, throw an error
+        // empty access token, zero app ID, non-zero installation ID, non-empty app pem file
+        else if (string.IsNullOrEmpty(_options.PersonalAccessToken)
+            && _options.GitHubAppID == 0
+            && !string.IsNullOrEmpty(_options.GitHubAppPemFilePath)
+            && _options.GitHubAppInstallationID != 0) /*||
+            //
+            (string.IsNullOrEmpty(_options.PersonalAccessToken)
             && !string.IsNullOrEmpty(_options.GitHubAppPemFilePath)
             && _options.GitHubAppID != 0
-            && _options.GitHubAppInstallationID != 0)
+            && _options.GitHubAppInstallationID != 0)*/
         {
             throw new ArgumentException("Cannot configure both token and app auth at the same time");
         }
