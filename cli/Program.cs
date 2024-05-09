@@ -36,7 +36,7 @@ var tokenElement = (JsonElement)respBody["token"];
 var token = tokenElement.ValueKind == JsonValueKind.String ? tokenElement.GetString() : "";
 
 // var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "";
-var adapter = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen", token));
+var adapter = RequestAdapter.Create(new TokenAuthenticationProvider(token));
 // adapter.BaseUrl = "http://api.github.localhost:1024";
 var gitHubClient = new GitHubClient(adapter);
 

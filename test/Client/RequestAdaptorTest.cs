@@ -9,7 +9,7 @@ public class RequestAdapterTests
     [Fact]
     public void Creates_RequestAdaptor_With_Defaults()
     {
-        var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen", "JRRTOLKIEN"));
+        var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider("JRRTOLKIEN"));
         Assert.NotNull(requestAdapter);
     }
 
@@ -17,7 +17,7 @@ public class RequestAdapterTests
     public void Creates_RequestAdaptor_With_GenericHttpClient()
     {
         var httpClient = new HttpClient();
-        var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen", "JRRTOLKIEN"), httpClient);
+        var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider("JRRTOLKIEN"), httpClient);
         Assert.NotNull(requestAdapter);
     }
 
@@ -25,7 +25,7 @@ public class RequestAdapterTests
     public void Creates_RequestAdaptor_With_ClientFactory()
     {
         var clientFactory = ClientFactory.Create();
-        var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen", "JRRTOLKIEN"), clientFactory);
+        var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider("JRRTOLKIEN"), clientFactory);
         Assert.NotNull(requestAdapter);
     }
 }

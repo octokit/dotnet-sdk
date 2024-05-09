@@ -19,11 +19,6 @@ public class TokenAuthenticationProvider : IAuthenticationProvider
     public IAuthenticationProvider TokenAuthProvider => this;
 
     /// <summary>
-    /// Gets or sets the client identifier.
-    /// </summary>
-    public string ClientId { get; set; }
-
-    /// <summary>
     /// Gets or sets the token.
     /// </summary>
     public string Token { get; set; }
@@ -34,12 +29,9 @@ public class TokenAuthenticationProvider : IAuthenticationProvider
     /// <param name="clientId">The client identifier to use.</param>
     /// <param name="token">The token to use.</param>
     /// <exception cref="ArgumentNullException"></exception>
-    public TokenAuthenticationProvider(string clientId, string token)
+    public TokenAuthenticationProvider(string token)
     {
-        ArgumentException.ThrowIfNullOrEmpty(clientId);
         ArgumentException.ThrowIfNullOrEmpty(token);
-
-        ClientId = clientId;
         Token = token;
     }
 

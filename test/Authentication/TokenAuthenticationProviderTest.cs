@@ -6,25 +6,18 @@ using Xunit;
 
 public class TokenAuthenticationProviderTests
 {
-    private const string ValidClientId = "validClientId";
     private const string ValidToken = "validToken";
     private TokenAuthenticationProvider _provider;
 
     public TokenAuthenticationProviderTests()
     {
-        _provider = new TokenAuthenticationProvider(ValidClientId, ValidToken);
-    }
-
-    [Fact]
-    public void Constructor_ThrowsException_WhenClientIdIsEmpty()
-    {
-        Assert.Throws<ArgumentException>(() => new TokenAuthenticationProvider("", ValidToken));
+        _provider = new TokenAuthenticationProvider(ValidToken);
     }
 
     [Fact]
     public void Constructor_ThrowsException_WhenTokenIsEmpty()
     {
-        Assert.Throws<ArgumentException>(() => new TokenAuthenticationProvider(ValidClientId, ""));
+        Assert.Throws<ArgumentException>(() => new TokenAuthenticationProvider(""));
     }
 
     [Fact]
