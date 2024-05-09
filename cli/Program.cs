@@ -3,12 +3,11 @@ using GitHub;
 using GitHub.Octokit.Authentication;
 using GitHub.Octokit.Client;
 
-// Use GitHubJwt library to create the GitHubApp Jwt Token using our private certificate PEM file
 var generator = new GitHubJwt.GitHubJwtFactory(
     new GitHubJwt.FilePrivateKeySource("/home/kfcampbell/github/dev/dotnet-sdk/kfcampbell-terraform-provider.2024-04-30.private-key.pem"),
     new GitHubJwt.GitHubJwtFactoryOptions
     {
-        AppIntegrationId = 131977, // The GitHub App Id
+        AppIntegrationId = 131977, // GitHub App Id
         ExpirationSeconds = 600 // 10 minutes is the maximum time allowed
     }
 );
@@ -25,7 +24,8 @@ client.DefaultRequestHeaders.Add("Authorization", $"Bearer {jwtToken}");
 var resp = await client.PostAsync($"https://api.github.com/app/installations/{installationId}/access_tokens", null);
 var body = await resp.Content.ReadAsStringAsync();
 
-if (!resp.IsSuccessStatusCode) {
+if (!resp.IsSuccessStatusCode)
+{
     Console.WriteLine($"Error: {resp.StatusCode}");
     Console.WriteLine($"Body: {body}");
     return;
@@ -40,9 +40,12 @@ var adapter = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen
 // adapter.BaseUrl = "http://api.github.localhost:1024";
 var gitHubClient = new GitHubClient(adapter);
 
-try {
+try
+{
     var response = await gitHubClient.Installation.Repositories.GetAsync();
     response.Repositories.ForEach(repo => Console.WriteLine(repo.FullName));
-} catch (Exception e) {
+}
+catch (Exception e)
+{
     Console.WriteLine(e.Message);
 }
