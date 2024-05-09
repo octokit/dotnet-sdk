@@ -18,13 +18,13 @@ public struct ClientOptions
     public string PersonalAccessToken { get; set; }
 
     // GitHubAppPemFilePath should be left blank if token auth or an unauthenticated client is desired.
-	public string GitHubAppPemFilePath { get; set; }
+    public string GitHubAppPemFilePath { get; set; }
 
-	// GitHubAppID should be left blank if token auth or an unauthenticated client is desired.
-	public long GitHubAppID { get; set; }
+    // GitHubAppID should be left blank if token auth or an unauthenticated client is desired.
+    public long GitHubAppID { get; set; }
 
-	// GitHubAppInstallationID should be left blank if token auth or an unauthenticated client is desired.
-	public long GitHubAppInstallationID { get; set; }
+    // GitHubAppInstallationID should be left blank if token auth or an unauthenticated client is desired.
+    public long GitHubAppInstallationID { get; set; }
 
 }
 
@@ -34,9 +34,12 @@ public class ClientBuilder
 
     public ClientBuilder(ClientOptions? options = null)
     {
-        if (options != null) {
+        if (options != null)
+        {
             _options = (ClientOptions)options;
-        } else {
+        }
+        else
+        {
             // it's a little annoying that the defaults aren't applied if the user brings their own
             // options struct. we can recommend users call GetDefaultClientOptions() before applying
             // their own, but that's still not ideal.
@@ -105,26 +108,54 @@ public class ClientBuilder
         // this is the crux of the thing, really
         // can assume we have some default options set based on the constructor
 
-        // TODO(kfcampbell): refactor auth options out into a helper method
+        var authType = GetAuthType();
+        var token = "";
+        if (authType == AuthType.PersonalAccessToken)
+        {
+            // build a token auth client
+        }
+        else if (authType == AuthType.GitHubApp)
+        {
+            // build an app auth client
+        }
+        else
+        {
+            // use an unauthenticated token provider
+        }
+
+        // very basic non-working implementation to keep compiler happy
+        var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider(token), null);
+        return new GitHubClient(requestAdapter);
+    }
+
+    public enum AuthType
+    {
+        PersonalAccessToken,
+        GitHubApp
+    }
+
+    // TODO(kfcampbell): flesh this out further and test it
+    private AuthType GetAuthType()
+    {
         // if token auth is configured and app ID isn't, build a token auth client
-        if (_options.PersonalAccessToken != null
-            && _options.GitHubAppPemFilePath == ""
+        if (!string.IsNullOrEmpty(_options.PersonalAccessToken)
+            && string.IsNullOrEmpty(_options.GitHubAppPemFilePath)
             && _options.GitHubAppID == 0
             && _options.GitHubAppInstallationID == 0)
         {
-            var tokenProvider = new TokenAuthenticationProvider(_options.PersonalAccessToken);
+            return AuthType.PersonalAccessToken;
         }
         // if app auth is configured and token isn't, build an app auth client
-        else if (_options.GitHubAppPemFilePath != null
+        else if (!string.IsNullOrEmpty(_options.GitHubAppPemFilePath)
                 && _options.GitHubAppID != 0
                 && _options.GitHubAppInstallationID != 0
-                && _options.PersonalAccessToken == "")
+                && string.IsNullOrEmpty(_options.PersonalAccessToken))
         {
-
+            return AuthType.GitHubApp;
         }
         // if some other combination of options is set, throw an error
-        else if (_options.PersonalAccessToken != null
-            && _options.GitHubAppPemFilePath != null
+        else if (string.IsNullOrEmpty(_options.PersonalAccessToken)
+            && !string.IsNullOrEmpty(_options.GitHubAppPemFilePath)
             && _options.GitHubAppID != 0
             && _options.GitHubAppInstallationID != 0)
         {
@@ -134,9 +165,5 @@ public class ClientBuilder
         {
             throw new NotImplementedException("Keegan needs to get his act together and implement this");
         }
-
-        // very basic non-working implementation to keep compiler happy
-        var requestAdapter = RequestAdapter.Create(new TokenAuthenticationProvider(""), null);
-        return new GitHubClient(requestAdapter);
     }
 }
