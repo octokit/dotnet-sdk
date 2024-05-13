@@ -109,3 +109,4 @@ testresults/
 [Tt]est[Rr]esult*/
 **/coverage.json
 coverage/*
+*.pem

@@ -10,6 +10,7 @@
 </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="GitHubJwt" Version="0.0.6" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="7.5.1" />
     <PackageReference Include="Microsoft.Kiota.Abstractions" Version="1.8.4" />
     <PackageReference Include="Microsoft.Kiota.Http.HttpClientLibrary" Version="1.4.0" />
     <PackageReference Include="Microsoft.Kiota.Serialization.Form" Version="1.1.6" />
