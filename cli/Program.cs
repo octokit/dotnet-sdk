@@ -1,10 +1,10 @@
-﻿using System.Text.Json;
-using System.Security.Cryptography;
-using Microsoft.IdentityModel.JsonWebTokens;
-using Microsoft.IdentityModel.Tokens;
+﻿using System.Security.Cryptography;
+using System.Text.Json;
 using GitHub;
 using GitHub.Octokit.Authentication;
 using GitHub.Octokit.Client;
+using Microsoft.IdentityModel.JsonWebTokens;
+using Microsoft.IdentityModel.Tokens;
 
 var installationId = Environment.GetEnvironmentVariable("GITHUB_APP_INSTALLATION_ID") ?? "";
 var clientId = Environment.GetEnvironmentVariable("GITHUB_APP_CLIENT_ID") ?? "";
