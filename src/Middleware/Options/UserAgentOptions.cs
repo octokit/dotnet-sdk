@@ -9,16 +9,21 @@ namespace GitHub.Octokit.Client.Middleware.Options;
 /// </summary>
 public class UserAgentOptions : IRequestOption
 {
-    /// <summary>
-    /// Gets or sets the product name used in the user agent request header.
-    /// Defaults to <c>"GitHub.Octokit.dotnet-sdk"</c>.
-    /// </summary>
-    public string ProductName { get; set; } = "GitHub.Octokit.dotnet-sdk";
 
-    /// <summary>
-    /// Gets or sets the product version used in the user agent request header.
-    /// </summary>
-    public string ProductVersion { get; set; } = GetProductVersion();
+  private const string DefaultProductName = "GitHub.Octokit.dotnet-sdk";
+  private const string DefaultProductVersion = "0.0.0";
 
-    private static string GetProductVersion() => "0.0.0";
+  /// <summary>
+  /// Gets or sets the product name used in the user agent request header.
+  /// Defaults to <c>"GitHub.Octokit.dotnet-sdk"</c>.
+  /// </summary>
+  public string ProductName { get; set; } = DefaultProductName;
+
+  /// <summary>
+  /// Gets or sets the product version used in the user agent request header.
+  /// </summary>
+  public string ProductVersion { get; set; } = DefaultProductVersion;
+
+  public static string GetFullSDKVersion() => DefaultProductName + ":" + DefaultProductVersion;
+
 }
