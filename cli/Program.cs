@@ -9,16 +9,21 @@ using Microsoft.IdentityModel.Tokens;
 var installationId = Environment.GetEnvironmentVariable("GITHUB_APP_INSTALLATION_ID") ?? "";
 var clientId = Environment.GetEnvironmentVariable("GITHUB_APP_CLIENT_ID") ?? "";
 var privateKey = File.ReadAllText(Environment.GetEnvironmentVariable("GITHUB_APP_PRIVATE_KEY_PATH") ?? "");
-var jwtToken = CreateJWT(clientId, privateKey);
 
+// Possible way to create a client with the AppInstallationTokenAuthProvider
+// var adapter = RequestAdapter.Create(new AppInstallationTokenAuthProvider(
+//   Environment.GetEnvironmentVariable("GITHUB_APP_PRIVATE_KEY_PATH") ?? "",
+//   Environment.GetEnvironmentVariable("GITHUB_APP_CLIENT_ID") ?? "",
+//   int.Parse(installationId)
+// ));
+
+var jwtToken = CreateJWT(clientId, privateKey);
 var client = BuildHttpClient(jwtToken);
 var token = GetAppToken(client).Result;
 
 if (string.IsNullOrEmpty(token)) throw new Exception("Failed to get token");
 
-// var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "";
 var adapter = RequestAdapter.Create(new TokenAuthProvider(token));
-// adapter.BaseUrl = "http://api.github.localhost:1024";
 var gitHubClient = new GitHubClient(adapter);
 
 try
