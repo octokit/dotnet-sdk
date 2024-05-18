@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Branch Protection
     /// </summary>
-    public class BranchProtection : IAdditionalDataHolder, IParsable 
+    public class BranchProtection : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -159,22 +160,22 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allow_deletions", n => { AllowDeletions = n.GetObjectValue<BranchProtection_allow_deletions>(BranchProtection_allow_deletions.CreateFromDiscriminatorValue); } },
-                {"allow_force_pushes", n => { AllowForcePushes = n.GetObjectValue<BranchProtection_allow_force_pushes>(BranchProtection_allow_force_pushes.CreateFromDiscriminatorValue); } },
-                {"allow_fork_syncing", n => { AllowForkSyncing = n.GetObjectValue<BranchProtection_allow_fork_syncing>(BranchProtection_allow_fork_syncing.CreateFromDiscriminatorValue); } },
-                {"block_creations", n => { BlockCreations = n.GetObjectValue<BranchProtection_block_creations>(BranchProtection_block_creations.CreateFromDiscriminatorValue); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"enforce_admins", n => { EnforceAdmins = n.GetObjectValue<ProtectedBranchAdminEnforced>(ProtectedBranchAdminEnforced.CreateFromDiscriminatorValue); } },
-                {"lock_branch", n => { LockBranch = n.GetObjectValue<BranchProtection_lock_branch>(BranchProtection_lock_branch.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"protection_url", n => { ProtectionUrl = n.GetStringValue(); } },
-                {"required_conversation_resolution", n => { RequiredConversationResolution = n.GetObjectValue<BranchProtection_required_conversation_resolution>(BranchProtection_required_conversation_resolution.CreateFromDiscriminatorValue); } },
-                {"required_linear_history", n => { RequiredLinearHistory = n.GetObjectValue<BranchProtection_required_linear_history>(BranchProtection_required_linear_history.CreateFromDiscriminatorValue); } },
-                {"required_pull_request_reviews", n => { RequiredPullRequestReviews = n.GetObjectValue<ProtectedBranchPullRequestReview>(ProtectedBranchPullRequestReview.CreateFromDiscriminatorValue); } },
-                {"required_signatures", n => { RequiredSignatures = n.GetObjectValue<BranchProtection_required_signatures>(BranchProtection_required_signatures.CreateFromDiscriminatorValue); } },
-                {"required_status_checks", n => { RequiredStatusChecks = n.GetObjectValue<ProtectedBranchRequiredStatusCheck>(ProtectedBranchRequiredStatusCheck.CreateFromDiscriminatorValue); } },
-                {"restrictions", n => { Restrictions = n.GetObjectValue<BranchRestrictionPolicy>(BranchRestrictionPolicy.CreateFromDiscriminatorValue); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "allow_deletions", n => { AllowDeletions = n.GetObjectValue<BranchProtection_allow_deletions>(BranchProtection_allow_deletions.CreateFromDiscriminatorValue); } },
+                { "allow_force_pushes", n => { AllowForcePushes = n.GetObjectValue<BranchProtection_allow_force_pushes>(BranchProtection_allow_force_pushes.CreateFromDiscriminatorValue); } },
+                { "allow_fork_syncing", n => { AllowForkSyncing = n.GetObjectValue<BranchProtection_allow_fork_syncing>(BranchProtection_allow_fork_syncing.CreateFromDiscriminatorValue); } },
+                { "block_creations", n => { BlockCreations = n.GetObjectValue<BranchProtection_block_creations>(BranchProtection_block_creations.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "enforce_admins", n => { EnforceAdmins = n.GetObjectValue<ProtectedBranchAdminEnforced>(ProtectedBranchAdminEnforced.CreateFromDiscriminatorValue); } },
+                { "lock_branch", n => { LockBranch = n.GetObjectValue<BranchProtection_lock_branch>(BranchProtection_lock_branch.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "protection_url", n => { ProtectionUrl = n.GetStringValue(); } },
+                { "required_conversation_resolution", n => { RequiredConversationResolution = n.GetObjectValue<BranchProtection_required_conversation_resolution>(BranchProtection_required_conversation_resolution.CreateFromDiscriminatorValue); } },
+                { "required_linear_history", n => { RequiredLinearHistory = n.GetObjectValue<BranchProtection_required_linear_history>(BranchProtection_required_linear_history.CreateFromDiscriminatorValue); } },
+                { "required_pull_request_reviews", n => { RequiredPullRequestReviews = n.GetObjectValue<ProtectedBranchPullRequestReview>(ProtectedBranchPullRequestReview.CreateFromDiscriminatorValue); } },
+                { "required_signatures", n => { RequiredSignatures = n.GetObjectValue<BranchProtection_required_signatures>(BranchProtection_required_signatures.CreateFromDiscriminatorValue); } },
+                { "required_status_checks", n => { RequiredStatusChecks = n.GetObjectValue<ProtectedBranchRequiredStatusCheck>(ProtectedBranchRequiredStatusCheck.CreateFromDiscriminatorValue); } },
+                { "restrictions", n => { Restrictions = n.GetObjectValue<BranchRestrictionPolicy>(BranchRestrictionPolicy.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

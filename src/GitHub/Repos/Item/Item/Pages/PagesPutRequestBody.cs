@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pages {
+namespace GitHub.Repos.Item.Item.Pages
+{
     #pragma warning disable CS1591
-    public class PagesPutRequestBody : IAdditionalDataHolder, IParsable 
+    public class PagesPutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.</summary>
         public PagesPutRequestBody_build_type? BuildType { get; set; }
-        /// <summary>Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see &quot;[Using a custom domain with GitHub Pages](https://docs.github.com/articles/using-a-custom-domain-with-github-pages/).&quot;</summary>
+        /// <summary>Specify a custom domain for the repository. Sending a `null` value will remove the custom domain. For more about custom domains, see &quot;[Using a custom domain with GitHub Pages](https://docs.github.com/pages/configuring-a-custom-domain-for-your-github-pages-site).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cname { get; set; }
@@ -56,10 +57,10 @@ namespace GitHub.Repos.Item.Item.Pages {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"build_type", n => { BuildType = n.GetEnumValue<PagesPutRequestBody_build_type>(); } },
-                {"cname", n => { Cname = n.GetStringValue(); } },
-                {"https_enforced", n => { HttpsEnforced = n.GetBoolValue(); } },
-                {"source", n => { Source = n.GetObjectValue<PagesPutRequestBody_source>(PagesPutRequestBody_source.CreateFromDiscriminatorValue); } },
+                { "build_type", n => { BuildType = n.GetEnumValue<PagesPutRequestBody_build_type>(); } },
+                { "cname", n => { Cname = n.GetStringValue(); } },
+                { "https_enforced", n => { HttpsEnforced = n.GetBoolValue(); } },
+                { "source", n => { Source = n.GetObjectValue<PagesPutRequestBody_source>(PagesPutRequestBody_source.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,7 +79,7 @@ namespace GitHub.Repos.Item.Item.Pages {
         /// <summary>
         /// Composed type wrapper for classes <see cref="PagesPutRequestBody_sourceMember1"/>, <see cref="string"/>
         /// </summary>
-        public class PagesPutRequestBody_source : IComposedTypeWrapper, IParsable 
+        public class PagesPutRequestBody_source : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="PagesPutRequestBody_sourceMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

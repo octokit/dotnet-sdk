@@ -10,11 +10,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls {
+namespace GitHub.Repos.Item.Item.Pulls
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls
     /// </summary>
-    public class PullsRequestBuilder : BaseRequestBuilder 
+    public class PullsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The comments property</summary>
         public CommentsRequestBuilder Comments
@@ -69,7 +70,7 @@ namespace GitHub.Repos.Item.Item.Pulls {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<PullRequestSimple>(requestInfo, PullRequestSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -97,8 +98,8 @@ namespace GitHub.Repos.Item.Item.Pulls {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<PullRequest>(requestInfo, PullRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Represents an &apos;issue_comment&apos; secret scanning location type. This location type shows that a secret was detected in a comment on an issue.
     /// </summary>
-    public class SecretScanningLocationIssueComment : IAdditionalDataHolder, IParsable 
+    public class SecretScanningLocationIssueComment : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -45,7 +46,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"issue_comment_url", n => { IssueCommentUrl = n.GetStringValue(); } },
+                { "issue_comment_url", n => { IssueCommentUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

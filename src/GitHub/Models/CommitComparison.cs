@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Commit Comparison
     /// </summary>
-    public class CommitComparison : IAdditionalDataHolder, IParsable 
+    public class CommitComparison : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -117,19 +118,19 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ahead_by", n => { AheadBy = n.GetIntValue(); } },
-                {"base_commit", n => { BaseCommit = n.GetObjectValue<Commit>(Commit.CreateFromDiscriminatorValue); } },
-                {"behind_by", n => { BehindBy = n.GetIntValue(); } },
-                {"commits", n => { Commits = n.GetCollectionOfObjectValues<Commit>(Commit.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"diff_url", n => { DiffUrl = n.GetStringValue(); } },
-                {"files", n => { Files = n.GetCollectionOfObjectValues<DiffEntry>(DiffEntry.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"merge_base_commit", n => { MergeBaseCommit = n.GetObjectValue<Commit>(Commit.CreateFromDiscriminatorValue); } },
-                {"patch_url", n => { PatchUrl = n.GetStringValue(); } },
-                {"permalink_url", n => { PermalinkUrl = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CommitComparison_status>(); } },
-                {"total_commits", n => { TotalCommits = n.GetIntValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "ahead_by", n => { AheadBy = n.GetIntValue(); } },
+                { "base_commit", n => { BaseCommit = n.GetObjectValue<Commit>(Commit.CreateFromDiscriminatorValue); } },
+                { "behind_by", n => { BehindBy = n.GetIntValue(); } },
+                { "commits", n => { Commits = n.GetCollectionOfObjectValues<Commit>(Commit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "diff_url", n => { DiffUrl = n.GetStringValue(); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<DiffEntry>(DiffEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "merge_base_commit", n => { MergeBaseCommit = n.GetObjectValue<Commit>(Commit.CreateFromDiscriminatorValue); } },
+                { "patch_url", n => { PatchUrl = n.GetStringValue(); } },
+                { "permalink_url", n => { PermalinkUrl = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CommitComparison_status>(); } },
+                { "total_commits", n => { TotalCommits = n.GetIntValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class Event_payload : IAdditionalDataHolder, IParsable 
+    public class Event_payload : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
@@ -68,10 +69,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetStringValue(); } },
-                {"comment", n => { Comment = n.GetObjectValue<IssueComment>(IssueComment.CreateFromDiscriminatorValue); } },
-                {"issue", n => { Issue = n.GetObjectValue<GitHub.Models.Issue>(GitHub.Models.Issue.CreateFromDiscriminatorValue); } },
-                {"pages", n => { Pages = n.GetCollectionOfObjectValues<Event_payload_pages>(Event_payload_pages.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "action", n => { Action = n.GetStringValue(); } },
+                { "comment", n => { Comment = n.GetObjectValue<IssueComment>(IssueComment.CreateFromDiscriminatorValue); } },
+                { "issue", n => { Issue = n.GetObjectValue<GitHub.Models.Issue>(GitHub.Models.Issue.CreateFromDiscriminatorValue); } },
+                { "pages", n => { Pages = n.GetCollectionOfObjectValues<Event_payload_pages>(Event_payload_pages.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

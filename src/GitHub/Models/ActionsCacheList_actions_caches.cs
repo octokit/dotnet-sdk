@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class ActionsCacheList_actions_caches : IAdditionalDataHolder, IParsable 
+    public class ActionsCacheList_actions_caches : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -68,13 +69,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"key", n => { Key = n.GetStringValue(); } },
-                {"last_accessed_at", n => { LastAccessedAt = n.GetDateTimeOffsetValue(); } },
-                {"ref", n => { Ref = n.GetStringValue(); } },
-                {"size_in_bytes", n => { SizeInBytes = n.GetIntValue(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "last_accessed_at", n => { LastAccessedAt = n.GetDateTimeOffsetValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
+                { "size_in_bytes", n => { SizeInBytes = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

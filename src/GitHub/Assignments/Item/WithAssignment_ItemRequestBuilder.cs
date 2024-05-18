@@ -10,11 +10,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Assignments.Item {
+namespace GitHub.Assignments.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \assignments\{assignment_id}
     /// </summary>
-    public class WithAssignment_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithAssignment_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The accepted_assignments property</summary>
         public Accepted_assignmentsRequestBuilder Accepted_assignments
@@ -62,7 +63,7 @@ namespace GitHub.Assignments.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<ClassroomAssignment>(requestInfo, ClassroomAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -10,11 +10,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
+namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}\deployment_protection_rules
     /// </summary>
-    public class Deployment_protection_rulesRequestBuilder : BaseRequestBuilder 
+    public class Deployment_protection_rulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The apps property</summary>
         public AppsRequestBuilder Apps

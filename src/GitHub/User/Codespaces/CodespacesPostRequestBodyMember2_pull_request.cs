@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Codespaces {
+namespace GitHub.User.Codespaces
+{
     /// <summary>
     /// Pull request number for this codespace
     /// </summary>
-    public class CodespacesPostRequestBodyMember2_pull_request : IAdditionalDataHolder, IParsable 
+    public class CodespacesPostRequestBodyMember2_pull_request : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -41,8 +42,8 @@ namespace GitHub.User.Codespaces {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"pull_request_number", n => { PullRequestNumber = n.GetIntValue(); } },
-                {"repository_id", n => { RepositoryId = n.GetIntValue(); } },
+                { "pull_request_number", n => { PullRequestNumber = n.GetIntValue(); } },
+                { "repository_id", n => { RepositoryId = n.GetIntValue(); } },
             };
         }
         /// <summary>

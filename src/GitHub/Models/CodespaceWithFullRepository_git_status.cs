@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Details about the codespace&apos;s git repository.
     /// </summary>
-    public class CodespaceWithFullRepository_git_status : IAdditionalDataHolder, IParsable 
+    public class CodespaceWithFullRepository_git_status : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -53,11 +54,11 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ahead", n => { Ahead = n.GetIntValue(); } },
-                {"behind", n => { Behind = n.GetIntValue(); } },
-                {"has_uncommitted_changes", n => { HasUncommittedChanges = n.GetBoolValue(); } },
-                {"has_unpushed_changes", n => { HasUnpushedChanges = n.GetBoolValue(); } },
-                {"ref", n => { Ref = n.GetStringValue(); } },
+                { "ahead", n => { Ahead = n.GetIntValue(); } },
+                { "behind", n => { Behind = n.GetIntValue(); } },
+                { "has_uncommitted_changes", n => { HasUncommittedChanges = n.GetBoolValue(); } },
+                { "has_unpushed_changes", n => { HasUnpushedChanges = n.GetBoolValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
             };
         }
         /// <summary>

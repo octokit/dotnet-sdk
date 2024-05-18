@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Codespaces.Item.Publish {
+namespace GitHub.User.Codespaces.Item.Publish
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\codespaces\{codespace_name}\publish
     /// </summary>
-    public class PublishRequestBuilder : BaseRequestBuilder 
+    public class PublishRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="PublishRequestBuilder"/> and sets the default values.
@@ -55,10 +56,10 @@ namespace GitHub.User.Codespaces.Item.Publish {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CodespaceWithFullRepository>(requestInfo, CodespaceWithFullRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

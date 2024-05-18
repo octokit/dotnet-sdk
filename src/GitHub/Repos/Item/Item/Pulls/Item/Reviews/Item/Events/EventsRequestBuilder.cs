@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events {
+namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\{pull_number}\reviews\{review_id}\events
     /// </summary>
-    public class EventsRequestBuilder : BaseRequestBuilder 
+    public class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="EventsRequestBuilder"/> and sets the default values.
@@ -54,9 +55,9 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<PullRequestReview>(requestInfo, PullRequestReview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
+namespace GitHub.Orgs.Item.PersonalAccessTokenRequests
+{
     #pragma warning disable CS1591
-    public class PersonalAccessTokenRequestsPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class PersonalAccessTokenRequestsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Action to apply to the requests.</summary>
@@ -54,9 +55,9 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetEnumValue<PersonalAccessTokenRequestsPostRequestBody_action>(); } },
-                {"pat_request_ids", n => { PatRequestIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
+                { "action", n => { Action = n.GetEnumValue<PersonalAccessTokenRequestsPostRequestBody_action>(); } },
+                { "pat_request_ids", n => { PatRequestIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>

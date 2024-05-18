@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class Commit_commit : IAdditionalDataHolder, IParsable 
+    public class Commit_commit : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -86,13 +87,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"author", n => { Author = n.GetObjectValue<NullableGitUser>(NullableGitUser.CreateFromDiscriminatorValue); } },
-                {"comment_count", n => { CommentCount = n.GetIntValue(); } },
-                {"committer", n => { Committer = n.GetObjectValue<NullableGitUser>(NullableGitUser.CreateFromDiscriminatorValue); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"tree", n => { Tree = n.GetObjectValue<Commit_commit_tree>(Commit_commit_tree.CreateFromDiscriminatorValue); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"verification", n => { Verification = n.GetObjectValue<GitHub.Models.Verification>(GitHub.Models.Verification.CreateFromDiscriminatorValue); } },
+                { "author", n => { Author = n.GetObjectValue<NullableGitUser>(NullableGitUser.CreateFromDiscriminatorValue); } },
+                { "comment_count", n => { CommentCount = n.GetIntValue(); } },
+                { "committer", n => { Committer = n.GetObjectValue<NullableGitUser>(NullableGitUser.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "tree", n => { Tree = n.GetObjectValue<Commit_commit_tree>(Commit_commit_tree.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "verification", n => { Verification = n.GetObjectValue<GitHub.Models.Verification>(GitHub.Models.Verification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

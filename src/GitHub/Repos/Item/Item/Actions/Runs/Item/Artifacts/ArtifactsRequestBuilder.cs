@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Artifacts {
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Artifacts
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\artifacts
     /// </summary>
-    public class ArtifactsRequestBuilder : BaseRequestBuilder 
+    public class ArtifactsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ArtifactsRequestBuilder"/> and sets the default values.

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class PullRequestSimple_base : IAdditionalDataHolder, IParsable 
+    public class PullRequestSimple_base : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -76,11 +77,11 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"label", n => { Label = n.GetStringValue(); } },
-                {"ref", n => { Ref = n.GetStringValue(); } },
-                {"repo", n => { Repo = n.GetObjectValue<Repository>(Repository.CreateFromDiscriminatorValue); } },
-                {"sha", n => { Sha = n.GetStringValue(); } },
-                {"user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
+                { "repo", n => { Repo = n.GetObjectValue<Repository>(Repository.CreateFromDiscriminatorValue); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

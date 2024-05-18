@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item.Memberships {
+namespace GitHub.Orgs.Item.Teams.Item.Memberships
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\memberships
     /// </summary>
-    public class MembershipsRequestBuilder : BaseRequestBuilder 
+    public class MembershipsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.teams.item.memberships.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>

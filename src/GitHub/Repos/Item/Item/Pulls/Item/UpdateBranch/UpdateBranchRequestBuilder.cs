@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
+namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\{pull_number}\update-branch
     /// </summary>
-    public class UpdateBranchRequestBuilder : BaseRequestBuilder 
+    public class UpdateBranchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="UpdateBranchRequestBuilder"/> and sets the default values.
@@ -53,8 +54,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<UpdateBranchPutResponse>(requestInfo, UpdateBranchPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

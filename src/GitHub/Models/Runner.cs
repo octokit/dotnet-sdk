@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A self hosted runner
     /// </summary>
-    public class Runner : IAdditionalDataHolder, IParsable 
+    public class Runner : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -75,13 +76,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"busy", n => { Busy = n.GetBoolValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"labels", n => { Labels = n.GetCollectionOfObjectValues<RunnerLabel>(RunnerLabel.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"os", n => { Os = n.GetStringValue(); } },
-                {"runner_group_id", n => { RunnerGroupId = n.GetIntValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
+                { "busy", n => { Busy = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "labels", n => { Labels = n.GetCollectionOfObjectValues<RunnerLabel>(RunnerLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "os", n => { Os = n.GetStringValue(); } },
+                { "runner_group_id", n => { RunnerGroupId = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

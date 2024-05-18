@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Low-level Git commit operations within a repository
     /// </summary>
-    public class GitCommit : IAdditionalDataHolder, IParsable 
+    public class GitCommit : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -117,16 +118,16 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"author", n => { Author = n.GetObjectValue<GitCommit_author>(GitCommit_author.CreateFromDiscriminatorValue); } },
-                {"committer", n => { Committer = n.GetObjectValue<GitCommit_committer>(GitCommit_committer.CreateFromDiscriminatorValue); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"parents", n => { Parents = n.GetCollectionOfObjectValues<GitCommit_parents>(GitCommit_parents.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sha", n => { Sha = n.GetStringValue(); } },
-                {"tree", n => { Tree = n.GetObjectValue<GitCommit_tree>(GitCommit_tree.CreateFromDiscriminatorValue); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"verification", n => { Verification = n.GetObjectValue<GitCommit_verification>(GitCommit_verification.CreateFromDiscriminatorValue); } },
+                { "author", n => { Author = n.GetObjectValue<GitCommit_author>(GitCommit_author.CreateFromDiscriminatorValue); } },
+                { "committer", n => { Committer = n.GetObjectValue<GitCommit_committer>(GitCommit_committer.CreateFromDiscriminatorValue); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "parents", n => { Parents = n.GetCollectionOfObjectValues<GitCommit_parents>(GitCommit_parents.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
+                { "tree", n => { Tree = n.GetObjectValue<GitCommit_tree>(GitCommit_tree.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "verification", n => { Verification = n.GetObjectValue<GitCommit_verification>(GitCommit_verification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

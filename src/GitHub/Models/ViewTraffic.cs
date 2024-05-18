@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// View Traffic
     /// </summary>
-    public class ViewTraffic : IAdditionalDataHolder, IParsable 
+    public class ViewTraffic : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -49,9 +50,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"count", n => { Count = n.GetIntValue(); } },
-                {"uniques", n => { Uniques = n.GetIntValue(); } },
-                {"views", n => { Views = n.GetCollectionOfObjectValues<Traffic>(Traffic.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "count", n => { Count = n.GetIntValue(); } },
+                { "uniques", n => { Uniques = n.GetIntValue(); } },
+                { "views", n => { Views = n.GetCollectionOfObjectValues<Traffic>(Traffic.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

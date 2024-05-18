@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class DependencyGraphDiff : IAdditionalDataHolder, IParsable 
+    public class DependencyGraphDiff : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -104,16 +105,16 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"change_type", n => { ChangeType = n.GetEnumValue<DependencyGraphDiff_change_type>(); } },
-                {"ecosystem", n => { Ecosystem = n.GetStringValue(); } },
-                {"license", n => { License = n.GetStringValue(); } },
-                {"manifest", n => { Manifest = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"package_url", n => { PackageUrl = n.GetStringValue(); } },
-                {"scope", n => { Scope = n.GetEnumValue<DependencyGraphDiff_scope>(); } },
-                {"source_repository_url", n => { SourceRepositoryUrl = n.GetStringValue(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
-                {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<DependencyGraphDiff_vulnerabilities>(DependencyGraphDiff_vulnerabilities.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "change_type", n => { ChangeType = n.GetEnumValue<DependencyGraphDiff_change_type>(); } },
+                { "ecosystem", n => { Ecosystem = n.GetStringValue(); } },
+                { "license", n => { License = n.GetStringValue(); } },
+                { "manifest", n => { Manifest = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "package_url", n => { PackageUrl = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetEnumValue<DependencyGraphDiff_scope>(); } },
+                { "source_repository_url", n => { SourceRepositoryUrl = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
+                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<DependencyGraphDiff_vulnerabilities>(DependencyGraphDiff_vulnerabilities.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

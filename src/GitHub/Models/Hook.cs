@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Webhooks for repositories.
     /// </summary>
-    public class Hook : IAdditionalDataHolder, IParsable 
+    public class Hook : IAdditionalDataHolder, IParsable
     {
         /// <summary>Determines whether the hook is actually triggered on pushes.</summary>
         public bool? Active { get; set; }
@@ -117,19 +118,19 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"active", n => { Active = n.GetBoolValue(); } },
-                {"config", n => { Config = n.GetObjectValue<WebhookConfig>(WebhookConfig.CreateFromDiscriminatorValue); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"deliveries_url", n => { DeliveriesUrl = n.GetStringValue(); } },
-                {"events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"last_response", n => { LastResponse = n.GetObjectValue<HookResponse>(HookResponse.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"ping_url", n => { PingUrl = n.GetStringValue(); } },
-                {"test_url", n => { TestUrl = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "active", n => { Active = n.GetBoolValue(); } },
+                { "config", n => { Config = n.GetObjectValue<WebhookConfig>(WebhookConfig.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "deliveries_url", n => { DeliveriesUrl = n.GetStringValue(); } },
+                { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "last_response", n => { LastResponse = n.GetObjectValue<HookResponse>(HookResponse.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "ping_url", n => { PingUrl = n.GetStringValue(); } },
+                { "test_url", n => { TestUrl = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

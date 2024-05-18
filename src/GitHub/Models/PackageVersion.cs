@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A version of a software package
     /// </summary>
-    public class PackageVersion : IAdditionalDataHolder, IParsable 
+    public class PackageVersion : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -101,17 +102,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"license", n => { License = n.GetStringValue(); } },
-                {"metadata", n => { Metadata = n.GetObjectValue<PackageVersion_metadata>(PackageVersion_metadata.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"package_html_url", n => { PackageHtmlUrl = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "license", n => { License = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<PackageVersion_metadata>(PackageVersion_metadata.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "package_html_url", n => { PackageHtmlUrl = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Dependabot.Secrets.Item.Repositories {
+namespace GitHub.Orgs.Item.Dependabot.Secrets.Item.Repositories
+{
     #pragma warning disable CS1591
-    public class RepositoriesPutRequestBody : IAdditionalDataHolder, IParsable 
+    public class RepositoriesPutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -44,7 +45,7 @@ namespace GitHub.Orgs.Item.Dependabot.Secrets.Item.Repositories {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"selected_repository_ids", n => { SelectedRepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                { "selected_repository_ids", n => { SelectedRepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
             };
         }
         /// <summary>

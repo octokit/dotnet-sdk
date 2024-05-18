@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.OrganizationRoles.Users {
+namespace GitHub.Orgs.Item.OrganizationRoles.Users
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-roles\users
     /// </summary>
-    public class UsersRequestBuilder : BaseRequestBuilder 
+    public class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.organizationRoles.users.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>

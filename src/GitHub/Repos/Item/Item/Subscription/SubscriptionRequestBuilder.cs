@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Subscription {
+namespace GitHub.Repos.Item.Item.Subscription
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\subscription
     /// </summary>
-    public class SubscriptionRequestBuilder : BaseRequestBuilder 
+    public class SubscriptionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="SubscriptionRequestBuilder"/> and sets the default values.
@@ -68,7 +69,7 @@ namespace GitHub.Repos.Item.Item.Subscription {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<RepositorySubscription>(requestInfo, RepositorySubscription.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

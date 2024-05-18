@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Commits {
+namespace GitHub.Repos.Item.Item.Git.Commits
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git\commits
     /// </summary>
-    public class CommitsRequestBuilder : BaseRequestBuilder 
+    public class CommitsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.git.commits.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -67,9 +68,9 @@ namespace GitHub.Repos.Item.Item.Git.Commits {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"409", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "409", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GitCommit>(requestInfo, GitCommit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

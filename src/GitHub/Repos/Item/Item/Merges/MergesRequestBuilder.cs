@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Merges {
+namespace GitHub.Repos.Item.Item.Merges
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\merges
     /// </summary>
-    public class MergesRequestBuilder : BaseRequestBuilder 
+    public class MergesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="MergesRequestBuilder"/> and sets the default values.
@@ -53,8 +54,8 @@ namespace GitHub.Repos.Item.Item.Merges {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Commit>(requestInfo, Commit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class Import_project_choices : IAdditionalDataHolder, IParsable 
+    public class Import_project_choices : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -60,9 +61,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"human_name", n => { HumanName = n.GetStringValue(); } },
-                {"tfvc_project", n => { TfvcProject = n.GetStringValue(); } },
-                {"vcs", n => { Vcs = n.GetStringValue(); } },
+                { "human_name", n => { HumanName = n.GetStringValue(); } },
+                { "tfvc_project", n => { TfvcProject = n.GetStringValue(); } },
+                { "vcs", n => { Vcs = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Gists.Starred {
+namespace GitHub.Gists.Starred
+{
     /// <summary>
     /// Builds and executes requests for operations under \gists\starred
     /// </summary>
-    public class StarredRequestBuilder : BaseRequestBuilder 
+    public class StarredRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="StarredRequestBuilder"/> and sets the default values.
@@ -51,8 +52,8 @@ namespace GitHub.Gists.Starred {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<BaseGist>(requestInfo, BaseGist.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

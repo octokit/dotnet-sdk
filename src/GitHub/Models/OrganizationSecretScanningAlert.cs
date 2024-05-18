@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class OrganizationSecretScanningAlert : IAdditionalDataHolder, IParsable 
+    public class OrganizationSecretScanningAlert : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -134,25 +135,25 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"locations_url", n => { LocationsUrl = n.GetStringValue(); } },
-                {"number", n => { Number = n.GetIntValue(); } },
-                {"push_protection_bypassed", n => { PushProtectionBypassed = n.GetBoolValue(); } },
-                {"push_protection_bypassed_at", n => { PushProtectionBypassedAt = n.GetDateTimeOffsetValue(); } },
-                {"push_protection_bypassed_by", n => { PushProtectionBypassedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"repository", n => { Repository = n.GetObjectValue<SimpleRepository>(SimpleRepository.CreateFromDiscriminatorValue); } },
-                {"resolution", n => { Resolution = n.GetEnumValue<SecretScanningAlertResolution>(); } },
-                {"resolution_comment", n => { ResolutionComment = n.GetStringValue(); } },
-                {"resolved_at", n => { ResolvedAt = n.GetDateTimeOffsetValue(); } },
-                {"resolved_by", n => { ResolvedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"secret", n => { Secret = n.GetStringValue(); } },
-                {"secret_type", n => { SecretType = n.GetStringValue(); } },
-                {"secret_type_display_name", n => { SecretTypeDisplayName = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<SecretScanningAlertState>(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"validity", n => { Validity = n.GetEnumValue<OrganizationSecretScanningAlert_validity>(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "locations_url", n => { LocationsUrl = n.GetStringValue(); } },
+                { "number", n => { Number = n.GetIntValue(); } },
+                { "push_protection_bypassed", n => { PushProtectionBypassed = n.GetBoolValue(); } },
+                { "push_protection_bypassed_at", n => { PushProtectionBypassedAt = n.GetDateTimeOffsetValue(); } },
+                { "push_protection_bypassed_by", n => { PushProtectionBypassedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "repository", n => { Repository = n.GetObjectValue<SimpleRepository>(SimpleRepository.CreateFromDiscriminatorValue); } },
+                { "resolution", n => { Resolution = n.GetEnumValue<SecretScanningAlertResolution>(); } },
+                { "resolution_comment", n => { ResolutionComment = n.GetStringValue(); } },
+                { "resolved_at", n => { ResolvedAt = n.GetDateTimeOffsetValue(); } },
+                { "resolved_by", n => { ResolvedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "secret", n => { Secret = n.GetStringValue(); } },
+                { "secret_type", n => { SecretType = n.GetStringValue(); } },
+                { "secret_type_display_name", n => { SecretTypeDisplayName = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<SecretScanningAlertState>(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "validity", n => { Validity = n.GetEnumValue<OrganizationSecretScanningAlert_validity>(); } },
             };
         }
         /// <summary>

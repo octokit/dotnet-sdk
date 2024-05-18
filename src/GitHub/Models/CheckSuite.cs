@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A suite of checks performed on the code of a given code change
     /// </summary>
-    public class CheckSuite : IAdditionalDataHolder, IParsable 
+    public class CheckSuite : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -141,25 +142,25 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"after", n => { After = n.GetStringValue(); } },
-                {"app", n => { App = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
-                {"before", n => { Before = n.GetStringValue(); } },
-                {"check_runs_url", n => { CheckRunsUrl = n.GetStringValue(); } },
-                {"conclusion", n => { Conclusion = n.GetEnumValue<CheckSuite_conclusion>(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"head_branch", n => { HeadBranch = n.GetStringValue(); } },
-                {"head_commit", n => { HeadCommit = n.GetObjectValue<SimpleCommit>(SimpleCommit.CreateFromDiscriminatorValue); } },
-                {"head_sha", n => { HeadSha = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"latest_check_runs_count", n => { LatestCheckRunsCount = n.GetIntValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"pull_requests", n => { PullRequests = n.GetCollectionOfObjectValues<PullRequestMinimal>(PullRequestMinimal.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
-                {"rerequestable", n => { Rerequestable = n.GetBoolValue(); } },
-                {"runs_rerequestable", n => { RunsRerequestable = n.GetBoolValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CheckSuite_status>(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "after", n => { After = n.GetStringValue(); } },
+                { "app", n => { App = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
+                { "before", n => { Before = n.GetStringValue(); } },
+                { "check_runs_url", n => { CheckRunsUrl = n.GetStringValue(); } },
+                { "conclusion", n => { Conclusion = n.GetEnumValue<CheckSuite_conclusion>(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "head_branch", n => { HeadBranch = n.GetStringValue(); } },
+                { "head_commit", n => { HeadCommit = n.GetObjectValue<SimpleCommit>(SimpleCommit.CreateFromDiscriminatorValue); } },
+                { "head_sha", n => { HeadSha = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "latest_check_runs_count", n => { LatestCheckRunsCount = n.GetIntValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "pull_requests", n => { PullRequests = n.GetCollectionOfObjectValues<PullRequestMinimal>(PullRequestMinimal.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
+                { "rerequestable", n => { Rerequestable = n.GetBoolValue(); } },
+                { "runs_rerequestable", n => { RunsRerequestable = n.GetBoolValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CheckSuite_status>(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

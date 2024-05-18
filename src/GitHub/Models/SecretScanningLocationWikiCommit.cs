@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Represents a &apos;wiki_commit&apos; secret scanning location type. This location type shows that a secret was detected inside a commit to a repository wiki.
     /// </summary>
-    public class SecretScanningLocationWikiCommit : IAdditionalDataHolder, IParsable 
+    public class SecretScanningLocationWikiCommit : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -85,15 +86,15 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"blob_sha", n => { BlobSha = n.GetStringValue(); } },
-                {"commit_sha", n => { CommitSha = n.GetStringValue(); } },
-                {"commit_url", n => { CommitUrl = n.GetStringValue(); } },
-                {"end_column", n => { EndColumn = n.GetDoubleValue(); } },
-                {"end_line", n => { EndLine = n.GetDoubleValue(); } },
-                {"page_url", n => { PageUrl = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
-                {"start_column", n => { StartColumn = n.GetDoubleValue(); } },
-                {"start_line", n => { StartLine = n.GetDoubleValue(); } },
+                { "blob_sha", n => { BlobSha = n.GetStringValue(); } },
+                { "commit_sha", n => { CommitSha = n.GetStringValue(); } },
+                { "commit_url", n => { CommitUrl = n.GetStringValue(); } },
+                { "end_column", n => { EndColumn = n.GetDoubleValue(); } },
+                { "end_line", n => { EndLine = n.GetDoubleValue(); } },
+                { "page_url", n => { PageUrl = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "start_column", n => { StartColumn = n.GetDoubleValue(); } },
+                { "start_line", n => { StartLine = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

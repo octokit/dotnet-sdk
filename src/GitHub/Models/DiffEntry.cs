@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Diff Entry
     /// </summary>
-    public class DiffEntry : IAdditionalDataHolder, IParsable 
+    public class DiffEntry : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -101,17 +102,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"additions", n => { Additions = n.GetIntValue(); } },
-                {"blob_url", n => { BlobUrl = n.GetStringValue(); } },
-                {"changes", n => { Changes = n.GetIntValue(); } },
-                {"contents_url", n => { ContentsUrl = n.GetStringValue(); } },
-                {"deletions", n => { Deletions = n.GetIntValue(); } },
-                {"filename", n => { Filename = n.GetStringValue(); } },
-                {"patch", n => { Patch = n.GetStringValue(); } },
-                {"previous_filename", n => { PreviousFilename = n.GetStringValue(); } },
-                {"raw_url", n => { RawUrl = n.GetStringValue(); } },
-                {"sha", n => { Sha = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<DiffEntry_status>(); } },
+                { "additions", n => { Additions = n.GetIntValue(); } },
+                { "blob_url", n => { BlobUrl = n.GetStringValue(); } },
+                { "changes", n => { Changes = n.GetIntValue(); } },
+                { "contents_url", n => { ContentsUrl = n.GetStringValue(); } },
+                { "deletions", n => { Deletions = n.GetIntValue(); } },
+                { "filename", n => { Filename = n.GetStringValue(); } },
+                { "patch", n => { Patch = n.GetStringValue(); } },
+                { "previous_filename", n => { PreviousFilename = n.GetStringValue(); } },
+                { "raw_url", n => { RawUrl = n.GetStringValue(); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<DiffEntry_status>(); } },
             };
         }
         /// <summary>

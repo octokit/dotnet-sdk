@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Codespaces.Secrets.PublicKey {
+namespace GitHub.Orgs.Item.Codespaces.Secrets.PublicKey
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\codespaces\secrets\public-key
     /// </summary>
-    public class PublicKeyRequestBuilder : BaseRequestBuilder 
+    public class PublicKeyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="PublicKeyRequestBuilder"/> and sets the default values.

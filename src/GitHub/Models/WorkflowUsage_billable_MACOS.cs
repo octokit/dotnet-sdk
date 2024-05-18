@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class WorkflowUsage_billable_MACOS : IAdditionalDataHolder, IParsable 
+    public class WorkflowUsage_billable_MACOS : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,7 +39,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"total_ms", n => { TotalMs = n.GetIntValue(); } },
+                { "total_ms", n => { TotalMs = n.GetIntValue(); } },
             };
         }
         /// <summary>

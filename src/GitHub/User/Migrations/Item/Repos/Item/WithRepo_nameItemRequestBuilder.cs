@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.User.Migrations.Item.Repos.Item {
+namespace GitHub.User.Migrations.Item.Repos.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\migrations\{migration_id}\repos\{repo_name}
     /// </summary>
-    public class WithRepo_nameItemRequestBuilder : BaseRequestBuilder 
+    public class WithRepo_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The lock property</summary>
         public LockRequestBuilder Lock

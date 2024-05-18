@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Autolinks {
+namespace GitHub.Repos.Item.Item.Autolinks
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\autolinks
     /// </summary>
-    public class AutolinksRequestBuilder : BaseRequestBuilder 
+    public class AutolinksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.autolinks.item collection</summary>
         /// <param name="position">The unique identifier of the autolink.</param>
@@ -85,7 +86,7 @@ namespace GitHub.Repos.Item.Item.Autolinks {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Autolink>(requestInfo, Autolink.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

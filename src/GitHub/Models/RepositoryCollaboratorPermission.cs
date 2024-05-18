@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Repository Collaborator Permission
     /// </summary>
-    public class RepositoryCollaboratorPermission : IAdditionalDataHolder, IParsable 
+    public class RepositoryCollaboratorPermission : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -61,9 +62,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"permission", n => { Permission = n.GetStringValue(); } },
-                {"role_name", n => { RoleName = n.GetStringValue(); } },
-                {"user", n => { User = n.GetObjectValue<NullableCollaborator>(NullableCollaborator.CreateFromDiscriminatorValue); } },
+                { "permission", n => { Permission = n.GetStringValue(); } },
+                { "role_name", n => { RoleName = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<NullableCollaborator>(NullableCollaborator.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

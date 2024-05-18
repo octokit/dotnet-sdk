@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Collaborators.Item {
+namespace GitHub.Repos.Item.Item.Collaborators.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\collaborators\{username}
     /// </summary>
-    public class WithUsernameItemRequestBuilder : BaseRequestBuilder 
+    public class WithUsernameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The permission property</summary>
         public PermissionRequestBuilder Permission
@@ -56,8 +57,8 @@ namespace GitHub.Repos.Item.Item.Collaborators.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,8 +103,8 @@ namespace GitHub.Repos.Item.Item.Collaborators.Item {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<RepositoryInvitation>(requestInfo, RepositoryInvitation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

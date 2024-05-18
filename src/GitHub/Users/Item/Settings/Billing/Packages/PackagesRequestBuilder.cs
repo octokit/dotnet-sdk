@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Settings.Billing.Packages {
+namespace GitHub.Users.Item.Settings.Billing.Packages
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\settings\billing\packages
     /// </summary>
-    public class PackagesRequestBuilder : BaseRequestBuilder 
+    public class PackagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="PackagesRequestBuilder"/> and sets the default values.

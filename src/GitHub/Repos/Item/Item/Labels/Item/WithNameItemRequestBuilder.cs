@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Labels.Item {
+namespace GitHub.Repos.Item.Item.Labels.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\labels\{name}
     /// </summary>
-    public class WithNameItemRequestBuilder : BaseRequestBuilder 
+    public class WithNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithNameItemRequestBuilder"/> and sets the default values.
@@ -68,7 +69,7 @@ namespace GitHub.Repos.Item.Item.Labels.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Label>(requestInfo, Label.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

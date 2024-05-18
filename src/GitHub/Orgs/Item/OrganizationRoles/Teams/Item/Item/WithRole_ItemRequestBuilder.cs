@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.OrganizationRoles.Teams.Item.Item {
+namespace GitHub.Orgs.Item.OrganizationRoles.Teams.Item.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-roles\teams\{team_slug}\{role_id}
     /// </summary>
-    public class WithRole_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithRole_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithRole_ItemRequestBuilder"/> and sets the default values.

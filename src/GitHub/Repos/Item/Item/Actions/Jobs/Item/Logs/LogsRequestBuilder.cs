@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Logs {
+namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Logs
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\jobs\{job_id}\logs
     /// </summary>
-    public class LogsRequestBuilder : BaseRequestBuilder 
+    public class LogsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="LogsRequestBuilder"/> and sets the default values.

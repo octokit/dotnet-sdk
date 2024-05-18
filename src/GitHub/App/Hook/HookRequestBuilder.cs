@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.App.Hook {
+namespace GitHub.App.Hook
+{
     /// <summary>
     /// Builds and executes requests for operations under \app\hook
     /// </summary>
-    public class HookRequestBuilder : BaseRequestBuilder 
+    public class HookRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The config property</summary>
         public ConfigRequestBuilder Config

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Notifications.Threads.Item.Subscription {
+namespace GitHub.Notifications.Threads.Item.Subscription
+{
     /// <summary>
     /// Builds and executes requests for operations under \notifications\threads\{thread_id}\subscription
     /// </summary>
-    public class SubscriptionRequestBuilder : BaseRequestBuilder 
+    public class SubscriptionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="SubscriptionRequestBuilder"/> and sets the default values.
@@ -50,8 +51,8 @@ namespace GitHub.Notifications.Threads.Item.Subscription {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,8 +77,8 @@ namespace GitHub.Notifications.Threads.Item.Subscription {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<ThreadSubscription>(requestInfo, ThreadSubscription.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -104,8 +105,8 @@ namespace GitHub.Notifications.Threads.Item.Subscription {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<ThreadSubscription>(requestInfo, ThreadSubscription.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

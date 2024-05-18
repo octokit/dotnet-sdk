@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Followers {
+namespace GitHub.Users.Item.Followers
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\followers
     /// </summary>
-    public class FollowersRequestBuilder : BaseRequestBuilder 
+    public class FollowersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="FollowersRequestBuilder"/> and sets the default values.

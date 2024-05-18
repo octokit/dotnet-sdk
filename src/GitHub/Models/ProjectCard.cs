@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Project cards represent a scope of work.
     /// </summary>
-    public class ProjectCard : IAdditionalDataHolder, IParsable 
+    public class ProjectCard : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -117,19 +118,19 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"archived", n => { Archived = n.GetBoolValue(); } },
-                {"column_name", n => { ColumnName = n.GetStringValue(); } },
-                {"column_url", n => { ColumnUrl = n.GetStringValue(); } },
-                {"content_url", n => { ContentUrl = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"note", n => { Note = n.GetStringValue(); } },
-                {"project_id", n => { ProjectId = n.GetStringValue(); } },
-                {"project_url", n => { ProjectUrl = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "archived", n => { Archived = n.GetBoolValue(); } },
+                { "column_name", n => { ColumnName = n.GetStringValue(); } },
+                { "column_url", n => { ColumnUrl = n.GetStringValue(); } },
+                { "content_url", n => { ContentUrl = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "note", n => { Note = n.GetStringValue(); } },
+                { "project_id", n => { ProjectId = n.GetStringValue(); } },
+                { "project_url", n => { ProjectUrl = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

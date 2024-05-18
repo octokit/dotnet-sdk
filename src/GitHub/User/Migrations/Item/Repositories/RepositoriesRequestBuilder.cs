@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Migrations.Item.Repositories {
+namespace GitHub.User.Migrations.Item.Repositories
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\migrations\{migration_id}\repositories
     /// </summary>
-    public class RepositoriesRequestBuilder : BaseRequestBuilder 
+    public class RepositoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="RepositoriesRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.User.Migrations.Item.Repositories {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<MinimalRepository>(requestInfo, MinimalRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

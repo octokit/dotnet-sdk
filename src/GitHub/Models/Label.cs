@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Color-coded labels help you categorize and filter your issues (just like labels in Gmail).
     /// </summary>
-    public class Label : IAdditionalDataHolder, IParsable 
+    public class Label : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -81,13 +82,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"color", n => { Color = n.GetStringValue(); } },
-                {"default", n => { Default = n.GetBoolValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetLongValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "color", n => { Color = n.GetStringValue(); } },
+                { "default", n => { Default = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

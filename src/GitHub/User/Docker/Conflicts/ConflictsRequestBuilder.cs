@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Docker.Conflicts {
+namespace GitHub.User.Docker.Conflicts
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\docker\conflicts
     /// </summary>
-    public class ConflictsRequestBuilder : BaseRequestBuilder 
+    public class ConflictsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ConflictsRequestBuilder"/> and sets the default values.

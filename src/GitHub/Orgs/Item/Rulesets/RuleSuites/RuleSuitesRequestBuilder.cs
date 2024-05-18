@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
+namespace GitHub.Orgs.Item.Rulesets.RuleSuites
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\rulesets\rule-suites
     /// </summary>
-    public class RuleSuitesRequestBuilder : BaseRequestBuilder 
+    public class RuleSuitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.rulesets.ruleSuites.item collection</summary>
         /// <param name="position">The unique identifier of the rule suite result.To get this ID, you can use [GET /repos/{owner}/{repo}/rulesets/rule-suites](https://docs.github.com/rest/repos/rule-suites#list-repository-rule-suites)for repositories and [GET /orgs/{org}/rulesets/rule-suites](https://docs.github.com/rest/orgs/rule-suites#list-organization-rule-suites)for organizations.</param>
@@ -64,8 +65,8 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<GitHub.Models.RuleSuites>(requestInfo, GitHub.Models.RuleSuites.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

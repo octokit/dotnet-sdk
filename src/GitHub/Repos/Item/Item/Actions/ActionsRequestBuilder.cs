@@ -18,11 +18,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Actions {
+namespace GitHub.Repos.Item.Item.Actions
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions
     /// </summary>
-    public class ActionsRequestBuilder : BaseRequestBuilder 
+    public class ActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The artifacts property</summary>
         public ArtifactsRequestBuilder Artifacts

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Reactions to conversations provide a way to help people express their feelings more simply and effectively.
     /// </summary>
-    public class Reaction : IAdditionalDataHolder, IParsable 
+    public class Reaction : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -59,11 +60,11 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"content", n => { Content = n.GetEnumValue<Reaction_content>(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetEnumValue<Reaction_content>(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Refs {
+namespace GitHub.Repos.Item.Item.Git.Refs
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git\refs
     /// </summary>
-    public class RefsRequestBuilder : BaseRequestBuilder 
+    public class RefsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.git.refs.item collection</summary>
         /// <param name="position">The Git reference. For more information, see &quot;[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)&quot; in the Git documentation.</param>
@@ -66,8 +67,8 @@ namespace GitHub.Repos.Item.Item.Git.Refs {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"409", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "409", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GitRef>(requestInfo, GitRef.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

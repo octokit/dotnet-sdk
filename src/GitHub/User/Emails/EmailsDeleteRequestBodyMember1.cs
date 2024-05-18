@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Emails {
+namespace GitHub.User.Emails
+{
     /// <summary>
     /// Deletes one or more email addresses from your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.
     /// </summary>
-    public class EmailsDeleteRequestBodyMember1 : IAdditionalDataHolder, IParsable 
+    public class EmailsDeleteRequestBodyMember1 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -45,7 +46,7 @@ namespace GitHub.User.Emails {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"emails", n => { Emails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "emails", n => { Emails = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

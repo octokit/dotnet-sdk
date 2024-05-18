@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Forks {
+namespace GitHub.Repos.Item.Item.Forks
+{
     #pragma warning disable CS1591
-    public class ForksPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class ForksPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -54,9 +55,9 @@ namespace GitHub.Repos.Item.Item.Forks {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"default_branch_only", n => { DefaultBranchOnly = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"organization", n => { Organization = n.GetStringValue(); } },
+                { "default_branch_only", n => { DefaultBranchOnly = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetStringValue(); } },
             };
         }
         /// <summary>

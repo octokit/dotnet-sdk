@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class Environment_protection_rulesMember2 : IAdditionalDataHolder, IParsable 
+    public class Environment_protection_rulesMember2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -64,11 +65,11 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"prevent_self_review", n => { PreventSelfReview = n.GetBoolValue(); } },
-                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<Environment_protection_rulesMember2_reviewers>(Environment_protection_rulesMember2_reviewers.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "prevent_self_review", n => { PreventSelfReview = n.GetBoolValue(); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<Environment_protection_rulesMember2_reviewers>(Environment_protection_rulesMember2_reviewers.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

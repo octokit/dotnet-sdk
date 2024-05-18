@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Notifications.Threads.Item.Subscription {
+namespace GitHub.Notifications.Threads.Item.Subscription
+{
     #pragma warning disable CS1591
-    public class SubscriptionPutRequestBody : IAdditionalDataHolder, IParsable 
+    public class SubscriptionPutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,7 +39,7 @@ namespace GitHub.Notifications.Threads.Item.Subscription {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ignored", n => { Ignored = n.GetBoolValue(); } },
+                { "ignored", n => { Ignored = n.GetBoolValue(); } },
             };
         }
         /// <summary>

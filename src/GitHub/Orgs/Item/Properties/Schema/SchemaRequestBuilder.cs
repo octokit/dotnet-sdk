@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Properties.Schema {
+namespace GitHub.Orgs.Item.Properties.Schema
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\properties\schema
     /// </summary>
-    public class SchemaRequestBuilder : BaseRequestBuilder 
+    public class SchemaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.properties.schema.item collection</summary>
         /// <param name="position">The custom property name. The name is case sensitive.</param>
@@ -64,8 +65,8 @@ namespace GitHub.Orgs.Item.Properties.Schema {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<OrgCustomProperty>(requestInfo, OrgCustomProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -93,8 +94,8 @@ namespace GitHub.Orgs.Item.Properties.Schema {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<OrgCustomProperty>(requestInfo, OrgCustomProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

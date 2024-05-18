@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Failed_invitations {
+namespace GitHub.Orgs.Item.Failed_invitations
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\failed_invitations
     /// </summary>
-    public class Failed_invitationsRequestBuilder : BaseRequestBuilder 
+    public class Failed_invitationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="Failed_invitationsRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.Orgs.Item.Failed_invitations {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<OrganizationInvitation>(requestInfo, OrganizationInvitation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

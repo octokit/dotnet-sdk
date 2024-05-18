@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Properties.Schema.Item {
+namespace GitHub.Orgs.Item.Properties.Schema.Item
+{
     #pragma warning disable CS1591
-    public class WithCustom_property_namePutRequestBody : IAdditionalDataHolder, IParsable 
+    public class WithCustom_property_namePutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -64,11 +65,11 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowed_values", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"default_value", n => { DefaultValue = n.GetObjectValue<WithCustom_property_namePutRequestBody_default_value>(WithCustom_property_namePutRequestBody_default_value.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"required", n => { Required = n.GetBoolValue(); } },
-                {"value_type", n => { ValueType = n.GetEnumValue<WithCustom_property_namePutRequestBody_value_type>(); } },
+                { "allowed_values", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "default_value", n => { DefaultValue = n.GetObjectValue<WithCustom_property_namePutRequestBody_default_value>(WithCustom_property_namePutRequestBody_default_value.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
+                { "value_type", n => { ValueType = n.GetEnumValue<WithCustom_property_namePutRequestBody_value_type>(); } },
             };
         }
         /// <summary>
@@ -88,7 +89,7 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item {
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>
         /// </summary>
-        public class WithCustom_property_namePutRequestBody_default_value : IComposedTypeWrapper, IParsable 
+        public class WithCustom_property_namePutRequestBody_default_value : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

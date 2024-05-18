@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Metaproperties for Git author/committer information.
     /// </summary>
-    public class NullableGitUser : IAdditionalDataHolder, IParsable 
+    public class NullableGitUser : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -61,9 +62,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"date", n => { Date = n.GetStringValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "date", n => { Date = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

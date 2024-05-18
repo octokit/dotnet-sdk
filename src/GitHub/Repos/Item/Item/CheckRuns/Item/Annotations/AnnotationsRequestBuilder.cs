@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckRuns.Item.Annotations {
+namespace GitHub.Repos.Item.Item.CheckRuns.Item.Annotations
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-runs\{check_run_id}\annotations
     /// </summary>
-    public class AnnotationsRequestBuilder : BaseRequestBuilder 
+    public class AnnotationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="AnnotationsRequestBuilder"/> and sets the default values.

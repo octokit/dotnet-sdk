@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Disable {
+namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Disable
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}\disable
     /// </summary>
-    public class DisableRequestBuilder : BaseRequestBuilder 
+    public class DisableRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="DisableRequestBuilder"/> and sets the default values.

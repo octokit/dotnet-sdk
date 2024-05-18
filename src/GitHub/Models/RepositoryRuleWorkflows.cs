@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
     /// </summary>
-    public class RepositoryRuleWorkflows : IAdditionalDataHolder, IParsable 
+    public class RepositoryRuleWorkflows : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -47,8 +48,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleWorkflows_parameters>(RepositoryRuleWorkflows_parameters.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<RepositoryRuleWorkflows_type>(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleWorkflows_parameters>(RepositoryRuleWorkflows_parameters.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<RepositoryRuleWorkflows_type>(); } },
             };
         }
         /// <summary>

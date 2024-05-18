@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
+namespace GitHub.Orgs.Item.Copilot.Billing.Seats
+{
     #pragma warning disable CS1591
-    public class SeatsGetResponse : IAdditionalDataHolder, IParsable 
+    public class SeatsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +48,8 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"seats", n => { Seats = n.GetCollectionOfObjectValues<CopilotSeatDetails>(CopilotSeatDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"total_seats", n => { TotalSeats = n.GetIntValue(); } },
+                { "seats", n => { Seats = n.GetCollectionOfObjectValues<CopilotSeatDetails>(CopilotSeatDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "total_seats", n => { TotalSeats = n.GetIntValue(); } },
             };
         }
         /// <summary>

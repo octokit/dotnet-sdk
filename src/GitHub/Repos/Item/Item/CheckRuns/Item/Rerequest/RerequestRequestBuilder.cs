@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckRuns.Item.Rerequest {
+namespace GitHub.Repos.Item.Item.CheckRuns.Item.Rerequest
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-runs\{check_run_id}\rerequest
     /// </summary>
-    public class RerequestRequestBuilder : BaseRequestBuilder 
+    public class RerequestRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="RerequestRequestBuilder"/> and sets the default values.
@@ -52,9 +53,9 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item.Rerequest {
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<EmptyObject>(requestInfo, EmptyObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

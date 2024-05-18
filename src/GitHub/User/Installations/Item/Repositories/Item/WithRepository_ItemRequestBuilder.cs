@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Installations.Item.Repositories.Item {
+namespace GitHub.User.Installations.Item.Repositories.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\installations\{installation_id}\repositories\{repository_id}
     /// </summary>
-    public class WithRepository_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithRepository_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithRepository_ItemRequestBuilder"/> and sets the default values.
@@ -50,8 +51,8 @@ namespace GitHub.User.Installations.Item.Repositories.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -75,8 +76,8 @@ namespace GitHub.User.Installations.Item.Repositories.Item {
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

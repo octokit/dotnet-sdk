@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
     /// </summary>
-    public class Snapshot_manifests : IAdditionalDataHolder, IParsable 
+    public class Snapshot_manifests : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

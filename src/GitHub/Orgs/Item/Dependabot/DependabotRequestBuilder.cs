@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Dependabot {
+namespace GitHub.Orgs.Item.Dependabot
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\dependabot
     /// </summary>
-    public class DependabotRequestBuilder : BaseRequestBuilder 
+    public class DependabotRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The alerts property</summary>
         public AlertsRequestBuilder Alerts

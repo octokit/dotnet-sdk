@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Codespaces {
+namespace GitHub.User.Codespaces
+{
     #pragma warning disable CS1591
-    public class CodespacesPostRequestBodyMember1 : IAdditionalDataHolder, IParsable 
+    public class CodespacesPostRequestBodyMember1 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -102,18 +103,18 @@ namespace GitHub.User.Codespaces {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"client_ip", n => { ClientIp = n.GetStringValue(); } },
-                {"devcontainer_path", n => { DevcontainerPath = n.GetStringValue(); } },
-                {"display_name", n => { DisplayName = n.GetStringValue(); } },
-                {"geo", n => { Geo = n.GetEnumValue<CodespacesPostRequestBodyMember1_geo>(); } },
-                {"idle_timeout_minutes", n => { IdleTimeoutMinutes = n.GetIntValue(); } },
-                {"location", n => { Location = n.GetStringValue(); } },
-                {"machine", n => { Machine = n.GetStringValue(); } },
-                {"multi_repo_permissions_opt_out", n => { MultiRepoPermissionsOptOut = n.GetBoolValue(); } },
-                {"ref", n => { Ref = n.GetStringValue(); } },
-                {"repository_id", n => { RepositoryId = n.GetIntValue(); } },
-                {"retention_period_minutes", n => { RetentionPeriodMinutes = n.GetIntValue(); } },
-                {"working_directory", n => { WorkingDirectory = n.GetStringValue(); } },
+                { "client_ip", n => { ClientIp = n.GetStringValue(); } },
+                { "devcontainer_path", n => { DevcontainerPath = n.GetStringValue(); } },
+                { "display_name", n => { DisplayName = n.GetStringValue(); } },
+                { "geo", n => { Geo = n.GetEnumValue<CodespacesPostRequestBodyMember1_geo>(); } },
+                { "idle_timeout_minutes", n => { IdleTimeoutMinutes = n.GetIntValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
+                { "machine", n => { Machine = n.GetStringValue(); } },
+                { "multi_repo_permissions_opt_out", n => { MultiRepoPermissionsOptOut = n.GetBoolValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
+                { "repository_id", n => { RepositoryId = n.GetIntValue(); } },
+                { "retention_period_minutes", n => { RetentionPeriodMinutes = n.GetIntValue(); } },
+                { "working_directory", n => { WorkingDirectory = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Invitations.Item.Teams {
+namespace GitHub.Orgs.Item.Invitations.Item.Teams
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\invitations\{invitation_id}\teams
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder 
+    public class TeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
@@ -34,7 +35,7 @@ namespace GitHub.Orgs.Item.Invitations.Item.Teams {
         /// List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/members#list-organization-invitation-teams" />
         /// </summary>
-        /// <returns>A List&lt;GitHub.Models.Team&gt;</returns>
+        /// <returns>A List&lt;Team&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
@@ -50,7 +51,7 @@ namespace GitHub.Orgs.Item.Invitations.Item.Teams {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<GitHub.Models.Team>(requestInfo, GitHub.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

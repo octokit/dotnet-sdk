@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Installation {
+namespace GitHub.Users.Item.Installation
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\installation
     /// </summary>
-    public class InstallationRequestBuilder : BaseRequestBuilder 
+    public class InstallationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="InstallationRequestBuilder"/> and sets the default values.

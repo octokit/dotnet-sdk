@@ -16,11 +16,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item {
+namespace GitHub.Repos.Item.Item.Pulls.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\{pull_number}
     /// </summary>
-    public class WithPull_numberItemRequestBuilder : BaseRequestBuilder 
+    public class WithPull_numberItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The codespaces property</summary>
         public CodespacesRequestBuilder Codespaces
@@ -101,10 +102,10 @@ namespace GitHub.Repos.Item.Item.Pulls.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"406", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
-                {"503", PullRequest503Error.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "406", BasicError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
+                { "503", PullRequest503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<PullRequest>(requestInfo, PullRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -131,8 +132,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<PullRequest>(requestInfo, PullRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

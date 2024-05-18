@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Teams {
+namespace GitHub.Orgs.Item.Teams
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder 
+    public class TeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.teams.item collection</summary>
         /// <param name="position">The slug of the team name.</param>
@@ -47,7 +48,7 @@ namespace GitHub.Orgs.Item.Teams {
         /// Lists all teams in an organization that are visible to the authenticated user.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#list-teams" />
         /// </summary>
-        /// <returns>A List&lt;GitHub.Models.Team&gt;</returns>
+        /// <returns>A List&lt;Team&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="BasicError">When receiving a 403 status code</exception>
@@ -63,7 +64,7 @@ namespace GitHub.Orgs.Item.Teams {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<GitHub.Models.Team>(requestInfo, GitHub.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -91,8 +92,8 @@ namespace GitHub.Orgs.Item.Teams {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<TeamFull>(requestInfo, TeamFull.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

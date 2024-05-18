@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Licenses {
+namespace GitHub.Licenses
+{
     /// <summary>
     /// Builds and executes requests for operations under \licenses
     /// </summary>
-    public class LicensesRequestBuilder : BaseRequestBuilder 
+    public class LicensesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.licenses.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

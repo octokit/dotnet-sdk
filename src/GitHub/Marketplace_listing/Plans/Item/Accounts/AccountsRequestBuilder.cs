@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Marketplace_listing.Plans.Item.Accounts {
+namespace GitHub.Marketplace_listing.Plans.Item.Accounts
+{
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\plans\{plan_id}\accounts
     /// </summary>
-    public class AccountsRequestBuilder : BaseRequestBuilder 
+    public class AccountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="AccountsRequestBuilder"/> and sets the default values.
@@ -52,9 +53,9 @@ namespace GitHub.Marketplace_listing.Plans.Item.Accounts {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<MarketplacePurchase>(requestInfo, MarketplacePurchase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

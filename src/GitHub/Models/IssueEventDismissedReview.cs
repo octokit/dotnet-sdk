@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class IssueEventDismissedReview : IAdditionalDataHolder, IParsable 
+    public class IssueEventDismissedReview : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -62,10 +63,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dismissal_commit_id", n => { DismissalCommitId = n.GetStringValue(); } },
-                {"dismissal_message", n => { DismissalMessage = n.GetStringValue(); } },
-                {"review_id", n => { ReviewId = n.GetIntValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
+                { "dismissal_commit_id", n => { DismissalCommitId = n.GetStringValue(); } },
+                { "dismissal_message", n => { DismissalMessage = n.GetStringValue(); } },
+                { "review_id", n => { ReviewId = n.GetIntValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

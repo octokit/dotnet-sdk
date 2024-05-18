@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A commit.
     /// </summary>
-    public class SimpleCommit : IAdditionalDataHolder, IParsable 
+    public class SimpleCommit : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -79,12 +80,12 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"author", n => { Author = n.GetObjectValue<SimpleCommit_author>(SimpleCommit_author.CreateFromDiscriminatorValue); } },
-                {"committer", n => { Committer = n.GetObjectValue<SimpleCommit_committer>(SimpleCommit_committer.CreateFromDiscriminatorValue); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
-                {"tree_id", n => { TreeId = n.GetStringValue(); } },
+                { "author", n => { Author = n.GetObjectValue<SimpleCommit_author>(SimpleCommit_author.CreateFromDiscriminatorValue); } },
+                { "committer", n => { Committer = n.GetObjectValue<SimpleCommit_committer>(SimpleCommit_committer.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
+                { "tree_id", n => { TreeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

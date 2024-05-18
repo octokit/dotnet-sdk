@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Users.Item.Events.Orgs {
+namespace GitHub.Users.Item.Events.Orgs
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\events\orgs
     /// </summary>
-    public class OrgsRequestBuilder : BaseRequestBuilder 
+    public class OrgsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.users.item.events.orgs.item collection</summary>
         /// <param name="position">The organization name. The name is not case sensitive.</param>

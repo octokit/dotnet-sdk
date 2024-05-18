@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.Secrets {
+namespace GitHub.Repos.Item.Item.Environments.Item.Secrets
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}\secrets
     /// </summary>
-    public class SecretsRequestBuilder : BaseRequestBuilder 
+    public class SecretsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The publicKey property</summary>
         public PublicKeyRequestBuilder PublicKey

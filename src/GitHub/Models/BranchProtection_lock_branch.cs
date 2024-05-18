@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
     /// </summary>
-    public class BranchProtection_lock_branch : IAdditionalDataHolder, IParsable 
+    public class BranchProtection_lock_branch : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -39,7 +40,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class ProtectedBranch_required_pull_request_reviews_dismissal_restrictions : IAdditionalDataHolder, IParsable 
+    public class ProtectedBranch_required_pull_request_reviews_dismissal_restrictions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -84,12 +85,12 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"apps", n => { Apps = n.GetCollectionOfObjectValues<Integration>(Integration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"teams", n => { Teams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"teams_url", n => { TeamsUrl = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"users", n => { Users = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"users_url", n => { UsersUrl = n.GetStringValue(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<Integration>(Integration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "teams", n => { Teams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "teams_url", n => { TeamsUrl = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users_url", n => { UsersUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

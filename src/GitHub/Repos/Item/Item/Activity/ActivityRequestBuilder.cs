@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Activity {
+namespace GitHub.Repos.Item.Item.Activity
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\activity
     /// </summary>
-    public class ActivityRequestBuilder : BaseRequestBuilder 
+    public class ActivityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ActivityRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.Repos.Item.Item.Activity {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
+                { "422", ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<GitHub.Models.Activity>(requestInfo, GitHub.Models.Activity.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class DependencyGraphSpdxSbom_sbom_packages : IAdditionalDataHolder, IParsable 
+    public class DependencyGraphSpdxSbom_sbom_packages : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -102,15 +103,15 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"downloadLocation", n => { DownloadLocation = n.GetStringValue(); } },
-                {"externalRefs", n => { ExternalRefs = n.GetCollectionOfObjectValues<DependencyGraphSpdxSbom_sbom_packages_externalRefs>(DependencyGraphSpdxSbom_sbom_packages_externalRefs.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"filesAnalyzed", n => { FilesAnalyzed = n.GetBoolValue(); } },
-                {"licenseConcluded", n => { LicenseConcluded = n.GetStringValue(); } },
-                {"licenseDeclared", n => { LicenseDeclared = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"SPDXID", n => { SPDXID = n.GetStringValue(); } },
-                {"supplier", n => { Supplier = n.GetStringValue(); } },
-                {"versionInfo", n => { VersionInfo = n.GetStringValue(); } },
+                { "downloadLocation", n => { DownloadLocation = n.GetStringValue(); } },
+                { "externalRefs", n => { ExternalRefs = n.GetCollectionOfObjectValues<DependencyGraphSpdxSbom_sbom_packages_externalRefs>(DependencyGraphSpdxSbom_sbom_packages_externalRefs.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "filesAnalyzed", n => { FilesAnalyzed = n.GetBoolValue(); } },
+                { "licenseConcluded", n => { LicenseConcluded = n.GetStringValue(); } },
+                { "licenseDeclared", n => { LicenseDeclared = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "SPDXID", n => { SPDXID = n.GetStringValue(); } },
+                { "supplier", n => { Supplier = n.GetStringValue(); } },
+                { "versionInfo", n => { VersionInfo = n.GetStringValue(); } },
             };
         }
         /// <summary>

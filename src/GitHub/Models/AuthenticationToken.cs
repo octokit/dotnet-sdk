@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Authentication Token
     /// </summary>
-    public class AuthenticationToken : IAdditionalDataHolder, IParsable 
+    public class AuthenticationToken : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -73,12 +74,12 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                {"permissions", n => { Permissions = n.GetObjectValue<AuthenticationToken_permissions>(AuthenticationToken_permissions.CreateFromDiscriminatorValue); } },
-                {"repositories", n => { Repositories = n.GetCollectionOfObjectValues<Repository>(Repository.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"repository_selection", n => { RepositorySelection = n.GetEnumValue<AuthenticationToken_repository_selection>(); } },
-                {"single_file", n => { SingleFile = n.GetStringValue(); } },
-                {"token", n => { Token = n.GetStringValue(); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<AuthenticationToken_permissions>(AuthenticationToken_permissions.CreateFromDiscriminatorValue); } },
+                { "repositories", n => { Repositories = n.GetCollectionOfObjectValues<Repository>(Repository.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "repository_selection", n => { RepositorySelection = n.GetEnumValue<AuthenticationToken_repository_selection>(); } },
+                { "single_file", n => { SingleFile = n.GetStringValue(); } },
+                { "token", n => { Token = n.GetStringValue(); } },
             };
         }
         /// <summary>

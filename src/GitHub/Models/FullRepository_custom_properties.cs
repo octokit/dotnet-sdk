@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
     /// </summary>
-    public class FullRepository_custom_properties : IAdditionalDataHolder, IParsable 
+    public class FullRepository_custom_properties : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

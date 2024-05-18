@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
+namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses
+{
     #pragma warning disable CS1591
-    public class StatusesPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class StatusesPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -80,13 +81,13 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"auto_inactive", n => { AutoInactive = n.GetBoolValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"environment", n => { Environment = n.GetStringValue(); } },
-                {"environment_url", n => { EnvironmentUrl = n.GetStringValue(); } },
-                {"log_url", n => { LogUrl = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<StatusesPostRequestBody_state>(); } },
-                {"target_url", n => { TargetUrl = n.GetStringValue(); } },
+                { "auto_inactive", n => { AutoInactive = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "environment_url", n => { EnvironmentUrl = n.GetStringValue(); } },
+                { "log_url", n => { LogUrl = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<StatusesPostRequestBody_state>(); } },
+                { "target_url", n => { TargetUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

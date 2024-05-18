@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
+namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches
+{
     /// <summary>
     /// Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
     /// </summary>
-    public class DispatchesPostRequestBody_inputs : IAdditionalDataHolder, IParsable 
+    public class DispatchesPostRequestBody_inputs : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

@@ -15,11 +15,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Commits.Item {
+namespace GitHub.Repos.Item.Item.Commits.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\commits\{commit_sha-id}
     /// </summary>
-    public class Commit_shaItemRequestBuilder : BaseRequestBuilder 
+    public class Commit_shaItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The branchesWhereHead property</summary>
         public BranchesWhereHeadRequestBuilder BranchesWhereHead
@@ -96,11 +97,11 @@ namespace GitHub.Repos.Item.Item.Commits.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"409", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
-                {"503", Commit503Error.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "409", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
+                { "503", Commit503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Commit>(requestInfo, Commit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

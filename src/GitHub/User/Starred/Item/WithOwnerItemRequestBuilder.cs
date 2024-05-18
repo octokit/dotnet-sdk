@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.User.Starred.Item {
+namespace GitHub.User.Starred.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\starred\{owner}
     /// </summary>
-    public class WithOwnerItemRequestBuilder : BaseRequestBuilder 
+    public class WithOwnerItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.starred.item.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

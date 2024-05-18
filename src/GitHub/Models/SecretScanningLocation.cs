@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class SecretScanningLocation : IAdditionalDataHolder, IParsable 
+    public class SecretScanningLocation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -46,8 +47,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"details", n => { Details = n.GetObjectValue<SecretScanningLocation_details>(SecretScanningLocation_details.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<SecretScanningLocation_type>(); } },
+                { "details", n => { Details = n.GetObjectValue<SecretScanningLocation_details>(SecretScanningLocation_details.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<SecretScanningLocation_type>(); } },
             };
         }
         /// <summary>
@@ -64,7 +65,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Composed type wrapper for classes <see cref="SecretScanningLocationCommit"/>, <see cref="SecretScanningLocationDiscussionBody"/>, <see cref="SecretScanningLocationDiscussionComment"/>, <see cref="SecretScanningLocationDiscussionTitle"/>, <see cref="SecretScanningLocationIssueBody"/>, <see cref="SecretScanningLocationIssueComment"/>, <see cref="SecretScanningLocationIssueTitle"/>, <see cref="SecretScanningLocationPullRequestBody"/>, <see cref="SecretScanningLocationPullRequestComment"/>, <see cref="SecretScanningLocationPullRequestReview"/>, <see cref="SecretScanningLocationPullRequestReviewComment"/>, <see cref="SecretScanningLocationPullRequestTitle"/>, <see cref="SecretScanningLocationWikiCommit"/>
         /// </summary>
-        public class SecretScanningLocation_details : IComposedTypeWrapper, IParsable 
+        public class SecretScanningLocation_details : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.SecretScanningLocationCommit"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

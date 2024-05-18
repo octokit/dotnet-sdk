@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Org Hook
     /// </summary>
-    public class OrgHook : IAdditionalDataHolder, IParsable 
+    public class OrgHook : IAdditionalDataHolder, IParsable
     {
         /// <summary>The active property</summary>
         public bool? Active { get; set; }
@@ -101,17 +102,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"active", n => { Active = n.GetBoolValue(); } },
-                {"config", n => { Config = n.GetObjectValue<OrgHook_config>(OrgHook_config.CreateFromDiscriminatorValue); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"deliveries_url", n => { DeliveriesUrl = n.GetStringValue(); } },
-                {"events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"ping_url", n => { PingUrl = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "active", n => { Active = n.GetBoolValue(); } },
+                { "config", n => { Config = n.GetObjectValue<OrgHook_config>(OrgHook_config.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "deliveries_url", n => { DeliveriesUrl = n.GetStringValue(); } },
+                { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "ping_url", n => { PingUrl = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

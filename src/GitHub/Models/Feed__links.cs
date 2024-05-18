@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class Feed__links : IAdditionalDataHolder, IParsable 
+    public class Feed__links : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -116,16 +117,16 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"current_user", n => { CurrentUser = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
-                {"current_user_actor", n => { CurrentUserActor = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
-                {"current_user_organization", n => { CurrentUserOrganization = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
-                {"current_user_organizations", n => { CurrentUserOrganizations = n.GetCollectionOfObjectValues<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"current_user_public", n => { CurrentUserPublic = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
-                {"repository_discussions", n => { RepositoryDiscussions = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
-                {"repository_discussions_category", n => { RepositoryDiscussionsCategory = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
-                {"security_advisories", n => { SecurityAdvisories = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
-                {"timeline", n => { Timeline = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
-                {"user", n => { User = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
+                { "current_user", n => { CurrentUser = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
+                { "current_user_actor", n => { CurrentUserActor = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
+                { "current_user_organization", n => { CurrentUserOrganization = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
+                { "current_user_organizations", n => { CurrentUserOrganizations = n.GetCollectionOfObjectValues<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "current_user_public", n => { CurrentUserPublic = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
+                { "repository_discussions", n => { RepositoryDiscussions = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
+                { "repository_discussions_category", n => { RepositoryDiscussionsCategory = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
+                { "security_advisories", n => { SecurityAdvisories = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
+                { "timeline", n => { Timeline = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<LinkWithType>(LinkWithType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

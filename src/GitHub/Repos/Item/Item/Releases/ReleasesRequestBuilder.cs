@@ -13,11 +13,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases {
+namespace GitHub.Repos.Item.Item.Releases
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases
     /// </summary>
-    public class ReleasesRequestBuilder : BaseRequestBuilder 
+    public class ReleasesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The assets property</summary>
         public AssetsRequestBuilder Assets
@@ -87,7 +88,7 @@ namespace GitHub.Repos.Item.Item.Releases {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Release>(requestInfo, Release.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -115,8 +116,8 @@ namespace GitHub.Repos.Item.Item.Releases {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Release>(requestInfo, Release.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews {
+namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews
+{
     #pragma warning disable CS1591
-    public class ReviewsPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class ReviewsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -62,10 +63,10 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"body", n => { Body = n.GetStringValue(); } },
-                {"comments", n => { Comments = n.GetCollectionOfObjectValues<ReviewsPostRequestBody_comments>(ReviewsPostRequestBody_comments.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"commit_id", n => { CommitId = n.GetStringValue(); } },
-                {"event", n => { Event = n.GetEnumValue<ReviewsPostRequestBody_event>(); } },
+                { "body", n => { Body = n.GetStringValue(); } },
+                { "comments", n => { Comments = n.GetCollectionOfObjectValues<ReviewsPostRequestBody_comments>(ReviewsPostRequestBody_comments.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "commit_id", n => { CommitId = n.GetStringValue(); } },
+                { "event", n => { Event = n.GetEnumValue<ReviewsPostRequestBody_event>(); } },
             };
         }
         /// <summary>

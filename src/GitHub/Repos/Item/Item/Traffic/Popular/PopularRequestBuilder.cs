@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Traffic.Popular {
+namespace GitHub.Repos.Item.Item.Traffic.Popular
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\traffic\popular
     /// </summary>
-    public class PopularRequestBuilder : BaseRequestBuilder 
+    public class PopularRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The paths property</summary>
         public PathsRequestBuilder Paths

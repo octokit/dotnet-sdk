@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.InteractionLimits {
+namespace GitHub.Orgs.Item.InteractionLimits
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\interaction-limits
     /// </summary>
-    public class InteractionLimitsRequestBuilder : BaseRequestBuilder 
+    public class InteractionLimitsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="InteractionLimitsRequestBuilder"/> and sets the default values.
@@ -89,7 +90,7 @@ namespace GitHub.Orgs.Item.InteractionLimits {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<InteractionLimitResponse>(requestInfo, InteractionLimitResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

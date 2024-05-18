@@ -10,11 +10,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Jobs.Item {
+namespace GitHub.Repos.Item.Item.Actions.Jobs.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\jobs\{job_id}
     /// </summary>
-    public class WithJob_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithJob_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The logs property</summary>
         public LogsRequestBuilder Logs

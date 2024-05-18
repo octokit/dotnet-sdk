@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// An object describing a submodule
     /// </summary>
-    public class ContentSubmodule : IAdditionalDataHolder, IParsable 
+    public class ContentSubmodule : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -113,17 +114,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"download_url", n => { DownloadUrl = n.GetStringValue(); } },
-                {"git_url", n => { GitUrl = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"_links", n => { Links = n.GetObjectValue<ContentSubmodule__links>(ContentSubmodule__links.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
-                {"sha", n => { Sha = n.GetStringValue(); } },
-                {"size", n => { Size = n.GetIntValue(); } },
-                {"submodule_git_url", n => { SubmoduleGitUrl = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<ContentSubmodule_type>(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "download_url", n => { DownloadUrl = n.GetStringValue(); } },
+                { "git_url", n => { GitUrl = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "_links", n => { Links = n.GetObjectValue<ContentSubmodule__links>(ContentSubmodule__links.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetIntValue(); } },
+                { "submodule_git_url", n => { SubmoduleGitUrl = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<ContentSubmodule_type>(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

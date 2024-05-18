@@ -13,11 +13,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Gists.Item {
+namespace GitHub.Gists.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \gists\{gist_id}
     /// </summary>
-    public class WithGist_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithGist_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The comments property</summary>
         public CommentsRequestBuilder Comments
@@ -87,8 +88,8 @@ namespace GitHub.Gists.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -113,8 +114,8 @@ namespace GitHub.Gists.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", GistSimple403Error.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", GistSimple403Error.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GistSimple>(requestInfo, GistSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -141,8 +142,8 @@ namespace GitHub.Gists.Item {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GistSimple>(requestInfo, GistSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

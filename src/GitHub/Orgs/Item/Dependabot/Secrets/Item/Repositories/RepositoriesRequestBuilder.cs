@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Dependabot.Secrets.Item.Repositories {
+namespace GitHub.Orgs.Item.Dependabot.Secrets.Item.Repositories
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\dependabot\secrets\{secret_name}\repositories
     /// </summary>
-    public class RepositoriesRequestBuilder : BaseRequestBuilder 
+    public class RepositoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.dependabot.secrets.item.repositories.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

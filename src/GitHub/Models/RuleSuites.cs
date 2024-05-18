@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class RuleSuites : IAdditionalDataHolder, IParsable 
+    public class RuleSuites : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number that identifies the user.</summary>
@@ -88,17 +89,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actor_id", n => { ActorId = n.GetIntValue(); } },
-                {"actor_name", n => { ActorName = n.GetStringValue(); } },
-                {"after_sha", n => { AfterSha = n.GetStringValue(); } },
-                {"before_sha", n => { BeforeSha = n.GetStringValue(); } },
-                {"evaluation_result", n => { EvaluationResult = n.GetEnumValue<RuleSuites_evaluation_result>(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"pushed_at", n => { PushedAt = n.GetDateTimeOffsetValue(); } },
-                {"ref", n => { Ref = n.GetStringValue(); } },
-                {"repository_id", n => { RepositoryId = n.GetIntValue(); } },
-                {"repository_name", n => { RepositoryName = n.GetStringValue(); } },
-                {"result", n => { Result = n.GetEnumValue<RuleSuites_result>(); } },
+                { "actor_id", n => { ActorId = n.GetIntValue(); } },
+                { "actor_name", n => { ActorName = n.GetStringValue(); } },
+                { "after_sha", n => { AfterSha = n.GetStringValue(); } },
+                { "before_sha", n => { BeforeSha = n.GetStringValue(); } },
+                { "evaluation_result", n => { EvaluationResult = n.GetEnumValue<RuleSuites_evaluation_result>(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "pushed_at", n => { PushedAt = n.GetDateTimeOffsetValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
+                { "repository_id", n => { RepositoryId = n.GetIntValue(); } },
+                { "repository_name", n => { RepositoryName = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetEnumValue<RuleSuites_result>(); } },
             };
         }
         /// <summary>

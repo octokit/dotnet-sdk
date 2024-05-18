@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Variables.Item {
+namespace GitHub.Orgs.Item.Actions.Variables.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\variables\{name}
     /// </summary>
-    public class WithNameItemRequestBuilder : BaseRequestBuilder 
+    public class WithNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The repositories property</summary>
         public RepositoriesRequestBuilder Repositories

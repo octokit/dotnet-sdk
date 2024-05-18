@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs {
+namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}\runs
     /// </summary>
-    public class RunsRequestBuilder : BaseRequestBuilder 
+    public class RunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="RunsRequestBuilder"/> and sets the default values.

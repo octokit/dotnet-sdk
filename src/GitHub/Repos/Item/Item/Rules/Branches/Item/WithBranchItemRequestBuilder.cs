@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Rules.Branches.Item {
+namespace GitHub.Repos.Item.Item.Rules.Branches.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rules\branches\{branch}
     /// </summary>
-    public class WithBranchItemRequestBuilder : BaseRequestBuilder 
+    public class WithBranchItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithBranchItemRequestBuilder"/> and sets the default values.

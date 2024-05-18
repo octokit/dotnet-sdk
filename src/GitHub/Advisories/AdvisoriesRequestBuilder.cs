@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Advisories {
+namespace GitHub.Advisories
+{
     /// <summary>
     /// Builds and executes requests for operations under \advisories
     /// </summary>
-    public class AdvisoriesRequestBuilder : BaseRequestBuilder 
+    public class AdvisoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.advisories.item collection</summary>
         /// <param name="position">The GHSA (GitHub Security Advisory) identifier of the advisory.</param>
@@ -64,8 +65,8 @@ namespace GitHub.Advisories {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
-                {"429", BasicError.CreateFromDiscriminatorValue},
+                { "422", ValidationErrorSimple.CreateFromDiscriminatorValue },
+                { "429", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<GlobalAdvisory>(requestInfo, GlobalAdvisory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

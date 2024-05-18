@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Migrations.Item.Archive {
+namespace GitHub.Orgs.Item.Migrations.Item.Archive
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\migrations\{migration_id}\archive
     /// </summary>
-    public class ArchiveRequestBuilder : BaseRequestBuilder 
+    public class ArchiveRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ArchiveRequestBuilder"/> and sets the default values.
@@ -49,7 +50,7 @@ namespace GitHub.Orgs.Item.Migrations.Item.Archive {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -72,7 +73,7 @@ namespace GitHub.Orgs.Item.Migrations.Item.Archive {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

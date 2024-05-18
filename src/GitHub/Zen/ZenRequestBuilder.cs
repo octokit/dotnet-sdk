@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Zen {
+namespace GitHub.Zen
+{
     /// <summary>
     /// Builds and executes requests for operations under \zen
     /// </summary>
-    public class ZenRequestBuilder : BaseRequestBuilder 
+    public class ZenRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ZenRequestBuilder"/> and sets the default values.

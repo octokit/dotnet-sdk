@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Commits pushed to matching refs must have verified signatures.
     /// </summary>
-    public class RepositoryRuleRequiredSignatures : IAdditionalDataHolder, IParsable 
+    public class RepositoryRuleRequiredSignatures : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -39,7 +40,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"type", n => { Type = n.GetEnumValue<RepositoryRuleRequiredSignatures_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<RepositoryRuleRequiredSignatures_type>(); } },
             };
         }
         /// <summary>

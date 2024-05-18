@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// License
     /// </summary>
-    public class License : IAdditionalDataHolder, IParsable 
+    public class License : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -135,19 +136,19 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"body", n => { Body = n.GetStringValue(); } },
-                {"conditions", n => { Conditions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"featured", n => { Featured = n.GetBoolValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"implementation", n => { Implementation = n.GetStringValue(); } },
-                {"key", n => { Key = n.GetStringValue(); } },
-                {"limitations", n => { Limitations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"spdx_id", n => { SpdxId = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "body", n => { Body = n.GetStringValue(); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "featured", n => { Featured = n.GetBoolValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "implementation", n => { Implementation = n.GetStringValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "limitations", n => { Limitations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "spdx_id", n => { SpdxId = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

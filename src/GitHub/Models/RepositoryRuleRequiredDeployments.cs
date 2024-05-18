@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
     /// </summary>
-    public class RepositoryRuleRequiredDeployments : IAdditionalDataHolder, IParsable 
+    public class RepositoryRuleRequiredDeployments : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -47,8 +48,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleRequiredDeployments_parameters>(RepositoryRuleRequiredDeployments_parameters.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<RepositoryRuleRequiredDeployments_type>(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleRequiredDeployments_parameters>(RepositoryRuleRequiredDeployments_parameters.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<RepositoryRuleRequiredDeployments_type>(); } },
             };
         }
         /// <summary>

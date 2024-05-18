@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Installation {
+namespace GitHub.Repos.Item.Item.Installation
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\installation
     /// </summary>
-    public class InstallationRequestBuilder : BaseRequestBuilder 
+    public class InstallationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="InstallationRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.Repos.Item.Item.Installation {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GitHub.Models.Installation>(requestInfo, GitHub.Models.Installation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

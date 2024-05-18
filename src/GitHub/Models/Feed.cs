@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Feed
     /// </summary>
-    public class Feed : IAdditionalDataHolder, IParsable 
+    public class Feed : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -125,17 +126,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"current_user_actor_url", n => { CurrentUserActorUrl = n.GetStringValue(); } },
-                {"current_user_organization_url", n => { CurrentUserOrganizationUrl = n.GetStringValue(); } },
-                {"current_user_organization_urls", n => { CurrentUserOrganizationUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"current_user_public_url", n => { CurrentUserPublicUrl = n.GetStringValue(); } },
-                {"current_user_url", n => { CurrentUserUrl = n.GetStringValue(); } },
-                {"_links", n => { Links = n.GetObjectValue<Feed__links>(Feed__links.CreateFromDiscriminatorValue); } },
-                {"repository_discussions_category_url", n => { RepositoryDiscussionsCategoryUrl = n.GetStringValue(); } },
-                {"repository_discussions_url", n => { RepositoryDiscussionsUrl = n.GetStringValue(); } },
-                {"security_advisories_url", n => { SecurityAdvisoriesUrl = n.GetStringValue(); } },
-                {"timeline_url", n => { TimelineUrl = n.GetStringValue(); } },
-                {"user_url", n => { UserUrl = n.GetStringValue(); } },
+                { "current_user_actor_url", n => { CurrentUserActorUrl = n.GetStringValue(); } },
+                { "current_user_organization_url", n => { CurrentUserOrganizationUrl = n.GetStringValue(); } },
+                { "current_user_organization_urls", n => { CurrentUserOrganizationUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "current_user_public_url", n => { CurrentUserPublicUrl = n.GetStringValue(); } },
+                { "current_user_url", n => { CurrentUserUrl = n.GetStringValue(); } },
+                { "_links", n => { Links = n.GetObjectValue<Feed__links>(Feed__links.CreateFromDiscriminatorValue); } },
+                { "repository_discussions_category_url", n => { RepositoryDiscussionsCategoryUrl = n.GetStringValue(); } },
+                { "repository_discussions_url", n => { RepositoryDiscussionsUrl = n.GetStringValue(); } },
+                { "security_advisories_url", n => { SecurityAdvisoriesUrl = n.GetStringValue(); } },
+                { "timeline_url", n => { TimelineUrl = n.GetStringValue(); } },
+                { "user_url", n => { UserUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

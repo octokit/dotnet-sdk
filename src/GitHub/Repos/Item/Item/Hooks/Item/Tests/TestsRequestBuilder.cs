@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Hooks.Item.Tests {
+namespace GitHub.Repos.Item.Item.Hooks.Item.Tests
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\hooks\{hook_id}\tests
     /// </summary>
-    public class TestsRequestBuilder : BaseRequestBuilder 
+    public class TestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="TestsRequestBuilder"/> and sets the default values.
@@ -49,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Tests {
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

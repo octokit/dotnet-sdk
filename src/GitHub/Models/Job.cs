@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Information of a job execution in a workflow run
     /// </summary>
-    public class Job : IAdditionalDataHolder, IParsable 
+    public class Job : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -161,29 +162,29 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"check_run_url", n => { CheckRunUrl = n.GetStringValue(); } },
-                {"completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                {"conclusion", n => { Conclusion = n.GetEnumValue<Job_conclusion>(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"head_branch", n => { HeadBranch = n.GetStringValue(); } },
-                {"head_sha", n => { HeadSha = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"run_attempt", n => { RunAttempt = n.GetIntValue(); } },
-                {"run_id", n => { RunId = n.GetIntValue(); } },
-                {"run_url", n => { RunUrl = n.GetStringValue(); } },
-                {"runner_group_id", n => { RunnerGroupId = n.GetIntValue(); } },
-                {"runner_group_name", n => { RunnerGroupName = n.GetStringValue(); } },
-                {"runner_id", n => { RunnerId = n.GetIntValue(); } },
-                {"runner_name", n => { RunnerName = n.GetStringValue(); } },
-                {"started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<Job_status>(); } },
-                {"steps", n => { Steps = n.GetCollectionOfObjectValues<Job_steps>(Job_steps.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"workflow_name", n => { WorkflowName = n.GetStringValue(); } },
+                { "check_run_url", n => { CheckRunUrl = n.GetStringValue(); } },
+                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                { "conclusion", n => { Conclusion = n.GetEnumValue<Job_conclusion>(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "head_branch", n => { HeadBranch = n.GetStringValue(); } },
+                { "head_sha", n => { HeadSha = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "run_attempt", n => { RunAttempt = n.GetIntValue(); } },
+                { "run_id", n => { RunId = n.GetIntValue(); } },
+                { "run_url", n => { RunUrl = n.GetStringValue(); } },
+                { "runner_group_id", n => { RunnerGroupId = n.GetIntValue(); } },
+                { "runner_group_name", n => { RunnerGroupName = n.GetStringValue(); } },
+                { "runner_id", n => { RunnerId = n.GetIntValue(); } },
+                { "runner_name", n => { RunnerName = n.GetStringValue(); } },
+                { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<Job_status>(); } },
+                { "steps", n => { Steps = n.GetCollectionOfObjectValues<Job_steps>(Job_steps.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
         }
         /// <summary>

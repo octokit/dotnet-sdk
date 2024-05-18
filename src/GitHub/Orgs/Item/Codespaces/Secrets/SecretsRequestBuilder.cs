@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Codespaces.Secrets {
+namespace GitHub.Orgs.Item.Codespaces.Secrets
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\codespaces\secrets
     /// </summary>
-    public class SecretsRequestBuilder : BaseRequestBuilder 
+    public class SecretsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The publicKey property</summary>
         public PublicKeyRequestBuilder PublicKey

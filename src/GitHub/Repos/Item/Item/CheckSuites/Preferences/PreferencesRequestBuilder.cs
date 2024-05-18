@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckSuites.Preferences {
+namespace GitHub.Repos.Item.Item.CheckSuites.Preferences
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-suites\preferences
     /// </summary>
-    public class PreferencesRequestBuilder : BaseRequestBuilder 
+    public class PreferencesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="PreferencesRequestBuilder"/> and sets the default values.

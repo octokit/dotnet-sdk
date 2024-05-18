@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Stats.Code_frequency {
+namespace GitHub.Repos.Item.Item.Stats.Code_frequency
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats\code_frequency
     /// </summary>
-    public class Code_frequencyRequestBuilder : BaseRequestBuilder 
+    public class Code_frequencyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="Code_frequencyRequestBuilder"/> and sets the default values.
@@ -33,21 +34,20 @@ namespace GitHub.Repos.Item.Item.Stats.Code_frequency {
         /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.
         /// API method documentation <see href="https://docs.github.com/rest/metrics/statistics#get-the-weekly-commit-activity" />
         /// </summary>
-        /// <returns>A List&lt;int&gt;</returns>
+        /// <returns>A <see cref="UntypedNode"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<int?>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<int?>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<UntypedNode> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<int?>(requestInfo, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.ToList();
+            return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Groups of organization members that gives permissions on specified repositories.
     /// </summary>
-    public class TeamSimple : IAdditionalDataHolder, IParsable 
+    public class TeamSimple : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -135,19 +136,19 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"ldap_dn", n => { LdapDn = n.GetStringValue(); } },
-                {"members_url", n => { MembersUrl = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"notification_setting", n => { NotificationSetting = n.GetStringValue(); } },
-                {"permission", n => { Permission = n.GetStringValue(); } },
-                {"privacy", n => { Privacy = n.GetStringValue(); } },
-                {"repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
-                {"slug", n => { Slug = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "ldap_dn", n => { LdapDn = n.GetStringValue(); } },
+                { "members_url", n => { MembersUrl = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "notification_setting", n => { NotificationSetting = n.GetStringValue(); } },
+                { "permission", n => { Permission = n.GetStringValue(); } },
+                { "privacy", n => { Privacy = n.GetStringValue(); } },
+                { "repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

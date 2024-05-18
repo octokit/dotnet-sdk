@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Search.Users {
+namespace GitHub.Search.Users
+{
     /// <summary>
     /// Builds and executes requests for operations under \search\users
     /// </summary>
-    public class UsersRequestBuilder : BaseRequestBuilder 
+    public class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="UsersRequestBuilder"/> and sets the default values.
@@ -51,8 +52,8 @@ namespace GitHub.Search.Users {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"503", Users503Error.CreateFromDiscriminatorValue},
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "503", Users503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<UsersGetResponse>(requestInfo, UsersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

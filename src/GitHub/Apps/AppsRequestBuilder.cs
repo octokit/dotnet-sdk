@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Apps {
+namespace GitHub.Apps
+{
     /// <summary>
     /// Builds and executes requests for operations under \apps
     /// </summary>
-    public class AppsRequestBuilder : BaseRequestBuilder 
+    public class AppsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.apps.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

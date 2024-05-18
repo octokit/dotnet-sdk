@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Contents.Item {
+namespace GitHub.Repos.Item.Item.Contents.Item
+{
     /// <summary>
     /// object containing information about the author.
     /// </summary>
-    public class WithPathDeleteRequestBody_author : IAdditionalDataHolder, IParsable 
+    public class WithPathDeleteRequestBody_author : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -53,8 +54,8 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

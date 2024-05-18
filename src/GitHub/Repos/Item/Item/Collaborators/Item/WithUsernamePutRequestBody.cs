@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Collaborators.Item {
+namespace GitHub.Repos.Item.Item.Collaborators.Item
+{
     #pragma warning disable CS1591
-    public class WithUsernamePutRequestBody : IAdditionalDataHolder, IParsable 
+    public class WithUsernamePutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,7 +46,7 @@ namespace GitHub.Repos.Item.Item.Collaborators.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"permission", n => { Permission = n.GetStringValue(); } },
+                { "permission", n => { Permission = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Commits.Item {
+namespace GitHub.Repos.Item.Item.Git.Commits.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git\commits\{commit_sha}
     /// </summary>
-    public class WithCommit_shaItemRequestBuilder : BaseRequestBuilder 
+    public class WithCommit_shaItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithCommit_shaItemRequestBuilder"/> and sets the default values.
@@ -51,8 +52,8 @@ namespace GitHub.Repos.Item.Item.Git.Commits.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"409", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "409", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GitCommit>(requestInfo, GitCommit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Projects.Columns.Item.Cards {
+namespace GitHub.Projects.Columns.Item.Cards
+{
     #pragma warning disable CS1591
-    public class ProjectCard503Error : ApiException, IAdditionalDataHolder, IParsable 
+    public class ProjectCard503Error : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -69,10 +70,10 @@ namespace GitHub.Projects.Columns.Item.Cards {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"code", n => { Code = n.GetStringValue(); } },
-                {"documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<ProjectCard503Error_errors>(ProjectCard503Error_errors.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
+                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<ProjectCard503Error_errors>(ProjectCard503Error_errors.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>

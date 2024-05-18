@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
+namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch
+{
     #pragma warning disable CS1591
-    public class UpdateBranchPutResponse : IAdditionalDataHolder, IParsable 
+    public class UpdateBranchPutResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -52,8 +53,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.UpdateBranch {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

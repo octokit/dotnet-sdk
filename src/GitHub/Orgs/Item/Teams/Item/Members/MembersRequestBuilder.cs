@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item.Members {
+namespace GitHub.Orgs.Item.Teams.Item.Members
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\members
     /// </summary>
-    public class MembersRequestBuilder : BaseRequestBuilder 
+    public class MembersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="MembersRequestBuilder"/> and sets the default values.

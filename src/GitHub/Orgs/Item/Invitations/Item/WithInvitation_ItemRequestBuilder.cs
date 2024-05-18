@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Invitations.Item {
+namespace GitHub.Orgs.Item.Invitations.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\invitations\{invitation_id}
     /// </summary>
-    public class WithInvitation_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithInvitation_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The teams property</summary>
         public TeamsRequestBuilder Teams
@@ -56,8 +57,8 @@ namespace GitHub.Orgs.Item.Invitations.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

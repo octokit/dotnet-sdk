@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Teams.Item.Repos.Item.Item {
+namespace GitHub.Teams.Item.Repos.Item.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\repos\{owner}\{repo}
     /// </summary>
-    public class WithRepoItemRequestBuilder : BaseRequestBuilder 
+    public class WithRepoItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithRepoItemRequestBuilder"/> and sets the default values.
@@ -92,8 +93,8 @@ namespace GitHub.Teams.Item.Repos.Item.Item {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

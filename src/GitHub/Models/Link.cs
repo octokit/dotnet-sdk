@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Hypermedia Link
     /// </summary>
-    public class Link : IAdditionalDataHolder, IParsable 
+    public class Link : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -45,7 +46,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"href", n => { Href = n.GetStringValue(); } },
+                { "href", n => { Href = n.GetStringValue(); } },
             };
         }
         /// <summary>

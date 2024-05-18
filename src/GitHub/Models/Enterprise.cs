@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// An enterprise on GitHub.
     /// </summary>
-    public class Enterprise : IAdditionalDataHolder, IParsable 
+    public class Enterprise : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -99,16 +100,16 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"slug", n => { Slug = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"website_url", n => { WebsiteUrl = n.GetStringValue(); } },
+                { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "website_url", n => { WebsiteUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

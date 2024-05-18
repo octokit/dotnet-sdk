@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// An artifact
     /// </summary>
-    public class Artifact : IAdditionalDataHolder, IParsable 
+    public class Artifact : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -89,17 +90,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"archive_download_url", n => { ArchiveDownloadUrl = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"expired", n => { Expired = n.GetBoolValue(); } },
-                {"expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"size_in_bytes", n => { SizeInBytes = n.GetIntValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"workflow_run", n => { WorkflowRun = n.GetObjectValue<Artifact_workflow_run>(Artifact_workflow_run.CreateFromDiscriminatorValue); } },
+                { "archive_download_url", n => { ArchiveDownloadUrl = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "expired", n => { Expired = n.GetBoolValue(); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "size_in_bytes", n => { SizeInBytes = n.GetIntValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "workflow_run", n => { WorkflowRun = n.GetObjectValue<Artifact_workflow_run>(Artifact_workflow_run.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

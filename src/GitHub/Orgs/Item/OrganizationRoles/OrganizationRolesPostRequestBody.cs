@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.OrganizationRoles {
+namespace GitHub.Orgs.Item.OrganizationRoles
+{
     #pragma warning disable CS1591
-    public class OrganizationRolesPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class OrganizationRolesPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -60,9 +61,9 @@ namespace GitHub.Orgs.Item.OrganizationRoles {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

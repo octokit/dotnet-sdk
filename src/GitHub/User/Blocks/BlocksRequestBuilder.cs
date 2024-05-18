@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Blocks {
+namespace GitHub.User.Blocks
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\blocks
     /// </summary>
-    public class BlocksRequestBuilder : BaseRequestBuilder 
+    public class BlocksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.blocks.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
@@ -65,9 +66,9 @@ namespace GitHub.User.Blocks {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

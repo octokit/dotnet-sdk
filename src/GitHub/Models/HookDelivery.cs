@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Delivery made by a webhook.
     /// </summary>
-    public class HookDelivery : IAdditionalDataHolder, IParsable 
+    public class HookDelivery : IAdditionalDataHolder, IParsable
     {
         /// <summary>The type of activity for the event that triggered the delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,20 +108,20 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetStringValue(); } },
-                {"delivered_at", n => { DeliveredAt = n.GetDateTimeOffsetValue(); } },
-                {"duration", n => { Duration = n.GetDoubleValue(); } },
-                {"event", n => { Event = n.GetStringValue(); } },
-                {"guid", n => { Guid = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"installation_id", n => { InstallationId = n.GetIntValue(); } },
-                {"redelivery", n => { Redelivery = n.GetBoolValue(); } },
-                {"repository_id", n => { RepositoryId = n.GetIntValue(); } },
-                {"request", n => { Request = n.GetObjectValue<HookDelivery_request>(HookDelivery_request.CreateFromDiscriminatorValue); } },
-                {"response", n => { Response = n.GetObjectValue<HookDelivery_response>(HookDelivery_response.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"status_code", n => { StatusCode = n.GetIntValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "action", n => { Action = n.GetStringValue(); } },
+                { "delivered_at", n => { DeliveredAt = n.GetDateTimeOffsetValue(); } },
+                { "duration", n => { Duration = n.GetDoubleValue(); } },
+                { "event", n => { Event = n.GetStringValue(); } },
+                { "guid", n => { Guid = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "installation_id", n => { InstallationId = n.GetIntValue(); } },
+                { "redelivery", n => { Redelivery = n.GetBoolValue(); } },
+                { "repository_id", n => { RepositoryId = n.GetIntValue(); } },
+                { "request", n => { Request = n.GetObjectValue<HookDelivery_request>(HookDelivery_request.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<HookDelivery_response>(HookDelivery_response.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "status_code", n => { StatusCode = n.GetIntValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

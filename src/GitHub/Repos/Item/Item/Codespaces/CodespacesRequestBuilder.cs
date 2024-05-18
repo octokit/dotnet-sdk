@@ -13,11 +13,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Codespaces {
+namespace GitHub.Repos.Item.Item.Codespaces
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces
     /// </summary>
-    public class CodespacesRequestBuilder : BaseRequestBuilder 
+    public class CodespacesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The devcontainers property</summary>
         public DevcontainersRequestBuilder Devcontainers
@@ -83,10 +84,10 @@ namespace GitHub.Repos.Item.Item.Codespaces {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CodespacesGetResponse>(requestInfo, CodespacesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -116,11 +117,11 @@ namespace GitHub.Repos.Item.Item.Codespaces {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"400", BasicError.CreateFromDiscriminatorValue},
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"503", Codespace503Error.CreateFromDiscriminatorValue},
+                { "400", BasicError.CreateFromDiscriminatorValue },
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "503", Codespace503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Codespace>(requestInfo, Codespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

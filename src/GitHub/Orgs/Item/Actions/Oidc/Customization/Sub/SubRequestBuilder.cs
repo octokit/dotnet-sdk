@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Oidc.Customization.Sub {
+namespace GitHub.Orgs.Item.Actions.Oidc.Customization.Sub
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\oidc\customization\sub
     /// </summary>
-    public class SubRequestBuilder : BaseRequestBuilder 
+    public class SubRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="SubRequestBuilder"/> and sets the default values.
@@ -72,8 +73,8 @@ namespace GitHub.Orgs.Item.Actions.Oidc.Customization.Sub {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<EmptyObject>(requestInfo, EmptyObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

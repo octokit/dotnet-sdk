@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Compare.Item {
+namespace GitHub.Repos.Item.Item.Compare.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\compare\{basehead}
     /// </summary>
-    public class WithBaseheadItemRequestBuilder : BaseRequestBuilder 
+    public class WithBaseheadItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithBaseheadItemRequestBuilder"/> and sets the default values.
@@ -52,9 +53,9 @@ namespace GitHub.Repos.Item.Item.Compare.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
-                {"503", CommitComparison503Error.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
+                { "503", CommitComparison503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CommitComparison>(requestInfo, CommitComparison.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

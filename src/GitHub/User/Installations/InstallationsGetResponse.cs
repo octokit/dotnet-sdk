@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Installations {
+namespace GitHub.User.Installations
+{
     #pragma warning disable CS1591
-    public class InstallationsGetResponse : IAdditionalDataHolder, IParsable 
+    public class InstallationsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +48,8 @@ namespace GitHub.User.Installations {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"installations", n => { Installations = n.GetCollectionOfObjectValues<GitHub.Models.Installation>(GitHub.Models.Installation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "installations", n => { Installations = n.GetCollectionOfObjectValues<GitHub.Models.Installation>(GitHub.Models.Installation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Networks.Item.Item {
+namespace GitHub.Networks.Item.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \networks\{owner}\{repo}
     /// </summary>
-    public class WithRepoItemRequestBuilder : BaseRequestBuilder 
+    public class WithRepoItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The events property</summary>
         public EventsRequestBuilder Events

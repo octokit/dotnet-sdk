@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class MarketplaceAccount : IAdditionalDataHolder, IParsable 
+    public class MarketplaceAccount : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -86,13 +87,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"login", n => { Login = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"organization_billing_email", n => { OrganizationBillingEmail = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "login", n => { Login = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "organization_billing_email", n => { OrganizationBillingEmail = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

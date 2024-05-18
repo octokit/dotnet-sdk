@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Trees {
+namespace GitHub.Repos.Item.Item.Git.Trees
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git\trees
     /// </summary>
-    public class TreesRequestBuilder : BaseRequestBuilder 
+    public class TreesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.git.trees.item collection</summary>
         /// <param name="position">The SHA1 value or ref (branch or tag) name of the tree.</param>
@@ -68,10 +69,10 @@ namespace GitHub.Repos.Item.Item.Git.Trees {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"409", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "409", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GitTree>(requestInfo, GitTree.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

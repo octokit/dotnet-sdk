@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Projects.Columns {
+namespace GitHub.Projects.Columns
+{
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns
     /// </summary>
-    public class ColumnsRequestBuilder : BaseRequestBuilder 
+    public class ColumnsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cards property</summary>
         public CardsRequestBuilder Cards

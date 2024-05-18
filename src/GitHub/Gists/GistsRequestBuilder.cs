@@ -11,11 +11,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Gists {
+namespace GitHub.Gists
+{
     /// <summary>
     /// Builds and executes requests for operations under \gists
     /// </summary>
-    public class GistsRequestBuilder : BaseRequestBuilder 
+    public class GistsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The public property</summary>
         public PublicRequestBuilder Public
@@ -75,7 +76,7 @@ namespace GitHub.Gists {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<BaseGist>(requestInfo, BaseGist.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -104,9 +105,9 @@ namespace GitHub.Gists {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GistSimple>(requestInfo, GistSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

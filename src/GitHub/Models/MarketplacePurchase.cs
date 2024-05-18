@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Marketplace Purchase
     /// </summary>
-    public class MarketplacePurchase : IAdditionalDataHolder, IParsable 
+    public class MarketplacePurchase : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -95,14 +96,14 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"login", n => { Login = n.GetStringValue(); } },
-                {"marketplace_pending_change", n => { MarketplacePendingChange = n.GetObjectValue<MarketplacePurchase_marketplace_pending_change>(MarketplacePurchase_marketplace_pending_change.CreateFromDiscriminatorValue); } },
-                {"marketplace_purchase", n => { MarketplacePurchaseProp = n.GetObjectValue<MarketplacePurchase_marketplace_purchase>(MarketplacePurchase_marketplace_purchase.CreateFromDiscriminatorValue); } },
-                {"organization_billing_email", n => { OrganizationBillingEmail = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "login", n => { Login = n.GetStringValue(); } },
+                { "marketplace_pending_change", n => { MarketplacePendingChange = n.GetObjectValue<MarketplacePurchase_marketplace_pending_change>(MarketplacePurchase_marketplace_pending_change.CreateFromDiscriminatorValue); } },
+                { "marketplace_purchase", n => { MarketplacePurchaseProp = n.GetObjectValue<MarketplacePurchase_marketplace_purchase>(MarketplacePurchase_marketplace_purchase.CreateFromDiscriminatorValue); } },
+                { "organization_billing_email", n => { OrganizationBillingEmail = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A GitHub Actions workflow
     /// </summary>
-    public class Workflow : IAdditionalDataHolder, IParsable 
+    public class Workflow : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -95,17 +96,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"badge_url", n => { BadgeUrl = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<Workflow_state>(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "badge_url", n => { BadgeUrl = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<Workflow_state>(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

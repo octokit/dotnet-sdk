@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Emojis {
+namespace GitHub.Emojis
+{
     /// <summary>
     /// Builds and executes requests for operations under \emojis
     /// </summary>
-    public class EmojisRequestBuilder : BaseRequestBuilder 
+    public class EmojisRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="EmojisRequestBuilder"/> and sets the default values.
