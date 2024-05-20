@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class NullableScopedInstallation : IAdditionalDataHolder, IParsable 
+    public class NullableScopedInstallation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A GitHub user.</summary>
@@ -80,13 +81,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"account", n => { Account = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"has_multiple_single_files", n => { HasMultipleSingleFiles = n.GetBoolValue(); } },
-                {"permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
-                {"repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
-                {"repository_selection", n => { RepositorySelection = n.GetEnumValue<NullableScopedInstallation_repository_selection>(); } },
-                {"single_file_name", n => { SingleFileName = n.GetStringValue(); } },
-                {"single_file_paths", n => { SingleFilePaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "account", n => { Account = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "has_multiple_single_files", n => { HasMultipleSingleFiles = n.GetBoolValue(); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
+                { "repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
+                { "repository_selection", n => { RepositorySelection = n.GetEnumValue<NullableScopedInstallation_repository_selection>(); } },
+                { "single_file_name", n => { SingleFileName = n.GetStringValue(); } },
+                { "single_file_paths", n => { SingleFilePaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

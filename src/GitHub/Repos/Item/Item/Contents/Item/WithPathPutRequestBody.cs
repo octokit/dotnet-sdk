@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Contents.Item {
+namespace GitHub.Repos.Item.Item.Contents.Item
+{
     #pragma warning disable CS1591
-    public class WithPathPutRequestBody : IAdditionalDataHolder, IParsable 
+    public class WithPathPutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -84,12 +85,12 @@ namespace GitHub.Repos.Item.Item.Contents.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"author", n => { Author = n.GetObjectValue<WithPathPutRequestBody_author>(WithPathPutRequestBody_author.CreateFromDiscriminatorValue); } },
-                {"branch", n => { Branch = n.GetStringValue(); } },
-                {"committer", n => { Committer = n.GetObjectValue<WithPathPutRequestBody_committer>(WithPathPutRequestBody_committer.CreateFromDiscriminatorValue); } },
-                {"content", n => { Content = n.GetStringValue(); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"sha", n => { Sha = n.GetStringValue(); } },
+                { "author", n => { Author = n.GetObjectValue<WithPathPutRequestBody_author>(WithPathPutRequestBody_author.CreateFromDiscriminatorValue); } },
+                { "branch", n => { Branch = n.GetStringValue(); } },
+                { "committer", n => { Committer = n.GetObjectValue<WithPathPutRequestBody_committer>(WithPathPutRequestBody_committer.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
             };
         }
         /// <summary>

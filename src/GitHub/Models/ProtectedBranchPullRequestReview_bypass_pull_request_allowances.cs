@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Allow specific users, teams, or apps to bypass pull request requirements.
     /// </summary>
-    public class ProtectedBranchPullRequestReview_bypass_pull_request_allowances : IAdditionalDataHolder, IParsable 
+    public class ProtectedBranchPullRequestReview_bypass_pull_request_allowances : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -61,9 +62,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"apps", n => { Apps = n.GetCollectionOfObjectValues<Integration>(Integration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"teams", n => { Teams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"users", n => { Users = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<Integration>(Integration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "teams", n => { Teams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

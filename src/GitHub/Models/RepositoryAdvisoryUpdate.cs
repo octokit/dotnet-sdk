@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class RepositoryAdvisoryUpdate : IParsable 
+    public class RepositoryAdvisoryUpdate : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of team slugs which have been granted write access to the advisory.</summary>
@@ -103,17 +104,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"collaborating_teams", n => { CollaboratingTeams = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"collaborating_users", n => { CollaboratingUsers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"credits", n => { Credits = n.GetCollectionOfObjectValues<RepositoryAdvisoryUpdate_credits>(RepositoryAdvisoryUpdate_credits.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"cve_id", n => { CveId = n.GetStringValue(); } },
-                {"cvss_vector_string", n => { CvssVectorString = n.GetStringValue(); } },
-                {"cwe_ids", n => { CweIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"severity", n => { Severity = n.GetEnumValue<RepositoryAdvisoryUpdate_severity>(); } },
-                {"state", n => { State = n.GetEnumValue<RepositoryAdvisoryUpdate_state>(); } },
-                {"summary", n => { Summary = n.GetStringValue(); } },
-                {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<RepositoryAdvisoryUpdate_vulnerabilities>(RepositoryAdvisoryUpdate_vulnerabilities.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "collaborating_teams", n => { CollaboratingTeams = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "collaborating_users", n => { CollaboratingUsers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "credits", n => { Credits = n.GetCollectionOfObjectValues<RepositoryAdvisoryUpdate_credits>(RepositoryAdvisoryUpdate_credits.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cve_id", n => { CveId = n.GetStringValue(); } },
+                { "cvss_vector_string", n => { CvssVectorString = n.GetStringValue(); } },
+                { "cwe_ids", n => { CweIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "severity", n => { Severity = n.GetEnumValue<RepositoryAdvisoryUpdate_severity>(); } },
+                { "state", n => { State = n.GetEnumValue<RepositoryAdvisoryUpdate_state>(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
+                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<RepositoryAdvisoryUpdate_vulnerabilities>(RepositoryAdvisoryUpdate_vulnerabilities.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

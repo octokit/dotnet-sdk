@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Cache.Usage {
+namespace GitHub.Orgs.Item.Actions.Cache.Usage
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\cache\usage
     /// </summary>
-    public class UsageRequestBuilder : BaseRequestBuilder 
+    public class UsageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="UsageRequestBuilder"/> and sets the default values.

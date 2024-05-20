@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Porter Author
     /// </summary>
-    public class PorterAuthor : IAdditionalDataHolder, IParsable 
+    public class PorterAuthor : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -87,13 +88,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"import_url", n => { ImportUrl = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"remote_id", n => { RemoteId = n.GetStringValue(); } },
-                {"remote_name", n => { RemoteName = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "import_url", n => { ImportUrl = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "remote_id", n => { RemoteId = n.GetStringValue(); } },
+                { "remote_name", n => { RemoteName = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

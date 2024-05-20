@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Review Requested Issue Event
     /// </summary>
-    public class ReviewRequestedIssueEvent : IAdditionalDataHolder, IParsable 
+    public class ReviewRequestedIssueEvent : IAdditionalDataHolder, IParsable
     {
         /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,18 +128,18 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"commit_id", n => { CommitId = n.GetStringValue(); } },
-                {"commit_url", n => { CommitUrl = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
-                {"event", n => { Event = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
-                {"requested_reviewer", n => { RequestedReviewer = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"requested_team", n => { RequestedTeam = n.GetObjectValue<Team>(Team.CreateFromDiscriminatorValue); } },
-                {"review_requester", n => { ReviewRequester = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "commit_id", n => { CommitId = n.GetStringValue(); } },
+                { "commit_url", n => { CommitUrl = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "event", n => { Event = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
+                { "requested_reviewer", n => { RequestedReviewer = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "requested_team", n => { RequestedTeam = n.GetObjectValue<Team>(Team.CreateFromDiscriminatorValue); } },
+                { "review_requester", n => { ReviewRequester = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Configuration for code scanning default setup.
     /// </summary>
-    public class CodeScanningDefaultSetup : IAdditionalDataHolder, IParsable 
+    public class CodeScanningDefaultSetup : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -53,11 +54,11 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"languages", n => { Languages = n.GetCollectionOfEnumValues<CodeScanningDefaultSetup_languages>()?.ToList(); } },
-                {"query_suite", n => { QuerySuite = n.GetEnumValue<CodeScanningDefaultSetup_query_suite>(); } },
-                {"schedule", n => { Schedule = n.GetEnumValue<CodeScanningDefaultSetup_schedule>(); } },
-                {"state", n => { State = n.GetEnumValue<CodeScanningDefaultSetup_state>(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "languages", n => { Languages = n.GetCollectionOfEnumValues<CodeScanningDefaultSetup_languages>()?.ToList(); } },
+                { "query_suite", n => { QuerySuite = n.GetEnumValue<CodeScanningDefaultSetup_query_suite>(); } },
+                { "schedule", n => { Schedule = n.GetEnumValue<CodeScanningDefaultSetup_schedule>(); } },
+                { "state", n => { State = n.GetEnumValue<CodeScanningDefaultSetup_state>(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

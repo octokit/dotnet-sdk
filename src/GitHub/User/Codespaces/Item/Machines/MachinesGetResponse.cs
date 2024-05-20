@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Codespaces.Item.Machines {
+namespace GitHub.User.Codespaces.Item.Machines
+{
     #pragma warning disable CS1591
-    public class MachinesGetResponse : IAdditionalDataHolder, IParsable 
+    public class MachinesGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +48,8 @@ namespace GitHub.User.Codespaces.Item.Machines {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"machines", n => { Machines = n.GetCollectionOfObjectValues<CodespaceMachine>(CodespaceMachine.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "machines", n => { Machines = n.GetCollectionOfObjectValues<CodespaceMachine>(CodespaceMachine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class ApiOverview_domains : IAdditionalDataHolder, IParsable 
+    public class ApiOverview_domains : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actions property</summary>
@@ -76,11 +77,11 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"codespaces", n => { Codespaces = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"copilot", n => { Copilot = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"packages", n => { Packages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"website", n => { Website = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "codespaces", n => { Codespaces = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "copilot", n => { Copilot = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "packages", n => { Packages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "website", n => { Website = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

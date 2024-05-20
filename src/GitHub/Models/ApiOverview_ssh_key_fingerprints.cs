@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class ApiOverview_ssh_key_fingerprints : IAdditionalDataHolder, IParsable 
+    public class ApiOverview_ssh_key_fingerprints : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -68,10 +69,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"SHA256_DSA", n => { SHA256DSA = n.GetStringValue(); } },
-                {"SHA256_ECDSA", n => { SHA256ECDSA = n.GetStringValue(); } },
-                {"SHA256_ED25519", n => { SHA256ED25519 = n.GetStringValue(); } },
-                {"SHA256_RSA", n => { SHA256RSA = n.GetStringValue(); } },
+                { "SHA256_DSA", n => { SHA256DSA = n.GetStringValue(); } },
+                { "SHA256_ECDSA", n => { SHA256ECDSA = n.GetStringValue(); } },
+                { "SHA256_ED25519", n => { SHA256ED25519 = n.GetStringValue(); } },
+                { "SHA256_RSA", n => { SHA256RSA = n.GetStringValue(); } },
             };
         }
         /// <summary>

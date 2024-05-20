@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A list of errors found in a repo&apos;s CODEOWNERS file
     /// </summary>
-    public class CodeownersErrors : IAdditionalDataHolder, IParsable 
+    public class CodeownersErrors : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -45,7 +46,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<CodeownersErrors_errors>(CodeownersErrors_errors.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<CodeownersErrors_errors>(CodeownersErrors_errors.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

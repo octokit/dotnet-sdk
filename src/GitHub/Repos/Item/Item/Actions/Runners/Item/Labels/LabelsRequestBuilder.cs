@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runners.Item.Labels {
+namespace GitHub.Repos.Item.Item.Actions.Runners.Item.Labels
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runners\{runner_id}\labels
     /// </summary>
-    public class LabelsRequestBuilder : BaseRequestBuilder 
+    public class LabelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.runners.item.labels.item collection</summary>
         /// <param name="position">The name of a self-hosted runner&apos;s custom label.</param>
@@ -63,7 +64,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.Item.Labels {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<LabelsDeleteResponse>(requestInfo, LabelsDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -87,7 +88,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.Item.Labels {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<LabelsGetResponse>(requestInfo, LabelsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -114,8 +115,8 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.Item.Labels {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<LabelsPostResponse>(requestInfo, LabelsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -142,8 +143,8 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.Item.Labels {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<LabelsPutResponse>(requestInfo, LabelsPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

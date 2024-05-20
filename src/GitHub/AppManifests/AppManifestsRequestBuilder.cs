@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.AppManifests {
+namespace GitHub.AppManifests
+{
     /// <summary>
     /// Builds and executes requests for operations under \app-manifests
     /// </summary>
-    public class AppManifestsRequestBuilder : BaseRequestBuilder 
+    public class AppManifestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.appManifests.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

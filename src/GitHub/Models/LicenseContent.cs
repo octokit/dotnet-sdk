@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// License Content
     /// </summary>
-    public class LicenseContent : IAdditionalDataHolder, IParsable 
+    public class LicenseContent : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -135,19 +136,19 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"content", n => { Content = n.GetStringValue(); } },
-                {"download_url", n => { DownloadUrl = n.GetStringValue(); } },
-                {"encoding", n => { Encoding = n.GetStringValue(); } },
-                {"git_url", n => { GitUrl = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"license", n => { License = n.GetObjectValue<NullableLicenseSimple>(NullableLicenseSimple.CreateFromDiscriminatorValue); } },
-                {"_links", n => { Links = n.GetObjectValue<LicenseContent__links>(LicenseContent__links.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
-                {"sha", n => { Sha = n.GetStringValue(); } },
-                {"size", n => { Size = n.GetIntValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "download_url", n => { DownloadUrl = n.GetStringValue(); } },
+                { "encoding", n => { Encoding = n.GetStringValue(); } },
+                { "git_url", n => { GitUrl = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "license", n => { License = n.GetObjectValue<NullableLicenseSimple>(NullableLicenseSimple.CreateFromDiscriminatorValue); } },
+                { "_links", n => { Links = n.GetObjectValue<LicenseContent__links>(LicenseContent__links.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
+                { "size", n => { Size = n.GetIntValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

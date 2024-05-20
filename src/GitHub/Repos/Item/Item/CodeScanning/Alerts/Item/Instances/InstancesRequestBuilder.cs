@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
+namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item.Instances
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\alerts\{alert_number}\instances
     /// </summary>
-    public class InstancesRequestBuilder : BaseRequestBuilder 
+    public class InstancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="InstancesRequestBuilder"/> and sets the default values.
@@ -52,9 +53,9 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item.Instances {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"503", Instances503Error.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "503", Instances503Error.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<CodeScanningAlertInstance>(requestInfo, CodeScanningAlertInstance.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

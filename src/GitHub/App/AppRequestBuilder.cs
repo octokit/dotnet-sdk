@@ -11,11 +11,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.App {
+namespace GitHub.App
+{
     /// <summary>
     /// Builds and executes requests for operations under \app
     /// </summary>
-    public class AppRequestBuilder : BaseRequestBuilder 
+    public class AppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The hook property</summary>
         public HookRequestBuilder Hook

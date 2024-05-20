@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Hooks.Item.Config {
+namespace GitHub.Repos.Item.Item.Hooks.Item.Config
+{
     #pragma warning disable CS1591
-    public class ConfigPatchRequestBody : IParsable 
+    public class ConfigPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.</summary>
@@ -60,10 +61,10 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Config {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"content_type", n => { ContentType = n.GetStringValue(); } },
-                {"insecure_ssl", n => { InsecureSsl = n.GetObjectValue<WebhookConfigInsecureSsl>(WebhookConfigInsecureSsl.CreateFromDiscriminatorValue); } },
-                {"secret", n => { Secret = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "content_type", n => { ContentType = n.GetStringValue(); } },
+                { "insecure_ssl", n => { InsecureSsl = n.GetObjectValue<WebhookConfigInsecureSsl>(WebhookConfigInsecureSsl.CreateFromDiscriminatorValue); } },
+                { "secret", n => { Secret = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

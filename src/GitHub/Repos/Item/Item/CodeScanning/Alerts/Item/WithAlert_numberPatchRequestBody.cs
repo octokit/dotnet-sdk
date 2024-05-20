@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item {
+namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item
+{
     #pragma warning disable CS1591
-    public class WithAlert_numberPatchRequestBody : IAdditionalDataHolder, IParsable 
+    public class WithAlert_numberPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,9 +50,9 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
-                {"dismissed_reason", n => { DismissedReason = n.GetEnumValue<CodeScanningAlertDismissedReason>(); } },
-                {"state", n => { State = n.GetEnumValue<CodeScanningAlertSetState>(); } },
+                { "dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
+                { "dismissed_reason", n => { DismissedReason = n.GetEnumValue<CodeScanningAlertDismissedReason>(); } },
+                { "state", n => { State = n.GetEnumValue<CodeScanningAlertSetState>(); } },
             };
         }
         /// <summary>

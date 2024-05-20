@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.OrganizationFineGrainedPermissions {
+namespace GitHub.Orgs.Item.OrganizationFineGrainedPermissions
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-fine-grained-permissions
     /// </summary>
-    public class OrganizationFineGrainedPermissionsRequestBuilder : BaseRequestBuilder 
+    public class OrganizationFineGrainedPermissionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="OrganizationFineGrainedPermissionsRequestBuilder"/> and sets the default values.
@@ -51,8 +52,8 @@ namespace GitHub.Orgs.Item.OrganizationFineGrainedPermissions {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<OrganizationFineGrainedPermission>(requestInfo, OrganizationFineGrainedPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class PullRequestSimple__links : IAdditionalDataHolder, IParsable 
+    public class PullRequestSimple__links : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -100,14 +101,14 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"comments", n => { Comments = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
-                {"commits", n => { Commits = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
-                {"html", n => { Html = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
-                {"issue", n => { Issue = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
-                {"review_comment", n => { ReviewComment = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
-                {"review_comments", n => { ReviewComments = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
-                {"self", n => { Self = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
-                {"statuses", n => { Statuses = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
+                { "comments", n => { Comments = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
+                { "commits", n => { Commits = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
+                { "html", n => { Html = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
+                { "issue", n => { Issue = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
+                { "review_comment", n => { ReviewComment = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
+                { "review_comments", n => { ReviewComments = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
+                { "self", n => { Self = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
+                { "statuses", n => { Statuses = n.GetObjectValue<Link>(Link.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

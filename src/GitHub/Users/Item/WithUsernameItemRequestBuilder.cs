@@ -27,11 +27,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item {
+namespace GitHub.Users.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}
     /// </summary>
-    public class WithUsernameItemRequestBuilder : BaseRequestBuilder 
+    public class WithUsernameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The docker property</summary>
         public DockerRequestBuilder Docker
@@ -164,7 +165,7 @@ namespace GitHub.Users.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<WithUsernameGetResponse>(requestInfo, WithUsernameGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -199,7 +200,7 @@ namespace GitHub.Users.Item {
         /// <summary>
         /// Composed type wrapper for classes <see cref="PrivateUser"/>, <see cref="PublicUser"/>
         /// </summary>
-        public class WithUsernameGetResponse : IComposedTypeWrapper, IParsable 
+        public class WithUsernameGetResponse : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.PrivateUser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

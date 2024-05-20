@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Outside_collaborators.Item {
+namespace GitHub.Orgs.Item.Outside_collaborators.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\outside_collaborators\{username}
     /// </summary>
-    public class WithUsernameItemRequestBuilder : BaseRequestBuilder 
+    public class WithUsernameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
@@ -49,7 +50,7 @@ namespace GitHub.Orgs.Item.Outside_collaborators.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", WithUsername422Error.CreateFromDiscriminatorValue},
+                { "422", WithUsername422Error.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -75,7 +76,7 @@ namespace GitHub.Orgs.Item.Outside_collaborators.Item {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<WithUsernamePutResponse>(requestInfo, WithUsernamePutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

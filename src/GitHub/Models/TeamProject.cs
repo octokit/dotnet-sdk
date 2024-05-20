@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A team&apos;s access to a project.
     /// </summary>
-    public class TeamProject : IAdditionalDataHolder, IParsable 
+    public class TeamProject : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -147,22 +148,22 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"body", n => { Body = n.GetStringValue(); } },
-                {"columns_url", n => { ColumnsUrl = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
-                {"creator", n => { Creator = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"number", n => { Number = n.GetIntValue(); } },
-                {"organization_permission", n => { OrganizationPermission = n.GetStringValue(); } },
-                {"owner_url", n => { OwnerUrl = n.GetStringValue(); } },
-                {"permissions", n => { Permissions = n.GetObjectValue<TeamProject_permissions>(TeamProject_permissions.CreateFromDiscriminatorValue); } },
-                {"private", n => { Private = n.GetBoolValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "body", n => { Body = n.GetStringValue(); } },
+                { "columns_url", n => { ColumnsUrl = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "creator", n => { Creator = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "number", n => { Number = n.GetIntValue(); } },
+                { "organization_permission", n => { OrganizationPermission = n.GetStringValue(); } },
+                { "owner_url", n => { OwnerUrl = n.GetStringValue(); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<TeamProject_permissions>(TeamProject_permissions.CreateFromDiscriminatorValue); } },
+                { "private", n => { Private = n.GetBoolValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

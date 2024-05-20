@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Issues.Item.Assignees {
+namespace GitHub.Repos.Item.Item.Issues.Item.Assignees
+{
     #pragma warning disable CS1591
-    public class AssigneesDeleteRequestBody : IAdditionalDataHolder, IParsable 
+    public class AssigneesDeleteRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -44,7 +45,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Assignees {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignees", n => { Assignees = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "assignees", n => { Assignees = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

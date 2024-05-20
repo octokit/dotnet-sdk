@@ -10,11 +10,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckSuites {
+namespace GitHub.Repos.Item.Item.CheckSuites
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-suites
     /// </summary>
-    public class CheckSuitesRequestBuilder : BaseRequestBuilder 
+    public class CheckSuitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The preferences property</summary>
         public PreferencesRequestBuilder Preferences

@@ -34,7 +34,6 @@ using GitHub.Orgs.Item.SecretScanning;
 using GitHub.Orgs.Item.SecurityAdvisories;
 using GitHub.Orgs.Item.SecurityManagers;
 using GitHub.Orgs.Item.Settings;
-using GitHub.Orgs.Item.Team;
 using GitHub.Orgs.Item.Teams;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -44,11 +43,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item {
+namespace GitHub.Orgs.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}
     /// </summary>
-    public class WithOrgItemRequestBuilder : BaseRequestBuilder 
+    public class WithOrgItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The actions property</summary>
         public ActionsRequestBuilder Actions
@@ -215,11 +215,6 @@ namespace GitHub.Orgs.Item {
         {
             get => new SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The team property</summary>
-        public TeamRequestBuilder Team
-        {
-            get => new TeamRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The teams property</summary>
         public TeamsRequestBuilder Teams
         {
@@ -274,8 +269,8 @@ namespace GitHub.Orgs.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<WithOrgDeleteResponse>(requestInfo, WithOrgDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -299,7 +294,7 @@ namespace GitHub.Orgs.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<OrganizationFull>(requestInfo, OrganizationFull.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -325,7 +320,7 @@ namespace GitHub.Orgs.Item {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"409", BasicError.CreateFromDiscriminatorValue},
+                { "409", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<OrganizationFull>(requestInfo, OrganizationFull.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Assignments.Item.Grades {
+namespace GitHub.Assignments.Item.Grades
+{
     /// <summary>
     /// Builds and executes requests for operations under \assignments\{assignment_id}\grades
     /// </summary>
-    public class GradesRequestBuilder : BaseRequestBuilder 
+    public class GradesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="GradesRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.Assignments.Item.Grades {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<ClassroomAssignmentGrade>(requestInfo, ClassroomAssignmentGrade.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

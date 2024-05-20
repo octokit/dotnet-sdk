@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.Apps {
+namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.Apps
+{
     #pragma warning disable CS1591
-    public class AppsGetResponse : IAdditionalDataHolder, IParsable 
+    public class AppsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +48,8 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.A
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"available_custom_deployment_protection_rule_integrations", n => { AvailableCustomDeploymentProtectionRuleIntegrations = n.GetCollectionOfObjectValues<CustomDeploymentRuleApp>(CustomDeploymentRuleApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "available_custom_deployment_protection_rule_integrations", n => { AvailableCustomDeploymentProtectionRuleIntegrations = n.GetCollectionOfObjectValues<CustomDeploymentRuleApp>(CustomDeploymentRuleApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

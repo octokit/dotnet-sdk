@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Hooks.Item.Deliveries.Item {
+namespace GitHub.Repos.Item.Item.Hooks.Item.Deliveries.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\hooks\{hook_id}\deliveries\{delivery_id}
     /// </summary>
-    public class WithDelivery_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithDelivery_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The attempts property</summary>
         public AttemptsRequestBuilder Attempts
@@ -57,8 +58,8 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Deliveries.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"400", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "400", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<HookDelivery>(requestInfo, HookDelivery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

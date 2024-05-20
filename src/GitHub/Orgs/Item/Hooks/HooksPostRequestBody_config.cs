@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Hooks {
+namespace GitHub.Orgs.Item.Hooks
+{
     /// <summary>
     /// Key/value pairs to provide settings for this webhook.
     /// </summary>
-    public class HooksPostRequestBody_config : IAdditionalDataHolder, IParsable 
+    public class HooksPostRequestBody_config : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -86,12 +87,12 @@ namespace GitHub.Orgs.Item.Hooks {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"content_type", n => { ContentType = n.GetStringValue(); } },
-                {"insecure_ssl", n => { InsecureSsl = n.GetObjectValue<WebhookConfigInsecureSsl>(WebhookConfigInsecureSsl.CreateFromDiscriminatorValue); } },
-                {"password", n => { Password = n.GetStringValue(); } },
-                {"secret", n => { Secret = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"username", n => { Username = n.GetStringValue(); } },
+                { "content_type", n => { ContentType = n.GetStringValue(); } },
+                { "insecure_ssl", n => { InsecureSsl = n.GetObjectValue<WebhookConfigInsecureSsl>(WebhookConfigInsecureSsl.CreateFromDiscriminatorValue); } },
+                { "password", n => { Password = n.GetStringValue(); } },
+                { "secret", n => { Secret = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "username", n => { Username = n.GetStringValue(); } },
             };
         }
         /// <summary>

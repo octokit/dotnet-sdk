@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection
+{
     /// <summary>
     /// Require status checks to pass before merging. Set to `null` to disable.
     /// </summary>
-    public class ProtectionPutRequestBody_required_status_checks : IAdditionalDataHolder, IParsable 
+    public class ProtectionPutRequestBody_required_status_checks : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -56,9 +57,9 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"checks", n => { Checks = n.GetCollectionOfObjectValues<ProtectionPutRequestBody_required_status_checks_checks>(ProtectionPutRequestBody_required_status_checks_checks.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"contexts", n => { Contexts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"strict", n => { Strict = n.GetBoolValue(); } },
+                { "checks", n => { Checks = n.GetCollectionOfObjectValues<ProtectionPutRequestBody_required_status_checks_checks>(ProtectionPutRequestBody_required_status_checks_checks.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contexts", n => { Contexts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "strict", n => { Strict = n.GetBoolValue(); } },
             };
         }
         /// <summary>

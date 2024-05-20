@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Packages.Item.Item.Versions {
+namespace GitHub.Users.Item.Packages.Item.Item.Versions
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\packages\{package_type}\{package_name}\versions
     /// </summary>
-    public class VersionsRequestBuilder : BaseRequestBuilder 
+    public class VersionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.users.item.packages.item.item.versions.item collection</summary>
         /// <param name="position">Unique identifier of the package version.</param>
@@ -65,9 +66,9 @@ namespace GitHub.Users.Item.Packages.Item.Item.Versions {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<PackageVersion>(requestInfo, PackageVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

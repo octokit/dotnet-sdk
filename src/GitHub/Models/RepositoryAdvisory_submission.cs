@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class RepositoryAdvisory_submission : IAdditionalDataHolder, IParsable 
+    public class RepositoryAdvisory_submission : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Whether a private vulnerability report was accepted by the repository&apos;s administrators.</summary>
@@ -38,7 +39,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accepted", n => { Accepted = n.GetBoolValue(); } },
+                { "accepted", n => { Accepted = n.GetBoolValue(); } },
             };
         }
         /// <summary>

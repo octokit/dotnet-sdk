@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Permissions.SelectedActions {
+namespace GitHub.Orgs.Item.Actions.Permissions.SelectedActions
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\permissions\selected-actions
     /// </summary>
-    public class SelectedActionsRequestBuilder : BaseRequestBuilder 
+    public class SelectedActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="SelectedActionsRequestBuilder"/> and sets the default values.

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A migration.
     /// </summary>
-    public class Migration : IAdditionalDataHolder, IParsable 
+    public class Migration : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -121,24 +122,24 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"archive_url", n => { ArchiveUrl = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"exclude", n => { Exclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"exclude_attachments", n => { ExcludeAttachments = n.GetBoolValue(); } },
-                {"exclude_git_data", n => { ExcludeGitData = n.GetBoolValue(); } },
-                {"exclude_metadata", n => { ExcludeMetadata = n.GetBoolValue(); } },
-                {"exclude_owner_projects", n => { ExcludeOwnerProjects = n.GetBoolValue(); } },
-                {"exclude_releases", n => { ExcludeReleases = n.GetBoolValue(); } },
-                {"guid", n => { Guid = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"lock_repositories", n => { LockRepositories = n.GetBoolValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"org_metadata_only", n => { OrgMetadataOnly = n.GetBoolValue(); } },
-                {"owner", n => { Owner = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"repositories", n => { Repositories = n.GetCollectionOfObjectValues<Repository>(Repository.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "archive_url", n => { ArchiveUrl = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "exclude", n => { Exclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "exclude_attachments", n => { ExcludeAttachments = n.GetBoolValue(); } },
+                { "exclude_git_data", n => { ExcludeGitData = n.GetBoolValue(); } },
+                { "exclude_metadata", n => { ExcludeMetadata = n.GetBoolValue(); } },
+                { "exclude_owner_projects", n => { ExcludeOwnerProjects = n.GetBoolValue(); } },
+                { "exclude_releases", n => { ExcludeReleases = n.GetBoolValue(); } },
+                { "guid", n => { Guid = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "lock_repositories", n => { LockRepositories = n.GetBoolValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "org_metadata_only", n => { OrgMetadataOnly = n.GetBoolValue(); } },
+                { "owner", n => { Owner = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "repositories", n => { Repositories = n.GetCollectionOfObjectValues<Repository>(Repository.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

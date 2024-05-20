@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// The public key used for setting user Codespaces&apos; Secrets.
     /// </summary>
-    public class CodespacesUserPublicKey : IAdditionalDataHolder, IParsable 
+    public class CodespacesUserPublicKey : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -53,8 +54,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"key", n => { Key = n.GetStringValue(); } },
-                {"key_id", n => { KeyId = n.GetStringValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "key_id", n => { KeyId = n.GetStringValue(); } },
             };
         }
         /// <summary>

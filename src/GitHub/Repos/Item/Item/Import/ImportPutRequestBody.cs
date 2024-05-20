@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Import {
+namespace GitHub.Repos.Item.Item.Import
+{
     #pragma warning disable CS1591
-    public class ImportPutRequestBody : IAdditionalDataHolder, IParsable 
+    public class ImportPutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -70,11 +71,11 @@ namespace GitHub.Repos.Item.Item.Import {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"tfvc_project", n => { TfvcProject = n.GetStringValue(); } },
-                {"vcs", n => { Vcs = n.GetEnumValue<ImportPutRequestBody_vcs>(); } },
-                {"vcs_password", n => { VcsPassword = n.GetStringValue(); } },
-                {"vcs_url", n => { VcsUrl = n.GetStringValue(); } },
-                {"vcs_username", n => { VcsUsername = n.GetStringValue(); } },
+                { "tfvc_project", n => { TfvcProject = n.GetStringValue(); } },
+                { "vcs", n => { Vcs = n.GetEnumValue<ImportPutRequestBody_vcs>(); } },
+                { "vcs_password", n => { VcsPassword = n.GetStringValue(); } },
+                { "vcs_url", n => { VcsUrl = n.GetStringValue(); } },
+                { "vcs_username", n => { VcsUsername = n.GetStringValue(); } },
             };
         }
         /// <summary>

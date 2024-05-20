@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.PersonalAccessTokens {
+namespace GitHub.Orgs.Item.PersonalAccessTokens
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\personal-access-tokens
     /// </summary>
-    public class PersonalAccessTokensRequestBuilder : BaseRequestBuilder 
+    public class PersonalAccessTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.personalAccessTokens.item collection</summary>
         /// <param name="position">The unique identifier of the fine-grained personal access token.</param>
@@ -66,10 +67,10 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<OrganizationProgrammaticAccessGrant>(requestInfo, OrganizationProgrammaticAccessGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -99,10 +100,10 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<PersonalAccessTokensPostResponse>(requestInfo, PersonalAccessTokensPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

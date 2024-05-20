@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection
+{
     /// <summary>
     /// Restrict who can push to the protected branch. User, app, and team `restrictions` are only available for organization-owned repositories. Set to `null` to disable.
     /// </summary>
-    public class ProtectionPutRequestBody_restrictions : IAdditionalDataHolder, IParsable 
+    public class ProtectionPutRequestBody_restrictions : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -61,9 +62,9 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"apps", n => { Apps = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"teams", n => { Teams = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"users", n => { Users = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "apps", n => { Apps = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "teams", n => { Teams = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

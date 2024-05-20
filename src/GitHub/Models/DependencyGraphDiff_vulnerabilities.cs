@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class DependencyGraphDiff_vulnerabilities : IAdditionalDataHolder, IParsable 
+    public class DependencyGraphDiff_vulnerabilities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -68,10 +69,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"advisory_ghsa_id", n => { AdvisoryGhsaId = n.GetStringValue(); } },
-                {"advisory_summary", n => { AdvisorySummary = n.GetStringValue(); } },
-                {"advisory_url", n => { AdvisoryUrl = n.GetStringValue(); } },
-                {"severity", n => { Severity = n.GetStringValue(); } },
+                { "advisory_ghsa_id", n => { AdvisoryGhsaId = n.GetStringValue(); } },
+                { "advisory_summary", n => { AdvisorySummary = n.GetStringValue(); } },
+                { "advisory_url", n => { AdvisoryUrl = n.GetStringValue(); } },
+                { "severity", n => { Severity = n.GetStringValue(); } },
             };
         }
         /// <summary>

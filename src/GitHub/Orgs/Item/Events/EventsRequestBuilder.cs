@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Events {
+namespace GitHub.Orgs.Item.Events
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\events
     /// </summary>
-    public class EventsRequestBuilder : BaseRequestBuilder 
+    public class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="EventsRequestBuilder"/> and sets the default values.

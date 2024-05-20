@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Projects.Columns.Cards.Item {
+namespace GitHub.Projects.Columns.Cards.Item
+{
     #pragma warning disable CS1591
-    public class WithCard_PatchRequestBody : IAdditionalDataHolder, IParsable 
+    public class WithCard_PatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -46,8 +47,8 @@ namespace GitHub.Projects.Columns.Cards.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"archived", n => { Archived = n.GetBoolValue(); } },
-                {"note", n => { Note = n.GetStringValue(); } },
+                { "archived", n => { Archived = n.GetBoolValue(); } },
+                { "note", n => { Note = n.GetStringValue(); } },
             };
         }
         /// <summary>

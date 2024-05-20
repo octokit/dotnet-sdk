@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.
     /// </summary>
-    public class RepositoryRuleRequiredStatusChecks : IAdditionalDataHolder, IParsable 
+    public class RepositoryRuleRequiredStatusChecks : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -47,8 +48,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleRequiredStatusChecks_parameters>(RepositoryRuleRequiredStatusChecks_parameters.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<RepositoryRuleRequiredStatusChecks_type>(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleRequiredStatusChecks_parameters>(RepositoryRuleRequiredStatusChecks_parameters.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<RepositoryRuleRequiredStatusChecks_type>(); } },
             };
         }
         /// <summary>

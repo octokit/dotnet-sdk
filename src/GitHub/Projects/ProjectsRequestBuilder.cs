@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Projects {
+namespace GitHub.Projects
+{
     /// <summary>
     /// Builds and executes requests for operations under \projects
     /// </summary>
-    public class ProjectsRequestBuilder : BaseRequestBuilder 
+    public class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The columns property</summary>
         public ColumnsRequestBuilder Columns

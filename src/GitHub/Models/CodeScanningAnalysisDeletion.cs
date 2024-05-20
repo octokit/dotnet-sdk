@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Successful deletion of a code scanning analysis
     /// </summary>
-    public class CodeScanningAnalysisDeletion : IAdditionalDataHolder, IParsable 
+    public class CodeScanningAnalysisDeletion : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -53,8 +54,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"confirm_delete_url", n => { ConfirmDeleteUrl = n.GetStringValue(); } },
-                {"next_analysis_url", n => { NextAnalysisUrl = n.GetStringValue(); } },
+                { "confirm_delete_url", n => { ConfirmDeleteUrl = n.GetStringValue(); } },
+                { "next_analysis_url", n => { NextAnalysisUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

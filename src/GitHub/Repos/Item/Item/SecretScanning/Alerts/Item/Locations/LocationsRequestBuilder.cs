@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
+namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item.Locations
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\secret-scanning\alerts\{alert_number}\locations
     /// </summary>
-    public class LocationsRequestBuilder : BaseRequestBuilder 
+    public class LocationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="LocationsRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item.Locations {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"503", Locations503Error.CreateFromDiscriminatorValue},
+                { "503", Locations503Error.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SecretScanningLocation>(requestInfo, SecretScanningLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

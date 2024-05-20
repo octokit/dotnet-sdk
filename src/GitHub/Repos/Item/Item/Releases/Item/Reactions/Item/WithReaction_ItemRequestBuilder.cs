@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Item.Reactions.Item {
+namespace GitHub.Repos.Item.Item.Releases.Item.Reactions.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\{release_id}\reactions\{reaction_id}
     /// </summary>
-    public class WithReaction_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithReaction_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithReaction_ItemRequestBuilder"/> and sets the default values.

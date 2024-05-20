@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Analyses {
+namespace GitHub.Repos.Item.Item.CodeScanning.Analyses
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\analyses
     /// </summary>
-    public class AnalysesRequestBuilder : BaseRequestBuilder 
+    public class AnalysesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.codeScanning.analyses.item collection</summary>
         /// <param name="position">The ID of the analysis, as returned from the `GET /repos/{owner}/{repo}/code-scanning/analyses` operation.</param>
@@ -65,9 +66,9 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Analyses {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"503", Analyses503Error.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "503", Analyses503Error.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<CodeScanningAnalysis>(requestInfo, CodeScanningAnalysis.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

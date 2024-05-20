@@ -10,11 +10,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Codespaces {
+namespace GitHub.User.Codespaces
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\codespaces
     /// </summary>
-    public class CodespacesRequestBuilder : BaseRequestBuilder 
+    public class CodespacesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The secrets property</summary>
         public SecretsRequestBuilder Secrets
@@ -72,10 +73,10 @@ namespace GitHub.User.Codespaces {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CodespacesGetResponse>(requestInfo, CodespacesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -104,10 +105,10 @@ namespace GitHub.User.Codespaces {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"503", Codespace503Error.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "503", Codespace503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Codespace>(requestInfo, Codespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -164,7 +165,7 @@ namespace GitHub.User.Codespaces {
         /// <summary>
         /// Composed type wrapper for classes <see cref="CodespacesPostRequestBodyMember1"/>, <see cref="CodespacesPostRequestBodyMember2"/>
         /// </summary>
-        public class CodespacesPostRequestBody : IComposedTypeWrapper, IParsable 
+        public class CodespacesPostRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="GitHub.User.Codespaces.CodespacesPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

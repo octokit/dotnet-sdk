@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Issue Event
     /// </summary>
-    public class IssueEvent : IAdditionalDataHolder, IParsable 
+    public class IssueEvent : IAdditionalDataHolder, IParsable
     {
         /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -195,28 +196,28 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actor", n => { Actor = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"assignee", n => { Assignee = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"assigner", n => { Assigner = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
-                {"commit_id", n => { CommitId = n.GetStringValue(); } },
-                {"commit_url", n => { CommitUrl = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"dismissed_review", n => { DismissedReview = n.GetObjectValue<IssueEventDismissedReview>(IssueEventDismissedReview.CreateFromDiscriminatorValue); } },
-                {"event", n => { Event = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetLongValue(); } },
-                {"issue", n => { Issue = n.GetObjectValue<NullableIssue>(NullableIssue.CreateFromDiscriminatorValue); } },
-                {"label", n => { Label = n.GetObjectValue<IssueEventLabel>(IssueEventLabel.CreateFromDiscriminatorValue); } },
-                {"lock_reason", n => { LockReason = n.GetStringValue(); } },
-                {"milestone", n => { Milestone = n.GetObjectValue<IssueEventMilestone>(IssueEventMilestone.CreateFromDiscriminatorValue); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
-                {"project_card", n => { ProjectCard = n.GetObjectValue<IssueEventProjectCard>(IssueEventProjectCard.CreateFromDiscriminatorValue); } },
-                {"rename", n => { Rename = n.GetObjectValue<IssueEventRename>(IssueEventRename.CreateFromDiscriminatorValue); } },
-                {"requested_reviewer", n => { RequestedReviewer = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"requested_team", n => { RequestedTeam = n.GetObjectValue<Team>(Team.CreateFromDiscriminatorValue); } },
-                {"review_requester", n => { ReviewRequester = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "actor", n => { Actor = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "assignee", n => { Assignee = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "assigner", n => { Assigner = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
+                { "commit_id", n => { CommitId = n.GetStringValue(); } },
+                { "commit_url", n => { CommitUrl = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "dismissed_review", n => { DismissedReview = n.GetObjectValue<IssueEventDismissedReview>(IssueEventDismissedReview.CreateFromDiscriminatorValue); } },
+                { "event", n => { Event = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "issue", n => { Issue = n.GetObjectValue<NullableIssue>(NullableIssue.CreateFromDiscriminatorValue); } },
+                { "label", n => { Label = n.GetObjectValue<IssueEventLabel>(IssueEventLabel.CreateFromDiscriminatorValue); } },
+                { "lock_reason", n => { LockReason = n.GetStringValue(); } },
+                { "milestone", n => { Milestone = n.GetObjectValue<IssueEventMilestone>(IssueEventMilestone.CreateFromDiscriminatorValue); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
+                { "project_card", n => { ProjectCard = n.GetObjectValue<IssueEventProjectCard>(IssueEventProjectCard.CreateFromDiscriminatorValue); } },
+                { "rename", n => { Rename = n.GetObjectValue<IssueEventRename>(IssueEventRename.CreateFromDiscriminatorValue); } },
+                { "requested_reviewer", n => { RequestedReviewer = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "requested_team", n => { RequestedTeam = n.GetObjectValue<Team>(Team.CreateFromDiscriminatorValue); } },
+                { "review_requester", n => { ReviewRequester = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

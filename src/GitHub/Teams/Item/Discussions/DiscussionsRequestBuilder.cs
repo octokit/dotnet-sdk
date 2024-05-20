@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Teams.Item.Discussions {
+namespace GitHub.Teams.Item.Discussions
+{
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\discussions
     /// </summary>
-    public class DiscussionsRequestBuilder : BaseRequestBuilder 
+    public class DiscussionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.teams.item.discussions.item collection</summary>
         /// <param name="position">The number that identifies the discussion.</param>

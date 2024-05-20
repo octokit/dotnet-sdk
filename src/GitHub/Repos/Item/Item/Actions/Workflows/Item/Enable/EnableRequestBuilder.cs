@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Enable {
+namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Enable
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}\enable
     /// </summary>
-    public class EnableRequestBuilder : BaseRequestBuilder 
+    public class EnableRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="EnableRequestBuilder"/> and sets the default values.

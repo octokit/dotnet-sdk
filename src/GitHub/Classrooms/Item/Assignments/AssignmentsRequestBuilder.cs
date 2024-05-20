@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Classrooms.Item.Assignments {
+namespace GitHub.Classrooms.Item.Assignments
+{
     /// <summary>
     /// Builds and executes requests for operations under \classrooms\{classroom_id}\assignments
     /// </summary>
-    public class AssignmentsRequestBuilder : BaseRequestBuilder 
+    public class AssignmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="AssignmentsRequestBuilder"/> and sets the default values.

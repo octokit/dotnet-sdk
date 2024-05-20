@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Response
     /// </summary>
-    public class RuleSuite : IAdditionalDataHolder, IParsable 
+    public class RuleSuite : IAdditionalDataHolder, IParsable
     {
         /// <summary>The number that identifies the user.</summary>
         public int? ActorId { get; set; }
@@ -97,18 +98,18 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actor_id", n => { ActorId = n.GetIntValue(); } },
-                {"actor_name", n => { ActorName = n.GetStringValue(); } },
-                {"after_sha", n => { AfterSha = n.GetStringValue(); } },
-                {"before_sha", n => { BeforeSha = n.GetStringValue(); } },
-                {"evaluation_result", n => { EvaluationResult = n.GetEnumValue<RuleSuite_evaluation_result>(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"pushed_at", n => { PushedAt = n.GetDateTimeOffsetValue(); } },
-                {"ref", n => { Ref = n.GetStringValue(); } },
-                {"repository_id", n => { RepositoryId = n.GetIntValue(); } },
-                {"repository_name", n => { RepositoryName = n.GetStringValue(); } },
-                {"result", n => { Result = n.GetEnumValue<RuleSuite_result>(); } },
-                {"rule_evaluations", n => { RuleEvaluations = n.GetCollectionOfObjectValues<RuleSuite_rule_evaluations>(RuleSuite_rule_evaluations.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actor_id", n => { ActorId = n.GetIntValue(); } },
+                { "actor_name", n => { ActorName = n.GetStringValue(); } },
+                { "after_sha", n => { AfterSha = n.GetStringValue(); } },
+                { "before_sha", n => { BeforeSha = n.GetStringValue(); } },
+                { "evaluation_result", n => { EvaluationResult = n.GetEnumValue<RuleSuite_evaluation_result>(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "pushed_at", n => { PushedAt = n.GetDateTimeOffsetValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
+                { "repository_id", n => { RepositoryId = n.GetIntValue(); } },
+                { "repository_name", n => { RepositoryName = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetEnumValue<RuleSuite_result>(); } },
+                { "rule_evaluations", n => { RuleEvaluations = n.GetCollectionOfObjectValues<RuleSuite_rule_evaluations>(RuleSuite_rule_evaluations.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

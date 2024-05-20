@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Projects.Columns.Cards.Item.Moves {
+namespace GitHub.Projects.Columns.Cards.Item.Moves
+{
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns\cards\{card_id}\moves
     /// </summary>
-    public class MovesRequestBuilder : BaseRequestBuilder 
+    public class MovesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="MovesRequestBuilder"/> and sets the default values.
@@ -55,10 +56,10 @@ namespace GitHub.Projects.Columns.Cards.Item.Moves {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", Moves403Error.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"503", Moves503Error.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", Moves403Error.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "503", Moves503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<MovesPostResponse>(requestInfo, MovesPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

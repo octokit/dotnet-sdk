@@ -11,11 +11,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions {
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\restrictions
     /// </summary>
-    public class RestrictionsRequestBuilder : BaseRequestBuilder 
+    public class RestrictionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The apps property</summary>
         public AppsRequestBuilder Apps
@@ -86,7 +87,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<BranchRestrictionPolicy>(requestInfo, BranchRestrictionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Networks.Item {
+namespace GitHub.Networks.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \networks\{owner}
     /// </summary>
-    public class WithOwnerItemRequestBuilder : BaseRequestBuilder 
+    public class WithOwnerItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.networks.item.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

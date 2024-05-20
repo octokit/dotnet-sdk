@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Validation Error Simple
     /// </summary>
-    public class ValidationErrorSimple : ApiException, IAdditionalDataHolder, IParsable 
+    public class ValidationErrorSimple : ApiException, IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -62,9 +63,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                {"errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>

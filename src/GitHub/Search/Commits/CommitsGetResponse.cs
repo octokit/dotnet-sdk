@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Search.Commits {
+namespace GitHub.Search.Commits
+{
     #pragma warning disable CS1591
-    public class CommitsGetResponse : IAdditionalDataHolder, IParsable 
+    public class CommitsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,9 +50,9 @@ namespace GitHub.Search.Commits {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"incomplete_results", n => { IncompleteResults = n.GetBoolValue(); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<CommitSearchResultItem>(CommitSearchResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "incomplete_results", n => { IncompleteResults = n.GetBoolValue(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<CommitSearchResultItem>(CommitSearchResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

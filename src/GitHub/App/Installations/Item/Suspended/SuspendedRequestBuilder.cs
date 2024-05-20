@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.App.Installations.Item.Suspended {
+namespace GitHub.App.Installations.Item.Suspended
+{
     /// <summary>
     /// Builds and executes requests for operations under \app\installations\{installation_id}\suspended
     /// </summary>
-    public class SuspendedRequestBuilder : BaseRequestBuilder 
+    public class SuspendedRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="SuspendedRequestBuilder"/> and sets the default values.
@@ -49,7 +50,7 @@ namespace GitHub.App.Installations.Item.Suspended {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -72,7 +73,7 @@ namespace GitHub.App.Installations.Item.Suspended {
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Artifacts.Item.Item {
+namespace GitHub.Repos.Item.Item.Actions.Artifacts.Item.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\artifacts\{artifact_id}\{archive_format}
     /// </summary>
-    public class WithArchive_formatItemRequestBuilder : BaseRequestBuilder 
+    public class WithArchive_formatItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithArchive_formatItemRequestBuilder"/> and sets the default values.
@@ -49,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts.Item.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"410", BasicError.CreateFromDiscriminatorValue},
+                { "410", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

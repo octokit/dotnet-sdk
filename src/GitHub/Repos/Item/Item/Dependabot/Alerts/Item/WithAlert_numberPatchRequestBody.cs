@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Dependabot.Alerts.Item {
+namespace GitHub.Repos.Item.Item.Dependabot.Alerts.Item
+{
     #pragma warning disable CS1591
-    public class WithAlert_numberPatchRequestBody : IParsable 
+    public class WithAlert_numberPatchRequestBody : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An optional comment associated with dismissing the alert.</summary>
@@ -39,9 +40,9 @@ namespace GitHub.Repos.Item.Item.Dependabot.Alerts.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
-                {"dismissed_reason", n => { DismissedReason = n.GetEnumValue<WithAlert_numberPatchRequestBody_dismissed_reason>(); } },
-                {"state", n => { State = n.GetEnumValue<WithAlert_numberPatchRequestBody_state>(); } },
+                { "dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
+                { "dismissed_reason", n => { DismissedReason = n.GetEnumValue<WithAlert_numberPatchRequestBody_dismissed_reason>(); } },
+                { "state", n => { State = n.GetEnumValue<WithAlert_numberPatchRequestBody_state>(); } },
             };
         }
         /// <summary>

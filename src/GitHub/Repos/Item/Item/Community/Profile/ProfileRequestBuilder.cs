@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Community.Profile {
+namespace GitHub.Repos.Item.Item.Community.Profile
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\community\profile
     /// </summary>
-    public class ProfileRequestBuilder : BaseRequestBuilder 
+    public class ProfileRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ProfileRequestBuilder"/> and sets the default values.

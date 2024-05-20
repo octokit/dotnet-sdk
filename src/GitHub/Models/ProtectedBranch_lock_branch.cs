@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
     /// </summary>
-    public class ProtectedBranch_lock_branch : IParsable 
+    public class ProtectedBranch_lock_branch : IParsable
     {
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
@@ -30,7 +31,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

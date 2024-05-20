@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Deployments {
+namespace GitHub.Repos.Item.Item.Deployments
+{
     #pragma warning disable CS1591
-    public class DeploymentsPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class DeploymentsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -92,15 +93,15 @@ namespace GitHub.Repos.Item.Item.Deployments {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"auto_merge", n => { AutoMerge = n.GetBoolValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"environment", n => { Environment = n.GetStringValue(); } },
-                {"payload", n => { Payload = n.GetStringValue(); } },
-                {"production_environment", n => { ProductionEnvironment = n.GetBoolValue(); } },
-                {"ref", n => { Ref = n.GetStringValue(); } },
-                {"required_contexts", n => { RequiredContexts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"task", n => { Task = n.GetStringValue(); } },
-                {"transient_environment", n => { TransientEnvironment = n.GetBoolValue(); } },
+                { "auto_merge", n => { AutoMerge = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "payload", n => { Payload = n.GetStringValue(); } },
+                { "production_environment", n => { ProductionEnvironment = n.GetBoolValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
+                { "required_contexts", n => { RequiredContexts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "task", n => { Task = n.GetStringValue(); } },
+                { "transient_environment", n => { TransientEnvironment = n.GetBoolValue(); } },
             };
         }
         /// <summary>

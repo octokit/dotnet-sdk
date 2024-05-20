@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.Databases.Item {
+namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.Databases.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\codeql\databases\{language}
     /// </summary>
-    public class WithLanguageItemRequestBuilder : BaseRequestBuilder 
+    public class WithLanguageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithLanguageItemRequestBuilder"/> and sets the default values.
@@ -52,9 +53,9 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.Databases.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"503", CodeScanningCodeqlDatabase503Error.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "503", CodeScanningCodeqlDatabase503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CodeScanningCodeqlDatabase>(requestInfo, CodeScanningCodeqlDatabase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

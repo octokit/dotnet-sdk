@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Issues {
+namespace GitHub.User.Issues
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\issues
     /// </summary>
-    public class IssuesRequestBuilder : BaseRequestBuilder 
+    public class IssuesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="IssuesRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.User.Issues {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Issue>(requestInfo, Issue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

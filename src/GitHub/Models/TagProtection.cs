@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Tag protection
     /// </summary>
-    public class TagProtection : IAdditionalDataHolder, IParsable 
+    public class TagProtection : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -65,11 +66,11 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"pattern", n => { Pattern = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "pattern", n => { Pattern = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>

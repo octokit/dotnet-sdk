@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Summary of Copilot usage.
     /// </summary>
-    public class CopilotUsageMetrics : IParsable 
+    public class CopilotUsageMetrics : IParsable
     {
         /// <summary>Breakdown of Copilot code completions usage by language and editor</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,16 +56,16 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"breakdown", n => { Breakdown = n.GetCollectionOfObjectValues<CopilotUsageMetrics_breakdown>(CopilotUsageMetrics_breakdown.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"day", n => { Day = n.GetDateValue(); } },
-                {"total_acceptances_count", n => { TotalAcceptancesCount = n.GetIntValue(); } },
-                {"total_active_chat_users", n => { TotalActiveChatUsers = n.GetIntValue(); } },
-                {"total_active_users", n => { TotalActiveUsers = n.GetIntValue(); } },
-                {"total_chat_acceptances", n => { TotalChatAcceptances = n.GetIntValue(); } },
-                {"total_chat_turns", n => { TotalChatTurns = n.GetIntValue(); } },
-                {"total_lines_accepted", n => { TotalLinesAccepted = n.GetIntValue(); } },
-                {"total_lines_suggested", n => { TotalLinesSuggested = n.GetIntValue(); } },
-                {"total_suggestions_count", n => { TotalSuggestionsCount = n.GetIntValue(); } },
+                { "breakdown", n => { Breakdown = n.GetCollectionOfObjectValues<CopilotUsageMetrics_breakdown>(CopilotUsageMetrics_breakdown.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "day", n => { Day = n.GetDateValue(); } },
+                { "total_acceptances_count", n => { TotalAcceptancesCount = n.GetIntValue(); } },
+                { "total_active_chat_users", n => { TotalActiveChatUsers = n.GetIntValue(); } },
+                { "total_active_users", n => { TotalActiveUsers = n.GetIntValue(); } },
+                { "total_chat_acceptances", n => { TotalChatAcceptances = n.GetIntValue(); } },
+                { "total_chat_turns", n => { TotalChatTurns = n.GetIntValue(); } },
+                { "total_lines_accepted", n => { TotalLinesAccepted = n.GetIntValue(); } },
+                { "total_lines_suggested", n => { TotalLinesSuggested = n.GetIntValue(); } },
+                { "total_suggestions_count", n => { TotalSuggestionsCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

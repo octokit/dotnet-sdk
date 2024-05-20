@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Releases {
+namespace GitHub.Repos.Item.Item.Releases
+{
     #pragma warning disable CS1591
-    public class ReleasesPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class ReleasesPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -85,15 +86,15 @@ namespace GitHub.Repos.Item.Item.Releases {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"body", n => { Body = n.GetStringValue(); } },
-                {"discussion_category_name", n => { DiscussionCategoryName = n.GetStringValue(); } },
-                {"draft", n => { Draft = n.GetBoolValue(); } },
-                {"generate_release_notes", n => { GenerateReleaseNotes = n.GetBoolValue(); } },
-                {"make_latest", n => { MakeLatest = n.GetEnumValue<ReleasesPostRequestBody_make_latest>(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"prerelease", n => { Prerelease = n.GetBoolValue(); } },
-                {"tag_name", n => { TagName = n.GetStringValue(); } },
-                {"target_commitish", n => { TargetCommitish = n.GetStringValue(); } },
+                { "body", n => { Body = n.GetStringValue(); } },
+                { "discussion_category_name", n => { DiscussionCategoryName = n.GetStringValue(); } },
+                { "draft", n => { Draft = n.GetBoolValue(); } },
+                { "generate_release_notes", n => { GenerateReleaseNotes = n.GetBoolValue(); } },
+                { "make_latest", n => { MakeLatest = n.GetEnumValue<ReleasesPostRequestBody_make_latest>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "prerelease", n => { Prerelease = n.GetBoolValue(); } },
+                { "tag_name", n => { TagName = n.GetStringValue(); } },
+                { "target_commitish", n => { TargetCommitish = n.GetStringValue(); } },
             };
         }
         /// <summary>

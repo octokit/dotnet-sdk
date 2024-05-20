@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
+namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig
+{
     #pragma warning disable CS1591
-    public class GenerateJitconfigPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class GenerateJitconfigPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -63,10 +64,10 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"runner_group_id", n => { RunnerGroupId = n.GetIntValue(); } },
-                {"work_folder", n => { WorkFolder = n.GetStringValue(); } },
+                { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "runner_group_id", n => { RunnerGroupId = n.GetIntValue(); } },
+                { "work_folder", n => { WorkFolder = n.GetStringValue(); } },
             };
         }
         /// <summary>

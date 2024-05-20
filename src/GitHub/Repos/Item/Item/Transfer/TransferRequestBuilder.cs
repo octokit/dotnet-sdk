@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Transfer {
+namespace GitHub.Repos.Item.Item.Transfer
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\transfer
     /// </summary>
-    public class TransferRequestBuilder : BaseRequestBuilder 
+    public class TransferRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="TransferRequestBuilder"/> and sets the default values.

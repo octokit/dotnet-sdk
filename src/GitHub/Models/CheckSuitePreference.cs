@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Check suite configuration preferences for a repository.
     /// </summary>
-    public class CheckSuitePreference : IAdditionalDataHolder, IParsable 
+    public class CheckSuitePreference : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -53,8 +54,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"preferences", n => { Preferences = n.GetObjectValue<CheckSuitePreference_preferences>(CheckSuitePreference_preferences.CreateFromDiscriminatorValue); } },
-                {"repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
+                { "preferences", n => { Preferences = n.GetObjectValue<CheckSuitePreference_preferences>(CheckSuitePreference_preferences.CreateFromDiscriminatorValue); } },
+                { "repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

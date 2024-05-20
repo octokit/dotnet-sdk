@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Codespaces.Secrets {
+namespace GitHub.User.Codespaces.Secrets
+{
     #pragma warning disable CS1591
-    public class SecretsGetResponse : IAdditionalDataHolder, IParsable 
+    public class SecretsGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +48,8 @@ namespace GitHub.User.Codespaces.Secrets {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"secrets", n => { Secrets = n.GetCollectionOfObjectValues<CodespacesSecret>(CodespacesSecret.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<CodespacesSecret>(CodespacesSecret.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

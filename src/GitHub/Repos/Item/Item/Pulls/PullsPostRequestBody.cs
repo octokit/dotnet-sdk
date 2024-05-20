@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls {
+namespace GitHub.Repos.Item.Item.Pulls
+{
     #pragma warning disable CS1591
-    public class PullsPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class PullsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -82,14 +83,14 @@ namespace GitHub.Repos.Item.Item.Pulls {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"base", n => { Base = n.GetStringValue(); } },
-                {"body", n => { Body = n.GetStringValue(); } },
-                {"draft", n => { Draft = n.GetBoolValue(); } },
-                {"head", n => { Head = n.GetStringValue(); } },
-                {"head_repo", n => { HeadRepo = n.GetStringValue(); } },
-                {"issue", n => { Issue = n.GetLongValue(); } },
-                {"maintainer_can_modify", n => { MaintainerCanModify = n.GetBoolValue(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
+                { "base", n => { Base = n.GetStringValue(); } },
+                { "body", n => { Body = n.GetStringValue(); } },
+                { "draft", n => { Draft = n.GetBoolValue(); } },
+                { "head", n => { Head = n.GetStringValue(); } },
+                { "head_repo", n => { HeadRepo = n.GetStringValue(); } },
+                { "issue", n => { Issue = n.GetLongValue(); } },
+                { "maintainer_can_modify", n => { MaintainerCanModify = n.GetBoolValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

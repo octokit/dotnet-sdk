@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Settings.Billing.SharedStorage {
+namespace GitHub.Users.Item.Settings.Billing.SharedStorage
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\settings\billing\shared-storage
     /// </summary>
-    public class SharedStorageRequestBuilder : BaseRequestBuilder 
+    public class SharedStorageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="SharedStorageRequestBuilder"/> and sets the default values.

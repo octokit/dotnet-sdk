@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
+namespace GitHub.Repos.Item.Item.Pulls.Item.Merge
+{
     #pragma warning disable CS1591
-    public class PullRequestMergeResult405Error : ApiException, IAdditionalDataHolder, IParsable 
+    public class PullRequestMergeResult405Error : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -53,8 +54,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                {"message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>

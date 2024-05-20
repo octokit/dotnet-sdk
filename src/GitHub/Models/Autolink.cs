@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// An autolink reference.
     /// </summary>
-    public class Autolink : IAdditionalDataHolder, IParsable 
+    public class Autolink : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -57,10 +58,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"is_alphanumeric", n => { IsAlphanumeric = n.GetBoolValue(); } },
-                {"key_prefix", n => { KeyPrefix = n.GetStringValue(); } },
-                {"url_template", n => { UrlTemplate = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "is_alphanumeric", n => { IsAlphanumeric = n.GetBoolValue(); } },
+                { "key_prefix", n => { KeyPrefix = n.GetStringValue(); } },
+                { "url_template", n => { UrlTemplate = n.GetStringValue(); } },
             };
         }
         /// <summary>

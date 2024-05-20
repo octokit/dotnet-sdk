@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Commits {
+namespace GitHub.Repos.Item.Item.Git.Commits
+{
     #pragma warning disable CS1591
-    public class CommitsPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class CommitsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -84,12 +85,12 @@ namespace GitHub.Repos.Item.Item.Git.Commits {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"author", n => { Author = n.GetObjectValue<CommitsPostRequestBody_author>(CommitsPostRequestBody_author.CreateFromDiscriminatorValue); } },
-                {"committer", n => { Committer = n.GetObjectValue<CommitsPostRequestBody_committer>(CommitsPostRequestBody_committer.CreateFromDiscriminatorValue); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"parents", n => { Parents = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"signature", n => { Signature = n.GetStringValue(); } },
-                {"tree", n => { Tree = n.GetStringValue(); } },
+                { "author", n => { Author = n.GetObjectValue<CommitsPostRequestBody_author>(CommitsPostRequestBody_author.CreateFromDiscriminatorValue); } },
+                { "committer", n => { Committer = n.GetObjectValue<CommitsPostRequestBody_committer>(CommitsPostRequestBody_committer.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "parents", n => { Parents = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
+                { "tree", n => { Tree = n.GetStringValue(); } },
             };
         }
         /// <summary>

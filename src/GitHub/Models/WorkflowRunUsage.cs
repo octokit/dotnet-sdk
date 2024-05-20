@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Workflow Run Usage
     /// </summary>
-    public class WorkflowRunUsage : IAdditionalDataHolder, IParsable 
+    public class WorkflowRunUsage : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -47,8 +48,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"billable", n => { Billable = n.GetObjectValue<WorkflowRunUsage_billable>(WorkflowRunUsage_billable.CreateFromDiscriminatorValue); } },
-                {"run_duration_ms", n => { RunDurationMs = n.GetIntValue(); } },
+                { "billable", n => { Billable = n.GetObjectValue<WorkflowRunUsage_billable>(WorkflowRunUsage_billable.CreateFromDiscriminatorValue); } },
+                { "run_duration_ms", n => { RunDurationMs = n.GetIntValue(); } },
             };
         }
         /// <summary>

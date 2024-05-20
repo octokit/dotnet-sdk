@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Starred {
+namespace GitHub.Users.Item.Starred
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\starred
     /// </summary>
-    public class StarredRequestBuilder : BaseRequestBuilder 
+    public class StarredRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="StarredRequestBuilder"/> and sets the default values.
@@ -79,7 +80,7 @@ namespace GitHub.Users.Item.Starred {
         /// <summary>
         /// Composed type wrapper for classes List&lt;Repository&gt;, List&lt;StarredRepository&gt;
         /// </summary>
-        public class StarredGetResponse : IComposedTypeWrapper, IParsable 
+        public class StarredGetResponse : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type List&lt;GitHub.Users.Item.Starred.Repository&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

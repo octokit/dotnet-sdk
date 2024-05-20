@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Rulesets.RuleSuites.Item {
+namespace GitHub.Orgs.Item.Rulesets.RuleSuites.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\rulesets\rule-suites\{rule_suite_id}
     /// </summary>
-    public class WithRule_suite_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithRule_suite_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithRule_suite_ItemRequestBuilder"/> and sets the default values.
@@ -51,8 +52,8 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<RuleSuite>(requestInfo, RuleSuite.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

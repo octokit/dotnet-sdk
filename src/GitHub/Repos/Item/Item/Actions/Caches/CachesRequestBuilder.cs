@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Caches {
+namespace GitHub.Repos.Item.Item.Actions.Caches
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\caches
     /// </summary>
-    public class CachesRequestBuilder : BaseRequestBuilder 
+    public class CachesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.caches.item collection</summary>
         /// <param name="position">The unique identifier of the GitHub Actions cache.</param>

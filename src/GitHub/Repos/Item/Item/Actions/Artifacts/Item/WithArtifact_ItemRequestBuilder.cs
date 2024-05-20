@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Artifacts.Item {
+namespace GitHub.Repos.Item.Item.Actions.Artifacts.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\artifacts\{artifact_id}
     /// </summary>
-    public class WithArtifact_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithArtifact_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.artifacts.item.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

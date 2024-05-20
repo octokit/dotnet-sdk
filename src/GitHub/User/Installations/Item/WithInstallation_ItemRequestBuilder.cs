@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.User.Installations.Item {
+namespace GitHub.User.Installations.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\installations\{installation_id}
     /// </summary>
-    public class WithInstallation_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithInstallation_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The repositories property</summary>
         public RepositoriesRequestBuilder Repositories

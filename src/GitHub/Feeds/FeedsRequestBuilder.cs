@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Feeds {
+namespace GitHub.Feeds
+{
     /// <summary>
     /// Builds and executes requests for operations under \feeds
     /// </summary>
-    public class FeedsRequestBuilder : BaseRequestBuilder 
+    public class FeedsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="FeedsRequestBuilder"/> and sets the default values.

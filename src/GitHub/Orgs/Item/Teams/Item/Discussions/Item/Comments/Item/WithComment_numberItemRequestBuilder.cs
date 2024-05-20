@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments.Item {
+namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\discussions\{discussion_number}\comments\{comment_number}
     /// </summary>
-    public class WithComment_numberItemRequestBuilder : BaseRequestBuilder 
+    public class WithComment_numberItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The reactions property</summary>
         public ReactionsRequestBuilder Reactions

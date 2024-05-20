@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item {
+namespace GitHub.Repos.Item.Item
+{
     /// <summary>
     /// Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see &quot;[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning).&quot;
     /// </summary>
-    public class RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection : IAdditionalDataHolder, IParsable 
+    public class RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -45,7 +46,7 @@ namespace GitHub.Repos.Item.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

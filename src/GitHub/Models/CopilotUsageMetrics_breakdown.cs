@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Breakdown of Copilot usage by editor for this language
     /// </summary>
-    public class CopilotUsageMetrics_breakdown : IAdditionalDataHolder, IParsable 
+    public class CopilotUsageMetrics_breakdown : IAdditionalDataHolder, IParsable
     {
         /// <summary>The number of Copilot suggestions accepted by users in the editor specified during the day specified.</summary>
         public int? AcceptancesCount { get; set; }
@@ -63,13 +64,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"acceptances_count", n => { AcceptancesCount = n.GetIntValue(); } },
-                {"active_users", n => { ActiveUsers = n.GetIntValue(); } },
-                {"editor", n => { Editor = n.GetStringValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
-                {"lines_accepted", n => { LinesAccepted = n.GetIntValue(); } },
-                {"lines_suggested", n => { LinesSuggested = n.GetIntValue(); } },
-                {"suggestions_count", n => { SuggestionsCount = n.GetIntValue(); } },
+                { "acceptances_count", n => { AcceptancesCount = n.GetIntValue(); } },
+                { "active_users", n => { ActiveUsers = n.GetIntValue(); } },
+                { "editor", n => { Editor = n.GetStringValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "lines_accepted", n => { LinesAccepted = n.GetIntValue(); } },
+                { "lines_suggested", n => { LinesSuggested = n.GetIntValue(); } },
+                { "suggestions_count", n => { SuggestionsCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

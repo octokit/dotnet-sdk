@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Enable or disable Dependabot security updates for the repository.
     /// </summary>
-    public class SecurityAndAnalysis_dependabot_security_updates : IAdditionalDataHolder, IParsable 
+    public class SecurityAndAnalysis_dependabot_security_updates : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -39,7 +40,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"status", n => { Status = n.GetEnumValue<SecurityAndAnalysis_dependabot_security_updates_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<SecurityAndAnalysis_dependabot_security_updates_status>(); } },
             };
         }
         /// <summary>

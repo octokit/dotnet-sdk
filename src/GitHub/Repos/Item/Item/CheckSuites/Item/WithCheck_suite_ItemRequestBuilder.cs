@@ -10,11 +10,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckSuites.Item {
+namespace GitHub.Repos.Item.Item.CheckSuites.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-suites\{check_suite_id}
     /// </summary>
-    public class WithCheck_suite_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithCheck_suite_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The checkRuns property</summary>
         public CheckRunsRequestBuilder CheckRuns

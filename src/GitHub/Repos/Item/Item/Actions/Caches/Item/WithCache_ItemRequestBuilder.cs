@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Caches.Item {
+namespace GitHub.Repos.Item.Item.Actions.Caches.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\caches\{cache_id}
     /// </summary>
-    public class WithCache_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithCache_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithCache_ItemRequestBuilder"/> and sets the default values.

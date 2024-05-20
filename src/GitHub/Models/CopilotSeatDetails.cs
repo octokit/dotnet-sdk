@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Information about a Copilot Business seat assignment for a user, team, or organization.
     /// </summary>
-    public class CopilotSeatDetails : IParsable 
+    public class CopilotSeatDetails : IParsable
     {
         /// <summary>The assignee that has been granted access to GitHub Copilot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,13 +62,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignee", n => { Assignee = n.GetObjectValue<CopilotSeatDetails_assignee>(CopilotSeatDetails_assignee.CreateFromDiscriminatorValue); } },
-                {"assigning_team", n => { AssigningTeam = n.GetObjectValue<Team>(Team.CreateFromDiscriminatorValue); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"last_activity_at", n => { LastActivityAt = n.GetDateTimeOffsetValue(); } },
-                {"last_activity_editor", n => { LastActivityEditor = n.GetStringValue(); } },
-                {"pending_cancellation_date", n => { PendingCancellationDate = n.GetDateValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "assignee", n => { Assignee = n.GetObjectValue<CopilotSeatDetails_assignee>(CopilotSeatDetails_assignee.CreateFromDiscriminatorValue); } },
+                { "assigning_team", n => { AssigningTeam = n.GetObjectValue<Team>(Team.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "last_activity_at", n => { LastActivityAt = n.GetDateTimeOffsetValue(); } },
+                { "last_activity_editor", n => { LastActivityEditor = n.GetStringValue(); } },
+                { "pending_cancellation_date", n => { PendingCancellationDate = n.GetDateValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -88,7 +89,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Composed type wrapper for classes <see cref="Organization"/>, <see cref="SimpleUser"/>, <see cref="Team"/>
         /// </summary>
-        public class CopilotSeatDetails_assignee : IComposedTypeWrapper, IParsable 
+        public class CopilotSeatDetails_assignee : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.Organization"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Codespaces.Item.Exports.Item {
+namespace GitHub.User.Codespaces.Item.Exports.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\codespaces\{codespace_name}\exports\{export_id}
     /// </summary>
-    public class WithExport_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithExport_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithExport_ItemRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.User.Codespaces.Item.Exports.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CodespaceExportDetails>(requestInfo, CodespaceExportDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

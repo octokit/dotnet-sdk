@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A CWE weakness assigned to the advisory.
     /// </summary>
-    public class DependabotAlertSecurityAdvisory_cwes : IParsable 
+    public class DependabotAlertSecurityAdvisory_cwes : IParsable
     {
         /// <summary>The unique CWE ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,8 +45,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cwe_id", n => { CweId = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "cwe_id", n => { CweId = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

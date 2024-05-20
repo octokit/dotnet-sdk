@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item.Repos.Item.Item {
+namespace GitHub.Orgs.Item.Teams.Item.Repos.Item.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\repos\{owner}\{repo}
     /// </summary>
-    public class WithRepoItemRequestBuilder : BaseRequestBuilder 
+    public class WithRepoItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithRepoItemRequestBuilder"/> and sets the default values.

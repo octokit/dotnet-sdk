@@ -11,11 +11,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Actions {
+namespace GitHub.Orgs.Item.Actions
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions
     /// </summary>
-    public class ActionsRequestBuilder : BaseRequestBuilder 
+    public class ActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cache property</summary>
         public CacheRequestBuilder Cache

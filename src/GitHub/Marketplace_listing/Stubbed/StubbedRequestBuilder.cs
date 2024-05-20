@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Marketplace_listing.Stubbed {
+namespace GitHub.Marketplace_listing.Stubbed
+{
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\stubbed
     /// </summary>
-    public class StubbedRequestBuilder : BaseRequestBuilder 
+    public class StubbedRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The accounts property</summary>
         public AccountsRequestBuilder Accounts

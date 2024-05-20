@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.SecretScanning {
+namespace GitHub.Orgs.Item.SecretScanning
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\secret-scanning
     /// </summary>
-    public class SecretScanningRequestBuilder : BaseRequestBuilder 
+    public class SecretScanningRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The alerts property</summary>
         public AlertsRequestBuilder Alerts

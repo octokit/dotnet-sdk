@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.CheckRuns {
+namespace GitHub.Repos.Item.Item.CheckRuns
+{
     #pragma warning disable CS1591
-    public class CheckRunsPostRequestBodyMember2 : IAdditionalDataHolder, IParsable 
+    public class CheckRunsPostRequestBodyMember2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,7 +39,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"status", n => { Status = n.GetEnumValue<CheckRunsPostRequestBodyMember2_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<CheckRunsPostRequestBodyMember2_status>(); } },
             };
         }
         /// <summary>

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pages {
+namespace GitHub.Repos.Item.Item.Pages
+{
     /// <summary>
     /// Update the source for the repository. Must include the branch name and path.
     /// </summary>
-    public class PagesPutRequestBody_sourceMember1 : IAdditionalDataHolder, IParsable 
+    public class PagesPutRequestBody_sourceMember1 : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -47,8 +48,8 @@ namespace GitHub.Repos.Item.Item.Pages {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"branch", n => { Branch = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetEnumValue<PagesPutRequestBody_sourceMember1_path>(); } },
+                { "branch", n => { Branch = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetEnumValue<PagesPutRequestBody_sourceMember1_path>(); } },
             };
         }
         /// <summary>

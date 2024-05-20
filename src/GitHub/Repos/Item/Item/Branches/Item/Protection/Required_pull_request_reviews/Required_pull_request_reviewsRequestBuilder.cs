@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_reviews {
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_reviews
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\required_pull_request_reviews
     /// </summary>
-    public class Required_pull_request_reviewsRequestBuilder : BaseRequestBuilder 
+    public class Required_pull_request_reviewsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="Required_pull_request_reviewsRequestBuilder"/> and sets the default values.
@@ -49,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -94,7 +95,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<ProtectedBranchPullRequestReview>(requestInfo, ProtectedBranchPullRequestReview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

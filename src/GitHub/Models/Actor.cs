@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Actor
     /// </summary>
-    public class Actor : IAdditionalDataHolder, IParsable 
+    public class Actor : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -79,12 +80,12 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                {"display_login", n => { DisplayLogin = n.GetStringValue(); } },
-                {"gravatar_id", n => { GravatarId = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"login", n => { Login = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
+                { "display_login", n => { DisplayLogin = n.GetStringValue(); } },
+                { "gravatar_id", n => { GravatarId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "login", n => { Login = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

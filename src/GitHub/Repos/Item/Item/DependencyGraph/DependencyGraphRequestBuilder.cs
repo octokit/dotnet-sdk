@@ -8,11 +8,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.DependencyGraph {
+namespace GitHub.Repos.Item.Item.DependencyGraph
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph
     /// </summary>
-    public class DependencyGraphRequestBuilder : BaseRequestBuilder 
+    public class DependencyGraphRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The compare property</summary>
         public CompareRequestBuilder Compare

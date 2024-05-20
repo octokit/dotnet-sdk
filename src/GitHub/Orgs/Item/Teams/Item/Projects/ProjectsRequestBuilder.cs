@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item.Projects {
+namespace GitHub.Orgs.Item.Teams.Item.Projects
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\projects
     /// </summary>
-    public class ProjectsRequestBuilder : BaseRequestBuilder 
+    public class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.teams.item.projects.item collection</summary>
         /// <param name="position">The unique identifier of the project.</param>

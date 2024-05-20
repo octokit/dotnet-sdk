@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Gists.Item {
+namespace GitHub.Gists.Item
+{
     #pragma warning disable CS1591
-    public class WithGist_PatchRequestBody : IAdditionalDataHolder, IParsable 
+    public class WithGist_PatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -52,8 +53,8 @@ namespace GitHub.Gists.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"files", n => { Files = n.GetObjectValue<WithGist_PatchRequestBody_files>(WithGist_PatchRequestBody_files.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "files", n => { Files = n.GetObjectValue<WithGist_PatchRequestBody_files>(WithGist_PatchRequestBody_files.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

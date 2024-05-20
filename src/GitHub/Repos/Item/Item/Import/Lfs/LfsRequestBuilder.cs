@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Import.Lfs {
+namespace GitHub.Repos.Item.Item.Import.Lfs
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\import\lfs
     /// </summary>
-    public class LfsRequestBuilder : BaseRequestBuilder 
+    public class LfsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="LfsRequestBuilder"/> and sets the default values.
@@ -54,8 +55,8 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"503", BasicError.CreateFromDiscriminatorValue},
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "503", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GitHub.Models.Import>(requestInfo, GitHub.Models.Import.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

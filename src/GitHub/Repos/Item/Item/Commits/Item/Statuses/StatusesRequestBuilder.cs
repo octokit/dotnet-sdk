@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Commits.Item.Statuses {
+namespace GitHub.Repos.Item.Item.Commits.Item.Statuses
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\commits\{commit_sha-id}\statuses
     /// </summary>
-    public class StatusesRequestBuilder : BaseRequestBuilder 
+    public class StatusesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="StatusesRequestBuilder"/> and sets the default values.

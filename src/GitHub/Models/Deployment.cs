@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A request for a specific ref(branch,sha,tag) to be deployed
     /// </summary>
-    public class Deployment : IAdditionalDataHolder, IParsable 
+    public class Deployment : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -151,24 +152,24 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"environment", n => { Environment = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"original_environment", n => { OriginalEnvironment = n.GetStringValue(); } },
-                {"payload", n => { Payload = n.GetStringValue(); } },
-                {"performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
-                {"production_environment", n => { ProductionEnvironment = n.GetBoolValue(); } },
-                {"ref", n => { Ref = n.GetStringValue(); } },
-                {"repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
-                {"sha", n => { Sha = n.GetStringValue(); } },
-                {"statuses_url", n => { StatusesUrl = n.GetStringValue(); } },
-                {"task", n => { Task = n.GetStringValue(); } },
-                {"transient_environment", n => { TransientEnvironment = n.GetBoolValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "original_environment", n => { OriginalEnvironment = n.GetStringValue(); } },
+                { "payload", n => { Payload = n.GetStringValue(); } },
+                { "performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
+                { "production_environment", n => { ProductionEnvironment = n.GetBoolValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
+                { "repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
+                { "statuses_url", n => { StatusesUrl = n.GetStringValue(); } },
+                { "task", n => { Task = n.GetStringValue(); } },
+                { "transient_environment", n => { TransientEnvironment = n.GetBoolValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

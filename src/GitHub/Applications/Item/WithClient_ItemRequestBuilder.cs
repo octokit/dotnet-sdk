@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Applications.Item {
+namespace GitHub.Applications.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \applications\{client_id}
     /// </summary>
-    public class WithClient_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithClient_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The grant property</summary>
         public GrantRequestBuilder Grant

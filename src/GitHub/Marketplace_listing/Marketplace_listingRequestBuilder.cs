@@ -8,11 +8,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Marketplace_listing {
+namespace GitHub.Marketplace_listing
+{
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing
     /// </summary>
-    public class Marketplace_listingRequestBuilder : BaseRequestBuilder 
+    public class Marketplace_listingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The accounts property</summary>
         public AccountsRequestBuilder Accounts

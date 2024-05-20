@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
+namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph\snapshots
     /// </summary>
-    public class SnapshotsRequestBuilder : BaseRequestBuilder 
+    public class SnapshotsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="SnapshotsRequestBuilder"/> and sets the default values.

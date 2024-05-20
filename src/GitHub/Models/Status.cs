@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// The status of a commit.
     /// </summary>
-    public class Status : IAdditionalDataHolder, IParsable 
+    public class Status : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -119,17 +120,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                {"context", n => { Context = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
-                {"creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
-                {"target_url", n => { TargetUrl = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
+                { "context", n => { Context = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "target_url", n => { TargetUrl = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

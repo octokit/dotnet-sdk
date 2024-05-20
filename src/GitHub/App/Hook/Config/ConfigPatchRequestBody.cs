@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.App.Hook.Config {
+namespace GitHub.App.Hook.Config
+{
     #pragma warning disable CS1591
-    public class ConfigPatchRequestBody : IAdditionalDataHolder, IParsable 
+    public class ConfigPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -69,10 +70,10 @@ namespace GitHub.App.Hook.Config {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"content_type", n => { ContentType = n.GetStringValue(); } },
-                {"insecure_ssl", n => { InsecureSsl = n.GetObjectValue<WebhookConfigInsecureSsl>(WebhookConfigInsecureSsl.CreateFromDiscriminatorValue); } },
-                {"secret", n => { Secret = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "content_type", n => { ContentType = n.GetStringValue(); } },
+                { "insecure_ssl", n => { InsecureSsl = n.GetObjectValue<WebhookConfigInsecureSsl>(WebhookConfigInsecureSsl.CreateFromDiscriminatorValue); } },
+                { "secret", n => { Secret = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

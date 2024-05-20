@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Licenses.Item {
+namespace GitHub.Licenses.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \licenses\{license}
     /// </summary>
-    public class WithLicenseItemRequestBuilder : BaseRequestBuilder 
+    public class WithLicenseItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithLicenseItemRequestBuilder"/> and sets the default values.
@@ -51,8 +52,8 @@ namespace GitHub.Licenses.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GitHub.Models.License>(requestInfo, GitHub.Models.License.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

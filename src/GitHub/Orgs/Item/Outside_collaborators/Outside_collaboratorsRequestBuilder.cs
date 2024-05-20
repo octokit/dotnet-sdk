@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Outside_collaborators {
+namespace GitHub.Orgs.Item.Outside_collaborators
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\outside_collaborators
     /// </summary>
-    public class Outside_collaboratorsRequestBuilder : BaseRequestBuilder 
+    public class Outside_collaboratorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.outside_collaborators.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>

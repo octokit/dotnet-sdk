@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class GitCommit_verification : IAdditionalDataHolder, IParsable 
+    public class GitCommit_verification : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -62,10 +63,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"payload", n => { Payload = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"signature", n => { Signature = n.GetStringValue(); } },
-                {"verified", n => { Verified = n.GetBoolValue(); } },
+                { "payload", n => { Payload = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
+                { "verified", n => { Verified = n.GetBoolValue(); } },
             };
         }
         /// <summary>

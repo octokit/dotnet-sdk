@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckRuns {
+namespace GitHub.Repos.Item.Item.CheckRuns
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-runs
     /// </summary>
-    public class CheckRunsRequestBuilder : BaseRequestBuilder 
+    public class CheckRunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.checkRuns.item collection</summary>
         /// <param name="position">The unique identifier of the check run.</param>
@@ -98,7 +99,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns {
         /// <summary>
         /// Composed type wrapper for classes <see cref="CheckRunsPostRequestBodyMember1"/>, <see cref="CheckRunsPostRequestBodyMember2"/>
         /// </summary>
-        public class CheckRunsPostRequestBody : IComposedTypeWrapper, IParsable 
+        public class CheckRunsPostRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.CheckRuns.CheckRunsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

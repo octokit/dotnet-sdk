@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Branch protections protect branches
     /// </summary>
-    public class ProtectedBranch : IAdditionalDataHolder, IParsable 
+    public class ProtectedBranch : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -141,19 +142,19 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allow_deletions", n => { AllowDeletions = n.GetObjectValue<ProtectedBranch_allow_deletions>(ProtectedBranch_allow_deletions.CreateFromDiscriminatorValue); } },
-                {"allow_force_pushes", n => { AllowForcePushes = n.GetObjectValue<ProtectedBranch_allow_force_pushes>(ProtectedBranch_allow_force_pushes.CreateFromDiscriminatorValue); } },
-                {"allow_fork_syncing", n => { AllowForkSyncing = n.GetObjectValue<ProtectedBranch_allow_fork_syncing>(ProtectedBranch_allow_fork_syncing.CreateFromDiscriminatorValue); } },
-                {"block_creations", n => { BlockCreations = n.GetObjectValue<ProtectedBranch_block_creations>(ProtectedBranch_block_creations.CreateFromDiscriminatorValue); } },
-                {"enforce_admins", n => { EnforceAdmins = n.GetObjectValue<ProtectedBranch_enforce_admins>(ProtectedBranch_enforce_admins.CreateFromDiscriminatorValue); } },
-                {"lock_branch", n => { LockBranch = n.GetObjectValue<ProtectedBranch_lock_branch>(ProtectedBranch_lock_branch.CreateFromDiscriminatorValue); } },
-                {"required_conversation_resolution", n => { RequiredConversationResolution = n.GetObjectValue<ProtectedBranch_required_conversation_resolution>(ProtectedBranch_required_conversation_resolution.CreateFromDiscriminatorValue); } },
-                {"required_linear_history", n => { RequiredLinearHistory = n.GetObjectValue<ProtectedBranch_required_linear_history>(ProtectedBranch_required_linear_history.CreateFromDiscriminatorValue); } },
-                {"required_pull_request_reviews", n => { RequiredPullRequestReviews = n.GetObjectValue<ProtectedBranch_required_pull_request_reviews>(ProtectedBranch_required_pull_request_reviews.CreateFromDiscriminatorValue); } },
-                {"required_signatures", n => { RequiredSignatures = n.GetObjectValue<ProtectedBranch_required_signatures>(ProtectedBranch_required_signatures.CreateFromDiscriminatorValue); } },
-                {"required_status_checks", n => { RequiredStatusChecks = n.GetObjectValue<StatusCheckPolicy>(StatusCheckPolicy.CreateFromDiscriminatorValue); } },
-                {"restrictions", n => { Restrictions = n.GetObjectValue<BranchRestrictionPolicy>(BranchRestrictionPolicy.CreateFromDiscriminatorValue); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "allow_deletions", n => { AllowDeletions = n.GetObjectValue<ProtectedBranch_allow_deletions>(ProtectedBranch_allow_deletions.CreateFromDiscriminatorValue); } },
+                { "allow_force_pushes", n => { AllowForcePushes = n.GetObjectValue<ProtectedBranch_allow_force_pushes>(ProtectedBranch_allow_force_pushes.CreateFromDiscriminatorValue); } },
+                { "allow_fork_syncing", n => { AllowForkSyncing = n.GetObjectValue<ProtectedBranch_allow_fork_syncing>(ProtectedBranch_allow_fork_syncing.CreateFromDiscriminatorValue); } },
+                { "block_creations", n => { BlockCreations = n.GetObjectValue<ProtectedBranch_block_creations>(ProtectedBranch_block_creations.CreateFromDiscriminatorValue); } },
+                { "enforce_admins", n => { EnforceAdmins = n.GetObjectValue<ProtectedBranch_enforce_admins>(ProtectedBranch_enforce_admins.CreateFromDiscriminatorValue); } },
+                { "lock_branch", n => { LockBranch = n.GetObjectValue<ProtectedBranch_lock_branch>(ProtectedBranch_lock_branch.CreateFromDiscriminatorValue); } },
+                { "required_conversation_resolution", n => { RequiredConversationResolution = n.GetObjectValue<ProtectedBranch_required_conversation_resolution>(ProtectedBranch_required_conversation_resolution.CreateFromDiscriminatorValue); } },
+                { "required_linear_history", n => { RequiredLinearHistory = n.GetObjectValue<ProtectedBranch_required_linear_history>(ProtectedBranch_required_linear_history.CreateFromDiscriminatorValue); } },
+                { "required_pull_request_reviews", n => { RequiredPullRequestReviews = n.GetObjectValue<ProtectedBranch_required_pull_request_reviews>(ProtectedBranch_required_pull_request_reviews.CreateFromDiscriminatorValue); } },
+                { "required_signatures", n => { RequiredSignatures = n.GetObjectValue<ProtectedBranch_required_signatures>(ProtectedBranch_required_signatures.CreateFromDiscriminatorValue); } },
+                { "required_status_checks", n => { RequiredStatusChecks = n.GetObjectValue<StatusCheckPolicy>(StatusCheckPolicy.CreateFromDiscriminatorValue); } },
+                { "restrictions", n => { Restrictions = n.GetObjectValue<BranchRestrictionPolicy>(BranchRestrictionPolicy.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

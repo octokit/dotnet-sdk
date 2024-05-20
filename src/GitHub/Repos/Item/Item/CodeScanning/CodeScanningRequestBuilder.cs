@@ -10,11 +10,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning {
+namespace GitHub.Repos.Item.Item.CodeScanning
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning
     /// </summary>
-    public class CodeScanningRequestBuilder : BaseRequestBuilder 
+    public class CodeScanningRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The alerts property</summary>
         public AlertsRequestBuilder Alerts

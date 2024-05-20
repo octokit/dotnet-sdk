@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A description of the machine powering a codespace.
     /// </summary>
-    public class CodespaceMachine : IAdditionalDataHolder, IParsable 
+    public class CodespaceMachine : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -69,13 +70,13 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cpus", n => { Cpus = n.GetIntValue(); } },
-                {"display_name", n => { DisplayName = n.GetStringValue(); } },
-                {"memory_in_bytes", n => { MemoryInBytes = n.GetIntValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"operating_system", n => { OperatingSystem = n.GetStringValue(); } },
-                {"prebuild_availability", n => { PrebuildAvailability = n.GetEnumValue<CodespaceMachine_prebuild_availability>(); } },
-                {"storage_in_bytes", n => { StorageInBytes = n.GetIntValue(); } },
+                { "cpus", n => { Cpus = n.GetIntValue(); } },
+                { "display_name", n => { DisplayName = n.GetStringValue(); } },
+                { "memory_in_bytes", n => { MemoryInBytes = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "operating_system", n => { OperatingSystem = n.GetStringValue(); } },
+                { "prebuild_availability", n => { PrebuildAvailability = n.GetEnumValue<CodespaceMachine_prebuild_availability>(); } },
+                { "storage_in_bytes", n => { StorageInBytes = n.GetIntValue(); } },
             };
         }
         /// <summary>

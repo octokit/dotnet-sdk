@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Settings.Billing.Actions {
+namespace GitHub.Orgs.Item.Settings.Billing.Actions
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\settings\billing\actions
     /// </summary>
-    public class ActionsRequestBuilder : BaseRequestBuilder 
+    public class ActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ActionsRequestBuilder"/> and sets the default values.

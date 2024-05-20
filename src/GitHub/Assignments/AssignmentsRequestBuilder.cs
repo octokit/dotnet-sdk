@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Assignments {
+namespace GitHub.Assignments
+{
     /// <summary>
     /// Builds and executes requests for operations under \assignments
     /// </summary>
-    public class AssignmentsRequestBuilder : BaseRequestBuilder 
+    public class AssignmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.assignments.item collection</summary>
         /// <param name="position">The unique identifier of the classroom assignment.</param>

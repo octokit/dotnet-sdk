@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Jobs {
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Jobs
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\jobs
     /// </summary>
-    public class JobsRequestBuilder : BaseRequestBuilder 
+    public class JobsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="JobsRequestBuilder"/> and sets the default values.

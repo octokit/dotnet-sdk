@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A codespace.
     /// </summary>
-    public class Codespace : IAdditionalDataHolder, IParsable 
+    public class Codespace : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -227,38 +228,38 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"billable_owner", n => { BillableOwner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"devcontainer_path", n => { DevcontainerPath = n.GetStringValue(); } },
-                {"display_name", n => { DisplayName = n.GetStringValue(); } },
-                {"environment_id", n => { EnvironmentId = n.GetStringValue(); } },
-                {"git_status", n => { GitStatus = n.GetObjectValue<Codespace_git_status>(Codespace_git_status.CreateFromDiscriminatorValue); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"idle_timeout_minutes", n => { IdleTimeoutMinutes = n.GetIntValue(); } },
-                {"idle_timeout_notice", n => { IdleTimeoutNotice = n.GetStringValue(); } },
-                {"last_known_stop_notice", n => { LastKnownStopNotice = n.GetStringValue(); } },
-                {"last_used_at", n => { LastUsedAt = n.GetDateTimeOffsetValue(); } },
-                {"location", n => { Location = n.GetEnumValue<Codespace_location>(); } },
-                {"machine", n => { Machine = n.GetObjectValue<NullableCodespaceMachine>(NullableCodespaceMachine.CreateFromDiscriminatorValue); } },
-                {"machines_url", n => { MachinesUrl = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"owner", n => { Owner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"pending_operation", n => { PendingOperation = n.GetBoolValue(); } },
-                {"pending_operation_disabled_reason", n => { PendingOperationDisabledReason = n.GetStringValue(); } },
-                {"prebuild", n => { Prebuild = n.GetBoolValue(); } },
-                {"publish_url", n => { PublishUrl = n.GetStringValue(); } },
-                {"pulls_url", n => { PullsUrl = n.GetStringValue(); } },
-                {"recent_folders", n => { RecentFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
-                {"retention_expires_at", n => { RetentionExpiresAt = n.GetDateTimeOffsetValue(); } },
-                {"retention_period_minutes", n => { RetentionPeriodMinutes = n.GetIntValue(); } },
-                {"runtime_constraints", n => { RuntimeConstraints = n.GetObjectValue<Codespace_runtime_constraints>(Codespace_runtime_constraints.CreateFromDiscriminatorValue); } },
-                {"start_url", n => { StartUrl = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<Codespace_state>(); } },
-                {"stop_url", n => { StopUrl = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"web_url", n => { WebUrl = n.GetStringValue(); } },
+                { "billable_owner", n => { BillableOwner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "devcontainer_path", n => { DevcontainerPath = n.GetStringValue(); } },
+                { "display_name", n => { DisplayName = n.GetStringValue(); } },
+                { "environment_id", n => { EnvironmentId = n.GetStringValue(); } },
+                { "git_status", n => { GitStatus = n.GetObjectValue<Codespace_git_status>(Codespace_git_status.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "idle_timeout_minutes", n => { IdleTimeoutMinutes = n.GetIntValue(); } },
+                { "idle_timeout_notice", n => { IdleTimeoutNotice = n.GetStringValue(); } },
+                { "last_known_stop_notice", n => { LastKnownStopNotice = n.GetStringValue(); } },
+                { "last_used_at", n => { LastUsedAt = n.GetDateTimeOffsetValue(); } },
+                { "location", n => { Location = n.GetEnumValue<Codespace_location>(); } },
+                { "machine", n => { Machine = n.GetObjectValue<NullableCodespaceMachine>(NullableCodespaceMachine.CreateFromDiscriminatorValue); } },
+                { "machines_url", n => { MachinesUrl = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "pending_operation", n => { PendingOperation = n.GetBoolValue(); } },
+                { "pending_operation_disabled_reason", n => { PendingOperationDisabledReason = n.GetStringValue(); } },
+                { "prebuild", n => { Prebuild = n.GetBoolValue(); } },
+                { "publish_url", n => { PublishUrl = n.GetStringValue(); } },
+                { "pulls_url", n => { PullsUrl = n.GetStringValue(); } },
+                { "recent_folders", n => { RecentFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
+                { "retention_expires_at", n => { RetentionExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "retention_period_minutes", n => { RetentionPeriodMinutes = n.GetIntValue(); } },
+                { "runtime_constraints", n => { RuntimeConstraints = n.GetObjectValue<Codespace_runtime_constraints>(Codespace_runtime_constraints.CreateFromDiscriminatorValue); } },
+                { "start_url", n => { StartUrl = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<Codespace_state>(); } },
+                { "stop_url", n => { StopUrl = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "web_url", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Branch Short
     /// </summary>
-    public class BranchShort : IAdditionalDataHolder, IParsable 
+    public class BranchShort : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -55,9 +56,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"commit", n => { Commit = n.GetObjectValue<BranchShort_commit>(BranchShort_commit.CreateFromDiscriminatorValue); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"protected", n => { Protected = n.GetBoolValue(); } },
+                { "commit", n => { Commit = n.GetObjectValue<BranchShort_commit>(BranchShort_commit.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "protected", n => { Protected = n.GetBoolValue(); } },
             };
         }
         /// <summary>

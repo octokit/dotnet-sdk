@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Installations {
+namespace GitHub.Orgs.Item.Installations
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\installations
     /// </summary>
-    public class InstallationsRequestBuilder : BaseRequestBuilder 
+    public class InstallationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="InstallationsRequestBuilder"/> and sets the default values.

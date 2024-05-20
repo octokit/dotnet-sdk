@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class FileCommit_commit_author : IAdditionalDataHolder, IParsable 
+    public class FileCommit_commit_author : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -60,9 +61,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"date", n => { Date = n.GetStringValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "date", n => { Date = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

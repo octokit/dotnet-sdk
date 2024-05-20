@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Search.Commits {
+namespace GitHub.Search.Commits
+{
     /// <summary>
     /// Builds and executes requests for operations under \search\commits
     /// </summary>
-    public class CommitsRequestBuilder : BaseRequestBuilder 
+    public class CommitsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="CommitsRequestBuilder"/> and sets the default values.
