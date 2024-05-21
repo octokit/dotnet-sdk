@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments {
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments
+{
     #pragma warning disable CS1591
-    public class Pending_deploymentsPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class Pending_deploymentsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -54,9 +55,9 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"environment_ids", n => { EnvironmentIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
-                {"state", n => { State = n.GetEnumValue<Pending_deploymentsPostRequestBody_state>(); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "environment_ids", n => { EnvironmentIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<Pending_deploymentsPostRequestBody_state>(); } },
             };
         }
         /// <summary>

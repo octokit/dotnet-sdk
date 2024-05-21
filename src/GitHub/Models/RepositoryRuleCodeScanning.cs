@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated.
     /// </summary>
-    public class RepositoryRuleCodeScanning : IAdditionalDataHolder, IParsable 
+    public class RepositoryRuleCodeScanning : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -47,8 +48,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleCodeScanning_parameters>(RepositoryRuleCodeScanning_parameters.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<RepositoryRuleCodeScanning_type>(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleCodeScanning_parameters>(RepositoryRuleCodeScanning_parameters.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<RepositoryRuleCodeScanning_type>(); } },
             };
         }
         /// <summary>

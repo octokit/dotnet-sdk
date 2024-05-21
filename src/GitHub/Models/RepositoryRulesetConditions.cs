@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Parameters for a repository ruleset ref name condition
     /// </summary>
-    public class RepositoryRulesetConditions : IAdditionalDataHolder, IParsable 
+    public class RepositoryRulesetConditions : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -45,7 +46,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ref_name", n => { RefName = n.GetObjectValue<RepositoryRulesetConditions_ref_name>(RepositoryRulesetConditions_ref_name.CreateFromDiscriminatorValue); } },
+                { "ref_name", n => { RefName = n.GetObjectValue<RepositoryRulesetConditions_ref_name>(RepositoryRulesetConditions_ref_name.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

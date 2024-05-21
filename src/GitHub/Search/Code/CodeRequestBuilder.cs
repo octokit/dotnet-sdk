@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Search.Code {
+namespace GitHub.Search.Code
+{
     /// <summary>
     /// Builds and executes requests for operations under \search\code
     /// </summary>
-    public class CodeRequestBuilder : BaseRequestBuilder 
+    public class CodeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="CodeRequestBuilder"/> and sets the default values.
@@ -52,9 +53,9 @@ namespace GitHub.Search.Code {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"503", Code503Error.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "503", Code503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CodeGetResponse>(requestInfo, CodeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

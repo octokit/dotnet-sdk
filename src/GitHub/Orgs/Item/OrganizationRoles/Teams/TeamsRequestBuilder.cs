@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.OrganizationRoles.Teams {
+namespace GitHub.Orgs.Item.OrganizationRoles.Teams
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-roles\teams
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder 
+    public class TeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.organizationRoles.teams.item collection</summary>
         /// <param name="position">The slug of the team name.</param>

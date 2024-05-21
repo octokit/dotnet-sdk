@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Keys.Item {
+namespace GitHub.Repos.Item.Item.Keys.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\keys\{key_id}
     /// </summary>
-    public class WithKey_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithKey_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithKey_ItemRequestBuilder"/> and sets the default values.
@@ -68,7 +69,7 @@ namespace GitHub.Repos.Item.Item.Keys.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<DeployKey>(requestInfo, DeployKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

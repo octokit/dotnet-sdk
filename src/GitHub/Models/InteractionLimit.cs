@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Limit interactions to a specific type of user for a specified duration
     /// </summary>
-    public class InteractionLimit : IAdditionalDataHolder, IParsable 
+    public class InteractionLimit : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -41,8 +42,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expiry", n => { Expiry = n.GetEnumValue<InteractionExpiry>(); } },
-                {"limit", n => { Limit = n.GetEnumValue<InteractionGroup>(); } },
+                { "expiry", n => { Expiry = n.GetEnumValue<InteractionExpiry>(); } },
+                { "limit", n => { Limit = n.GetEnumValue<InteractionGroup>(); } },
             };
         }
         /// <summary>

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Gists.Item.Commits {
+namespace GitHub.Gists.Item.Commits
+{
     /// <summary>
     /// Builds and executes requests for operations under \gists\{gist_id}\commits
     /// </summary>
-    public class CommitsRequestBuilder : BaseRequestBuilder 
+    public class CommitsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="CommitsRequestBuilder"/> and sets the default values.
@@ -51,8 +52,8 @@ namespace GitHub.Gists.Item.Commits {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<GistCommit>(requestInfo, GistCommit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

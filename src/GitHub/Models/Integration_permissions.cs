@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// The set of permissions for the GitHub app
     /// </summary>
-    public class Integration_permissions : IAdditionalDataHolder, IParsable 
+    public class Integration_permissions : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -77,11 +78,11 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"checks", n => { Checks = n.GetStringValue(); } },
-                {"contents", n => { Contents = n.GetStringValue(); } },
-                {"deployments", n => { Deployments = n.GetStringValue(); } },
-                {"issues", n => { Issues = n.GetStringValue(); } },
-                {"metadata", n => { Metadata = n.GetStringValue(); } },
+                { "checks", n => { Checks = n.GetStringValue(); } },
+                { "contents", n => { Contents = n.GetStringValue(); } },
+                { "deployments", n => { Deployments = n.GetStringValue(); } },
+                { "issues", n => { Issues = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetStringValue(); } },
             };
         }
         /// <summary>

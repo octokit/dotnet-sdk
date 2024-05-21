@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Collaborators.Item.Permission {
+namespace GitHub.Repos.Item.Item.Collaborators.Item.Permission
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\collaborators\{username}\permission
     /// </summary>
-    public class PermissionRequestBuilder : BaseRequestBuilder 
+    public class PermissionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="PermissionRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.Repos.Item.Item.Collaborators.Item.Permission {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<RepositoryCollaboratorPermission>(requestInfo, RepositoryCollaboratorPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

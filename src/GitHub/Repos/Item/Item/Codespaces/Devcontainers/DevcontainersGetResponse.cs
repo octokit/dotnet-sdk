@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Codespaces.Devcontainers {
+namespace GitHub.Repos.Item.Item.Codespaces.Devcontainers
+{
     #pragma warning disable CS1591
-    public class DevcontainersGetResponse : IAdditionalDataHolder, IParsable 
+    public class DevcontainersGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -46,8 +47,8 @@ namespace GitHub.Repos.Item.Item.Codespaces.Devcontainers {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"devcontainers", n => { Devcontainers = n.GetCollectionOfObjectValues<DevcontainersGetResponse_devcontainers>(DevcontainersGetResponse_devcontainers.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "devcontainers", n => { Devcontainers = n.GetCollectionOfObjectValues<DevcontainersGetResponse_devcontainers>(DevcontainersGetResponse_devcontainers.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

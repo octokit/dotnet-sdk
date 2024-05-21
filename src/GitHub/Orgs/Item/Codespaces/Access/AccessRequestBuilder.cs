@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Codespaces.Access {
+namespace GitHub.Orgs.Item.Codespaces.Access
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\codespaces\access
     /// </summary>
-    public class AccessRequestBuilder : BaseRequestBuilder 
+    public class AccessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The selected_users property</summary>
         [Obsolete("")]
@@ -61,9 +62,9 @@ namespace GitHub.Orgs.Item.Codespaces.Access {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

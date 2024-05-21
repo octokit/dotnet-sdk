@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.Comments.Item.Replies {
+namespace GitHub.Repos.Item.Item.Pulls.Item.Comments.Item.Replies
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\{pull_number}\comments\{comment_id}\replies
     /// </summary>
-    public class RepliesRequestBuilder : BaseRequestBuilder 
+    public class RepliesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="RepliesRequestBuilder"/> and sets the default values.
@@ -52,7 +53,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Comments.Item.Replies {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<PullRequestReviewComment>(requestInfo, PullRequestReviewComment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

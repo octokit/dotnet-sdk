@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Teams.Item.Members {
+namespace GitHub.Teams.Item.Members
+{
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\members
     /// </summary>
-    public class MembersRequestBuilder : BaseRequestBuilder 
+    public class MembersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.teams.item.members.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
@@ -65,7 +66,7 @@ namespace GitHub.Teams.Item.Members {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

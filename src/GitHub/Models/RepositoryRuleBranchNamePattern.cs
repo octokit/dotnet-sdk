@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Parameters to be used for the branch_name_pattern rule
     /// </summary>
-    public class RepositoryRuleBranchNamePattern : IAdditionalDataHolder, IParsable 
+    public class RepositoryRuleBranchNamePattern : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -47,8 +48,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleBranchNamePattern_parameters>(RepositoryRuleBranchNamePattern_parameters.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetEnumValue<RepositoryRuleBranchNamePattern_type>(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleBranchNamePattern_parameters>(RepositoryRuleBranchNamePattern_parameters.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<RepositoryRuleBranchNamePattern_type>(); } },
             };
         }
         /// <summary>

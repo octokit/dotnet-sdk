@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Hovercard {
+namespace GitHub.Users.Item.Hovercard
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\hovercard
     /// </summary>
-    public class HovercardRequestBuilder : BaseRequestBuilder 
+    public class HovercardRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="HovercardRequestBuilder"/> and sets the default values.
@@ -51,8 +52,8 @@ namespace GitHub.Users.Item.Hovercard {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GitHub.Models.Hovercard>(requestInfo, GitHub.Models.Hovercard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

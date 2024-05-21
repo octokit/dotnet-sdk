@@ -10,11 +10,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Rulesets {
+namespace GitHub.Orgs.Item.Rulesets
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\rulesets
     /// </summary>
-    public class RulesetsRequestBuilder : BaseRequestBuilder 
+    public class RulesetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ruleSuites property</summary>
         public RuleSuitesRequestBuilder RuleSuites
@@ -70,8 +71,8 @@ namespace GitHub.Orgs.Item.Rulesets {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<RepositoryRuleset>(requestInfo, RepositoryRuleset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -99,8 +100,8 @@ namespace GitHub.Orgs.Item.Rulesets {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<RepositoryRuleset>(requestInfo, RepositoryRuleset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

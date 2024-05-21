@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Copilot.Usage {
+namespace GitHub.Orgs.Item.Copilot.Usage
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\copilot\usage
     /// </summary>
-    public class UsageRequestBuilder : BaseRequestBuilder 
+    public class UsageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="UsageRequestBuilder"/> and sets the default values.
@@ -53,10 +54,10 @@ namespace GitHub.Orgs.Item.Copilot.Usage {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<CopilotUsageMetrics>(requestInfo, CopilotUsageMetrics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

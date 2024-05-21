@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Following {
+namespace GitHub.User.Following
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\following
     /// </summary>
-    public class FollowingRequestBuilder : BaseRequestBuilder 
+    public class FollowingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.following.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
@@ -64,8 +65,8 @@ namespace GitHub.User.Following {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class RepositoryRulesetConditions_ref_name : IAdditionalDataHolder, IParsable 
+    public class RepositoryRulesetConditions_ref_name : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -52,8 +53,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"exclude", n => { Exclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"include", n => { Include = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "exclude", n => { Exclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "include", n => { Include = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

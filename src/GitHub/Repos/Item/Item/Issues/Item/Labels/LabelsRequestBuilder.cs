@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
+namespace GitHub.Repos.Item.Item.Issues.Item.Labels
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\{issue_number}\labels
     /// </summary>
-    public class LabelsRequestBuilder : BaseRequestBuilder 
+    public class LabelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.issues.item.labels.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -63,8 +64,8 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"410", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "410", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -89,8 +90,8 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"410", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "410", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Label>(requestInfo, Label.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -119,9 +120,9 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"410", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "410", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Label>(requestInfo, Label.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -150,9 +151,9 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"410", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "410", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Label>(requestInfo, Label.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -251,7 +252,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// Composed type wrapper for classes <see cref="LabelsPostRequestBodyMember1"/>, <see cref="LabelsPostRequestBodyMember2"/>, <see cref="string"/>, List&lt;LabelsPostRequestBodyMember3&gt;
         /// </summary>
-        public class LabelsPostRequestBody : IComposedTypeWrapper, IParsable 
+        public class LabelsPostRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -429,7 +430,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels {
         /// <summary>
         /// Composed type wrapper for classes <see cref="LabelsPutRequestBodyMember1"/>, <see cref="LabelsPutRequestBodyMember2"/>, <see cref="string"/>, List&lt;LabelsPutRequestBodyMember3&gt;
         /// </summary>
-        public class LabelsPutRequestBody : IComposedTypeWrapper, IParsable 
+        public class LabelsPutRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

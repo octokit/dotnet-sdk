@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Metadata for a Git tag
     /// </summary>
-    public class GitTag : IAdditionalDataHolder, IParsable 
+    public class GitTag : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -101,14 +102,14 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"object", n => { Object = n.GetObjectValue<GitTag_object>(GitTag_object.CreateFromDiscriminatorValue); } },
-                {"sha", n => { Sha = n.GetStringValue(); } },
-                {"tag", n => { Tag = n.GetStringValue(); } },
-                {"tagger", n => { Tagger = n.GetObjectValue<GitTag_tagger>(GitTag_tagger.CreateFromDiscriminatorValue); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"verification", n => { Verification = n.GetObjectValue<GitHub.Models.Verification>(GitHub.Models.Verification.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetObjectValue<GitTag_object>(GitTag_object.CreateFromDiscriminatorValue); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
+                { "tag", n => { Tag = n.GetStringValue(); } },
+                { "tagger", n => { Tagger = n.GetObjectValue<GitTag_tagger>(GitTag_tagger.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "verification", n => { Verification = n.GetObjectValue<GitHub.Models.Verification>(GitHub.Models.Verification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

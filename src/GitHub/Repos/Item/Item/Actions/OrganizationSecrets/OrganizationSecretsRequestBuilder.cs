@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.OrganizationSecrets {
+namespace GitHub.Repos.Item.Item.Actions.OrganizationSecrets
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\organization-secrets
     /// </summary>
-    public class OrganizationSecretsRequestBuilder : BaseRequestBuilder 
+    public class OrganizationSecretsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="OrganizationSecretsRequestBuilder"/> and sets the default values.

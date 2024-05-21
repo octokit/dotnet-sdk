@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Permission check result for a given devcontainer config.
     /// </summary>
-    public class CodespacesPermissionsCheckForDevcontainer : IAdditionalDataHolder, IParsable 
+    public class CodespacesPermissionsCheckForDevcontainer : IAdditionalDataHolder, IParsable
     {
         /// <summary>Whether the user has accepted the permissions defined by the devcontainer config</summary>
         public bool? Accepted { get; set; }
@@ -39,7 +40,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accepted", n => { Accepted = n.GetBoolValue(); } },
+                { "accepted", n => { Accepted = n.GetBoolValue(); } },
             };
         }
         /// <summary>

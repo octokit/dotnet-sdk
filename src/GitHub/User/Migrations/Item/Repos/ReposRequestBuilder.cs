@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.User.Migrations.Item.Repos {
+namespace GitHub.User.Migrations.Item.Repos
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\migrations\{migration_id}\repos
     /// </summary>
-    public class ReposRequestBuilder : BaseRequestBuilder 
+    public class ReposRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.migrations.item.repos.item collection</summary>
         /// <param name="position">repo_name parameter</param>

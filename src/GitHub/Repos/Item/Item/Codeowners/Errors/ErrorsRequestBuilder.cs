@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Codeowners.Errors {
+namespace GitHub.Repos.Item.Item.Codeowners.Errors
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codeowners\errors
     /// </summary>
-    public class ErrorsRequestBuilder : BaseRequestBuilder 
+    public class ErrorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ErrorsRequestBuilder"/> and sets the default values.

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Import.Authors.Item {
+namespace GitHub.Repos.Item.Item.Import.Authors.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\import\authors\{author_id}
     /// </summary>
-    public class WithAuthor_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithAuthor_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithAuthor_ItemRequestBuilder"/> and sets the default values.
@@ -55,9 +56,9 @@ namespace GitHub.Repos.Item.Item.Import.Authors.Item {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"503", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "503", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<PorterAuthor>(requestInfo, PorterAuthor.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.OrganizationRoles.Item.Teams {
+namespace GitHub.Orgs.Item.OrganizationRoles.Item.Teams
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-roles\{role_id}\teams
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder 
+    public class TeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
@@ -34,7 +35,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Item.Teams {
         /// Lists the teams that are assigned to an organization role. For more information on organization roles, see &quot;[Managing people&apos;s access to your organization with roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles).&quot;To use this endpoint, you must be an administrator for the organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/organization-roles#list-teams-that-are-assigned-to-an-organization-role" />
         /// </summary>
-        /// <returns>A List&lt;GitHub.Models.Team&gt;</returns>
+        /// <returns>A List&lt;Team&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

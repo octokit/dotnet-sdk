@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection
+{
     #pragma warning disable CS1591
-    public class ProtectionPutRequestBody_required_status_checks_checks : IAdditionalDataHolder, IParsable 
+    public class ProtectionPutRequestBody_required_status_checks_checks : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -46,8 +47,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"app_id", n => { AppId = n.GetIntValue(); } },
-                {"context", n => { Context = n.GetStringValue(); } },
+                { "app_id", n => { AppId = n.GetIntValue(); } },
+                { "context", n => { Context = n.GetStringValue(); } },
             };
         }
         /// <summary>

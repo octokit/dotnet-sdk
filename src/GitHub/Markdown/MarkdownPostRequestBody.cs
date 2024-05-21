@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Markdown {
+namespace GitHub.Markdown
+{
     #pragma warning disable CS1591
-    public class MarkdownPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class MarkdownPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -55,9 +56,9 @@ namespace GitHub.Markdown {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"context", n => { Context = n.GetStringValue(); } },
-                {"mode", n => { Mode = n.GetEnumValue<MarkdownPostRequestBody_mode>(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
+                { "context", n => { Context = n.GetStringValue(); } },
+                { "mode", n => { Mode = n.GetEnumValue<MarkdownPostRequestBody_mode>(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
             };
         }
         /// <summary>

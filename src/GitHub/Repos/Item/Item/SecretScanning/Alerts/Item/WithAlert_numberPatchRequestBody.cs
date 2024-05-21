@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item {
+namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item
+{
     #pragma warning disable CS1591
-    public class WithAlert_numberPatchRequestBody : IAdditionalDataHolder, IParsable 
+    public class WithAlert_numberPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,9 +50,9 @@ namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"resolution", n => { Resolution = n.GetEnumValue<SecretScanningAlertResolution>(); } },
-                {"resolution_comment", n => { ResolutionComment = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<SecretScanningAlertState>(); } },
+                { "resolution", n => { Resolution = n.GetEnumValue<SecretScanningAlertResolution>(); } },
+                { "resolution_comment", n => { ResolutionComment = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<SecretScanningAlertState>(); } },
             };
         }
         /// <summary>

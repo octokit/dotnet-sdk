@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Hooks {
+namespace GitHub.Repos.Item.Item.Hooks
+{
     #pragma warning disable CS1591
-    public class HooksPostRequestBody : IParsable 
+    public class HooksPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.</summary>
@@ -53,10 +54,10 @@ namespace GitHub.Repos.Item.Item.Hooks {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"active", n => { Active = n.GetBoolValue(); } },
-                {"config", n => { Config = n.GetObjectValue<HooksPostRequestBody_config>(HooksPostRequestBody_config.CreateFromDiscriminatorValue); } },
-                {"events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "active", n => { Active = n.GetBoolValue(); } },
+                { "config", n => { Config = n.GetObjectValue<HooksPostRequestBody_config>(HooksPostRequestBody_config.CreateFromDiscriminatorValue); } },
+                { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

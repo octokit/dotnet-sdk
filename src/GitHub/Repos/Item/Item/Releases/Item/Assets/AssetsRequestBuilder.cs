@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Item.Assets {
+namespace GitHub.Repos.Item.Item.Releases.Item.Assets
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\{release_id}\assets
     /// </summary>
-    public class AssetsRequestBuilder : BaseRequestBuilder 
+    public class AssetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="AssetsRequestBuilder"/> and sets the default values.

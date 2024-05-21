@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Issues.Events {
+namespace GitHub.Repos.Item.Item.Issues.Events
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\events
     /// </summary>
-    public class EventsRequestBuilder : BaseRequestBuilder 
+    public class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.issues.events.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -63,7 +64,7 @@ namespace GitHub.Repos.Item.Item.Issues.Events {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<IssueEvent>(requestInfo, IssueEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

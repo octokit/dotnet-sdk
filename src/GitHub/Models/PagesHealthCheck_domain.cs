@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class PagesHealthCheck_domain : IAdditionalDataHolder, IParsable 
+    public class PagesHealthCheck_domain : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -128,34 +129,34 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"caa_error", n => { CaaError = n.GetStringValue(); } },
-                {"dns_resolves", n => { DnsResolves = n.GetBoolValue(); } },
-                {"enforces_https", n => { EnforcesHttps = n.GetBoolValue(); } },
-                {"has_cname_record", n => { HasCnameRecord = n.GetBoolValue(); } },
-                {"has_mx_records_present", n => { HasMxRecordsPresent = n.GetBoolValue(); } },
-                {"host", n => { Host = n.GetStringValue(); } },
-                {"https_error", n => { HttpsError = n.GetStringValue(); } },
-                {"is_a_record", n => { IsARecord = n.GetBoolValue(); } },
-                {"is_apex_domain", n => { IsApexDomain = n.GetBoolValue(); } },
-                {"is_cloudflare_ip", n => { IsCloudflareIp = n.GetBoolValue(); } },
-                {"is_cname_to_fastly", n => { IsCnameToFastly = n.GetBoolValue(); } },
-                {"is_cname_to_github_user_domain", n => { IsCnameToGithubUserDomain = n.GetBoolValue(); } },
-                {"is_cname_to_pages_dot_github_dot_com", n => { IsCnameToPagesDotGithubDotCom = n.GetBoolValue(); } },
-                {"is_fastly_ip", n => { IsFastlyIp = n.GetBoolValue(); } },
-                {"is_https_eligible", n => { IsHttpsEligible = n.GetBoolValue(); } },
-                {"is_non_github_pages_ip_present", n => { IsNonGithubPagesIpPresent = n.GetBoolValue(); } },
-                {"is_old_ip_address", n => { IsOldIpAddress = n.GetBoolValue(); } },
-                {"is_pages_domain", n => { IsPagesDomain = n.GetBoolValue(); } },
-                {"is_pointed_to_github_pages_ip", n => { IsPointedToGithubPagesIp = n.GetBoolValue(); } },
-                {"is_proxied", n => { IsProxied = n.GetBoolValue(); } },
-                {"is_served_by_pages", n => { IsServedByPages = n.GetBoolValue(); } },
-                {"is_valid", n => { IsValid = n.GetBoolValue(); } },
-                {"is_valid_domain", n => { IsValidDomain = n.GetBoolValue(); } },
-                {"nameservers", n => { Nameservers = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"responds_to_https", n => { RespondsToHttps = n.GetBoolValue(); } },
-                {"should_be_a_record", n => { ShouldBeARecord = n.GetBoolValue(); } },
-                {"uri", n => { Uri = n.GetStringValue(); } },
+                { "caa_error", n => { CaaError = n.GetStringValue(); } },
+                { "dns_resolves", n => { DnsResolves = n.GetBoolValue(); } },
+                { "enforces_https", n => { EnforcesHttps = n.GetBoolValue(); } },
+                { "has_cname_record", n => { HasCnameRecord = n.GetBoolValue(); } },
+                { "has_mx_records_present", n => { HasMxRecordsPresent = n.GetBoolValue(); } },
+                { "host", n => { Host = n.GetStringValue(); } },
+                { "https_error", n => { HttpsError = n.GetStringValue(); } },
+                { "is_a_record", n => { IsARecord = n.GetBoolValue(); } },
+                { "is_apex_domain", n => { IsApexDomain = n.GetBoolValue(); } },
+                { "is_cloudflare_ip", n => { IsCloudflareIp = n.GetBoolValue(); } },
+                { "is_cname_to_fastly", n => { IsCnameToFastly = n.GetBoolValue(); } },
+                { "is_cname_to_github_user_domain", n => { IsCnameToGithubUserDomain = n.GetBoolValue(); } },
+                { "is_cname_to_pages_dot_github_dot_com", n => { IsCnameToPagesDotGithubDotCom = n.GetBoolValue(); } },
+                { "is_fastly_ip", n => { IsFastlyIp = n.GetBoolValue(); } },
+                { "is_https_eligible", n => { IsHttpsEligible = n.GetBoolValue(); } },
+                { "is_non_github_pages_ip_present", n => { IsNonGithubPagesIpPresent = n.GetBoolValue(); } },
+                { "is_old_ip_address", n => { IsOldIpAddress = n.GetBoolValue(); } },
+                { "is_pages_domain", n => { IsPagesDomain = n.GetBoolValue(); } },
+                { "is_pointed_to_github_pages_ip", n => { IsPointedToGithubPagesIp = n.GetBoolValue(); } },
+                { "is_proxied", n => { IsProxied = n.GetBoolValue(); } },
+                { "is_served_by_pages", n => { IsServedByPages = n.GetBoolValue(); } },
+                { "is_valid", n => { IsValid = n.GetBoolValue(); } },
+                { "is_valid_domain", n => { IsValidDomain = n.GetBoolValue(); } },
+                { "nameservers", n => { Nameservers = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "responds_to_https", n => { RespondsToHttps = n.GetBoolValue(); } },
+                { "should_be_a_record", n => { ShouldBeARecord = n.GetBoolValue(); } },
+                { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Team Membership
     /// </summary>
-    public class TeamMembership : IAdditionalDataHolder, IParsable 
+    public class TeamMembership : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -50,9 +51,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"role", n => { Role = n.GetEnumValue<TeamMembership_role>(); } },
-                {"state", n => { State = n.GetEnumValue<TeamMembership_state>(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "role", n => { Role = n.GetEnumValue<TeamMembership_role>(); } },
+                { "state", n => { State = n.GetEnumValue<TeamMembership_state>(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

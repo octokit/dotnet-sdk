@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Pull Request Review Comments are comments on a portion of the Pull Request&apos;s diff.
     /// </summary>
-    public class PullRequestReviewComment : IAdditionalDataHolder, IParsable 
+    public class PullRequestReviewComment : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -181,35 +182,35 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
-                {"body", n => { Body = n.GetStringValue(); } },
-                {"body_html", n => { BodyHtml = n.GetStringValue(); } },
-                {"body_text", n => { BodyText = n.GetStringValue(); } },
-                {"commit_id", n => { CommitId = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"diff_hunk", n => { DiffHunk = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"in_reply_to_id", n => { InReplyToId = n.GetIntValue(); } },
-                {"line", n => { Line = n.GetIntValue(); } },
-                {"_links", n => { Links = n.GetObjectValue<PullRequestReviewComment__links>(PullRequestReviewComment__links.CreateFromDiscriminatorValue); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"original_commit_id", n => { OriginalCommitId = n.GetStringValue(); } },
-                {"original_line", n => { OriginalLine = n.GetIntValue(); } },
-                {"original_position", n => { OriginalPosition = n.GetIntValue(); } },
-                {"original_start_line", n => { OriginalStartLine = n.GetIntValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
-                {"position", n => { Position = n.GetIntValue(); } },
-                {"pull_request_review_id", n => { PullRequestReviewId = n.GetIntValue(); } },
-                {"pull_request_url", n => { PullRequestUrl = n.GetStringValue(); } },
-                {"reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
-                {"side", n => { Side = n.GetEnumValue<PullRequestReviewComment_side>(); } },
-                {"start_line", n => { StartLine = n.GetIntValue(); } },
-                {"start_side", n => { StartSide = n.GetEnumValue<PullRequestReviewComment_start_side>(); } },
-                {"subject_type", n => { SubjectType = n.GetEnumValue<PullRequestReviewComment_subject_type>(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"user", n => { User = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
+                { "body", n => { Body = n.GetStringValue(); } },
+                { "body_html", n => { BodyHtml = n.GetStringValue(); } },
+                { "body_text", n => { BodyText = n.GetStringValue(); } },
+                { "commit_id", n => { CommitId = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "diff_hunk", n => { DiffHunk = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "in_reply_to_id", n => { InReplyToId = n.GetIntValue(); } },
+                { "line", n => { Line = n.GetIntValue(); } },
+                { "_links", n => { Links = n.GetObjectValue<PullRequestReviewComment__links>(PullRequestReviewComment__links.CreateFromDiscriminatorValue); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "original_commit_id", n => { OriginalCommitId = n.GetStringValue(); } },
+                { "original_line", n => { OriginalLine = n.GetIntValue(); } },
+                { "original_position", n => { OriginalPosition = n.GetIntValue(); } },
+                { "original_start_line", n => { OriginalStartLine = n.GetIntValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "position", n => { Position = n.GetIntValue(); } },
+                { "pull_request_review_id", n => { PullRequestReviewId = n.GetIntValue(); } },
+                { "pull_request_url", n => { PullRequestUrl = n.GetStringValue(); } },
+                { "reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
+                { "side", n => { Side = n.GetEnumValue<PullRequestReviewComment_side>(); } },
+                { "start_line", n => { StartLine = n.GetIntValue(); } },
+                { "start_side", n => { StartSide = n.GetEnumValue<PullRequestReviewComment_start_side>(); } },
+                { "subject_type", n => { SubjectType = n.GetEnumValue<PullRequestReviewComment_subject_type>(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Teams.Item.Memberships.Item {
+namespace GitHub.Teams.Item.Memberships.Item
+{
     #pragma warning disable CS1591
-    public class WithUsernamePutRequestBody : IAdditionalDataHolder, IParsable 
+    public class WithUsernamePutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,7 +40,7 @@ namespace GitHub.Teams.Item.Memberships.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"role", n => { Role = n.GetEnumValue<WithUsernamePutRequestBody_role>(); } },
+                { "role", n => { Role = n.GetEnumValue<WithUsernamePutRequestBody_role>(); } },
             };
         }
         /// <summary>

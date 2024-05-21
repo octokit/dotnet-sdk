@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Teams {
+namespace GitHub.Teams
+{
     /// <summary>
     /// Builds and executes requests for operations under \teams
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder 
+    public class TeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.teams.item collection</summary>
         /// <param name="position">The unique identifier of the team.</param>

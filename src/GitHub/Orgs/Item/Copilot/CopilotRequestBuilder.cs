@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Copilot {
+namespace GitHub.Orgs.Item.Copilot
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\copilot
     /// </summary>
-    public class CopilotRequestBuilder : BaseRequestBuilder 
+    public class CopilotRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The billing property</summary>
         public BillingRequestBuilder Billing

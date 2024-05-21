@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class RepositoryAdvisoryUpdate_vulnerabilities : IParsable 
+    public class RepositoryAdvisoryUpdate_vulnerabilities : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the package affected by the vulnerability.</summary>
@@ -59,10 +60,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"package", n => { Package = n.GetObjectValue<RepositoryAdvisoryUpdate_vulnerabilities_package>(RepositoryAdvisoryUpdate_vulnerabilities_package.CreateFromDiscriminatorValue); } },
-                {"patched_versions", n => { PatchedVersions = n.GetStringValue(); } },
-                {"vulnerable_functions", n => { VulnerableFunctions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"vulnerable_version_range", n => { VulnerableVersionRange = n.GetStringValue(); } },
+                { "package", n => { Package = n.GetObjectValue<RepositoryAdvisoryUpdate_vulnerabilities_package>(RepositoryAdvisoryUpdate_vulnerabilities_package.CreateFromDiscriminatorValue); } },
+                { "patched_versions", n => { PatchedVersions = n.GetStringValue(); } },
+                { "vulnerable_functions", n => { VulnerableFunctions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "vulnerable_version_range", n => { VulnerableVersionRange = n.GetStringValue(); } },
             };
         }
         /// <summary>

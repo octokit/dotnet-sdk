@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Projects {
+namespace GitHub.Users.Item.Projects
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\projects
     /// </summary>
-    public class ProjectsRequestBuilder : BaseRequestBuilder 
+    public class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ProjectsRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.Users.Item.Projects {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Project>(requestInfo, Project.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

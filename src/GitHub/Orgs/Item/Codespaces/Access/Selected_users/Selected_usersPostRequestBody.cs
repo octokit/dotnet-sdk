@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Codespaces.Access.Selected_users {
+namespace GitHub.Orgs.Item.Codespaces.Access.Selected_users
+{
     #pragma warning disable CS1591
-    public class Selected_usersPostRequestBody : IAdditionalDataHolder, IParsable 
+    public class Selected_usersPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -44,7 +45,7 @@ namespace GitHub.Orgs.Item.Codespaces.Access.Selected_users {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"selected_usernames", n => { SelectedUsernames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "selected_usernames", n => { SelectedUsernames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class DependencyGraphSpdxSbom_sbom_creationInfo : IAdditionalDataHolder, IParsable 
+    public class DependencyGraphSpdxSbom_sbom_creationInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -52,8 +53,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"created", n => { Created = n.GetStringValue(); } },
-                {"creators", n => { Creators = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "created", n => { Created = n.GetStringValue(); } },
+                { "creators", n => { Creators = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

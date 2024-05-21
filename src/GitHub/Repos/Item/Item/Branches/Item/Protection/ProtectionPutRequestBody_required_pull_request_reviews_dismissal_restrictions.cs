@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection
+{
     /// <summary>
     /// Specify which users, teams, and apps can dismiss pull request reviews. Pass an empty `dismissal_restrictions` object to disable. User and team `dismissal_restrictions` are only available for organization-owned repositories. Omit this parameter for personal repositories.
     /// </summary>
-    public class ProtectionPutRequestBody_required_pull_request_reviews_dismissal_restrictions : IAdditionalDataHolder, IParsable 
+    public class ProtectionPutRequestBody_required_pull_request_reviews_dismissal_restrictions : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -61,9 +62,9 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"apps", n => { Apps = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"teams", n => { Teams = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"users", n => { Users = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "apps", n => { Apps = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "teams", n => { Teams = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

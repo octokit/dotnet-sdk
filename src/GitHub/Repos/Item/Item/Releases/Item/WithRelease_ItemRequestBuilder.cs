@@ -10,11 +10,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Item {
+namespace GitHub.Repos.Item.Item.Releases.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\{release_id}
     /// </summary>
-    public class WithRelease_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithRelease_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The assets property</summary>
         public AssetsRequestBuilder Assets
@@ -101,7 +102,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Release>(requestInfo, Release.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

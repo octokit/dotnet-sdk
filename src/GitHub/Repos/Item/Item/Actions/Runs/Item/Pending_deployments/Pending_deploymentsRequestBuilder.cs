@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments {
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\pending_deployments
     /// </summary>
-    public class Pending_deploymentsRequestBuilder : BaseRequestBuilder 
+    public class Pending_deploymentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="Pending_deploymentsRequestBuilder"/> and sets the default values.

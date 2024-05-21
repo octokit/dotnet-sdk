@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class ActionsBillingUsage_minutes_used_breakdown : IAdditionalDataHolder, IParsable 
+    public class ActionsBillingUsage_minutes_used_breakdown : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -66,21 +67,21 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"MACOS", n => { MACOS = n.GetIntValue(); } },
-                {"macos_12_core", n => { Macos12Core = n.GetIntValue(); } },
-                {"total", n => { Total = n.GetIntValue(); } },
-                {"UBUNTU", n => { UBUNTU = n.GetIntValue(); } },
-                {"ubuntu_16_core", n => { Ubuntu16Core = n.GetIntValue(); } },
-                {"ubuntu_32_core", n => { Ubuntu32Core = n.GetIntValue(); } },
-                {"ubuntu_4_core", n => { Ubuntu4Core = n.GetIntValue(); } },
-                {"ubuntu_64_core", n => { Ubuntu64Core = n.GetIntValue(); } },
-                {"ubuntu_8_core", n => { Ubuntu8Core = n.GetIntValue(); } },
-                {"WINDOWS", n => { WINDOWS = n.GetIntValue(); } },
-                {"windows_16_core", n => { Windows16Core = n.GetIntValue(); } },
-                {"windows_32_core", n => { Windows32Core = n.GetIntValue(); } },
-                {"windows_4_core", n => { Windows4Core = n.GetIntValue(); } },
-                {"windows_64_core", n => { Windows64Core = n.GetIntValue(); } },
-                {"windows_8_core", n => { Windows8Core = n.GetIntValue(); } },
+                { "MACOS", n => { MACOS = n.GetIntValue(); } },
+                { "macos_12_core", n => { Macos12Core = n.GetIntValue(); } },
+                { "total", n => { Total = n.GetIntValue(); } },
+                { "UBUNTU", n => { UBUNTU = n.GetIntValue(); } },
+                { "ubuntu_16_core", n => { Ubuntu16Core = n.GetIntValue(); } },
+                { "ubuntu_32_core", n => { Ubuntu32Core = n.GetIntValue(); } },
+                { "ubuntu_4_core", n => { Ubuntu4Core = n.GetIntValue(); } },
+                { "ubuntu_64_core", n => { Ubuntu64Core = n.GetIntValue(); } },
+                { "ubuntu_8_core", n => { Ubuntu8Core = n.GetIntValue(); } },
+                { "WINDOWS", n => { WINDOWS = n.GetIntValue(); } },
+                { "windows_16_core", n => { Windows16Core = n.GetIntValue(); } },
+                { "windows_32_core", n => { Windows32Core = n.GetIntValue(); } },
+                { "windows_4_core", n => { Windows4Core = n.GetIntValue(); } },
+                { "windows_64_core", n => { Windows64Core = n.GetIntValue(); } },
+                { "windows_8_core", n => { Windows8Core = n.GetIntValue(); } },
             };
         }
         /// <summary>

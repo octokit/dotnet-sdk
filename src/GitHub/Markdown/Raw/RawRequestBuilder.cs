@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Markdown.Raw {
+namespace GitHub.Markdown.Raw
+{
     /// <summary>
     /// Builds and executes requests for operations under \markdown\raw
     /// </summary>
-    public class RawRequestBuilder : BaseRequestBuilder 
+    public class RawRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="RawRequestBuilder"/> and sets the default values.

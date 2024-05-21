@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Rules {
+namespace GitHub.Repos.Item.Item.Rules
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rules
     /// </summary>
-    public class RulesRequestBuilder : BaseRequestBuilder 
+    public class RulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The branches property</summary>
         public BranchesRequestBuilder Branches

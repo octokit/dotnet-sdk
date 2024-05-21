@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection
+{
     /// <summary>
     /// Require at least one approving review on a pull request, before merging. Set to `null` to disable.
     /// </summary>
-    public class ProtectionPutRequestBody_required_pull_request_reviews : IAdditionalDataHolder, IParsable 
+    public class ProtectionPutRequestBody_required_pull_request_reviews : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -61,12 +62,12 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"bypass_pull_request_allowances", n => { BypassPullRequestAllowances = n.GetObjectValue<ProtectionPutRequestBody_required_pull_request_reviews_bypass_pull_request_allowances>(ProtectionPutRequestBody_required_pull_request_reviews_bypass_pull_request_allowances.CreateFromDiscriminatorValue); } },
-                {"dismiss_stale_reviews", n => { DismissStaleReviews = n.GetBoolValue(); } },
-                {"dismissal_restrictions", n => { DismissalRestrictions = n.GetObjectValue<ProtectionPutRequestBody_required_pull_request_reviews_dismissal_restrictions>(ProtectionPutRequestBody_required_pull_request_reviews_dismissal_restrictions.CreateFromDiscriminatorValue); } },
-                {"require_code_owner_reviews", n => { RequireCodeOwnerReviews = n.GetBoolValue(); } },
-                {"require_last_push_approval", n => { RequireLastPushApproval = n.GetBoolValue(); } },
-                {"required_approving_review_count", n => { RequiredApprovingReviewCount = n.GetIntValue(); } },
+                { "bypass_pull_request_allowances", n => { BypassPullRequestAllowances = n.GetObjectValue<ProtectionPutRequestBody_required_pull_request_reviews_bypass_pull_request_allowances>(ProtectionPutRequestBody_required_pull_request_reviews_bypass_pull_request_allowances.CreateFromDiscriminatorValue); } },
+                { "dismiss_stale_reviews", n => { DismissStaleReviews = n.GetBoolValue(); } },
+                { "dismissal_restrictions", n => { DismissalRestrictions = n.GetObjectValue<ProtectionPutRequestBody_required_pull_request_reviews_dismissal_restrictions>(ProtectionPutRequestBody_required_pull_request_reviews_dismissal_restrictions.CreateFromDiscriminatorValue); } },
+                { "require_code_owner_reviews", n => { RequireCodeOwnerReviews = n.GetBoolValue(); } },
+                { "require_last_push_approval", n => { RequireLastPushApproval = n.GetBoolValue(); } },
+                { "required_approving_review_count", n => { RequiredApprovingReviewCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

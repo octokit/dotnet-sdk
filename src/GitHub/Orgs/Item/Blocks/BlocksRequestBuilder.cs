@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Blocks {
+namespace GitHub.Orgs.Item.Blocks
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\blocks
     /// </summary>
-    public class BlocksRequestBuilder : BaseRequestBuilder 
+    public class BlocksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.blocks.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>

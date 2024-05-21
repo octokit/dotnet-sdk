@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.DependencyGraph.Compare.Item {
+namespace GitHub.Repos.Item.Item.DependencyGraph.Compare.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph\compare\{basehead}
     /// </summary>
-    public class WithBaseheadItemRequestBuilder : BaseRequestBuilder 
+    public class WithBaseheadItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithBaseheadItemRequestBuilder"/> and sets the default values.
@@ -51,8 +52,8 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Compare.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<DependencyGraphDiff>(requestInfo, DependencyGraphDiff.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

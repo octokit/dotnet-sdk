@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Stats.Contributors {
+namespace GitHub.Repos.Item.Item.Stats.Contributors
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats\contributors
     /// </summary>
-    public class ContributorsRequestBuilder : BaseRequestBuilder 
+    public class ContributorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="ContributorsRequestBuilder"/> and sets the default values.

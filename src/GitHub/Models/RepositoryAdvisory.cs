@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A repository security advisory.
     /// </summary>
-    public class RepositoryAdvisory : IParsable 
+    public class RepositoryAdvisory : IParsable
     {
         /// <summary>The author of the advisory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -194,32 +195,32 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"author", n => { Author = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
-                {"collaborating_teams", n => { CollaboratingTeams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"collaborating_users", n => { CollaboratingUsers = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"credits", n => { Credits = n.GetCollectionOfObjectValues<RepositoryAdvisory_credits>(RepositoryAdvisory_credits.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"credits_detailed", n => { CreditsDetailed = n.GetCollectionOfObjectValues<RepositoryAdvisoryCredit>(RepositoryAdvisoryCredit.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"cve_id", n => { CveId = n.GetStringValue(); } },
-                {"cvss", n => { Cvss = n.GetObjectValue<RepositoryAdvisory_cvss>(RepositoryAdvisory_cvss.CreateFromDiscriminatorValue); } },
-                {"cwe_ids", n => { CweIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"cwes", n => { Cwes = n.GetCollectionOfObjectValues<RepositoryAdvisory_cwes>(RepositoryAdvisory_cwes.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"ghsa_id", n => { GhsaId = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"identifiers", n => { Identifiers = n.GetCollectionOfObjectValues<RepositoryAdvisory_identifiers>(RepositoryAdvisory_identifiers.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"private_fork", n => { PrivateFork = n.GetObjectValue<SimpleRepository>(SimpleRepository.CreateFromDiscriminatorValue); } },
-                {"published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
-                {"publisher", n => { Publisher = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"severity", n => { Severity = n.GetEnumValue<RepositoryAdvisory_severity>(); } },
-                {"state", n => { State = n.GetEnumValue<RepositoryAdvisory_state>(); } },
-                {"submission", n => { Submission = n.GetObjectValue<RepositoryAdvisory_submission>(RepositoryAdvisory_submission.CreateFromDiscriminatorValue); } },
-                {"summary", n => { Summary = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<RepositoryAdvisoryVulnerability>(RepositoryAdvisoryVulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"withdrawn_at", n => { WithdrawnAt = n.GetDateTimeOffsetValue(); } },
+                { "author", n => { Author = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
+                { "collaborating_teams", n => { CollaboratingTeams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "collaborating_users", n => { CollaboratingUsers = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "credits", n => { Credits = n.GetCollectionOfObjectValues<RepositoryAdvisory_credits>(RepositoryAdvisory_credits.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "credits_detailed", n => { CreditsDetailed = n.GetCollectionOfObjectValues<RepositoryAdvisoryCredit>(RepositoryAdvisoryCredit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cve_id", n => { CveId = n.GetStringValue(); } },
+                { "cvss", n => { Cvss = n.GetObjectValue<RepositoryAdvisory_cvss>(RepositoryAdvisory_cvss.CreateFromDiscriminatorValue); } },
+                { "cwe_ids", n => { CweIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "cwes", n => { Cwes = n.GetCollectionOfObjectValues<RepositoryAdvisory_cwes>(RepositoryAdvisory_cwes.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "ghsa_id", n => { GhsaId = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "identifiers", n => { Identifiers = n.GetCollectionOfObjectValues<RepositoryAdvisory_identifiers>(RepositoryAdvisory_identifiers.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "private_fork", n => { PrivateFork = n.GetObjectValue<SimpleRepository>(SimpleRepository.CreateFromDiscriminatorValue); } },
+                { "published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
+                { "publisher", n => { Publisher = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "severity", n => { Severity = n.GetEnumValue<RepositoryAdvisory_severity>(); } },
+                { "state", n => { State = n.GetEnumValue<RepositoryAdvisory_state>(); } },
+                { "submission", n => { Submission = n.GetObjectValue<RepositoryAdvisory_submission>(RepositoryAdvisory_submission.CreateFromDiscriminatorValue); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<RepositoryAdvisoryVulnerability>(RepositoryAdvisoryVulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "withdrawn_at", n => { WithdrawnAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

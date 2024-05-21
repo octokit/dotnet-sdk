@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Comments {
+namespace GitHub.Repos.Item.Item.Pulls.Comments
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\comments
     /// </summary>
-    public class CommentsRequestBuilder : BaseRequestBuilder 
+    public class CommentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.pulls.comments.item collection</summary>
         /// <param name="position">The unique identifier of the comment.</param>

@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item {
+namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\alerts\{alert_number}
     /// </summary>
-    public class WithAlert_numberItemRequestBuilder : BaseRequestBuilder 
+    public class WithAlert_numberItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The instances property</summary>
         public InstancesRequestBuilder Instances
@@ -58,9 +59,9 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"503", CodeScanningAlert503Error.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "503", CodeScanningAlert503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CodeScanningAlert>(requestInfo, CodeScanningAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,9 +89,9 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"503", CodeScanningAlert503Error.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "503", CodeScanningAlert503Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<CodeScanningAlert>(requestInfo, CodeScanningAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

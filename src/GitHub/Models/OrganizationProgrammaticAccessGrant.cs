@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Minimal representation of an organization programmatic access grant for enumerations
     /// </summary>
-    public class OrganizationProgrammaticAccessGrant : IAdditionalDataHolder, IParsable 
+    public class OrganizationProgrammaticAccessGrant : IAdditionalDataHolder, IParsable
     {
         /// <summary>Date and time when the fine-grained personal access token was approved to access the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,15 +92,15 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"access_granted_at", n => { AccessGrantedAt = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"owner", n => { Owner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"permissions", n => { Permissions = n.GetObjectValue<OrganizationProgrammaticAccessGrant_permissions>(OrganizationProgrammaticAccessGrant_permissions.CreateFromDiscriminatorValue); } },
-                {"repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
-                {"repository_selection", n => { RepositorySelection = n.GetEnumValue<OrganizationProgrammaticAccessGrant_repository_selection>(); } },
-                {"token_expired", n => { TokenExpired = n.GetBoolValue(); } },
-                {"token_expires_at", n => { TokenExpiresAt = n.GetStringValue(); } },
-                {"token_last_used_at", n => { TokenLastUsedAt = n.GetStringValue(); } },
+                { "access_granted_at", n => { AccessGrantedAt = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "owner", n => { Owner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<OrganizationProgrammaticAccessGrant_permissions>(OrganizationProgrammaticAccessGrant_permissions.CreateFromDiscriminatorValue); } },
+                { "repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
+                { "repository_selection", n => { RepositorySelection = n.GetEnumValue<OrganizationProgrammaticAccessGrant_repository_selection>(); } },
+                { "token_expired", n => { TokenExpired = n.GetBoolValue(); } },
+                { "token_expires_at", n => { TokenExpiresAt = n.GetStringValue(); } },
+                { "token_last_used_at", n => { TokenLastUsedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>

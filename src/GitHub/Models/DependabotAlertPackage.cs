@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Details for the vulnerable package.
     /// </summary>
-    public class DependabotAlertPackage : IParsable 
+    public class DependabotAlertPackage : IParsable
     {
         /// <summary>The package&apos;s language or package management ecosystem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,8 +45,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ecosystem", n => { Ecosystem = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "ecosystem", n => { Ecosystem = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

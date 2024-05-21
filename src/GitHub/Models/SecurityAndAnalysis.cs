@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class SecurityAndAnalysis : IAdditionalDataHolder, IParsable 
+    public class SecurityAndAnalysis : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -68,10 +69,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"advanced_security", n => { AdvancedSecurity = n.GetObjectValue<SecurityAndAnalysis_advanced_security>(SecurityAndAnalysis_advanced_security.CreateFromDiscriminatorValue); } },
-                {"dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetObjectValue<SecurityAndAnalysis_dependabot_security_updates>(SecurityAndAnalysis_dependabot_security_updates.CreateFromDiscriminatorValue); } },
-                {"secret_scanning", n => { SecretScanning = n.GetObjectValue<SecurityAndAnalysis_secret_scanning>(SecurityAndAnalysis_secret_scanning.CreateFromDiscriminatorValue); } },
-                {"secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetObjectValue<SecurityAndAnalysis_secret_scanning_push_protection>(SecurityAndAnalysis_secret_scanning_push_protection.CreateFromDiscriminatorValue); } },
+                { "advanced_security", n => { AdvancedSecurity = n.GetObjectValue<SecurityAndAnalysis_advanced_security>(SecurityAndAnalysis_advanced_security.CreateFromDiscriminatorValue); } },
+                { "dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetObjectValue<SecurityAndAnalysis_dependabot_security_updates>(SecurityAndAnalysis_dependabot_security_updates.CreateFromDiscriminatorValue); } },
+                { "secret_scanning", n => { SecretScanning = n.GetObjectValue<SecurityAndAnalysis_secret_scanning>(SecurityAndAnalysis_secret_scanning.CreateFromDiscriminatorValue); } },
+                { "secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetObjectValue<SecurityAndAnalysis_secret_scanning_push_protection>(SecurityAndAnalysis_secret_scanning_push_protection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

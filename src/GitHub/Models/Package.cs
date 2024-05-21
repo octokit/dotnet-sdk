@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A software package
     /// </summary>
-    public class Package : IAdditionalDataHolder, IParsable 
+    public class Package : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -89,17 +90,17 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"owner", n => { Owner = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"package_type", n => { PackageType = n.GetEnumValue<Package_package_type>(); } },
-                {"repository", n => { Repository = n.GetObjectValue<NullableMinimalRepository>(NullableMinimalRepository.CreateFromDiscriminatorValue); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"version_count", n => { VersionCount = n.GetIntValue(); } },
-                {"visibility", n => { Visibility = n.GetEnumValue<Package_visibility>(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "package_type", n => { PackageType = n.GetEnumValue<Package_package_type>(); } },
+                { "repository", n => { Repository = n.GetObjectValue<NullableMinimalRepository>(NullableMinimalRepository.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "version_count", n => { VersionCount = n.GetIntValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<Package_visibility>(); } },
             };
         }
         /// <summary>

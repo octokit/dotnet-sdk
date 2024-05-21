@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Code Search Result Item
     /// </summary>
-    public class CodeSearchResultItem : IAdditionalDataHolder, IParsable 
+    public class CodeSearchResultItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -123,19 +124,19 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"file_size", n => { FileSize = n.GetIntValue(); } },
-                {"git_url", n => { GitUrl = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
-                {"last_modified_at", n => { LastModifiedAt = n.GetDateTimeOffsetValue(); } },
-                {"line_numbers", n => { LineNumbers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"path", n => { Path = n.GetStringValue(); } },
-                {"repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
-                {"score", n => { Score = n.GetDoubleValue(); } },
-                {"sha", n => { Sha = n.GetStringValue(); } },
-                {"text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<Code>(Code.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "file_size", n => { FileSize = n.GetIntValue(); } },
+                { "git_url", n => { GitUrl = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "last_modified_at", n => { LastModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "line_numbers", n => { LineNumbers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
+                { "score", n => { Score = n.GetDoubleValue(); } },
+                { "sha", n => { Sha = n.GetStringValue(); } },
+                { "text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<Code>(Code.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Codeowners {
+namespace GitHub.Repos.Item.Item.Codeowners
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codeowners
     /// </summary>
-    public class CodeownersRequestBuilder : BaseRequestBuilder 
+    public class CodeownersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The errors property</summary>
         public ErrorsRequestBuilder Errors

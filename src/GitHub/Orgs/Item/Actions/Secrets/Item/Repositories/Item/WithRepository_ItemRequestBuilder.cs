@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Secrets.Item.Repositories.Item {
+namespace GitHub.Orgs.Item.Actions.Secrets.Item.Repositories.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\secrets\{secret_name}\repositories\{repository_id}
     /// </summary>
-    public class WithRepository_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithRepository_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithRepository_ItemRequestBuilder"/> and sets the default values.

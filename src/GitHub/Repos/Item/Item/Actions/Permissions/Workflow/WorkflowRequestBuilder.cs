@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Permissions.Workflow {
+namespace GitHub.Repos.Item.Item.Actions.Permissions.Workflow
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\permissions\workflow
     /// </summary>
-    public class WorkflowRequestBuilder : BaseRequestBuilder 
+    public class WorkflowRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WorkflowRequestBuilder"/> and sets the default values.

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.App.Installations.Item.Access_tokens {
+namespace GitHub.App.Installations.Item.Access_tokens
+{
     /// <summary>
     /// Builds and executes requests for operations under \app\installations\{installation_id}\access_tokens
     /// </summary>
-    public class Access_tokensRequestBuilder : BaseRequestBuilder 
+    public class Access_tokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="Access_tokensRequestBuilder"/> and sets the default values.
@@ -55,10 +56,10 @@ namespace GitHub.App.Installations.Item.Access_tokens {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<InstallationToken>(requestInfo, InstallationToken.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

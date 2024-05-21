@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A credit given to a user for a repository security advisory.
     /// </summary>
-    public class RepositoryAdvisoryCredit : IParsable 
+    public class RepositoryAdvisoryCredit : IParsable
     {
         /// <summary>The state of the user&apos;s acceptance of the credit.</summary>
         public RepositoryAdvisoryCredit_state? State { get; set; }
@@ -40,9 +41,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"state", n => { State = n.GetEnumValue<RepositoryAdvisoryCredit_state>(); } },
-                {"type", n => { Type = n.GetEnumValue<SecurityAdvisoryCreditTypes>(); } },
-                {"user", n => { User = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<RepositoryAdvisoryCredit_state>(); } },
+                { "type", n => { Type = n.GetEnumValue<SecurityAdvisoryCreditTypes>(); } },
+                { "user", n => { User = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

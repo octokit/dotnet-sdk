@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
+namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules
+{
     #pragma warning disable CS1591
-    public class Deployment_protection_rulesGetResponse : IAdditionalDataHolder, IParsable 
+    public class Deployment_protection_rulesGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +48,8 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"custom_deployment_protection_rules", n => { CustomDeploymentProtectionRules = n.GetCollectionOfObjectValues<DeploymentProtectionRule>(DeploymentProtectionRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "custom_deployment_protection_rules", n => { CustomDeploymentProtectionRules = n.GetCollectionOfObjectValues<DeploymentProtectionRule>(DeploymentProtectionRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

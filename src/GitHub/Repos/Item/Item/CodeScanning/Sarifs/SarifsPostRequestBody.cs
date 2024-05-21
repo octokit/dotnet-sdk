@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Sarifs {
+namespace GitHub.Repos.Item.Item.CodeScanning.Sarifs
+{
     #pragma warning disable CS1591
-    public class SarifsPostRequestBody : IParsable 
+    public class SarifsPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The base directory used in the analysis, as it appears in the SARIF file.This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.</summary>
@@ -71,13 +72,13 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Sarifs {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"checkout_uri", n => { CheckoutUri = n.GetStringValue(); } },
-                {"commit_sha", n => { CommitSha = n.GetStringValue(); } },
-                {"ref", n => { Ref = n.GetStringValue(); } },
-                {"sarif", n => { Sarif = n.GetStringValue(); } },
-                {"started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                {"tool_name", n => { ToolName = n.GetStringValue(); } },
-                {"validate", n => { Validate = n.GetBoolValue(); } },
+                { "checkout_uri", n => { CheckoutUri = n.GetStringValue(); } },
+                { "commit_sha", n => { CommitSha = n.GetStringValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
+                { "sarif", n => { Sarif = n.GetStringValue(); } },
+                { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
+                { "tool_name", n => { ToolName = n.GetStringValue(); } },
+                { "validate", n => { Validate = n.GetBoolValue(); } },
             };
         }
         /// <summary>

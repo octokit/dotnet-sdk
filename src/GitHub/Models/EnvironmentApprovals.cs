@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// An entry in the reviews log for environment deployments
     /// </summary>
-    public class EnvironmentApprovals : IAdditionalDataHolder, IParsable 
+    public class EnvironmentApprovals : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -63,10 +64,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"environments", n => { Environments = n.GetCollectionOfObjectValues<EnvironmentApprovals_environments>(EnvironmentApprovals_environments.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"state", n => { State = n.GetEnumValue<EnvironmentApprovals_state>(); } },
-                {"user", n => { User = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "environments", n => { Environments = n.GetCollectionOfObjectValues<EnvironmentApprovals_environments>(EnvironmentApprovals_environments.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<EnvironmentApprovals_state>(); } },
+                { "user", n => { User = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

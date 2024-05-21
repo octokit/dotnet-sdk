@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Import.Lfs {
+namespace GitHub.Repos.Item.Item.Import.Lfs
+{
     #pragma warning disable CS1591
-    public class LfsPatchRequestBody : IAdditionalDataHolder, IParsable 
+    public class LfsPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,7 +39,7 @@ namespace GitHub.Repos.Item.Item.Import.Lfs {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"use_lfs", n => { UseLfs = n.GetEnumValue<LfsPatchRequestBody_use_lfs>(); } },
+                { "use_lfs", n => { UseLfs = n.GetEnumValue<LfsPatchRequestBody_use_lfs>(); } },
             };
         }
         /// <summary>

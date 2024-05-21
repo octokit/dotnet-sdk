@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Projects.Item {
+namespace GitHub.Projects.Item
+{
     #pragma warning disable CS1591
-    public class WithProject_PatchRequestBody : IAdditionalDataHolder, IParsable 
+    public class WithProject_PatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -64,11 +65,11 @@ namespace GitHub.Projects.Item {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"body", n => { Body = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"organization_permission", n => { OrganizationPermission = n.GetEnumValue<WithProject_PatchRequestBody_organization_permission>(); } },
-                {"private", n => { Private = n.GetBoolValue(); } },
-                {"state", n => { State = n.GetStringValue(); } },
+                { "body", n => { Body = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "organization_permission", n => { OrganizationPermission = n.GetEnumValue<WithProject_PatchRequestBody_organization_permission>(); } },
+                { "private", n => { Private = n.GetBoolValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

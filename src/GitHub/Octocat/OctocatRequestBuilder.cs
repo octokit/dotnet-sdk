@@ -7,11 +7,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Octocat {
+namespace GitHub.Octocat
+{
     /// <summary>
     /// Builds and executes requests for operations under \octocat
     /// </summary>
-    public class OctocatRequestBuilder : BaseRequestBuilder 
+    public class OctocatRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="OctocatRequestBuilder"/> and sets the default values.

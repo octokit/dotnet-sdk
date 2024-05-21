@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A check performed on the code of a given code change
     /// </summary>
-    public class CheckRun : IAdditionalDataHolder, IParsable 
+    public class CheckRun : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -143,23 +144,23 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"app", n => { App = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
-                {"check_suite", n => { CheckSuite = n.GetObjectValue<CheckRun_check_suite>(CheckRun_check_suite.CreateFromDiscriminatorValue); } },
-                {"completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                {"conclusion", n => { Conclusion = n.GetEnumValue<CheckRun_conclusion>(); } },
-                {"deployment", n => { Deployment = n.GetObjectValue<DeploymentSimple>(DeploymentSimple.CreateFromDiscriminatorValue); } },
-                {"details_url", n => { DetailsUrl = n.GetStringValue(); } },
-                {"external_id", n => { ExternalId = n.GetStringValue(); } },
-                {"head_sha", n => { HeadSha = n.GetStringValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"output", n => { Output = n.GetObjectValue<CheckRun_output>(CheckRun_output.CreateFromDiscriminatorValue); } },
-                {"pull_requests", n => { PullRequests = n.GetCollectionOfObjectValues<PullRequestMinimal>(PullRequestMinimal.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CheckRun_status>(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "app", n => { App = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
+                { "check_suite", n => { CheckSuite = n.GetObjectValue<CheckRun_check_suite>(CheckRun_check_suite.CreateFromDiscriminatorValue); } },
+                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                { "conclusion", n => { Conclusion = n.GetEnumValue<CheckRun_conclusion>(); } },
+                { "deployment", n => { Deployment = n.GetObjectValue<DeploymentSimple>(DeploymentSimple.CreateFromDiscriminatorValue); } },
+                { "details_url", n => { DetailsUrl = n.GetStringValue(); } },
+                { "external_id", n => { ExternalId = n.GetStringValue(); } },
+                { "head_sha", n => { HeadSha = n.GetStringValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "output", n => { Output = n.GetObjectValue<CheckRun_output>(CheckRun_output.CreateFromDiscriminatorValue); } },
+                { "pull_requests", n => { PullRequests = n.GetCollectionOfObjectValues<PullRequestMinimal>(PullRequestMinimal.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CheckRun_status>(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

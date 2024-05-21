@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Permissions requested, categorized by type of permission.
     /// </summary>
-    public class OrganizationProgrammaticAccessGrantRequest_permissions : IAdditionalDataHolder, IParsable 
+    public class OrganizationProgrammaticAccessGrantRequest_permissions : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -61,9 +62,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"organization", n => { Organization = n.GetObjectValue<OrganizationProgrammaticAccessGrantRequest_permissions_organization>(OrganizationProgrammaticAccessGrantRequest_permissions_organization.CreateFromDiscriminatorValue); } },
-                {"other", n => { Other = n.GetObjectValue<OrganizationProgrammaticAccessGrantRequest_permissions_other>(OrganizationProgrammaticAccessGrantRequest_permissions_other.CreateFromDiscriminatorValue); } },
-                {"repository", n => { Repository = n.GetObjectValue<OrganizationProgrammaticAccessGrantRequest_permissions_repository>(OrganizationProgrammaticAccessGrantRequest_permissions_repository.CreateFromDiscriminatorValue); } },
+                { "organization", n => { Organization = n.GetObjectValue<OrganizationProgrammaticAccessGrantRequest_permissions_organization>(OrganizationProgrammaticAccessGrantRequest_permissions_organization.CreateFromDiscriminatorValue); } },
+                { "other", n => { Other = n.GetObjectValue<OrganizationProgrammaticAccessGrantRequest_permissions_other>(OrganizationProgrammaticAccessGrantRequest_permissions_other.CreateFromDiscriminatorValue); } },
+                { "repository", n => { Repository = n.GetObjectValue<OrganizationProgrammaticAccessGrantRequest_permissions_repository>(OrganizationProgrammaticAccessGrantRequest_permissions_repository.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

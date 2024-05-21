@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Installation
     /// </summary>
-    public class Installation : IAdditionalDataHolder, IParsable 
+    public class Installation : IAdditionalDataHolder, IParsable
     {
         /// <summary>The access_tokens_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,26 +150,26 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"access_tokens_url", n => { AccessTokensUrl = n.GetStringValue(); } },
-                {"account", n => { Account = n.GetObjectValue<Installation_account>(Installation_account.CreateFromDiscriminatorValue); } },
-                {"app_id", n => { AppId = n.GetIntValue(); } },
-                {"app_slug", n => { AppSlug = n.GetStringValue(); } },
-                {"contact_email", n => { ContactEmail = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"has_multiple_single_files", n => { HasMultipleSingleFiles = n.GetBoolValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
-                {"repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
-                {"repository_selection", n => { RepositorySelection = n.GetEnumValue<Installation_repository_selection>(); } },
-                {"single_file_name", n => { SingleFileName = n.GetStringValue(); } },
-                {"single_file_paths", n => { SingleFilePaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"suspended_at", n => { SuspendedAt = n.GetDateTimeOffsetValue(); } },
-                {"suspended_by", n => { SuspendedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"target_id", n => { TargetId = n.GetIntValue(); } },
-                {"target_type", n => { TargetType = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "access_tokens_url", n => { AccessTokensUrl = n.GetStringValue(); } },
+                { "account", n => { Account = n.GetObjectValue<Installation_account>(Installation_account.CreateFromDiscriminatorValue); } },
+                { "app_id", n => { AppId = n.GetIntValue(); } },
+                { "app_slug", n => { AppSlug = n.GetStringValue(); } },
+                { "contact_email", n => { ContactEmail = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "has_multiple_single_files", n => { HasMultipleSingleFiles = n.GetBoolValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
+                { "repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
+                { "repository_selection", n => { RepositorySelection = n.GetEnumValue<Installation_repository_selection>(); } },
+                { "single_file_name", n => { SingleFileName = n.GetStringValue(); } },
+                { "single_file_paths", n => { SingleFilePaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "suspended_at", n => { SuspendedAt = n.GetDateTimeOffsetValue(); } },
+                { "suspended_by", n => { SuspendedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "target_id", n => { TargetId = n.GetIntValue(); } },
+                { "target_type", n => { TargetType = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -203,7 +204,7 @@ namespace GitHub.Models {
         /// <summary>
         /// Composed type wrapper for classes <see cref="Enterprise"/>, <see cref="SimpleUser"/>
         /// </summary>
-        public class Installation_account : IComposedTypeWrapper, IParsable 
+        public class Installation_account : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.Enterprise"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

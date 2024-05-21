@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Gitignore.Templates.Item {
+namespace GitHub.Gitignore.Templates.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \gitignore\templates\{name}
     /// </summary>
-    public class WithNameItemRequestBuilder : BaseRequestBuilder 
+    public class WithNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithNameItemRequestBuilder"/> and sets the default values.

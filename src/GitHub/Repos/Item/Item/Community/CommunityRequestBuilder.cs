@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Community {
+namespace GitHub.Repos.Item.Item.Community
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\community
     /// </summary>
-    public class CommunityRequestBuilder : BaseRequestBuilder 
+    public class CommunityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The profile property</summary>
         public ProfileRequestBuilder Profile

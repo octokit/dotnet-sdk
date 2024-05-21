@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Secrets for a GitHub Codespace.
     /// </summary>
-    public class CodespacesSecret : IAdditionalDataHolder, IParsable 
+    public class CodespacesSecret : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -59,11 +60,11 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"selected_repositories_url", n => { SelectedRepositoriesUrl = n.GetStringValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"visibility", n => { Visibility = n.GetEnumValue<CodespacesSecret_visibility>(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "selected_repositories_url", n => { SelectedRepositoriesUrl = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<CodespacesSecret_visibility>(); } },
             };
         }
         /// <summary>

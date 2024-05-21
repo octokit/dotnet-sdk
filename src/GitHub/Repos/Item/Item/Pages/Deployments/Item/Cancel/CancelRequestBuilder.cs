@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pages.Deployments.Item.Cancel {
+namespace GitHub.Repos.Item.Item.Pages.Deployments.Item.Cancel
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pages\deployments\{pages_deployment_id}\cancel
     /// </summary>
-    public class CancelRequestBuilder : BaseRequestBuilder 
+    public class CancelRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="CancelRequestBuilder"/> and sets the default values.
@@ -49,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments.Item.Cancel {
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Ssh_signing_keys {
+namespace GitHub.Users.Item.Ssh_signing_keys
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\ssh_signing_keys
     /// </summary>
-    public class Ssh_signing_keysRequestBuilder : BaseRequestBuilder 
+    public class Ssh_signing_keysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="Ssh_signing_keysRequestBuilder"/> and sets the default values.

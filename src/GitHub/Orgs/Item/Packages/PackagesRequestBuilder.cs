@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Packages {
+namespace GitHub.Orgs.Item.Packages
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\packages
     /// </summary>
-    public class PackagesRequestBuilder : BaseRequestBuilder 
+    public class PackagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.packages.item collection</summary>
         /// <param name="position">The type of supported package. Packages in GitHub&apos;s Gradle registry have the type `maven`. Docker images pushed to GitHub&apos;s Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub&apos;s Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.</param>
@@ -64,8 +65,8 @@ namespace GitHub.Orgs.Item.Packages {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Package>(requestInfo, Package.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

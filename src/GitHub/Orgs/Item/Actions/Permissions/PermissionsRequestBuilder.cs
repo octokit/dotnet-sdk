@@ -11,11 +11,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Permissions {
+namespace GitHub.Orgs.Item.Actions.Permissions
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\permissions
     /// </summary>
-    public class PermissionsRequestBuilder : BaseRequestBuilder 
+    public class PermissionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The repositories property</summary>
         public RepositoriesRequestBuilder Repositories

@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Actions.Runners {
+namespace GitHub.Orgs.Item.Actions.Runners
+{
     #pragma warning disable CS1591
-    public class RunnersGetResponse : IAdditionalDataHolder, IParsable 
+    public class RunnersGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +48,8 @@ namespace GitHub.Orgs.Item.Actions.Runners {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"runners", n => { Runners = n.GetCollectionOfObjectValues<Runner>(Runner.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                { "runners", n => { Runners = n.GetCollectionOfObjectValues<Runner>(Runner.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -12,11 +12,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item {
+namespace GitHub.Repos.Item.Item.Environments.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}
     /// </summary>
-    public class WithEnvironment_nameItemRequestBuilder : BaseRequestBuilder 
+    public class WithEnvironment_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The deployment_protection_rules property</summary>
         public Deployment_protection_rulesRequestBuilder Deployment_protection_rules
@@ -113,7 +114,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"422", BasicError.CreateFromDiscriminatorValue},
+                { "422", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<EnvironmentObject>(requestInfo, EnvironmentObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

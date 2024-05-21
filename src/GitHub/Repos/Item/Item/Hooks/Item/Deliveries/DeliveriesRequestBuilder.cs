@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Hooks.Item.Deliveries {
+namespace GitHub.Repos.Item.Item.Hooks.Item.Deliveries
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\hooks\{hook_id}\deliveries
     /// </summary>
-    public class DeliveriesRequestBuilder : BaseRequestBuilder 
+    public class DeliveriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.hooks.item.deliveries.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -64,8 +65,8 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Deliveries {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"400", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "400", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<HookDeliveryItem>(requestInfo, HookDeliveryItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

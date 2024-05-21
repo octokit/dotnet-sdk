@@ -5,9 +5,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class GistComment403Error : ApiException, IAdditionalDataHolder, IParsable 
+    public class GistComment403Error : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -61,9 +62,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"block", n => { Block = n.GetObjectValue<GistComment403Error_block>(GistComment403Error_block.CreateFromDiscriminatorValue); } },
-                {"documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                {"message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "block", n => { Block = n.GetObjectValue<GistComment403Error_block>(GistComment403Error_block.CreateFromDiscriminatorValue); } },
+                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>

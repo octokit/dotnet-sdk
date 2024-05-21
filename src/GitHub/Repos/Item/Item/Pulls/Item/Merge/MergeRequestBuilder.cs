@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
+namespace GitHub.Repos.Item.Item.Pulls.Item.Merge
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\{pull_number}\merge
     /// </summary>
-    public class MergeRequestBuilder : BaseRequestBuilder 
+    public class MergeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="MergeRequestBuilder"/> and sets the default values.
@@ -74,11 +75,11 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Merge {
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"405", PullRequestMergeResult405Error.CreateFromDiscriminatorValue},
-                {"409", PullRequestMergeResult409Error.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "405", PullRequestMergeResult405Error.CreateFromDiscriminatorValue },
+                { "409", PullRequestMergeResult409Error.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<PullRequestMergeResult>(requestInfo, PullRequestMergeResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

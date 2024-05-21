@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts {
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\attempts
     /// </summary>
-    public class AttemptsRequestBuilder : BaseRequestBuilder 
+    public class AttemptsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.runs.item.attempts.item collection</summary>
         /// <param name="position">The attempt number of the workflow run.</param>

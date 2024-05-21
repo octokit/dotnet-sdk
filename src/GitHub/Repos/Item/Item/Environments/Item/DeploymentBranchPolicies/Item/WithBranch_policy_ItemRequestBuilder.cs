@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.DeploymentBranchPolicies.Item {
+namespace GitHub.Repos.Item.Item.Environments.Item.DeploymentBranchPolicies.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}\deployment-branch-policies\{branch_policy_id}
     /// </summary>
-    public class WithBranch_policy_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithBranch_policy_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithBranch_policy_ItemRequestBuilder"/> and sets the default values.

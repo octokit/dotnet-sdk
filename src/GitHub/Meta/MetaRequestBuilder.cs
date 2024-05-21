@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Meta {
+namespace GitHub.Meta
+{
     /// <summary>
     /// Builds and executes requests for operations under \meta
     /// </summary>
-    public class MetaRequestBuilder : BaseRequestBuilder 
+    public class MetaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="MetaRequestBuilder"/> and sets the default values.

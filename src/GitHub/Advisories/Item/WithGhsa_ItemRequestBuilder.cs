@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Advisories.Item {
+namespace GitHub.Advisories.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \advisories\{ghsa_id}
     /// </summary>
-    public class WithGhsa_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithGhsa_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="WithGhsa_ItemRequestBuilder"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace GitHub.Advisories.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GlobalAdvisory>(requestInfo, GlobalAdvisory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

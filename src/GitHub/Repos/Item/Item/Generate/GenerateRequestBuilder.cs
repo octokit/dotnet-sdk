@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Generate {
+namespace GitHub.Repos.Item.Item.Generate
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\generate
     /// </summary>
-    public class GenerateRequestBuilder : BaseRequestBuilder 
+    public class GenerateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="GenerateRequestBuilder"/> and sets the default values.

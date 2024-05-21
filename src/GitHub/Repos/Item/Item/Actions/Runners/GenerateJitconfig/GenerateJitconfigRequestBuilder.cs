@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
+namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runners\generate-jitconfig
     /// </summary>
-    public class GenerateJitconfigRequestBuilder : BaseRequestBuilder 
+    public class GenerateJitconfigRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="GenerateJitconfigRequestBuilder"/> and sets the default values.
@@ -53,8 +54,8 @@ namespace GitHub.Repos.Item.Item.Actions.Runners.GenerateJitconfig {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<GenerateJitconfigPostResponse>(requestInfo, GenerateJitconfigPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runners.Item {
+namespace GitHub.Repos.Item.Item.Actions.Runners.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runners\{runner_id}
     /// </summary>
-    public class WithRunner_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithRunner_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The labels property</summary>
         public LabelsRequestBuilder Labels

@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs {
+namespace GitHub.Repos.Item.Item.Actions.Runs
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs
     /// </summary>
-    public class RunsRequestBuilder : BaseRequestBuilder 
+    public class RunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.runs.item collection</summary>
         /// <param name="position">The unique identifier of the workflow run.</param>

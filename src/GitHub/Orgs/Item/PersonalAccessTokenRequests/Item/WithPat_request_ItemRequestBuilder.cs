@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item {
+namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\personal-access-token-requests\{pat_request_id}
     /// </summary>
-    public class WithPat_request_ItemRequestBuilder : BaseRequestBuilder 
+    public class WithPat_request_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The repositories property</summary>
         public RepositoriesRequestBuilder Repositories
@@ -60,10 +61,10 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
+                { "422", ValidationError.CreateFromDiscriminatorValue },
+                { "500", BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

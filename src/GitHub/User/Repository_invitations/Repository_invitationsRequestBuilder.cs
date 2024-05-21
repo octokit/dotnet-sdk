@@ -9,11 +9,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Repository_invitations {
+namespace GitHub.User.Repository_invitations
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\repository_invitations
     /// </summary>
-    public class Repository_invitationsRequestBuilder : BaseRequestBuilder 
+    public class Repository_invitationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.repository_invitations.item collection</summary>
         /// <param name="position">The unique identifier of the invitation.</param>
@@ -65,9 +66,9 @@ namespace GitHub.User.Repository_invitations {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "401", BasicError.CreateFromDiscriminatorValue },
+                { "403", BasicError.CreateFromDiscriminatorValue },
+                { "404", BasicError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<RepositoryInvitation>(requestInfo, RepositoryInvitation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

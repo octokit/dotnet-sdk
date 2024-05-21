@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Thread
     /// </summary>
-    public class ThreadObject : IAdditionalDataHolder, IParsable 
+    public class ThreadObject : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -103,15 +104,15 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"last_read_at", n => { LastReadAt = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
-                {"subject", n => { Subject = n.GetObjectValue<Thread_subject>(Thread_subject.CreateFromDiscriminatorValue); } },
-                {"subscription_url", n => { SubscriptionUrl = n.GetStringValue(); } },
-                {"unread", n => { Unread = n.GetBoolValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "last_read_at", n => { LastReadAt = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
+                { "subject", n => { Subject = n.GetObjectValue<Thread_subject>(Thread_subject.CreateFromDiscriminatorValue); } },
+                { "subscription_url", n => { SubscriptionUrl = n.GetStringValue(); } },
+                { "unread", n => { Unread = n.GetBoolValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

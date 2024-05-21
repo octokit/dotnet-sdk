@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     #pragma warning disable CS1591
-    public class RepositoryRuleset__links : IAdditionalDataHolder, IParsable 
+    public class RepositoryRuleset__links : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -52,8 +53,8 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"html", n => { Html = n.GetObjectValue<RepositoryRuleset__links_html>(RepositoryRuleset__links_html.CreateFromDiscriminatorValue); } },
-                {"self", n => { Self = n.GetObjectValue<RepositoryRuleset__links_self>(RepositoryRuleset__links_self.CreateFromDiscriminatorValue); } },
+                { "html", n => { Html = n.GetObjectValue<RepositoryRuleset__links_html>(RepositoryRuleset__links_html.CreateFromDiscriminatorValue); } },
+                { "self", n => { Self = n.GetObjectValue<RepositoryRuleset__links_self>(RepositoryRuleset__links_self.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

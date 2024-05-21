@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Clone Traffic
     /// </summary>
-    public class CloneTraffic : IAdditionalDataHolder, IParsable 
+    public class CloneTraffic : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -49,9 +50,9 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clones", n => { Clones = n.GetCollectionOfObjectValues<Traffic>(Traffic.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"count", n => { Count = n.GetIntValue(); } },
-                {"uniques", n => { Uniques = n.GetIntValue(); } },
+                { "clones", n => { Clones = n.GetCollectionOfObjectValues<Traffic>(Traffic.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "count", n => { Count = n.GetIntValue(); } },
+                { "uniques", n => { Uniques = n.GetIntValue(); } },
             };
         }
         /// <summary>

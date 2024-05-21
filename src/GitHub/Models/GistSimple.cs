@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Gist Simple
     /// </summary>
-    public class GistSimple : IAdditionalDataHolder, IParsable 
+    public class GistSimple : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -189,27 +190,27 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"comments", n => { Comments = n.GetIntValue(); } },
-                {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
-                {"commits_url", n => { CommitsUrl = n.GetStringValue(); } },
-                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"files", n => { Files = n.GetObjectValue<GistSimple_files>(GistSimple_files.CreateFromDiscriminatorValue); } },
-                {"fork_of", n => { ForkOf = n.GetObjectValue<GistSimple_fork_of>(GistSimple_fork_of.CreateFromDiscriminatorValue); } },
-                {"forks", n => { Forks = n.GetCollectionOfObjectValues<GistSimple_forks>(GistSimple_forks.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"forks_url", n => { ForksUrl = n.GetStringValue(); } },
-                {"git_pull_url", n => { GitPullUrl = n.GetStringValue(); } },
-                {"git_push_url", n => { GitPushUrl = n.GetStringValue(); } },
-                {"history", n => { History = n.GetCollectionOfObjectValues<GistHistory>(GistHistory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"node_id", n => { NodeId = n.GetStringValue(); } },
-                {"owner", n => { Owner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                {"public", n => { Public = n.GetBoolValue(); } },
-                {"truncated", n => { Truncated = n.GetBoolValue(); } },
-                {"updated_at", n => { UpdatedAt = n.GetStringValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
-                {"user", n => { User = n.GetStringValue(); } },
+                { "comments", n => { Comments = n.GetIntValue(); } },
+                { "comments_url", n => { CommentsUrl = n.GetStringValue(); } },
+                { "commits_url", n => { CommitsUrl = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "files", n => { Files = n.GetObjectValue<GistSimple_files>(GistSimple_files.CreateFromDiscriminatorValue); } },
+                { "fork_of", n => { ForkOf = n.GetObjectValue<GistSimple_fork_of>(GistSimple_fork_of.CreateFromDiscriminatorValue); } },
+                { "forks", n => { Forks = n.GetCollectionOfObjectValues<GistSimple_forks>(GistSimple_forks.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "forks_url", n => { ForksUrl = n.GetStringValue(); } },
+                { "git_pull_url", n => { GitPullUrl = n.GetStringValue(); } },
+                { "git_push_url", n => { GitPushUrl = n.GetStringValue(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<GistHistory>(GistHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                { "public", n => { Public = n.GetBoolValue(); } },
+                { "truncated", n => { Truncated = n.GetBoolValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "user", n => { User = n.GetStringValue(); } },
             };
         }
         /// <summary>

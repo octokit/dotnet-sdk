@@ -8,11 +8,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Gpg_keys {
+namespace GitHub.Users.Item.Gpg_keys
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\gpg_keys
     /// </summary>
-    public class Gpg_keysRequestBuilder : BaseRequestBuilder 
+    public class Gpg_keysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
         /// Instantiates a new <see cref="Gpg_keysRequestBuilder"/> and sets the default values.

@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
+namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots
+{
     #pragma warning disable CS1591
-    public class SnapshotsPostResponse : IAdditionalDataHolder, IParsable 
+    public class SnapshotsPostResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -62,10 +63,10 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Snapshots {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
-                {"message", n => { Message = n.GetStringValue(); } },
-                {"result", n => { Result = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetStringValue(); } },
             };
         }
         /// <summary>

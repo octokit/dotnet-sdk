@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// A Dependabot alert.
     /// </summary>
-    public class DependabotAlert : IParsable 
+    public class DependabotAlert : IParsable
     {
         /// <summary>The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
         public DateTimeOffset? AutoDismissedAt { get; private set; }
@@ -100,21 +101,21 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"auto_dismissed_at", n => { AutoDismissedAt = n.GetDateTimeOffsetValue(); } },
-                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                {"dependency", n => { Dependency = n.GetObjectValue<DependabotAlert_dependency>(DependabotAlert_dependency.CreateFromDiscriminatorValue); } },
-                {"dismissed_at", n => { DismissedAt = n.GetDateTimeOffsetValue(); } },
-                {"dismissed_by", n => { DismissedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                {"dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
-                {"dismissed_reason", n => { DismissedReason = n.GetEnumValue<DependabotAlert_dismissed_reason>(); } },
-                {"fixed_at", n => { FixedAt = n.GetDateTimeOffsetValue(); } },
-                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"number", n => { Number = n.GetIntValue(); } },
-                {"security_advisory", n => { SecurityAdvisory = n.GetObjectValue<DependabotAlertSecurityAdvisory>(DependabotAlertSecurityAdvisory.CreateFromDiscriminatorValue); } },
-                {"security_vulnerability", n => { SecurityVulnerability = n.GetObjectValue<DependabotAlertSecurityVulnerability>(DependabotAlertSecurityVulnerability.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetEnumValue<DependabotAlert_state>(); } },
-                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                {"url", n => { Url = n.GetStringValue(); } },
+                { "auto_dismissed_at", n => { AutoDismissedAt = n.GetDateTimeOffsetValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "dependency", n => { Dependency = n.GetObjectValue<DependabotAlert_dependency>(DependabotAlert_dependency.CreateFromDiscriminatorValue); } },
+                { "dismissed_at", n => { DismissedAt = n.GetDateTimeOffsetValue(); } },
+                { "dismissed_by", n => { DismissedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
+                { "dismissed_reason", n => { DismissedReason = n.GetEnumValue<DependabotAlert_dismissed_reason>(); } },
+                { "fixed_at", n => { FixedAt = n.GetDateTimeOffsetValue(); } },
+                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "number", n => { Number = n.GetIntValue(); } },
+                { "security_advisory", n => { SecurityAdvisory = n.GetObjectValue<DependabotAlertSecurityAdvisory>(DependabotAlertSecurityAdvisory.CreateFromDiscriminatorValue); } },
+                { "security_vulnerability", n => { SecurityVulnerability = n.GetObjectValue<DependabotAlertSecurityVulnerability>(DependabotAlertSecurityVulnerability.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<DependabotAlert_state>(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

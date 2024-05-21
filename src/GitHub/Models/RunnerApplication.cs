@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models {
+namespace GitHub.Models
+{
     /// <summary>
     /// Runner Application
     /// </summary>
-    public class RunnerApplication : IAdditionalDataHolder, IParsable 
+    public class RunnerApplication : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -85,12 +86,12 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"architecture", n => { Architecture = n.GetStringValue(); } },
-                {"download_url", n => { DownloadUrl = n.GetStringValue(); } },
-                {"filename", n => { Filename = n.GetStringValue(); } },
-                {"os", n => { Os = n.GetStringValue(); } },
-                {"sha256_checksum", n => { Sha256Checksum = n.GetStringValue(); } },
-                {"temp_download_token", n => { TempDownloadToken = n.GetStringValue(); } },
+                { "architecture", n => { Architecture = n.GetStringValue(); } },
+                { "download_url", n => { DownloadUrl = n.GetStringValue(); } },
+                { "filename", n => { Filename = n.GetStringValue(); } },
+                { "os", n => { Os = n.GetStringValue(); } },
+                { "sha256_checksum", n => { Sha256Checksum = n.GetStringValue(); } },
+                { "temp_download_token", n => { TempDownloadToken = n.GetStringValue(); } },
             };
         }
         /// <summary>
