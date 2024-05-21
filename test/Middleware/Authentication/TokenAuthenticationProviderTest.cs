@@ -2,38 +2,37 @@
 
 using GitHub.Octokit.Client.Authentication;
 using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Authentication;
 using Xunit;
 
 public class TokenAuthenticationProviderTests
 {
-  private const string ValidToken = "validToken";
-  private TokenAuthProvider _provider;
+    private const string ValidToken = "validToken";
 
-  public TokenAuthenticationProviderTests()
-  {
-    _provider = new TokenAuthProvider(ValidToken);
-  }
+    private TokenProvider _tokenProvider;
 
-  [Fact]
-  public void Constructor_ThrowsException_WhenTokenIsEmpty()
-  {
-    Assert.Throws<ArgumentException>(() => new TokenAuthProvider(""));
-  }
+    private BaseBearerTokenAuthenticationProvider _authProvider;
 
-  [Fact]
-  public async Task AuthenticateRequestAsync_ThrowsException_WhenRequestIsNull()
-  {
-    await Assert.ThrowsAsync<ArgumentNullException>(() => _provider.AuthenticateRequestAsync(null, null));
-  }
+    public TokenAuthenticationProviderTests()
+    {
+        _tokenProvider = new TokenProvider(ValidToken);
+        _authProvider = new BaseBearerTokenAuthenticationProvider(_tokenProvider);
+    }
 
-  [Fact]
-  public async Task AuthenticateRequestAsync_AddsAuthorizationHeader_WhenRequestIsValid()
-  {
-    var request = new RequestInformation();
-    await _provider.AuthenticateRequestAsync(request);
-    var headerToken = request.Headers["Authorization"].FirstOrDefault<string>();
+    [Fact]
+    public void Constructor_ThrowsException_WhenTokenIsEmpty()
+    {
+        Assert.Throws<ArgumentException>(() => new TokenProvider(""));
+    }
 
-    Assert.True(request.Headers.ContainsKey("Authorization"));
-    Assert.Equal($"Bearer {ValidToken}", headerToken);
-  }
+    [Fact]
+    public async Task AuthenticateRequestAsync_AddsAuthorizationHeader_WhenRequestIsValid()
+    {
+        var request = new RequestInformation(Method.GET, "https://localhost", new Dictionary<string, object>());
+        await _authProvider.AuthenticateRequestAsync(request);
+        var headerToken = request.Headers["Authorization"].FirstOrDefault<string>();
+
+        Assert.True(request.Headers.ContainsKey("Authorization"));
+        Assert.Equal($"Bearer {ValidToken}", headerToken);
+    }
 }

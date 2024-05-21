@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using GitHub;
-using GitHub.Octokit.Client.Authentication;
 using GitHub.Octokit.Client;
+using GitHub.Octokit.Client.Authentication;
 using Microsoft.Kiota.Abstractions.Authentication;
 
 
@@ -19,12 +19,12 @@ var aiGitHubClient = new GitHubClient(aiAdapter);
 
 try
 {
-  var response = await aiGitHubClient.Installation.Repositories.GetAsync();
-  response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
+    var response = await aiGitHubClient.Installation.Repositories.GetAsync();
+    response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
 }
 catch (Exception e)
 {
-  Console.WriteLine(e.Message);
+    Console.WriteLine(e.Message);
 }
 
 // Personal Access Token authentication
@@ -34,10 +34,10 @@ var gitHubClient = new GitHubClient(adapter);
 
 try
 {
-  var response = await gitHubClient.Installation.Repositories.GetAsync();
-  response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
+    var response = await gitHubClient.Installation.Repositories.GetAsync();
+    response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
 }
 catch (Exception e)
 {
-  Console.WriteLine(e.Message);
+    Console.WriteLine(e.Message);
 }

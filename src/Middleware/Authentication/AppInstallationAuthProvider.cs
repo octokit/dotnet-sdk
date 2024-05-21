@@ -10,8 +10,8 @@ namespace GitHub.Octokit.Client.Authentication;
 // 
 public class AppInstallationAuthProvider : BaseBearerTokenAuthenticationProvider
 {
-  public AppInstallationAuthProvider(IAccessTokenProvider tokenProvider) : base(tokenProvider)
-  {
+    public AppInstallationAuthProvider(IAccessTokenProvider tokenProvider) : base(tokenProvider)
+    {
 
-  }
+    }
 }
