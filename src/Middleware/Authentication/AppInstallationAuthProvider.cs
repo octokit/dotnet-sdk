@@ -7,7 +7,6 @@ namespace GitHub.Octokit.Client.Authentication;
 
 // This may be useful for testing purposes and to provide a common interface for all authentication providers
 // Or to abstract logic that is specific to bearer token authentication providers
-// 
 public class AppInstallationAuthProvider : BaseBearerTokenAuthenticationProvider
 {
     public AppInstallationAuthProvider(IAccessTokenProvider tokenProvider) : base(tokenProvider)
