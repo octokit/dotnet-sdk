@@ -19,25 +19,25 @@ var aiGitHubClient = new GitHubClient(aiAdapter);
 
 try
 {
-    var response = await aiGitHubClient.Installation.Repositories.GetAsync();
-    response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
+  var response = await aiGitHubClient.Installation.Repositories.GetAsync();
+  response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
 }
 catch (Exception e)
 {
-    Console.WriteLine(e.Message);
+  Console.WriteLine(e.Message);
 }
 
 // Personal Access Token authentication
-var tokenProvider = new TokenProvider(Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "");
-var adapter = RequestAdapter.Create(new BaseBearerTokenAuthenticationProvider(tokenProvider));
-var gitHubClient = new GitHubClient(adapter);
+// var tokenProvider = new TokenProvider(Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "");
+// var adapter = RequestAdapter.Create(new AppInstallationAuthProvider(tokenProvider));
+// var gitHubClient = new GitHubClient(adapter);
 
-try
-{
-    var response = await gitHubClient.Installation.Repositories.GetAsync();
-    response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
-}
-catch (Exception e)
-{
-    Console.WriteLine(e.Message);
-}
+// try
+// {
+//   var response = await gitHubClient.Installation.Repositories.GetAsync();
+//   response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
+// }
+// catch (Exception e)
+// {
+//   Console.WriteLine(e.Message);
+// }
