@@ -2,7 +2,6 @@
 using GitHub;
 using GitHub.Octokit.Client;
 using GitHub.Octokit.Client.Authentication;
-using Microsoft.Kiota.Abstractions.Authentication;
 
 
 // App InstallationToken authentication

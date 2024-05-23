@@ -1,7 +1,9 @@
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.Kiota.Abstractions.Authentication;
 
 namespace GitHub.Octokit.Client.Authentication;
+/// <summary>
+/// Used for basic token authentication
+/// </summary>
 public class TokenProvider : IAccessTokenProvider
 {
     private readonly string _accessToken;
