@@ -19,12 +19,12 @@ var aiGitHubClient = new GitHubClient(aiAdapter);
 
 try
 {
-  var response = await aiGitHubClient.Installation.Repositories.GetAsync();
-  response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
+    var response = await aiGitHubClient.Installation.Repositories.GetAsync();
+    response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
 }
 catch (Exception e)
 {
-  Console.WriteLine(e.Message);
+    Console.WriteLine(e.Message);
 }
 
 // Personal Access Token authentication
