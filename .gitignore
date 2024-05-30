@@ -109,4 +109,6 @@ testresults/
 [Tt]est[Rr]esult*/
 **/coverage.json
 coverage/*
+tools/*
+dotnet-tools.json
 *.pem
