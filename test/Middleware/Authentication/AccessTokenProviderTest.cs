@@ -1,7 +1,7 @@
+using System.Security.Cryptography;
 using GitHub.Octokit.Client.Authentication;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
-using System.Security.Cryptography;
 using Xunit;
 
 public class AccessTokenProviderTests
