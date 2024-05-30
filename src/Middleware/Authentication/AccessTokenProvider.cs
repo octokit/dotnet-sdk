@@ -20,6 +20,14 @@ public class AccessTokenProvider
         return tokenHandler.CreateToken(tokenDescriptor);
     }
 
+    /// <summary>
+    /// Get the app installation access token from GitHub
+    /// </summary>
+    /// <param name="baseUrl"></param>
+    /// <param name="jwt"></param>
+    /// <param name="installationId"></param>
+    /// <returns></returns>
+    /// <exception cref="Exception"></exception>
     public static async Task<string> GetGitHubAccessTokenAsync(string baseUrl, string jwt, string installationId)
     {
         using var client = new HttpClient();
@@ -46,23 +54,23 @@ public class AccessTokenProvider
     /// Create a token descriptor
     /// We want to store the descriptor so that we can automatically refresh the token before it expires
     /// </summary>
-    /// <param name="credentials"></param>
-    /// <param name="now"></param>
-    public static SecurityTokenDescriptor CreateTokenDescriptor(RSA privateKey, string sourceId)
+    /// <param name="privateKey"></param>
+    /// <param name="sourceId"></param>
+    /// <param name="issuedAt"></param>
+    public static SecurityTokenDescriptor CreateTokenDescriptor(RSA privateKey, string sourceId, DateTime issuedAt)
     {
-        var now = DateTime.UtcNow;
         var signingCredentials = new SigningCredentials(new RsaSecurityKey(privateKey), SecurityAlgorithms.RsaSha256);
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Issuer = sourceId,
-            IssuedAt = now,
-            NotBefore = now,
-            Expires = now.AddMinutes(_timeoutMinuites),
+            IssuedAt = issuedAt,
+            NotBefore = issuedAt,
+            Expires = issuedAt.AddMinutes(_timeoutMinuites),
             SigningCredentials = signingCredentials,
             Claims = new Dictionary<string, object>
           {
-              { JwtRegisteredClaimNames.Iat, new DateTimeOffset(now).ToUnixTimeSeconds() },
-              { JwtRegisteredClaimNames.Exp, new DateTimeOffset(now.AddMinutes(_timeoutMinuites)).ToUnixTimeSeconds() },
+              { JwtRegisteredClaimNames.Iat, new DateTimeOffset(issuedAt).ToUnixTimeSeconds() },
+              { JwtRegisteredClaimNames.Exp, new DateTimeOffset(issuedAt.AddMinutes(_timeoutMinuites)).ToUnixTimeSeconds() },
               { JwtRegisteredClaimNames.Iss, sourceId }
           }
         };
