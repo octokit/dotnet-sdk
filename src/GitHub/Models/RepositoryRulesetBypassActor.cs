@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// An actor that can bypass rules in a ruleset
     /// </summary>
-    public class RepositoryRulesetBypassActor : IAdditionalDataHolder, IParsable
+    public class RepositoryRulesetBypassActor : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.</summary>
         public int? ActorId { get; set; }
@@ -44,9 +43,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actor_id", n => { ActorId = n.GetIntValue(); } },
-                { "actor_type", n => { ActorType = n.GetEnumValue<RepositoryRulesetBypassActor_actor_type>(); } },
-                { "bypass_mode", n => { BypassMode = n.GetEnumValue<RepositoryRulesetBypassActor_bypass_mode>(); } },
+                {"actor_id", n => { ActorId = n.GetIntValue(); } },
+                {"actor_type", n => { ActorType = n.GetEnumValue<RepositoryRulesetBypassActor_actor_type>(); } },
+                {"bypass_mode", n => { BypassMode = n.GetEnumValue<RepositoryRulesetBypassActor_bypass_mode>(); } },
             };
         }
         /// <summary>

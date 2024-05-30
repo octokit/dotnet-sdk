@@ -13,12 +13,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Codespaces.Item
-{
+namespace GitHub.User.Codespaces.Item {
     /// <summary>
     /// Builds and executes requests for operations under \user\codespaces\{codespace_name}
     /// </summary>
-    public class WithCodespace_nameItemRequestBuilder : BaseRequestBuilder
+    public class WithCodespace_nameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The exports property</summary>
         public ExportsRequestBuilder Exports
@@ -84,10 +83,10 @@ namespace GitHub.User.Codespaces.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WithCodespace_nameDeleteResponse>(requestInfo, WithCodespace_nameDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -114,10 +113,10 @@ namespace GitHub.User.Codespaces.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Codespace>(requestInfo, Codespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -145,9 +144,9 @@ namespace GitHub.User.Codespaces.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Codespace>(requestInfo, Codespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
-{
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\restrictions\teams
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder
+    public class TeamsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="TeamsRequestBuilder"/> and sets the default values.
@@ -53,7 +52,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Team>(requestInfo, Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -78,7 +77,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Team>(requestInfo, Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -105,7 +104,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Team>(requestInfo, Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -132,7 +131,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Team>(requestInfo, Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -234,7 +233,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="TeamsDeleteRequestBodyMember1"/>
         /// </summary>
-        public class TeamsDeleteRequestBody : IComposedTypeWrapper, IParsable
+        public class TeamsDeleteRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -340,7 +339,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="TeamsPostRequestBodyMember1"/>
         /// </summary>
-        public class TeamsPostRequestBody : IComposedTypeWrapper, IParsable
+        public class TeamsPostRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -446,7 +445,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="TeamsPutRequestBodyMember1"/>
         /// </summary>
-        public class TeamsPutRequestBody : IComposedTypeWrapper, IParsable
+        public class TeamsPutRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

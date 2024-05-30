@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts
-{
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\required_status_checks\contexts
     /// </summary>
-    public class ContextsRequestBuilder : BaseRequestBuilder
+    public class ContextsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ContextsRequestBuilder"/> and sets the default values.
@@ -54,8 +53,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -80,7 +79,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -109,9 +108,9 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -139,8 +138,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<string>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -242,7 +241,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// <summary>
         /// Composed type wrapper for classes <see cref="ContextsDeleteRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
-        public class ContextsDeleteRequestBody : IComposedTypeWrapper, IParsable
+        public class ContextsDeleteRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -348,7 +347,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// <summary>
         /// Composed type wrapper for classes <see cref="ContextsPostRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
-        public class ContextsPostRequestBody : IComposedTypeWrapper, IParsable
+        public class ContextsPostRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -454,7 +453,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
         /// <summary>
         /// Composed type wrapper for classes <see cref="ContextsPutRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
-        public class ContextsPutRequestBody : IComposedTypeWrapper, IParsable
+        public class ContextsPutRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

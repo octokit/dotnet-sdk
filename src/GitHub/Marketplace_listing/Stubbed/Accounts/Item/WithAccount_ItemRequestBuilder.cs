@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Marketplace_listing.Stubbed.Accounts.Item
-{
+namespace GitHub.Marketplace_listing.Stubbed.Accounts.Item {
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\stubbed\accounts\{account_id}
     /// </summary>
-    public class WithAccount_ItemRequestBuilder : BaseRequestBuilder
+    public class WithAccount_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithAccount_ItemRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.Marketplace_listing.Stubbed.Accounts.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<MarketplacePurchase>(requestInfo, MarketplacePurchase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

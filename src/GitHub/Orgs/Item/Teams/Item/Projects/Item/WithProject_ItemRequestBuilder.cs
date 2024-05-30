@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item.Projects.Item
-{
+namespace GitHub.Orgs.Item.Teams.Item.Projects.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\projects\{project_id}
     /// </summary>
-    public class WithProject_ItemRequestBuilder : BaseRequestBuilder
+    public class WithProject_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithProject_ItemRequestBuilder"/> and sets the default values.
@@ -89,7 +88,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", WithProject_403Error.CreateFromDiscriminatorValue },
+                {"403", WithProject_403Error.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

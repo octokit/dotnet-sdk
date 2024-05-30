@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Stats.Commit_activity
-{
+namespace GitHub.Repos.Item.Item.Stats.Commit_activity {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats\commit_activity
     /// </summary>
-    public class Commit_activityRequestBuilder : BaseRequestBuilder
+    public class Commit_activityRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="Commit_activityRequestBuilder"/> and sets the default values.

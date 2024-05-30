@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class Commit_stats : IAdditionalDataHolder, IParsable
+    public class Commit_stats : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -43,9 +42,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additions", n => { Additions = n.GetIntValue(); } },
-                { "deletions", n => { Deletions = n.GetIntValue(); } },
-                { "total", n => { Total = n.GetIntValue(); } },
+                {"additions", n => { Additions = n.GetIntValue(); } },
+                {"deletions", n => { Deletions = n.GetIntValue(); } },
+                {"total", n => { Total = n.GetIntValue(); } },
             };
         }
         /// <summary>

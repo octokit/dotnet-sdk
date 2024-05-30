@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Rate_limit
-{
+namespace GitHub.Rate_limit {
     /// <summary>
     /// Builds and executes requests for operations under \rate_limit
     /// </summary>
-    public class Rate_limitRequestBuilder : BaseRequestBuilder
+    public class Rate_limitRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="Rate_limitRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.Rate_limit
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RateLimitOverview>(requestInfo, RateLimitOverview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

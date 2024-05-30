@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Gists.Public
-{
+namespace GitHub.Gists.Public {
     /// <summary>
     /// Builds and executes requests for operations under \gists\public
     /// </summary>
-    public class PublicRequestBuilder : BaseRequestBuilder
+    public class PublicRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="PublicRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Gists.Public
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<BaseGist>(requestInfo, BaseGist.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

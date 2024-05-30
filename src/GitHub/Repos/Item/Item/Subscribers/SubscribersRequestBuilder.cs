@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Subscribers
-{
+namespace GitHub.Repos.Item.Item.Subscribers {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\subscribers
     /// </summary>
-    public class SubscribersRequestBuilder : BaseRequestBuilder
+    public class SubscribersRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="SubscribersRequestBuilder"/> and sets the default values.

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Projects
-{
+namespace GitHub.User.Projects {
     /// <summary>
     /// Builds and executes requests for operations under \user\projects
     /// </summary>
-    public class ProjectsRequestBuilder : BaseRequestBuilder
+    public class ProjectsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ProjectsRequestBuilder"/> and sets the default values.
@@ -55,9 +54,9 @@ namespace GitHub.User.Projects
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationErrorSimple.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Project>(requestInfo, Project.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

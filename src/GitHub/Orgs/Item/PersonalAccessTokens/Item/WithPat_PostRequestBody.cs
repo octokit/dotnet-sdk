@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.PersonalAccessTokens.Item
-{
+namespace GitHub.Orgs.Item.PersonalAccessTokens.Item {
     #pragma warning disable CS1591
-    public class WithPat_PostRequestBody : IAdditionalDataHolder, IParsable
+    public class WithPat_PostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Action to apply to the fine-grained personal access token.</summary>
@@ -39,7 +38,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<WithPat_PostRequestBody_action>(); } },
+                {"action", n => { Action = n.GetEnumValue<WithPat_PostRequestBody_action>(); } },
             };
         }
         /// <summary>

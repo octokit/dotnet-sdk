@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Properties
-{
+namespace GitHub.Repos.Item.Item.Properties {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\properties
     /// </summary>
-    public class PropertiesRequestBuilder : BaseRequestBuilder
+    public class PropertiesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The values property</summary>
         public ValuesRequestBuilder Values

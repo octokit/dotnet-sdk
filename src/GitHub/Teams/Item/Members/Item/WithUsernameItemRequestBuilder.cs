@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Teams.Item.Members.Item
-{
+namespace GitHub.Teams.Item.Members.Item {
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\members\{username}
     /// </summary>
-    public class WithUsernameItemRequestBuilder : BaseRequestBuilder
+    public class WithUsernameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
@@ -89,7 +88,7 @@ namespace GitHub.Teams.Item.Members.Item
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

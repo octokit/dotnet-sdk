@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class Hovercard_contexts : IAdditionalDataHolder, IParsable
+    public class Hovercard_contexts : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -53,8 +52,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "octicon", n => { Octicon = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
+                {"octicon", n => { Octicon = n.GetStringValue(); } },
             };
         }
         /// <summary>

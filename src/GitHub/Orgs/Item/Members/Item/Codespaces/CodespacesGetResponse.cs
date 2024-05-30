@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Members.Item.Codespaces
-{
+namespace GitHub.Orgs.Item.Members.Item.Codespaces {
     #pragma warning disable CS1591
-    public class CodespacesGetResponse : IAdditionalDataHolder, IParsable
+    public class CodespacesGetResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,8 +47,8 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "codespaces", n => { Codespaces = n.GetCollectionOfObjectValues<Codespace>(Codespace.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"codespaces", n => { Codespaces = n.GetCollectionOfObjectValues<Codespace>(Codespace.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

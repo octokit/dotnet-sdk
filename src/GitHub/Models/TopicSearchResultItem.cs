@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Topic Search Result Item
     /// </summary>
-    public class TopicSearchResultItem : IAdditionalDataHolder, IParsable
+    public class TopicSearchResultItem : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -130,22 +129,22 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aliases", n => { Aliases = n.GetCollectionOfObjectValues<TopicSearchResultItem_aliases>(TopicSearchResultItem_aliases.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "created_by", n => { CreatedBy = n.GetStringValue(); } },
-                { "curated", n => { Curated = n.GetBoolValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "display_name", n => { DisplayName = n.GetStringValue(); } },
-                { "featured", n => { Featured = n.GetBoolValue(); } },
-                { "logo_url", n => { LogoUrl = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "related", n => { Related = n.GetCollectionOfObjectValues<TopicSearchResultItem_related>(TopicSearchResultItem_related.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "released", n => { Released = n.GetStringValue(); } },
-                { "repository_count", n => { RepositoryCount = n.GetIntValue(); } },
-                { "score", n => { Score = n.GetDoubleValue(); } },
-                { "short_description", n => { ShortDescription = n.GetStringValue(); } },
-                { "text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<Topics>(Topics.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"aliases", n => { Aliases = n.GetCollectionOfObjectValues<TopicSearchResultItem_aliases>(TopicSearchResultItem_aliases.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"created_by", n => { CreatedBy = n.GetStringValue(); } },
+                {"curated", n => { Curated = n.GetBoolValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"display_name", n => { DisplayName = n.GetStringValue(); } },
+                {"featured", n => { Featured = n.GetBoolValue(); } },
+                {"logo_url", n => { LogoUrl = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"related", n => { Related = n.GetCollectionOfObjectValues<TopicSearchResultItem_related>(TopicSearchResultItem_related.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"released", n => { Released = n.GetStringValue(); } },
+                {"repository_count", n => { RepositoryCount = n.GetIntValue(); } },
+                {"score", n => { Score = n.GetDoubleValue(); } },
+                {"short_description", n => { ShortDescription = n.GetStringValue(); } },
+                {"text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<Topics>(Topics.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

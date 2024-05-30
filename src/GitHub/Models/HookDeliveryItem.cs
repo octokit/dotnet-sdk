@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Delivery made by a webhook, without request and response information.
     /// </summary>
-    public class HookDeliveryItem : IAdditionalDataHolder, IParsable
+    public class HookDeliveryItem : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The type of activity for the event that triggered the delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,6 +58,8 @@ namespace GitHub.Models
 #endif
         /// <summary>Status code received when delivery was made.</summary>
         public int? StatusCode { get; set; }
+        /// <summary>Time when the webhook delivery was throttled.</summary>
+        public DateTimeOffset? ThrottledAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="HookDeliveryItem"/> and sets the default values.
         /// </summary>
@@ -84,17 +85,18 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetStringValue(); } },
-                { "delivered_at", n => { DeliveredAt = n.GetDateTimeOffsetValue(); } },
-                { "duration", n => { Duration = n.GetDoubleValue(); } },
-                { "event", n => { Event = n.GetStringValue(); } },
-                { "guid", n => { Guid = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "installation_id", n => { InstallationId = n.GetIntValue(); } },
-                { "redelivery", n => { Redelivery = n.GetBoolValue(); } },
-                { "repository_id", n => { RepositoryId = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
-                { "status_code", n => { StatusCode = n.GetIntValue(); } },
+                {"action", n => { Action = n.GetStringValue(); } },
+                {"delivered_at", n => { DeliveredAt = n.GetDateTimeOffsetValue(); } },
+                {"duration", n => { Duration = n.GetDoubleValue(); } },
+                {"event", n => { Event = n.GetStringValue(); } },
+                {"guid", n => { Guid = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"installation_id", n => { InstallationId = n.GetIntValue(); } },
+                {"redelivery", n => { Redelivery = n.GetBoolValue(); } },
+                {"repository_id", n => { RepositoryId = n.GetIntValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"status_code", n => { StatusCode = n.GetIntValue(); } },
+                {"throttled_at", n => { ThrottledAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -115,6 +117,7 @@ namespace GitHub.Models
             writer.WriteIntValue("repository_id", RepositoryId);
             writer.WriteStringValue("status", Status);
             writer.WriteIntValue("status_code", StatusCode);
+            writer.WriteDateTimeOffsetValue("throttled_at", ThrottledAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

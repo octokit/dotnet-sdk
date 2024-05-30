@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A collection of related issues and pull requests.
     /// </summary>
-    public class NullableMilestone : IAdditionalDataHolder, IParsable
+    public class NullableMilestone : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -113,22 +112,22 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
-                { "closed_issues", n => { ClosedIssues = n.GetIntValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "due_on", n => { DueOn = n.GetDateTimeOffsetValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "labels_url", n => { LabelsUrl = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "open_issues", n => { OpenIssues = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<NullableMilestone_state>(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
+                {"closed_issues", n => { ClosedIssues = n.GetIntValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"due_on", n => { DueOn = n.GetDateTimeOffsetValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"labels_url", n => { LabelsUrl = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"number", n => { Number = n.GetIntValue(); } },
+                {"open_issues", n => { OpenIssues = n.GetIntValue(); } },
+                {"state", n => { State = n.GetEnumValue<NullableMilestone_state>(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

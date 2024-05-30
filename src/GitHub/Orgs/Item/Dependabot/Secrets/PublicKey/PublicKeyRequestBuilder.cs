@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Dependabot.Secrets.PublicKey
-{
+namespace GitHub.Orgs.Item.Dependabot.Secrets.PublicKey {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\dependabot\secrets\public-key
     /// </summary>
-    public class PublicKeyRequestBuilder : BaseRequestBuilder
+    public class PublicKeyRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="PublicKeyRequestBuilder"/> and sets the default values.

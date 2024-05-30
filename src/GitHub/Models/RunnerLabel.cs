@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A label for a self hosted runner
     /// </summary>
-    public class RunnerLabel : IAdditionalDataHolder, IParsable
+    public class RunnerLabel : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -50,9 +49,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<RunnerLabel_type>(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<RunnerLabel_type>(); } },
             };
         }
         /// <summary>

@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Installation.Token
-{
+namespace GitHub.Installation.Token {
     /// <summary>
     /// Builds and executes requests for operations under \installation\token
     /// </summary>
-    public class TokenRequestBuilder : BaseRequestBuilder
+    public class TokenRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="TokenRequestBuilder"/> and sets the default values.

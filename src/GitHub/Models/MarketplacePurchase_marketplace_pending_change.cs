@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class MarketplacePurchase_marketplace_pending_change : IAdditionalDataHolder, IParsable
+    public class MarketplacePurchase_marketplace_pending_change : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -59,11 +58,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_date", n => { EffectiveDate = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "is_installed", n => { IsInstalled = n.GetBoolValue(); } },
-                { "plan", n => { Plan = n.GetObjectValue<MarketplaceListingPlan>(MarketplaceListingPlan.CreateFromDiscriminatorValue); } },
-                { "unit_count", n => { UnitCount = n.GetIntValue(); } },
+                {"effective_date", n => { EffectiveDate = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"is_installed", n => { IsInstalled = n.GetBoolValue(); } },
+                {"plan", n => { Plan = n.GetObjectValue<MarketplaceListingPlan>(MarketplaceListingPlan.CreateFromDiscriminatorValue); } },
+                {"unit_count", n => { UnitCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

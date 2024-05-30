@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check
-{
+namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\permissions_check
     /// </summary>
-    public class Permissions_checkRequestBuilder : BaseRequestBuilder
+    public class Permissions_checkRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="Permissions_checkRequestBuilder"/> and sets the default values.
@@ -55,11 +54,11 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
-                { "503", CodespacesPermissionsCheckForDevcontainer503Error.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
+                {"503", CodespacesPermissionsCheckForDevcontainer503Error.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CodespacesPermissionsCheckForDevcontainer>(requestInfo, CodespacesPermissionsCheckForDevcontainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

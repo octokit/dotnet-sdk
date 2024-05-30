@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Latest
-{
+namespace GitHub.Repos.Item.Item.Releases.Latest {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\latest
     /// </summary>
-    public class LatestRequestBuilder : BaseRequestBuilder
+    public class LatestRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="LatestRequestBuilder"/> and sets the default values.

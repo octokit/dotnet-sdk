@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class WorkflowRunUsage_billable_WINDOWS : IAdditionalDataHolder, IParsable
+    public class WorkflowRunUsage_billable_WINDOWS : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,9 +48,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "job_runs", n => { JobRuns = n.GetCollectionOfObjectValues<WorkflowRunUsage_billable_WINDOWS_job_runs>(WorkflowRunUsage_billable_WINDOWS_job_runs.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "jobs", n => { Jobs = n.GetIntValue(); } },
-                { "total_ms", n => { TotalMs = n.GetIntValue(); } },
+                {"job_runs", n => { JobRuns = n.GetCollectionOfObjectValues<WorkflowRunUsage_billable_WINDOWS_job_runs>(WorkflowRunUsage_billable_WINDOWS_job_runs.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"jobs", n => { Jobs = n.GetIntValue(); } },
+                {"total_ms", n => { TotalMs = n.GetIntValue(); } },
             };
         }
         /// <summary>

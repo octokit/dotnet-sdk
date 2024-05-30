@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pages
-{
+namespace GitHub.Repos.Item.Item.Pages {
     /// <summary>
     /// The source branch and directory used to publish your Pages site.
     /// </summary>
-    public class PagesPostRequestBody : IAdditionalDataHolder, IParsable
+    public class PagesPostRequestBody : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -48,8 +47,8 @@ namespace GitHub.Repos.Item.Item.Pages
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "build_type", n => { BuildType = n.GetEnumValue<PagesPostRequestBody_build_type>(); } },
-                { "source", n => { Source = n.GetObjectValue<PagesPostRequestBody_source>(PagesPostRequestBody_source.CreateFromDiscriminatorValue); } },
+                {"build_type", n => { BuildType = n.GetEnumValue<PagesPostRequestBody_build_type>(); } },
+                {"source", n => { Source = n.GetObjectValue<PagesPostRequestBody_source>(PagesPostRequestBody_source.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

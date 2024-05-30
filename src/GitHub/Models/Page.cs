@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// The configuration for GitHub Pages for a repository.
     /// </summary>
-    public class Page : IAdditionalDataHolder, IParsable
+    public class Page : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -92,18 +91,18 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "build_type", n => { BuildType = n.GetEnumValue<Page_build_type>(); } },
-                { "cname", n => { Cname = n.GetStringValue(); } },
-                { "custom_404", n => { Custom404 = n.GetBoolValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "https_certificate", n => { HttpsCertificate = n.GetObjectValue<PagesHttpsCertificate>(PagesHttpsCertificate.CreateFromDiscriminatorValue); } },
-                { "https_enforced", n => { HttpsEnforced = n.GetBoolValue(); } },
-                { "pending_domain_unverified_at", n => { PendingDomainUnverifiedAt = n.GetDateTimeOffsetValue(); } },
-                { "protected_domain_state", n => { ProtectedDomainState = n.GetEnumValue<Page_protected_domain_state>(); } },
-                { "public", n => { Public = n.GetBoolValue(); } },
-                { "source", n => { Source = n.GetObjectValue<PagesSourceHash>(PagesSourceHash.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<Page_status>(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"build_type", n => { BuildType = n.GetEnumValue<Page_build_type>(); } },
+                {"cname", n => { Cname = n.GetStringValue(); } },
+                {"custom_404", n => { Custom404 = n.GetBoolValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"https_certificate", n => { HttpsCertificate = n.GetObjectValue<PagesHttpsCertificate>(PagesHttpsCertificate.CreateFromDiscriminatorValue); } },
+                {"https_enforced", n => { HttpsEnforced = n.GetBoolValue(); } },
+                {"pending_domain_unverified_at", n => { PendingDomainUnverifiedAt = n.GetDateTimeOffsetValue(); } },
+                {"protected_domain_state", n => { ProtectedDomainState = n.GetEnumValue<Page_protected_domain_state>(); } },
+                {"public", n => { Public = n.GetBoolValue(); } },
+                {"source", n => { Source = n.GetObjectValue<PagesSourceHash>(PagesSourceHash.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<Page_status>(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

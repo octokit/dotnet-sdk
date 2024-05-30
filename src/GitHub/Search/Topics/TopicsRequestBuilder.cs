@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Search.Topics
-{
+namespace GitHub.Search.Topics {
     /// <summary>
     /// Builds and executes requests for operations under \search\topics
     /// </summary>
-    public class TopicsRequestBuilder : BaseRequestBuilder
+    public class TopicsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="TopicsRequestBuilder"/> and sets the default values.

@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Commits.Item.CheckSuites
-{
+namespace GitHub.Repos.Item.Item.Commits.Item.CheckSuites {
     #pragma warning disable CS1591
-    public class CheckSuitesGetResponse : IAdditionalDataHolder, IParsable
+    public class CheckSuitesGetResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,8 +47,8 @@ namespace GitHub.Repos.Item.Item.Commits.Item.CheckSuites
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "check_suites", n => { CheckSuites = n.GetCollectionOfObjectValues<CheckSuite>(CheckSuite.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"check_suites", n => { CheckSuites = n.GetCollectionOfObjectValues<CheckSuite>(CheckSuite.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

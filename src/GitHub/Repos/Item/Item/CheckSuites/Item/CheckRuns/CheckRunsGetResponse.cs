@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns
-{
+namespace GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns {
     #pragma warning disable CS1591
-    public class CheckRunsGetResponse : IAdditionalDataHolder, IParsable
+    public class CheckRunsGetResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,8 +47,8 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "check_runs", n => { CheckRuns = n.GetCollectionOfObjectValues<CheckRun>(CheckRun.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"check_runs", n => { CheckRuns = n.GetCollectionOfObjectValues<CheckRun>(CheckRun.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

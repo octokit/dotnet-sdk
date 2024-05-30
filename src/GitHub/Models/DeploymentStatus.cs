@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// The status of a deployment.
     /// </summary>
-    public class DeploymentStatus : IAdditionalDataHolder, IParsable
+    public class DeploymentStatus : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -134,21 +133,21 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "deployment_url", n => { DeploymentUrl = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetStringValue(); } },
-                { "environment_url", n => { EnvironmentUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "log_url", n => { LogUrl = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
-                { "repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<DeploymentStatus_state>(); } },
-                { "target_url", n => { TargetUrl = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"deployment_url", n => { DeploymentUrl = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"environment", n => { Environment = n.GetStringValue(); } },
+                {"environment_url", n => { EnvironmentUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"log_url", n => { LogUrl = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
+                {"repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
+                {"state", n => { State = n.GetEnumValue<DeploymentStatus_state>(); } },
+                {"target_url", n => { TargetUrl = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

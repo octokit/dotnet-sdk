@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Repository actions caches
     /// </summary>
-    public class ActionsCacheList : IAdditionalDataHolder, IParsable
+    public class ActionsCacheList : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Array of caches</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,8 +47,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions_caches", n => { ActionsCaches = n.GetCollectionOfObjectValues<ActionsCacheList_actions_caches>(ActionsCacheList_actions_caches.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"actions_caches", n => { ActionsCaches = n.GetCollectionOfObjectValues<ActionsCacheList_actions_caches>(ActionsCacheList_actions_caches.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

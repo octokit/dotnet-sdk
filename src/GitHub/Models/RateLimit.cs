@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class RateLimit : IAdditionalDataHolder, IParsable
+    public class RateLimit : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,10 +44,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "limit", n => { Limit = n.GetIntValue(); } },
-                { "remaining", n => { Remaining = n.GetIntValue(); } },
-                { "reset", n => { Reset = n.GetIntValue(); } },
-                { "used", n => { Used = n.GetIntValue(); } },
+                {"limit", n => { Limit = n.GetIntValue(); } },
+                {"remaining", n => { Remaining = n.GetIntValue(); } },
+                {"reset", n => { Reset = n.GetIntValue(); } },
+                {"used", n => { Used = n.GetIntValue(); } },
             };
         }
         /// <summary>

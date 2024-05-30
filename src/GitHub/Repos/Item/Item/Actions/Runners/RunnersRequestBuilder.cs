@@ -12,12 +12,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runners
-{
+namespace GitHub.Repos.Item.Item.Actions.Runners {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runners
     /// </summary>
-    public class RunnersRequestBuilder : BaseRequestBuilder
+    public class RunnersRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The downloads property</summary>
         public DownloadsRequestBuilder Downloads

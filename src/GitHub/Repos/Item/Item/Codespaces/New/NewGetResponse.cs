@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Codespaces.New
-{
+namespace GitHub.Repos.Item.Item.Codespaces.New {
     #pragma warning disable CS1591
-    public class NewGetResponse : IAdditionalDataHolder, IParsable
+    public class NewGetResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -54,8 +53,8 @@ namespace GitHub.Repos.Item.Item.Codespaces.New
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billable_owner", n => { BillableOwner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "defaults", n => { Defaults = n.GetObjectValue<NewGetResponse_defaults>(NewGetResponse_defaults.CreateFromDiscriminatorValue); } },
+                {"billable_owner", n => { BillableOwner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"defaults", n => { Defaults = n.GetObjectValue<NewGetResponse_defaults>(NewGetResponse_defaults.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events
-{
+namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events {
     #pragma warning disable CS1591
-    public class EventsPostRequestBody : IAdditionalDataHolder, IParsable
+    public class EventsPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +46,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "event", n => { Event = n.GetEnumValue<EventsPostRequestBody_event>(); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"event", n => { Event = n.GetEnumValue<EventsPostRequestBody_event>(); } },
             };
         }
         /// <summary>

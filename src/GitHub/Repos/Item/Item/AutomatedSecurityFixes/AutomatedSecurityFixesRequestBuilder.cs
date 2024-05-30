@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.AutomatedSecurityFixes
-{
+namespace GitHub.Repos.Item.Item.AutomatedSecurityFixes {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\automated-security-fixes
     /// </summary>
-    public class AutomatedSecurityFixesRequestBuilder : BaseRequestBuilder
+    public class AutomatedSecurityFixesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="AutomatedSecurityFixesRequestBuilder"/> and sets the default values.

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Timeline Comment Event
     /// </summary>
-    public class TimelineCommentEvent : IAdditionalDataHolder, IParsable
+    public class TimelineCommentEvent : IAdditionalDataHolder, IParsable 
     {
         /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,22 +141,22 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "body_html", n => { BodyHtml = n.GetStringValue(); } },
-                { "body_text", n => { BodyText = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "event", n => { Event = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "issue_url", n => { IssueUrl = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
-                { "reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"body_html", n => { BodyHtml = n.GetStringValue(); } },
+                {"body_text", n => { BodyText = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"event", n => { Event = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"issue_url", n => { IssueUrl = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
+                {"reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

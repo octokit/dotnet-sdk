@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Applications.Item.Token
-{
+namespace GitHub.Applications.Item.Token {
     /// <summary>
     /// Builds and executes requests for operations under \applications\{client_id}\token
     /// </summary>
-    public class TokenRequestBuilder : BaseRequestBuilder
+    public class TokenRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The scoped property</summary>
         public ScopedRequestBuilder Scoped
@@ -58,7 +57,7 @@ namespace GitHub.Applications.Item.Token
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -84,7 +83,7 @@ namespace GitHub.Applications.Item.Token
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Authorization>(requestInfo, Authorization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -111,8 +110,8 @@ namespace GitHub.Applications.Item.Token
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Authorization>(requestInfo, Authorization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

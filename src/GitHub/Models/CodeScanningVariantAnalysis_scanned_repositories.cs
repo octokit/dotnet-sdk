@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class CodeScanningVariantAnalysis_scanned_repositories : IAdditionalDataHolder, IParsable
+    public class CodeScanningVariantAnalysis_scanned_repositories : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -59,11 +58,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis_status", n => { AnalysisStatus = n.GetEnumValue<CodeScanningVariantAnalysisStatus>(); } },
-                { "artifact_size_in_bytes", n => { ArtifactSizeInBytes = n.GetIntValue(); } },
-                { "failure_message", n => { FailureMessage = n.GetStringValue(); } },
-                { "repository", n => { Repository = n.GetObjectValue<CodeScanningVariantAnalysisRepository>(CodeScanningVariantAnalysisRepository.CreateFromDiscriminatorValue); } },
-                { "result_count", n => { ResultCount = n.GetIntValue(); } },
+                {"analysis_status", n => { AnalysisStatus = n.GetEnumValue<CodeScanningVariantAnalysisStatus>(); } },
+                {"artifact_size_in_bytes", n => { ArtifactSizeInBytes = n.GetIntValue(); } },
+                {"failure_message", n => { FailureMessage = n.GetStringValue(); } },
+                {"repository", n => { Repository = n.GetObjectValue<CodeScanningVariantAnalysisRepository>(CodeScanningVariantAnalysisRepository.CreateFromDiscriminatorValue); } },
+                {"result_count", n => { ResultCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Migrations
-{
+namespace GitHub.Orgs.Item.Migrations {
     #pragma warning disable CS1591
-    public class MigrationsPostRequestBody : IAdditionalDataHolder, IParsable
+    public class MigrationsPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -67,15 +66,15 @@ namespace GitHub.Orgs.Item.Migrations
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exclude", n => { Exclude = n.GetCollectionOfEnumValues<MigrationsPostRequestBody_exclude>()?.ToList(); } },
-                { "exclude_attachments", n => { ExcludeAttachments = n.GetBoolValue(); } },
-                { "exclude_git_data", n => { ExcludeGitData = n.GetBoolValue(); } },
-                { "exclude_metadata", n => { ExcludeMetadata = n.GetBoolValue(); } },
-                { "exclude_owner_projects", n => { ExcludeOwnerProjects = n.GetBoolValue(); } },
-                { "exclude_releases", n => { ExcludeReleases = n.GetBoolValue(); } },
-                { "lock_repositories", n => { LockRepositories = n.GetBoolValue(); } },
-                { "org_metadata_only", n => { OrgMetadataOnly = n.GetBoolValue(); } },
-                { "repositories", n => { Repositories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"exclude", n => { Exclude = n.GetCollectionOfEnumValues<MigrationsPostRequestBody_exclude>()?.ToList(); } },
+                {"exclude_attachments", n => { ExcludeAttachments = n.GetBoolValue(); } },
+                {"exclude_git_data", n => { ExcludeGitData = n.GetBoolValue(); } },
+                {"exclude_metadata", n => { ExcludeMetadata = n.GetBoolValue(); } },
+                {"exclude_owner_projects", n => { ExcludeOwnerProjects = n.GetBoolValue(); } },
+                {"exclude_releases", n => { ExcludeReleases = n.GetBoolValue(); } },
+                {"lock_repositories", n => { LockRepositories = n.GetBoolValue(); } },
+                {"org_metadata_only", n => { OrgMetadataOnly = n.GetBoolValue(); } },
+                {"repositories", n => { Repositories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

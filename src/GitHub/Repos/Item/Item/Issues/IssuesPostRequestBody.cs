@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Issues
-{
+namespace GitHub.Repos.Item.Item.Issues {
     #pragma warning disable CS1591
-    public class IssuesPostRequestBody : IAdditionalDataHolder, IParsable
+    public class IssuesPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -85,12 +84,12 @@ namespace GitHub.Repos.Item.Item.Issues
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignee", n => { Assignee = n.GetStringValue(); } },
-                { "assignees", n => { Assignees = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "milestone", n => { Milestone = n.GetObjectValue<IssuesPostRequestBody_milestone>(IssuesPostRequestBody_milestone.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<IssuesPostRequestBody_title>(IssuesPostRequestBody_title.CreateFromDiscriminatorValue); } },
+                {"assignee", n => { Assignee = n.GetStringValue(); } },
+                {"assignees", n => { Assignees = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"milestone", n => { Milestone = n.GetObjectValue<IssuesPostRequestBody_milestone>(IssuesPostRequestBody_milestone.CreateFromDiscriminatorValue); } },
+                {"title", n => { Title = n.GetObjectValue<IssuesPostRequestBody_title>(IssuesPostRequestBody_title.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -111,7 +110,7 @@ namespace GitHub.Repos.Item.Item.Issues
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        public class IssuesPostRequestBody_milestone : IComposedTypeWrapper, IParsable
+        public class IssuesPostRequestBody_milestone : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }
@@ -171,7 +170,7 @@ namespace GitHub.Repos.Item.Item.Issues
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        public class IssuesPostRequestBody_title : IComposedTypeWrapper, IParsable
+        public class IssuesPostRequestBody_title : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }

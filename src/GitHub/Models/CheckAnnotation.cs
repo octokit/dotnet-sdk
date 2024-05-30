@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Check Annotation
     /// </summary>
-    public class CheckAnnotation : IAdditionalDataHolder, IParsable
+    public class CheckAnnotation : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -94,16 +93,16 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "annotation_level", n => { AnnotationLevel = n.GetStringValue(); } },
-                { "blob_href", n => { BlobHref = n.GetStringValue(); } },
-                { "end_column", n => { EndColumn = n.GetIntValue(); } },
-                { "end_line", n => { EndLine = n.GetIntValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "path", n => { Path = n.GetStringValue(); } },
-                { "raw_details", n => { RawDetails = n.GetStringValue(); } },
-                { "start_column", n => { StartColumn = n.GetIntValue(); } },
-                { "start_line", n => { StartLine = n.GetIntValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
+                {"annotation_level", n => { AnnotationLevel = n.GetStringValue(); } },
+                {"blob_href", n => { BlobHref = n.GetStringValue(); } },
+                {"end_column", n => { EndColumn = n.GetIntValue(); } },
+                {"end_line", n => { EndLine = n.GetIntValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
+                {"raw_details", n => { RawDetails = n.GetStringValue(); } },
+                {"start_column", n => { StartColumn = n.GetIntValue(); } },
+                {"start_line", n => { StartLine = n.GetIntValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.Comments
-{
+namespace GitHub.Repos.Item.Item.Pulls.Item.Comments {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\{pull_number}\comments
     /// </summary>
-    public class CommentsRequestBuilder : BaseRequestBuilder
+    public class CommentsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.pulls.item.comments.item collection</summary>
         /// <param name="position">The unique identifier of the comment.</param>
@@ -87,8 +86,8 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Comments
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PullRequestReviewComment>(requestInfo, PullRequestReviewComment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

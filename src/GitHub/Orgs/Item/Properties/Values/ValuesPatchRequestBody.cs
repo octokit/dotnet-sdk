@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Properties.Values
-{
+namespace GitHub.Orgs.Item.Properties.Values {
     #pragma warning disable CS1591
-    public class ValuesPatchRequestBody : IAdditionalDataHolder, IParsable
+    public class ValuesPatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -54,8 +53,8 @@ namespace GitHub.Orgs.Item.Properties.Values
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "properties", n => { Properties = n.GetCollectionOfObjectValues<CustomPropertyValue>(CustomPropertyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "repository_names", n => { RepositoryNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"properties", n => { Properties = n.GetCollectionOfObjectValues<CustomPropertyValue>(CustomPropertyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"repository_names", n => { RepositoryNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

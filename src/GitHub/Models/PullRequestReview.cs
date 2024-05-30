@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Pull Request Reviews are reviews on pull requests.
     /// </summary>
-    public class PullRequestReview : IAdditionalDataHolder, IParsable
+    public class PullRequestReview : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -124,19 +123,19 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "body_html", n => { BodyHtml = n.GetStringValue(); } },
-                { "body_text", n => { BodyText = n.GetStringValue(); } },
-                { "commit_id", n => { CommitId = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<PullRequestReview__links>(PullRequestReview__links.CreateFromDiscriminatorValue); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "pull_request_url", n => { PullRequestUrl = n.GetStringValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
-                { "submitted_at", n => { SubmittedAt = n.GetDateTimeOffsetValue(); } },
-                { "user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"body_html", n => { BodyHtml = n.GetStringValue(); } },
+                {"body_text", n => { BodyText = n.GetStringValue(); } },
+                {"commit_id", n => { CommitId = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"_links", n => { Links = n.GetObjectValue<PullRequestReview__links>(PullRequestReview__links.CreateFromDiscriminatorValue); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"pull_request_url", n => { PullRequestUrl = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"submitted_at", n => { SubmittedAt = n.GetDateTimeOffsetValue(); } },
+                {"user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class RepositoryRulePullRequest_parameters : IAdditionalDataHolder, IParsable
+    public class RepositoryRulePullRequest_parameters : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,11 +46,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dismiss_stale_reviews_on_push", n => { DismissStaleReviewsOnPush = n.GetBoolValue(); } },
-                { "require_code_owner_review", n => { RequireCodeOwnerReview = n.GetBoolValue(); } },
-                { "require_last_push_approval", n => { RequireLastPushApproval = n.GetBoolValue(); } },
-                { "required_approving_review_count", n => { RequiredApprovingReviewCount = n.GetIntValue(); } },
-                { "required_review_thread_resolution", n => { RequiredReviewThreadResolution = n.GetBoolValue(); } },
+                {"dismiss_stale_reviews_on_push", n => { DismissStaleReviewsOnPush = n.GetBoolValue(); } },
+                {"require_code_owner_review", n => { RequireCodeOwnerReview = n.GetBoolValue(); } },
+                {"require_last_push_approval", n => { RequireLastPushApproval = n.GetBoolValue(); } },
+                {"required_approving_review_count", n => { RequiredApprovingReviewCount = n.GetIntValue(); } },
+                {"required_review_thread_resolution", n => { RequiredReviewThreadResolution = n.GetBoolValue(); } },
             };
         }
         /// <summary>

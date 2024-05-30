@@ -10,12 +10,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Events
-{
+namespace GitHub.Users.Item.Events {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\events
     /// </summary>
-    public class EventsRequestBuilder : BaseRequestBuilder
+    public class EventsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The orgs property</summary>
         public OrgsRequestBuilder Orgs

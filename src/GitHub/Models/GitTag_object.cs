@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class GitTag_object : IAdditionalDataHolder, IParsable
+    public class GitTag_object : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -61,9 +60,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Starred
-{
+namespace GitHub.User.Starred {
     /// <summary>
     /// Builds and executes requests for operations under \user\starred
     /// </summary>
-    public class StarredRequestBuilder : BaseRequestBuilder
+    public class StarredRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.user.starred.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -65,8 +64,8 @@ namespace GitHub.User.Starred
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Repository>(requestInfo, Repository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Commit Search Result Item
     /// </summary>
-    public class CommitSearchResultItem : IAdditionalDataHolder, IParsable
+    public class CommitSearchResultItem : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -128,18 +127,18 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "comments_url", n => { CommentsUrl = n.GetStringValue(); } },
-                { "commit", n => { Commit = n.GetObjectValue<CommitSearchResultItem_commit>(CommitSearchResultItem_commit.CreateFromDiscriminatorValue); } },
-                { "committer", n => { Committer = n.GetObjectValue<NullableGitUser>(NullableGitUser.CreateFromDiscriminatorValue); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "parents", n => { Parents = n.GetCollectionOfObjectValues<CommitSearchResultItem_parents>(CommitSearchResultItem_parents.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
-                { "score", n => { Score = n.GetDoubleValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<Commits>(Commits.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
+                {"commit", n => { Commit = n.GetObjectValue<CommitSearchResultItem_commit>(CommitSearchResultItem_commit.CreateFromDiscriminatorValue); } },
+                {"committer", n => { Committer = n.GetObjectValue<NullableGitUser>(NullableGitUser.CreateFromDiscriminatorValue); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"parents", n => { Parents = n.GetCollectionOfObjectValues<CommitSearchResultItem_parents>(CommitSearchResultItem_parents.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
+                {"score", n => { Score = n.GetDoubleValue(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<Commits>(Commits.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

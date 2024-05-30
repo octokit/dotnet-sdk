@@ -7,12 +7,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Codeql
-{
+namespace GitHub.Repos.Item.Item.CodeScanning.Codeql {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\codeql
     /// </summary>
-    public class CodeqlRequestBuilder : BaseRequestBuilder
+    public class CodeqlRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The databases property</summary>
         public DatabasesRequestBuilder Databases

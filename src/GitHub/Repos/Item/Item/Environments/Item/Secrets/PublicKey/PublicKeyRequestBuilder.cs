@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.Secrets.PublicKey
-{
+namespace GitHub.Repos.Item.Item.Environments.Item.Secrets.PublicKey {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}\secrets\public-key
     /// </summary>
-    public class PublicKeyRequestBuilder : BaseRequestBuilder
+    public class PublicKeyRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="PublicKeyRequestBuilder"/> and sets the default values.

@@ -10,12 +10,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.SecurityAdvisories
-{
+namespace GitHub.Repos.Item.Item.SecurityAdvisories {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\security-advisories
     /// </summary>
-    public class SecurityAdvisoriesRequestBuilder : BaseRequestBuilder
+    public class SecurityAdvisoriesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The reports property</summary>
         public ReportsRequestBuilder Reports
@@ -71,8 +70,8 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"400", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<RepositoryAdvisory>(requestInfo, RepositoryAdvisory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -101,9 +100,9 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RepositoryAdvisory>(requestInfo, RepositoryAdvisory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

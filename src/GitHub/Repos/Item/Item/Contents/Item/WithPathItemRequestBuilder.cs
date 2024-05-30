@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Contents.Item
-{
+namespace GitHub.Repos.Item.Item.Contents.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\contents\{path}
     /// </summary>
-    public class WithPathItemRequestBuilder : BaseRequestBuilder
+    public class WithPathItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithPathItemRequestBuilder"/> and sets the default values.
@@ -56,10 +55,10 @@ namespace GitHub.Repos.Item.Item.Contents.Item
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "409", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
-                { "503", FileCommit503Error.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"409", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
+                {"503", FileCommit503Error.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<FileCommit>(requestInfo, FileCommit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -84,8 +83,8 @@ namespace GitHub.Repos.Item.Item.Contents.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WithPathGetResponse>(requestInfo, WithPathGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -113,9 +112,9 @@ namespace GitHub.Repos.Item.Item.Contents.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "409", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"409", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<FileCommit>(requestInfo, FileCommit.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -194,7 +193,7 @@ namespace GitHub.Repos.Item.Item.Contents.Item
         /// <summary>
         /// Composed type wrapper for classes <see cref="ContentFile"/>, <see cref="ContentSubmodule"/>, <see cref="ContentSymlink"/>, List&lt;WithPathGetResponseMember1&gt;
         /// </summary>
-        public class WithPathGetResponse : IComposedTypeWrapper, IParsable
+        public class WithPathGetResponse : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.ContentFile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

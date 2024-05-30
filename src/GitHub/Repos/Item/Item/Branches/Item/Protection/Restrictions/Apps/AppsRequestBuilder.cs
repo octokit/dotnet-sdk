@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
-{
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\restrictions\apps
     /// </summary>
-    public class AppsRequestBuilder : BaseRequestBuilder
+    public class AppsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="AppsRequestBuilder"/> and sets the default values.
@@ -53,7 +52,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Integration>(requestInfo, Integration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -78,7 +77,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Integration>(requestInfo, Integration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -105,7 +104,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Integration>(requestInfo, Integration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -132,7 +131,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Integration>(requestInfo, Integration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -234,7 +233,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
         /// <summary>
         /// Composed type wrapper for classes <see cref="AppsDeleteRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
-        public class AppsDeleteRequestBody : IComposedTypeWrapper, IParsable
+        public class AppsDeleteRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -340,7 +339,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
         /// <summary>
         /// Composed type wrapper for classes <see cref="AppsPostRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
-        public class AppsPostRequestBody : IComposedTypeWrapper, IParsable
+        public class AppsPostRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -446,7 +445,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
         /// <summary>
         /// Composed type wrapper for classes <see cref="AppsPutRequestBodyMember1"/>, <see cref="string"/>
         /// </summary>
-        public class AppsPutRequestBody : IComposedTypeWrapper, IParsable
+        public class AppsPutRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Artifacts
-{
+namespace GitHub.Repos.Item.Item.Actions.Artifacts {
     #pragma warning disable CS1591
-    public class ArtifactsGetResponse : IAdditionalDataHolder, IParsable
+    public class ArtifactsGetResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,8 +47,8 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "artifacts", n => { Artifacts = n.GetCollectionOfObjectValues<Artifact>(Artifact.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"artifacts", n => { Artifacts = n.GetCollectionOfObjectValues<Artifact>(Artifact.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

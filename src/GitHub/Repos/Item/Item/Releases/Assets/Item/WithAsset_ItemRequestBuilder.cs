@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Assets.Item
-{
+namespace GitHub.Repos.Item.Item.Releases.Assets.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\assets\{asset_id}
     /// </summary>
-    public class WithAsset_ItemRequestBuilder : BaseRequestBuilder
+    public class WithAsset_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithAsset_ItemRequestBuilder"/> and sets the default values.
@@ -69,7 +68,7 @@ namespace GitHub.Repos.Item.Item.Releases.Assets.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ReleaseAsset>(requestInfo, ReleaseAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

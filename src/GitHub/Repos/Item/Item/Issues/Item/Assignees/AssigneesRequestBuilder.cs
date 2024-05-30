@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Issues.Item.Assignees
-{
+namespace GitHub.Repos.Item.Item.Issues.Item.Assignees {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\{issue_number}\assignees
     /// </summary>
-    public class AssigneesRequestBuilder : BaseRequestBuilder
+    public class AssigneesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.issues.item.assignees.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

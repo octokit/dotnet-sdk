@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Markdown
-{
+namespace GitHub.Markdown {
     /// <summary>
     /// Builds and executes requests for operations under \markdown
     /// </summary>
-    public class MarkdownRequestBuilder : BaseRequestBuilder
+    public class MarkdownRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The raw property</summary>
         public RawRequestBuilder Raw

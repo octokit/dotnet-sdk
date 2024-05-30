@@ -10,12 +10,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckRuns.Item
-{
+namespace GitHub.Repos.Item.Item.CheckRuns.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-runs\{check_run_id}
     /// </summary>
-    public class WithCheck_run_ItemRequestBuilder : BaseRequestBuilder
+    public class WithCheck_run_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The annotations property</summary>
         public AnnotationsRequestBuilder Annotations
@@ -136,7 +135,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns.Item
         /// <summary>
         /// Composed type wrapper for classes <see cref="WithCheck_run_PatchRequestBodyMember1"/>, <see cref="WithCheck_run_PatchRequestBodyMember2"/>
         /// </summary>
-        public class WithCheck_run_PatchRequestBody : IComposedTypeWrapper, IParsable
+        public class WithCheck_run_PatchRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="WithCheck_run_PatchRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

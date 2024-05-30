@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.Variables
-{
+namespace GitHub.Repos.Item.Item.Environments.Item.Variables {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}\variables
     /// </summary>
-    public class VariablesRequestBuilder : BaseRequestBuilder
+    public class VariablesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.environments.item.variables.item collection</summary>
         /// <param name="position">The name of the variable.</param>

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Tags.Item
-{
+namespace GitHub.Repos.Item.Item.Releases.Tags.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\tags\{tag}
     /// </summary>
-    public class WithTagItemRequestBuilder : BaseRequestBuilder
+    public class WithTagItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithTagItemRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Releases.Tags.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Release>(requestInfo, Release.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

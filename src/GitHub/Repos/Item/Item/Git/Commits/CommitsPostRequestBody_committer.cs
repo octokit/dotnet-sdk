@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Commits
-{
+namespace GitHub.Repos.Item.Item.Git.Commits {
     /// <summary>
     /// Information about the person who is making the commit. By default, `committer` will use the information set in `author`. See the `author` and `committer` object below for details.
     /// </summary>
-    public class CommitsPostRequestBody_committer : IAdditionalDataHolder, IParsable
+    public class CommitsPostRequestBody_committer : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -56,9 +55,9 @@ namespace GitHub.Repos.Item.Item.Git.Commits
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

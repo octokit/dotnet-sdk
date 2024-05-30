@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users
-{
+namespace GitHub.Users {
     /// <summary>
     /// Builds and executes requests for operations under \users
     /// </summary>
-    public class UsersRequestBuilder : BaseRequestBuilder
+    public class UsersRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.users.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>

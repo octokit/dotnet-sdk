@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.VariantAnalyses.Item.Repos
-{
+namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.VariantAnalyses.Item.Repos {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\codeql\variant-analyses\{codeql_variant_analysis_id}\repos
     /// </summary>
-    public class ReposRequestBuilder : BaseRequestBuilder
+    public class ReposRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.codeScanning.codeql.variantAnalyses.item.repos.item collection</summary>
         /// <param name="position">The account owner of the variant analysis repository. The name is not case sensitive.</param>

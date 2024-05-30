@@ -10,12 +10,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Members.Item
-{
+namespace GitHub.Orgs.Item.Members.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\members\{username}
     /// </summary>
-    public class WithUsernameItemRequestBuilder : BaseRequestBuilder
+    public class WithUsernameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The codespaces property</summary>
         public CodespacesRequestBuilder Codespaces
@@ -62,7 +61,7 @@ namespace GitHub.Orgs.Item.Members.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

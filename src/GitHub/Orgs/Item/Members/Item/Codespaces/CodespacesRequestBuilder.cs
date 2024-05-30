@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Members.Item.Codespaces
-{
+namespace GitHub.Orgs.Item.Members.Item.Codespaces {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\members\{username}\codespaces
     /// </summary>
-    public class CodespacesRequestBuilder : BaseRequestBuilder
+    public class CodespacesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.members.item.codespaces.item collection</summary>
         /// <param name="position">The name of the codespace.</param>
@@ -67,10 +66,10 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CodespacesGetResponse>(requestInfo, CodespacesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

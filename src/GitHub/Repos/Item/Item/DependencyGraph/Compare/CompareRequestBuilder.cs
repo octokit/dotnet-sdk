@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.DependencyGraph.Compare
-{
+namespace GitHub.Repos.Item.Item.DependencyGraph.Compare {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph\compare
     /// </summary>
-    public class CompareRequestBuilder : BaseRequestBuilder
+    public class CompareRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.dependencyGraph.compare.item collection</summary>
         /// <param name="position">The base and head Git revisions to compare. The Git revisions will be resolved to commit SHAs. Named revisions will be resolved to their corresponding HEAD commits, and an appropriate merge base will be determined. This parameter expects the format `{base}...{head}`.</param>

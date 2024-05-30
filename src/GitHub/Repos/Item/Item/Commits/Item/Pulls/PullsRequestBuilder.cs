@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Commits.Item.Pulls
-{
+namespace GitHub.Repos.Item.Item.Commits.Item.Pulls {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\commits\{commit_sha-id}\pulls
     /// </summary>
-    public class PullsRequestBuilder : BaseRequestBuilder
+    public class PullsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="PullsRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item.Pulls
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "409", BasicError.CreateFromDiscriminatorValue },
+                {"409", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<PullRequestSimple>(requestInfo, PullRequestSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

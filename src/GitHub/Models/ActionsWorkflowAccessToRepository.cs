@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class ActionsWorkflowAccessToRepository : IAdditionalDataHolder, IParsable
+    public class ActionsWorkflowAccessToRepository : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Defines the level of access that workflows outside of the repository have to actions and reusable workflows within therepository.`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.</summary>
@@ -39,7 +38,7 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_level", n => { AccessLevel = n.GetEnumValue<ActionsWorkflowAccessToRepository_access_level>(); } },
+                {"access_level", n => { AccessLevel = n.GetEnumValue<ActionsWorkflowAccessToRepository_access_level>(); } },
             };
         }
         /// <summary>

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Commits.Item.Comments
-{
+namespace GitHub.Repos.Item.Item.Commits.Item.Comments {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\commits\{commit_sha-id}\comments
     /// </summary>
-    public class CommentsRequestBuilder : BaseRequestBuilder
+    public class CommentsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="CommentsRequestBuilder"/> and sets the default values.
@@ -74,8 +73,8 @@ namespace GitHub.Repos.Item.Item.Commits.Item.Comments
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CommitComment>(requestInfo, CommitComment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

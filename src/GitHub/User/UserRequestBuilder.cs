@@ -34,12 +34,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User
-{
+namespace GitHub.User {
     /// <summary>
     /// Builds and executes requests for operations under \user
     /// </summary>
-    public class UserRequestBuilder : BaseRequestBuilder
+    public class UserRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The blocks property</summary>
         public BlocksRequestBuilder Blocks
@@ -208,8 +207,8 @@ namespace GitHub.User
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<UserGetResponse>(requestInfo, UserGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -238,10 +237,10 @@ namespace GitHub.User
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PrivateUser>(requestInfo, PrivateUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -298,7 +297,7 @@ namespace GitHub.User
         /// <summary>
         /// Composed type wrapper for classes <see cref="PrivateUser"/>, <see cref="PublicUser"/>
         /// </summary>
-        public class UserGetResponse : IComposedTypeWrapper, IParsable
+        public class UserGetResponse : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.PrivateUser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

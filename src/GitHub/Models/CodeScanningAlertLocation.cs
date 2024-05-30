@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Describe a region within a file for the alert.
     /// </summary>
-    public class CodeScanningAlertLocation : IAdditionalDataHolder, IParsable
+    public class CodeScanningAlertLocation : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -54,11 +53,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_column", n => { EndColumn = n.GetIntValue(); } },
-                { "end_line", n => { EndLine = n.GetIntValue(); } },
-                { "path", n => { Path = n.GetStringValue(); } },
-                { "start_column", n => { StartColumn = n.GetIntValue(); } },
-                { "start_line", n => { StartLine = n.GetIntValue(); } },
+                {"end_column", n => { EndColumn = n.GetIntValue(); } },
+                {"end_line", n => { EndLine = n.GetIntValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
+                {"start_column", n => { StartColumn = n.GetIntValue(); } },
+                {"start_line", n => { StartLine = n.GetIntValue(); } },
             };
         }
         /// <summary>

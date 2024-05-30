@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class RepositoryRuleRequiredStatusChecks_parameters : IAdditionalDataHolder, IParsable
+    public class RepositoryRuleRequiredStatusChecks_parameters : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +46,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "required_status_checks", n => { RequiredStatusChecks = n.GetCollectionOfObjectValues<RepositoryRuleParamsStatusCheckConfiguration>(RepositoryRuleParamsStatusCheckConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "strict_required_status_checks_policy", n => { StrictRequiredStatusChecksPolicy = n.GetBoolValue(); } },
+                {"required_status_checks", n => { RequiredStatusChecks = n.GetCollectionOfObjectValues<RepositoryRuleParamsStatusCheckConfiguration>(RepositoryRuleParamsStatusCheckConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"strict_required_status_checks_policy", n => { StrictRequiredStatusChecksPolicy = n.GetBoolValue(); } },
             };
         }
         /// <summary>

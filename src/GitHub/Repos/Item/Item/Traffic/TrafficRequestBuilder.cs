@@ -8,12 +8,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Traffic
-{
+namespace GitHub.Repos.Item.Item.Traffic {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\traffic
     /// </summary>
-    public class TrafficRequestBuilder : BaseRequestBuilder
+    public class TrafficRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The clones property</summary>
         public ClonesRequestBuilder Clones

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A set of rules to apply when specified conditions are met.
     /// </summary>
-    public class RepositoryRuleset : IAdditionalDataHolder, IParsable
+    public class RepositoryRuleset : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -108,20 +107,20 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bypass_actors", n => { BypassActors = n.GetCollectionOfObjectValues<RepositoryRulesetBypassActor>(RepositoryRulesetBypassActor.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "conditions", n => { Conditions = n.GetObjectValue<RepositoryRuleset_conditions>(RepositoryRuleset_conditions.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "current_user_can_bypass", n => { CurrentUserCanBypass = n.GetEnumValue<RepositoryRuleset_current_user_can_bypass>(); } },
-                { "enforcement", n => { Enforcement = n.GetEnumValue<RepositoryRuleEnforcement>(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "_links", n => { Links = n.GetObjectValue<RepositoryRuleset__links>(RepositoryRuleset__links.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<RepositoryRule>(RepositoryRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "source", n => { Source = n.GetStringValue(); } },
-                { "source_type", n => { SourceType = n.GetEnumValue<RepositoryRuleset_source_type>(); } },
-                { "target", n => { Target = n.GetEnumValue<RepositoryRuleset_target>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"bypass_actors", n => { BypassActors = n.GetCollectionOfObjectValues<RepositoryRulesetBypassActor>(RepositoryRulesetBypassActor.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"conditions", n => { Conditions = n.GetObjectValue<RepositoryRuleset_conditions>(RepositoryRuleset_conditions.CreateFromDiscriminatorValue); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"current_user_can_bypass", n => { CurrentUserCanBypass = n.GetEnumValue<RepositoryRuleset_current_user_can_bypass>(); } },
+                {"enforcement", n => { Enforcement = n.GetEnumValue<RepositoryRuleEnforcement>(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"_links", n => { Links = n.GetObjectValue<RepositoryRuleset__links>(RepositoryRuleset__links.CreateFromDiscriminatorValue); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"rules", n => { Rules = n.GetCollectionOfObjectValues<RepositoryRule>(RepositoryRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"source", n => { Source = n.GetStringValue(); } },
+                {"source_type", n => { SourceType = n.GetEnumValue<RepositoryRuleset_source_type>(); } },
+                {"target", n => { Target = n.GetEnumValue<RepositoryRuleset_target>(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -150,7 +149,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="OrgRulesetConditions"/>, <see cref="RepositoryRulesetConditions"/>
         /// </summary>
-        public class RepositoryRuleset_conditions : IComposedTypeWrapper, IParsable
+        public class RepositoryRuleset_conditions : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.OrgRulesetConditions"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

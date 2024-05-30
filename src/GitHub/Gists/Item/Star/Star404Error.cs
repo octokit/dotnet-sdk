@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Gists.Item.Star
-{
+namespace GitHub.Gists.Item.Star {
     #pragma warning disable CS1591
-    public class Star404Error : ApiException, IParsable
+    public class Star404Error : ApiException, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The primary error message.</summary>

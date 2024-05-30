@@ -10,12 +10,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Codespaces
-{
+namespace GitHub.Orgs.Item.Codespaces {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\codespaces
     /// </summary>
-    public class CodespacesRequestBuilder : BaseRequestBuilder
+    public class CodespacesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The access property</summary>
         public AccessRequestBuilder Access
@@ -66,10 +65,10 @@ namespace GitHub.Orgs.Item.Codespaces
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CodespacesGetResponse>(requestInfo, CodespacesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

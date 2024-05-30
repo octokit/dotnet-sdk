@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckSuites.Item.Rerequest
-{
+namespace GitHub.Repos.Item.Item.CheckSuites.Item.Rerequest {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-suites\{check_suite_id}\rerequest
     /// </summary>
-    public class RerequestRequestBuilder : BaseRequestBuilder
+    public class RerequestRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="RerequestRequestBuilder"/> and sets the default values.

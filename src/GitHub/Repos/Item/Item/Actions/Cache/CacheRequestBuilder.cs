@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Cache
-{
+namespace GitHub.Repos.Item.Item.Actions.Cache {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\cache
     /// </summary>
-    public class CacheRequestBuilder : BaseRequestBuilder
+    public class CacheRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The usage property</summary>
         public UsageRequestBuilder Usage

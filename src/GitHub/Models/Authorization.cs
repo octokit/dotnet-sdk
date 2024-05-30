@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// The authorization for an OAuth app, GitHub App, or a Personal Access Token.
     /// </summary>
-    public class Authorization : IAdditionalDataHolder, IParsable
+    public class Authorization : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -134,21 +133,21 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app", n => { App = n.GetObjectValue<Authorization_app>(Authorization_app.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
-                { "hashed_token", n => { HashedToken = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "installation", n => { Installation = n.GetObjectValue<NullableScopedInstallation>(NullableScopedInstallation.CreateFromDiscriminatorValue); } },
-                { "note", n => { Note = n.GetStringValue(); } },
-                { "note_url", n => { NoteUrl = n.GetStringValue(); } },
-                { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "token", n => { Token = n.GetStringValue(); } },
-                { "token_last_eight", n => { TokenLastEight = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"app", n => { App = n.GetObjectValue<Authorization_app>(Authorization_app.CreateFromDiscriminatorValue); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                {"fingerprint", n => { Fingerprint = n.GetStringValue(); } },
+                {"hashed_token", n => { HashedToken = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"installation", n => { Installation = n.GetObjectValue<NullableScopedInstallation>(NullableScopedInstallation.CreateFromDiscriminatorValue); } },
+                {"note", n => { Note = n.GetStringValue(); } },
+                {"note_url", n => { NoteUrl = n.GetStringValue(); } },
+                {"scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"token", n => { Token = n.GetStringValue(); } },
+                {"token_last_eight", n => { TokenLastEight = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

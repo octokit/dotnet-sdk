@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.CodeScanning.Alerts
-{
+namespace GitHub.Orgs.Item.CodeScanning.Alerts {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\code-scanning\alerts
     /// </summary>
-    public class AlertsRequestBuilder : BaseRequestBuilder
+    public class AlertsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="AlertsRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Orgs.Item.CodeScanning.Alerts
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "503", Alerts503Error.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"503", Alerts503Error.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<CodeScanningOrganizationAlertItems>(requestInfo, CodeScanningOrganizationAlertItems.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

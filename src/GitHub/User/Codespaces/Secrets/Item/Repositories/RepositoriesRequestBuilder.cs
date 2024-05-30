@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Codespaces.Secrets.Item.Repositories
-{
+namespace GitHub.User.Codespaces.Secrets.Item.Repositories {
     /// <summary>
     /// Builds and executes requests for operations under \user\codespaces\secrets\{secret_name}\repositories
     /// </summary>
-    public class RepositoriesRequestBuilder : BaseRequestBuilder
+    public class RepositoriesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.user.codespaces.secrets.item.repositories.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -67,10 +66,10 @@ namespace GitHub.User.Codespaces.Secrets.Item.Repositories
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RepositoriesGetResponse>(requestInfo, RepositoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,10 +97,10 @@ namespace GitHub.User.Codespaces.Secrets.Item.Repositories
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

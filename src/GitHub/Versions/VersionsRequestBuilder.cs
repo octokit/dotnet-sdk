@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Versions
-{
+namespace GitHub.Versions {
     /// <summary>
     /// Builds and executes requests for operations under \versions
     /// </summary>
-    public class VersionsRequestBuilder : BaseRequestBuilder
+    public class VersionsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="VersionsRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.Versions
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendPrimitiveCollectionAsync<Date?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

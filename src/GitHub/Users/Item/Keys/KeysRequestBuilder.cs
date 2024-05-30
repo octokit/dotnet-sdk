@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Keys
-{
+namespace GitHub.Users.Item.Keys {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\keys
     /// </summary>
-    public class KeysRequestBuilder : BaseRequestBuilder
+    public class KeysRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="KeysRequestBuilder"/> and sets the default values.

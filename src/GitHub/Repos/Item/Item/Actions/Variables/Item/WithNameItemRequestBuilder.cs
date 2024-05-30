@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Variables.Item
-{
+namespace GitHub.Repos.Item.Item.Actions.Variables.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\variables\{name}
     /// </summary>
-    public class WithNameItemRequestBuilder : BaseRequestBuilder
+    public class WithNameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithNameItemRequestBuilder"/> and sets the default values.

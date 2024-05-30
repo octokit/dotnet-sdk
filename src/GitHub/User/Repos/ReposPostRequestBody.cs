@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Repos
-{
+namespace GitHub.User.Repos {
     #pragma warning disable CS1591
-    public class ReposPostRequestBody : IAdditionalDataHolder, IParsable
+    public class ReposPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -113,29 +112,29 @@ namespace GitHub.User.Repos
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_auto_merge", n => { AllowAutoMerge = n.GetBoolValue(); } },
-                { "allow_merge_commit", n => { AllowMergeCommit = n.GetBoolValue(); } },
-                { "allow_rebase_merge", n => { AllowRebaseMerge = n.GetBoolValue(); } },
-                { "allow_squash_merge", n => { AllowSquashMerge = n.GetBoolValue(); } },
-                { "auto_init", n => { AutoInit = n.GetBoolValue(); } },
-                { "delete_branch_on_merge", n => { DeleteBranchOnMerge = n.GetBoolValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "gitignore_template", n => { GitignoreTemplate = n.GetStringValue(); } },
-                { "has_discussions", n => { HasDiscussions = n.GetBoolValue(); } },
-                { "has_downloads", n => { HasDownloads = n.GetBoolValue(); } },
-                { "has_issues", n => { HasIssues = n.GetBoolValue(); } },
-                { "has_projects", n => { HasProjects = n.GetBoolValue(); } },
-                { "has_wiki", n => { HasWiki = n.GetBoolValue(); } },
-                { "homepage", n => { Homepage = n.GetStringValue(); } },
-                { "is_template", n => { IsTemplate = n.GetBoolValue(); } },
-                { "license_template", n => { LicenseTemplate = n.GetStringValue(); } },
-                { "merge_commit_message", n => { MergeCommitMessage = n.GetEnumValue<ReposPostRequestBody_merge_commit_message>(); } },
-                { "merge_commit_title", n => { MergeCommitTitle = n.GetEnumValue<ReposPostRequestBody_merge_commit_title>(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "private", n => { Private = n.GetBoolValue(); } },
-                { "squash_merge_commit_message", n => { SquashMergeCommitMessage = n.GetEnumValue<ReposPostRequestBody_squash_merge_commit_message>(); } },
-                { "squash_merge_commit_title", n => { SquashMergeCommitTitle = n.GetEnumValue<ReposPostRequestBody_squash_merge_commit_title>(); } },
-                { "team_id", n => { TeamId = n.GetIntValue(); } },
+                {"allow_auto_merge", n => { AllowAutoMerge = n.GetBoolValue(); } },
+                {"allow_merge_commit", n => { AllowMergeCommit = n.GetBoolValue(); } },
+                {"allow_rebase_merge", n => { AllowRebaseMerge = n.GetBoolValue(); } },
+                {"allow_squash_merge", n => { AllowSquashMerge = n.GetBoolValue(); } },
+                {"auto_init", n => { AutoInit = n.GetBoolValue(); } },
+                {"delete_branch_on_merge", n => { DeleteBranchOnMerge = n.GetBoolValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"gitignore_template", n => { GitignoreTemplate = n.GetStringValue(); } },
+                {"has_discussions", n => { HasDiscussions = n.GetBoolValue(); } },
+                {"has_downloads", n => { HasDownloads = n.GetBoolValue(); } },
+                {"has_issues", n => { HasIssues = n.GetBoolValue(); } },
+                {"has_projects", n => { HasProjects = n.GetBoolValue(); } },
+                {"has_wiki", n => { HasWiki = n.GetBoolValue(); } },
+                {"homepage", n => { Homepage = n.GetStringValue(); } },
+                {"is_template", n => { IsTemplate = n.GetBoolValue(); } },
+                {"license_template", n => { LicenseTemplate = n.GetStringValue(); } },
+                {"merge_commit_message", n => { MergeCommitMessage = n.GetEnumValue<ReposPostRequestBody_merge_commit_message>(); } },
+                {"merge_commit_title", n => { MergeCommitTitle = n.GetEnumValue<ReposPostRequestBody_merge_commit_title>(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"private", n => { Private = n.GetBoolValue(); } },
+                {"squash_merge_commit_message", n => { SquashMergeCommitMessage = n.GetEnumValue<ReposPostRequestBody_squash_merge_commit_message>(); } },
+                {"squash_merge_commit_title", n => { SquashMergeCommitTitle = n.GetEnumValue<ReposPostRequestBody_squash_merge_commit_title>(); } },
+                {"team_id", n => { TeamId = n.GetIntValue(); } },
             };
         }
         /// <summary>

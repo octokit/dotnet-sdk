@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pages.Builds.Item
-{
+namespace GitHub.Repos.Item.Item.Pages.Builds.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pages\builds\{build_id}
     /// </summary>
-    public class WithBuild_ItemRequestBuilder : BaseRequestBuilder
+    public class WithBuild_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithBuild_ItemRequestBuilder"/> and sets the default values.

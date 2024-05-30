@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Public_members
-{
+namespace GitHub.Orgs.Item.Public_members {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\public_members
     /// </summary>
-    public class Public_membersRequestBuilder : BaseRequestBuilder
+    public class Public_membersRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.public_members.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>

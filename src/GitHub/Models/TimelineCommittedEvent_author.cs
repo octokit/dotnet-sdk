@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Identifying information for the git-user
     /// </summary>
-    public class TimelineCommittedEvent_author : IAdditionalDataHolder, IParsable
+    public class TimelineCommittedEvent_author : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -56,9 +55,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

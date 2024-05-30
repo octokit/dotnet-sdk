@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Approvals
-{
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Approvals {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\approvals
     /// </summary>
-    public class ApprovalsRequestBuilder : BaseRequestBuilder
+    public class ApprovalsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ApprovalsRequestBuilder"/> and sets the default values.

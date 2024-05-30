@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.User.Packages.Item
-{
+namespace GitHub.User.Packages.Item {
     /// <summary>
     /// Builds and executes requests for operations under \user\packages\{package_type}
     /// </summary>
-    public class WithPackage_typeItemRequestBuilder : BaseRequestBuilder
+    public class WithPackage_typeItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.user.packages.item.item collection</summary>
         /// <param name="position">The name of the package.</param>

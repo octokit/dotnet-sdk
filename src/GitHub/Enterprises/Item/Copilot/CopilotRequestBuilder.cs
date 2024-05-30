@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Enterprises.Item.Copilot
-{
+namespace GitHub.Enterprises.Item.Copilot {
     /// <summary>
     /// Builds and executes requests for operations under \enterprises\{enterprise}\copilot
     /// </summary>
-    public class CopilotRequestBuilder : BaseRequestBuilder
+    public class CopilotRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The usage property</summary>
         public UsageRequestBuilder Usage

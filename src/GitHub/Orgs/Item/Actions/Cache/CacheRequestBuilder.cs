@@ -7,12 +7,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Actions.Cache
-{
+namespace GitHub.Orgs.Item.Actions.Cache {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\cache
     /// </summary>
-    public class CacheRequestBuilder : BaseRequestBuilder
+    public class CacheRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The usage property</summary>
         public UsageRequestBuilder Usage

@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Deployments
-{
+namespace GitHub.Repos.Item.Item.Deployments {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\deployments
     /// </summary>
-    public class DeploymentsRequestBuilder : BaseRequestBuilder
+    public class DeploymentsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.deployments.item collection</summary>
         /// <param name="position">deployment_id parameter</param>
@@ -86,7 +85,7 @@ namespace GitHub.Repos.Item.Item.Deployments
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Deployment>(requestInfo, Deployment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

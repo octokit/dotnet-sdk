@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.GenerateNotes
-{
+namespace GitHub.Repos.Item.Item.Releases.GenerateNotes {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\generate-notes
     /// </summary>
-    public class GenerateNotesRequestBuilder : BaseRequestBuilder
+    public class GenerateNotesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="GenerateNotesRequestBuilder"/> and sets the default values.
@@ -53,7 +52,7 @@ namespace GitHub.Repos.Item.Item.Releases.GenerateNotes
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ReleaseNotesContent>(requestInfo, ReleaseNotesContent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

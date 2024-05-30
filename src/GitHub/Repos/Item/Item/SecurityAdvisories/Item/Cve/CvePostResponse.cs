@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Cve
-{
+namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Cve {
     #pragma warning disable CS1591
-    public class CvePostResponse : IAdditionalDataHolder, IParsable
+    public class CvePostResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

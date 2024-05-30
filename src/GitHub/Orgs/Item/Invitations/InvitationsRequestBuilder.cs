@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Invitations
-{
+namespace GitHub.Orgs.Item.Invitations {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\invitations
     /// </summary>
-    public class InvitationsRequestBuilder : BaseRequestBuilder
+    public class InvitationsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.invitations.item collection</summary>
         /// <param name="position">The unique identifier of the invitation.</param>
@@ -45,7 +44,7 @@ namespace GitHub.Orgs.Item.Invitations
         {
         }
         /// <summary>
-        /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, or `hiring_manager`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
+        /// The return hash contains a `role` field which refers to the OrganizationInvitation role and will be one of the following values: `direct_member`, `admin`,`billing_manager`, or `hiring_manager`. If the invitee is not a GitHubmember, the `login` field in the return hash will be `null`.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/members#list-pending-organization-invitations" />
         /// </summary>
         /// <returns>A List&lt;OrganizationInvitation&gt;</returns>
@@ -64,7 +63,7 @@ namespace GitHub.Orgs.Item.Invitations
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<OrganizationInvitation>(requestInfo, OrganizationInvitation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -92,13 +91,13 @@ namespace GitHub.Orgs.Item.Invitations
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<OrganizationInvitation>(requestInfo, OrganizationInvitation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, or `hiring_manager`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
+        /// The return hash contains a `role` field which refers to the OrganizationInvitation role and will be one of the following values: `direct_member`, `admin`,`billing_manager`, or `hiring_manager`. If the invitee is not a GitHubmember, the `login` field in the return hash will be `null`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +147,7 @@ namespace GitHub.Orgs.Item.Invitations
             return new InvitationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, or `hiring_manager`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
+        /// The return hash contains a `role` field which refers to the OrganizationInvitation role and will be one of the following values: `direct_member`, `admin`,`billing_manager`, or `hiring_manager`. If the invitee is not a GitHubmember, the `login` field in the return hash will be `null`.
         /// </summary>
         public class InvitationsRequestBuilderGetQueryParameters 
         {

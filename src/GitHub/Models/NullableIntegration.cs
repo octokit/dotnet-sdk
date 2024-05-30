@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
     /// </summary>
-    public class NullableIntegration : IAdditionalDataHolder, IParsable
+    public class NullableIntegration : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -150,23 +149,23 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "external_url", n => { ExternalUrl = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "installations_count", n => { InstallationsCount = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "pem", n => { Pem = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<NullableIntegration_permissions>(NullableIntegration_permissions.CreateFromDiscriminatorValue); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "webhook_secret", n => { WebhookSecret = n.GetStringValue(); } },
+                {"client_id", n => { ClientId = n.GetStringValue(); } },
+                {"client_secret", n => { ClientSecret = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"external_url", n => { ExternalUrl = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"installations_count", n => { InstallationsCount = n.GetIntValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"owner", n => { Owner = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"pem", n => { Pem = n.GetStringValue(); } },
+                {"permissions", n => { Permissions = n.GetObjectValue<NullableIntegration_permissions>(NullableIntegration_permissions.CreateFromDiscriminatorValue); } },
+                {"slug", n => { Slug = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"webhook_secret", n => { WebhookSecret = n.GetStringValue(); } },
             };
         }
         /// <summary>

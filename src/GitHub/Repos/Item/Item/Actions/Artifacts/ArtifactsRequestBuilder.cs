@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Artifacts
-{
+namespace GitHub.Repos.Item.Item.Actions.Artifacts {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\artifacts
     /// </summary>
-    public class ArtifactsRequestBuilder : BaseRequestBuilder
+    public class ArtifactsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.artifacts.item collection</summary>
         /// <param name="position">The unique identifier of the artifact.</param>

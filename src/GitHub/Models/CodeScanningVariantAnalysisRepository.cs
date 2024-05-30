@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Repository Identifier
     /// </summary>
-    public class CodeScanningVariantAnalysisRepository : IAdditionalDataHolder, IParsable
+    public class CodeScanningVariantAnalysisRepository : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -62,12 +61,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "full_name", n => { FullName = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "private", n => { Private = n.GetBoolValue(); } },
-                { "stargazers_count", n => { StargazersCount = n.GetIntValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"full_name", n => { FullName = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"private", n => { Private = n.GetBoolValue(); } },
+                {"stargazers_count", n => { StargazersCount = n.GetIntValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

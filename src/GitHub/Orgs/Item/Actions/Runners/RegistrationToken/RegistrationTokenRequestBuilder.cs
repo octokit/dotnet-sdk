@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Runners.RegistrationToken
-{
+namespace GitHub.Orgs.Item.Actions.Runners.RegistrationToken {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\runners\registration-token
     /// </summary>
-    public class RegistrationTokenRequestBuilder : BaseRequestBuilder
+    public class RegistrationTokenRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="RegistrationTokenRequestBuilder"/> and sets the default values.

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class CodeScanningVariantAnalysisRepoTask : IAdditionalDataHolder, IParsable
+    public class CodeScanningVariantAnalysisRepoTask : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -83,14 +82,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis_status", n => { AnalysisStatus = n.GetEnumValue<CodeScanningVariantAnalysisStatus>(); } },
-                { "artifact_size_in_bytes", n => { ArtifactSizeInBytes = n.GetIntValue(); } },
-                { "artifact_url", n => { ArtifactUrl = n.GetStringValue(); } },
-                { "database_commit_sha", n => { DatabaseCommitSha = n.GetStringValue(); } },
-                { "failure_message", n => { FailureMessage = n.GetStringValue(); } },
-                { "repository", n => { Repository = n.GetObjectValue<SimpleRepository>(SimpleRepository.CreateFromDiscriminatorValue); } },
-                { "result_count", n => { ResultCount = n.GetIntValue(); } },
-                { "source_location_prefix", n => { SourceLocationPrefix = n.GetStringValue(); } },
+                {"analysis_status", n => { AnalysisStatus = n.GetEnumValue<CodeScanningVariantAnalysisStatus>(); } },
+                {"artifact_size_in_bytes", n => { ArtifactSizeInBytes = n.GetIntValue(); } },
+                {"artifact_url", n => { ArtifactUrl = n.GetStringValue(); } },
+                {"database_commit_sha", n => { DatabaseCommitSha = n.GetStringValue(); } },
+                {"failure_message", n => { FailureMessage = n.GetStringValue(); } },
+                {"repository", n => { Repository = n.GetObjectValue<SimpleRepository>(SimpleRepository.CreateFromDiscriminatorValue); } },
+                {"result_count", n => { ResultCount = n.GetIntValue(); } },
+                {"source_location_prefix", n => { SourceLocationPrefix = n.GetStringValue(); } },
             };
         }
         /// <summary>

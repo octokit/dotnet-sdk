@@ -11,12 +11,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Migrations.Item
-{
+namespace GitHub.Orgs.Item.Migrations.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\migrations\{migration_id}
     /// </summary>
-    public class WithMigration_ItemRequestBuilder : BaseRequestBuilder
+    public class WithMigration_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The archive property</summary>
         public ArchiveRequestBuilder Archive
@@ -69,7 +68,7 @@ namespace GitHub.Orgs.Item.Migrations.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Migration>(requestInfo, Migration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

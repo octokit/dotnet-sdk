@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Grade for a student or groups GitHub Classroom assignment
     /// </summary>
-    public class ClassroomAssignmentGrade : IAdditionalDataHolder, IParsable
+    public class ClassroomAssignmentGrade : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -114,17 +113,17 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignment_name", n => { AssignmentName = n.GetStringValue(); } },
-                { "assignment_url", n => { AssignmentUrl = n.GetStringValue(); } },
-                { "github_username", n => { GithubUsername = n.GetStringValue(); } },
-                { "group_name", n => { GroupName = n.GetStringValue(); } },
-                { "points_available", n => { PointsAvailable = n.GetIntValue(); } },
-                { "points_awarded", n => { PointsAwarded = n.GetIntValue(); } },
-                { "roster_identifier", n => { RosterIdentifier = n.GetStringValue(); } },
-                { "starter_code_url", n => { StarterCodeUrl = n.GetStringValue(); } },
-                { "student_repository_name", n => { StudentRepositoryName = n.GetStringValue(); } },
-                { "student_repository_url", n => { StudentRepositoryUrl = n.GetStringValue(); } },
-                { "submission_timestamp", n => { SubmissionTimestamp = n.GetStringValue(); } },
+                {"assignment_name", n => { AssignmentName = n.GetStringValue(); } },
+                {"assignment_url", n => { AssignmentUrl = n.GetStringValue(); } },
+                {"github_username", n => { GithubUsername = n.GetStringValue(); } },
+                {"group_name", n => { GroupName = n.GetStringValue(); } },
+                {"points_available", n => { PointsAvailable = n.GetIntValue(); } },
+                {"points_awarded", n => { PointsAwarded = n.GetIntValue(); } },
+                {"roster_identifier", n => { RosterIdentifier = n.GetStringValue(); } },
+                {"starter_code_url", n => { StarterCodeUrl = n.GetStringValue(); } },
+                {"student_repository_name", n => { StudentRepositoryName = n.GetStringValue(); } },
+                {"student_repository_url", n => { StudentRepositoryUrl = n.GetStringValue(); } },
+                {"submission_timestamp", n => { SubmissionTimestamp = n.GetStringValue(); } },
             };
         }
         /// <summary>

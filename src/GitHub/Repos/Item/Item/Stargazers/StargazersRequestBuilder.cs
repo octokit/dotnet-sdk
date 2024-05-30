@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Stargazers
-{
+namespace GitHub.Repos.Item.Item.Stargazers {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stargazers
     /// </summary>
-    public class StargazersRequestBuilder : BaseRequestBuilder
+    public class StargazersRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="StargazersRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Stargazers
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<StargazersGetResponse>(requestInfo, StargazersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -86,7 +85,7 @@ namespace GitHub.Repos.Item.Item.Stargazers
         /// <summary>
         /// Composed type wrapper for classes List&lt;SimpleUser&gt;, List&lt;Stargazer&gt;
         /// </summary>
-        public class StargazersGetResponse : IComposedTypeWrapper, IParsable
+        public class StargazersGetResponse : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type List&lt;GitHub.Repos.Item.Item.Stargazers.SimpleUser&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

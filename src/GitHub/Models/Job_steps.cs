@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class Job_steps : IAdditionalDataHolder, IParsable
+    public class Job_steps : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -61,12 +60,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "conclusion", n => { Conclusion = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<Job_steps_status>(); } },
+                {"completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                {"conclusion", n => { Conclusion = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"number", n => { Number = n.GetIntValue(); } },
+                {"started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetEnumValue<Job_steps_status>(); } },
             };
         }
         /// <summary>

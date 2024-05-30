@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A workflow that must run for this rule to pass
     /// </summary>
-    public class RepositoryRuleParamsWorkflowFileReference : IAdditionalDataHolder, IParsable
+    public class RepositoryRuleParamsWorkflowFileReference : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -64,10 +63,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "path", n => { Path = n.GetStringValue(); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "repository_id", n => { RepositoryId = n.GetIntValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
+                {"ref", n => { Ref = n.GetStringValue(); } },
+                {"repository_id", n => { RepositoryId = n.GetIntValue(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
             };
         }
         /// <summary>

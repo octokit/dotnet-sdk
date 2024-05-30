@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.SecurityManagers.Teams
-{
+namespace GitHub.Orgs.Item.SecurityManagers.Teams {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\security-managers\teams
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder
+    public class TeamsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.securityManagers.teams.item collection</summary>
         /// <param name="position">The slug of the team name.</param>

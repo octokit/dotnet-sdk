@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class BranchRestrictionPolicy_apps : IAdditionalDataHolder, IParsable
+    public class BranchRestrictionPolicy_apps : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -127,18 +126,18 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "external_url", n => { ExternalUrl = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<BranchRestrictionPolicy_apps_owner>(BranchRestrictionPolicy_apps_owner.CreateFromDiscriminatorValue); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<BranchRestrictionPolicy_apps_permissions>(BranchRestrictionPolicy_apps_permissions.CreateFromDiscriminatorValue); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"external_url", n => { ExternalUrl = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"owner", n => { Owner = n.GetObjectValue<BranchRestrictionPolicy_apps_owner>(BranchRestrictionPolicy_apps_owner.CreateFromDiscriminatorValue); } },
+                {"permissions", n => { Permissions = n.GetObjectValue<BranchRestrictionPolicy_apps_permissions>(BranchRestrictionPolicy_apps_permissions.CreateFromDiscriminatorValue); } },
+                {"slug", n => { Slug = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>

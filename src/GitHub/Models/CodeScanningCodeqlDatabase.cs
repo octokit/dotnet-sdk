@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A CodeQL database.
     /// </summary>
-    public class CodeScanningCodeqlDatabase : IAdditionalDataHolder, IParsable
+    public class CodeScanningCodeqlDatabase : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -94,16 +93,16 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "commit_oid", n => { CommitOid = n.GetStringValue(); } },
-                { "content_type", n => { ContentType = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "language", n => { Language = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetIntValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "uploader", n => { Uploader = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"commit_oid", n => { CommitOid = n.GetStringValue(); } },
+                {"content_type", n => { ContentType = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"language", n => { Language = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetIntValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"uploader", n => { Uploader = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

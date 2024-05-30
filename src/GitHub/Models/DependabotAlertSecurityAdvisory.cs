@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Details for the GitHub Security Advisory.
     /// </summary>
-    public class DependabotAlertSecurityAdvisory : IParsable
+    public class DependabotAlertSecurityAdvisory : IParsable 
     {
         /// <summary>The unique CVE ID assigned to the advisory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,19 +108,19 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cve_id", n => { CveId = n.GetStringValue(); } },
-                { "cvss", n => { Cvss = n.GetObjectValue<DependabotAlertSecurityAdvisory_cvss>(DependabotAlertSecurityAdvisory_cvss.CreateFromDiscriminatorValue); } },
-                { "cwes", n => { Cwes = n.GetCollectionOfObjectValues<DependabotAlertSecurityAdvisory_cwes>(DependabotAlertSecurityAdvisory_cwes.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "ghsa_id", n => { GhsaId = n.GetStringValue(); } },
-                { "identifiers", n => { Identifiers = n.GetCollectionOfObjectValues<DependabotAlertSecurityAdvisory_identifiers>(DependabotAlertSecurityAdvisory_identifiers.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
-                { "references", n => { References = n.GetCollectionOfObjectValues<DependabotAlertSecurityAdvisory_references>(DependabotAlertSecurityAdvisory_references.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "severity", n => { Severity = n.GetEnumValue<DependabotAlertSecurityAdvisory_severity>(); } },
-                { "summary", n => { Summary = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<DependabotAlertSecurityVulnerability>(DependabotAlertSecurityVulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "withdrawn_at", n => { WithdrawnAt = n.GetDateTimeOffsetValue(); } },
+                {"cve_id", n => { CveId = n.GetStringValue(); } },
+                {"cvss", n => { Cvss = n.GetObjectValue<DependabotAlertSecurityAdvisory_cvss>(DependabotAlertSecurityAdvisory_cvss.CreateFromDiscriminatorValue); } },
+                {"cwes", n => { Cwes = n.GetCollectionOfObjectValues<DependabotAlertSecurityAdvisory_cwes>(DependabotAlertSecurityAdvisory_cwes.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"ghsa_id", n => { GhsaId = n.GetStringValue(); } },
+                {"identifiers", n => { Identifiers = n.GetCollectionOfObjectValues<DependabotAlertSecurityAdvisory_identifiers>(DependabotAlertSecurityAdvisory_identifiers.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
+                {"references", n => { References = n.GetCollectionOfObjectValues<DependabotAlertSecurityAdvisory_references>(DependabotAlertSecurityAdvisory_references.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"severity", n => { Severity = n.GetEnumValue<DependabotAlertSecurityAdvisory_severity>(); } },
+                {"summary", n => { Summary = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<DependabotAlertSecurityVulnerability>(DependabotAlertSecurityVulnerability.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"withdrawn_at", n => { WithdrawnAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

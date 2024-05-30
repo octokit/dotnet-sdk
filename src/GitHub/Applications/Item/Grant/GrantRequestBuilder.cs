@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Applications.Item.Grant
-{
+namespace GitHub.Applications.Item.Grant {
     /// <summary>
     /// Builds and executes requests for operations under \applications\{client_id}\grant
     /// </summary>
-    public class GrantRequestBuilder : BaseRequestBuilder
+    public class GrantRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="GrantRequestBuilder"/> and sets the default values.
@@ -52,7 +51,7 @@ namespace GitHub.Applications.Item.Grant
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

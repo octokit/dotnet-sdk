@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A run of a CodeQL query against one or more repositories.
     /// </summary>
-    public class CodeScanningVariantAnalysis : IAdditionalDataHolder, IParsable
+    public class CodeScanningVariantAnalysis : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.</summary>
         public int? ActionsWorkflowRunId { get; set; }
@@ -94,19 +93,19 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions_workflow_run_id", n => { ActionsWorkflowRunId = n.GetIntValue(); } },
-                { "actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "controller_repo", n => { ControllerRepo = n.GetObjectValue<SimpleRepository>(SimpleRepository.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "failure_reason", n => { FailureReason = n.GetEnumValue<CodeScanningVariantAnalysis_failure_reason>(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "query_language", n => { QueryLanguage = n.GetEnumValue<CodeScanningVariantAnalysisLanguage>(); } },
-                { "query_pack_url", n => { QueryPackUrl = n.GetStringValue(); } },
-                { "scanned_repositories", n => { ScannedRepositories = n.GetCollectionOfObjectValues<CodeScanningVariantAnalysis_scanned_repositories>(CodeScanningVariantAnalysis_scanned_repositories.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "skipped_repositories", n => { SkippedRepositories = n.GetObjectValue<CodeScanningVariantAnalysis_skipped_repositories>(CodeScanningVariantAnalysis_skipped_repositories.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<CodeScanningVariantAnalysis_status>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"actions_workflow_run_id", n => { ActionsWorkflowRunId = n.GetIntValue(); } },
+                {"actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                {"controller_repo", n => { ControllerRepo = n.GetObjectValue<SimpleRepository>(SimpleRepository.CreateFromDiscriminatorValue); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"failure_reason", n => { FailureReason = n.GetEnumValue<CodeScanningVariantAnalysis_failure_reason>(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"query_language", n => { QueryLanguage = n.GetEnumValue<CodeScanningVariantAnalysisLanguage>(); } },
+                {"query_pack_url", n => { QueryPackUrl = n.GetStringValue(); } },
+                {"scanned_repositories", n => { ScannedRepositories = n.GetCollectionOfObjectValues<CodeScanningVariantAnalysis_scanned_repositories>(CodeScanningVariantAnalysis_scanned_repositories.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"skipped_repositories", n => { SkippedRepositories = n.GetObjectValue<CodeScanningVariantAnalysis_skipped_repositories>(CodeScanningVariantAnalysis_skipped_repositories.CreateFromDiscriminatorValue); } },
+                {"status", n => { Status = n.GetEnumValue<CodeScanningVariantAnalysis_status>(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

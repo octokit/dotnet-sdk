@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.OrganizationVariables
-{
+namespace GitHub.Repos.Item.Item.Actions.OrganizationVariables {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\organization-variables
     /// </summary>
-    public class OrganizationVariablesRequestBuilder : BaseRequestBuilder
+    public class OrganizationVariablesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="OrganizationVariablesRequestBuilder"/> and sets the default values.

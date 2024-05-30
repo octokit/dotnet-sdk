@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Details of a deployment environment
     /// </summary>
-    public class EnvironmentObject : IAdditionalDataHolder, IParsable
+    public class EnvironmentObject : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -92,15 +91,15 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "deployment_branch_policy", n => { DeploymentBranchPolicy = n.GetObjectValue<DeploymentBranchPolicySettings>(DeploymentBranchPolicySettings.CreateFromDiscriminatorValue); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "protection_rules", n => { ProtectionRules = n.GetCollectionOfObjectValues<Environment_protection_rules>(Environment_protection_rules.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"deployment_branch_policy", n => { DeploymentBranchPolicy = n.GetObjectValue<DeploymentBranchPolicySettings>(DeploymentBranchPolicySettings.CreateFromDiscriminatorValue); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"protection_rules", n => { ProtectionRules = n.GetCollectionOfObjectValues<Environment_protection_rules>(Environment_protection_rules.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -124,7 +123,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="Environment_protection_rulesMember1"/>, <see cref="Environment_protection_rulesMember2"/>, <see cref="Environment_protection_rulesMember3"/>
         /// </summary>
-        public class Environment_protection_rules : IComposedTypeWrapper, IParsable
+        public class Environment_protection_rules : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="Environment_protection_rulesMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.ForceCancel
-{
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.ForceCancel {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\force-cancel
     /// </summary>
-    public class ForceCancelRequestBuilder : BaseRequestBuilder
+    public class ForceCancelRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ForceCancelRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.ForceCancel
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "409", BasicError.CreateFromDiscriminatorValue },
+                {"409", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EmptyObject>(requestInfo, EmptyObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

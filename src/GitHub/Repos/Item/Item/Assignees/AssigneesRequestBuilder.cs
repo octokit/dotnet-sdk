@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Assignees
-{
+namespace GitHub.Repos.Item.Item.Assignees {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\assignees
     /// </summary>
-    public class AssigneesRequestBuilder : BaseRequestBuilder
+    public class AssigneesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.assignees.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -64,7 +63,7 @@ namespace GitHub.Repos.Item.Item.Assignees
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

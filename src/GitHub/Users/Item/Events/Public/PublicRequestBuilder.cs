@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Events.Public
-{
+namespace GitHub.Users.Item.Events.Public {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\events\public
     /// </summary>
-    public class PublicRequestBuilder : BaseRequestBuilder
+    public class PublicRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="PublicRequestBuilder"/> and sets the default values.

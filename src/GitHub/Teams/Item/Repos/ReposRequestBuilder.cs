@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Teams.Item.Repos
-{
+namespace GitHub.Teams.Item.Repos {
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\repos
     /// </summary>
-    public class ReposRequestBuilder : BaseRequestBuilder
+    public class ReposRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.teams.item.repos.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -65,7 +64,7 @@ namespace GitHub.Teams.Item.Repos
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<MinimalRepository>(requestInfo, MinimalRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Received_events
-{
+namespace GitHub.Users.Item.Received_events {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\received_events
     /// </summary>
-    public class Received_eventsRequestBuilder : BaseRequestBuilder
+    public class Received_eventsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The public property</summary>
         public PublicRequestBuilder Public

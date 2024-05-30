@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Zipball
-{
+namespace GitHub.Repos.Item.Item.Zipball {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\zipball
     /// </summary>
-    public class ZipballRequestBuilder : BaseRequestBuilder
+    public class ZipballRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.zipball.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

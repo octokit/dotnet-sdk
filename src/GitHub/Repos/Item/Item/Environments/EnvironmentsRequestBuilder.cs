@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Environments
-{
+namespace GitHub.Repos.Item.Item.Environments {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments
     /// </summary>
-    public class EnvironmentsRequestBuilder : BaseRequestBuilder
+    public class EnvironmentsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.environments.item collection</summary>
         /// <param name="position">The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`.</param>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.MergeUpstream
-{
+namespace GitHub.Repos.Item.Item.MergeUpstream {
     #pragma warning disable CS1591
-    public class MergeUpstreamPostRequestBody : IAdditionalDataHolder, IParsable
+    public class MergeUpstreamPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,7 +44,7 @@ namespace GitHub.Repos.Item.Item.MergeUpstream
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "branch", n => { Branch = n.GetStringValue(); } },
+                {"branch", n => { Branch = n.GetStringValue(); } },
             };
         }
         /// <summary>

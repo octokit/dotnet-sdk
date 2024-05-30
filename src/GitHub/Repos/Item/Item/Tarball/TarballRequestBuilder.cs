@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Tarball
-{
+namespace GitHub.Repos.Item.Item.Tarball {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\tarball
     /// </summary>
-    public class TarballRequestBuilder : BaseRequestBuilder
+    public class TarballRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.tarball.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

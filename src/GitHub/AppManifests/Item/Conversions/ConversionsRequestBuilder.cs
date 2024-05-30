@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.AppManifests.Item.Conversions
-{
+namespace GitHub.AppManifests.Item.Conversions {
     /// <summary>
     /// Builds and executes requests for operations under \app-manifests\{code}\conversions
     /// </summary>
-    public class ConversionsRequestBuilder : BaseRequestBuilder
+    public class ConversionsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ConversionsRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.AppManifests.Item.Conversions
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationErrorSimple.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ConversionsPostResponse>(requestInfo, ConversionsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Configuration for code scanning default setup.
     /// </summary>
-    public class CodeScanningDefaultSetupUpdate : IParsable
+    public class CodeScanningDefaultSetupUpdate : IParsable 
     {
         /// <summary>CodeQL languages to be analyzed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,9 +40,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "languages", n => { Languages = n.GetCollectionOfEnumValues<CodeScanningDefaultSetupUpdate_languages>()?.ToList(); } },
-                { "query_suite", n => { QuerySuite = n.GetEnumValue<CodeScanningDefaultSetupUpdate_query_suite>(); } },
-                { "state", n => { State = n.GetEnumValue<CodeScanningDefaultSetupUpdate_state>(); } },
+                {"languages", n => { Languages = n.GetCollectionOfEnumValues<CodeScanningDefaultSetupUpdate_languages>()?.ToList(); } },
+                {"query_suite", n => { QuerySuite = n.GetEnumValue<CodeScanningDefaultSetupUpdate_query_suite>(); } },
+                {"state", n => { State = n.GetEnumValue<CodeScanningDefaultSetupUpdate_state>(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Issues.Item
-{
+namespace GitHub.Repos.Item.Item.Issues.Item {
     #pragma warning disable CS1591
-    public class WithIssue_numberPatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithIssue_numberPatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -89,14 +88,14 @@ namespace GitHub.Repos.Item.Item.Issues.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignee", n => { Assignee = n.GetStringValue(); } },
-                { "assignees", n => { Assignees = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "milestone", n => { Milestone = n.GetObjectValue<WithIssue_numberPatchRequestBody_milestone>(WithIssue_numberPatchRequestBody_milestone.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<WithIssue_numberPatchRequestBody_state>(); } },
-                { "state_reason", n => { StateReason = n.GetEnumValue<WithIssue_numberPatchRequestBody_state_reason>(); } },
-                { "title", n => { Title = n.GetObjectValue<WithIssue_numberPatchRequestBody_title>(WithIssue_numberPatchRequestBody_title.CreateFromDiscriminatorValue); } },
+                {"assignee", n => { Assignee = n.GetStringValue(); } },
+                {"assignees", n => { Assignees = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"milestone", n => { Milestone = n.GetObjectValue<WithIssue_numberPatchRequestBody_milestone>(WithIssue_numberPatchRequestBody_milestone.CreateFromDiscriminatorValue); } },
+                {"state", n => { State = n.GetEnumValue<WithIssue_numberPatchRequestBody_state>(); } },
+                {"state_reason", n => { StateReason = n.GetEnumValue<WithIssue_numberPatchRequestBody_state_reason>(); } },
+                {"title", n => { Title = n.GetObjectValue<WithIssue_numberPatchRequestBody_title>(WithIssue_numberPatchRequestBody_title.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -119,7 +118,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        public class WithIssue_numberPatchRequestBody_milestone : IComposedTypeWrapper, IParsable
+        public class WithIssue_numberPatchRequestBody_milestone : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }
@@ -179,7 +178,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        public class WithIssue_numberPatchRequestBody_title : IComposedTypeWrapper, IParsable
+        public class WithIssue_numberPatchRequestBody_title : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }

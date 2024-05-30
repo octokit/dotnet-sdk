@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.CheckSuites
-{
+namespace GitHub.Repos.Item.Item.CheckSuites {
     #pragma warning disable CS1591
-    public class CheckSuitesPostRequestBody : IAdditionalDataHolder, IParsable
+    public class CheckSuitesPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,7 +44,7 @@ namespace GitHub.Repos.Item.Item.CheckSuites
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "head_sha", n => { HeadSha = n.GetStringValue(); } },
+                {"head_sha", n => { HeadSha = n.GetStringValue(); } },
             };
         }
         /// <summary>

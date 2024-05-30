@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Milestones.Item
-{
+namespace GitHub.Repos.Item.Item.Milestones.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\milestones\{milestone_number}
     /// </summary>
-    public class WithMilestone_numberItemRequestBuilder : BaseRequestBuilder
+    public class WithMilestone_numberItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The labels property</summary>
         public LabelsRequestBuilder Labels
@@ -56,7 +55,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -80,7 +79,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Milestone>(requestInfo, Milestone.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

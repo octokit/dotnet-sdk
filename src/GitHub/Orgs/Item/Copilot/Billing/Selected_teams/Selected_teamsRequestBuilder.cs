@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Copilot.Billing.Selected_teams
-{
+namespace GitHub.Orgs.Item.Copilot.Billing.Selected_teams {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\copilot\billing\selected_teams
     /// </summary>
-    public class Selected_teamsRequestBuilder : BaseRequestBuilder
+    public class Selected_teamsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="Selected_teamsRequestBuilder"/> and sets the default values.
@@ -56,10 +55,10 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_teams
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Selected_teamsDeleteResponse>(requestInfo, Selected_teamsDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,10 +87,10 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_teams
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Selected_teamsPostResponse>(requestInfo, Selected_teamsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
