@@ -20,6 +20,12 @@ public class AppInstallationTokenProvider : IAccessTokenProvider
 
     AllowedHostsValidator IAccessTokenProvider.AllowedHostsValidator => new AllowedHostsValidator();
 
+    /// <summary>
+    /// Constructor for AppInstallationTokenProvider using the appId
+    /// </summary>
+    /// <param name="appId"></param>
+    /// <param name="privateKey"></param>
+    /// <param name="installationId"></param>
     public AppInstallationTokenProvider(int appId, RSA privateKey, string installationId)
     {
         _sourceId = appId.ToString();
@@ -27,6 +33,12 @@ public class AppInstallationTokenProvider : IAccessTokenProvider
         _installationId = installationId;
     }
 
+    /// <summary>
+    /// Constructor for AppInstallationTokenProvider using the clientId
+    /// </summary>
+    /// <param name="clientId"></param>
+    /// <param name="privateKey"></param>
+    /// <param name="installationId"></param>
     public AppInstallationTokenProvider(string clientId, RSA privateKey, string installationId)
     {
         _sourceId = clientId;
@@ -34,6 +46,13 @@ public class AppInstallationTokenProvider : IAccessTokenProvider
         _installationId = installationId;
     }
 
+    /// <summary>
+    /// Get the authorization token
+    /// </summary>
+    /// <param name="requestUri"></param>
+    /// <param name="additionalAuthenticationContext"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
     public async Task<string> GetAuthorizationTokenAsync(Uri requestUri, Dictionary<string, object>? additionalAuthenticationContext = default, CancellationToken cancellationToken = default)
     {
 
@@ -42,7 +61,7 @@ public class AppInstallationTokenProvider : IAccessTokenProvider
         {
             var baseUrl = requestUri.GetLeftPart(UriPartial.Authority);
 
-            _tokenDescriptor = AccessTokenProvider.CreateTokenDescriptor(_privateKey, _sourceId);
+            _tokenDescriptor = AccessTokenProvider.CreateTokenDescriptor(_privateKey, _sourceId, DateTime.UtcNow);
             var jwt = AccessTokenProvider.CreateJsonWebToken(_tokenDescriptor);
             _accessToken = await AccessTokenProvider.GetGitHubAccessTokenAsync(baseUrl, jwt, _installationId);
         }
