@@ -10,7 +10,7 @@ namespace GitHub.Octokit.Client.Authentication;
 /// <summary>
 /// This class is responsible for creating, signing and refreshing access tokens
 /// </summary>
-public class GitHubAppTokenProvider: IGitHubAppTokenProvider
+public class GitHubAppTokenProvider : IGitHubAppTokenProvider
 {
     private const int _timeoutMinutes = 10;
 
