@@ -12,7 +12,7 @@ namespace GitHub.Octokit.Client.Authentication;
 /// </summary>
 public class AccessTokenProvider
 {
-    private const int _timeoutMinuites = 10;
+    private const int _timeoutMinutes = 10;
 
     public static string CreateJsonWebToken(SecurityTokenDescriptor tokenDescriptor)
     {
@@ -65,12 +65,12 @@ public class AccessTokenProvider
             Issuer = sourceId,
             IssuedAt = issuedAt,
             NotBefore = issuedAt,
-            Expires = issuedAt.AddMinutes(_timeoutMinuites),
+            Expires = issuedAt.AddMinutes(_timeoutMinutes),
             SigningCredentials = signingCredentials,
             Claims = new Dictionary<string, object>
           {
               { JwtRegisteredClaimNames.Iat, new DateTimeOffset(issuedAt).ToUnixTimeSeconds() },
-              { JwtRegisteredClaimNames.Exp, new DateTimeOffset(issuedAt.AddMinutes(_timeoutMinuites)).ToUnixTimeSeconds() },
+              { JwtRegisteredClaimNames.Exp, new DateTimeOffset(issuedAt.AddMinutes(_timeoutMinutes)).ToUnixTimeSeconds() },
               { JwtRegisteredClaimNames.Iss, sourceId }
           }
         };
