@@ -8,11 +8,12 @@ using GitHub.Octokit.Client.Authentication;
 var installationId = Environment.GetEnvironmentVariable("GITHUB_APP_INSTALLATION_ID") ?? "";
 var clientId = Environment.GetEnvironmentVariable("GITHUB_APP_CLIENT_ID") ?? "";
 var privateKeyPem = File.ReadAllText(Environment.GetEnvironmentVariable("GITHUB_APP_PRIVATE_KEY_PATH") ?? "");
+var githubAppTokenProvider = new GitHubAppTokenProvider();
 
 var rsa = RSA.Create();
 rsa.ImportFromPem(privateKeyPem);
 
-var aiAccessTokenProvider = new AppInstallationTokenProvider(clientId, rsa, installationId);
+var aiAccessTokenProvider = new AppInstallationTokenProvider(clientId, rsa, installationId, githubAppTokenProvider);
 var aiAdapter = RequestAdapter.Create(new AppInstallationAuthProvider(aiAccessTokenProvider));
 var aiGitHubClient = new GitHubClient(aiAdapter);
 

@@ -18,20 +18,9 @@ public class AppInstallationTokenProvider : IAccessTokenProvider
 
     private SecurityTokenDescriptor? _tokenDescriptor;
 
-    AllowedHostsValidator IAccessTokenProvider.AllowedHostsValidator => new AllowedHostsValidator();
+    private IGitHubAppTokenProvider _gitHubAppTokenProvider;
 
-    /// <summary>
-    /// Constructor for AppInstallationTokenProvider using the appId
-    /// </summary>
-    /// <param name="appId"></param>
-    /// <param name="privateKey"></param>
-    /// <param name="installationId"></param>
-    public AppInstallationTokenProvider(int appId, RSA privateKey, string installationId)
-    {
-        _sourceId = appId.ToString();
-        _privateKey = privateKey;
-        _installationId = installationId;
-    }
+    AllowedHostsValidator IAccessTokenProvider.AllowedHostsValidator => new AllowedHostsValidator();
 
     /// <summary>
     /// Constructor for AppInstallationTokenProvider using the clientId
@@ -39,11 +28,26 @@ public class AppInstallationTokenProvider : IAccessTokenProvider
     /// <param name="clientId"></param>
     /// <param name="privateKey"></param>
     /// <param name="installationId"></param>
-    public AppInstallationTokenProvider(string clientId, RSA privateKey, string installationId)
+    public AppInstallationTokenProvider(string clientId, RSA privateKey, string installationId, IGitHubAppTokenProvider githubAppTokenProvider)
     {
         _sourceId = clientId;
         _privateKey = privateKey;
         _installationId = installationId;
+        _gitHubAppTokenProvider = githubAppTokenProvider;
+    }
+
+    /// <summary>
+    /// Constructor for AppInstallationTokenProvider using the appId
+    /// </summary>
+    /// <param name="appId"></param>
+    /// <param name="privateKey"></param>
+    /// <param name="installationId"></param>
+    public AppInstallationTokenProvider(int appId, RSA privateKey, string installationId, IGitHubAppTokenProvider githubAppTokenProvider)
+    {
+        _sourceId = appId.ToString();
+        _privateKey = privateKey;
+        _installationId = installationId;
+        _gitHubAppTokenProvider = githubAppTokenProvider;
     }
 
     /// <summary>
@@ -55,15 +59,14 @@ public class AppInstallationTokenProvider : IAccessTokenProvider
     /// <returns></returns>
     public async Task<string> GetAuthorizationTokenAsync(Uri requestUri, Dictionary<string, object>? additionalAuthenticationContext = default, CancellationToken cancellationToken = default)
     {
-
         /// If the token is empty, about to be expired, or has expired - get a new one
         if (string.IsNullOrEmpty(_accessToken) || (_tokenDescriptor != null && _tokenDescriptor.Expires < DateTime.UtcNow.AddMinutes(-1)))
         {
             var baseUrl = requestUri.GetLeftPart(UriPartial.Authority);
 
-            _tokenDescriptor = GitHubAppTokenProvider.CreateTokenDescriptor(_privateKey, _sourceId, DateTime.UtcNow);
-            var jwt = GitHubAppTokenProvider.CreateJsonWebToken(_tokenDescriptor);
-            _accessToken = await GitHubAppTokenProvider.GetGitHubAccessTokenAsync(baseUrl, jwt, _installationId);
+            _tokenDescriptor = _gitHubAppTokenProvider.CreateTokenDescriptor(_privateKey, _sourceId, DateTime.UtcNow);
+            var jwt = _gitHubAppTokenProvider.CreateJsonWebToken(_tokenDescriptor);
+            _accessToken = await _gitHubAppTokenProvider.GetGitHubAccessTokenAsync(baseUrl, jwt, _installationId);
         }
 
         return _accessToken;

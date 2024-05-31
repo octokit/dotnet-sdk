@@ -4,16 +4,16 @@ using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using Xunit;
 
-public class AccessTokenProviderTests
+public class GitHubAppTokenProviderTests
 {
-
     [Fact]
     public void CreateJsonWebToken_ReturnsValidToken()
     {
+        var githubAppTokenProvider = new GitHubAppTokenProvider();
         var privateKey = RSA.Create();
         var sourceId = "example-source-id";
-        var tokenDescriptor = GitHubAppTokenProvider.CreateTokenDescriptor(privateKey, sourceId, DateTime.UtcNow);
-        var token = GitHubAppTokenProvider.CreateJsonWebToken(tokenDescriptor);
+        var tokenDescriptor = githubAppTokenProvider.CreateTokenDescriptor(privateKey, sourceId, DateTime.UtcNow);
+        var token = githubAppTokenProvider.CreateJsonWebToken(tokenDescriptor);
 
         Assert.NotNull(token);
     }
@@ -21,11 +21,11 @@ public class AccessTokenProviderTests
     [Fact]
     public void CreateTokenDescriptor_ReturnsValidDescriptor()
     {
-
+        var githubAppTokenProvider = new GitHubAppTokenProvider();
         var privateKey = RSA.Create();
         var sourceId = "example-source-id";
         var now = DateTime.UtcNow;
-        var tokenDescriptor = GitHubAppTokenProvider.CreateTokenDescriptor(privateKey, sourceId, now);
+        var tokenDescriptor = githubAppTokenProvider.CreateTokenDescriptor(privateKey, sourceId, now);
 
         Assert.Equal(sourceId, tokenDescriptor.Issuer);
         Assert.Equal(now, tokenDescriptor.IssuedAt);

@@ -10,11 +10,38 @@ namespace GitHub.Octokit.Client.Authentication;
 /// <summary>
 /// This class is responsible for creating, signing and refreshing access tokens
 /// </summary>
-public class GitHubAppTokenProvider
+public class GitHubAppTokenProvider: IGitHubAppTokenProvider
 {
     private const int _timeoutMinutes = 10;
 
-    public static string CreateJsonWebToken(SecurityTokenDescriptor tokenDescriptor)
+    /// <summary>
+    /// Create a token descriptor
+    /// We want to store the descriptor so that we can automatically refresh the token before it expires
+    /// </summary>
+    /// <param name="privateKey"></param>
+    /// <param name="sourceId"></param>
+    /// <param name="issuedAt"></param>
+    public SecurityTokenDescriptor CreateTokenDescriptor(RSA privateKey, string sourceId, DateTime issuedAt)
+    {
+        var signingCredentials = new SigningCredentials(new RsaSecurityKey(privateKey), SecurityAlgorithms.RsaSha256);
+        var tokenDescriptor = new SecurityTokenDescriptor
+        {
+            Issuer = sourceId,
+            IssuedAt = issuedAt,
+            NotBefore = issuedAt,
+            Expires = issuedAt.AddMinutes(_timeoutMinutes),
+            SigningCredentials = signingCredentials,
+            Claims = new Dictionary<string, object>
+          {
+              { JwtRegisteredClaimNames.Iat, new DateTimeOffset(issuedAt).ToUnixTimeSeconds() },
+              { JwtRegisteredClaimNames.Exp, new DateTimeOffset(issuedAt.AddMinutes(_timeoutMinutes)).ToUnixTimeSeconds() },
+              { JwtRegisteredClaimNames.Iss, sourceId }
+          }
+        };
+        return tokenDescriptor;
+    }
+
+    public string CreateJsonWebToken(SecurityTokenDescriptor tokenDescriptor)
     {
         var tokenHandler = new JsonWebTokenHandler();
         return tokenHandler.CreateToken(tokenDescriptor);
@@ -28,7 +55,7 @@ public class GitHubAppTokenProvider
     /// <param name="installationId"></param>
     /// <returns></returns>
     /// <exception cref="Exception"></exception>
-    public static async Task<string> GetGitHubAccessTokenAsync(string baseUrl, string jwt, string installationId)
+    public async Task<string> GetGitHubAccessTokenAsync(string baseUrl, string jwt, string installationId)
     {
         using var client = new HttpClient();
         var request = new HttpRequestMessage(HttpMethod.Post, $"{baseUrl}/app/installations/{installationId}/access_tokens");
@@ -48,32 +75,5 @@ public class GitHubAppTokenProvider
         var token = doc.RootElement.GetProperty("token").GetString();
 
         return token ?? throw new Exception("Failed to get access token");
-    }
-
-    /// <summary>
-    /// Create a token descriptor
-    /// We want to store the descriptor so that we can automatically refresh the token before it expires
-    /// </summary>
-    /// <param name="privateKey"></param>
-    /// <param name="sourceId"></param>
-    /// <param name="issuedAt"></param>
-    public static SecurityTokenDescriptor CreateTokenDescriptor(RSA privateKey, string sourceId, DateTime issuedAt)
-    {
-        var signingCredentials = new SigningCredentials(new RsaSecurityKey(privateKey), SecurityAlgorithms.RsaSha256);
-        var tokenDescriptor = new SecurityTokenDescriptor
-        {
-            Issuer = sourceId,
-            IssuedAt = issuedAt,
-            NotBefore = issuedAt,
-            Expires = issuedAt.AddMinutes(_timeoutMinutes),
-            SigningCredentials = signingCredentials,
-            Claims = new Dictionary<string, object>
-          {
-              { JwtRegisteredClaimNames.Iat, new DateTimeOffset(issuedAt).ToUnixTimeSeconds() },
-              { JwtRegisteredClaimNames.Exp, new DateTimeOffset(issuedAt.AddMinutes(_timeoutMinutes)).ToUnixTimeSeconds() },
-              { JwtRegisteredClaimNames.Iss, sourceId }
-          }
-        };
-        return tokenDescriptor;
     }
 }
