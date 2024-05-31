@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class PullRequestWebhook : PullRequest, IParsable
+    public class PullRequestWebhook : PullRequest, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Whether to allow auto-merge for pull requests.</summary>
@@ -44,14 +43,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allow_auto_merge", n => { AllowAutoMerge = n.GetBoolValue(); } },
-                { "allow_update_branch", n => { AllowUpdateBranch = n.GetBoolValue(); } },
-                { "delete_branch_on_merge", n => { DeleteBranchOnMerge = n.GetBoolValue(); } },
-                { "merge_commit_message", n => { MergeCommitMessage = n.GetEnumValue<PullRequestWebhook_merge_commit_message>(); } },
-                { "merge_commit_title", n => { MergeCommitTitle = n.GetEnumValue<PullRequestWebhook_merge_commit_title>(); } },
-                { "squash_merge_commit_message", n => { SquashMergeCommitMessage = n.GetEnumValue<PullRequestWebhook_squash_merge_commit_message>(); } },
-                { "squash_merge_commit_title", n => { SquashMergeCommitTitle = n.GetEnumValue<PullRequestWebhook_squash_merge_commit_title>(); } },
-                { "use_squash_pr_title_as_default", n => { UseSquashPrTitleAsDefault = n.GetBoolValue(); } },
+                {"allow_auto_merge", n => { AllowAutoMerge = n.GetBoolValue(); } },
+                {"allow_update_branch", n => { AllowUpdateBranch = n.GetBoolValue(); } },
+                {"delete_branch_on_merge", n => { DeleteBranchOnMerge = n.GetBoolValue(); } },
+                {"merge_commit_message", n => { MergeCommitMessage = n.GetEnumValue<PullRequestWebhook_merge_commit_message>(); } },
+                {"merge_commit_title", n => { MergeCommitTitle = n.GetEnumValue<PullRequestWebhook_merge_commit_title>(); } },
+                {"squash_merge_commit_message", n => { SquashMergeCommitMessage = n.GetEnumValue<PullRequestWebhook_squash_merge_commit_message>(); } },
+                {"squash_merge_commit_title", n => { SquashMergeCommitTitle = n.GetEnumValue<PullRequestWebhook_squash_merge_commit_title>(); } },
+                {"use_squash_pr_title_as_default", n => { UseSquashPrTitleAsDefault = n.GetBoolValue(); } },
             };
         }
         /// <summary>

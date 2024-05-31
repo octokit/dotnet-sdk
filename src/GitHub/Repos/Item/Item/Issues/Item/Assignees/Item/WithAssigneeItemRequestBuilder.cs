@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Issues.Item.Assignees.Item
-{
+namespace GitHub.Repos.Item.Item.Issues.Item.Assignees.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\{issue_number}\assignees\{assignee}
     /// </summary>
-    public class WithAssigneeItemRequestBuilder : BaseRequestBuilder
+    public class WithAssigneeItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithAssigneeItemRequestBuilder"/> and sets the default values.
@@ -50,7 +49,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Assignees.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

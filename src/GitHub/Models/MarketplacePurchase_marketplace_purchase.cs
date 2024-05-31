@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class MarketplacePurchase_marketplace_purchase : IAdditionalDataHolder, IParsable
+    public class MarketplacePurchase_marketplace_purchase : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -83,14 +82,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billing_cycle", n => { BillingCycle = n.GetStringValue(); } },
-                { "free_trial_ends_on", n => { FreeTrialEndsOn = n.GetStringValue(); } },
-                { "is_installed", n => { IsInstalled = n.GetBoolValue(); } },
-                { "next_billing_date", n => { NextBillingDate = n.GetStringValue(); } },
-                { "on_free_trial", n => { OnFreeTrial = n.GetBoolValue(); } },
-                { "plan", n => { Plan = n.GetObjectValue<MarketplaceListingPlan>(MarketplaceListingPlan.CreateFromDiscriminatorValue); } },
-                { "unit_count", n => { UnitCount = n.GetIntValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
+                {"billing_cycle", n => { BillingCycle = n.GetStringValue(); } },
+                {"free_trial_ends_on", n => { FreeTrialEndsOn = n.GetStringValue(); } },
+                {"is_installed", n => { IsInstalled = n.GetBoolValue(); } },
+                {"next_billing_date", n => { NextBillingDate = n.GetStringValue(); } },
+                {"on_free_trial", n => { OnFreeTrial = n.GetBoolValue(); } },
+                {"plan", n => { Plan = n.GetObjectValue<MarketplaceListingPlan>(MarketplaceListingPlan.CreateFromDiscriminatorValue); } },
+                {"unit_count", n => { UnitCount = n.GetIntValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Actions OIDC subject customization for a repository
     /// </summary>
-    public class OidcCustomSubRepo : IAdditionalDataHolder, IParsable
+    public class OidcCustomSubRepo : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -48,8 +47,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "include_claim_keys", n => { IncludeClaimKeys = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "use_default", n => { UseDefault = n.GetBoolValue(); } },
+                {"include_claim_keys", n => { IncludeClaimKeys = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"use_default", n => { UseDefault = n.GetBoolValue(); } },
             };
         }
         /// <summary>

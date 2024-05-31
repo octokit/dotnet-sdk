@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A GitHub repository view for Classroom
     /// </summary>
-    public class SimpleClassroomRepository : IAdditionalDataHolder, IParsable
+    public class SimpleClassroomRepository : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -74,12 +73,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default_branch", n => { DefaultBranch = n.GetStringValue(); } },
-                { "full_name", n => { FullName = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "private", n => { Private = n.GetBoolValue(); } },
+                {"default_branch", n => { DefaultBranch = n.GetStringValue(); } },
+                {"full_name", n => { FullName = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"private", n => { Private = n.GetBoolValue(); } },
             };
         }
         /// <summary>

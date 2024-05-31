@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Merges
-{
+namespace GitHub.Repos.Item.Item.Merges {
     #pragma warning disable CS1591
-    public class MergesPostRequestBody : IAdditionalDataHolder, IParsable
+    public class MergesPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -61,9 +60,9 @@ namespace GitHub.Repos.Item.Item.Merges
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "base", n => { Base = n.GetStringValue(); } },
-                { "commit_message", n => { CommitMessage = n.GetStringValue(); } },
-                { "head", n => { Head = n.GetStringValue(); } },
+                {"base", n => { Base = n.GetStringValue(); } },
+                {"commit_message", n => { CommitMessage = n.GetStringValue(); } },
+                {"head", n => { Head = n.GetStringValue(); } },
             };
         }
         /// <summary>

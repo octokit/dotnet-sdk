@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item.Repos.Item
-{
+namespace GitHub.Orgs.Item.Teams.Item.Repos.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\repos\{owner}
     /// </summary>
-    public class WithOwnerItemRequestBuilder : BaseRequestBuilder
+    public class WithOwnerItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.teams.item.repos.item.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

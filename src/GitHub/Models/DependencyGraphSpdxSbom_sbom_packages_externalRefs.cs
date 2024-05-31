@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class DependencyGraphSpdxSbom_sbom_packages_externalRefs : IAdditionalDataHolder, IParsable
+    public class DependencyGraphSpdxSbom_sbom_packages_externalRefs : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -61,9 +60,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "referenceCategory", n => { ReferenceCategory = n.GetStringValue(); } },
-                { "referenceLocator", n => { ReferenceLocator = n.GetStringValue(); } },
-                { "referenceType", n => { ReferenceType = n.GetStringValue(); } },
+                {"referenceCategory", n => { ReferenceCategory = n.GetStringValue(); } },
+                {"referenceLocator", n => { ReferenceLocator = n.GetStringValue(); } },
+                {"referenceType", n => { ReferenceType = n.GetStringValue(); } },
             };
         }
         /// <summary>

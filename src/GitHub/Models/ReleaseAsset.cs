@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Data related to a release.
     /// </summary>
-    public class ReleaseAsset : IAdditionalDataHolder, IParsable
+    public class ReleaseAsset : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -106,19 +105,19 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "browser_download_url", n => { BrowserDownloadUrl = n.GetStringValue(); } },
-                { "content_type", n => { ContentType = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "download_count", n => { DownloadCount = n.GetIntValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "label", n => { Label = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<ReleaseAsset_state>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "uploader", n => { Uploader = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"browser_download_url", n => { BrowserDownloadUrl = n.GetStringValue(); } },
+                {"content_type", n => { ContentType = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"download_count", n => { DownloadCount = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"label", n => { Label = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetIntValue(); } },
+                {"state", n => { State = n.GetEnumValue<ReleaseAsset_state>(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"uploader", n => { Uploader = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

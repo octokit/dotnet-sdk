@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Create a new snapshot of a repository&apos;s dependencies.
     /// </summary>
-    public class Snapshot : IParsable
+    public class Snapshot : IParsable 
     {
         /// <summary>A description of the detector used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,14 +80,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "detector", n => { Detector = n.GetObjectValue<Snapshot_detector>(Snapshot_detector.CreateFromDiscriminatorValue); } },
-                { "job", n => { Job = n.GetObjectValue<Snapshot_job>(Snapshot_job.CreateFromDiscriminatorValue); } },
-                { "manifests", n => { Manifests = n.GetObjectValue<Snapshot_manifests>(Snapshot_manifests.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<GitHub.Models.Metadata>(GitHub.Models.Metadata.CreateFromDiscriminatorValue); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "scanned", n => { Scanned = n.GetDateTimeOffsetValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetIntValue(); } },
+                {"detector", n => { Detector = n.GetObjectValue<Snapshot_detector>(Snapshot_detector.CreateFromDiscriminatorValue); } },
+                {"job", n => { Job = n.GetObjectValue<Snapshot_job>(Snapshot_job.CreateFromDiscriminatorValue); } },
+                {"manifests", n => { Manifests = n.GetObjectValue<Snapshot_manifests>(Snapshot_manifests.CreateFromDiscriminatorValue); } },
+                {"metadata", n => { Metadata = n.GetObjectValue<GitHub.Models.Metadata>(GitHub.Models.Metadata.CreateFromDiscriminatorValue); } },
+                {"ref", n => { Ref = n.GetStringValue(); } },
+                {"scanned", n => { Scanned = n.GetDateTimeOffsetValue(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

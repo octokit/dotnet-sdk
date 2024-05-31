@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Reactions.Item
-{
+namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Reactions.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\discussions\{discussion_number}\reactions\{reaction_id}
     /// </summary>
-    public class WithReaction_ItemRequestBuilder : BaseRequestBuilder
+    public class WithReaction_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithReaction_ItemRequestBuilder"/> and sets the default values.

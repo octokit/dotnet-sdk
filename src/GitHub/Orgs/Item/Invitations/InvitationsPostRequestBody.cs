@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Invitations
-{
+namespace GitHub.Orgs.Item.Invitations {
     #pragma warning disable CS1591
-    public class InvitationsPostRequestBody : IAdditionalDataHolder, IParsable
+    public class InvitationsPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -58,10 +57,10 @@ namespace GitHub.Orgs.Item.Invitations
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "invitee_id", n => { InviteeId = n.GetIntValue(); } },
-                { "role", n => { Role = n.GetEnumValue<InvitationsPostRequestBody_role>(); } },
-                { "team_ids", n => { TeamIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"invitee_id", n => { InviteeId = n.GetIntValue(); } },
+                {"role", n => { Role = n.GetEnumValue<InvitationsPostRequestBody_role>(); } },
+                {"team_ids", n => { TeamIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
             };
         }
         /// <summary>

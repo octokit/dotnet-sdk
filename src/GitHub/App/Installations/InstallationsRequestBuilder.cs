@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.App.Installations
-{
+namespace GitHub.App.Installations {
     /// <summary>
     /// Builds and executes requests for operations under \app\installations
     /// </summary>
-    public class InstallationsRequestBuilder : BaseRequestBuilder
+    public class InstallationsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.app.installations.item collection</summary>
         /// <param name="position">The unique identifier of the installation.</param>

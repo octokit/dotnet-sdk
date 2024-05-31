@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Community Profile
     /// </summary>
-    public class CommunityProfile : IAdditionalDataHolder, IParsable
+    public class CommunityProfile : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -68,12 +67,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content_reports_enabled", n => { ContentReportsEnabled = n.GetBoolValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "documentation", n => { Documentation = n.GetStringValue(); } },
-                { "files", n => { Files = n.GetObjectValue<CommunityProfile_files>(CommunityProfile_files.CreateFromDiscriminatorValue); } },
-                { "health_percentage", n => { HealthPercentage = n.GetIntValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"content_reports_enabled", n => { ContentReportsEnabled = n.GetBoolValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"documentation", n => { Documentation = n.GetStringValue(); } },
+                {"files", n => { Files = n.GetObjectValue<CommunityProfile_files>(CommunityProfile_files.CreateFromDiscriminatorValue); } },
+                {"health_percentage", n => { HealthPercentage = n.GetIntValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

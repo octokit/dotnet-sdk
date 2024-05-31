@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
     /// </summary>
-    public class NullableIssue : IAdditionalDataHolder, IParsable
+    public class NullableIssue : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The active_lock_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -250,40 +249,40 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "active_lock_reason", n => { ActiveLockReason = n.GetStringValue(); } },
-                { "assignee", n => { Assignee = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "assignees", n => { Assignees = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "body_html", n => { BodyHtml = n.GetStringValue(); } },
-                { "body_text", n => { BodyText = n.GetStringValue(); } },
-                { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
-                { "closed_by", n => { ClosedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "comments", n => { Comments = n.GetIntValue(); } },
-                { "comments_url", n => { CommentsUrl = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "draft", n => { Draft = n.GetBoolValue(); } },
-                { "events_url", n => { EventsUrl = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetLongValue(); } },
-                { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "labels_url", n => { LabelsUrl = n.GetStringValue(); } },
-                { "locked", n => { Locked = n.GetBoolValue(); } },
-                { "milestone", n => { Milestone = n.GetObjectValue<NullableMilestone>(NullableMilestone.CreateFromDiscriminatorValue); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
-                { "pull_request", n => { PullRequest = n.GetObjectValue<NullableIssue_pull_request>(NullableIssue_pull_request.CreateFromDiscriminatorValue); } },
-                { "reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
-                { "repository", n => { Repository = n.GetObjectValue<GitHub.Models.Repository>(GitHub.Models.Repository.CreateFromDiscriminatorValue); } },
-                { "repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
-                { "state_reason", n => { StateReason = n.GetEnumValue<NullableIssue_state_reason>(); } },
-                { "timeline_url", n => { TimelineUrl = n.GetStringValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"active_lock_reason", n => { ActiveLockReason = n.GetStringValue(); } },
+                {"assignee", n => { Assignee = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"assignees", n => { Assignees = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"body_html", n => { BodyHtml = n.GetStringValue(); } },
+                {"body_text", n => { BodyText = n.GetStringValue(); } },
+                {"closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
+                {"closed_by", n => { ClosedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"comments", n => { Comments = n.GetIntValue(); } },
+                {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"draft", n => { Draft = n.GetBoolValue(); } },
+                {"events_url", n => { EventsUrl = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
+                {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"labels_url", n => { LabelsUrl = n.GetStringValue(); } },
+                {"locked", n => { Locked = n.GetBoolValue(); } },
+                {"milestone", n => { Milestone = n.GetObjectValue<NullableMilestone>(NullableMilestone.CreateFromDiscriminatorValue); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"number", n => { Number = n.GetIntValue(); } },
+                {"performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
+                {"pull_request", n => { PullRequest = n.GetObjectValue<NullableIssue_pull_request>(NullableIssue_pull_request.CreateFromDiscriminatorValue); } },
+                {"reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
+                {"repository", n => { Repository = n.GetObjectValue<GitHub.Models.Repository>(GitHub.Models.Repository.CreateFromDiscriminatorValue); } },
+                {"repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"state_reason", n => { StateReason = n.GetEnumValue<NullableIssue_state_reason>(); } },
+                {"timeline_url", n => { TimelineUrl = n.GetStringValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

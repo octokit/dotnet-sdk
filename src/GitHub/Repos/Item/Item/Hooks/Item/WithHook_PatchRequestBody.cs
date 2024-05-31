@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Hooks.Item
-{
+namespace GitHub.Repos.Item.Item.Hooks.Item {
     #pragma warning disable CS1591
-    public class WithHook_PatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithHook_PatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.</summary>
@@ -72,11 +71,11 @@ namespace GitHub.Repos.Item.Item.Hooks.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "active", n => { Active = n.GetBoolValue(); } },
-                { "add_events", n => { AddEvents = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "config", n => { Config = n.GetObjectValue<WebhookConfig>(WebhookConfig.CreateFromDiscriminatorValue); } },
-                { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "remove_events", n => { RemoveEvents = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"active", n => { Active = n.GetBoolValue(); } },
+                {"add_events", n => { AddEvents = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"config", n => { Config = n.GetObjectValue<WebhookConfig>(WebhookConfig.CreateFromDiscriminatorValue); } },
+                {"events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"remove_events", n => { RemoveEvents = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
-{
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\restrictions\users
     /// </summary>
-    public class UsersRequestBuilder : BaseRequestBuilder
+    public class UsersRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="UsersRequestBuilder"/> and sets the default values.
@@ -53,7 +52,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -78,7 +77,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -105,7 +104,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -132,7 +131,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -234,7 +233,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="UsersDeleteRequestBodyMember1"/>
         /// </summary>
-        public class UsersDeleteRequestBody : IComposedTypeWrapper, IParsable
+        public class UsersDeleteRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -340,7 +339,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="UsersPostRequestBodyMember1"/>
         /// </summary>
-        public class UsersPostRequestBody : IComposedTypeWrapper, IParsable
+        public class UsersPostRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -446,7 +445,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>, <see cref="UsersPutRequestBodyMember1"/>
         /// </summary>
-        public class UsersPutRequestBody : IComposedTypeWrapper, IParsable
+        public class UsersPutRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

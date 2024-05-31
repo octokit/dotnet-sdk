@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A description of the detector used.
     /// </summary>
-    public class Snapshot_detector : IParsable
+    public class Snapshot_detector : IParsable 
     {
         /// <summary>The name of the detector used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,9 +52,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

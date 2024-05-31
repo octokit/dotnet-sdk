@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class Codespace_runtime_constraints : IAdditionalDataHolder, IParsable
+    public class Codespace_runtime_constraints : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,7 +44,7 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_port_privacy_settings", n => { AllowedPortPrivacySettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowed_port_privacy_settings", n => { AllowedPortPrivacySettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User
-{
+namespace GitHub.User {
     #pragma warning disable CS1591
-    public class UserPatchRequestBody : IAdditionalDataHolder, IParsable
+    public class UserPatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -95,14 +94,14 @@ namespace GitHub.User
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bio", n => { Bio = n.GetStringValue(); } },
-                { "blog", n => { Blog = n.GetStringValue(); } },
-                { "company", n => { Company = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "hireable", n => { Hireable = n.GetBoolValue(); } },
-                { "location", n => { Location = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "twitter_username", n => { TwitterUsername = n.GetStringValue(); } },
+                {"bio", n => { Bio = n.GetStringValue(); } },
+                {"blog", n => { Blog = n.GetStringValue(); } },
+                {"company", n => { Company = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"hireable", n => { Hireable = n.GetBoolValue(); } },
+                {"location", n => { Location = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"twitter_username", n => { TwitterUsername = n.GetStringValue(); } },
             };
         }
         /// <summary>

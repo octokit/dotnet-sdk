@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Codes_of_conduct
-{
+namespace GitHub.Codes_of_conduct {
     /// <summary>
     /// Builds and executes requests for operations under \codes_of_conduct
     /// </summary>
-    public class Codes_of_conductRequestBuilder : BaseRequestBuilder
+    public class Codes_of_conductRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.codes_of_conduct.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.SecurityManagers.Teams.Item
-{
+namespace GitHub.Orgs.Item.SecurityManagers.Teams.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\security-managers\teams\{team_slug}
     /// </summary>
-    public class WithTeam_slugItemRequestBuilder : BaseRequestBuilder
+    public class WithTeam_slugItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithTeam_slugItemRequestBuilder"/> and sets the default values.

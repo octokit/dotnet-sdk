@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.DependencyGraph.Sbom
-{
+namespace GitHub.Repos.Item.Item.DependencyGraph.Sbom {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph\sbom
     /// </summary>
-    public class SbomRequestBuilder : BaseRequestBuilder
+    public class SbomRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="SbomRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Sbom
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DependencyGraphSpdxSbom>(requestInfo, DependencyGraphSpdxSbom.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

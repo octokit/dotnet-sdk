@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
     /// </summary>
-    public class CodeScanningVariantAnalysis_skipped_repositories : IAdditionalDataHolder, IParsable
+    public class CodeScanningVariantAnalysis_skipped_repositories : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The access_mismatch_repos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,10 +69,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_mismatch_repos", n => { AccessMismatchRepos = n.GetObjectValue<CodeScanningVariantAnalysisSkippedRepoGroup>(CodeScanningVariantAnalysisSkippedRepoGroup.CreateFromDiscriminatorValue); } },
-                { "no_codeql_db_repos", n => { NoCodeqlDbRepos = n.GetObjectValue<CodeScanningVariantAnalysisSkippedRepoGroup>(CodeScanningVariantAnalysisSkippedRepoGroup.CreateFromDiscriminatorValue); } },
-                { "not_found_repos", n => { NotFoundRepos = n.GetObjectValue<CodeScanningVariantAnalysis_skipped_repositories_not_found_repos>(CodeScanningVariantAnalysis_skipped_repositories_not_found_repos.CreateFromDiscriminatorValue); } },
-                { "over_limit_repos", n => { OverLimitRepos = n.GetObjectValue<CodeScanningVariantAnalysisSkippedRepoGroup>(CodeScanningVariantAnalysisSkippedRepoGroup.CreateFromDiscriminatorValue); } },
+                {"access_mismatch_repos", n => { AccessMismatchRepos = n.GetObjectValue<CodeScanningVariantAnalysisSkippedRepoGroup>(CodeScanningVariantAnalysisSkippedRepoGroup.CreateFromDiscriminatorValue); } },
+                {"no_codeql_db_repos", n => { NoCodeqlDbRepos = n.GetObjectValue<CodeScanningVariantAnalysisSkippedRepoGroup>(CodeScanningVariantAnalysisSkippedRepoGroup.CreateFromDiscriminatorValue); } },
+                {"not_found_repos", n => { NotFoundRepos = n.GetObjectValue<CodeScanningVariantAnalysis_skipped_repositories_not_found_repos>(CodeScanningVariantAnalysis_skipped_repositories_not_found_repos.CreateFromDiscriminatorValue); } },
+                {"over_limit_repos", n => { OverLimitRepos = n.GetObjectValue<CodeScanningVariantAnalysisSkippedRepoGroup>(CodeScanningVariantAnalysisSkippedRepoGroup.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

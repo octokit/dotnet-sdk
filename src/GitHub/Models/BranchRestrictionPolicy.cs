@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Branch Restriction Policy
     /// </summary>
-    public class BranchRestrictionPolicy : IAdditionalDataHolder, IParsable
+    public class BranchRestrictionPolicy : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -94,13 +93,13 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "apps", n => { Apps = n.GetCollectionOfObjectValues<BranchRestrictionPolicy_apps>(BranchRestrictionPolicy_apps.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "apps_url", n => { AppsUrl = n.GetStringValue(); } },
-                { "teams", n => { Teams = n.GetCollectionOfObjectValues<BranchRestrictionPolicy_teams>(BranchRestrictionPolicy_teams.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "teams_url", n => { TeamsUrl = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<BranchRestrictionPolicy_users>(BranchRestrictionPolicy_users.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "users_url", n => { UsersUrl = n.GetStringValue(); } },
+                {"apps", n => { Apps = n.GetCollectionOfObjectValues<BranchRestrictionPolicy_apps>(BranchRestrictionPolicy_apps.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"apps_url", n => { AppsUrl = n.GetStringValue(); } },
+                {"teams", n => { Teams = n.GetCollectionOfObjectValues<BranchRestrictionPolicy_teams>(BranchRestrictionPolicy_teams.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"teams_url", n => { TeamsUrl = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"users", n => { Users = n.GetCollectionOfObjectValues<BranchRestrictionPolicy_users>(BranchRestrictionPolicy_users.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"users_url", n => { UsersUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

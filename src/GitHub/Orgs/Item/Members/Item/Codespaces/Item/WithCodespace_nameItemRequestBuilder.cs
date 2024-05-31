@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Members.Item.Codespaces.Item
-{
+namespace GitHub.Orgs.Item.Members.Item.Codespaces.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\members\{username}\codespaces\{codespace_name}
     /// </summary>
-    public class WithCodespace_nameItemRequestBuilder : BaseRequestBuilder
+    public class WithCodespace_nameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The stop property</summary>
         public StopRequestBuilder Stop
@@ -60,10 +59,10 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<WithCodespace_nameDeleteResponse>(requestInfo, WithCodespace_nameDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class Environment_protection_rulesMember2_reviewers : IAdditionalDataHolder, IParsable
+    public class Environment_protection_rulesMember2_reviewers : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,8 +46,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "reviewer", n => { Reviewer = n.GetObjectValue<Environment_protection_rulesMember2_reviewers_reviewer>(Environment_protection_rulesMember2_reviewers_reviewer.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<DeploymentReviewerType>(); } },
+                {"reviewer", n => { Reviewer = n.GetObjectValue<Environment_protection_rulesMember2_reviewers_reviewer>(Environment_protection_rulesMember2_reviewers_reviewer.CreateFromDiscriminatorValue); } },
+                {"type", n => { Type = n.GetEnumValue<DeploymentReviewerType>(); } },
             };
         }
         /// <summary>
@@ -65,7 +64,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="SimpleUser"/>, <see cref="Team"/>
         /// </summary>
-        public class Environment_protection_rulesMember2_reviewers_reviewer : IComposedTypeWrapper, IParsable
+        public class Environment_protection_rulesMember2_reviewers_reviewer : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.SimpleUser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

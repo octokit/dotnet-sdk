@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// An object without any properties.
     /// </summary>
-    public class EmptyObject : IParsable
+    public class EmptyObject : IParsable 
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

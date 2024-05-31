@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// The breakdown of Copilot Business seats for the organization.
     /// </summary>
-    public class CopilotSeatBreakdown : IAdditionalDataHolder, IParsable
+    public class CopilotSeatBreakdown : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The number of seats that have used Copilot during the current billing cycle.</summary>
         public int? ActiveThisCycle { get; set; }
@@ -50,12 +49,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "active_this_cycle", n => { ActiveThisCycle = n.GetIntValue(); } },
-                { "added_this_cycle", n => { AddedThisCycle = n.GetIntValue(); } },
-                { "inactive_this_cycle", n => { InactiveThisCycle = n.GetIntValue(); } },
-                { "pending_cancellation", n => { PendingCancellation = n.GetIntValue(); } },
-                { "pending_invitation", n => { PendingInvitation = n.GetIntValue(); } },
-                { "total", n => { Total = n.GetIntValue(); } },
+                {"active_this_cycle", n => { ActiveThisCycle = n.GetIntValue(); } },
+                {"added_this_cycle", n => { AddedThisCycle = n.GetIntValue(); } },
+                {"inactive_this_cycle", n => { InactiveThisCycle = n.GetIntValue(); } },
+                {"pending_cancellation", n => { PendingCancellation = n.GetIntValue(); } },
+                {"pending_invitation", n => { PendingInvitation = n.GetIntValue(); } },
+                {"total", n => { Total = n.GetIntValue(); } },
             };
         }
         /// <summary>

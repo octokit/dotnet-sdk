@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Dependabot.Secrets.Item
-{
+namespace GitHub.Repos.Item.Item.Dependabot.Secrets.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependabot\secrets\{secret_name}
     /// </summary>
-    public class WithSecret_nameItemRequestBuilder : BaseRequestBuilder
+    public class WithSecret_nameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithSecret_nameItemRequestBuilder"/> and sets the default values.

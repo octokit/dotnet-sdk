@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Timing
-{
+namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Timing {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}\timing
     /// </summary>
-    public class TimingRequestBuilder : BaseRequestBuilder
+    public class TimingRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="TimingRequestBuilder"/> and sets the default values.

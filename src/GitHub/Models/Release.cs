@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A release.
     /// </summary>
-    public class Release : IAdditionalDataHolder, IParsable
+    public class Release : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -186,29 +185,29 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assets", n => { Assets = n.GetCollectionOfObjectValues<ReleaseAsset>(ReleaseAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assets_url", n => { AssetsUrl = n.GetStringValue(); } },
-                { "author", n => { Author = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "body_html", n => { BodyHtml = n.GetStringValue(); } },
-                { "body_text", n => { BodyText = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "discussion_url", n => { DiscussionUrl = n.GetStringValue(); } },
-                { "draft", n => { Draft = n.GetBoolValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "mentions_count", n => { MentionsCount = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "prerelease", n => { Prerelease = n.GetBoolValue(); } },
-                { "published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
-                { "reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
-                { "tag_name", n => { TagName = n.GetStringValue(); } },
-                { "tarball_url", n => { TarballUrl = n.GetStringValue(); } },
-                { "target_commitish", n => { TargetCommitish = n.GetStringValue(); } },
-                { "upload_url", n => { UploadUrl = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "zipball_url", n => { ZipballUrl = n.GetStringValue(); } },
+                {"assets", n => { Assets = n.GetCollectionOfObjectValues<ReleaseAsset>(ReleaseAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"assets_url", n => { AssetsUrl = n.GetStringValue(); } },
+                {"author", n => { Author = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"body_html", n => { BodyHtml = n.GetStringValue(); } },
+                {"body_text", n => { BodyText = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"discussion_url", n => { DiscussionUrl = n.GetStringValue(); } },
+                {"draft", n => { Draft = n.GetBoolValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"mentions_count", n => { MentionsCount = n.GetIntValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"prerelease", n => { Prerelease = n.GetBoolValue(); } },
+                {"published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },
+                {"reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
+                {"tag_name", n => { TagName = n.GetStringValue(); } },
+                {"tarball_url", n => { TarballUrl = n.GetStringValue(); } },
+                {"target_commitish", n => { TargetCommitish = n.GetStringValue(); } },
+                {"upload_url", n => { UploadUrl = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"zipball_url", n => { ZipballUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

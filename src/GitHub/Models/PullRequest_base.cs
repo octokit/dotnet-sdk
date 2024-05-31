@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class PullRequest_base : IAdditionalDataHolder, IParsable
+    public class PullRequest_base : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -77,11 +76,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "label", n => { Label = n.GetStringValue(); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "repo", n => { Repo = n.GetObjectValue<PullRequest_base_repo>(PullRequest_base_repo.CreateFromDiscriminatorValue); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<PullRequest_base_user>(PullRequest_base_user.CreateFromDiscriminatorValue); } },
+                {"label", n => { Label = n.GetStringValue(); } },
+                {"ref", n => { Ref = n.GetStringValue(); } },
+                {"repo", n => { Repo = n.GetObjectValue<PullRequest_base_repo>(PullRequest_base_repo.CreateFromDiscriminatorValue); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<PullRequest_base_user>(PullRequest_base_user.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

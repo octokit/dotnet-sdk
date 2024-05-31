@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Rulesets.Item
-{
+namespace GitHub.Orgs.Item.Rulesets.Item {
     #pragma warning disable CS1591
-    public class WithRuleset_PutRequestBody : IAdditionalDataHolder, IParsable
+    public class WithRuleset_PutRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -74,12 +73,12 @@ namespace GitHub.Orgs.Item.Rulesets.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bypass_actors", n => { BypassActors = n.GetCollectionOfObjectValues<RepositoryRulesetBypassActor>(RepositoryRulesetBypassActor.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "conditions", n => { Conditions = n.GetObjectValue<OrgRulesetConditions>(OrgRulesetConditions.CreateFromDiscriminatorValue); } },
-                { "enforcement", n => { Enforcement = n.GetEnumValue<RepositoryRuleEnforcement>(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<RepositoryRule>(RepositoryRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "target", n => { Target = n.GetEnumValue<WithRuleset_PutRequestBody_target>(); } },
+                {"bypass_actors", n => { BypassActors = n.GetCollectionOfObjectValues<RepositoryRulesetBypassActor>(RepositoryRulesetBypassActor.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"conditions", n => { Conditions = n.GetObjectValue<OrgRulesetConditions>(OrgRulesetConditions.CreateFromDiscriminatorValue); } },
+                {"enforcement", n => { Enforcement = n.GetEnumValue<RepositoryRuleEnforcement>(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"rules", n => { Rules = n.GetCollectionOfObjectValues<RepositoryRule>(RepositoryRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"target", n => { Target = n.GetEnumValue<WithRuleset_PutRequestBody_target>(); } },
             };
         }
         /// <summary>

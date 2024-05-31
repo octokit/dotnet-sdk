@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Rate Limit Overview
     /// </summary>
-    public class RateLimitOverview : IAdditionalDataHolder, IParsable
+    public class RateLimitOverview : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -54,8 +53,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "rate", n => { Rate = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "resources", n => { Resources = n.GetObjectValue<RateLimitOverview_resources>(RateLimitOverview_resources.CreateFromDiscriminatorValue); } },
+                {"rate", n => { Rate = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"resources", n => { Resources = n.GetObjectValue<RateLimitOverview_resources>(RateLimitOverview_resources.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

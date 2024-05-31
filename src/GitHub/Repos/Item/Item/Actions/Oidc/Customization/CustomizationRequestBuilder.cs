@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Oidc.Customization
-{
+namespace GitHub.Repos.Item.Item.Actions.Oidc.Customization {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\oidc\customization
     /// </summary>
-    public class CustomizationRequestBuilder : BaseRequestBuilder
+    public class CustomizationRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The sub property</summary>
         public SubRequestBuilder Sub

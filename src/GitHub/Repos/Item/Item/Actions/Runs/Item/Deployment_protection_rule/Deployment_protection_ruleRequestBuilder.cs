@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule
-{
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\deployment_protection_rule
     /// </summary>
-    public class Deployment_protection_ruleRequestBuilder : BaseRequestBuilder
+    public class Deployment_protection_ruleRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="Deployment_protection_ruleRequestBuilder"/> and sets the default values.
@@ -84,7 +83,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule
         /// <summary>
         /// Composed type wrapper for classes <see cref="ReviewCustomGatesCommentRequired"/>, <see cref="ReviewCustomGatesStateRequired"/>
         /// </summary>
-        public class Deployment_protection_rulePostRequestBody : IComposedTypeWrapper, IParsable
+        public class Deployment_protection_rulePostRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.ReviewCustomGatesCommentRequired"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

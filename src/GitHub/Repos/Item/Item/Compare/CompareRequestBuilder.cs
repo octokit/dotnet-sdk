@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Compare
-{
+namespace GitHub.Repos.Item.Item.Compare {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\compare
     /// </summary>
-    public class CompareRequestBuilder : BaseRequestBuilder
+    public class CompareRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.compare.item collection</summary>
         /// <param name="position">The base branch and head branch to compare. This parameter expects the format `BASE...HEAD`. Both must be branch names in `repo`. To compare with a branch that exists in a different repository in the same network as `repo`, the `basehead` parameter expects the format `USERNAME:BASE...USERNAME:HEAD`.</param>

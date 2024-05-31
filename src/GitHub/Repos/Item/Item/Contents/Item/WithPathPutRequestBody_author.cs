@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Contents.Item
-{
+namespace GitHub.Repos.Item.Item.Contents.Item {
     /// <summary>
     /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
     /// </summary>
-    public class WithPathPutRequestBody_author : IAdditionalDataHolder, IParsable
+    public class WithPathPutRequestBody_author : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -62,9 +61,9 @@ namespace GitHub.Repos.Item.Item.Contents.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                {"date", n => { Date = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

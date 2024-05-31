@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class WorkflowUsage_billable : IAdditionalDataHolder, IParsable
+    public class WorkflowUsage_billable : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -61,9 +60,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "MACOS", n => { MACOS = n.GetObjectValue<WorkflowUsage_billable_MACOS>(WorkflowUsage_billable_MACOS.CreateFromDiscriminatorValue); } },
-                { "UBUNTU", n => { UBUNTU = n.GetObjectValue<WorkflowUsage_billable_UBUNTU>(WorkflowUsage_billable_UBUNTU.CreateFromDiscriminatorValue); } },
-                { "WINDOWS", n => { WINDOWS = n.GetObjectValue<WorkflowUsage_billable_WINDOWS>(WorkflowUsage_billable_WINDOWS.CreateFromDiscriminatorValue); } },
+                {"MACOS", n => { MACOS = n.GetObjectValue<WorkflowUsage_billable_MACOS>(WorkflowUsage_billable_MACOS.CreateFromDiscriminatorValue); } },
+                {"UBUNTU", n => { UBUNTU = n.GetObjectValue<WorkflowUsage_billable_UBUNTU>(WorkflowUsage_billable_UBUNTU.CreateFromDiscriminatorValue); } },
+                {"WINDOWS", n => { WINDOWS = n.GetObjectValue<WorkflowUsage_billable_WINDOWS>(WorkflowUsage_billable_WINDOWS.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class CodeScanningAlertInstance : IAdditionalDataHolder, IParsable
+    public class CodeScanningAlertInstance : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -111,16 +110,16 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis_key", n => { AnalysisKey = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetStringValue(); } },
-                { "classifications", n => { Classifications = n.GetCollectionOfEnumValues<CodeScanningAlertClassification>()?.ToList(); } },
-                { "commit_sha", n => { CommitSha = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "location", n => { Location = n.GetObjectValue<CodeScanningAlertLocation>(CodeScanningAlertLocation.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetObjectValue<CodeScanningAlertInstance_message>(CodeScanningAlertInstance_message.CreateFromDiscriminatorValue); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<CodeScanningAlertState>(); } },
+                {"analysis_key", n => { AnalysisKey = n.GetStringValue(); } },
+                {"category", n => { Category = n.GetStringValue(); } },
+                {"classifications", n => { Classifications = n.GetCollectionOfEnumValues<CodeScanningAlertClassification>()?.ToList(); } },
+                {"commit_sha", n => { CommitSha = n.GetStringValue(); } },
+                {"environment", n => { Environment = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"location", n => { Location = n.GetObjectValue<CodeScanningAlertLocation>(CodeScanningAlertLocation.CreateFromDiscriminatorValue); } },
+                {"message", n => { Message = n.GetObjectValue<CodeScanningAlertInstance_message>(CodeScanningAlertInstance_message.CreateFromDiscriminatorValue); } },
+                {"ref", n => { Ref = n.GetStringValue(); } },
+                {"state", n => { State = n.GetEnumValue<CodeScanningAlertState>(); } },
             };
         }
         /// <summary>

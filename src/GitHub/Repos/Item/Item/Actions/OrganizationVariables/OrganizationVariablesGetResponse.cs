@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.OrganizationVariables
-{
+namespace GitHub.Repos.Item.Item.Actions.OrganizationVariables {
     #pragma warning disable CS1591
-    public class OrganizationVariablesGetResponse : IAdditionalDataHolder, IParsable
+    public class OrganizationVariablesGetResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,8 +47,8 @@ namespace GitHub.Repos.Item.Item.Actions.OrganizationVariables
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
-                { "variables", n => { Variables = n.GetCollectionOfObjectValues<ActionsVariable>(ActionsVariable.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"variables", n => { Variables = n.GetCollectionOfObjectValues<ActionsVariable>(ActionsVariable.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

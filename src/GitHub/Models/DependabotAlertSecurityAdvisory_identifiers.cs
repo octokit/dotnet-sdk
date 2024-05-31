@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// An advisory identifier.
     /// </summary>
-    public class DependabotAlertSecurityAdvisory_identifiers : IParsable
+    public class DependabotAlertSecurityAdvisory_identifiers : IParsable 
     {
         /// <summary>The type of advisory identifier.</summary>
         public DependabotAlertSecurityAdvisory_identifiers_type? Type { get; private set; }
@@ -39,8 +38,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<DependabotAlertSecurityAdvisory_identifiers_type>(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<DependabotAlertSecurityAdvisory_identifiers_type>(); } },
+                {"value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Teams.Item.Discussions.Item.Reactions
-{
+namespace GitHub.Teams.Item.Discussions.Item.Reactions {
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\discussions\{discussion_number}\reactions
     /// </summary>
-    public class ReactionsRequestBuilder : BaseRequestBuilder
+    public class ReactionsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ReactionsRequestBuilder"/> and sets the default values.

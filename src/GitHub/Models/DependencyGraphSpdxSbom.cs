@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A schema for the SPDX JSON format returned by the Dependency Graph.
     /// </summary>
-    public class DependencyGraphSpdxSbom : IAdditionalDataHolder, IParsable
+    public class DependencyGraphSpdxSbom : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -46,7 +45,7 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "sbom", n => { Sbom = n.GetObjectValue<DependencyGraphSpdxSbom_sbom>(DependencyGraphSpdxSbom_sbom.CreateFromDiscriminatorValue); } },
+                {"sbom", n => { Sbom = n.GetObjectValue<DependencyGraphSpdxSbom_sbom>(DependencyGraphSpdxSbom_sbom.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

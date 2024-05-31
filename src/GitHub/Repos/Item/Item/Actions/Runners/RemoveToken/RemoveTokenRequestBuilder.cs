@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runners.RemoveToken
-{
+namespace GitHub.Repos.Item.Item.Actions.Runners.RemoveToken {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runners\remove-token
     /// </summary>
-    public class RemoveTokenRequestBuilder : BaseRequestBuilder
+    public class RemoveTokenRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="RemoveTokenRequestBuilder"/> and sets the default values.

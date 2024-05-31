@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item
-{
+namespace GitHub.Repos.Item.Item.Environments.Item {
     #pragma warning disable CS1591
-    public class WithEnvironment_namePutRequestBody_reviewers : IAdditionalDataHolder, IParsable
+    public class WithEnvironment_namePutRequestBody_reviewers : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,8 +41,8 @@ namespace GitHub.Repos.Item.Item.Environments.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<DeploymentReviewerType>(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"type", n => { Type = n.GetEnumValue<DeploymentReviewerType>(); } },
             };
         }
         /// <summary>

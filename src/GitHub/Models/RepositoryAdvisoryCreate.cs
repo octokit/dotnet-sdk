@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class RepositoryAdvisoryCreate : IParsable
+    public class RepositoryAdvisoryCreate : IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>A list of users receiving credit for their participation in the security advisory.</summary>
@@ -88,15 +87,15 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credits", n => { Credits = n.GetCollectionOfObjectValues<RepositoryAdvisoryCreate_credits>(RepositoryAdvisoryCreate_credits.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "cve_id", n => { CveId = n.GetStringValue(); } },
-                { "cvss_vector_string", n => { CvssVectorString = n.GetStringValue(); } },
-                { "cwe_ids", n => { CweIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<RepositoryAdvisoryCreate_severity>(); } },
-                { "start_private_fork", n => { StartPrivateFork = n.GetBoolValue(); } },
-                { "summary", n => { Summary = n.GetStringValue(); } },
-                { "vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<RepositoryAdvisoryCreate_vulnerabilities>(RepositoryAdvisoryCreate_vulnerabilities.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"credits", n => { Credits = n.GetCollectionOfObjectValues<RepositoryAdvisoryCreate_credits>(RepositoryAdvisoryCreate_credits.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"cve_id", n => { CveId = n.GetStringValue(); } },
+                {"cvss_vector_string", n => { CvssVectorString = n.GetStringValue(); } },
+                {"cwe_ids", n => { CweIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"severity", n => { Severity = n.GetEnumValue<RepositoryAdvisoryCreate_severity>(); } },
+                {"start_private_fork", n => { StartPrivateFork = n.GetBoolValue(); } },
+                {"summary", n => { Summary = n.GetStringValue(); } },
+                {"vulnerabilities", n => { Vulnerabilities = n.GetCollectionOfObjectValues<RepositoryAdvisoryCreate_vulnerabilities>(RepositoryAdvisoryCreate_vulnerabilities.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

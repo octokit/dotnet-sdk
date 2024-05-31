@@ -10,12 +10,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.App.Installations.Item
-{
+namespace GitHub.App.Installations.Item {
     /// <summary>
     /// Builds and executes requests for operations under \app\installations\{installation_id}
     /// </summary>
-    public class WithInstallation_ItemRequestBuilder : BaseRequestBuilder
+    public class WithInstallation_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The access_tokens property</summary>
         public Access_tokensRequestBuilder Access_tokens
@@ -62,7 +61,7 @@ namespace GitHub.App.Installations.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -86,7 +85,7 @@ namespace GitHub.App.Installations.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GitHub.Models.Installation>(requestInfo, GitHub.Models.Installation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

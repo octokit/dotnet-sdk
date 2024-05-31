@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Milestones.Item.Labels
-{
+namespace GitHub.Repos.Item.Item.Milestones.Item.Labels {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\milestones\{milestone_number}\labels
     /// </summary>
-    public class LabelsRequestBuilder : BaseRequestBuilder
+    public class LabelsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="LabelsRequestBuilder"/> and sets the default values.

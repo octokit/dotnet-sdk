@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class PagesHttpsCertificate : IAdditionalDataHolder, IParsable
+    public class PagesHttpsCertificate : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -58,10 +57,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "expires_at", n => { ExpiresAt = n.GetDateValue(); } },
-                { "state", n => { State = n.GetEnumValue<PagesHttpsCertificate_state>(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"expires_at", n => { ExpiresAt = n.GetDateValue(); } },
+                {"state", n => { State = n.GetEnumValue<PagesHttpsCertificate_state>(); } },
             };
         }
         /// <summary>

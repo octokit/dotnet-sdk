@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
     /// </summary>
-    public class DeploymentBranchPolicySettings : IAdditionalDataHolder, IParsable
+    public class DeploymentBranchPolicySettings : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -42,8 +41,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_branch_policies", n => { CustomBranchPolicies = n.GetBoolValue(); } },
-                { "protected_branches", n => { ProtectedBranches = n.GetBoolValue(); } },
+                {"custom_branch_policies", n => { CustomBranchPolicies = n.GetBoolValue(); } },
+                {"protected_branches", n => { ProtectedBranches = n.GetBoolValue(); } },
             };
         }
         /// <summary>

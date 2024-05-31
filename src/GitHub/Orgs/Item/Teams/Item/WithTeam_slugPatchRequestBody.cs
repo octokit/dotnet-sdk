@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item
-{
+namespace GitHub.Orgs.Item.Teams.Item {
     #pragma warning disable CS1591
-    public class WithTeam_slugPatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithTeam_slugPatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -62,12 +61,12 @@ namespace GitHub.Orgs.Item.Teams.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "notification_setting", n => { NotificationSetting = n.GetEnumValue<WithTeam_slugPatchRequestBody_notification_setting>(); } },
-                { "parent_team_id", n => { ParentTeamId = n.GetIntValue(); } },
-                { "permission", n => { Permission = n.GetEnumValue<WithTeam_slugPatchRequestBody_permission>(); } },
-                { "privacy", n => { Privacy = n.GetEnumValue<WithTeam_slugPatchRequestBody_privacy>(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"notification_setting", n => { NotificationSetting = n.GetEnumValue<WithTeam_slugPatchRequestBody_notification_setting>(); } },
+                {"parent_team_id", n => { ParentTeamId = n.GetIntValue(); } },
+                {"permission", n => { Permission = n.GetEnumValue<WithTeam_slugPatchRequestBody_permission>(); } },
+                {"privacy", n => { Privacy = n.GetEnumValue<WithTeam_slugPatchRequestBody_privacy>(); } },
             };
         }
         /// <summary>

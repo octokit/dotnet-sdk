@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A GitHub Classroom assignment
     /// </summary>
-    public class ClassroomAssignment : IAdditionalDataHolder, IParsable
+    public class ClassroomAssignment : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The number of students that have accepted the assignment.</summary>
         public int? Accepted { get; set; }
@@ -118,25 +117,25 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accepted", n => { Accepted = n.GetIntValue(); } },
-                { "classroom", n => { Classroom = n.GetObjectValue<GitHub.Models.Classroom>(GitHub.Models.Classroom.CreateFromDiscriminatorValue); } },
-                { "deadline", n => { Deadline = n.GetDateTimeOffsetValue(); } },
-                { "editor", n => { Editor = n.GetStringValue(); } },
-                { "feedback_pull_requests_enabled", n => { FeedbackPullRequestsEnabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "invitations_enabled", n => { InvitationsEnabled = n.GetBoolValue(); } },
-                { "invite_link", n => { InviteLink = n.GetStringValue(); } },
-                { "language", n => { Language = n.GetStringValue(); } },
-                { "max_members", n => { MaxMembers = n.GetIntValue(); } },
-                { "max_teams", n => { MaxTeams = n.GetIntValue(); } },
-                { "passing", n => { Passing = n.GetIntValue(); } },
-                { "public_repo", n => { PublicRepo = n.GetBoolValue(); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "starter_code_repository", n => { StarterCodeRepository = n.GetObjectValue<SimpleClassroomRepository>(SimpleClassroomRepository.CreateFromDiscriminatorValue); } },
-                { "students_are_repo_admins", n => { StudentsAreRepoAdmins = n.GetBoolValue(); } },
-                { "submitted", n => { Submitted = n.GetIntValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<ClassroomAssignment_type>(); } },
+                {"accepted", n => { Accepted = n.GetIntValue(); } },
+                {"classroom", n => { Classroom = n.GetObjectValue<GitHub.Models.Classroom>(GitHub.Models.Classroom.CreateFromDiscriminatorValue); } },
+                {"deadline", n => { Deadline = n.GetDateTimeOffsetValue(); } },
+                {"editor", n => { Editor = n.GetStringValue(); } },
+                {"feedback_pull_requests_enabled", n => { FeedbackPullRequestsEnabled = n.GetBoolValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"invitations_enabled", n => { InvitationsEnabled = n.GetBoolValue(); } },
+                {"invite_link", n => { InviteLink = n.GetStringValue(); } },
+                {"language", n => { Language = n.GetStringValue(); } },
+                {"max_members", n => { MaxMembers = n.GetIntValue(); } },
+                {"max_teams", n => { MaxTeams = n.GetIntValue(); } },
+                {"passing", n => { Passing = n.GetIntValue(); } },
+                {"public_repo", n => { PublicRepo = n.GetBoolValue(); } },
+                {"slug", n => { Slug = n.GetStringValue(); } },
+                {"starter_code_repository", n => { StarterCodeRepository = n.GetObjectValue<SimpleClassroomRepository>(SimpleClassroomRepository.CreateFromDiscriminatorValue); } },
+                {"students_are_repo_admins", n => { StudentsAreRepoAdmins = n.GetBoolValue(); } },
+                {"submitted", n => { Submitted = n.GetIntValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<ClassroomAssignment_type>(); } },
             };
         }
         /// <summary>

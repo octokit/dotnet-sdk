@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection
-{
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
     #pragma warning disable CS1591
-    public class ProtectionPutRequestBody : IAdditionalDataHolder, IParsable
+    public class ProtectionPutRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -77,17 +76,17 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_deletions", n => { AllowDeletions = n.GetBoolValue(); } },
-                { "allow_force_pushes", n => { AllowForcePushes = n.GetBoolValue(); } },
-                { "allow_fork_syncing", n => { AllowForkSyncing = n.GetBoolValue(); } },
-                { "block_creations", n => { BlockCreations = n.GetBoolValue(); } },
-                { "enforce_admins", n => { EnforceAdmins = n.GetBoolValue(); } },
-                { "lock_branch", n => { LockBranch = n.GetBoolValue(); } },
-                { "required_conversation_resolution", n => { RequiredConversationResolution = n.GetBoolValue(); } },
-                { "required_linear_history", n => { RequiredLinearHistory = n.GetBoolValue(); } },
-                { "required_pull_request_reviews", n => { RequiredPullRequestReviews = n.GetObjectValue<ProtectionPutRequestBody_required_pull_request_reviews>(ProtectionPutRequestBody_required_pull_request_reviews.CreateFromDiscriminatorValue); } },
-                { "required_status_checks", n => { RequiredStatusChecks = n.GetObjectValue<ProtectionPutRequestBody_required_status_checks>(ProtectionPutRequestBody_required_status_checks.CreateFromDiscriminatorValue); } },
-                { "restrictions", n => { Restrictions = n.GetObjectValue<ProtectionPutRequestBody_restrictions>(ProtectionPutRequestBody_restrictions.CreateFromDiscriminatorValue); } },
+                {"allow_deletions", n => { AllowDeletions = n.GetBoolValue(); } },
+                {"allow_force_pushes", n => { AllowForcePushes = n.GetBoolValue(); } },
+                {"allow_fork_syncing", n => { AllowForkSyncing = n.GetBoolValue(); } },
+                {"block_creations", n => { BlockCreations = n.GetBoolValue(); } },
+                {"enforce_admins", n => { EnforceAdmins = n.GetBoolValue(); } },
+                {"lock_branch", n => { LockBranch = n.GetBoolValue(); } },
+                {"required_conversation_resolution", n => { RequiredConversationResolution = n.GetBoolValue(); } },
+                {"required_linear_history", n => { RequiredLinearHistory = n.GetBoolValue(); } },
+                {"required_pull_request_reviews", n => { RequiredPullRequestReviews = n.GetObjectValue<ProtectionPutRequestBody_required_pull_request_reviews>(ProtectionPutRequestBody_required_pull_request_reviews.CreateFromDiscriminatorValue); } },
+                {"required_status_checks", n => { RequiredStatusChecks = n.GetObjectValue<ProtectionPutRequestBody_required_status_checks>(ProtectionPutRequestBody_required_status_checks.CreateFromDiscriminatorValue); } },
+                {"restrictions", n => { Restrictions = n.GetObjectValue<ProtectionPutRequestBody_restrictions>(ProtectionPutRequestBody_restrictions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

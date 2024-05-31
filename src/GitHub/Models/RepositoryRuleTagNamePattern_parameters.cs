@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class RepositoryRuleTagNamePattern_parameters : IAdditionalDataHolder, IParsable
+    public class RepositoryRuleTagNamePattern_parameters : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -57,10 +56,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "negate", n => { Negate = n.GetBoolValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<RepositoryRuleTagNamePattern_parameters_operator>(); } },
-                { "pattern", n => { Pattern = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"negate", n => { Negate = n.GetBoolValue(); } },
+                {"operator", n => { Operator = n.GetEnumValue<RepositoryRuleTagNamePattern_parameters_operator>(); } },
+                {"pattern", n => { Pattern = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository
-{
+namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\cache\usage-by-repository
     /// </summary>
-    public class UsageByRepositoryRequestBuilder : BaseRequestBuilder
+    public class UsageByRepositoryRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="UsageByRepositoryRequestBuilder"/> and sets the default values.

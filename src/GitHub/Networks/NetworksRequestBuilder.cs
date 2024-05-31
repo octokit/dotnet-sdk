@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Networks
-{
+namespace GitHub.Networks {
     /// <summary>
     /// Builds and executes requests for operations under \networks
     /// </summary>
-    public class NetworksRequestBuilder : BaseRequestBuilder
+    public class NetworksRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.networks.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

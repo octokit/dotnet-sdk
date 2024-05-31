@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Org Membership
     /// </summary>
-    public class OrgMembership : IAdditionalDataHolder, IParsable
+    public class OrgMembership : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -82,13 +81,13 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "organization", n => { Organization = n.GetObjectValue<OrganizationSimple>(OrganizationSimple.CreateFromDiscriminatorValue); } },
-                { "organization_url", n => { OrganizationUrl = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<OrgMembership_permissions>(OrgMembership_permissions.CreateFromDiscriminatorValue); } },
-                { "role", n => { Role = n.GetEnumValue<OrgMembership_role>(); } },
-                { "state", n => { State = n.GetEnumValue<OrgMembership_state>(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"organization", n => { Organization = n.GetObjectValue<OrganizationSimple>(OrganizationSimple.CreateFromDiscriminatorValue); } },
+                {"organization_url", n => { OrganizationUrl = n.GetStringValue(); } },
+                {"permissions", n => { Permissions = n.GetObjectValue<OrgMembership_permissions>(OrgMembership_permissions.CreateFromDiscriminatorValue); } },
+                {"role", n => { Role = n.GetEnumValue<OrgMembership_role>(); } },
+                {"state", n => { State = n.GetEnumValue<OrgMembership_state>(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

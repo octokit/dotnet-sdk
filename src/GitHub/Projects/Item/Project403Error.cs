@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Projects.Item
-{
+namespace GitHub.Projects.Item {
     #pragma warning disable CS1591
-    public class Project403Error : ApiException, IAdditionalDataHolder, IParsable
+    public class Project403Error : ApiException, IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -62,9 +61,9 @@ namespace GitHub.Projects.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                {"documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
+                {"errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>

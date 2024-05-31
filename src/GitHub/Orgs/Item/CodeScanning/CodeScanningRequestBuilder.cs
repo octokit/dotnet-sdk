@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.CodeScanning
-{
+namespace GitHub.Orgs.Item.CodeScanning {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\code-scanning
     /// </summary>
-    public class CodeScanningRequestBuilder : BaseRequestBuilder
+    public class CodeScanningRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The alerts property</summary>
         public AlertsRequestBuilder Alerts

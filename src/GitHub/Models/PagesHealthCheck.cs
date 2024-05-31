@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Pages Health Check Status
     /// </summary>
-    public class PagesHealthCheck : IAdditionalDataHolder, IParsable
+    public class PagesHealthCheck : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -54,8 +53,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alt_domain", n => { AltDomain = n.GetObjectValue<PagesHealthCheck_alt_domain>(PagesHealthCheck_alt_domain.CreateFromDiscriminatorValue); } },
-                { "domain", n => { Domain = n.GetObjectValue<PagesHealthCheck_domain>(PagesHealthCheck_domain.CreateFromDiscriminatorValue); } },
+                {"alt_domain", n => { AltDomain = n.GetObjectValue<PagesHealthCheck_alt_domain>(PagesHealthCheck_alt_domain.CreateFromDiscriminatorValue); } },
+                {"domain", n => { Domain = n.GetObjectValue<PagesHealthCheck_domain>(PagesHealthCheck_domain.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

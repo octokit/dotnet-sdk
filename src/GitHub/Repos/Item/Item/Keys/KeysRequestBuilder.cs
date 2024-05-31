@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Keys
-{
+namespace GitHub.Repos.Item.Item.Keys {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\keys
     /// </summary>
-    public class KeysRequestBuilder : BaseRequestBuilder
+    public class KeysRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.keys.item collection</summary>
         /// <param name="position">The unique identifier of the key.</param>
@@ -86,7 +85,7 @@ namespace GitHub.Repos.Item.Item.Keys
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeployKey>(requestInfo, DeployKey.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

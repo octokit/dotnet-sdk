@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Assignments.Item.Accepted_assignments
-{
+namespace GitHub.Assignments.Item.Accepted_assignments {
     /// <summary>
     /// Builds and executes requests for operations under \assignments\{assignment_id}\accepted_assignments
     /// </summary>
-    public class Accepted_assignmentsRequestBuilder : BaseRequestBuilder
+    public class Accepted_assignmentsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="Accepted_assignmentsRequestBuilder"/> and sets the default values.

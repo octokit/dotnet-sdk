@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Deployment protection rule
     /// </summary>
-    public class DeploymentProtectionRule : IAdditionalDataHolder, IParsable
+    public class DeploymentProtectionRule : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -58,10 +57,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app", n => { App = n.GetObjectValue<CustomDeploymentRuleApp>(CustomDeploymentRuleApp.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
+                {"app", n => { App = n.GetObjectValue<CustomDeploymentRuleApp>(CustomDeploymentRuleApp.CreateFromDiscriminatorValue); } },
+                {"enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

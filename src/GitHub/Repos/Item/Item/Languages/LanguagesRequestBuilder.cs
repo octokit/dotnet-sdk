@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Languages
-{
+namespace GitHub.Repos.Item.Item.Languages {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\languages
     /// </summary>
-    public class LanguagesRequestBuilder : BaseRequestBuilder
+    public class LanguagesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="LanguagesRequestBuilder"/> and sets the default values.

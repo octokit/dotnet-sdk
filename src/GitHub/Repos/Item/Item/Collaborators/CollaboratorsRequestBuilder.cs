@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Collaborators
-{
+namespace GitHub.Repos.Item.Item.Collaborators {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\collaborators
     /// </summary>
-    public class CollaboratorsRequestBuilder : BaseRequestBuilder
+    public class CollaboratorsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.collaborators.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
@@ -64,7 +63,7 @@ namespace GitHub.Repos.Item.Item.Collaborators
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Collaborator>(requestInfo, Collaborator.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

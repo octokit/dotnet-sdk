@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Generate
-{
+namespace GitHub.Repos.Item.Item.Generate {
     #pragma warning disable CS1591
-    public class GeneratePostRequestBody : IAdditionalDataHolder, IParsable
+    public class GeneratePostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -65,11 +64,11 @@ namespace GitHub.Repos.Item.Item.Generate
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "include_all_branches", n => { IncludeAllBranches = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetStringValue(); } },
-                { "private", n => { Private = n.GetBoolValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"include_all_branches", n => { IncludeAllBranches = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"owner", n => { Owner = n.GetStringValue(); } },
+                {"private", n => { Private = n.GetBoolValue(); } },
             };
         }
         /// <summary>

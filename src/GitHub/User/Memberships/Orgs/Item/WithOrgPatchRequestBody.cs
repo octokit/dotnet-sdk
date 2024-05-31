@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Memberships.Orgs.Item
-{
+namespace GitHub.User.Memberships.Orgs.Item {
     #pragma warning disable CS1591
-    public class WithOrgPatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithOrgPatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,7 +38,7 @@ namespace GitHub.User.Memberships.Orgs.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "state", n => { State = n.GetEnumValue<WithOrgPatchRequestBody_state>(); } },
+                {"state", n => { State = n.GetEnumValue<WithOrgPatchRequestBody_state>(); } },
             };
         }
         /// <summary>

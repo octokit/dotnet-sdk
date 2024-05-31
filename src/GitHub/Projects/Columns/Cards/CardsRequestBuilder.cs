@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Projects.Columns.Cards
-{
+namespace GitHub.Projects.Columns.Cards {
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns\cards
     /// </summary>
-    public class CardsRequestBuilder : BaseRequestBuilder
+    public class CardsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.projects.columns.cards.item collection</summary>
         /// <param name="position">The unique identifier of the card.</param>

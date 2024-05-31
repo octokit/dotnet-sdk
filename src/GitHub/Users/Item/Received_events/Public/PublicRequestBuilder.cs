@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Received_events.Public
-{
+namespace GitHub.Users.Item.Received_events.Public {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\received_events\public
     /// </summary>
-    public class PublicRequestBuilder : BaseRequestBuilder
+    public class PublicRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="PublicRequestBuilder"/> and sets the default values.

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A GitHub organization.
     /// </summary>
-    public class OrganizationSimple : IAdditionalDataHolder, IParsable
+    public class OrganizationSimple : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -128,18 +127,18 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "events_url", n => { EventsUrl = n.GetStringValue(); } },
-                { "hooks_url", n => { HooksUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "issues_url", n => { IssuesUrl = n.GetStringValue(); } },
-                { "login", n => { Login = n.GetStringValue(); } },
-                { "members_url", n => { MembersUrl = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "public_members_url", n => { PublicMembersUrl = n.GetStringValue(); } },
-                { "repos_url", n => { ReposUrl = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"events_url", n => { EventsUrl = n.GetStringValue(); } },
+                {"hooks_url", n => { HooksUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"issues_url", n => { IssuesUrl = n.GetStringValue(); } },
+                {"login", n => { Login = n.GetStringValue(); } },
+                {"members_url", n => { MembersUrl = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"public_members_url", n => { PublicMembersUrl = n.GetStringValue(); } },
+                {"repos_url", n => { ReposUrl = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

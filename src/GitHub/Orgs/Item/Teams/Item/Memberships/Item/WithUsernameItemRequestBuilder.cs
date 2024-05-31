@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item
-{
+namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\memberships\{username}
     /// </summary>
-    public class WithUsernameItemRequestBuilder : BaseRequestBuilder
+    public class WithUsernameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.

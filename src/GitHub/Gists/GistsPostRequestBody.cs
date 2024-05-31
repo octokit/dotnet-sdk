@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Gists
-{
+namespace GitHub.Gists {
     #pragma warning disable CS1591
-    public class GistsPostRequestBody : IAdditionalDataHolder, IParsable
+    public class GistsPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -61,9 +60,9 @@ namespace GitHub.Gists
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "files", n => { Files = n.GetObjectValue<GistsPostRequestBody_files>(GistsPostRequestBody_files.CreateFromDiscriminatorValue); } },
-                { "public", n => { Public = n.GetObjectValue<GistsPostRequestBody_public>(GistsPostRequestBody_public.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"files", n => { Files = n.GetObjectValue<GistsPostRequestBody_files>(GistsPostRequestBody_files.CreateFromDiscriminatorValue); } },
+                {"public", n => { Public = n.GetObjectValue<GistsPostRequestBody_public>(GistsPostRequestBody_public.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +80,7 @@ namespace GitHub.Gists
         /// <summary>
         /// Composed type wrapper for classes <see cref="bool"/>, <see cref="string"/>
         /// </summary>
-        public class GistsPostRequestBody_public : IComposedTypeWrapper, IParsable
+        public class GistsPostRequestBody_public : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="bool"/></summary>
             public bool? Boolean { get; set; }

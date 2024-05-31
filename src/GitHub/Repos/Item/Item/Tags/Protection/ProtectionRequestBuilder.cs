@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Tags.Protection
-{
+namespace GitHub.Repos.Item.Item.Tags.Protection {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\tags\protection
     /// </summary>
-    public class ProtectionRequestBuilder : BaseRequestBuilder
+    public class ProtectionRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.tags.protection.item collection</summary>
         /// <param name="position">The unique identifier of the tag protection.</param>
@@ -65,8 +64,8 @@ namespace GitHub.Repos.Item.Item.Tags.Protection
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<TagProtection>(requestInfo, TagProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -94,8 +93,8 @@ namespace GitHub.Repos.Item.Item.Tags.Protection
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TagProtection>(requestInfo, TagProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

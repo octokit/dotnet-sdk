@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class DependencyGraphSpdxSbom_sbom : IAdditionalDataHolder, IParsable
+    public class DependencyGraphSpdxSbom_sbom : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -101,14 +100,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "creationInfo", n => { CreationInfo = n.GetObjectValue<DependencyGraphSpdxSbom_sbom_creationInfo>(DependencyGraphSpdxSbom_sbom_creationInfo.CreateFromDiscriminatorValue); } },
-                { "dataLicense", n => { DataLicense = n.GetStringValue(); } },
-                { "documentDescribes", n => { DocumentDescribes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "documentNamespace", n => { DocumentNamespace = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "packages", n => { Packages = n.GetCollectionOfObjectValues<DependencyGraphSpdxSbom_sbom_packages>(DependencyGraphSpdxSbom_sbom_packages.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "SPDXID", n => { SPDXID = n.GetStringValue(); } },
-                { "spdxVersion", n => { SpdxVersion = n.GetStringValue(); } },
+                {"creationInfo", n => { CreationInfo = n.GetObjectValue<DependencyGraphSpdxSbom_sbom_creationInfo>(DependencyGraphSpdxSbom_sbom_creationInfo.CreateFromDiscriminatorValue); } },
+                {"dataLicense", n => { DataLicense = n.GetStringValue(); } },
+                {"documentDescribes", n => { DocumentDescribes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"documentNamespace", n => { DocumentNamespace = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"packages", n => { Packages = n.GetCollectionOfObjectValues<DependencyGraphSpdxSbom_sbom_packages>(DependencyGraphSpdxSbom_sbom_packages.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"SPDXID", n => { SPDXID = n.GetStringValue(); } },
+                {"spdxVersion", n => { SpdxVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

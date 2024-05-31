@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Applications.Item.Grant
-{
+namespace GitHub.Applications.Item.Grant {
     #pragma warning disable CS1591
-    public class GrantDeleteRequestBody : IAdditionalDataHolder, IParsable
+    public class GrantDeleteRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The OAuth access token used to authenticate to the GitHub API.</summary>
@@ -45,7 +44,7 @@ namespace GitHub.Applications.Item.Grant
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_token", n => { AccessToken = n.GetStringValue(); } },
+                {"access_token", n => { AccessToken = n.GetStringValue(); } },
             };
         }
         /// <summary>

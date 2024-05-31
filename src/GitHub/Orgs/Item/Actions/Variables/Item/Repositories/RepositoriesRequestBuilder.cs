@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories
-{
+namespace GitHub.Orgs.Item.Actions.Variables.Item.Repositories {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\variables\{name}\repositories
     /// </summary>
-    public class RepositoriesRequestBuilder : BaseRequestBuilder
+    public class RepositoriesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.actions.variables.item.repositories.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

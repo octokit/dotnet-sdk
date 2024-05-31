@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Tags
-{
+namespace GitHub.Repos.Item.Item.Releases.Tags {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\tags
     /// </summary>
-    public class TagsRequestBuilder : BaseRequestBuilder
+    public class TagsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.releases.tags.item collection</summary>
         /// <param name="position">tag parameter</param>

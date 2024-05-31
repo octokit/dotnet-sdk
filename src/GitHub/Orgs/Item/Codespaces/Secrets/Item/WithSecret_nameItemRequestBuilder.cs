@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Codespaces.Secrets.Item
-{
+namespace GitHub.Orgs.Item.Codespaces.Secrets.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\codespaces\secrets\{secret_name}
     /// </summary>
-    public class WithSecret_nameItemRequestBuilder : BaseRequestBuilder
+    public class WithSecret_nameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The repositories property</summary>
         public RepositoriesRequestBuilder Repositories
@@ -56,7 +55,7 @@ namespace GitHub.Orgs.Item.Codespaces.Secrets.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,8 +101,8 @@ namespace GitHub.Orgs.Item.Codespaces.Secrets.Item
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<EmptyObject>(requestInfo, EmptyObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

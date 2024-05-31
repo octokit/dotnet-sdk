@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item
-{
+namespace GitHub.Repos.Item.Item.Environments.Item {
     #pragma warning disable CS1591
-    public class WithEnvironment_namePutRequestBody : IParsable
+    public class WithEnvironment_namePutRequestBody : IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.</summary>
@@ -49,10 +48,10 @@ namespace GitHub.Repos.Item.Item.Environments.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deployment_branch_policy", n => { DeploymentBranchPolicy = n.GetObjectValue<DeploymentBranchPolicySettings>(DeploymentBranchPolicySettings.CreateFromDiscriminatorValue); } },
-                { "prevent_self_review", n => { PreventSelfReview = n.GetBoolValue(); } },
-                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<WithEnvironment_namePutRequestBody_reviewers>(WithEnvironment_namePutRequestBody_reviewers.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "wait_timer", n => { WaitTimer = n.GetIntValue(); } },
+                {"deployment_branch_policy", n => { DeploymentBranchPolicy = n.GetObjectValue<DeploymentBranchPolicySettings>(DeploymentBranchPolicySettings.CreateFromDiscriminatorValue); } },
+                {"prevent_self_review", n => { PreventSelfReview = n.GetBoolValue(); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<WithEnvironment_namePutRequestBody_reviewers>(WithEnvironment_namePutRequestBody_reviewers.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"wait_timer", n => { WaitTimer = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Applications.Item.Token.Scoped
-{
+namespace GitHub.Applications.Item.Token.Scoped {
     /// <summary>
     /// Builds and executes requests for operations under \applications\{client_id}\token\scoped
     /// </summary>
-    public class ScopedRequestBuilder : BaseRequestBuilder
+    public class ScopedRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ScopedRequestBuilder"/> and sets the default values.
@@ -32,7 +31,7 @@ namespace GitHub.Applications.Item.Token.Scoped
         {
         }
         /// <summary>
-        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
+        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
         /// API method documentation <see href="https://docs.github.com/rest/apps/apps#create-a-scoped-access-token" />
         /// </summary>
         /// <returns>A <see cref="Authorization"/></returns>
@@ -56,15 +55,15 @@ namespace GitHub.Applications.Item.Token.Scoped
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Authorization>(requestInfo, Authorization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
+        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Teams.Item.Discussions.Item.Comments.Item
-{
+namespace GitHub.Teams.Item.Discussions.Item.Comments.Item {
     #pragma warning disable CS1591
-    public class WithComment_numberPatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithComment_numberPatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,7 +44,7 @@ namespace GitHub.Teams.Item.Discussions.Item.Comments.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "body", n => { Body = n.GetStringValue(); } },
+                {"body", n => { Body = n.GetStringValue(); } },
             };
         }
         /// <summary>

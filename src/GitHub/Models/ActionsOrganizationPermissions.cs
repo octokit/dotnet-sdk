@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class ActionsOrganizationPermissions : IAdditionalDataHolder, IParsable
+    public class ActionsOrganizationPermissions : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -57,10 +56,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_actions", n => { AllowedActions = n.GetEnumValue<AllowedActions>(); } },
-                { "enabled_repositories", n => { EnabledRepositories = n.GetEnumValue<EnabledRepositories>(); } },
-                { "selected_actions_url", n => { SelectedActionsUrl = n.GetStringValue(); } },
-                { "selected_repositories_url", n => { SelectedRepositoriesUrl = n.GetStringValue(); } },
+                {"allowed_actions", n => { AllowedActions = n.GetEnumValue<AllowedActions>(); } },
+                {"enabled_repositories", n => { EnabledRepositories = n.GetEnumValue<EnabledRepositories>(); } },
+                {"selected_actions_url", n => { SelectedActionsUrl = n.GetStringValue(); } },
+                {"selected_repositories_url", n => { SelectedRepositoriesUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

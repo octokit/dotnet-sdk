@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.App.Hook.Config
-{
+namespace GitHub.App.Hook.Config {
     /// <summary>
     /// Builds and executes requests for operations under \app\hook\config
     /// </summary>
-    public class ConfigRequestBuilder : BaseRequestBuilder
+    public class ConfigRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ConfigRequestBuilder"/> and sets the default values.

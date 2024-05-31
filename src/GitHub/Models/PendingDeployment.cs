@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Details of a deployment that is waiting for protection rules to pass
     /// </summary>
-    public class PendingDeployment : IAdditionalDataHolder, IParsable
+    public class PendingDeployment : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -60,11 +59,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "current_user_can_approve", n => { CurrentUserCanApprove = n.GetBoolValue(); } },
-                { "environment", n => { Environment = n.GetObjectValue<PendingDeployment_environment>(PendingDeployment_environment.CreateFromDiscriminatorValue); } },
-                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<PendingDeployment_reviewers>(PendingDeployment_reviewers.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "wait_timer", n => { WaitTimer = n.GetIntValue(); } },
-                { "wait_timer_started_at", n => { WaitTimerStartedAt = n.GetDateTimeOffsetValue(); } },
+                {"current_user_can_approve", n => { CurrentUserCanApprove = n.GetBoolValue(); } },
+                {"environment", n => { Environment = n.GetObjectValue<PendingDeployment_environment>(PendingDeployment_environment.CreateFromDiscriminatorValue); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<PendingDeployment_reviewers>(PendingDeployment_reviewers.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"wait_timer", n => { WaitTimer = n.GetIntValue(); } },
+                {"wait_timer_started_at", n => { WaitTimerStartedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

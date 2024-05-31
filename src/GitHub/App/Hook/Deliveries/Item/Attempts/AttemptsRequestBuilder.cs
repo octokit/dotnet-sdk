@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.App.Hook.Deliveries.Item.Attempts
-{
+namespace GitHub.App.Hook.Deliveries.Item.Attempts {
     /// <summary>
     /// Builds and executes requests for operations under \app\hook\deliveries\{delivery_id}\attempts
     /// </summary>
-    public class AttemptsRequestBuilder : BaseRequestBuilder
+    public class AttemptsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="AttemptsRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.App.Hook.Deliveries.Item.Attempts
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"400", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<AttemptsPostResponse>(requestInfo, AttemptsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
