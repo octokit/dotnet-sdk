@@ -112,3 +112,4 @@ coverage/*
 tools/*
 dotnet-tools.json
 *.pem
+coveragereport/*
