@@ -12,8 +12,8 @@ public class AccessTokenProviderTests
     {
         var privateKey = RSA.Create();
         var sourceId = "example-source-id";
-        var tokenDescriptor = AccessTokenProvider.CreateTokenDescriptor(privateKey, sourceId, DateTime.UtcNow);
-        var token = AccessTokenProvider.CreateJsonWebToken(tokenDescriptor);
+        var tokenDescriptor = GitHubAppTokenProvider.CreateTokenDescriptor(privateKey, sourceId, DateTime.UtcNow);
+        var token = GitHubAppTokenProvider.CreateJsonWebToken(tokenDescriptor);
 
         Assert.NotNull(token);
     }
@@ -25,7 +25,7 @@ public class AccessTokenProviderTests
         var privateKey = RSA.Create();
         var sourceId = "example-source-id";
         var now = DateTime.UtcNow;
-        var tokenDescriptor = AccessTokenProvider.CreateTokenDescriptor(privateKey, sourceId, now);
+        var tokenDescriptor = GitHubAppTokenProvider.CreateTokenDescriptor(privateKey, sourceId, now);
 
         Assert.Equal(sourceId, tokenDescriptor.Issuer);
         Assert.Equal(now, tokenDescriptor.IssuedAt);

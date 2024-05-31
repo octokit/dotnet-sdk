@@ -61,9 +61,9 @@ public class AppInstallationTokenProvider : IAccessTokenProvider
         {
             var baseUrl = requestUri.GetLeftPart(UriPartial.Authority);
 
-            _tokenDescriptor = AccessTokenProvider.CreateTokenDescriptor(_privateKey, _sourceId, DateTime.UtcNow);
-            var jwt = AccessTokenProvider.CreateJsonWebToken(_tokenDescriptor);
-            _accessToken = await AccessTokenProvider.GetGitHubAccessTokenAsync(baseUrl, jwt, _installationId);
+            _tokenDescriptor = GitHubAppTokenProvider.CreateTokenDescriptor(_privateKey, _sourceId, DateTime.UtcNow);
+            var jwt = GitHubAppTokenProvider.CreateJsonWebToken(_tokenDescriptor);
+            _accessToken = await GitHubAppTokenProvider.GetGitHubAccessTokenAsync(baseUrl, jwt, _installationId);
         }
 
         return _accessToken;
