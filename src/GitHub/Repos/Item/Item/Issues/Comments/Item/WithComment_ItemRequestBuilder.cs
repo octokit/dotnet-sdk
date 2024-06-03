@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Issues.Comments.Item
-{
+namespace GitHub.Repos.Item.Item.Issues.Comments.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\comments\{comment_id}
     /// </summary>
-    public class WithComment_ItemRequestBuilder : BaseRequestBuilder
+    public class WithComment_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The reactions property</summary>
         public ReactionsRequestBuilder Reactions
@@ -75,7 +74,7 @@ namespace GitHub.Repos.Item.Item.Issues.Comments.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<IssueComment>(requestInfo, IssueComment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,7 +100,7 @@ namespace GitHub.Repos.Item.Item.Issues.Comments.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<IssueComment>(requestInfo, IssueComment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

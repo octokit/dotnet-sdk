@@ -8,12 +8,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Enterprises.Item
-{
+namespace GitHub.Enterprises.Item {
     /// <summary>
     /// Builds and executes requests for operations under \enterprises\{enterprise}
     /// </summary>
-    public class WithEnterpriseItemRequestBuilder : BaseRequestBuilder
+    public class WithEnterpriseItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The copilot property</summary>
         public CopilotRequestBuilder Copilot

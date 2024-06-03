@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Dispatches
-{
+namespace GitHub.Repos.Item.Item.Dispatches {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dispatches
     /// </summary>
-    public class DispatchesRequestBuilder : BaseRequestBuilder
+    public class DispatchesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="DispatchesRequestBuilder"/> and sets the default values.
@@ -53,8 +52,8 @@ namespace GitHub.Repos.Item.Item.Dispatches
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

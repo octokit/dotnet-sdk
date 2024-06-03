@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Actions.Variables.Item
-{
+namespace GitHub.Orgs.Item.Actions.Variables.Item {
     #pragma warning disable CS1591
-    public class WithNamePatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithNamePatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -63,10 +62,10 @@ namespace GitHub.Orgs.Item.Actions.Variables.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "selected_repository_ids", n => { SelectedRepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
-                { "visibility", n => { Visibility = n.GetEnumValue<WithNamePatchRequestBody_visibility>(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"selected_repository_ids", n => { SelectedRepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                {"value", n => { Value = n.GetStringValue(); } },
+                {"visibility", n => { Visibility = n.GetEnumValue<WithNamePatchRequestBody_visibility>(); } },
             };
         }
         /// <summary>

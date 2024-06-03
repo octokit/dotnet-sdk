@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Custom property name and associated value
     /// </summary>
-    public class CustomPropertyValue : IAdditionalDataHolder, IParsable
+    public class CustomPropertyValue : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -54,8 +53,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "property_name", n => { PropertyName = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<CustomPropertyValue_value>(CustomPropertyValue_value.CreateFromDiscriminatorValue); } },
+                {"property_name", n => { PropertyName = n.GetStringValue(); } },
+                {"value", n => { Value = n.GetObjectValue<CustomPropertyValue_value>(CustomPropertyValue_value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +71,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>
         /// </summary>
-        public class CustomPropertyValue_value : IComposedTypeWrapper, IParsable
+        public class CustomPropertyValue_value : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

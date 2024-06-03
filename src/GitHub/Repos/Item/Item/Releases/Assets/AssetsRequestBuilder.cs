@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Assets
-{
+namespace GitHub.Repos.Item.Item.Releases.Assets {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\assets
     /// </summary>
-    public class AssetsRequestBuilder : BaseRequestBuilder
+    public class AssetsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.releases.assets.item collection</summary>
         /// <param name="position">The unique identifier of the asset.</param>

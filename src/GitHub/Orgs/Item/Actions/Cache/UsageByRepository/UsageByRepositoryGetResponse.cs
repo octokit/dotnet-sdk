@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository
-{
+namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository {
     #pragma warning disable CS1591
-    public class UsageByRepositoryGetResponse : IAdditionalDataHolder, IParsable
+    public class UsageByRepositoryGetResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,8 +47,8 @@ namespace GitHub.Orgs.Item.Actions.Cache.UsageByRepository
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "repository_cache_usages", n => { RepositoryCacheUsages = n.GetCollectionOfObjectValues<ActionsCacheUsageByRepository>(ActionsCacheUsageByRepository.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"repository_cache_usages", n => { RepositoryCacheUsages = n.GetCollectionOfObjectValues<ActionsCacheUsageByRepository>(ActionsCacheUsageByRepository.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.RerunFailedJobs
-{
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.RerunFailedJobs {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\rerun-failed-jobs
     /// </summary>
-    public class RerunFailedJobsRequestBuilder : BaseRequestBuilder
+    public class RerunFailedJobsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="RerunFailedJobsRequestBuilder"/> and sets the default values.

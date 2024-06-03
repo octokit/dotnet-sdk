@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Item.Item
-{
+namespace GitHub.Orgs.Item.Item.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\{security_product}\{enablement}
     /// </summary>
-    public class WithEnablementItemRequestBuilder : BaseRequestBuilder
+    public class WithEnablementItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithEnablementItemRequestBuilder"/> and sets the default values.

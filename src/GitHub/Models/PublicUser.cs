@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Public User
     /// </summary>
-    public class PublicUser : IParsable
+    public class PublicUser : IParsable 
     {
         /// <summary>The avatar_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -259,46 +258,46 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                { "bio", n => { Bio = n.GetStringValue(); } },
-                { "blog", n => { Blog = n.GetStringValue(); } },
-                { "collaborators", n => { Collaborators = n.GetIntValue(); } },
-                { "company", n => { Company = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "disk_usage", n => { DiskUsage = n.GetIntValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "events_url", n => { EventsUrl = n.GetStringValue(); } },
-                { "followers", n => { Followers = n.GetIntValue(); } },
-                { "followers_url", n => { FollowersUrl = n.GetStringValue(); } },
-                { "following", n => { Following = n.GetIntValue(); } },
-                { "following_url", n => { FollowingUrl = n.GetStringValue(); } },
-                { "gists_url", n => { GistsUrl = n.GetStringValue(); } },
-                { "gravatar_id", n => { GravatarId = n.GetStringValue(); } },
-                { "hireable", n => { Hireable = n.GetBoolValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "location", n => { Location = n.GetStringValue(); } },
-                { "login", n => { Login = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "notification_email", n => { NotificationEmail = n.GetStringValue(); } },
-                { "organizations_url", n => { OrganizationsUrl = n.GetStringValue(); } },
-                { "owned_private_repos", n => { OwnedPrivateRepos = n.GetIntValue(); } },
-                { "plan", n => { Plan = n.GetObjectValue<PublicUser_plan>(PublicUser_plan.CreateFromDiscriminatorValue); } },
-                { "private_gists", n => { PrivateGists = n.GetIntValue(); } },
-                { "public_gists", n => { PublicGists = n.GetIntValue(); } },
-                { "public_repos", n => { PublicRepos = n.GetIntValue(); } },
-                { "received_events_url", n => { ReceivedEventsUrl = n.GetStringValue(); } },
-                { "repos_url", n => { ReposUrl = n.GetStringValue(); } },
-                { "site_admin", n => { SiteAdmin = n.GetBoolValue(); } },
-                { "starred_url", n => { StarredUrl = n.GetStringValue(); } },
-                { "subscriptions_url", n => { SubscriptionsUrl = n.GetStringValue(); } },
-                { "suspended_at", n => { SuspendedAt = n.GetDateTimeOffsetValue(); } },
-                { "total_private_repos", n => { TotalPrivateRepos = n.GetIntValue(); } },
-                { "twitter_username", n => { TwitterUsername = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
+                {"bio", n => { Bio = n.GetStringValue(); } },
+                {"blog", n => { Blog = n.GetStringValue(); } },
+                {"collaborators", n => { Collaborators = n.GetIntValue(); } },
+                {"company", n => { Company = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"disk_usage", n => { DiskUsage = n.GetIntValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"events_url", n => { EventsUrl = n.GetStringValue(); } },
+                {"followers", n => { Followers = n.GetIntValue(); } },
+                {"followers_url", n => { FollowersUrl = n.GetStringValue(); } },
+                {"following", n => { Following = n.GetIntValue(); } },
+                {"following_url", n => { FollowingUrl = n.GetStringValue(); } },
+                {"gists_url", n => { GistsUrl = n.GetStringValue(); } },
+                {"gravatar_id", n => { GravatarId = n.GetStringValue(); } },
+                {"hireable", n => { Hireable = n.GetBoolValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"location", n => { Location = n.GetStringValue(); } },
+                {"login", n => { Login = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"notification_email", n => { NotificationEmail = n.GetStringValue(); } },
+                {"organizations_url", n => { OrganizationsUrl = n.GetStringValue(); } },
+                {"owned_private_repos", n => { OwnedPrivateRepos = n.GetIntValue(); } },
+                {"plan", n => { Plan = n.GetObjectValue<PublicUser_plan>(PublicUser_plan.CreateFromDiscriminatorValue); } },
+                {"private_gists", n => { PrivateGists = n.GetIntValue(); } },
+                {"public_gists", n => { PublicGists = n.GetIntValue(); } },
+                {"public_repos", n => { PublicRepos = n.GetIntValue(); } },
+                {"received_events_url", n => { ReceivedEventsUrl = n.GetStringValue(); } },
+                {"repos_url", n => { ReposUrl = n.GetStringValue(); } },
+                {"site_admin", n => { SiteAdmin = n.GetBoolValue(); } },
+                {"starred_url", n => { StarredUrl = n.GetStringValue(); } },
+                {"subscriptions_url", n => { SubscriptionsUrl = n.GetStringValue(); } },
+                {"suspended_at", n => { SuspendedAt = n.GetDateTimeOffsetValue(); } },
+                {"total_private_repos", n => { TotalPrivateRepos = n.GetIntValue(); } },
+                {"twitter_username", n => { TwitterUsername = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

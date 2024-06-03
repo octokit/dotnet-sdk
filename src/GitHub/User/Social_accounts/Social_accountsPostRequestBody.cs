@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Social_accounts
-{
+namespace GitHub.User.Social_accounts {
     #pragma warning disable CS1591
-    public class Social_accountsPostRequestBody : IAdditionalDataHolder, IParsable
+    public class Social_accountsPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Full URLs for the social media profiles to add.</summary>
@@ -45,7 +44,7 @@ namespace GitHub.User.Social_accounts
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_urls", n => { AccountUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"account_urls", n => { AccountUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

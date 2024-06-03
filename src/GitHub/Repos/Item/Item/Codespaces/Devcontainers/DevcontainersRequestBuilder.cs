@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Codespaces.Devcontainers
-{
+namespace GitHub.Repos.Item.Item.Codespaces.Devcontainers {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\devcontainers
     /// </summary>
-    public class DevcontainersRequestBuilder : BaseRequestBuilder
+    public class DevcontainersRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="DevcontainersRequestBuilder"/> and sets the default values.
@@ -55,11 +54,11 @@ namespace GitHub.Repos.Item.Item.Codespaces.Devcontainers
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", BasicError.CreateFromDiscriminatorValue },
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"400", BasicError.CreateFromDiscriminatorValue},
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DevcontainersGetResponse>(requestInfo, DevcontainersGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

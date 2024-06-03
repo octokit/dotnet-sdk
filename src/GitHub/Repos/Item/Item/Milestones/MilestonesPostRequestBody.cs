@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Milestones
-{
+namespace GitHub.Repos.Item.Item.Milestones {
     #pragma warning disable CS1591
-    public class MilestonesPostRequestBody : IAdditionalDataHolder, IParsable
+    public class MilestonesPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -58,10 +57,10 @@ namespace GitHub.Repos.Item.Item.Milestones
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "due_on", n => { DueOn = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<MilestonesPostRequestBody_state>(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"due_on", n => { DueOn = n.GetDateTimeOffsetValue(); } },
+                {"state", n => { State = n.GetEnumValue<MilestonesPostRequestBody_state>(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

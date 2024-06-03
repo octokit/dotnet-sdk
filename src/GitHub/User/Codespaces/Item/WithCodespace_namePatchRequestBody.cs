@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Codespaces.Item
-{
+namespace GitHub.User.Codespaces.Item {
     #pragma warning disable CS1591
-    public class WithCodespace_namePatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithCodespace_namePatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -61,9 +60,9 @@ namespace GitHub.User.Codespaces.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "display_name", n => { DisplayName = n.GetStringValue(); } },
-                { "machine", n => { Machine = n.GetStringValue(); } },
-                { "recent_folders", n => { RecentFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"display_name", n => { DisplayName = n.GetStringValue(); } },
+                {"machine", n => { Machine = n.GetStringValue(); } },
+                {"recent_folders", n => { RecentFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

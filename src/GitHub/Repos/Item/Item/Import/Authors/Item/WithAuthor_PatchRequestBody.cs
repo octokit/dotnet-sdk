@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Import.Authors.Item
-{
+namespace GitHub.Repos.Item.Item.Import.Authors.Item {
     #pragma warning disable CS1591
-    public class WithAuthor_PatchRequestBody : IParsable
+    public class WithAuthor_PatchRequestBody : IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The new Git author email.</summary>
@@ -44,8 +43,8 @@ namespace GitHub.Repos.Item.Item.Import.Authors.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

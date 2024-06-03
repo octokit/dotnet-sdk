@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Marketplace Listing Plan
     /// </summary>
-    public class MarketplaceListingPlan : IAdditionalDataHolder, IParsable
+    public class MarketplaceListingPlan : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The accounts_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,19 +105,19 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accounts_url", n => { AccountsUrl = n.GetStringValue(); } },
-                { "bullets", n => { Bullets = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "has_free_trial", n => { HasFreeTrial = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "monthly_price_in_cents", n => { MonthlyPriceInCents = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "price_model", n => { PriceModel = n.GetEnumValue<MarketplaceListingPlan_price_model>(); } },
-                { "state", n => { State = n.GetStringValue(); } },
-                { "unit_name", n => { UnitName = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "yearly_price_in_cents", n => { YearlyPriceInCents = n.GetIntValue(); } },
+                {"accounts_url", n => { AccountsUrl = n.GetStringValue(); } },
+                {"bullets", n => { Bullets = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"has_free_trial", n => { HasFreeTrial = n.GetBoolValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"monthly_price_in_cents", n => { MonthlyPriceInCents = n.GetIntValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"number", n => { Number = n.GetIntValue(); } },
+                {"price_model", n => { PriceModel = n.GetEnumValue<MarketplaceListingPlan_price_model>(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"unit_name", n => { UnitName = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"yearly_price_in_cents", n => { YearlyPriceInCents = n.GetIntValue(); } },
             };
         }
         /// <summary>

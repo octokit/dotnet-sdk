@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Enterprises
-{
+namespace GitHub.Enterprises {
     /// <summary>
     /// Builds and executes requests for operations under \enterprises
     /// </summary>
-    public class EnterprisesRequestBuilder : BaseRequestBuilder
+    public class EnterprisesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.enterprises.item collection</summary>
         /// <param name="position">The slug version of the enterprise name. You can also substitute this value with the enterprise id.</param>

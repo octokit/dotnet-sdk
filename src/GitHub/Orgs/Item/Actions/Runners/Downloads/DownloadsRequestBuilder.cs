@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Runners.Downloads
-{
+namespace GitHub.Orgs.Item.Actions.Runners.Downloads {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\runners\downloads
     /// </summary>
-    public class DownloadsRequestBuilder : BaseRequestBuilder
+    public class DownloadsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="DownloadsRequestBuilder"/> and sets the default values.

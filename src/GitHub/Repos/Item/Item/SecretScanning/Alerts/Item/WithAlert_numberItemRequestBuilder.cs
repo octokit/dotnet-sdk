@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item
-{
+namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\secret-scanning\alerts\{alert_number}
     /// </summary>
-    public class WithAlert_numberItemRequestBuilder : BaseRequestBuilder
+    public class WithAlert_numberItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The locations property</summary>
         public LocationsRequestBuilder Locations
@@ -57,7 +56,7 @@ namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "503", SecretScanningAlert503Error.CreateFromDiscriminatorValue },
+                {"503", SecretScanningAlert503Error.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SecretScanningAlert>(requestInfo, SecretScanningAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -83,7 +82,7 @@ namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "503", SecretScanningAlert503Error.CreateFromDiscriminatorValue },
+                {"503", SecretScanningAlert503Error.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<SecretScanningAlert>(requestInfo, SecretScanningAlert.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// An export of a codespace. Also, latest export details for a codespace can be fetched with id = latest
     /// </summary>
-    public class CodespaceExportDetails : IAdditionalDataHolder, IParsable
+    public class CodespaceExportDetails : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -88,13 +87,13 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "branch", n => { Branch = n.GetStringValue(); } },
-                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "export_url", n => { ExportUrl = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                {"branch", n => { Branch = n.GetStringValue(); } },
+                {"completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                {"export_url", n => { ExportUrl = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

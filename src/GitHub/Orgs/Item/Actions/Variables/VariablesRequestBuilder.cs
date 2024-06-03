@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Variables
-{
+namespace GitHub.Orgs.Item.Actions.Variables {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\variables
     /// </summary>
-    public class VariablesRequestBuilder : BaseRequestBuilder
+    public class VariablesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.actions.variables.item collection</summary>
         /// <param name="position">The name of the variable.</param>

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Permissions.Access
-{
+namespace GitHub.Repos.Item.Item.Actions.Permissions.Access {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\permissions\access
     /// </summary>
-    public class AccessRequestBuilder : BaseRequestBuilder
+    public class AccessRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="AccessRequestBuilder"/> and sets the default values.

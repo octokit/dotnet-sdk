@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Authentication token for a GitHub App installed on a user or org.
     /// </summary>
-    public class InstallationToken : IAdditionalDataHolder, IParsable
+    public class InstallationToken : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -90,14 +89,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
-                { "has_multiple_single_files", n => { HasMultipleSingleFiles = n.GetBoolValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
-                { "repositories", n => { Repositories = n.GetCollectionOfObjectValues<Repository>(Repository.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "repository_selection", n => { RepositorySelection = n.GetEnumValue<InstallationToken_repository_selection>(); } },
-                { "single_file", n => { SingleFile = n.GetStringValue(); } },
-                { "single_file_paths", n => { SingleFilePaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "token", n => { Token = n.GetStringValue(); } },
+                {"expires_at", n => { ExpiresAt = n.GetStringValue(); } },
+                {"has_multiple_single_files", n => { HasMultipleSingleFiles = n.GetBoolValue(); } },
+                {"permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
+                {"repositories", n => { Repositories = n.GetCollectionOfObjectValues<Repository>(Repository.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"repository_selection", n => { RepositorySelection = n.GetEnumValue<InstallationToken_repository_selection>(); } },
+                {"single_file", n => { SingleFile = n.GetStringValue(); } },
+                {"single_file_paths", n => { SingleFilePaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"token", n => { Token = n.GetStringValue(); } },
             };
         }
         /// <summary>

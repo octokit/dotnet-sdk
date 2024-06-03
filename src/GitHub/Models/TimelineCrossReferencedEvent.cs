@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Timeline Cross Referenced Event
     /// </summary>
-    public class TimelineCrossReferencedEvent : IAdditionalDataHolder, IParsable
+    public class TimelineCrossReferencedEvent : IAdditionalDataHolder, IParsable 
     {
         /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,11 +65,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "event", n => { Event = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetObjectValue<TimelineCrossReferencedEvent_source>(TimelineCrossReferencedEvent_source.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"event", n => { Event = n.GetStringValue(); } },
+                {"source", n => { Source = n.GetObjectValue<TimelineCrossReferencedEvent_source>(TimelineCrossReferencedEvent_source.CreateFromDiscriminatorValue); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

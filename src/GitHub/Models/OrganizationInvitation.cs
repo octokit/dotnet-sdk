@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Organization Invitation
     /// </summary>
-    public class OrganizationInvitation : IAdditionalDataHolder, IParsable
+    public class OrganizationInvitation : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -122,18 +121,18 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "failed_at", n => { FailedAt = n.GetStringValue(); } },
-                { "failed_reason", n => { FailedReason = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "invitation_source", n => { InvitationSource = n.GetStringValue(); } },
-                { "invitation_teams_url", n => { InvitationTeamsUrl = n.GetStringValue(); } },
-                { "inviter", n => { Inviter = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "login", n => { Login = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetStringValue(); } },
-                { "team_count", n => { TeamCount = n.GetIntValue(); } },
+                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"failed_at", n => { FailedAt = n.GetStringValue(); } },
+                {"failed_reason", n => { FailedReason = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"invitation_source", n => { InvitationSource = n.GetStringValue(); } },
+                {"invitation_teams_url", n => { InvitationTeamsUrl = n.GetStringValue(); } },
+                {"inviter", n => { Inviter = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"login", n => { Login = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"role", n => { Role = n.GetStringValue(); } },
+                {"team_count", n => { TeamCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

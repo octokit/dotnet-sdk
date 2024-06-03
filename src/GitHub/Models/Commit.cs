@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Commit
     /// </summary>
-    public class Commit : IAdditionalDataHolder, IParsable
+    public class Commit : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -126,17 +125,17 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "comments_url", n => { CommentsUrl = n.GetStringValue(); } },
-                { "commit", n => { CommitProp = n.GetObjectValue<Commit_commit>(Commit_commit.CreateFromDiscriminatorValue); } },
-                { "committer", n => { Committer = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "files", n => { Files = n.GetCollectionOfObjectValues<DiffEntry>(DiffEntry.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "parents", n => { Parents = n.GetCollectionOfObjectValues<Commit_parents>(Commit_parents.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "stats", n => { Stats = n.GetObjectValue<Commit_stats>(Commit_stats.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
+                {"commit", n => { CommitProp = n.GetObjectValue<Commit_commit>(Commit_commit.CreateFromDiscriminatorValue); } },
+                {"committer", n => { Committer = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"files", n => { Files = n.GetCollectionOfObjectValues<DiffEntry>(DiffEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"parents", n => { Parents = n.GetCollectionOfObjectValues<Commit_parents>(Commit_parents.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"stats", n => { Stats = n.GetObjectValue<Commit_stats>(Commit_stats.CreateFromDiscriminatorValue); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

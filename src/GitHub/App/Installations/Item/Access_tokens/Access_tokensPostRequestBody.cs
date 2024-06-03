@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.App.Installations.Item.Access_tokens
-{
+namespace GitHub.App.Installations.Item.Access_tokens {
     #pragma warning disable CS1591
-    public class Access_tokensPostRequestBody : IAdditionalDataHolder, IParsable
+    public class Access_tokensPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -62,9 +61,9 @@ namespace GitHub.App.Installations.Item.Access_tokens
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
-                { "repositories", n => { Repositories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "repository_ids", n => { RepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                {"permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
+                {"repositories", n => { Repositories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"repository_ids", n => { RepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
             };
         }
         /// <summary>

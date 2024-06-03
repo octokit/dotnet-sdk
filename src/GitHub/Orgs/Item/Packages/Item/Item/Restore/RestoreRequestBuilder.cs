@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Packages.Item.Item.Restore
-{
+namespace GitHub.Orgs.Item.Packages.Item.Item.Restore {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\packages\{package_type}\{package_name}\restore
     /// </summary>
-    public class RestoreRequestBuilder : BaseRequestBuilder
+    public class RestoreRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="RestoreRequestBuilder"/> and sets the default values.
@@ -52,9 +51,9 @@ namespace GitHub.Orgs.Item.Packages.Item.Item.Restore
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

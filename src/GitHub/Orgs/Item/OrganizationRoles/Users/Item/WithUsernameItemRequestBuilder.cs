@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.OrganizationRoles.Users.Item
-{
+namespace GitHub.Orgs.Item.OrganizationRoles.Users.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-roles\users\{username}
     /// </summary>
-    public class WithUsernameItemRequestBuilder : BaseRequestBuilder
+    public class WithUsernameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.organizationRoles.users.item.item collection</summary>
         /// <param name="position">The unique identifier of the role.</param>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Invitations.Item
-{
+namespace GitHub.Repos.Item.Item.Invitations.Item {
     #pragma warning disable CS1591
-    public class WithInvitation_PatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithInvitation_PatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,7 +38,7 @@ namespace GitHub.Repos.Item.Item.Invitations.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "permissions", n => { Permissions = n.GetEnumValue<WithInvitation_PatchRequestBody_permissions>(); } },
+                {"permissions", n => { Permissions = n.GetEnumValue<WithInvitation_PatchRequestBody_permissions>(); } },
             };
         }
         /// <summary>

@@ -15,12 +15,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Teams.Item
-{
+namespace GitHub.Orgs.Item.Teams.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}
     /// </summary>
-    public class WithTeam_slugItemRequestBuilder : BaseRequestBuilder
+    public class WithTeam_slugItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The discussions property</summary>
         public DiscussionsRequestBuilder Discussions
@@ -111,7 +110,7 @@ namespace GitHub.Orgs.Item.Teams.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TeamFull>(requestInfo, TeamFull.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -139,9 +138,9 @@ namespace GitHub.Orgs.Item.Teams.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<TeamFull>(requestInfo, TeamFull.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

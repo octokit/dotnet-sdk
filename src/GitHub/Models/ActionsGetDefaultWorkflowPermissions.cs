@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class ActionsGetDefaultWorkflowPermissions : IAdditionalDataHolder, IParsable
+    public class ActionsGetDefaultWorkflowPermissions : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,8 +40,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "can_approve_pull_request_reviews", n => { CanApprovePullRequestReviews = n.GetBoolValue(); } },
-                { "default_workflow_permissions", n => { DefaultWorkflowPermissions = n.GetEnumValue<ActionsDefaultWorkflowPermissions>(); } },
+                {"can_approve_pull_request_reviews", n => { CanApprovePullRequestReviews = n.GetBoolValue(); } },
+                {"default_workflow_permissions", n => { DefaultWorkflowPermissions = n.GetEnumValue<ActionsDefaultWorkflowPermissions>(); } },
             };
         }
         /// <summary>

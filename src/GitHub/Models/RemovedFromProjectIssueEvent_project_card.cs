@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class RemovedFromProjectIssueEvent_project_card : IAdditionalDataHolder, IParsable
+    public class RemovedFromProjectIssueEvent_project_card : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -73,12 +72,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "column_name", n => { ColumnName = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "previous_column_name", n => { PreviousColumnName = n.GetStringValue(); } },
-                { "project_id", n => { ProjectId = n.GetIntValue(); } },
-                { "project_url", n => { ProjectUrl = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"column_name", n => { ColumnName = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"previous_column_name", n => { PreviousColumnName = n.GetStringValue(); } },
+                {"project_id", n => { ProjectId = n.GetIntValue(); } },
+                {"project_url", n => { ProjectUrl = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

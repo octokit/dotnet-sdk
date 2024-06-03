@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
-{
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\required_status_checks
     /// </summary>
-    public class Required_status_checksRequestBuilder : BaseRequestBuilder
+    public class Required_status_checksRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The contexts property</summary>
         public ContextsRequestBuilder Contexts
@@ -75,7 +74,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<StatusCheckPolicy>(requestInfo, StatusCheckPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,8 +101,8 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<StatusCheckPolicy>(requestInfo, StatusCheckPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

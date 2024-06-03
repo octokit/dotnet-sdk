@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Required status check
     /// </summary>
-    public class RepositoryRuleParamsStatusCheckConfiguration : IAdditionalDataHolder, IParsable
+    public class RepositoryRuleParamsStatusCheckConfiguration : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -48,8 +47,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "context", n => { Context = n.GetStringValue(); } },
-                { "integration_id", n => { IntegrationId = n.GetIntValue(); } },
+                {"context", n => { Context = n.GetStringValue(); } },
+                {"integration_id", n => { IntegrationId = n.GetIntValue(); } },
             };
         }
         /// <summary>

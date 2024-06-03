@@ -5,12 +5,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Composed type wrapper for classes <see cref="AddedToProjectIssueEvent"/>, <see cref="AssignedIssueEvent"/>, <see cref="ConvertedNoteToIssueIssueEvent"/>, <see cref="DemilestonedIssueEvent"/>, <see cref="LabeledIssueEvent"/>, <see cref="LockedIssueEvent"/>, <see cref="MilestonedIssueEvent"/>, <see cref="MovedColumnInProjectIssueEvent"/>, <see cref="RemovedFromProjectIssueEvent"/>, <see cref="RenamedIssueEvent"/>, <see cref="ReviewDismissedIssueEvent"/>, <see cref="ReviewRequestedIssueEvent"/>, <see cref="ReviewRequestRemovedIssueEvent"/>, <see cref="UnassignedIssueEvent"/>, <see cref="UnlabeledIssueEvent"/>
     /// </summary>
-    public class IssueEventForIssue : IComposedTypeWrapper, IParsable
+    public class IssueEventForIssue : IComposedTypeWrapper, IParsable 
     {
         /// <summary>Composed type representation for type <see cref="GitHub.Models.AddedToProjectIssueEvent"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

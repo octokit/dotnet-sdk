@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class RepositoryRuleCodeScanning_parameters : IAdditionalDataHolder, IParsable
+    public class RepositoryRuleCodeScanning_parameters : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,7 +44,7 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code_scanning_tools", n => { CodeScanningTools = n.GetCollectionOfObjectValues<RepositoryRuleParamsCodeScanningTool>(RepositoryRuleParamsCodeScanningTool.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"code_scanning_tools", n => { CodeScanningTools = n.GetCollectionOfObjectValues<RepositoryRuleParamsCodeScanningTool>(RepositoryRuleParamsCodeScanningTool.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

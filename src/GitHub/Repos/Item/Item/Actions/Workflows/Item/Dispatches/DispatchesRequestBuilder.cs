@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches
-{
+namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}\dispatches
     /// </summary>
-    public class DispatchesRequestBuilder : BaseRequestBuilder
+    public class DispatchesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="DispatchesRequestBuilder"/> and sets the default values.

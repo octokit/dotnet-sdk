@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Only allow users with bypass permission to update matching refs.
     /// </summary>
-    public class RepositoryRuleUpdate : IAdditionalDataHolder, IParsable
+    public class RepositoryRuleUpdate : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -48,8 +47,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleUpdate_parameters>(RepositoryRuleUpdate_parameters.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<RepositoryRuleUpdate_type>(); } },
+                {"parameters", n => { Parameters = n.GetObjectValue<RepositoryRuleUpdate_parameters>(RepositoryRuleUpdate_parameters.CreateFromDiscriminatorValue); } },
+                {"type", n => { Type = n.GetEnumValue<RepositoryRuleUpdate_type>(); } },
             };
         }
         /// <summary>

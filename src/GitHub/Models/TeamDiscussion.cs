@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A team discussion is a persistent record of a free-form conversation within a team.
     /// </summary>
-    public class TeamDiscussion : IAdditionalDataHolder, IParsable
+    public class TeamDiscussion : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -140,24 +139,24 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "body_html", n => { BodyHtml = n.GetStringValue(); } },
-                { "body_version", n => { BodyVersion = n.GetStringValue(); } },
-                { "comments_count", n => { CommentsCount = n.GetIntValue(); } },
-                { "comments_url", n => { CommentsUrl = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "last_edited_at", n => { LastEditedAt = n.GetDateTimeOffsetValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "pinned", n => { Pinned = n.GetBoolValue(); } },
-                { "private", n => { Private = n.GetBoolValue(); } },
-                { "reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
-                { "team_url", n => { TeamUrl = n.GetStringValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"body_html", n => { BodyHtml = n.GetStringValue(); } },
+                {"body_version", n => { BodyVersion = n.GetStringValue(); } },
+                {"comments_count", n => { CommentsCount = n.GetIntValue(); } },
+                {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"last_edited_at", n => { LastEditedAt = n.GetDateTimeOffsetValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"number", n => { Number = n.GetIntValue(); } },
+                {"pinned", n => { Pinned = n.GetBoolValue(); } },
+                {"private", n => { Private = n.GetBoolValue(); } },
+                {"reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
+                {"team_url", n => { TeamUrl = n.GetStringValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

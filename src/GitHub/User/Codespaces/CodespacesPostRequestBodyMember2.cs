@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.User.Codespaces
-{
+namespace GitHub.User.Codespaces {
     #pragma warning disable CS1591
-    public class CodespacesPostRequestBodyMember2 : IAdditionalDataHolder, IParsable
+    public class CodespacesPostRequestBodyMember2 : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -81,13 +80,13 @@ namespace GitHub.User.Codespaces
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "devcontainer_path", n => { DevcontainerPath = n.GetStringValue(); } },
-                { "geo", n => { Geo = n.GetEnumValue<CodespacesPostRequestBodyMember2_geo>(); } },
-                { "idle_timeout_minutes", n => { IdleTimeoutMinutes = n.GetIntValue(); } },
-                { "location", n => { Location = n.GetStringValue(); } },
-                { "machine", n => { Machine = n.GetStringValue(); } },
-                { "pull_request", n => { PullRequest = n.GetObjectValue<CodespacesPostRequestBodyMember2_pull_request>(CodespacesPostRequestBodyMember2_pull_request.CreateFromDiscriminatorValue); } },
-                { "working_directory", n => { WorkingDirectory = n.GetStringValue(); } },
+                {"devcontainer_path", n => { DevcontainerPath = n.GetStringValue(); } },
+                {"geo", n => { Geo = n.GetEnumValue<CodespacesPostRequestBodyMember2_geo>(); } },
+                {"idle_timeout_minutes", n => { IdleTimeoutMinutes = n.GetIntValue(); } },
+                {"location", n => { Location = n.GetStringValue(); } },
+                {"machine", n => { Machine = n.GetStringValue(); } },
+                {"pull_request", n => { PullRequest = n.GetObjectValue<CodespacesPostRequestBodyMember2_pull_request>(CodespacesPostRequestBodyMember2_pull_request.CreateFromDiscriminatorValue); } },
+                {"working_directory", n => { WorkingDirectory = n.GetStringValue(); } },
             };
         }
         /// <summary>

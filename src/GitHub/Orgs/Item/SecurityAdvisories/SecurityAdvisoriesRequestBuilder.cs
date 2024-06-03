@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.SecurityAdvisories
-{
+namespace GitHub.Orgs.Item.SecurityAdvisories {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\security-advisories
     /// </summary>
-    public class SecurityAdvisoriesRequestBuilder : BaseRequestBuilder
+    public class SecurityAdvisoriesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="SecurityAdvisoriesRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Orgs.Item.SecurityAdvisories
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"400", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<RepositoryAdvisory>(requestInfo, RepositoryAdvisory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

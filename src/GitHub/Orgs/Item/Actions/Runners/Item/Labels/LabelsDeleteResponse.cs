@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Actions.Runners.Item.Labels
-{
+namespace GitHub.Orgs.Item.Actions.Runners.Item.Labels {
     #pragma warning disable CS1591
-    public class LabelsDeleteResponse : IAdditionalDataHolder, IParsable
+    public class LabelsDeleteResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,8 +47,8 @@ namespace GitHub.Orgs.Item.Actions.Runners.Item.Labels
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "labels", n => { Labels = n.GetCollectionOfObjectValues<RunnerLabel>(RunnerLabel.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"labels", n => { Labels = n.GetCollectionOfObjectValues<RunnerLabel>(RunnerLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

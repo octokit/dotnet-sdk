@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Timeline Committed Event
     /// </summary>
-    public class TimelineCommittedEvent : IAdditionalDataHolder, IParsable
+    public class TimelineCommittedEvent : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -126,17 +125,17 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetObjectValue<TimelineCommittedEvent_author>(TimelineCommittedEvent_author.CreateFromDiscriminatorValue); } },
-                { "committer", n => { Committer = n.GetObjectValue<TimelineCommittedEvent_committer>(TimelineCommittedEvent_committer.CreateFromDiscriminatorValue); } },
-                { "event", n => { Event = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "parents", n => { Parents = n.GetCollectionOfObjectValues<TimelineCommittedEvent_parents>(TimelineCommittedEvent_parents.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "tree", n => { Tree = n.GetObjectValue<TimelineCommittedEvent_tree>(TimelineCommittedEvent_tree.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "verification", n => { Verification = n.GetObjectValue<TimelineCommittedEvent_verification>(TimelineCommittedEvent_verification.CreateFromDiscriminatorValue); } },
+                {"author", n => { Author = n.GetObjectValue<TimelineCommittedEvent_author>(TimelineCommittedEvent_author.CreateFromDiscriminatorValue); } },
+                {"committer", n => { Committer = n.GetObjectValue<TimelineCommittedEvent_committer>(TimelineCommittedEvent_committer.CreateFromDiscriminatorValue); } },
+                {"event", n => { Event = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"parents", n => { Parents = n.GetCollectionOfObjectValues<TimelineCommittedEvent_parents>(TimelineCommittedEvent_parents.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"tree", n => { Tree = n.GetObjectValue<TimelineCommittedEvent_tree>(TimelineCommittedEvent_tree.CreateFromDiscriminatorValue); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"verification", n => { Verification = n.GetObjectValue<TimelineCommittedEvent_verification>(TimelineCommittedEvent_verification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.CheckSuites.Preferences
-{
+namespace GitHub.Repos.Item.Item.CheckSuites.Preferences {
     #pragma warning disable CS1591
-    public class PreferencesPatchRequestBody_auto_trigger_checks : IAdditionalDataHolder, IParsable
+    public class PreferencesPatchRequestBody_auto_trigger_checks : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,8 +40,8 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Preferences
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app_id", n => { AppId = n.GetIntValue(); } },
-                { "setting", n => { Setting = n.GetBoolValue(); } },
+                {"app_id", n => { AppId = n.GetIntValue(); } },
+                {"setting", n => { Setting = n.GetBoolValue(); } },
             };
         }
         /// <summary>

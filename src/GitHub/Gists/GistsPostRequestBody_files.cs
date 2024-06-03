@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Gists
-{
+namespace GitHub.Gists {
     /// <summary>
     /// Names and content for the files that make up the gist
     /// </summary>
-    public class GistsPostRequestBody_files : IAdditionalDataHolder, IParsable
+    public class GistsPostRequestBody_files : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

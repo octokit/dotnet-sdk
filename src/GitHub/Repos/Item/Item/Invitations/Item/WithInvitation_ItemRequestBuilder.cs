@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Invitations.Item
-{
+namespace GitHub.Repos.Item.Item.Invitations.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\invitations\{invitation_id}
     /// </summary>
-    public class WithInvitation_ItemRequestBuilder : BaseRequestBuilder
+    public class WithInvitation_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithInvitation_ItemRequestBuilder"/> and sets the default values.

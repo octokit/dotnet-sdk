@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class RepositoryAdvisoryCreate_credits : IParsable
+    public class RepositoryAdvisoryCreate_credits : IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The username of the user credited.</summary>
@@ -38,8 +37,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "login", n => { Login = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<SecurityAdvisoryCreditTypes>(); } },
+                {"login", n => { Login = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<SecurityAdvisoryCreditTypes>(); } },
             };
         }
         /// <summary>

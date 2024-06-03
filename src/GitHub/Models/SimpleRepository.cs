@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A GitHub repository.
     /// </summary>
-    public class SimpleRepository : IAdditionalDataHolder, IParsable
+    public class SimpleRepository : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -388,52 +387,52 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "archive_url", n => { ArchiveUrl = n.GetStringValue(); } },
-                { "assignees_url", n => { AssigneesUrl = n.GetStringValue(); } },
-                { "blobs_url", n => { BlobsUrl = n.GetStringValue(); } },
-                { "branches_url", n => { BranchesUrl = n.GetStringValue(); } },
-                { "collaborators_url", n => { CollaboratorsUrl = n.GetStringValue(); } },
-                { "comments_url", n => { CommentsUrl = n.GetStringValue(); } },
-                { "commits_url", n => { CommitsUrl = n.GetStringValue(); } },
-                { "compare_url", n => { CompareUrl = n.GetStringValue(); } },
-                { "contents_url", n => { ContentsUrl = n.GetStringValue(); } },
-                { "contributors_url", n => { ContributorsUrl = n.GetStringValue(); } },
-                { "deployments_url", n => { DeploymentsUrl = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "downloads_url", n => { DownloadsUrl = n.GetStringValue(); } },
-                { "events_url", n => { EventsUrl = n.GetStringValue(); } },
-                { "fork", n => { Fork = n.GetBoolValue(); } },
-                { "forks_url", n => { ForksUrl = n.GetStringValue(); } },
-                { "full_name", n => { FullName = n.GetStringValue(); } },
-                { "git_commits_url", n => { GitCommitsUrl = n.GetStringValue(); } },
-                { "git_refs_url", n => { GitRefsUrl = n.GetStringValue(); } },
-                { "git_tags_url", n => { GitTagsUrl = n.GetStringValue(); } },
-                { "hooks_url", n => { HooksUrl = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "issue_comment_url", n => { IssueCommentUrl = n.GetStringValue(); } },
-                { "issue_events_url", n => { IssueEventsUrl = n.GetStringValue(); } },
-                { "issues_url", n => { IssuesUrl = n.GetStringValue(); } },
-                { "keys_url", n => { KeysUrl = n.GetStringValue(); } },
-                { "labels_url", n => { LabelsUrl = n.GetStringValue(); } },
-                { "languages_url", n => { LanguagesUrl = n.GetStringValue(); } },
-                { "merges_url", n => { MergesUrl = n.GetStringValue(); } },
-                { "milestones_url", n => { MilestonesUrl = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "notifications_url", n => { NotificationsUrl = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "private", n => { Private = n.GetBoolValue(); } },
-                { "pulls_url", n => { PullsUrl = n.GetStringValue(); } },
-                { "releases_url", n => { ReleasesUrl = n.GetStringValue(); } },
-                { "stargazers_url", n => { StargazersUrl = n.GetStringValue(); } },
-                { "statuses_url", n => { StatusesUrl = n.GetStringValue(); } },
-                { "subscribers_url", n => { SubscribersUrl = n.GetStringValue(); } },
-                { "subscription_url", n => { SubscriptionUrl = n.GetStringValue(); } },
-                { "tags_url", n => { TagsUrl = n.GetStringValue(); } },
-                { "teams_url", n => { TeamsUrl = n.GetStringValue(); } },
-                { "trees_url", n => { TreesUrl = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"archive_url", n => { ArchiveUrl = n.GetStringValue(); } },
+                {"assignees_url", n => { AssigneesUrl = n.GetStringValue(); } },
+                {"blobs_url", n => { BlobsUrl = n.GetStringValue(); } },
+                {"branches_url", n => { BranchesUrl = n.GetStringValue(); } },
+                {"collaborators_url", n => { CollaboratorsUrl = n.GetStringValue(); } },
+                {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
+                {"commits_url", n => { CommitsUrl = n.GetStringValue(); } },
+                {"compare_url", n => { CompareUrl = n.GetStringValue(); } },
+                {"contents_url", n => { ContentsUrl = n.GetStringValue(); } },
+                {"contributors_url", n => { ContributorsUrl = n.GetStringValue(); } },
+                {"deployments_url", n => { DeploymentsUrl = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"downloads_url", n => { DownloadsUrl = n.GetStringValue(); } },
+                {"events_url", n => { EventsUrl = n.GetStringValue(); } },
+                {"fork", n => { Fork = n.GetBoolValue(); } },
+                {"forks_url", n => { ForksUrl = n.GetStringValue(); } },
+                {"full_name", n => { FullName = n.GetStringValue(); } },
+                {"git_commits_url", n => { GitCommitsUrl = n.GetStringValue(); } },
+                {"git_refs_url", n => { GitRefsUrl = n.GetStringValue(); } },
+                {"git_tags_url", n => { GitTagsUrl = n.GetStringValue(); } },
+                {"hooks_url", n => { HooksUrl = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"issue_comment_url", n => { IssueCommentUrl = n.GetStringValue(); } },
+                {"issue_events_url", n => { IssueEventsUrl = n.GetStringValue(); } },
+                {"issues_url", n => { IssuesUrl = n.GetStringValue(); } },
+                {"keys_url", n => { KeysUrl = n.GetStringValue(); } },
+                {"labels_url", n => { LabelsUrl = n.GetStringValue(); } },
+                {"languages_url", n => { LanguagesUrl = n.GetStringValue(); } },
+                {"merges_url", n => { MergesUrl = n.GetStringValue(); } },
+                {"milestones_url", n => { MilestonesUrl = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"notifications_url", n => { NotificationsUrl = n.GetStringValue(); } },
+                {"owner", n => { Owner = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"private", n => { Private = n.GetBoolValue(); } },
+                {"pulls_url", n => { PullsUrl = n.GetStringValue(); } },
+                {"releases_url", n => { ReleasesUrl = n.GetStringValue(); } },
+                {"stargazers_url", n => { StargazersUrl = n.GetStringValue(); } },
+                {"statuses_url", n => { StatusesUrl = n.GetStringValue(); } },
+                {"subscribers_url", n => { SubscribersUrl = n.GetStringValue(); } },
+                {"subscription_url", n => { SubscriptionUrl = n.GetStringValue(); } },
+                {"tags_url", n => { TagsUrl = n.GetStringValue(); } },
+                {"teams_url", n => { TeamsUrl = n.GetStringValue(); } },
+                {"trees_url", n => { TreesUrl = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -8,12 +8,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Settings.Billing
-{
+namespace GitHub.Orgs.Item.Settings.Billing {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\settings\billing
     /// </summary>
-    public class BillingRequestBuilder : BaseRequestBuilder
+    public class BillingRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The actions property</summary>
         public ActionsRequestBuilder Actions

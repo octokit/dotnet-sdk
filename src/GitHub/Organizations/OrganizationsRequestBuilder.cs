@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Organizations
-{
+namespace GitHub.Organizations {
     /// <summary>
     /// Builds and executes requests for operations under \organizations
     /// </summary>
-    public class OrganizationsRequestBuilder : BaseRequestBuilder
+    public class OrganizationsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="OrganizationsRequestBuilder"/> and sets the default values.

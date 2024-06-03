@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Tags
-{
+namespace GitHub.Repos.Item.Item.Git.Tags {
     /// <summary>
     /// An object with information about the individual creating the tag.
     /// </summary>
-    public class TagsPostRequestBody_tagger : IAdditionalDataHolder, IParsable
+    public class TagsPostRequestBody_tagger : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -56,9 +55,9 @@ namespace GitHub.Repos.Item.Item.Git.Tags
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

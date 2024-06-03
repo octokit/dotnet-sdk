@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.Item
-{
+namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}\deployment_protection_rules\{protection_rule_id}
     /// </summary>
-    public class WithProtection_rule_ItemRequestBuilder : BaseRequestBuilder
+    public class WithProtection_rule_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithProtection_rule_ItemRequestBuilder"/> and sets the default values.

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Results of a successful merge upstream request
     /// </summary>
-    public class MergedUpstream : IAdditionalDataHolder, IParsable
+    public class MergedUpstream : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -56,9 +55,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "base_branch", n => { BaseBranch = n.GetStringValue(); } },
-                { "merge_type", n => { MergeType = n.GetEnumValue<MergedUpstream_merge_type>(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
+                {"base_branch", n => { BaseBranch = n.GetStringValue(); } },
+                {"merge_type", n => { MergeType = n.GetEnumValue<MergedUpstream_merge_type>(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
             };
         }
         /// <summary>

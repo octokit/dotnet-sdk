@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.User.Memberships
-{
+namespace GitHub.User.Memberships {
     /// <summary>
     /// Builds and executes requests for operations under \user\memberships
     /// </summary>
-    public class MembershipsRequestBuilder : BaseRequestBuilder
+    public class MembershipsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The orgs property</summary>
         public OrgsRequestBuilder Orgs

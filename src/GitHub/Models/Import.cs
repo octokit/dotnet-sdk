@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A repository import from an external source.
     /// </summary>
-    public class Import : IAdditionalDataHolder, IParsable
+    public class Import : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -168,29 +167,29 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authors_count", n => { AuthorsCount = n.GetIntValue(); } },
-                { "authors_url", n => { AuthorsUrl = n.GetStringValue(); } },
-                { "commit_count", n => { CommitCount = n.GetIntValue(); } },
-                { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
-                { "failed_step", n => { FailedStep = n.GetStringValue(); } },
-                { "has_large_files", n => { HasLargeFiles = n.GetBoolValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "import_percent", n => { ImportPercent = n.GetIntValue(); } },
-                { "large_files_count", n => { LargeFilesCount = n.GetIntValue(); } },
-                { "large_files_size", n => { LargeFilesSize = n.GetIntValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "project_choices", n => { ProjectChoices = n.GetCollectionOfObjectValues<Import_project_choices>(Import_project_choices.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "push_percent", n => { PushPercent = n.GetIntValue(); } },
-                { "repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<Import_status>(); } },
-                { "status_text", n => { StatusText = n.GetStringValue(); } },
-                { "svc_root", n => { SvcRoot = n.GetStringValue(); } },
-                { "svn_root", n => { SvnRoot = n.GetStringValue(); } },
-                { "tfvc_project", n => { TfvcProject = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "use_lfs", n => { UseLfs = n.GetBoolValue(); } },
-                { "vcs", n => { Vcs = n.GetStringValue(); } },
-                { "vcs_url", n => { VcsUrl = n.GetStringValue(); } },
+                {"authors_count", n => { AuthorsCount = n.GetIntValue(); } },
+                {"authors_url", n => { AuthorsUrl = n.GetStringValue(); } },
+                {"commit_count", n => { CommitCount = n.GetIntValue(); } },
+                {"error_message", n => { ErrorMessage = n.GetStringValue(); } },
+                {"failed_step", n => { FailedStep = n.GetStringValue(); } },
+                {"has_large_files", n => { HasLargeFiles = n.GetBoolValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"import_percent", n => { ImportPercent = n.GetIntValue(); } },
+                {"large_files_count", n => { LargeFilesCount = n.GetIntValue(); } },
+                {"large_files_size", n => { LargeFilesSize = n.GetIntValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
+                {"project_choices", n => { ProjectChoices = n.GetCollectionOfObjectValues<Import_project_choices>(Import_project_choices.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"push_percent", n => { PushPercent = n.GetIntValue(); } },
+                {"repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
+                {"status", n => { Status = n.GetEnumValue<Import_status>(); } },
+                {"status_text", n => { StatusText = n.GetStringValue(); } },
+                {"svc_root", n => { SvcRoot = n.GetStringValue(); } },
+                {"svn_root", n => { SvnRoot = n.GetStringValue(); } },
+                {"tfvc_project", n => { TfvcProject = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"use_lfs", n => { UseLfs = n.GetBoolValue(); } },
+                {"vcs", n => { Vcs = n.GetStringValue(); } },
+                {"vcs_url", n => { VcsUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

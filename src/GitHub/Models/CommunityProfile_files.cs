@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class CommunityProfile_files : IAdditionalDataHolder, IParsable
+    public class CommunityProfile_files : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -93,13 +92,13 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code_of_conduct", n => { CodeOfConduct = n.GetObjectValue<NullableCodeOfConductSimple>(NullableCodeOfConductSimple.CreateFromDiscriminatorValue); } },
-                { "code_of_conduct_file", n => { CodeOfConductFile = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
-                { "contributing", n => { Contributing = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
-                { "issue_template", n => { IssueTemplate = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
-                { "license", n => { License = n.GetObjectValue<NullableLicenseSimple>(NullableLicenseSimple.CreateFromDiscriminatorValue); } },
-                { "pull_request_template", n => { PullRequestTemplate = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
-                { "readme", n => { Readme = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
+                {"code_of_conduct", n => { CodeOfConduct = n.GetObjectValue<NullableCodeOfConductSimple>(NullableCodeOfConductSimple.CreateFromDiscriminatorValue); } },
+                {"code_of_conduct_file", n => { CodeOfConductFile = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
+                {"contributing", n => { Contributing = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
+                {"issue_template", n => { IssueTemplate = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
+                {"license", n => { License = n.GetObjectValue<NullableLicenseSimple>(NullableLicenseSimple.CreateFromDiscriminatorValue); } },
+                {"pull_request_template", n => { PullRequestTemplate = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
+                {"readme", n => { Readme = n.GetObjectValue<NullableCommunityHealthFile>(NullableCommunityHealthFile.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

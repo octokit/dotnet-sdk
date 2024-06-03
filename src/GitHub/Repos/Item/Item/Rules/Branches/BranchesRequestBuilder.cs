@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Rules.Branches
-{
+namespace GitHub.Repos.Item.Item.Rules.Branches {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rules\branches
     /// </summary>
-    public class BranchesRequestBuilder : BaseRequestBuilder
+    public class BranchesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.rules.branches.item collection</summary>
         /// <param name="position">The name of the branch. Cannot contain wildcard characters. To use wildcard characters in branch names, use [the GraphQL API](https://docs.github.com/graphql).</param>

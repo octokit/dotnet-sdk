@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Contributor Activity
     /// </summary>
-    public class ContributorActivity : IAdditionalDataHolder, IParsable
+    public class ContributorActivity : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -56,9 +55,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "total", n => { Total = n.GetIntValue(); } },
-                { "weeks", n => { Weeks = n.GetCollectionOfObjectValues<ContributorActivity_weeks>(ContributorActivity_weeks.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"total", n => { Total = n.GetIntValue(); } },
+                {"weeks", n => { Weeks = n.GetCollectionOfObjectValues<ContributorActivity_weeks>(ContributorActivity_weeks.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

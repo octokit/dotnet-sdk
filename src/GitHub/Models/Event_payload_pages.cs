@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class Event_payload_pages : IAdditionalDataHolder, IParsable
+    public class Event_payload_pages : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
@@ -85,12 +84,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "page_name", n => { PageName = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "summary", n => { Summary = n.GetStringValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
+                {"action", n => { Action = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"page_name", n => { PageName = n.GetStringValue(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"summary", n => { Summary = n.GetStringValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Protected Branch Required Status Check
     /// </summary>
-    public class ProtectedBranchRequiredStatusCheck : IAdditionalDataHolder, IParsable
+    public class ProtectedBranchRequiredStatusCheck : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -80,12 +79,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "checks", n => { Checks = n.GetCollectionOfObjectValues<ProtectedBranchRequiredStatusCheck_checks>(ProtectedBranchRequiredStatusCheck_checks.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "contexts", n => { Contexts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "contexts_url", n => { ContextsUrl = n.GetStringValue(); } },
-                { "enforcement_level", n => { EnforcementLevel = n.GetStringValue(); } },
-                { "strict", n => { Strict = n.GetBoolValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"checks", n => { Checks = n.GetCollectionOfObjectValues<ProtectedBranchRequiredStatusCheck_checks>(ProtectedBranchRequiredStatusCheck_checks.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"contexts", n => { Contexts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"contexts_url", n => { ContextsUrl = n.GetStringValue(); } },
+                {"enforcement_level", n => { EnforcementLevel = n.GetStringValue(); } },
+                {"strict", n => { Strict = n.GetBoolValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

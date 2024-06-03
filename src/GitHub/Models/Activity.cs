@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Activity
     /// </summary>
-    public class Activity : IAdditionalDataHolder, IParsable
+    public class Activity : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The type of the activity that was performed.</summary>
         public Activity_activity_type? ActivityType { get; set; }
@@ -84,14 +83,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activity_type", n => { ActivityType = n.GetEnumValue<Activity_activity_type>(); } },
-                { "actor", n => { Actor = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "after", n => { After = n.GetStringValue(); } },
-                { "before", n => { Before = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
+                {"activity_type", n => { ActivityType = n.GetEnumValue<Activity_activity_type>(); } },
+                {"actor", n => { Actor = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"after", n => { After = n.GetStringValue(); } },
+                {"before", n => { Before = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"ref", n => { Ref = n.GetStringValue(); } },
+                {"timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Statuses
-{
+namespace GitHub.Repos.Item.Item.Statuses {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\statuses
     /// </summary>
-    public class StatusesRequestBuilder : BaseRequestBuilder
+    public class StatusesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.statuses.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

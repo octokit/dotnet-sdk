@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.App.InstallationRequests
-{
+namespace GitHub.App.InstallationRequests {
     /// <summary>
     /// Builds and executes requests for operations under \app\installation-requests
     /// </summary>
-    public class InstallationRequestsRequestBuilder : BaseRequestBuilder
+    public class InstallationRequestsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="InstallationRequestsRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.App.InstallationRequests
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<IntegrationInstallationRequest>(requestInfo, IntegrationInstallationRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

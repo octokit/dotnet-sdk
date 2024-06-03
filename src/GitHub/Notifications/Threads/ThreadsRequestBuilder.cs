@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Notifications.Threads
-{
+namespace GitHub.Notifications.Threads {
     /// <summary>
     /// Builds and executes requests for operations under \notifications\threads
     /// </summary>
-    public class ThreadsRequestBuilder : BaseRequestBuilder
+    public class ThreadsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.notifications.threads.item collection</summary>
         /// <param name="position">The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user)).</param>

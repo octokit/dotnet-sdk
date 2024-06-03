@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Applications.Item.Token.Scoped
-{
+namespace GitHub.Applications.Item.Token.Scoped {
     #pragma warning disable CS1591
-    public class ScopedPostRequestBody : IAdditionalDataHolder, IParsable
+    public class ScopedPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The access token used to authenticate to the GitHub API.</summary>
@@ -80,12 +79,12 @@ namespace GitHub.Applications.Item.Token.Scoped
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_token", n => { AccessToken = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
-                { "repositories", n => { Repositories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "repository_ids", n => { RepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
-                { "target", n => { Target = n.GetStringValue(); } },
-                { "target_id", n => { TargetId = n.GetIntValue(); } },
+                {"access_token", n => { AccessToken = n.GetStringValue(); } },
+                {"permissions", n => { Permissions = n.GetObjectValue<AppPermissions>(AppPermissions.CreateFromDiscriminatorValue); } },
+                {"repositories", n => { Repositories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"repository_ids", n => { RepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                {"target", n => { Target = n.GetStringValue(); } },
+                {"target_id", n => { TargetId = n.GetIntValue(); } },
             };
         }
         /// <summary>

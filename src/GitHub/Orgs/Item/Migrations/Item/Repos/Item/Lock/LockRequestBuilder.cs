@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Migrations.Item.Repos.Item.Lock
-{
+namespace GitHub.Orgs.Item.Migrations.Item.Repos.Item.Lock {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\migrations\{migration_id}\repos\{repo_name}\lock
     /// </summary>
-    public class LockRequestBuilder : BaseRequestBuilder
+    public class LockRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="LockRequestBuilder"/> and sets the default values.
@@ -50,7 +49,7 @@ namespace GitHub.Orgs.Item.Migrations.Item.Repos.Item.Lock
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

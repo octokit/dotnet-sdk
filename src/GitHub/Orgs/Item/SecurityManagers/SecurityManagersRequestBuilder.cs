@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.SecurityManagers
-{
+namespace GitHub.Orgs.Item.SecurityManagers {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\security-managers
     /// </summary>
-    public class SecurityManagersRequestBuilder : BaseRequestBuilder
+    public class SecurityManagersRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The teams property</summary>
         public TeamsRequestBuilder Teams

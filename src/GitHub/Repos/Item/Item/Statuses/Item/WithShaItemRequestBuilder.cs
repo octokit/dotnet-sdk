@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Statuses.Item
-{
+namespace GitHub.Repos.Item.Item.Statuses.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\statuses\{sha}
     /// </summary>
-    public class WithShaItemRequestBuilder : BaseRequestBuilder
+    public class WithShaItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithShaItemRequestBuilder"/> and sets the default values.

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Gist Commit
     /// </summary>
-    public class GistCommit : IAdditionalDataHolder, IParsable
+    public class GistCommit : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -72,11 +71,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "change_status", n => { ChangeStatus = n.GetObjectValue<GistCommit_change_status>(GistCommit_change_status.CreateFromDiscriminatorValue); } },
-                { "committed_at", n => { CommittedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetStringValue(); } },
+                {"change_status", n => { ChangeStatus = n.GetObjectValue<GistCommit_change_status>(GistCommit_change_status.CreateFromDiscriminatorValue); } },
+                {"committed_at", n => { CommittedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

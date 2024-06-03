@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Branch With Protection
     /// </summary>
-    public class BranchWithProtection : IAdditionalDataHolder, IParsable
+    public class BranchWithProtection : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -90,14 +89,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "commit", n => { Commit = n.GetObjectValue<GitHub.Models.Commit>(GitHub.Models.Commit.CreateFromDiscriminatorValue); } },
-                { "_links", n => { Links = n.GetObjectValue<BranchWithProtection__links>(BranchWithProtection__links.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "protected", n => { Protected = n.GetBoolValue(); } },
-                { "protection", n => { Protection = n.GetObjectValue<BranchProtection>(BranchProtection.CreateFromDiscriminatorValue); } },
-                { "protection_url", n => { ProtectionUrl = n.GetStringValue(); } },
-                { "required_approving_review_count", n => { RequiredApprovingReviewCount = n.GetIntValue(); } },
+                {"commit", n => { Commit = n.GetObjectValue<GitHub.Models.Commit>(GitHub.Models.Commit.CreateFromDiscriminatorValue); } },
+                {"_links", n => { Links = n.GetObjectValue<BranchWithProtection__links>(BranchWithProtection__links.CreateFromDiscriminatorValue); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"pattern", n => { Pattern = n.GetStringValue(); } },
+                {"protected", n => { Protected = n.GetBoolValue(); } },
+                {"protection", n => { Protection = n.GetObjectValue<BranchProtection>(BranchProtection.CreateFromDiscriminatorValue); } },
+                {"protection_url", n => { ProtectionUrl = n.GetStringValue(); } },
+                {"required_approving_review_count", n => { RequiredApprovingReviewCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules
-{
+namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules {
     #pragma warning disable CS1591
-    public class Deployment_protection_rulesPostRequestBody : IAdditionalDataHolder, IParsable
+    public class Deployment_protection_rulesPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,7 +38,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "integration_id", n => { IntegrationId = n.GetIntValue(); } },
+                {"integration_id", n => { IntegrationId = n.GetIntValue(); } },
             };
         }
         /// <summary>

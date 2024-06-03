@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// The GitHub Pages deployment status.
     /// </summary>
-    public class PageDeployment : IAdditionalDataHolder, IParsable
+    public class PageDeployment : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -70,10 +69,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetObjectValue<PageDeployment_id>(PageDeployment_id.CreateFromDiscriminatorValue); } },
-                { "page_url", n => { PageUrl = n.GetStringValue(); } },
-                { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
-                { "status_url", n => { StatusUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetObjectValue<PageDeployment_id>(PageDeployment_id.CreateFromDiscriminatorValue); } },
+                {"page_url", n => { PageUrl = n.GetStringValue(); } },
+                {"preview_url", n => { PreviewUrl = n.GetStringValue(); } },
+                {"status_url", n => { StatusUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -92,7 +91,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        public class PageDeployment_id : IComposedTypeWrapper, IParsable
+        public class PageDeployment_id : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }

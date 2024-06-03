@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Sarifs
-{
+namespace GitHub.Repos.Item.Item.CodeScanning.Sarifs {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\sarifs
     /// </summary>
-    public class SarifsRequestBuilder : BaseRequestBuilder
+    public class SarifsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.codeScanning.sarifs.item collection</summary>
         /// <param name="position">The SARIF ID obtained after uploading.</param>
@@ -68,9 +67,9 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Sarifs
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "503", CodeScanningSarifsReceipt503Error.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"503", CodeScanningSarifsReceipt503Error.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CodeScanningSarifsReceipt>(requestInfo, CodeScanningSarifsReceipt.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

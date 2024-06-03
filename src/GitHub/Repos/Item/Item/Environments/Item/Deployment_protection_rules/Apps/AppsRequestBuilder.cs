@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.Apps
-{
+namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.Apps {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}\deployment_protection_rules\apps
     /// </summary>
-    public class AppsRequestBuilder : BaseRequestBuilder
+    public class AppsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="AppsRequestBuilder"/> and sets the default values.

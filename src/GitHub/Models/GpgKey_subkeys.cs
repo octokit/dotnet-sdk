@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class GpgKey_subkeys : IAdditionalDataHolder, IParsable
+    public class GpgKey_subkeys : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -107,20 +106,20 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "can_certify", n => { CanCertify = n.GetBoolValue(); } },
-                { "can_encrypt_comms", n => { CanEncryptComms = n.GetBoolValue(); } },
-                { "can_encrypt_storage", n => { CanEncryptStorage = n.GetBoolValue(); } },
-                { "can_sign", n => { CanSign = n.GetBoolValue(); } },
-                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "emails", n => { Emails = n.GetCollectionOfObjectValues<GpgKey_subkeys_emails>(GpgKey_subkeys_emails.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "key_id", n => { KeyId = n.GetStringValue(); } },
-                { "primary_key_id", n => { PrimaryKeyId = n.GetIntValue(); } },
-                { "public_key", n => { PublicKey = n.GetStringValue(); } },
-                { "raw_key", n => { RawKey = n.GetStringValue(); } },
-                { "revoked", n => { Revoked = n.GetBoolValue(); } },
-                { "subkeys", n => { Subkeys = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                {"can_certify", n => { CanCertify = n.GetBoolValue(); } },
+                {"can_encrypt_comms", n => { CanEncryptComms = n.GetBoolValue(); } },
+                {"can_encrypt_storage", n => { CanEncryptStorage = n.GetBoolValue(); } },
+                {"can_sign", n => { CanSign = n.GetBoolValue(); } },
+                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
+                {"emails", n => { Emails = n.GetCollectionOfObjectValues<GpgKey_subkeys_emails>(GpgKey_subkeys_emails.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"expires_at", n => { ExpiresAt = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"key_id", n => { KeyId = n.GetStringValue(); } },
+                {"primary_key_id", n => { PrimaryKeyId = n.GetIntValue(); } },
+                {"public_key", n => { PublicKey = n.GetStringValue(); } },
+                {"raw_key", n => { RawKey = n.GetStringValue(); } },
+                {"revoked", n => { Revoked = n.GetBoolValue(); } },
+                {"subkeys", n => { Subkeys = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

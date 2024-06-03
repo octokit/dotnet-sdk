@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class PullRequestMinimal : IAdditionalDataHolder, IParsable
+    public class PullRequestMinimal : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -65,11 +64,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "base", n => { Base = n.GetObjectValue<PullRequestMinimal_base>(PullRequestMinimal_base.CreateFromDiscriminatorValue); } },
-                { "head", n => { Head = n.GetObjectValue<PullRequestMinimal_head>(PullRequestMinimal_head.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"base", n => { Base = n.GetObjectValue<PullRequestMinimal_base>(PullRequestMinimal_base.CreateFromDiscriminatorValue); } },
+                {"head", n => { Head = n.GetObjectValue<PullRequestMinimal_head>(PullRequestMinimal_head.CreateFromDiscriminatorValue); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"number", n => { Number = n.GetIntValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

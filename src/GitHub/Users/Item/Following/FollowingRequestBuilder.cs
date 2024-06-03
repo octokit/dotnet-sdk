@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Following
-{
+namespace GitHub.Users.Item.Following {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\following
     /// </summary>
-    public class FollowingRequestBuilder : BaseRequestBuilder
+    public class FollowingRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.users.item.following.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.User.Email
-{
+namespace GitHub.User.Email {
     /// <summary>
     /// Builds and executes requests for operations under \user\email
     /// </summary>
-    public class EmailRequestBuilder : BaseRequestBuilder
+    public class EmailRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The visibility property</summary>
         public VisibilityRequestBuilder Visibility

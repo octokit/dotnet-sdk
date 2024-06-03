@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users
-{
+namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users {
     /// <summary>
     /// The total number of seat assignments cancelled.
     /// </summary>
-    public class Selected_usersDeleteResponse : IAdditionalDataHolder, IParsable
+    public class Selected_usersDeleteResponse : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -40,7 +39,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "seats_cancelled", n => { SeatsCancelled = n.GetIntValue(); } },
+                {"seats_cancelled", n => { SeatsCancelled = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Teams.Item.Projects
-{
+namespace GitHub.Teams.Item.Projects {
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\projects
     /// </summary>
-    public class ProjectsRequestBuilder : BaseRequestBuilder
+    public class ProjectsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.teams.item.projects.item collection</summary>
         /// <param name="position">The unique identifier of the project.</param>
@@ -66,7 +65,7 @@ namespace GitHub.Teams.Item.Projects
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<TeamProject>(requestInfo, TeamProject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

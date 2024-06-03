@@ -10,12 +10,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Stats
-{
+namespace GitHub.Repos.Item.Item.Stats {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats
     /// </summary>
-    public class StatsRequestBuilder : BaseRequestBuilder
+    public class StatsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The code_frequency property</summary>
         public Code_frequencyRequestBuilder Code_frequency

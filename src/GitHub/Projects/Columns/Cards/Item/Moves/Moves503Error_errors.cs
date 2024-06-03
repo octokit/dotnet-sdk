@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Projects.Columns.Cards.Item.Moves
-{
+namespace GitHub.Projects.Columns.Cards.Item.Moves {
     #pragma warning disable CS1591
-    public class Moves503Error_errors : IAdditionalDataHolder, IParsable
+    public class Moves503Error_errors : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -53,8 +52,8 @@ namespace GitHub.Projects.Columns.Cards.Item.Moves
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetStringValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
             };
         }
         /// <summary>

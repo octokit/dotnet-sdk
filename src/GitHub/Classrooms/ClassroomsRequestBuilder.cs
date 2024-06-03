@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Classrooms
-{
+namespace GitHub.Classrooms {
     /// <summary>
     /// Builds and executes requests for operations under \classrooms
     /// </summary>
-    public class ClassroomsRequestBuilder : BaseRequestBuilder
+    public class ClassroomsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.classrooms.item collection</summary>
         /// <param name="position">The unique identifier of the classroom.</param>

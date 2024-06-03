@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_signatures
-{
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_signatures {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\required_signatures
     /// </summary>
-    public class Required_signaturesRequestBuilder : BaseRequestBuilder
+    public class Required_signaturesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="Required_signaturesRequestBuilder"/> and sets the default values.
@@ -50,7 +49,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_signatures
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -74,7 +73,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_signatures
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ProtectedBranchAdminEnforced>(requestInfo, ProtectedBranchAdminEnforced.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,7 +97,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_signatures
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ProtectedBranchAdminEnforced>(requestInfo, ProtectedBranchAdminEnforced.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

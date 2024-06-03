@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Actions.Secrets.Item
-{
+namespace GitHub.Orgs.Item.Actions.Secrets.Item {
     #pragma warning disable CS1591
-    public class WithSecret_namePutRequestBody : IAdditionalDataHolder, IParsable
+    public class WithSecret_namePutRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -63,10 +62,10 @@ namespace GitHub.Orgs.Item.Actions.Secrets.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "encrypted_value", n => { EncryptedValue = n.GetStringValue(); } },
-                { "key_id", n => { KeyId = n.GetStringValue(); } },
-                { "selected_repository_ids", n => { SelectedRepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
-                { "visibility", n => { Visibility = n.GetEnumValue<WithSecret_namePutRequestBody_visibility>(); } },
+                {"encrypted_value", n => { EncryptedValue = n.GetStringValue(); } },
+                {"key_id", n => { KeyId = n.GetStringValue(); } },
+                {"selected_repository_ids", n => { SelectedRepositoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                {"visibility", n => { Visibility = n.GetEnumValue<WithSecret_namePutRequestBody_visibility>(); } },
             };
         }
         /// <summary>

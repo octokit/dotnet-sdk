@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Codespaces.Item.Exports
-{
+namespace GitHub.User.Codespaces.Item.Exports {
     /// <summary>
     /// Builds and executes requests for operations under \user\codespaces\{codespace_name}\exports
     /// </summary>
-    public class ExportsRequestBuilder : BaseRequestBuilder
+    public class ExportsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.user.codespaces.item.exports.item collection</summary>
         /// <param name="position">The ID of the export operation, or `latest`. Currently only `latest` is currently supported.</param>
@@ -68,11 +67,11 @@ namespace GitHub.User.Codespaces.Item.Exports
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CodespaceExportDetails>(requestInfo, CodespaceExportDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

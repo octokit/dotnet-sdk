@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// User Search Result Item
     /// </summary>
-    public class UserSearchResultItem : IAdditionalDataHolder, IParsable
+    public class UserSearchResultItem : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -244,40 +243,40 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                { "bio", n => { Bio = n.GetStringValue(); } },
-                { "blog", n => { Blog = n.GetStringValue(); } },
-                { "company", n => { Company = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "events_url", n => { EventsUrl = n.GetStringValue(); } },
-                { "followers", n => { Followers = n.GetIntValue(); } },
-                { "followers_url", n => { FollowersUrl = n.GetStringValue(); } },
-                { "following", n => { Following = n.GetIntValue(); } },
-                { "following_url", n => { FollowingUrl = n.GetStringValue(); } },
-                { "gists_url", n => { GistsUrl = n.GetStringValue(); } },
-                { "gravatar_id", n => { GravatarId = n.GetStringValue(); } },
-                { "hireable", n => { Hireable = n.GetBoolValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "location", n => { Location = n.GetStringValue(); } },
-                { "login", n => { Login = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "organizations_url", n => { OrganizationsUrl = n.GetStringValue(); } },
-                { "public_gists", n => { PublicGists = n.GetIntValue(); } },
-                { "public_repos", n => { PublicRepos = n.GetIntValue(); } },
-                { "received_events_url", n => { ReceivedEventsUrl = n.GetStringValue(); } },
-                { "repos_url", n => { ReposUrl = n.GetStringValue(); } },
-                { "score", n => { Score = n.GetDoubleValue(); } },
-                { "site_admin", n => { SiteAdmin = n.GetBoolValue(); } },
-                { "starred_url", n => { StarredUrl = n.GetStringValue(); } },
-                { "subscriptions_url", n => { SubscriptionsUrl = n.GetStringValue(); } },
-                { "suspended_at", n => { SuspendedAt = n.GetDateTimeOffsetValue(); } },
-                { "text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<Users>(Users.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
+                {"bio", n => { Bio = n.GetStringValue(); } },
+                {"blog", n => { Blog = n.GetStringValue(); } },
+                {"company", n => { Company = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"events_url", n => { EventsUrl = n.GetStringValue(); } },
+                {"followers", n => { Followers = n.GetIntValue(); } },
+                {"followers_url", n => { FollowersUrl = n.GetStringValue(); } },
+                {"following", n => { Following = n.GetIntValue(); } },
+                {"following_url", n => { FollowingUrl = n.GetStringValue(); } },
+                {"gists_url", n => { GistsUrl = n.GetStringValue(); } },
+                {"gravatar_id", n => { GravatarId = n.GetStringValue(); } },
+                {"hireable", n => { Hireable = n.GetBoolValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"location", n => { Location = n.GetStringValue(); } },
+                {"login", n => { Login = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"organizations_url", n => { OrganizationsUrl = n.GetStringValue(); } },
+                {"public_gists", n => { PublicGists = n.GetIntValue(); } },
+                {"public_repos", n => { PublicRepos = n.GetIntValue(); } },
+                {"received_events_url", n => { ReceivedEventsUrl = n.GetStringValue(); } },
+                {"repos_url", n => { ReposUrl = n.GetStringValue(); } },
+                {"score", n => { Score = n.GetDoubleValue(); } },
+                {"site_admin", n => { SiteAdmin = n.GetBoolValue(); } },
+                {"starred_url", n => { StarredUrl = n.GetStringValue(); } },
+                {"subscriptions_url", n => { SubscriptionsUrl = n.GetStringValue(); } },
+                {"suspended_at", n => { SuspendedAt = n.GetDateTimeOffsetValue(); } },
+                {"text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<Users>(Users.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

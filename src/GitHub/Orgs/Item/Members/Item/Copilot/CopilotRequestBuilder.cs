@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Members.Item.Copilot
-{
+namespace GitHub.Orgs.Item.Members.Item.Copilot {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\members\{username}\copilot
     /// </summary>
-    public class CopilotRequestBuilder : BaseRequestBuilder
+    public class CopilotRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="CopilotRequestBuilder"/> and sets the default values.
@@ -54,10 +53,10 @@ namespace GitHub.Orgs.Item.Members.Item.Copilot
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CopilotSeatDetails>(requestInfo, CopilotSeatDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

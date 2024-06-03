@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Item
-{
+namespace GitHub.Orgs.Item.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\{security_product}
     /// </summary>
-    public class WithSecurity_productItemRequestBuilder : BaseRequestBuilder
+    public class WithSecurity_productItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.item.item collection</summary>
         /// <param name="position">The action to take.`enable_all` means to enable the specified security feature for all repositories in the organization.`disable_all` means to disable the specified security feature for all repositories in the organization.</param>

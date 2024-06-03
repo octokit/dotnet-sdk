@@ -21,12 +21,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item
-{
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}
     /// </summary>
-    public class WithRun_ItemRequestBuilder : BaseRequestBuilder
+    public class WithRun_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The approvals property</summary>
         public ApprovalsRequestBuilder Approvals

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Gitignore.Templates
-{
+namespace GitHub.Gitignore.Templates {
     /// <summary>
     /// Builds and executes requests for operations under \gitignore\templates
     /// </summary>
-    public class TemplatesRequestBuilder : BaseRequestBuilder
+    public class TemplatesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.gitignore.templates.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

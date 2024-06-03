@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Trees
-{
+namespace GitHub.Repos.Item.Item.Git.Trees {
     #pragma warning disable CS1591
-    public class TreesPostRequestBody_tree : IAdditionalDataHolder, IParsable
+    public class TreesPostRequestBody_tree : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -65,11 +64,11 @@ namespace GitHub.Repos.Item.Item.Git.Trees
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<TreesPostRequestBody_tree_mode>(); } },
-                { "path", n => { Path = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<TreesPostRequestBody_tree_type>(); } },
+                {"content", n => { Content = n.GetStringValue(); } },
+                {"mode", n => { Mode = n.GetEnumValue<TreesPostRequestBody_tree_mode>(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<TreesPostRequestBody_tree_type>(); } },
             };
         }
         /// <summary>

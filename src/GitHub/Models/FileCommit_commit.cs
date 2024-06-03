@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class FileCommit_commit : IAdditionalDataHolder, IParsable
+    public class FileCommit_commit : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -117,16 +116,16 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetObjectValue<FileCommit_commit_author>(FileCommit_commit_author.CreateFromDiscriminatorValue); } },
-                { "committer", n => { Committer = n.GetObjectValue<FileCommit_commit_committer>(FileCommit_commit_committer.CreateFromDiscriminatorValue); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "parents", n => { Parents = n.GetCollectionOfObjectValues<FileCommit_commit_parents>(FileCommit_commit_parents.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "tree", n => { Tree = n.GetObjectValue<FileCommit_commit_tree>(FileCommit_commit_tree.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "verification", n => { Verification = n.GetObjectValue<FileCommit_commit_verification>(FileCommit_commit_verification.CreateFromDiscriminatorValue); } },
+                {"author", n => { Author = n.GetObjectValue<FileCommit_commit_author>(FileCommit_commit_author.CreateFromDiscriminatorValue); } },
+                {"committer", n => { Committer = n.GetObjectValue<FileCommit_commit_committer>(FileCommit_commit_committer.CreateFromDiscriminatorValue); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"parents", n => { Parents = n.GetCollectionOfObjectValues<FileCommit_commit_parents>(FileCommit_commit_parents.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"tree", n => { Tree = n.GetObjectValue<FileCommit_commit_tree>(FileCommit_commit_tree.CreateFromDiscriminatorValue); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"verification", n => { Verification = n.GetObjectValue<FileCommit_commit_verification>(FileCommit_commit_verification.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
