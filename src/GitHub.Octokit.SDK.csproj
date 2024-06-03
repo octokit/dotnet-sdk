@@ -43,6 +43,5 @@
     <PackageReference Include="Microsoft.Kiota.Authentication.Azure" Version="1.1.5" />
     <None Include="NugetREADME.md" Pack="true" PackagePath="\" />
     <None Include="octokit.png" Pack="true" PackagePath="\" />
-    <PackageReference Include="Polly" Version="8.4.0" />
   </ItemGroup>
 </Project>
