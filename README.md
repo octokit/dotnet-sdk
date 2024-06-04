@@ -68,8 +68,11 @@ Currently this project is fairly simple (we hope it can stay that way).  All of 
 ## Testing
 
 - Run tests: `dotnet test`
-- Run coverage: `dotnet test /p:CollectCoverage=true`
-
+- Generate test coverage: `dotnet test -p:CollectCoverage=true -p:CoverletOutput=coverage/ -p:CoverletOutputFormat=opencover -p:ExcludeByFile="$(pwd)/src/GitHub/**/*.cs"`
+- Generate test report: `dotnet reportgenerator -targetdir:$(pwd)/test/coverage/Report/ -reports:$(pwd)/test/coverage/coverage.opencover.xml`
+    - Note that this requires installing [ReportGenerator](https://github.com/danielpalme/ReportGenerator), whose installation instructions can be found [here](https://github.com/danielpalme/ReportGenerator?tab=readme-ov-file#install-the-package-matching-your-platform-and-needs)
+    - We're using the `dotnet-reportgenerator-globaltool`, so follow that set of installation instructions
+- The test report can be viewed by opening the generated report file (logged to CLI output, something like `/path/to/your/repo/dotnet-sdk/test/coverage/Report/index.html`) in a browser
 
 ## More details on this SDK and repo
 
