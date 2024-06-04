@@ -113,3 +113,4 @@ tools/*
 dotnet-tools.json
 *.pem
 coveragereport/*
+.config/

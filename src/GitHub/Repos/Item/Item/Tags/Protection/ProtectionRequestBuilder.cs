@@ -18,6 +18,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
         /// <summary>Gets an item from the GitHub.repos.item.item.tags.protection.item collection</summary>
         /// <param name="position">The unique identifier of the tag protection.</param>
         /// <returns>A <see cref="WithTag_protection_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public WithTag_protection_ItemRequestBuilder this[int position]
         {
             get
@@ -44,14 +45,15 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
         {
         }
         /// <summary>
-        /// This returns the tag protection states of a repository.This information is only available to repository administrators.
-        /// API method documentation <see href="https://docs.github.com/rest/repos/tags#list-tag-protection-states-for-a-repository" />
+        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)&quot; endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
+        /// API method documentation <see href="https://docs.github.com/rest/repos/tags#deprecated---list-tag-protection-states-for-a-repository" />
         /// </summary>
         /// <returns>A List&lt;TagProtection&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="BasicError">When receiving a 403 status code</exception>
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<TagProtection>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,8 +73,8 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
-        /// API method documentation <see href="https://docs.github.com/rest/repos/tags#create-a-tag-protection-state-for-a-repository" />
+        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)&quot; endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
+        /// API method documentation <see href="https://docs.github.com/rest/repos/tags#deprecated---create-a-tag-protection-state-for-a-repository" />
         /// </summary>
         /// <returns>A <see cref="TagProtection"/></returns>
         /// <param name="body">The request body</param>
@@ -80,6 +82,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="BasicError">When receiving a 403 status code</exception>
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<TagProtection?> PostAsync(ProtectionPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -99,10 +102,11 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
             return await RequestAdapter.SendAsync<TagProtection>(requestInfo, TagProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This returns the tag protection states of a repository.This information is only available to repository administrators.
+        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)&quot; endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -118,11 +122,12 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
             return requestInfo;
         }
         /// <summary>
-        /// This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
+        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)&quot; endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(ProtectionPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -144,6 +149,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
         /// </summary>
         /// <returns>A <see cref="ProtectionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public ProtectionRequestBuilder WithUrl(string rawUrl)
         {
             return new ProtectionRequestBuilder(rawUrl, RequestAdapter);
