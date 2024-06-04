@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class CodeScanningAlertItems : IAdditionalDataHolder, IParsable
+    public class CodeScanningAlertItems : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -115,21 +114,21 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "dismissed_at", n => { DismissedAt = n.GetDateTimeOffsetValue(); } },
-                { "dismissed_by", n => { DismissedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
-                { "dismissed_reason", n => { DismissedReason = n.GetEnumValue<CodeScanningAlertDismissedReason>(); } },
-                { "fixed_at", n => { FixedAt = n.GetDateTimeOffsetValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "instances_url", n => { InstancesUrl = n.GetStringValue(); } },
-                { "most_recent_instance", n => { MostRecentInstance = n.GetObjectValue<CodeScanningAlertInstance>(CodeScanningAlertInstance.CreateFromDiscriminatorValue); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "rule", n => { Rule = n.GetObjectValue<CodeScanningAlertRuleSummary>(CodeScanningAlertRuleSummary.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<CodeScanningAlertState>(); } },
-                { "tool", n => { Tool = n.GetObjectValue<CodeScanningAnalysisTool>(CodeScanningAnalysisTool.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"dismissed_at", n => { DismissedAt = n.GetDateTimeOffsetValue(); } },
+                {"dismissed_by", n => { DismissedBy = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
+                {"dismissed_reason", n => { DismissedReason = n.GetEnumValue<CodeScanningAlertDismissedReason>(); } },
+                {"fixed_at", n => { FixedAt = n.GetDateTimeOffsetValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"instances_url", n => { InstancesUrl = n.GetStringValue(); } },
+                {"most_recent_instance", n => { MostRecentInstance = n.GetObjectValue<CodeScanningAlertInstance>(CodeScanningAlertInstance.CreateFromDiscriminatorValue); } },
+                {"number", n => { Number = n.GetIntValue(); } },
+                {"rule", n => { Rule = n.GetObjectValue<CodeScanningAlertRuleSummary>(CodeScanningAlertRuleSummary.CreateFromDiscriminatorValue); } },
+                {"state", n => { State = n.GetEnumValue<CodeScanningAlertState>(); } },
+                {"tool", n => { Tool = n.GetObjectValue<CodeScanningAnalysisTool>(CodeScanningAnalysisTool.CreateFromDiscriminatorValue); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

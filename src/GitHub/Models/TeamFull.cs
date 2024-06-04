@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Groups of organization members that gives permissions on specified repositories.
     /// </summary>
-    public class TeamFull : IAdditionalDataHolder, IParsable
+    public class TeamFull : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -148,25 +147,25 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "ldap_dn", n => { LdapDn = n.GetStringValue(); } },
-                { "members_count", n => { MembersCount = n.GetIntValue(); } },
-                { "members_url", n => { MembersUrl = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "notification_setting", n => { NotificationSetting = n.GetEnumValue<TeamFull_notification_setting>(); } },
-                { "organization", n => { Organization = n.GetObjectValue<TeamOrganization>(TeamOrganization.CreateFromDiscriminatorValue); } },
-                { "parent", n => { Parent = n.GetObjectValue<NullableTeamSimple>(NullableTeamSimple.CreateFromDiscriminatorValue); } },
-                { "permission", n => { Permission = n.GetStringValue(); } },
-                { "privacy", n => { Privacy = n.GetEnumValue<TeamFull_privacy>(); } },
-                { "repos_count", n => { ReposCount = n.GetIntValue(); } },
-                { "repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"ldap_dn", n => { LdapDn = n.GetStringValue(); } },
+                {"members_count", n => { MembersCount = n.GetIntValue(); } },
+                {"members_url", n => { MembersUrl = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"notification_setting", n => { NotificationSetting = n.GetEnumValue<TeamFull_notification_setting>(); } },
+                {"organization", n => { Organization = n.GetObjectValue<TeamOrganization>(TeamOrganization.CreateFromDiscriminatorValue); } },
+                {"parent", n => { Parent = n.GetObjectValue<NullableTeamSimple>(NullableTeamSimple.CreateFromDiscriminatorValue); } },
+                {"permission", n => { Permission = n.GetStringValue(); } },
+                {"privacy", n => { Privacy = n.GetEnumValue<TeamFull_privacy>(); } },
+                {"repos_count", n => { ReposCount = n.GetIntValue(); } },
+                {"repositories_url", n => { RepositoriesUrl = n.GetStringValue(); } },
+                {"slug", n => { Slug = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

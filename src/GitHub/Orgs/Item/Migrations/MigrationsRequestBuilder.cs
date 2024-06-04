@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Migrations
-{
+namespace GitHub.Orgs.Item.Migrations {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\migrations
     /// </summary>
-    public class MigrationsRequestBuilder : BaseRequestBuilder
+    public class MigrationsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.orgs.item.migrations.item collection</summary>
         /// <param name="position">The unique identifier of the migration.</param>
@@ -87,8 +86,8 @@ namespace GitHub.Orgs.Item.Migrations
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Migration>(requestInfo, Migration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

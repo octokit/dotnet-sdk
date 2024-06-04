@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pages.Health
-{
+namespace GitHub.Repos.Item.Item.Pages.Health {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pages\health
     /// </summary>
-    public class HealthRequestBuilder : BaseRequestBuilder
+    public class HealthRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="HealthRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Pages.Health
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PagesHealthCheck>(requestInfo, PagesHealthCheck.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

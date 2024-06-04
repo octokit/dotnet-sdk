@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// An SSH key granting access to a single repository.
     /// </summary>
-    public class DeployKey : IAdditionalDataHolder, IParsable
+    public class DeployKey : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The added_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,15 +91,15 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "added_by", n => { AddedBy = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "key", n => { Key = n.GetStringValue(); } },
-                { "last_used", n => { LastUsed = n.GetStringValue(); } },
-                { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "verified", n => { Verified = n.GetBoolValue(); } },
+                {"added_by", n => { AddedBy = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"key", n => { Key = n.GetStringValue(); } },
+                {"last_used", n => { LastUsed = n.GetStringValue(); } },
+                {"read_only", n => { ReadOnly = n.GetBoolValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"verified", n => { Verified = n.GetBoolValue(); } },
             };
         }
         /// <summary>

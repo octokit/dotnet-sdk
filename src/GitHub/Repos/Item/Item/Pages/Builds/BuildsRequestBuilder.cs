@@ -10,12 +10,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pages.Builds
-{
+namespace GitHub.Repos.Item.Item.Pages.Builds {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pages\builds
     /// </summary>
-    public class BuildsRequestBuilder : BaseRequestBuilder
+    public class BuildsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The latest property</summary>
         public LatestRequestBuilder Latest

@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Marketplace_listing.Stubbed.Plans.Item
-{
+namespace GitHub.Marketplace_listing.Stubbed.Plans.Item {
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\stubbed\plans\{plan_id}
     /// </summary>
-    public class WithPlan_ItemRequestBuilder : BaseRequestBuilder
+    public class WithPlan_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The accounts property</summary>
         public AccountsRequestBuilder Accounts

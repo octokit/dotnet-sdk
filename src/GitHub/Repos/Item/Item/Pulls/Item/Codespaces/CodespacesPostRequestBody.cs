@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item.Codespaces
-{
+namespace GitHub.Repos.Item.Item.Pulls.Item.Codespaces {
     #pragma warning disable CS1591
-    public class CodespacesPostRequestBody : IAdditionalDataHolder, IParsable
+    public class CodespacesPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -93,16 +92,16 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Codespaces
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "client_ip", n => { ClientIp = n.GetStringValue(); } },
-                { "devcontainer_path", n => { DevcontainerPath = n.GetStringValue(); } },
-                { "display_name", n => { DisplayName = n.GetStringValue(); } },
-                { "geo", n => { Geo = n.GetEnumValue<CodespacesPostRequestBody_geo>(); } },
-                { "idle_timeout_minutes", n => { IdleTimeoutMinutes = n.GetIntValue(); } },
-                { "location", n => { Location = n.GetStringValue(); } },
-                { "machine", n => { Machine = n.GetStringValue(); } },
-                { "multi_repo_permissions_opt_out", n => { MultiRepoPermissionsOptOut = n.GetBoolValue(); } },
-                { "retention_period_minutes", n => { RetentionPeriodMinutes = n.GetIntValue(); } },
-                { "working_directory", n => { WorkingDirectory = n.GetStringValue(); } },
+                {"client_ip", n => { ClientIp = n.GetStringValue(); } },
+                {"devcontainer_path", n => { DevcontainerPath = n.GetStringValue(); } },
+                {"display_name", n => { DisplayName = n.GetStringValue(); } },
+                {"geo", n => { Geo = n.GetEnumValue<CodespacesPostRequestBody_geo>(); } },
+                {"idle_timeout_minutes", n => { IdleTimeoutMinutes = n.GetIntValue(); } },
+                {"location", n => { Location = n.GetStringValue(); } },
+                {"machine", n => { Machine = n.GetStringValue(); } },
+                {"multi_repo_permissions_opt_out", n => { MultiRepoPermissionsOptOut = n.GetBoolValue(); } },
+                {"retention_period_minutes", n => { RetentionPeriodMinutes = n.GetIntValue(); } },
+                {"working_directory", n => { WorkingDirectory = n.GetStringValue(); } },
             };
         }
         /// <summary>

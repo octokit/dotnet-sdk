@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Settings
-{
+namespace GitHub.Orgs.Item.Settings {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\settings
     /// </summary>
-    public class SettingsRequestBuilder : BaseRequestBuilder
+    public class SettingsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The billing property</summary>
         public BillingRequestBuilder Billing

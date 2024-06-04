@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Pull Request Simple
     /// </summary>
-    public class PullRequestSimple : IAdditionalDataHolder, IParsable
+    public class PullRequestSimple : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The active_lock_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -272,42 +271,42 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "active_lock_reason", n => { ActiveLockReason = n.GetStringValue(); } },
-                { "assignee", n => { Assignee = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "assignees", n => { Assignees = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
-                { "auto_merge", n => { AutoMerge = n.GetObjectValue<GitHub.Models.AutoMerge>(GitHub.Models.AutoMerge.CreateFromDiscriminatorValue); } },
-                { "base", n => { Base = n.GetObjectValue<PullRequestSimple_base>(PullRequestSimple_base.CreateFromDiscriminatorValue); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
-                { "comments_url", n => { CommentsUrl = n.GetStringValue(); } },
-                { "commits_url", n => { CommitsUrl = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "diff_url", n => { DiffUrl = n.GetStringValue(); } },
-                { "draft", n => { Draft = n.GetBoolValue(); } },
-                { "head", n => { Head = n.GetObjectValue<PullRequestSimple_head>(PullRequestSimple_head.CreateFromDiscriminatorValue); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "issue_url", n => { IssueUrl = n.GetStringValue(); } },
-                { "labels", n => { Labels = n.GetCollectionOfObjectValues<PullRequestSimple_labels>(PullRequestSimple_labels.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "_links", n => { Links = n.GetObjectValue<PullRequestSimple__links>(PullRequestSimple__links.CreateFromDiscriminatorValue); } },
-                { "locked", n => { Locked = n.GetBoolValue(); } },
-                { "merge_commit_sha", n => { MergeCommitSha = n.GetStringValue(); } },
-                { "merged_at", n => { MergedAt = n.GetDateTimeOffsetValue(); } },
-                { "milestone", n => { Milestone = n.GetObjectValue<NullableMilestone>(NullableMilestone.CreateFromDiscriminatorValue); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "patch_url", n => { PatchUrl = n.GetStringValue(); } },
-                { "requested_reviewers", n => { RequestedReviewers = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "requested_teams", n => { RequestedTeams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "review_comment_url", n => { ReviewCommentUrl = n.GetStringValue(); } },
-                { "review_comments_url", n => { ReviewCommentsUrl = n.GetStringValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
-                { "statuses_url", n => { StatusesUrl = n.GetStringValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"active_lock_reason", n => { ActiveLockReason = n.GetStringValue(); } },
+                {"assignee", n => { Assignee = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"assignees", n => { Assignees = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"author_association", n => { AuthorAssociation = n.GetEnumValue<AuthorAssociation>(); } },
+                {"auto_merge", n => { AutoMerge = n.GetObjectValue<GitHub.Models.AutoMerge>(GitHub.Models.AutoMerge.CreateFromDiscriminatorValue); } },
+                {"base", n => { Base = n.GetObjectValue<PullRequestSimple_base>(PullRequestSimple_base.CreateFromDiscriminatorValue); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"closed_at", n => { ClosedAt = n.GetDateTimeOffsetValue(); } },
+                {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
+                {"commits_url", n => { CommitsUrl = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"diff_url", n => { DiffUrl = n.GetStringValue(); } },
+                {"draft", n => { Draft = n.GetBoolValue(); } },
+                {"head", n => { Head = n.GetObjectValue<PullRequestSimple_head>(PullRequestSimple_head.CreateFromDiscriminatorValue); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"issue_url", n => { IssueUrl = n.GetStringValue(); } },
+                {"labels", n => { Labels = n.GetCollectionOfObjectValues<PullRequestSimple_labels>(PullRequestSimple_labels.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"_links", n => { Links = n.GetObjectValue<PullRequestSimple__links>(PullRequestSimple__links.CreateFromDiscriminatorValue); } },
+                {"locked", n => { Locked = n.GetBoolValue(); } },
+                {"merge_commit_sha", n => { MergeCommitSha = n.GetStringValue(); } },
+                {"merged_at", n => { MergedAt = n.GetDateTimeOffsetValue(); } },
+                {"milestone", n => { Milestone = n.GetObjectValue<NullableMilestone>(NullableMilestone.CreateFromDiscriminatorValue); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"number", n => { Number = n.GetIntValue(); } },
+                {"patch_url", n => { PatchUrl = n.GetStringValue(); } },
+                {"requested_reviewers", n => { RequestedReviewers = n.GetCollectionOfObjectValues<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"requested_teams", n => { RequestedTeams = n.GetCollectionOfObjectValues<Team>(Team.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"review_comment_url", n => { ReviewCommentUrl = n.GetStringValue(); } },
+                {"review_comments_url", n => { ReviewCommentsUrl = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"statuses_url", n => { StatusesUrl = n.GetStringValue(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"user", n => { User = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

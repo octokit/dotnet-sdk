@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.AppManifests.Item
-{
+namespace GitHub.AppManifests.Item {
     /// <summary>
     /// Builds and executes requests for operations under \app-manifests\{code}
     /// </summary>
-    public class WithCodeItemRequestBuilder : BaseRequestBuilder
+    public class WithCodeItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The conversions property</summary>
         public ConversionsRequestBuilder Conversions

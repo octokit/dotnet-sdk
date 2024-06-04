@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Search.Repositories
-{
+namespace GitHub.Search.Repositories {
     /// <summary>
     /// Builds and executes requests for operations under \search\repositories
     /// </summary>
-    public class RepositoriesRequestBuilder : BaseRequestBuilder
+    public class RepositoriesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="RepositoriesRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Search.Repositories
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
-                { "503", Repositories503Error.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
+                {"503", Repositories503Error.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RepositoriesGetResponse>(requestInfo, RepositoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

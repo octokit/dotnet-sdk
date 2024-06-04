@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns
-{
+namespace GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-suites\{check_suite_id}\check-runs
     /// </summary>
-    public class CheckRunsRequestBuilder : BaseRequestBuilder
+    public class CheckRunsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="CheckRunsRequestBuilder"/> and sets the default values.

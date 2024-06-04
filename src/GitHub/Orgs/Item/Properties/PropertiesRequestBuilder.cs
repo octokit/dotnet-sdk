@@ -7,12 +7,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Properties
-{
+namespace GitHub.Orgs.Item.Properties {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\properties
     /// </summary>
-    public class PropertiesRequestBuilder : BaseRequestBuilder
+    public class PropertiesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The schema property</summary>
         public SchemaRequestBuilder Schema

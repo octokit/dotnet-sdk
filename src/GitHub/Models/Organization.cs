@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// GitHub account for managing multiple users, teams, and repositories
     /// </summary>
-    public class Organization : IAdditionalDataHolder, IParsable
+    public class Organization : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -210,35 +209,35 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
-                { "blog", n => { Blog = n.GetStringValue(); } },
-                { "company", n => { Company = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "events_url", n => { EventsUrl = n.GetStringValue(); } },
-                { "followers", n => { Followers = n.GetIntValue(); } },
-                { "following", n => { Following = n.GetIntValue(); } },
-                { "has_organization_projects", n => { HasOrganizationProjects = n.GetBoolValue(); } },
-                { "has_repository_projects", n => { HasRepositoryProjects = n.GetBoolValue(); } },
-                { "hooks_url", n => { HooksUrl = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "is_verified", n => { IsVerified = n.GetBoolValue(); } },
-                { "issues_url", n => { IssuesUrl = n.GetStringValue(); } },
-                { "location", n => { Location = n.GetStringValue(); } },
-                { "login", n => { Login = n.GetStringValue(); } },
-                { "members_url", n => { MembersUrl = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "plan", n => { Plan = n.GetObjectValue<Organization_plan>(Organization_plan.CreateFromDiscriminatorValue); } },
-                { "public_gists", n => { PublicGists = n.GetIntValue(); } },
-                { "public_members_url", n => { PublicMembersUrl = n.GetStringValue(); } },
-                { "public_repos", n => { PublicRepos = n.GetIntValue(); } },
-                { "repos_url", n => { ReposUrl = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
+                {"blog", n => { Blog = n.GetStringValue(); } },
+                {"company", n => { Company = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"events_url", n => { EventsUrl = n.GetStringValue(); } },
+                {"followers", n => { Followers = n.GetIntValue(); } },
+                {"following", n => { Following = n.GetIntValue(); } },
+                {"has_organization_projects", n => { HasOrganizationProjects = n.GetBoolValue(); } },
+                {"has_repository_projects", n => { HasRepositoryProjects = n.GetBoolValue(); } },
+                {"hooks_url", n => { HooksUrl = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"is_verified", n => { IsVerified = n.GetBoolValue(); } },
+                {"issues_url", n => { IssuesUrl = n.GetStringValue(); } },
+                {"location", n => { Location = n.GetStringValue(); } },
+                {"login", n => { Login = n.GetStringValue(); } },
+                {"members_url", n => { MembersUrl = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"plan", n => { Plan = n.GetObjectValue<Organization_plan>(Organization_plan.CreateFromDiscriminatorValue); } },
+                {"public_gists", n => { PublicGists = n.GetIntValue(); } },
+                {"public_members_url", n => { PublicMembersUrl = n.GetStringValue(); } },
+                {"public_repos", n => { PublicRepos = n.GetIntValue(); } },
+                {"repos_url", n => { ReposUrl = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

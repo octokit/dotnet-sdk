@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Search.Code
-{
+namespace GitHub.Search.Code {
     #pragma warning disable CS1591
-    public class CodeGetResponse : IAdditionalDataHolder, IParsable
+    public class CodeGetResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -50,9 +49,9 @@ namespace GitHub.Search.Code
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "incomplete_results", n => { IncompleteResults = n.GetBoolValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<CodeSearchResultItem>(CodeSearchResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"incomplete_results", n => { IncompleteResults = n.GetBoolValue(); } },
+                {"items", n => { Items = n.GetCollectionOfObjectValues<CodeSearchResultItem>(CodeSearchResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

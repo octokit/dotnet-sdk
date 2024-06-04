@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pages.Deployments
-{
+namespace GitHub.Repos.Item.Item.Pages.Deployments {
     /// <summary>
     /// The object used to create GitHub Pages deployment
     /// </summary>
-    public class DeploymentsPostRequestBody : IAdditionalDataHolder, IParsable
+    public class DeploymentsPostRequestBody : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -74,11 +73,11 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "artifact_id", n => { ArtifactId = n.GetDoubleValue(); } },
-                { "artifact_url", n => { ArtifactUrl = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetStringValue(); } },
-                { "oidc_token", n => { OidcToken = n.GetStringValue(); } },
-                { "pages_build_version", n => { PagesBuildVersion = n.GetStringValue(); } },
+                {"artifact_id", n => { ArtifactId = n.GetDoubleValue(); } },
+                {"artifact_url", n => { ArtifactUrl = n.GetStringValue(); } },
+                {"environment", n => { Environment = n.GetStringValue(); } },
+                {"oidc_token", n => { OidcToken = n.GetStringValue(); } },
+                {"pages_build_version", n => { PagesBuildVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class ProtectedBranch_allow_force_pushes : IParsable
+    public class ProtectedBranch_allow_force_pushes : IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The enabled property</summary>
@@ -30,7 +29,7 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                {"enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

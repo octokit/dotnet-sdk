@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows
-{
+namespace GitHub.Repos.Item.Item.Actions.Workflows {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows
     /// </summary>
-    public class WorkflowsRequestBuilder : BaseRequestBuilder
+    public class WorkflowsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.workflows.item collection</summary>
         /// <param name="position">The ID of the workflow. You can also pass the workflow file name as a string.</param>

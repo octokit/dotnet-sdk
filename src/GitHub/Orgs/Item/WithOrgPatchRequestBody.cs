@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item
-{
+namespace GitHub.Orgs.Item {
     #pragma warning disable CS1591
-    public class WithOrgPatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithOrgPatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -150,35 +149,35 @@ namespace GitHub.Orgs.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "advanced_security_enabled_for_new_repositories", n => { AdvancedSecurityEnabledForNewRepositories = n.GetBoolValue(); } },
-                { "billing_email", n => { BillingEmail = n.GetStringValue(); } },
-                { "blog", n => { Blog = n.GetStringValue(); } },
-                { "company", n => { Company = n.GetStringValue(); } },
-                { "default_repository_permission", n => { DefaultRepositoryPermission = n.GetEnumValue<WithOrgPatchRequestBody_default_repository_permission>(); } },
-                { "dependabot_alerts_enabled_for_new_repositories", n => { DependabotAlertsEnabledForNewRepositories = n.GetBoolValue(); } },
-                { "dependabot_security_updates_enabled_for_new_repositories", n => { DependabotSecurityUpdatesEnabledForNewRepositories = n.GetBoolValue(); } },
-                { "dependency_graph_enabled_for_new_repositories", n => { DependencyGraphEnabledForNewRepositories = n.GetBoolValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "has_organization_projects", n => { HasOrganizationProjects = n.GetBoolValue(); } },
-                { "has_repository_projects", n => { HasRepositoryProjects = n.GetBoolValue(); } },
-                { "location", n => { Location = n.GetStringValue(); } },
-                { "members_allowed_repository_creation_type", n => { MembersAllowedRepositoryCreationType = n.GetEnumValue<WithOrgPatchRequestBody_members_allowed_repository_creation_type>(); } },
-                { "members_can_create_internal_repositories", n => { MembersCanCreateInternalRepositories = n.GetBoolValue(); } },
-                { "members_can_create_pages", n => { MembersCanCreatePages = n.GetBoolValue(); } },
-                { "members_can_create_private_pages", n => { MembersCanCreatePrivatePages = n.GetBoolValue(); } },
-                { "members_can_create_private_repositories", n => { MembersCanCreatePrivateRepositories = n.GetBoolValue(); } },
-                { "members_can_create_public_pages", n => { MembersCanCreatePublicPages = n.GetBoolValue(); } },
-                { "members_can_create_public_repositories", n => { MembersCanCreatePublicRepositories = n.GetBoolValue(); } },
-                { "members_can_create_repositories", n => { MembersCanCreateRepositories = n.GetBoolValue(); } },
-                { "members_can_fork_private_repositories", n => { MembersCanForkPrivateRepositories = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "secret_scanning_enabled_for_new_repositories", n => { SecretScanningEnabledForNewRepositories = n.GetBoolValue(); } },
-                { "secret_scanning_push_protection_custom_link", n => { SecretScanningPushProtectionCustomLink = n.GetStringValue(); } },
-                { "secret_scanning_push_protection_custom_link_enabled", n => { SecretScanningPushProtectionCustomLinkEnabled = n.GetBoolValue(); } },
-                { "secret_scanning_push_protection_enabled_for_new_repositories", n => { SecretScanningPushProtectionEnabledForNewRepositories = n.GetBoolValue(); } },
-                { "twitter_username", n => { TwitterUsername = n.GetStringValue(); } },
-                { "web_commit_signoff_required", n => { WebCommitSignoffRequired = n.GetBoolValue(); } },
+                {"advanced_security_enabled_for_new_repositories", n => { AdvancedSecurityEnabledForNewRepositories = n.GetBoolValue(); } },
+                {"billing_email", n => { BillingEmail = n.GetStringValue(); } },
+                {"blog", n => { Blog = n.GetStringValue(); } },
+                {"company", n => { Company = n.GetStringValue(); } },
+                {"default_repository_permission", n => { DefaultRepositoryPermission = n.GetEnumValue<WithOrgPatchRequestBody_default_repository_permission>(); } },
+                {"dependabot_alerts_enabled_for_new_repositories", n => { DependabotAlertsEnabledForNewRepositories = n.GetBoolValue(); } },
+                {"dependabot_security_updates_enabled_for_new_repositories", n => { DependabotSecurityUpdatesEnabledForNewRepositories = n.GetBoolValue(); } },
+                {"dependency_graph_enabled_for_new_repositories", n => { DependencyGraphEnabledForNewRepositories = n.GetBoolValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"email", n => { Email = n.GetStringValue(); } },
+                {"has_organization_projects", n => { HasOrganizationProjects = n.GetBoolValue(); } },
+                {"has_repository_projects", n => { HasRepositoryProjects = n.GetBoolValue(); } },
+                {"location", n => { Location = n.GetStringValue(); } },
+                {"members_allowed_repository_creation_type", n => { MembersAllowedRepositoryCreationType = n.GetEnumValue<WithOrgPatchRequestBody_members_allowed_repository_creation_type>(); } },
+                {"members_can_create_internal_repositories", n => { MembersCanCreateInternalRepositories = n.GetBoolValue(); } },
+                {"members_can_create_pages", n => { MembersCanCreatePages = n.GetBoolValue(); } },
+                {"members_can_create_private_pages", n => { MembersCanCreatePrivatePages = n.GetBoolValue(); } },
+                {"members_can_create_private_repositories", n => { MembersCanCreatePrivateRepositories = n.GetBoolValue(); } },
+                {"members_can_create_public_pages", n => { MembersCanCreatePublicPages = n.GetBoolValue(); } },
+                {"members_can_create_public_repositories", n => { MembersCanCreatePublicRepositories = n.GetBoolValue(); } },
+                {"members_can_create_repositories", n => { MembersCanCreateRepositories = n.GetBoolValue(); } },
+                {"members_can_fork_private_repositories", n => { MembersCanForkPrivateRepositories = n.GetBoolValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"secret_scanning_enabled_for_new_repositories", n => { SecretScanningEnabledForNewRepositories = n.GetBoolValue(); } },
+                {"secret_scanning_push_protection_custom_link", n => { SecretScanningPushProtectionCustomLink = n.GetStringValue(); } },
+                {"secret_scanning_push_protection_custom_link_enabled", n => { SecretScanningPushProtectionCustomLinkEnabled = n.GetBoolValue(); } },
+                {"secret_scanning_push_protection_enabled_for_new_repositories", n => { SecretScanningPushProtectionEnabledForNewRepositories = n.GetBoolValue(); } },
+                {"twitter_username", n => { TwitterUsername = n.GetStringValue(); } },
+                {"web_commit_signoff_required", n => { WebCommitSignoffRequired = n.GetBoolValue(); } },
             };
         }
         /// <summary>

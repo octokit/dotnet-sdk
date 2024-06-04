@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Blob
     /// </summary>
-    public class Blob : IAdditionalDataHolder, IParsable
+    public class Blob : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -88,13 +87,13 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "encoding", n => { Encoding = n.GetStringValue(); } },
-                { "highlighted_content", n => { HighlightedContent = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetIntValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"content", n => { Content = n.GetStringValue(); } },
+                {"encoding", n => { Encoding = n.GetStringValue(); } },
+                {"highlighted_content", n => { HighlightedContent = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"size", n => { Size = n.GetIntValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

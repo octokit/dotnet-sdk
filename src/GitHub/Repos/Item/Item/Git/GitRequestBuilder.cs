@@ -12,12 +12,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Git
-{
+namespace GitHub.Repos.Item.Item.Git {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git
     /// </summary>
-    public class GitRequestBuilder : BaseRequestBuilder
+    public class GitRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The blobs property</summary>
         public BlobsRequestBuilder Blobs

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Information about the seat breakdown and policies set for an organization with a Copilot Business subscription.
     /// </summary>
-    public class CopilotOrganizationDetails : IAdditionalDataHolder, IParsable
+    public class CopilotOrganizationDetails : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -56,12 +55,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cli", n => { Cli = n.GetEnumValue<CopilotOrganizationDetails_cli>(); } },
-                { "ide_chat", n => { IdeChat = n.GetEnumValue<CopilotOrganizationDetails_ide_chat>(); } },
-                { "platform_chat", n => { PlatformChat = n.GetEnumValue<CopilotOrganizationDetails_platform_chat>(); } },
-                { "public_code_suggestions", n => { PublicCodeSuggestions = n.GetEnumValue<CopilotOrganizationDetails_public_code_suggestions>(); } },
-                { "seat_breakdown", n => { SeatBreakdown = n.GetObjectValue<CopilotSeatBreakdown>(CopilotSeatBreakdown.CreateFromDiscriminatorValue); } },
-                { "seat_management_setting", n => { SeatManagementSetting = n.GetEnumValue<CopilotOrganizationDetails_seat_management_setting>(); } },
+                {"cli", n => { Cli = n.GetEnumValue<CopilotOrganizationDetails_cli>(); } },
+                {"ide_chat", n => { IdeChat = n.GetEnumValue<CopilotOrganizationDetails_ide_chat>(); } },
+                {"platform_chat", n => { PlatformChat = n.GetEnumValue<CopilotOrganizationDetails_platform_chat>(); } },
+                {"public_code_suggestions", n => { PublicCodeSuggestions = n.GetEnumValue<CopilotOrganizationDetails_public_code_suggestions>(); } },
+                {"seat_breakdown", n => { SeatBreakdown = n.GetObjectValue<CopilotSeatBreakdown>(CopilotSeatBreakdown.CreateFromDiscriminatorValue); } },
+                {"seat_management_setting", n => { SeatManagementSetting = n.GetEnumValue<CopilotOrganizationDetails_seat_management_setting>(); } },
             };
         }
         /// <summary>

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Projects.Columns.Item.Cards
-{
+namespace GitHub.Projects.Columns.Item.Cards {
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns\{column_id}\cards
     /// </summary>
-    public class CardsRequestBuilder : BaseRequestBuilder
+    public class CardsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="CardsRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Projects.Columns.Item.Cards
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<ProjectCard>(requestInfo, ProjectCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -82,9 +81,9 @@ namespace GitHub.Projects.Columns.Item.Cards
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "503", ProjectCard503Error.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"503", ProjectCard503Error.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ProjectCard>(requestInfo, ProjectCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -138,7 +137,7 @@ namespace GitHub.Projects.Columns.Item.Cards
         /// <summary>
         /// Composed type wrapper for classes <see cref="CardsPostRequestBodyMember1"/>, <see cref="CardsPostRequestBodyMember2"/>
         /// </summary>
-        public class CardsPostRequestBody : IComposedTypeWrapper, IParsable
+        public class CardsPostRequestBody : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

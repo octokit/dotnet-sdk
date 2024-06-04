@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item.Repositories
-{
+namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item.Repositories {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\personal-access-token-requests\{pat_request_id}\repositories
     /// </summary>
-    public class RepositoriesRequestBuilder : BaseRequestBuilder
+    public class RepositoriesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="RepositoriesRequestBuilder"/> and sets the default values.
@@ -53,9 +52,9 @@ namespace GitHub.Orgs.Item.PersonalAccessTokenRequests.Item.Repositories
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "500", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"500", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<MinimalRepository>(requestInfo, MinimalRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

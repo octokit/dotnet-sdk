@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Packages.Item.Item.Versions.Item
-{
+namespace GitHub.User.Packages.Item.Item.Versions.Item {
     /// <summary>
     /// Builds and executes requests for operations under \user\packages\{package_type}\{package_name}\versions\{package_version_id}
     /// </summary>
-    public class WithPackage_version_ItemRequestBuilder : BaseRequestBuilder
+    public class WithPackage_version_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The restore property</summary>
         public RestoreRequestBuilder Restore
@@ -58,9 +57,9 @@ namespace GitHub.User.Packages.Item.Item.Versions.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Hooks.Item.Pings
-{
+namespace GitHub.Orgs.Item.Hooks.Item.Pings {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\hooks\{hook_id}\pings
     /// </summary>
-    public class PingsRequestBuilder : BaseRequestBuilder
+    public class PingsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="PingsRequestBuilder"/> and sets the default values.
@@ -50,7 +49,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Pings
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

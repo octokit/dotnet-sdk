@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Combined Commit Status
     /// </summary>
-    public class CombinedCommitStatus : IAdditionalDataHolder, IParsable
+    public class CombinedCommitStatus : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -88,13 +87,13 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "commit_url", n => { CommitUrl = n.GetStringValue(); } },
-                { "repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
-                { "statuses", n => { Statuses = n.GetCollectionOfObjectValues<SimpleCommitStatus>(SimpleCommitStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"commit_url", n => { CommitUrl = n.GetStringValue(); } },
+                {"repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
+                {"state", n => { State = n.GetStringValue(); } },
+                {"statuses", n => { Statuses = n.GetCollectionOfObjectValues<SimpleCommitStatus>(SimpleCommitStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

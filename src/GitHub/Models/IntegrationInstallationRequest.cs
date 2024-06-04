@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Request to install an integration on a target
     /// </summary>
-    public class IntegrationInstallationRequest : IAdditionalDataHolder, IParsable
+    public class IntegrationInstallationRequest : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,11 +65,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account", n => { Account = n.GetObjectValue<IntegrationInstallationRequest_account>(IntegrationInstallationRequest_account.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "requester", n => { Requester = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"account", n => { Account = n.GetObjectValue<IntegrationInstallationRequest_account>(IntegrationInstallationRequest_account.CreateFromDiscriminatorValue); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"requester", n => { Requester = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,7 +89,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="Enterprise"/>, <see cref="SimpleUser"/>
         /// </summary>
-        public class IntegrationInstallationRequest_account : IComposedTypeWrapper, IParsable
+        public class IntegrationInstallationRequest_account : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="GitHub.Models.Enterprise"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Users.Item.Docker
-{
+namespace GitHub.Users.Item.Docker {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\docker
     /// </summary>
-    public class DockerRequestBuilder : BaseRequestBuilder
+    public class DockerRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The conflicts property</summary>
         public ConflictsRequestBuilder Conflicts

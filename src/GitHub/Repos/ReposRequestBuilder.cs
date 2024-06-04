@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos
-{
+namespace GitHub.Repos {
     /// <summary>
     /// Builds and executes requests for operations under \repos
     /// </summary>
-    public class ReposRequestBuilder : BaseRequestBuilder
+    public class ReposRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item collection</summary>
         /// <param name="position">The account owner of the repository. The name is not case sensitive.</param>

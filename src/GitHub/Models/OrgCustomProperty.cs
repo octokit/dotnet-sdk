@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Custom property defined on an organization
     /// </summary>
-    public class OrgCustomProperty : IAdditionalDataHolder, IParsable
+    public class OrgCustomProperty : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -76,13 +75,13 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_values", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "default_value", n => { DefaultValue = n.GetObjectValue<OrgCustomProperty_default_value>(OrgCustomProperty_default_value.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "property_name", n => { PropertyName = n.GetStringValue(); } },
-                { "required", n => { Required = n.GetBoolValue(); } },
-                { "value_type", n => { ValueType = n.GetEnumValue<OrgCustomProperty_value_type>(); } },
-                { "values_editable_by", n => { ValuesEditableBy = n.GetEnumValue<OrgCustomProperty_values_editable_by>(); } },
+                {"allowed_values", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"default_value", n => { DefaultValue = n.GetObjectValue<OrgCustomProperty_default_value>(OrgCustomProperty_default_value.CreateFromDiscriminatorValue); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"property_name", n => { PropertyName = n.GetStringValue(); } },
+                {"required", n => { Required = n.GetBoolValue(); } },
+                {"value_type", n => { ValueType = n.GetEnumValue<OrgCustomProperty_value_type>(); } },
+                {"values_editable_by", n => { ValuesEditableBy = n.GetEnumValue<OrgCustomProperty_values_editable_by>(); } },
             };
         }
         /// <summary>
@@ -104,7 +103,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>
         /// </summary>
-        public class OrgCustomProperty_default_value : IComposedTypeWrapper, IParsable
+        public class OrgCustomProperty_default_value : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

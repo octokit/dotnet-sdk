@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Gitignore
-{
+namespace GitHub.Gitignore {
     /// <summary>
     /// Builds and executes requests for operations under \gitignore
     /// </summary>
-    public class GitignoreRequestBuilder : BaseRequestBuilder
+    public class GitignoreRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The templates property</summary>
         public TemplatesRequestBuilder Templates

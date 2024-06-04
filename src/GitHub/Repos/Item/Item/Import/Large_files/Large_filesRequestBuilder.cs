@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Import.Large_files
-{
+namespace GitHub.Repos.Item.Item.Import.Large_files {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\import\large_files
     /// </summary>
-    public class Large_filesRequestBuilder : BaseRequestBuilder
+    public class Large_filesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="Large_filesRequestBuilder"/> and sets the default values.
@@ -52,7 +51,7 @@ namespace GitHub.Repos.Item.Item.Import.Large_files
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "503", BasicError.CreateFromDiscriminatorValue },
+                {"503", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<PorterLargeFile>(requestInfo, PorterLargeFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

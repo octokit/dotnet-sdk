@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Thread Subscription
     /// </summary>
-    public class ThreadSubscription : IAdditionalDataHolder, IParsable
+    public class ThreadSubscription : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -76,13 +75,13 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "ignored", n => { Ignored = n.GetBoolValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
-                { "repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
-                { "subscribed", n => { Subscribed = n.GetBoolValue(); } },
-                { "thread_url", n => { ThreadUrl = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"ignored", n => { Ignored = n.GetBoolValue(); } },
+                {"reason", n => { Reason = n.GetStringValue(); } },
+                {"repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
+                {"subscribed", n => { Subscribed = n.GetBoolValue(); } },
+                {"thread_url", n => { ThreadUrl = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

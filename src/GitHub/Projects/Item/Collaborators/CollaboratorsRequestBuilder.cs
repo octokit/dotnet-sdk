@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Projects.Item.Collaborators
-{
+namespace GitHub.Projects.Item.Collaborators {
     /// <summary>
     /// Builds and executes requests for operations under \projects\{project_id}\collaborators
     /// </summary>
-    public class CollaboratorsRequestBuilder : BaseRequestBuilder
+    public class CollaboratorsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.projects.item.collaborators.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
@@ -67,10 +66,10 @@ namespace GitHub.Projects.Item.Collaborators
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<SimpleUser>(requestInfo, SimpleUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

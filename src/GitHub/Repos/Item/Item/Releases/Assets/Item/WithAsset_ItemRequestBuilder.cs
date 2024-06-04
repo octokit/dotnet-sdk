@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Assets.Item
-{
+namespace GitHub.Repos.Item.Item.Releases.Assets.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\assets\{asset_id}
     /// </summary>
-    public class WithAsset_ItemRequestBuilder : BaseRequestBuilder
+    public class WithAsset_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithAsset_ItemRequestBuilder"/> and sets the default values.
@@ -50,7 +49,7 @@ namespace GitHub.Repos.Item.Item.Releases.Assets.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To download the asset&apos;s binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/overview/media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
+        /// To download the asset&apos;s binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
         /// API method documentation <see href="https://docs.github.com/rest/releases/assets#get-a-release-asset" />
         /// </summary>
         /// <returns>A <see cref="ReleaseAsset"/></returns>
@@ -69,7 +68,7 @@ namespace GitHub.Repos.Item.Item.Releases.Assets.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<ReleaseAsset>(requestInfo, ReleaseAsset.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -110,7 +109,7 @@ namespace GitHub.Repos.Item.Item.Releases.Assets.Item
             return requestInfo;
         }
         /// <summary>
-        /// To download the asset&apos;s binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/overview/media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
+        /// To download the asset&apos;s binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

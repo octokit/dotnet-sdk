@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches
-{
+namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches {
     #pragma warning disable CS1591
-    public class DispatchesPostRequestBody : IAdditionalDataHolder, IParsable
+    public class DispatchesPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -53,8 +52,8 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "inputs", n => { Inputs = n.GetObjectValue<DispatchesPostRequestBody_inputs>(DispatchesPostRequestBody_inputs.CreateFromDiscriminatorValue); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
+                {"inputs", n => { Inputs = n.GetObjectValue<DispatchesPostRequestBody_inputs>(DispatchesPostRequestBody_inputs.CreateFromDiscriminatorValue); } },
+                {"ref", n => { Ref = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -48,12 +48,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub
-{
+namespace GitHub {
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    public class GitHubClient : BaseRequestBuilder
+    public class GitHubClient : BaseRequestBuilder 
     {
         /// <summary>The advisories property</summary>
         public AdvisoriesRequestBuilder Advisories

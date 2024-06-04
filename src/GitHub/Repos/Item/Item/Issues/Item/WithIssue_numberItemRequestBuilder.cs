@@ -15,12 +15,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Issues.Item
-{
+namespace GitHub.Repos.Item.Item.Issues.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\{issue_number}
     /// </summary>
-    public class WithIssue_numberItemRequestBuilder : BaseRequestBuilder
+    public class WithIssue_numberItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The assignees property</summary>
         public AssigneesRequestBuilder Assignees
@@ -94,8 +93,8 @@ namespace GitHub.Repos.Item.Item.Issues.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "410", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"410", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Issue>(requestInfo, Issue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -125,11 +124,11 @@ namespace GitHub.Repos.Item.Item.Issues.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "410", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
-                { "503", Issue503Error.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"410", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
+                {"503", Issue503Error.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Issue>(requestInfo, Issue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

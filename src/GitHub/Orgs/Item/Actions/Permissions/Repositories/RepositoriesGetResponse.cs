@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Actions.Permissions.Repositories
-{
+namespace GitHub.Orgs.Item.Actions.Permissions.Repositories {
     #pragma warning disable CS1591
-    public class RepositoriesGetResponse : IAdditionalDataHolder, IParsable
+    public class RepositoriesGetResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,8 +47,8 @@ namespace GitHub.Orgs.Item.Actions.Permissions.Repositories
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "repositories", n => { Repositories = n.GetCollectionOfObjectValues<Repository>(Repository.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "total_count", n => { TotalCount = n.GetDoubleValue(); } },
+                {"repositories", n => { Repositories = n.GetCollectionOfObjectValues<Repository>(Repository.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"total_count", n => { TotalCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

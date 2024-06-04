@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Dependabot.Secrets
-{
+namespace GitHub.Orgs.Item.Dependabot.Secrets {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\dependabot\secrets
     /// </summary>
-    public class SecretsRequestBuilder : BaseRequestBuilder
+    public class SecretsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The publicKey property</summary>
         public PublicKeyRequestBuilder PublicKey

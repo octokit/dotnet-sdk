@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Repos
-{
+namespace GitHub.Orgs.Item.Repos {
     /// <summary>
     /// The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.
     /// </summary>
-    public class ReposPostRequestBody_custom_properties : IAdditionalDataHolder, IParsable
+    public class ReposPostRequestBody_custom_properties : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

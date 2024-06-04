@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class Root : IAdditionalDataHolder, IParsable
+    public class Root : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -302,39 +301,39 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authorizations_url", n => { AuthorizationsUrl = n.GetStringValue(); } },
-                { "code_search_url", n => { CodeSearchUrl = n.GetStringValue(); } },
-                { "commit_search_url", n => { CommitSearchUrl = n.GetStringValue(); } },
-                { "current_user_authorizations_html_url", n => { CurrentUserAuthorizationsHtmlUrl = n.GetStringValue(); } },
-                { "current_user_repositories_url", n => { CurrentUserRepositoriesUrl = n.GetStringValue(); } },
-                { "current_user_url", n => { CurrentUserUrl = n.GetStringValue(); } },
-                { "emails_url", n => { EmailsUrl = n.GetStringValue(); } },
-                { "emojis_url", n => { EmojisUrl = n.GetStringValue(); } },
-                { "events_url", n => { EventsUrl = n.GetStringValue(); } },
-                { "feeds_url", n => { FeedsUrl = n.GetStringValue(); } },
-                { "followers_url", n => { FollowersUrl = n.GetStringValue(); } },
-                { "following_url", n => { FollowingUrl = n.GetStringValue(); } },
-                { "gists_url", n => { GistsUrl = n.GetStringValue(); } },
-                { "hub_url", n => { HubUrl = n.GetStringValue(); } },
-                { "issue_search_url", n => { IssueSearchUrl = n.GetStringValue(); } },
-                { "issues_url", n => { IssuesUrl = n.GetStringValue(); } },
-                { "keys_url", n => { KeysUrl = n.GetStringValue(); } },
-                { "label_search_url", n => { LabelSearchUrl = n.GetStringValue(); } },
-                { "notifications_url", n => { NotificationsUrl = n.GetStringValue(); } },
-                { "organization_repositories_url", n => { OrganizationRepositoriesUrl = n.GetStringValue(); } },
-                { "organization_teams_url", n => { OrganizationTeamsUrl = n.GetStringValue(); } },
-                { "organization_url", n => { OrganizationUrl = n.GetStringValue(); } },
-                { "public_gists_url", n => { PublicGistsUrl = n.GetStringValue(); } },
-                { "rate_limit_url", n => { RateLimitUrl = n.GetStringValue(); } },
-                { "repository_search_url", n => { RepositorySearchUrl = n.GetStringValue(); } },
-                { "repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
-                { "starred_gists_url", n => { StarredGistsUrl = n.GetStringValue(); } },
-                { "starred_url", n => { StarredUrl = n.GetStringValue(); } },
-                { "topic_search_url", n => { TopicSearchUrl = n.GetStringValue(); } },
-                { "user_organizations_url", n => { UserOrganizationsUrl = n.GetStringValue(); } },
-                { "user_repositories_url", n => { UserRepositoriesUrl = n.GetStringValue(); } },
-                { "user_search_url", n => { UserSearchUrl = n.GetStringValue(); } },
-                { "user_url", n => { UserUrl = n.GetStringValue(); } },
+                {"authorizations_url", n => { AuthorizationsUrl = n.GetStringValue(); } },
+                {"code_search_url", n => { CodeSearchUrl = n.GetStringValue(); } },
+                {"commit_search_url", n => { CommitSearchUrl = n.GetStringValue(); } },
+                {"current_user_authorizations_html_url", n => { CurrentUserAuthorizationsHtmlUrl = n.GetStringValue(); } },
+                {"current_user_repositories_url", n => { CurrentUserRepositoriesUrl = n.GetStringValue(); } },
+                {"current_user_url", n => { CurrentUserUrl = n.GetStringValue(); } },
+                {"emails_url", n => { EmailsUrl = n.GetStringValue(); } },
+                {"emojis_url", n => { EmojisUrl = n.GetStringValue(); } },
+                {"events_url", n => { EventsUrl = n.GetStringValue(); } },
+                {"feeds_url", n => { FeedsUrl = n.GetStringValue(); } },
+                {"followers_url", n => { FollowersUrl = n.GetStringValue(); } },
+                {"following_url", n => { FollowingUrl = n.GetStringValue(); } },
+                {"gists_url", n => { GistsUrl = n.GetStringValue(); } },
+                {"hub_url", n => { HubUrl = n.GetStringValue(); } },
+                {"issue_search_url", n => { IssueSearchUrl = n.GetStringValue(); } },
+                {"issues_url", n => { IssuesUrl = n.GetStringValue(); } },
+                {"keys_url", n => { KeysUrl = n.GetStringValue(); } },
+                {"label_search_url", n => { LabelSearchUrl = n.GetStringValue(); } },
+                {"notifications_url", n => { NotificationsUrl = n.GetStringValue(); } },
+                {"organization_repositories_url", n => { OrganizationRepositoriesUrl = n.GetStringValue(); } },
+                {"organization_teams_url", n => { OrganizationTeamsUrl = n.GetStringValue(); } },
+                {"organization_url", n => { OrganizationUrl = n.GetStringValue(); } },
+                {"public_gists_url", n => { PublicGistsUrl = n.GetStringValue(); } },
+                {"rate_limit_url", n => { RateLimitUrl = n.GetStringValue(); } },
+                {"repository_search_url", n => { RepositorySearchUrl = n.GetStringValue(); } },
+                {"repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
+                {"starred_gists_url", n => { StarredGistsUrl = n.GetStringValue(); } },
+                {"starred_url", n => { StarredUrl = n.GetStringValue(); } },
+                {"topic_search_url", n => { TopicSearchUrl = n.GetStringValue(); } },
+                {"user_organizations_url", n => { UserOrganizationsUrl = n.GetStringValue(); } },
+                {"user_repositories_url", n => { UserRepositoriesUrl = n.GetStringValue(); } },
+                {"user_search_url", n => { UserSearchUrl = n.GetStringValue(); } },
+                {"user_url", n => { UserUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

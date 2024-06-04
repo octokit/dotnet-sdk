@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class RateLimitOverview_resources : IAdditionalDataHolder, IParsable
+    public class RateLimitOverview_resources : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The actions_runner_registration property</summary>
@@ -117,16 +116,16 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions_runner_registration", n => { ActionsRunnerRegistration = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "code_scanning_upload", n => { CodeScanningUpload = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "code_search", n => { CodeSearch = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "core", n => { Core = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "dependency_snapshots", n => { DependencySnapshots = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "graphql", n => { Graphql = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "integration_manifest", n => { IntegrationManifest = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "scim", n => { Scim = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "search", n => { Search = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
-                { "source_import", n => { SourceImport = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"actions_runner_registration", n => { ActionsRunnerRegistration = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"code_scanning_upload", n => { CodeScanningUpload = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"code_search", n => { CodeSearch = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"core", n => { Core = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"dependency_snapshots", n => { DependencySnapshots = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"graphql", n => { Graphql = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"integration_manifest", n => { IntegrationManifest = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"scim", n => { Scim = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"search", n => { Search = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
+                {"source_import", n => { SourceImport = n.GetObjectValue<RateLimit>(RateLimit.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

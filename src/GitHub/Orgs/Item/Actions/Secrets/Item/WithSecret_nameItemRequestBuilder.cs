@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Secrets.Item
-{
+namespace GitHub.Orgs.Item.Actions.Secrets.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\secrets\{secret_name}
     /// </summary>
-    public class WithSecret_nameItemRequestBuilder : BaseRequestBuilder
+    public class WithSecret_nameItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The repositories property</summary>
         public RepositoriesRequestBuilder Repositories

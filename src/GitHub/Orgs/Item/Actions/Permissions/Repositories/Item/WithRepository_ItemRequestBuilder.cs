@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Permissions.Repositories.Item
-{
+namespace GitHub.Orgs.Item.Actions.Permissions.Repositories.Item {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\permissions\repositories\{repository_id}
     /// </summary>
-    public class WithRepository_ItemRequestBuilder : BaseRequestBuilder
+    public class WithRepository_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithRepository_ItemRequestBuilder"/> and sets the default values.

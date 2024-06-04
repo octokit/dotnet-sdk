@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Code of Conduct Simple
     /// </summary>
-    public class CodeOfConductSimple : IAdditionalDataHolder, IParsable
+    public class CodeOfConductSimple : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -70,10 +69,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "key", n => { Key = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"key", n => { Key = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A reply to a discussion within a team.
     /// </summary>
-    public class TeamDiscussionComment : IAdditionalDataHolder, IParsable
+    public class TeamDiscussionComment : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -118,19 +117,19 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "body_html", n => { BodyHtml = n.GetStringValue(); } },
-                { "body_version", n => { BodyVersion = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "discussion_url", n => { DiscussionUrl = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "last_edited_at", n => { LastEditedAt = n.GetDateTimeOffsetValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "number", n => { Number = n.GetIntValue(); } },
-                { "reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"body_html", n => { BodyHtml = n.GetStringValue(); } },
+                {"body_version", n => { BodyVersion = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"discussion_url", n => { DiscussionUrl = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"last_edited_at", n => { LastEditedAt = n.GetDateTimeOffsetValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"number", n => { Number = n.GetIntValue(); } },
+                {"reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

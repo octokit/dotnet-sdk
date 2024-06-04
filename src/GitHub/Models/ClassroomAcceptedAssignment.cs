@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// A GitHub Classroom accepted assignment
     /// </summary>
-    public class ClassroomAcceptedAssignment : IAdditionalDataHolder, IParsable
+    public class ClassroomAcceptedAssignment : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -78,14 +77,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignment", n => { Assignment = n.GetObjectValue<SimpleClassroomAssignment>(SimpleClassroomAssignment.CreateFromDiscriminatorValue); } },
-                { "commit_count", n => { CommitCount = n.GetIntValue(); } },
-                { "grade", n => { Grade = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "passing", n => { Passing = n.GetBoolValue(); } },
-                { "repository", n => { Repository = n.GetObjectValue<SimpleClassroomRepository>(SimpleClassroomRepository.CreateFromDiscriminatorValue); } },
-                { "students", n => { Students = n.GetCollectionOfObjectValues<SimpleClassroomUser>(SimpleClassroomUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "submitted", n => { Submitted = n.GetBoolValue(); } },
+                {"assignment", n => { Assignment = n.GetObjectValue<SimpleClassroomAssignment>(SimpleClassroomAssignment.CreateFromDiscriminatorValue); } },
+                {"commit_count", n => { CommitCount = n.GetIntValue(); } },
+                {"grade", n => { Grade = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"passing", n => { Passing = n.GetBoolValue(); } },
+                {"repository", n => { Repository = n.GetObjectValue<SimpleClassroomRepository>(SimpleClassroomRepository.CreateFromDiscriminatorValue); } },
+                {"students", n => { Students = n.GetCollectionOfObjectValues<SimpleClassroomUser>(SimpleClassroomUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"submitted", n => { Submitted = n.GetBoolValue(); } },
             };
         }
         /// <summary>

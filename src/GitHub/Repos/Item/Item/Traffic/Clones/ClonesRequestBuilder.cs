@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Traffic.Clones
-{
+namespace GitHub.Repos.Item.Item.Traffic.Clones {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\traffic\clones
     /// </summary>
-    public class ClonesRequestBuilder : BaseRequestBuilder
+    public class ClonesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ClonesRequestBuilder"/> and sets the default values.
@@ -51,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Traffic.Clones
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CloneTraffic>(requestInfo, CloneTraffic.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

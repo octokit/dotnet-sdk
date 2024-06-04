@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Event
     /// </summary>
-    public class Event : IAdditionalDataHolder, IParsable
+    public class Event : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Actor</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,14 +89,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actor", n => { Actor = n.GetObjectValue<GitHub.Models.Actor>(GitHub.Models.Actor.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "org", n => { Org = n.GetObjectValue<GitHub.Models.Actor>(GitHub.Models.Actor.CreateFromDiscriminatorValue); } },
-                { "payload", n => { Payload = n.GetObjectValue<Event_payload>(Event_payload.CreateFromDiscriminatorValue); } },
-                { "public", n => { Public = n.GetBoolValue(); } },
-                { "repo", n => { Repo = n.GetObjectValue<Event_repo>(Event_repo.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                {"actor", n => { Actor = n.GetObjectValue<GitHub.Models.Actor>(GitHub.Models.Actor.CreateFromDiscriminatorValue); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"id", n => { Id = n.GetStringValue(); } },
+                {"org", n => { Org = n.GetObjectValue<GitHub.Models.Actor>(GitHub.Models.Actor.CreateFromDiscriminatorValue); } },
+                {"payload", n => { Payload = n.GetObjectValue<Event_payload>(Event_payload.CreateFromDiscriminatorValue); } },
+                {"public", n => { Public = n.GetBoolValue(); } },
+                {"repo", n => { Repo = n.GetObjectValue<Event_repo>(Event_repo.CreateFromDiscriminatorValue); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>

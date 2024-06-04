@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Zipball.Item
-{
+namespace GitHub.Repos.Item.Item.Zipball.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\zipball\{ref}
     /// </summary>
-    public class WithRefItemRequestBuilder : BaseRequestBuilder
+    public class WithRefItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithRefItemRequestBuilder"/> and sets the default values.

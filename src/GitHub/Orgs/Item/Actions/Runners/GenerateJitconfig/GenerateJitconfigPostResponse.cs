@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig
-{
+namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig {
     #pragma warning disable CS1591
-    public class GenerateJitconfigPostResponse : IAdditionalDataHolder, IParsable
+    public class GenerateJitconfigPostResponse : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -54,8 +53,8 @@ namespace GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "encoded_jit_config", n => { EncodedJitConfig = n.GetStringValue(); } },
-                { "runner", n => { Runner = n.GetObjectValue<GitHub.Models.Runner>(GitHub.Models.Runner.CreateFromDiscriminatorValue); } },
+                {"encoded_jit_config", n => { EncodedJitConfig = n.GetStringValue(); } },
+                {"runner", n => { Runner = n.GetObjectValue<GitHub.Models.Runner>(GitHub.Models.Runner.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

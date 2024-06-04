@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class Code : IAdditionalDataHolder, IParsable
+    public class Code : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -77,11 +76,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fragment", n => { Fragment = n.GetStringValue(); } },
-                { "matches", n => { Matches = n.GetCollectionOfObjectValues<Code_matches>(Code_matches.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "object_type", n => { ObjectType = n.GetStringValue(); } },
-                { "object_url", n => { ObjectUrl = n.GetStringValue(); } },
-                { "property", n => { Property = n.GetStringValue(); } },
+                {"fragment", n => { Fragment = n.GetStringValue(); } },
+                {"matches", n => { Matches = n.GetCollectionOfObjectValues<Code_matches>(Code_matches.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"object_type", n => { ObjectType = n.GetStringValue(); } },
+                {"object_url", n => { ObjectUrl = n.GetStringValue(); } },
+                {"property", n => { Property = n.GetStringValue(); } },
             };
         }
         /// <summary>

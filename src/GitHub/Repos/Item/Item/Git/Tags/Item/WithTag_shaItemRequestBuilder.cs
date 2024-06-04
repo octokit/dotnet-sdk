@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Tags.Item
-{
+namespace GitHub.Repos.Item.Item.Git.Tags.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git\tags\{tag_sha}
     /// </summary>
-    public class WithTag_shaItemRequestBuilder : BaseRequestBuilder
+    public class WithTag_shaItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithTag_shaItemRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Repos.Item.Item.Git.Tags.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "409", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"409", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GitTag>(requestInfo, GitTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Memberships.Orgs
-{
+namespace GitHub.User.Memberships.Orgs {
     /// <summary>
     /// Builds and executes requests for operations under \user\memberships\orgs
     /// </summary>
-    public class OrgsRequestBuilder : BaseRequestBuilder
+    public class OrgsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.user.memberships.orgs.item collection</summary>
         /// <param name="position">The organization name. The name is not case sensitive.</param>
@@ -66,9 +65,9 @@ namespace GitHub.User.Memberships.Orgs
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<OrgMembership>(requestInfo, OrgMembership.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

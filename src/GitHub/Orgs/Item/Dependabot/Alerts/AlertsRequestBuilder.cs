@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Dependabot.Alerts
-{
+namespace GitHub.Orgs.Item.Dependabot.Alerts {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\dependabot\alerts
     /// </summary>
-    public class AlertsRequestBuilder : BaseRequestBuilder
+    public class AlertsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="AlertsRequestBuilder"/> and sets the default values.
@@ -54,10 +53,10 @@ namespace GitHub.Orgs.Item.Dependabot.Alerts
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationErrorSimple.CreateFromDiscriminatorValue },
+                {"400", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<DependabotAlertWithRepository>(requestInfo, DependabotAlertWithRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

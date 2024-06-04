@@ -7,12 +7,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Installation
-{
+namespace GitHub.Installation {
     /// <summary>
     /// Builds and executes requests for operations under \installation
     /// </summary>
-    public class InstallationRequestBuilder : BaseRequestBuilder
+    public class InstallationRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The repositories property</summary>
         public RepositoriesRequestBuilder Repositories

@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Installations.Item.Repositories
-{
+namespace GitHub.User.Installations.Item.Repositories {
     /// <summary>
     /// Builds and executes requests for operations under \user\installations\{installation_id}\repositories
     /// </summary>
-    public class RepositoriesRequestBuilder : BaseRequestBuilder
+    public class RepositoriesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.user.installations.item.repositories.item collection</summary>
         /// <param name="position">The unique identifier of the repository.</param>
@@ -65,8 +64,8 @@ namespace GitHub.User.Installations.Item.Repositories
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<RepositoriesGetResponse>(requestInfo, RepositoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

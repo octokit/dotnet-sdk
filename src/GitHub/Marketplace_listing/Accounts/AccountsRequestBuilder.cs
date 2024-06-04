@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Marketplace_listing.Accounts
-{
+namespace GitHub.Marketplace_listing.Accounts {
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\accounts
     /// </summary>
-    public class AccountsRequestBuilder : BaseRequestBuilder
+    public class AccountsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.marketplace_listing.accounts.item collection</summary>
         /// <param name="position">account_id parameter</param>

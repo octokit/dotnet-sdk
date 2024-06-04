@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// GitHub Actions Cache Usage by repository.
     /// </summary>
-    public class ActionsCacheUsageByRepository : IAdditionalDataHolder, IParsable
+    public class ActionsCacheUsageByRepository : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The number of active caches in the repository.</summary>
         public int? ActiveCachesCount { get; set; }
@@ -50,9 +49,9 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "active_caches_count", n => { ActiveCachesCount = n.GetIntValue(); } },
-                { "active_caches_size_in_bytes", n => { ActiveCachesSizeInBytes = n.GetIntValue(); } },
-                { "full_name", n => { FullName = n.GetStringValue(); } },
+                {"active_caches_count", n => { ActiveCachesCount = n.GetIntValue(); } },
+                {"active_caches_size_in_bytes", n => { ActiveCachesSizeInBytes = n.GetIntValue(); } },
+                {"full_name", n => { FullName = n.GetStringValue(); } },
             };
         }
         /// <summary>

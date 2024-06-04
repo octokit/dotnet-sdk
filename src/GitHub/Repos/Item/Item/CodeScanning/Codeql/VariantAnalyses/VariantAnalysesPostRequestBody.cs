@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.VariantAnalyses
-{
+namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.VariantAnalyses {
     #pragma warning disable CS1591
-    public class VariantAnalysesPostRequestBody : IParsable
+    public class VariantAnalysesPostRequestBody : IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The language targeted by the CodeQL query</summary>
@@ -63,11 +62,11 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.VariantAnalyses
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "language", n => { Language = n.GetEnumValue<CodeScanningVariantAnalysisLanguage>(); } },
-                { "query_pack", n => { QueryPack = n.GetStringValue(); } },
-                { "repositories", n => { Repositories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "repository_lists", n => { RepositoryLists = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "repository_owners", n => { RepositoryOwners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"language", n => { Language = n.GetEnumValue<CodeScanningVariantAnalysisLanguage>(); } },
+                {"query_pack", n => { QueryPack = n.GetStringValue(); } },
+                {"repositories", n => { Repositories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"repository_lists", n => { RepositoryLists = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"repository_owners", n => { RepositoryOwners = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// The status of auto merging a pull request.
     /// </summary>
-    public class AutoMerge : IAdditionalDataHolder, IParsable
+    public class AutoMerge : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -64,10 +63,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "commit_message", n => { CommitMessage = n.GetStringValue(); } },
-                { "commit_title", n => { CommitTitle = n.GetStringValue(); } },
-                { "enabled_by", n => { EnabledBy = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "merge_method", n => { MergeMethod = n.GetEnumValue<AutoMerge_merge_method>(); } },
+                {"commit_message", n => { CommitMessage = n.GetStringValue(); } },
+                {"commit_title", n => { CommitTitle = n.GetStringValue(); } },
+                {"enabled_by", n => { EnabledBy = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"merge_method", n => { MergeMethod = n.GetEnumValue<AutoMerge_merge_method>(); } },
             };
         }
         /// <summary>

@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Classrooms.Item
-{
+namespace GitHub.Classrooms.Item {
     /// <summary>
     /// Builds and executes requests for operations under \classrooms\{classroom_id}
     /// </summary>
-    public class WithClassroom_ItemRequestBuilder : BaseRequestBuilder
+    public class WithClassroom_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The assignments property</summary>
         public AssignmentsRequestBuilder Assignments
@@ -57,7 +56,7 @@ namespace GitHub.Classrooms.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Classroom>(requestInfo, Classroom.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

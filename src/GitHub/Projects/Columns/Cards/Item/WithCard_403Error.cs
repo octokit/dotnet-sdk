@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Projects.Columns.Cards.Item
-{
+namespace GitHub.Projects.Columns.Cards.Item {
     #pragma warning disable CS1591
-    public class WithCard_403Error : ApiException, IAdditionalDataHolder, IParsable
+    public class WithCard_403Error : ApiException, IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -62,9 +61,9 @@ namespace GitHub.Projects.Columns.Cards.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                {"documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
+                {"errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"message", n => { MessageEscaped = n.GetStringValue(); } },
             };
         }
         /// <summary>

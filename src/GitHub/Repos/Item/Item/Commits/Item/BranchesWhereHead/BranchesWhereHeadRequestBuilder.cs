@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Commits.Item.BranchesWhereHead
-{
+namespace GitHub.Repos.Item.Item.Commits.Item.BranchesWhereHead {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\commits\{commit_sha-id}\branches-where-head
     /// </summary>
-    public class BranchesWhereHeadRequestBuilder : BaseRequestBuilder
+    public class BranchesWhereHeadRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="BranchesWhereHeadRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Repos.Item.Item.Commits.Item.BranchesWhereHead
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "409", BasicError.CreateFromDiscriminatorValue },
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"409", BasicError.CreateFromDiscriminatorValue},
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<BranchShort>(requestInfo, BranchShort.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

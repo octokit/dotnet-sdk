@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class ValidationError_errors : IAdditionalDataHolder, IParsable
+    public class ValidationError_errors : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -79,12 +78,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetStringValue(); } },
-                { "field", n => { Field = n.GetStringValue(); } },
-                { "index", n => { Index = n.GetIntValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "resource", n => { Resource = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<ValidationError_errors_value>(ValidationError_errors_value.CreateFromDiscriminatorValue); } },
+                {"code", n => { Code = n.GetStringValue(); } },
+                {"field", n => { Field = n.GetStringValue(); } },
+                {"index", n => { Index = n.GetIntValue(); } },
+                {"message", n => { Message = n.GetStringValue(); } },
+                {"resource", n => { Resource = n.GetStringValue(); } },
+                {"value", n => { Value = n.GetObjectValue<ValidationError_errors_value>(ValidationError_errors_value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,7 +104,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        public class ValidationError_errors_value : IComposedTypeWrapper, IParsable
+        public class ValidationError_errors_value : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="int"/></summary>
             public int? Integer { get; set; }

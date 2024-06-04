@@ -13,12 +13,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows.Item
-{
+namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}
     /// </summary>
-    public class WithWorkflow_ItemRequestBuilder : BaseRequestBuilder
+    public class WithWorkflow_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The disable property</summary>
         public DisableRequestBuilder Disable

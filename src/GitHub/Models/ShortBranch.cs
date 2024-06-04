@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Short Branch
     /// </summary>
-    public class ShortBranch : IAdditionalDataHolder, IParsable
+    public class ShortBranch : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -72,11 +71,11 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "commit", n => { Commit = n.GetObjectValue<ShortBranch_commit>(ShortBranch_commit.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "protected", n => { Protected = n.GetBoolValue(); } },
-                { "protection", n => { Protection = n.GetObjectValue<BranchProtection>(BranchProtection.CreateFromDiscriminatorValue); } },
-                { "protection_url", n => { ProtectionUrl = n.GetStringValue(); } },
+                {"commit", n => { Commit = n.GetObjectValue<ShortBranch_commit>(ShortBranch_commit.CreateFromDiscriminatorValue); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"protected", n => { Protected = n.GetBoolValue(); } },
+                {"protection", n => { Protection = n.GetObjectValue<BranchProtection>(BranchProtection.CreateFromDiscriminatorValue); } },
+                {"protection_url", n => { ProtectionUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

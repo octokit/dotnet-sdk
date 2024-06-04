@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// User Marketplace Purchase
     /// </summary>
-    public class UserMarketplacePurchase : IAdditionalDataHolder, IParsable
+    public class UserMarketplacePurchase : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,14 +71,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account", n => { Account = n.GetObjectValue<MarketplaceAccount>(MarketplaceAccount.CreateFromDiscriminatorValue); } },
-                { "billing_cycle", n => { BillingCycle = n.GetStringValue(); } },
-                { "free_trial_ends_on", n => { FreeTrialEndsOn = n.GetDateTimeOffsetValue(); } },
-                { "next_billing_date", n => { NextBillingDate = n.GetDateTimeOffsetValue(); } },
-                { "on_free_trial", n => { OnFreeTrial = n.GetBoolValue(); } },
-                { "plan", n => { Plan = n.GetObjectValue<MarketplaceListingPlan>(MarketplaceListingPlan.CreateFromDiscriminatorValue); } },
-                { "unit_count", n => { UnitCount = n.GetIntValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"account", n => { Account = n.GetObjectValue<MarketplaceAccount>(MarketplaceAccount.CreateFromDiscriminatorValue); } },
+                {"billing_cycle", n => { BillingCycle = n.GetStringValue(); } },
+                {"free_trial_ends_on", n => { FreeTrialEndsOn = n.GetDateTimeOffsetValue(); } },
+                {"next_billing_date", n => { NextBillingDate = n.GetDateTimeOffsetValue(); } },
+                {"on_free_trial", n => { OnFreeTrial = n.GetBoolValue(); } },
+                {"plan", n => { Plan = n.GetObjectValue<MarketplaceListingPlan>(MarketplaceListingPlan.CreateFromDiscriminatorValue); } },
+                {"unit_count", n => { UnitCount = n.GetIntValue(); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

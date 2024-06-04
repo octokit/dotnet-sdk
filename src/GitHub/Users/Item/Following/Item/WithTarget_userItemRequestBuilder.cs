@@ -7,12 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Following.Item
-{
+namespace GitHub.Users.Item.Following.Item {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\following\{target_user}
     /// </summary>
-    public class WithTarget_userItemRequestBuilder : BaseRequestBuilder
+    public class WithTarget_userItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithTarget_userItemRequestBuilder"/> and sets the default values.

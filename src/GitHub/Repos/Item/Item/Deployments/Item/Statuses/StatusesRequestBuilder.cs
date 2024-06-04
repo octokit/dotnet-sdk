@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses
-{
+namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\deployments\{deployment_id}\statuses
     /// </summary>
-    public class StatusesRequestBuilder : BaseRequestBuilder
+    public class StatusesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.deployments.item.statuses.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
@@ -64,7 +63,7 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<DeploymentStatus>(requestInfo, DeploymentStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -91,7 +90,7 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", ValidationError.CreateFromDiscriminatorValue },
+                {"422", ValidationError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<DeploymentStatus>(requestInfo, DeploymentStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -10,12 +10,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item
-{
+namespace GitHub.Repos.Item.Item.Branches.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}
     /// </summary>
-    public class WithBranchItemRequestBuilder : BaseRequestBuilder
+    public class WithBranchItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The protection property</summary>
         public ProtectionRequestBuilder Protection
@@ -63,7 +62,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<BranchWithProtection>(requestInfo, BranchWithProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

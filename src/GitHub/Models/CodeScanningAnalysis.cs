@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class CodeScanningAnalysis : IAdditionalDataHolder, IParsable
+    public class CodeScanningAnalysis : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -127,21 +126,21 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "analysis_key", n => { AnalysisKey = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetStringValue(); } },
-                { "commit_sha", n => { CommitSha = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "deletable", n => { Deletable = n.GetBoolValue(); } },
-                { "environment", n => { Environment = n.GetStringValue(); } },
-                { "error", n => { Error = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "results_count", n => { ResultsCount = n.GetIntValue(); } },
-                { "rules_count", n => { RulesCount = n.GetIntValue(); } },
-                { "sarif_id", n => { SarifId = n.GetStringValue(); } },
-                { "tool", n => { Tool = n.GetObjectValue<CodeScanningAnalysisTool>(CodeScanningAnalysisTool.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "warning", n => { Warning = n.GetStringValue(); } },
+                {"analysis_key", n => { AnalysisKey = n.GetStringValue(); } },
+                {"category", n => { Category = n.GetStringValue(); } },
+                {"commit_sha", n => { CommitSha = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"deletable", n => { Deletable = n.GetBoolValue(); } },
+                {"environment", n => { Environment = n.GetStringValue(); } },
+                {"error", n => { Error = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"ref", n => { Ref = n.GetStringValue(); } },
+                {"results_count", n => { ResultsCount = n.GetIntValue(); } },
+                {"rules_count", n => { RulesCount = n.GetIntValue(); } },
+                {"sarif_id", n => { SarifId = n.GetStringValue(); } },
+                {"tool", n => { Tool = n.GetObjectValue<CodeScanningAnalysisTool>(CodeScanningAnalysisTool.CreateFromDiscriminatorValue); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"warning", n => { Warning = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Rerun
-{
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Rerun {
     #pragma warning disable CS1591
-    public class RerunPostRequestBody : IAdditionalDataHolder, IParsable
+    public class RerunPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,7 +38,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Rerun
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enable_debug_logging", n => { EnableDebugLogging = n.GetBoolValue(); } },
+                {"enable_debug_logging", n => { EnableDebugLogging = n.GetBoolValue(); } },
             };
         }
         /// <summary>

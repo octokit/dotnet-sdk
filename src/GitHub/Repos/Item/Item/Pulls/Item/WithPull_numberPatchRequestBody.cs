@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Pulls.Item
-{
+namespace GitHub.Repos.Item.Item.Pulls.Item {
     #pragma warning disable CS1591
-    public class WithPull_numberPatchRequestBody : IAdditionalDataHolder, IParsable
+    public class WithPull_numberPatchRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -65,11 +64,11 @@ namespace GitHub.Repos.Item.Item.Pulls.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "base", n => { Base = n.GetStringValue(); } },
-                { "body", n => { Body = n.GetStringValue(); } },
-                { "maintainer_can_modify", n => { MaintainerCanModify = n.GetBoolValue(); } },
-                { "state", n => { State = n.GetEnumValue<WithPull_numberPatchRequestBody_state>(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
+                {"base", n => { Base = n.GetStringValue(); } },
+                {"body", n => { Body = n.GetStringValue(); } },
+                {"maintainer_can_modify", n => { MaintainerCanModify = n.GetBoolValue(); } },
+                {"state", n => { State = n.GetEnumValue<WithPull_numberPatchRequestBody_state>(); } },
+                {"title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

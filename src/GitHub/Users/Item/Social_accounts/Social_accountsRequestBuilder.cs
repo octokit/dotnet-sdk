@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Social_accounts
-{
+namespace GitHub.Users.Item.Social_accounts {
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\social_accounts
     /// </summary>
-    public class Social_accountsRequestBuilder : BaseRequestBuilder
+    public class Social_accountsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="Social_accountsRequestBuilder"/> and sets the default values.

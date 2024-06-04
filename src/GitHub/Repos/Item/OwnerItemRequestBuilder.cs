@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item
-{
+namespace GitHub.Repos.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}
     /// </summary>
-    public class OwnerItemRequestBuilder : BaseRequestBuilder
+    public class OwnerItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item collection</summary>
         /// <param name="position">The name of the repository without the `.git` extension. The name is not case sensitive.</param>

@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Packages
-{
+namespace GitHub.User.Packages {
     /// <summary>
     /// Builds and executes requests for operations under \user\packages
     /// </summary>
-    public class PackagesRequestBuilder : BaseRequestBuilder
+    public class PackagesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.user.packages.item collection</summary>
         /// <param name="position">The type of supported package. Packages in GitHub&apos;s Gradle registry have the type `maven`. Docker images pushed to GitHub&apos;s Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub&apos;s Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry.</param>

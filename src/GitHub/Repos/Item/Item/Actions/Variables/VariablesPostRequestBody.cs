@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Variables
-{
+namespace GitHub.Repos.Item.Item.Actions.Variables {
     #pragma warning disable CS1591
-    public class VariablesPostRequestBody : IAdditionalDataHolder, IParsable
+    public class VariablesPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -53,8 +52,8 @@ namespace GitHub.Repos.Item.Item.Actions.Variables
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

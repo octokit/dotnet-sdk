@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Tags
-{
+namespace GitHub.Repos.Item.Item.Tags {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\tags
     /// </summary>
-    public class TagsRequestBuilder : BaseRequestBuilder
+    public class TagsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The protection property</summary>
         public ProtectionRequestBuilder Protection

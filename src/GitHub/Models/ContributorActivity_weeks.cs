@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class ContributorActivity_weeks : IAdditionalDataHolder, IParsable
+    public class ContributorActivity_weeks : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>The a property</summary>
@@ -45,10 +44,10 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "a", n => { A = n.GetIntValue(); } },
-                { "c", n => { C = n.GetIntValue(); } },
-                { "d", n => { D = n.GetIntValue(); } },
-                { "w", n => { W = n.GetIntValue(); } },
+                {"a", n => { A = n.GetIntValue(); } },
+                {"c", n => { C = n.GetIntValue(); } },
+                {"d", n => { D = n.GetIntValue(); } },
+                {"w", n => { W = n.GetIntValue(); } },
             };
         }
         /// <summary>

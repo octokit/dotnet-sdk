@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Pages.Deployments.Item
-{
+namespace GitHub.Repos.Item.Item.Pages.Deployments.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pages\deployments\{pages_deployment_id}
     /// </summary>
-    public class WithPages_deployment_ItemRequestBuilder : BaseRequestBuilder
+    public class WithPages_deployment_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The cancel property</summary>
         public CancelRequestBuilder Cancel
@@ -57,7 +56,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<PagesDeploymentStatus>(requestInfo, PagesDeploymentStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

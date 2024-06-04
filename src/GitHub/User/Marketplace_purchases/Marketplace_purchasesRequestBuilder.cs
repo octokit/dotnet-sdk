@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Marketplace_purchases
-{
+namespace GitHub.User.Marketplace_purchases {
     /// <summary>
     /// Builds and executes requests for operations under \user\marketplace_purchases
     /// </summary>
-    public class Marketplace_purchasesRequestBuilder : BaseRequestBuilder
+    public class Marketplace_purchasesRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The stubbed property</summary>
         public StubbedRequestBuilder Stubbed
@@ -58,8 +57,8 @@ namespace GitHub.User.Marketplace_purchases
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<UserMarketplacePurchase>(requestInfo, UserMarketplacePurchase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

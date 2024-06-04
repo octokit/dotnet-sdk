@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.VariantAnalyses.Item
-{
+namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.VariantAnalyses.Item {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\codeql\variant-analyses\{codeql_variant_analysis_id}
     /// </summary>
-    public class WithCodeql_variant_analysis_ItemRequestBuilder : BaseRequestBuilder
+    public class WithCodeql_variant_analysis_ItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>The repos property</summary>
         public GitHub.Repos.Item.Item.CodeScanning.Codeql.VariantAnalyses.Item.Repos.ReposRequestBuilder Repos
@@ -58,8 +57,8 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.VariantAnalyses.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "404", BasicError.CreateFromDiscriminatorValue },
-                { "503", CodeScanningVariantAnalysis503Error.CreateFromDiscriminatorValue },
+                {"404", BasicError.CreateFromDiscriminatorValue},
+                {"503", CodeScanningVariantAnalysis503Error.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<CodeScanningVariantAnalysis>(requestInfo, CodeScanningVariantAnalysis.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

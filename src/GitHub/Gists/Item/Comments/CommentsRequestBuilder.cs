@@ -9,12 +9,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Gists.Item.Comments
-{
+namespace GitHub.Gists.Item.Comments {
     /// <summary>
     /// Builds and executes requests for operations under \gists\{gist_id}\comments
     /// </summary>
-    public class CommentsRequestBuilder : BaseRequestBuilder
+    public class CommentsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.gists.item.comments.item collection</summary>
         /// <param name="position">The unique identifier of the comment.</param>
@@ -65,8 +64,8 @@ namespace GitHub.Gists.Item.Comments
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<GistComment>(requestInfo, GistComment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
@@ -94,8 +93,8 @@ namespace GitHub.Gists.Item.Comments
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<GistComment>(requestInfo, GistComment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

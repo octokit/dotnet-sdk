@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     #pragma warning disable CS1591
-    public class ReactionRollup : IAdditionalDataHolder, IParsable
+    public class ReactionRollup : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -63,16 +62,16 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "confused", n => { Confused = n.GetIntValue(); } },
-                { "eyes", n => { Eyes = n.GetIntValue(); } },
-                { "heart", n => { Heart = n.GetIntValue(); } },
-                { "hooray", n => { Hooray = n.GetIntValue(); } },
-                { "laugh", n => { Laugh = n.GetIntValue(); } },
-                { "-1", n => { Minus1 = n.GetIntValue(); } },
-                { "+1", n => { Plus1 = n.GetIntValue(); } },
-                { "rocket", n => { Rocket = n.GetIntValue(); } },
-                { "total_count", n => { TotalCount = n.GetIntValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
+                {"confused", n => { Confused = n.GetIntValue(); } },
+                {"eyes", n => { Eyes = n.GetIntValue(); } },
+                {"heart", n => { Heart = n.GetIntValue(); } },
+                {"hooray", n => { Hooray = n.GetIntValue(); } },
+                {"laugh", n => { Laugh = n.GetIntValue(); } },
+                {"-1", n => { Minus1 = n.GetIntValue(); } },
+                {"+1", n => { Plus1 = n.GetIntValue(); } },
+                {"rocket", n => { Rocket = n.GetIntValue(); } },
+                {"total_count", n => { TotalCount = n.GetIntValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>

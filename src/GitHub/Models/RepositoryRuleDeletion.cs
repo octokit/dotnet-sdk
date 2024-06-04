@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Only allow users with bypass permissions to delete matching refs.
     /// </summary>
-    public class RepositoryRuleDeletion : IAdditionalDataHolder, IParsable
+    public class RepositoryRuleDeletion : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -40,7 +39,7 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<RepositoryRuleDeletion_type>(); } },
+                {"type", n => { Type = n.GetEnumValue<RepositoryRuleDeletion_type>(); } },
             };
         }
         /// <summary>

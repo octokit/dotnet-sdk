@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Jobs
-{
+namespace GitHub.Repos.Item.Item.Actions.Jobs {
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\jobs
     /// </summary>
-    public class JobsRequestBuilder : BaseRequestBuilder
+    public class JobsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.jobs.item collection</summary>
         /// <param name="position">The unique identifier of the job.</param>

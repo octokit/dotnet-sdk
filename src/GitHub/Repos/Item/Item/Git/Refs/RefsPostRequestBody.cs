@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Repos.Item.Item.Git.Refs
-{
+namespace GitHub.Repos.Item.Item.Git.Refs {
     #pragma warning disable CS1591
-    public class RefsPostRequestBody : IAdditionalDataHolder, IParsable
+    public class RefsPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -53,8 +52,8 @@ namespace GitHub.Repos.Item.Item.Git.Refs
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ref", n => { Ref = n.GetStringValue(); } },
-                { "sha", n => { Sha = n.GetStringValue(); } },
+                {"ref", n => { Ref = n.GetStringValue(); } },
+                {"sha", n => { Sha = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Orgs
-{
+namespace GitHub.User.Orgs {
     /// <summary>
     /// Builds and executes requests for operations under \user\orgs
     /// </summary>
-    public class OrgsRequestBuilder : BaseRequestBuilder
+    public class OrgsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="OrgsRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.User.Orgs
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<OrganizationSimple>(requestInfo, OrganizationSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

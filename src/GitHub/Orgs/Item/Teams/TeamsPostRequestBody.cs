@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Orgs.Item.Teams
-{
+namespace GitHub.Orgs.Item.Teams {
     #pragma warning disable CS1591
-    public class TeamsPostRequestBody : IAdditionalDataHolder, IParsable
+    public class TeamsPostRequestBody : IAdditionalDataHolder, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -78,14 +77,14 @@ namespace GitHub.Orgs.Item.Teams
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "maintainers", n => { Maintainers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "notification_setting", n => { NotificationSetting = n.GetEnumValue<TeamsPostRequestBody_notification_setting>(); } },
-                { "parent_team_id", n => { ParentTeamId = n.GetIntValue(); } },
-                { "permission", n => { Permission = n.GetEnumValue<TeamsPostRequestBody_permission>(); } },
-                { "privacy", n => { Privacy = n.GetEnumValue<TeamsPostRequestBody_privacy>(); } },
-                { "repo_names", n => { RepoNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
+                {"maintainers", n => { Maintainers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"notification_setting", n => { NotificationSetting = n.GetEnumValue<TeamsPostRequestBody_notification_setting>(); } },
+                {"parent_team_id", n => { ParentTeamId = n.GetIntValue(); } },
+                {"permission", n => { Permission = n.GetEnumValue<TeamsPostRequestBody_permission>(); } },
+                {"privacy", n => { Privacy = n.GetEnumValue<TeamsPostRequestBody_privacy>(); } },
+                {"repo_names", n => { RepoNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

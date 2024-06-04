@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.AppManifests.Item.Conversions
-{
+namespace GitHub.AppManifests.Item.Conversions {
     #pragma warning disable CS1591
-    public class ConversionsPostResponse : Integration, IParsable
+    public class ConversionsPostResponse : Integration, IParsable 
     #pragma warning restore CS1591
     {
         /// <summary>

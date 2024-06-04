@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Docker.Conflicts
-{
+namespace GitHub.Orgs.Item.Docker.Conflicts {
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\docker\conflicts
     /// </summary>
-    public class ConflictsRequestBuilder : BaseRequestBuilder
+    public class ConflictsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="ConflictsRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Orgs.Item.Docker.Conflicts
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", BasicError.CreateFromDiscriminatorValue },
-                { "403", BasicError.CreateFromDiscriminatorValue },
+                {"401", BasicError.CreateFromDiscriminatorValue},
+                {"403", BasicError.CreateFromDiscriminatorValue},
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<Package>(requestInfo, Package.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();

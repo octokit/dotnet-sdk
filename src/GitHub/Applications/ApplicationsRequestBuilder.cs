@@ -6,12 +6,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Applications
-{
+namespace GitHub.Applications {
     /// <summary>
     /// Builds and executes requests for operations under \applications
     /// </summary>
-    public class ApplicationsRequestBuilder : BaseRequestBuilder
+    public class ApplicationsRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>Gets an item from the GitHub.applications.item collection</summary>
         /// <param name="position">The client ID of the GitHub app.</param>

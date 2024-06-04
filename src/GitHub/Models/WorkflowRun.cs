@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// An invocation of a workflow
     /// </summary>
-    public class WorkflowRun : IAdditionalDataHolder, IParsable
+    public class WorkflowRun : IAdditionalDataHolder, IParsable 
     {
         /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -272,42 +271,42 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "artifacts_url", n => { ArtifactsUrl = n.GetStringValue(); } },
-                { "cancel_url", n => { CancelUrl = n.GetStringValue(); } },
-                { "check_suite_id", n => { CheckSuiteId = n.GetIntValue(); } },
-                { "check_suite_node_id", n => { CheckSuiteNodeId = n.GetStringValue(); } },
-                { "check_suite_url", n => { CheckSuiteUrl = n.GetStringValue(); } },
-                { "conclusion", n => { Conclusion = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "display_title", n => { DisplayTitle = n.GetStringValue(); } },
-                { "event", n => { Event = n.GetStringValue(); } },
-                { "head_branch", n => { HeadBranch = n.GetStringValue(); } },
-                { "head_commit", n => { HeadCommit = n.GetObjectValue<NullableSimpleCommit>(NullableSimpleCommit.CreateFromDiscriminatorValue); } },
-                { "head_repository", n => { HeadRepository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
-                { "head_repository_id", n => { HeadRepositoryId = n.GetIntValue(); } },
-                { "head_sha", n => { HeadSha = n.GetStringValue(); } },
-                { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "jobs_url", n => { JobsUrl = n.GetStringValue(); } },
-                { "logs_url", n => { LogsUrl = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "path", n => { Path = n.GetStringValue(); } },
-                { "previous_attempt_url", n => { PreviousAttemptUrl = n.GetStringValue(); } },
-                { "pull_requests", n => { PullRequests = n.GetCollectionOfObjectValues<PullRequestMinimal>(PullRequestMinimal.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "referenced_workflows", n => { ReferencedWorkflows = n.GetCollectionOfObjectValues<ReferencedWorkflow>(ReferencedWorkflow.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
-                { "rerun_url", n => { RerunUrl = n.GetStringValue(); } },
-                { "run_attempt", n => { RunAttempt = n.GetIntValue(); } },
-                { "run_number", n => { RunNumber = n.GetIntValue(); } },
-                { "run_started_at", n => { RunStartedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
-                { "triggering_actor", n => { TriggeringActor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "workflow_id", n => { WorkflowId = n.GetIntValue(); } },
-                { "workflow_url", n => { WorkflowUrl = n.GetStringValue(); } },
+                {"actor", n => { Actor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"artifacts_url", n => { ArtifactsUrl = n.GetStringValue(); } },
+                {"cancel_url", n => { CancelUrl = n.GetStringValue(); } },
+                {"check_suite_id", n => { CheckSuiteId = n.GetIntValue(); } },
+                {"check_suite_node_id", n => { CheckSuiteNodeId = n.GetStringValue(); } },
+                {"check_suite_url", n => { CheckSuiteUrl = n.GetStringValue(); } },
+                {"conclusion", n => { Conclusion = n.GetStringValue(); } },
+                {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                {"display_title", n => { DisplayTitle = n.GetStringValue(); } },
+                {"event", n => { Event = n.GetStringValue(); } },
+                {"head_branch", n => { HeadBranch = n.GetStringValue(); } },
+                {"head_commit", n => { HeadCommit = n.GetObjectValue<NullableSimpleCommit>(NullableSimpleCommit.CreateFromDiscriminatorValue); } },
+                {"head_repository", n => { HeadRepository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
+                {"head_repository_id", n => { HeadRepositoryId = n.GetIntValue(); } },
+                {"head_sha", n => { HeadSha = n.GetStringValue(); } },
+                {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetIntValue(); } },
+                {"jobs_url", n => { JobsUrl = n.GetStringValue(); } },
+                {"logs_url", n => { LogsUrl = n.GetStringValue(); } },
+                {"name", n => { Name = n.GetStringValue(); } },
+                {"node_id", n => { NodeId = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
+                {"previous_attempt_url", n => { PreviousAttemptUrl = n.GetStringValue(); } },
+                {"pull_requests", n => { PullRequests = n.GetCollectionOfObjectValues<PullRequestMinimal>(PullRequestMinimal.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"referenced_workflows", n => { ReferencedWorkflows = n.GetCollectionOfObjectValues<ReferencedWorkflow>(ReferencedWorkflow.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"repository", n => { Repository = n.GetObjectValue<MinimalRepository>(MinimalRepository.CreateFromDiscriminatorValue); } },
+                {"rerun_url", n => { RerunUrl = n.GetStringValue(); } },
+                {"run_attempt", n => { RunAttempt = n.GetIntValue(); } },
+                {"run_number", n => { RunNumber = n.GetIntValue(); } },
+                {"run_started_at", n => { RunStartedAt = n.GetDateTimeOffsetValue(); } },
+                {"status", n => { Status = n.GetStringValue(); } },
+                {"triggering_actor", n => { TriggeringActor = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
+                {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"workflow_id", n => { WorkflowId = n.GetIntValue(); } },
+                {"workflow_url", n => { WorkflowUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

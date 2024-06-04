@@ -8,12 +8,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Apps.Item
-{
+namespace GitHub.Apps.Item {
     /// <summary>
     /// Builds and executes requests for operations under \apps\{app_slug}
     /// </summary>
-    public class WithApp_slugItemRequestBuilder : BaseRequestBuilder
+    public class WithApp_slugItemRequestBuilder : BaseRequestBuilder 
     {
         /// <summary>
         /// Instantiates a new <see cref="WithApp_slugItemRequestBuilder"/> and sets the default values.
@@ -52,8 +51,8 @@ namespace GitHub.Apps.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "403", BasicError.CreateFromDiscriminatorValue },
-                { "404", BasicError.CreateFromDiscriminatorValue },
+                {"403", BasicError.CreateFromDiscriminatorValue},
+                {"404", BasicError.CreateFromDiscriminatorValue},
             };
             return await RequestAdapter.SendAsync<Integration>(requestInfo, Integration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

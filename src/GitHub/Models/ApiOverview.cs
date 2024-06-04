@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Api Overview
     /// </summary>
-    public class ApiOverview : IAdditionalDataHolder, IParsable
+    public class ApiOverview : IAdditionalDataHolder, IParsable 
     {
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,21 +151,21 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "actions_macos", n => { ActionsMacos = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "api", n => { Api = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "dependabot", n => { Dependabot = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "domains", n => { Domains = n.GetObjectValue<ApiOverview_domains>(ApiOverview_domains.CreateFromDiscriminatorValue); } },
-                { "git", n => { Git = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "github_enterprise_importer", n => { GithubEnterpriseImporter = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "hooks", n => { Hooks = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "importer", n => { Importer = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "packages", n => { Packages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "pages", n => { Pages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "ssh_key_fingerprints", n => { SshKeyFingerprints = n.GetObjectValue<ApiOverview_ssh_key_fingerprints>(ApiOverview_ssh_key_fingerprints.CreateFromDiscriminatorValue); } },
-                { "ssh_keys", n => { SshKeys = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "verifiable_password_authentication", n => { VerifiablePasswordAuthentication = n.GetBoolValue(); } },
-                { "web", n => { Web = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"actions_macos", n => { ActionsMacos = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"api", n => { Api = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"dependabot", n => { Dependabot = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"domains", n => { Domains = n.GetObjectValue<ApiOverview_domains>(ApiOverview_domains.CreateFromDiscriminatorValue); } },
+                {"git", n => { Git = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"github_enterprise_importer", n => { GithubEnterpriseImporter = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"hooks", n => { Hooks = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"importer", n => { Importer = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"packages", n => { Packages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"pages", n => { Pages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"ssh_key_fingerprints", n => { SshKeyFingerprints = n.GetObjectValue<ApiOverview_ssh_key_fingerprints>(ApiOverview_ssh_key_fingerprints.CreateFromDiscriminatorValue); } },
+                {"ssh_keys", n => { SshKeys = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"verifiable_password_authentication", n => { VerifiablePasswordAuthentication = n.GetBoolValue(); } },
+                {"web", n => { Web = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

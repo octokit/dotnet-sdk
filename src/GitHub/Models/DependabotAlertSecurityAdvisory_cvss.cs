@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace GitHub.Models
-{
+namespace GitHub.Models {
     /// <summary>
     /// Details for the advisory pertaining to the Common Vulnerability Scoring System.
     /// </summary>
-    public class DependabotAlertSecurityAdvisory_cvss : IParsable
+    public class DependabotAlertSecurityAdvisory_cvss : IParsable 
     {
         /// <summary>The overall CVSS score of the advisory.</summary>
         public double? Score { get; private set; }
@@ -39,8 +38,8 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "score", n => { Score = n.GetDoubleValue(); } },
-                { "vector_string", n => { VectorString = n.GetStringValue(); } },
+                {"score", n => { Score = n.GetDoubleValue(); } },
+                {"vector_string", n => { VectorString = n.GetStringValue(); } },
             };
         }
         /// <summary>
