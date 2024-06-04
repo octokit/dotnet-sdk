@@ -22,11 +22,16 @@ jobs:
       - name: Build the project
         run: dotnet build src/GitHub.Octokit.SDK.csproj test/Tests.csproj
 
+      - name: Build the tests
+        run: dotnet build test/Tests.csproj
+
       - name: Format
         run: dotnet format --verify-no-changes
+
+      - name: Test SDK
+        run: dotnet test -p:CollectCoverage=true -p:CoverletOutput=TestResults/ -p:CoverletOutputFormat=opencover -p:ExcludeByFile="**/GitHub/**/*.cs"
 
       - name: Build and strong name sign
         run: dotnet build src/GitHub.Octokit.SDK.csproj --no-incremental /p:SignAssembly=true /p:AssemblyOriginatorKeyFile=../key.snk
 
-      - name: Test SDK
-        run: dotnet test -p:CollectCoverage=true -p:CoverletOutput=TestResults/ -p:CoverletOutputFormat=opencover -p:ExcludeByFile="**/GitHub/**/*.cs"
+
