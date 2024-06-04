@@ -51,8 +51,6 @@ public class AppInstallationTokenProviderTests
         _mockGitHubAppTokenProvider.Verify(x => x.GetGitHubAccessTokenAsync(It.IsAny<string>(), "mockJwt", "installationId"), Times.Once);
     }
 
-    // TODO(kfcampbell): i don't love that the below tests rely on reflection; perhaps there's a better
-    // way to structure the code to avoid it? perhaps we could set private fields as internal?
     [Fact]
     public async Task GetAuthorizationTokenAsync_TokenIsExpired_FetchesNewToken()
     {
@@ -82,6 +80,8 @@ public class AppInstallationTokenProviderTests
         _mockGitHubAppTokenProvider.Verify(x => x.GetGitHubAccessTokenAsync(It.IsAny<string>(), "mockJwt", "installationId"), Times.Once);
     }
 
+
+    // for more info: https://github.com/octokit/dotnet-sdk/issues/77
     [Fact]
     public async Task GetAuthorizationTokenAsync_TokenIsValid_DoesNotFetchNewToken()
     {

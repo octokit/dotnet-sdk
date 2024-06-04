@@ -59,8 +59,6 @@ public class GitHubAppTokenProvider : IGitHubAppTokenProvider
     {
         using var client = new HttpClient();
         var request = new HttpRequestMessage(HttpMethod.Post, $"{baseUrl}/app/installations/{installationId}/access_tokens");
-
-        // TODO: this needs to be refactored for testability, reusability, and error handling
         request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", jwt);
         request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
 
