@@ -19,8 +19,8 @@ jobs:
         with:
           dotnet-version: '8.x.x'
 
-      - name: Install dotnet-format
-        run: dotnet tool install -g dotnet-format
+      - name: Build the project
+        run: dotnet build
 
       - name: Format
         run: dotnet format --verify-no-changes
