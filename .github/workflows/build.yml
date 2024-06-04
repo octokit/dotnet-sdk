@@ -20,10 +20,7 @@ jobs:
           dotnet-version: '8.x.x'
 
       - name: Build the project
-        run: dotnet build src/GitHub.Octokit.SDK.csproj test/Tests.csproj
-
-      - name: Build the tests
-        run: dotnet build test/Tests.csproj
+        run: dotnet build src/GitHub.Octokit.SDK.csproj
 
       - name: Format
         run: dotnet format --verify-no-changes
