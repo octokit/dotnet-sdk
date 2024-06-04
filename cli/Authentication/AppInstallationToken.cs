@@ -23,17 +23,18 @@ For App Installation Auth you'll need the following environment vars.  For more 
 
 public class AppInstallationToken
 {
+
+    static readonly string INSTALLATION_ID = Environment.GetEnvironmentVariable("GITHUB_APP_INSTALLATION_ID") ?? "";
+    static readonly string CLIENT_ID = Environment.GetEnvironmentVariable("GITHUB_APP_CLIENT_ID") ?? "";
+    static readonly string PRIVATE_KEY_PATH = File.ReadAllText(Environment.GetEnvironmentVariable("GITHUB_APP_PRIVATE_KEY_PATH") ?? "");
+
     public static async Task Run()
     {
-        var installationId = Environment.GetEnvironmentVariable("GITHUB_APP_INSTALLATION_ID") ?? "";
-        var clientId = Environment.GetEnvironmentVariable("GITHUB_APP_CLIENT_ID") ?? "";
-        var privateKeyPem = File.ReadAllText(Environment.GetEnvironmentVariable("GITHUB_APP_PRIVATE_KEY_PATH") ?? "");
         var githubAppTokenProvider = new GitHubAppTokenProvider();
-
         var rsa = RSA.Create();
-        rsa.ImportFromPem(privateKeyPem);
+        rsa.ImportFromPem(PRIVATE_KEY_PATH);
 
-        var aiAccessTokenProvider = new AppInstallationTokenProvider(clientId, rsa, installationId, githubAppTokenProvider);
+        var aiAccessTokenProvider = new AppInstallationTokenProvider(CLIENT_ID, rsa, INSTALLATION_ID, githubAppTokenProvider);
         var aiAdapter = RequestAdapter.Create(new AppInstallationAuthProvider(aiAccessTokenProvider));
         var aiGitHubClient = new GitHubClient(aiAdapter);
 

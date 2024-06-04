@@ -11,10 +11,9 @@ public class APIVersionOptions : IRequestOption
 {
     /// <summary>
     /// Gets or sets the API version for the request header.
+    /// TODO : Get the version from the generator
+    /// This should never be set from the client code.
     /// </summary>
-    public string APIVersion { get; set; } = GetAPIVersion();
+    public const string APIVersion = "2022-11-28";
 
-    public static string GetAPIVersion() =>
-      //TODO : Get the version from the generator
-      "2022-11-28";
 }

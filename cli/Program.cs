@@ -6,7 +6,7 @@ class Program
 {
     static async Task Main(string[] args)
     {
-        if (args.Length == 0)
+        if (args != null && args.Length == 0)
         {
             Console.WriteLine("Please provide an argument: 'AppInstallationToken' or 'PersonalAccessToken'");
             return;
