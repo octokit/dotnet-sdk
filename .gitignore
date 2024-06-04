@@ -108,6 +108,9 @@ node_modules/
 testresults/
 [Tt]est[Rr]esult*/
 **/coverage.json
-test/coverage/*
-tools/
+coverage/*
+tools/*
+dotnet-tools.json
+*.pem
+coveragereport/*
 .config/

@@ -20,9 +20,9 @@ public class APIVersionHandler(APIVersionOptions? apiVersionOptions = null) : De
 
         var apiVersionHandlerOption = request.GetRequestOption<APIVersionOptions>() ?? _apiVersionOptions;
 
-        if (!request.Headers.Contains(ApiVersionHeaderKey) || !request.Headers.GetValues(ApiVersionHeaderKey).Any(x => apiVersionHandlerOption.APIVersion.Equals(x, StringComparison.OrdinalIgnoreCase)))
+        if (!request.Headers.Contains(ApiVersionHeaderKey) || !request.Headers.GetValues(ApiVersionHeaderKey).Any(x => APIVersionOptions.APIVersion.Equals(x, StringComparison.OrdinalIgnoreCase)))
         {
-            request.Headers.Add(ApiVersionHeaderKey, apiVersionHandlerOption.APIVersion);
+            request.Headers.Add(ApiVersionHeaderKey, APIVersionOptions.APIVersion);
         }
 
         return base.SendAsync(request, cancellationToken);
