@@ -9,12 +9,12 @@ public class TokenAuthenticationProviderTests
 
     private TokenProvider _tokenProvider;
 
-    private BaseBearerTokenAuthenticationProvider _authProvider;
+    private TokenAuthProvider _authProvider;
 
     public TokenAuthenticationProviderTests()
     {
         _tokenProvider = new TokenProvider(ValidToken);
-        _authProvider = new BaseBearerTokenAuthenticationProvider(_tokenProvider);
+        _authProvider = new TokenAuthProvider(_tokenProvider);
     }
 
     [Fact]
