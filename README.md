@@ -38,9 +38,38 @@ foreach (var pullRequest in pullRequests)
 
 ### Authentication
 
-Currently, this SDK supports both [Personal Access Tokens (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic) and [fine-grained Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#fine-grained-personal-access-tokens).
+This SDK supports [Personal Access Tokens (classic)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#personal-access-tokens-classic), [fine-grained Personal Access Tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#fine-grained-personal-access-tokens), and [GitHub Apps](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/about-authentication-with-a-github-app) authentication.
 
-Future work is planned for the SDK to support [GitHub Apps](https://docs.github.com/en/apps/overview) authentication as well.
+In order to use either type of Personal Access token, you can use the `TokenAuthProvider` constructor option when constructing a new token provider, like so:
+
+```csharp
+    var tokenProvider = new TokenProvider(Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "");
+    var adapter = RequestAdapter.Create(new TokenAuthProvider(tokenProvider));
+    var gitHubClient = new GitHubClient(adapter);
+```
+
+In order to authenticate as a GitHub App, you can use the `AppInstallationAuthProvider` constructor option:
+
+```csharp
+    var githubAppTokenProvider = new GitHubAppTokenProvider();
+    var rsa = RSA.Create();
+    rsa.ImportFromPem(PRIVATE_KEY_PATH);
+
+    var aiAccessTokenProvider = new AppInstallationTokenProvider(CLIENT_ID, rsa, INSTALLATION_ID, githubAppTokenProvider);
+    var aiAdapter = RequestAdapter.Create(new AppInstallationAuthProvider(aiAccessTokenProvider));
+    var aiGitHubClient = new GitHubClient(aiAdapter);
+```
+
+To see more detailed examples, view [the cli/ directory in this repo](cli/).
+
+⚠️ **Note**: There are [three types](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/about-authentication-with-a-github-app) of GitHub App authentication:
+1. [As the App itself (meta endpoints)](https://docs.github.com/en/rest/apps/apps?apiVersion=2022-11-28)
+1. [As an App installation](https://docs.github.com/en/rest/authentication/endpoints-available-for-github-app-installation-access-tokens?apiVersion=2022-11-28)
+1. On behalf of a user
+
+Authenticating on behalf of a user is not supported in an SDK, as it requires a UI authentication flow with redirects. This SDK supports authenticating as the App itself and as an App installation.
+
+Note that the SDK **does not yet** support authenticating as the App itself and as an App installation using the same client transparently to the user. Authenticating as the App itself requires [creating a JSON Web Token (JWT)](https://docs.github.com/en/apps/creating-github-apps/authenticating-with-a-github-app/generating-a-json-web-token-jwt-for-a-github-app) and using that as token authentication. For helpers to create and sign a JWT in .NET, you may use the helpers in the `GitHubAppTokenProvider` [class](src/Client/Authentication/GitHubAppTokenProvider.cs).
 
 ## Why a generated SDK?
 
