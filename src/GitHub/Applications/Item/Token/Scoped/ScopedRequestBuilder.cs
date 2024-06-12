@@ -31,7 +31,7 @@ namespace GitHub.Applications.Item.Token.Scoped {
         {
         }
         /// <summary>
-        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
+        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.
         /// API method documentation <see href="https://docs.github.com/rest/apps/apps#create-a-scoped-access-token" />
         /// </summary>
         /// <returns>A <see cref="Authorization"/></returns>
@@ -63,7 +63,7 @@ namespace GitHub.Applications.Item.Token.Scoped {
             return await RequestAdapter.SendAsync<Authorization>(requestInfo, Authorization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication)when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub Appas the username and password.
+        /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specifywhich repositories the token can access and which permissions are granted to thetoken.Invalid tokens will return `404 NOT FOUND`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

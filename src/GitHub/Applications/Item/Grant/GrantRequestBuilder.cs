@@ -31,7 +31,7 @@ namespace GitHub.Applications.Item.Grant {
         {
         }
         /// <summary>
-        /// OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) when accessing this endpoint, using the OAuth application&apos;s `client_id` and `client_secret` as the username and password. You must also provide a valid OAuth `access_token` as an input parameter and the grant for the token&apos;s owner will be deleted.Deleting an application&apos;s grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user&apos;s account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
+        /// OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must provide a valid OAuth `access_token` as an input parameter and the grant for the token&apos;s owner will be deleted.Deleting an application&apos;s grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user&apos;s account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
         /// API method documentation <see href="https://docs.github.com/rest/apps/oauth-applications#delete-an-app-authorization" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -56,7 +56,7 @@ namespace GitHub.Applications.Item.Grant {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) when accessing this endpoint, using the OAuth application&apos;s `client_id` and `client_secret` as the username and password. You must also provide a valid OAuth `access_token` as an input parameter and the grant for the token&apos;s owner will be deleted.Deleting an application&apos;s grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user&apos;s account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
+        /// OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must provide a valid OAuth `access_token` as an input parameter and the grant for the token&apos;s owner will be deleted.Deleting an application&apos;s grant will also delete all OAuth tokens associated with the application for the user. Once deleted, the application will have no access to the user&apos;s account and will no longer be listed on [the application authorizations settings screen within GitHub](https://github.com/settings/applications#authorized).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
