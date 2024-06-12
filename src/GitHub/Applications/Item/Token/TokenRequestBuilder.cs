@@ -37,7 +37,7 @@ namespace GitHub.Applications.Item.Token {
         {
         }
         /// <summary>
-        /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization. You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) when accessing this endpoint, using the application&apos;s `client_id` and `client_secret` as the username and password.
+        /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization.
         /// API method documentation <see href="https://docs.github.com/rest/apps/oauth-applications#delete-an-app-token" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -62,7 +62,7 @@ namespace GitHub.Applications.Item.Token {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// OAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the &quot;token&quot; property in the response because changes take effect immediately. You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) when accessing this endpoint, using the application&apos;s `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
+        /// OAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the &quot;token&quot; property in the response because changes take effect immediately. Invalid tokens will return `404 NOT FOUND`.
         /// API method documentation <see href="https://docs.github.com/rest/apps/oauth-applications#reset-a-token" />
         /// </summary>
         /// <returns>A <see cref="Authorization"/></returns>
@@ -88,7 +88,7 @@ namespace GitHub.Applications.Item.Token {
             return await RequestAdapter.SendAsync<Authorization>(requestInfo, Authorization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) to use this endpoint, where the username is the application `client_id` and the password is its `client_secret`. Invalid tokens will return `404 NOT FOUND`.
+        /// OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. Invalid tokens will return `404 NOT FOUND`.
         /// API method documentation <see href="https://docs.github.com/rest/apps/oauth-applications#check-a-token" />
         /// </summary>
         /// <returns>A <see cref="Authorization"/></returns>
@@ -116,7 +116,7 @@ namespace GitHub.Applications.Item.Token {
             return await RequestAdapter.SendAsync<Authorization>(requestInfo, Authorization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization. You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) when accessing this endpoint, using the application&apos;s `client_id` and `client_secret` as the username and password.
+        /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -138,7 +138,7 @@ namespace GitHub.Applications.Item.Token {
             return requestInfo;
         }
         /// <summary>
-        /// OAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the &quot;token&quot; property in the response because changes take effect immediately. You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) when accessing this endpoint, using the application&apos;s `client_id` and `client_secret` as the username and password. Invalid tokens will return `404 NOT FOUND`.
+        /// OAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the &quot;token&quot; property in the response because changes take effect immediately. Invalid tokens will return `404 NOT FOUND`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +160,7 @@ namespace GitHub.Applications.Item.Token {
             return requestInfo;
         }
         /// <summary>
-        /// OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. You must use [Basic Authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) to use this endpoint, where the username is the application `client_id` and the password is its `client_secret`. Invalid tokens will return `404 NOT FOUND`.
+        /// OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. Invalid tokens will return `404 NOT FOUND`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
