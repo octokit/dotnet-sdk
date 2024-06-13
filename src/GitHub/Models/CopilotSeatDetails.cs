@@ -19,13 +19,13 @@ namespace GitHub.Models {
 #else
         public CopilotSeatDetails_assignee Assignee { get; set; }
 #endif
-        /// <summary>The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually.</summary>
+        /// <summary>The team through which the assignee is granted access to GitHub Copilot, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Team? AssigningTeam { get; set; }
+        public CopilotSeatDetails_assigning_team? AssigningTeam { get; set; }
 #nullable restore
 #else
-        public Team AssigningTeam { get; set; }
+        public CopilotSeatDetails_assigning_team AssigningTeam { get; set; }
 #endif
         /// <summary>Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -38,6 +38,14 @@ namespace GitHub.Models {
 #nullable restore
 #else
         public string LastActivityEditor { get; set; }
+#endif
+        /// <summary>The organization to which this seat belongs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CopilotSeatDetails_organization? Organization { get; set; }
+#nullable restore
+#else
+        public CopilotSeatDetails_organization Organization { get; set; }
 #endif
         /// <summary>The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee&apos;s Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization&apos;s next billing cycle.</summary>
         public Date? PendingCancellationDate { get; set; }
@@ -62,10 +70,11 @@ namespace GitHub.Models {
             return new Dictionary<string, Action<IParseNode>>
             {
                 {"assignee", n => { Assignee = n.GetObjectValue<CopilotSeatDetails_assignee>(CopilotSeatDetails_assignee.CreateFromDiscriminatorValue); } },
-                {"assigning_team", n => { AssigningTeam = n.GetObjectValue<Team>(Team.CreateFromDiscriminatorValue); } },
+                {"assigning_team", n => { AssigningTeam = n.GetObjectValue<CopilotSeatDetails_assigning_team>(CopilotSeatDetails_assigning_team.CreateFromDiscriminatorValue); } },
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 {"last_activity_at", n => { LastActivityAt = n.GetDateTimeOffsetValue(); } },
                 {"last_activity_editor", n => { LastActivityEditor = n.GetStringValue(); } },
+                {"organization", n => { Organization = n.GetObjectValue<CopilotSeatDetails_organization>(CopilotSeatDetails_organization.CreateFromDiscriminatorValue); } },
                 {"pending_cancellation_date", n => { PendingCancellationDate = n.GetDateValue(); } },
                 {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -78,15 +87,16 @@ namespace GitHub.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<CopilotSeatDetails_assignee>("assignee", Assignee);
-            writer.WriteObjectValue<Team>("assigning_team", AssigningTeam);
+            writer.WriteObjectValue<CopilotSeatDetails_assigning_team>("assigning_team", AssigningTeam);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("last_activity_at", LastActivityAt);
             writer.WriteStringValue("last_activity_editor", LastActivityEditor);
+            writer.WriteObjectValue<CopilotSeatDetails_organization>("organization", Organization);
             writer.WriteDateValue("pending_cancellation_date", PendingCancellationDate);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="Organization"/>, <see cref="SimpleUser"/>, <see cref="Team"/>
+        /// Composed type wrapper for classes <see cref="GitHub.Models.Organization"/>, <see cref="SimpleUser"/>, <see cref="Team"/>
         /// </summary>
         public class CopilotSeatDetails_assignee : IComposedTypeWrapper, IParsable 
         {
@@ -172,6 +182,80 @@ namespace GitHub.Models {
                 else if(SimpleUser != null)
                 {
                     writer.WriteObjectValue<GitHub.Models.SimpleUser>(null, SimpleUser);
+                }
+                else if(Team != null)
+                {
+                    writer.WriteObjectValue<GitHub.Models.Team>(null, Team);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="EnterpriseTeam"/>, <see cref="Team"/>
+        /// </summary>
+        public class CopilotSeatDetails_assigning_team : IComposedTypeWrapper, IParsable 
+        {
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.EnterpriseTeam"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Models.EnterpriseTeam? EnterpriseTeam { get; set; }
+#nullable restore
+#else
+            public GitHub.Models.EnterpriseTeam EnterpriseTeam { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.Team"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Models.Team? Team { get; set; }
+#nullable restore
+#else
+            public GitHub.Models.Team Team { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="CopilotSeatDetails_assigning_team"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static CopilotSeatDetails_assigning_team CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new CopilotSeatDetails_assigning_team();
+                if("enterprise-team".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.EnterpriseTeam = new GitHub.Models.EnterpriseTeam();
+                }
+                else if("team".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.Team = new GitHub.Models.Team();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(EnterpriseTeam != null)
+                {
+                    return EnterpriseTeam.GetFieldDeserializers();
+                }
+                else if(Team != null)
+                {
+                    return Team.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(EnterpriseTeam != null)
+                {
+                    writer.WriteObjectValue<GitHub.Models.EnterpriseTeam>(null, EnterpriseTeam);
                 }
                 else if(Team != null)
                 {
