@@ -13,5 +13,13 @@ namespace GitHub.Models {
         #pragma warning disable CS1591
         Single_select,
         #pragma warning restore CS1591
+        [EnumMember(Value = "multi_select")]
+        #pragma warning disable CS1591
+        Multi_select,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "true_false")]
+        #pragma warning disable CS1591
+        True_false,
+        #pragma warning restore CS1591
     }
 }
