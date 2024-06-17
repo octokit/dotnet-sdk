@@ -19,10 +19,10 @@ To install the package, you can use either of the following options:
 ```csharp
 using GitHub;
 using GitHub.Octokit.Client;
-using GitHub.Octokit.Authentication;
+using GitHub.Octokit.Client.Authentication;
 
 var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "";
-var request = RequestAdapter.Create(new TokenAuthenticationProvider("Octokit.Gen", token));
+var request = RequestAdapter.Create(new TokenAuthProvider(new TokenProvider(token)));
 var gitHubClient = new GitHubClient(request);
 
 var pullRequests = await gitHubClient.Repos["octokit"]["octokit.net"].Pulls.GetAsync();
