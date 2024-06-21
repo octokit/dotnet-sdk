@@ -3,6 +3,7 @@ using GitHub.Models;
 using GitHub.Repos.Item.Item.Actions;
 using GitHub.Repos.Item.Item.Activity;
 using GitHub.Repos.Item.Item.Assignees;
+using GitHub.Repos.Item.Item.Attestations;
 using GitHub.Repos.Item.Item.Autolinks;
 using GitHub.Repos.Item.Item.AutomatedSecurityFixes;
 using GitHub.Repos.Item.Item.Branches;
@@ -93,6 +94,11 @@ namespace GitHub.Repos.Item.Item {
         public AssigneesRequestBuilder Assignees
         {
             get => new AssigneesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The attestations property</summary>
+        public AttestationsRequestBuilder Attestations
+        {
+            get => new AttestationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The autolinks property</summary>
         public AutolinksRequestBuilder Autolinks
