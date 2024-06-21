@@ -3,6 +3,7 @@ using GitHub.Models;
 using GitHub.Orgs.Item.Actions;
 using GitHub.Orgs.Item.Blocks;
 using GitHub.Orgs.Item.CodeScanning;
+using GitHub.Orgs.Item.CodeSecurity;
 using GitHub.Orgs.Item.Codespaces;
 using GitHub.Orgs.Item.Copilot;
 using GitHub.Orgs.Item.Dependabot;
@@ -63,6 +64,11 @@ namespace GitHub.Orgs.Item {
         public CodeScanningRequestBuilder CodeScanning
         {
             get => new CodeScanningRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The codeSecurity property</summary>
+        public CodeSecurityRequestBuilder CodeSecurity
+        {
+            get => new CodeSecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codespaces property</summary>
         public CodespacesRequestBuilder Codespaces
