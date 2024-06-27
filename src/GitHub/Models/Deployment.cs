@@ -39,7 +39,7 @@ namespace GitHub.Models {
         public string Environment { get; set; }
 #endif
         /// <summary>Unique identifier of the deployment</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The node_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,7 +155,7 @@ namespace GitHub.Models {
                 {"creator", n => { Creator = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"environment", n => { Environment = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"node_id", n => { NodeId = n.GetStringValue(); } },
                 {"original_environment", n => { OriginalEnvironment = n.GetStringValue(); } },
                 {"payload", n => { Payload = n.GetStringValue(); } },
@@ -182,7 +182,7 @@ namespace GitHub.Models {
             writer.WriteObjectValue<NullableSimpleUser>("creator", Creator);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("environment", Environment);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteStringValue("original_environment", OriginalEnvironment);
             writer.WriteStringValue("payload", Payload);

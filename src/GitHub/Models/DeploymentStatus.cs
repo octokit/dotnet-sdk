@@ -55,7 +55,7 @@ namespace GitHub.Models {
         public string EnvironmentUrl { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The URL to associate with this status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,7 +139,7 @@ namespace GitHub.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"environment", n => { Environment = n.GetStringValue(); } },
                 {"environment_url", n => { EnvironmentUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"log_url", n => { LogUrl = n.GetStringValue(); } },
                 {"node_id", n => { NodeId = n.GetStringValue(); } },
                 {"performed_via_github_app", n => { PerformedViaGithubApp = n.GetObjectValue<NullableIntegration>(NullableIntegration.CreateFromDiscriminatorValue); } },
@@ -163,7 +163,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("environment_url", EnvironmentUrl);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("log_url", LogUrl);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteObjectValue<NullableIntegration>("performed_via_github_app", PerformedViaGithubApp);

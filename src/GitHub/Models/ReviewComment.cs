@@ -65,7 +65,7 @@ namespace GitHub.Models {
         public string HtmlUrl { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The in_reply_to_id property</summary>
         public int? InReplyToId { get; set; }
         /// <summary>The line of the blob to which the comment applies. The last line of the range for a multi-line comment</summary>
@@ -111,7 +111,7 @@ namespace GitHub.Models {
         /// <summary>The position property</summary>
         public int? Position { get; set; }
         /// <summary>The pull_request_review_id property</summary>
-        public int? PullRequestReviewId { get; set; }
+        public long? PullRequestReviewId { get; set; }
         /// <summary>The pull_request_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,7 +187,7 @@ namespace GitHub.Models {
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 {"diff_hunk", n => { DiffHunk = n.GetStringValue(); } },
                 {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"in_reply_to_id", n => { InReplyToId = n.GetIntValue(); } },
                 {"line", n => { Line = n.GetIntValue(); } },
                 {"_links", n => { Links = n.GetObjectValue<ReviewComment__links>(ReviewComment__links.CreateFromDiscriminatorValue); } },
@@ -198,7 +198,7 @@ namespace GitHub.Models {
                 {"original_start_line", n => { OriginalStartLine = n.GetIntValue(); } },
                 {"path", n => { Path = n.GetStringValue(); } },
                 {"position", n => { Position = n.GetIntValue(); } },
-                {"pull_request_review_id", n => { PullRequestReviewId = n.GetIntValue(); } },
+                {"pull_request_review_id", n => { PullRequestReviewId = n.GetLongValue(); } },
                 {"pull_request_url", n => { PullRequestUrl = n.GetStringValue(); } },
                 {"reactions", n => { Reactions = n.GetObjectValue<ReactionRollup>(ReactionRollup.CreateFromDiscriminatorValue); } },
                 {"side", n => { Side = n.GetEnumValue<ReviewComment_side>(); } },
@@ -224,7 +224,7 @@ namespace GitHub.Models {
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("diff_hunk", DiffHunk);
             writer.WriteStringValue("html_url", HtmlUrl);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteIntValue("in_reply_to_id", InReplyToId);
             writer.WriteIntValue("line", Line);
             writer.WriteObjectValue<ReviewComment__links>("_links", Links);
@@ -235,7 +235,7 @@ namespace GitHub.Models {
             writer.WriteIntValue("original_start_line", OriginalStartLine);
             writer.WriteStringValue("path", Path);
             writer.WriteIntValue("position", Position);
-            writer.WriteIntValue("pull_request_review_id", PullRequestReviewId);
+            writer.WriteLongValue("pull_request_review_id", PullRequestReviewId);
             writer.WriteStringValue("pull_request_url", PullRequestUrl);
             writer.WriteObjectValue<ReactionRollup>("reactions", Reactions);
             writer.WriteEnumValue<ReviewComment_side>("side", Side);

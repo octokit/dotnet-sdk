@@ -11,6 +11,7 @@ using GitHub.User.Gpg_keys;
 using GitHub.User.Installations;
 using GitHub.User.InteractionLimits;
 using GitHub.User.Issues;
+using GitHub.User.Item;
 using GitHub.User.Keys;
 using GitHub.User.Marketplace_purchases;
 using GitHub.User.Memberships;
@@ -169,6 +170,18 @@ namespace GitHub.User {
         public TeamsRequestBuilder Teams
         {
             get => new TeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the GitHub.user.item collection</summary>
+        /// <param name="position">account_id parameter</param>
+        /// <returns>A <see cref="WithAccount_ItemRequestBuilder"/></returns>
+        public WithAccount_ItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("account_id", position);
+                return new WithAccount_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="UserRequestBuilder"/> and sets the default values.

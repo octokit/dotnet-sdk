@@ -109,7 +109,7 @@ namespace GitHub.Models {
         public string HtmlUrl { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The issue_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -286,7 +286,7 @@ namespace GitHub.Models {
                 {"draft", n => { Draft = n.GetBoolValue(); } },
                 {"head", n => { Head = n.GetObjectValue<PullRequestSimple_head>(PullRequestSimple_head.CreateFromDiscriminatorValue); } },
                 {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"issue_url", n => { IssueUrl = n.GetStringValue(); } },
                 {"labels", n => { Labels = n.GetCollectionOfObjectValues<PullRequestSimple_labels>(PullRequestSimple_labels.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"_links", n => { Links = n.GetObjectValue<PullRequestSimple__links>(PullRequestSimple__links.CreateFromDiscriminatorValue); } },
@@ -331,7 +331,7 @@ namespace GitHub.Models {
             writer.WriteBoolValue("draft", Draft);
             writer.WriteObjectValue<PullRequestSimple_head>("head", Head);
             writer.WriteStringValue("html_url", HtmlUrl);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("issue_url", IssueUrl);
             writer.WriteCollectionOfObjectValues<PullRequestSimple_labels>("labels", Labels);
             writer.WriteObjectValue<PullRequestSimple__links>("_links", Links);

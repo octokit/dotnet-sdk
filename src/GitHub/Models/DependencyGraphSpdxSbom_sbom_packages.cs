@@ -11,6 +11,14 @@ namespace GitHub.Models {
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The copyright holders of the package, and any dates present with those notices, if available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CopyrightText { get; set; }
+#nullable restore
+#else
+        public string CopyrightText { get; set; }
+#endif
         /// <summary>The location where the package can be downloaded,or NOASSERTION if this has not been determined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +110,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                {"copyrightText", n => { CopyrightText = n.GetStringValue(); } },
                 {"downloadLocation", n => { DownloadLocation = n.GetStringValue(); } },
                 {"externalRefs", n => { ExternalRefs = n.GetCollectionOfObjectValues<DependencyGraphSpdxSbom_sbom_packages_externalRefs>(DependencyGraphSpdxSbom_sbom_packages_externalRefs.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"filesAnalyzed", n => { FilesAnalyzed = n.GetBoolValue(); } },
@@ -120,6 +129,7 @@ namespace GitHub.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("copyrightText", CopyrightText);
             writer.WriteStringValue("downloadLocation", DownloadLocation);
             writer.WriteCollectionOfObjectValues<DependencyGraphSpdxSbom_sbom_packages_externalRefs>("externalRefs", ExternalRefs);
             writer.WriteBoolValue("filesAnalyzed", FilesAnalyzed);
