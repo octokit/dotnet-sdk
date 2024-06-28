@@ -28,7 +28,7 @@ namespace GitHub.Models {
         public PullRequestMinimal_head Head { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The number property</summary>
         public int? Number { get; set; }
         /// <summary>The url property</summary>
@@ -66,7 +66,7 @@ namespace GitHub.Models {
             {
                 {"base", n => { Base = n.GetObjectValue<PullRequestMinimal_base>(PullRequestMinimal_base.CreateFromDiscriminatorValue); } },
                 {"head", n => { Head = n.GetObjectValue<PullRequestMinimal_head>(PullRequestMinimal_head.CreateFromDiscriminatorValue); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"number", n => { Number = n.GetIntValue(); } },
                 {"url", n => { Url = n.GetStringValue(); } },
             };
@@ -80,7 +80,7 @@ namespace GitHub.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<PullRequestMinimal_base>("base", Base);
             writer.WriteObjectValue<PullRequestMinimal_head>("head", Head);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteIntValue("number", Number);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

@@ -20,7 +20,7 @@ namespace GitHub.Models {
         public string HtmlUrl { get; set; }
 #endif
         /// <summary>The id of the environment.</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The name of the environment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +71,7 @@ namespace GitHub.Models {
             return new Dictionary<string, Action<IParseNode>>
             {
                 {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"node_id", n => { NodeId = n.GetStringValue(); } },
                 {"url", n => { Url = n.GetStringValue(); } },
@@ -85,7 +85,7 @@ namespace GitHub.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("html_url", HtmlUrl);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteStringValue("url", Url);

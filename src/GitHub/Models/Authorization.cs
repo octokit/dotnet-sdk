@@ -41,7 +41,7 @@ namespace GitHub.Models {
         public string HashedToken { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The installation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,7 +138,7 @@ namespace GitHub.Models {
                 {"expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 {"fingerprint", n => { Fingerprint = n.GetStringValue(); } },
                 {"hashed_token", n => { HashedToken = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"installation", n => { Installation = n.GetObjectValue<NullableScopedInstallation>(NullableScopedInstallation.CreateFromDiscriminatorValue); } },
                 {"note", n => { Note = n.GetStringValue(); } },
                 {"note_url", n => { NoteUrl = n.GetStringValue(); } },
@@ -162,7 +162,7 @@ namespace GitHub.Models {
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteStringValue("fingerprint", Fingerprint);
             writer.WriteStringValue("hashed_token", HashedToken);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<NullableScopedInstallation>("installation", Installation);
             writer.WriteStringValue("note", Note);
             writer.WriteStringValue("note_url", NoteUrl);
