@@ -109,7 +109,7 @@ namespace GitHub.Models {
         public string HtmlUrl { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -258,7 +258,7 @@ namespace GitHub.Models {
                 {"gravatar_id", n => { GravatarId = n.GetStringValue(); } },
                 {"hireable", n => { Hireable = n.GetBoolValue(); } },
                 {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"location", n => { Location = n.GetStringValue(); } },
                 {"login", n => { Login = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -301,7 +301,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("gravatar_id", GravatarId);
             writer.WriteBoolValue("hireable", Hireable);
             writer.WriteStringValue("html_url", HtmlUrl);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("login", Login);
             writer.WriteStringValue("name", Name);

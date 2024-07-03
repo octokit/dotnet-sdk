@@ -45,7 +45,7 @@ namespace GitHub.Models {
         public string FailedReason { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The invitation_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,7 +125,7 @@ namespace GitHub.Models {
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"failed_at", n => { FailedAt = n.GetStringValue(); } },
                 {"failed_reason", n => { FailedReason = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"invitation_source", n => { InvitationSource = n.GetStringValue(); } },
                 {"invitation_teams_url", n => { InvitationTeamsUrl = n.GetStringValue(); } },
                 {"inviter", n => { Inviter = n.GetObjectValue<SimpleUser>(SimpleUser.CreateFromDiscriminatorValue); } },
@@ -146,7 +146,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("failed_at", FailedAt);
             writer.WriteStringValue("failed_reason", FailedReason);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("invitation_source", InvitationSource);
             writer.WriteStringValue("invitation_teams_url", InvitationTeamsUrl);
             writer.WriteObjectValue<SimpleUser>("inviter", Inviter);

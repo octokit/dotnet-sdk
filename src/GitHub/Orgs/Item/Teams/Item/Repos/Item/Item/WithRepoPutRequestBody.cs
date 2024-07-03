@@ -25,7 +25,6 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos.Item.Item {
         public WithRepoPutRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
-            Permission = "push";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

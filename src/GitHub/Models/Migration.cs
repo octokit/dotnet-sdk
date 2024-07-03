@@ -49,7 +49,7 @@ namespace GitHub.Models {
         public string Guid { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The lock_repositories property</summary>
         public bool? LockRepositories { get; set; }
         /// <summary>The node_id property</summary>
@@ -130,7 +130,7 @@ namespace GitHub.Models {
                 {"exclude_owner_projects", n => { ExcludeOwnerProjects = n.GetBoolValue(); } },
                 {"exclude_releases", n => { ExcludeReleases = n.GetBoolValue(); } },
                 {"guid", n => { Guid = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"lock_repositories", n => { LockRepositories = n.GetBoolValue(); } },
                 {"node_id", n => { NodeId = n.GetStringValue(); } },
                 {"org_metadata_only", n => { OrgMetadataOnly = n.GetBoolValue(); } },
@@ -157,7 +157,7 @@ namespace GitHub.Models {
             writer.WriteBoolValue("exclude_owner_projects", ExcludeOwnerProjects);
             writer.WriteBoolValue("exclude_releases", ExcludeReleases);
             writer.WriteStringValue("guid", Guid);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteBoolValue("lock_repositories", LockRepositories);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteBoolValue("org_metadata_only", OrgMetadataOnly);

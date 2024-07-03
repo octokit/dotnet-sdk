@@ -25,7 +25,7 @@ namespace GitHub.Models {
         public string HtmlUrl { get; set; }
 #endif
         /// <summary>Unique identifier of the repository invitation.</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,7 +96,7 @@ namespace GitHub.Models {
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 {"expired", n => { Expired = n.GetBoolValue(); } },
                 {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"invitee", n => { Invitee = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
                 {"inviter", n => { Inviter = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
                 {"node_id", n => { NodeId = n.GetStringValue(); } },
@@ -115,7 +115,7 @@ namespace GitHub.Models {
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("expired", Expired);
             writer.WriteStringValue("html_url", HtmlUrl);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteObjectValue<NullableSimpleUser>("invitee", Invitee);
             writer.WriteObjectValue<NullableSimpleUser>("inviter", Inviter);
             writer.WriteStringValue("node_id", NodeId);

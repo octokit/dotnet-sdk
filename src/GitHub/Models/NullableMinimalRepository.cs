@@ -249,7 +249,7 @@ namespace GitHub.Models {
         public string HtmlUrl { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The issue_comment_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -605,7 +605,7 @@ namespace GitHub.Models {
                 {"homepage", n => { Homepage = n.GetStringValue(); } },
                 {"hooks_url", n => { HooksUrl = n.GetStringValue(); } },
                 {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"is_template", n => { IsTemplate = n.GetBoolValue(); } },
                 {"issue_comment_url", n => { IssueCommentUrl = n.GetStringValue(); } },
                 {"issue_events_url", n => { IssueEventsUrl = n.GetStringValue(); } },
@@ -701,7 +701,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("homepage", Homepage);
             writer.WriteStringValue("hooks_url", HooksUrl);
             writer.WriteStringValue("html_url", HtmlUrl);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("issue_comment_url", IssueCommentUrl);
             writer.WriteStringValue("issue_events_url", IssueEventsUrl);
             writer.WriteStringValue("issues_url", IssuesUrl);
