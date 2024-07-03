@@ -55,7 +55,7 @@ namespace GitHub.Models {
         public Codespace_git_status GitStatus { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The number of minutes of inactivity after which this codespace will be automatically stopped.</summary>
         public int? IdleTimeoutMinutes { get; set; }
         /// <summary>Text to show user when codespace idle timeout minutes has been overriden by an organization policy</summary>
@@ -233,7 +233,7 @@ namespace GitHub.Models {
                 {"display_name", n => { DisplayName = n.GetStringValue(); } },
                 {"environment_id", n => { EnvironmentId = n.GetStringValue(); } },
                 {"git_status", n => { GitStatus = n.GetObjectValue<Codespace_git_status>(Codespace_git_status.CreateFromDiscriminatorValue); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"idle_timeout_minutes", n => { IdleTimeoutMinutes = n.GetIntValue(); } },
                 {"idle_timeout_notice", n => { IdleTimeoutNotice = n.GetStringValue(); } },
                 {"last_known_stop_notice", n => { LastKnownStopNotice = n.GetStringValue(); } },
@@ -274,7 +274,7 @@ namespace GitHub.Models {
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("environment_id", EnvironmentId);
             writer.WriteObjectValue<Codespace_git_status>("git_status", GitStatus);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteIntValue("idle_timeout_minutes", IdleTimeoutMinutes);
             writer.WriteStringValue("idle_timeout_notice", IdleTimeoutNotice);
             writer.WriteStringValue("last_known_stop_notice", LastKnownStopNotice);

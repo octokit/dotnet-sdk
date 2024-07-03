@@ -33,7 +33,7 @@ namespace GitHub.Models {
         /// <summary>The expires_at property</summary>
         public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The key_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,7 +110,7 @@ namespace GitHub.Models {
                 {"created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 {"emails", n => { Emails = n.GetCollectionOfObjectValues<GpgKey_emails>(GpgKey_emails.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                {"id", n => { Id = n.GetIntValue(); } },
+                {"id", n => { Id = n.GetLongValue(); } },
                 {"key_id", n => { KeyId = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"primary_key_id", n => { PrimaryKeyId = n.GetIntValue(); } },
@@ -134,7 +134,7 @@ namespace GitHub.Models {
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<GpgKey_emails>("emails", Emails);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteStringValue("key_id", KeyId);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("primary_key_id", PrimaryKeyId);
