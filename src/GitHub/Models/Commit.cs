@@ -12,13 +12,13 @@ namespace GitHub.Models {
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A GitHub user.</summary>
+        /// <summary>The author property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public NullableSimpleUser? Author { get; set; }
+        public Commit_author? Author { get; set; }
 #nullable restore
 #else
-        public NullableSimpleUser Author { get; set; }
+        public Commit_author Author { get; set; }
 #endif
         /// <summary>The comments_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,13 +36,13 @@ namespace GitHub.Models {
 #else
         public Commit_commit CommitProp { get; set; }
 #endif
-        /// <summary>A GitHub user.</summary>
+        /// <summary>The committer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public NullableSimpleUser? Committer { get; set; }
+        public Commit_committer? Committer { get; set; }
 #nullable restore
 #else
-        public NullableSimpleUser Committer { get; set; }
+        public Commit_committer Committer { get; set; }
 #endif
         /// <summary>The files property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,10 +125,10 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"author", n => { Author = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"author", n => { Author = n.GetObjectValue<Commit_author>(Commit_author.CreateFromDiscriminatorValue); } },
                 {"comments_url", n => { CommentsUrl = n.GetStringValue(); } },
                 {"commit", n => { CommitProp = n.GetObjectValue<Commit_commit>(Commit_commit.CreateFromDiscriminatorValue); } },
-                {"committer", n => { Committer = n.GetObjectValue<NullableSimpleUser>(NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                {"committer", n => { Committer = n.GetObjectValue<Commit_committer>(Commit_committer.CreateFromDiscriminatorValue); } },
                 {"files", n => { Files = n.GetCollectionOfObjectValues<DiffEntry>(DiffEntry.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 {"node_id", n => { NodeId = n.GetStringValue(); } },
@@ -145,10 +145,10 @@ namespace GitHub.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<NullableSimpleUser>("author", Author);
+            writer.WriteObjectValue<Commit_author>("author", Author);
             writer.WriteStringValue("comments_url", CommentsUrl);
             writer.WriteObjectValue<Commit_commit>("commit", CommitProp);
-            writer.WriteObjectValue<NullableSimpleUser>("committer", Committer);
+            writer.WriteObjectValue<Commit_committer>("committer", Committer);
             writer.WriteCollectionOfObjectValues<DiffEntry>("files", Files);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteStringValue("node_id", NodeId);
@@ -157,6 +157,154 @@ namespace GitHub.Models {
             writer.WriteObjectValue<Commit_stats>("stats", Stats);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="EmptyObject"/>, <see cref="SimpleUser"/>
+        /// </summary>
+        public class Commit_author : IComposedTypeWrapper, IParsable 
+        {
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.EmptyObject"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Models.EmptyObject? EmptyObject { get; set; }
+#nullable restore
+#else
+            public GitHub.Models.EmptyObject EmptyObject { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SimpleUser"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Models.SimpleUser? SimpleUser { get; set; }
+#nullable restore
+#else
+            public GitHub.Models.SimpleUser SimpleUser { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="Commit_author"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static Commit_author CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new Commit_author();
+                if("empty-object".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.EmptyObject = new GitHub.Models.EmptyObject();
+                }
+                else if("simple-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SimpleUser = new GitHub.Models.SimpleUser();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(EmptyObject != null)
+                {
+                    return EmptyObject.GetFieldDeserializers();
+                }
+                else if(SimpleUser != null)
+                {
+                    return SimpleUser.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(EmptyObject != null)
+                {
+                    writer.WriteObjectValue<GitHub.Models.EmptyObject>(null, EmptyObject);
+                }
+                else if(SimpleUser != null)
+                {
+                    writer.WriteObjectValue<GitHub.Models.SimpleUser>(null, SimpleUser);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="EmptyObject"/>, <see cref="SimpleUser"/>
+        /// </summary>
+        public class Commit_committer : IComposedTypeWrapper, IParsable 
+        {
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.EmptyObject"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Models.EmptyObject? EmptyObject { get; set; }
+#nullable restore
+#else
+            public GitHub.Models.EmptyObject EmptyObject { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="GitHub.Models.SimpleUser"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public GitHub.Models.SimpleUser? SimpleUser { get; set; }
+#nullable restore
+#else
+            public GitHub.Models.SimpleUser SimpleUser { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="Commit_committer"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static Commit_committer CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new Commit_committer();
+                if("empty-object".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.EmptyObject = new GitHub.Models.EmptyObject();
+                }
+                else if("simple-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SimpleUser = new GitHub.Models.SimpleUser();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(EmptyObject != null)
+                {
+                    return EmptyObject.GetFieldDeserializers();
+                }
+                else if(SimpleUser != null)
+                {
+                    return SimpleUser.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(EmptyObject != null)
+                {
+                    writer.WriteObjectValue<GitHub.Models.EmptyObject>(null, EmptyObject);
+                }
+                else if(SimpleUser != null)
+                {
+                    writer.WriteObjectValue<GitHub.Models.SimpleUser>(null, SimpleUser);
+                }
+            }
         }
     }
 }

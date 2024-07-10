@@ -7,10 +7,9 @@ namespace cli.Authentication;
 /*
 For Personal Access Token Auth you'll need the following environment variable.  For more information see the [GitHub docs](https://docs.github.com/en/rest/orgs/personal-access-tokens).
 
-`GITHUB_TOKEN` 
+`GITHUB_TOKEN`
 - Description: The personal access token for the user
 - Location: Found under User > Settings > Developer Settings > [Token Type]
-
 */
 
 public class PersonalAccessToken
