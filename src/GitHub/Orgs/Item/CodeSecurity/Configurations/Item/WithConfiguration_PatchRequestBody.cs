@@ -41,6 +41,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
         public WithConfiguration_PatchRequestBody_secret_scanning? SecretScanning { get; set; }
         /// <summary>The enablement status of secret scanning push protection</summary>
         public WithConfiguration_PatchRequestBody_secret_scanning_push_protection? SecretScanningPushProtection { get; set; }
+        /// <summary>The enablement status of secret scanning validity checks</summary>
+        public WithConfiguration_PatchRequestBody_secret_scanning_validity_checks? SecretScanningValidityChecks { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +71,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
                 {"private_vulnerability_reporting", n => { PrivateVulnerabilityReporting = n.GetEnumValue<WithConfiguration_PatchRequestBody_private_vulnerability_reporting>(); } },
                 {"secret_scanning", n => { SecretScanning = n.GetEnumValue<WithConfiguration_PatchRequestBody_secret_scanning>(); } },
                 {"secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetEnumValue<WithConfiguration_PatchRequestBody_secret_scanning_push_protection>(); } },
+                {"secret_scanning_validity_checks", n => { SecretScanningValidityChecks = n.GetEnumValue<WithConfiguration_PatchRequestBody_secret_scanning_validity_checks>(); } },
             };
         }
         /// <summary>
@@ -88,6 +91,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_private_vulnerability_reporting>("private_vulnerability_reporting", PrivateVulnerabilityReporting);
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_secret_scanning>("secret_scanning", SecretScanning);
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
+            writer.WriteEnumValue<WithConfiguration_PatchRequestBody_secret_scanning_validity_checks>("secret_scanning_validity_checks", SecretScanningValidityChecks);
         }
     }
 }
