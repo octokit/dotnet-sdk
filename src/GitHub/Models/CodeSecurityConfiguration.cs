@@ -56,6 +56,8 @@ namespace GitHub.Models {
         public CodeSecurityConfiguration_secret_scanning? SecretScanning { get; set; }
         /// <summary>The enablement status of secret scanning push protection</summary>
         public CodeSecurityConfiguration_secret_scanning_push_protection? SecretScanningPushProtection { get; set; }
+        /// <summary>The enablement status of secret scanning validity checks</summary>
+        public CodeSecurityConfiguration_secret_scanning_validity_checks? SecretScanningValidityChecks { get; set; }
         /// <summary>The type of the code security configuration.</summary>
         public CodeSecurityConfiguration_target_type? TargetType { get; set; }
         /// <summary>The updated_at property</summary>
@@ -106,6 +108,7 @@ namespace GitHub.Models {
                 {"private_vulnerability_reporting", n => { PrivateVulnerabilityReporting = n.GetEnumValue<CodeSecurityConfiguration_private_vulnerability_reporting>(); } },
                 {"secret_scanning", n => { SecretScanning = n.GetEnumValue<CodeSecurityConfiguration_secret_scanning>(); } },
                 {"secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetEnumValue<CodeSecurityConfiguration_secret_scanning_push_protection>(); } },
+                {"secret_scanning_validity_checks", n => { SecretScanningValidityChecks = n.GetEnumValue<CodeSecurityConfiguration_secret_scanning_validity_checks>(); } },
                 {"target_type", n => { TargetType = n.GetEnumValue<CodeSecurityConfiguration_target_type>(); } },
                 {"updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 {"url", n => { Url = n.GetStringValue(); } },
@@ -131,6 +134,7 @@ namespace GitHub.Models {
             writer.WriteEnumValue<CodeSecurityConfiguration_private_vulnerability_reporting>("private_vulnerability_reporting", PrivateVulnerabilityReporting);
             writer.WriteEnumValue<CodeSecurityConfiguration_secret_scanning>("secret_scanning", SecretScanning);
             writer.WriteEnumValue<CodeSecurityConfiguration_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
+            writer.WriteEnumValue<CodeSecurityConfiguration_secret_scanning_validity_checks>("secret_scanning_validity_checks", SecretScanningValidityChecks);
             writer.WriteEnumValue<CodeSecurityConfiguration_target_type>("target_type", TargetType);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);

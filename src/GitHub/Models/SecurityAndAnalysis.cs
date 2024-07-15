@@ -35,6 +35,14 @@ namespace GitHub.Models {
 #else
         public SecurityAndAnalysis_secret_scanning SecretScanning { get; set; }
 #endif
+        /// <summary>The secret_scanning_non_provider_patterns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public SecurityAndAnalysis_secret_scanning_non_provider_patterns? SecretScanningNonProviderPatterns { get; set; }
+#nullable restore
+#else
+        public SecurityAndAnalysis_secret_scanning_non_provider_patterns SecretScanningNonProviderPatterns { get; set; }
+#endif
         /// <summary>The secret_scanning_push_protection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +79,7 @@ namespace GitHub.Models {
                 {"advanced_security", n => { AdvancedSecurity = n.GetObjectValue<SecurityAndAnalysis_advanced_security>(SecurityAndAnalysis_advanced_security.CreateFromDiscriminatorValue); } },
                 {"dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetObjectValue<SecurityAndAnalysis_dependabot_security_updates>(SecurityAndAnalysis_dependabot_security_updates.CreateFromDiscriminatorValue); } },
                 {"secret_scanning", n => { SecretScanning = n.GetObjectValue<SecurityAndAnalysis_secret_scanning>(SecurityAndAnalysis_secret_scanning.CreateFromDiscriminatorValue); } },
+                {"secret_scanning_non_provider_patterns", n => { SecretScanningNonProviderPatterns = n.GetObjectValue<SecurityAndAnalysis_secret_scanning_non_provider_patterns>(SecurityAndAnalysis_secret_scanning_non_provider_patterns.CreateFromDiscriminatorValue); } },
                 {"secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetObjectValue<SecurityAndAnalysis_secret_scanning_push_protection>(SecurityAndAnalysis_secret_scanning_push_protection.CreateFromDiscriminatorValue); } },
             };
         }
@@ -84,6 +93,7 @@ namespace GitHub.Models {
             writer.WriteObjectValue<SecurityAndAnalysis_advanced_security>("advanced_security", AdvancedSecurity);
             writer.WriteObjectValue<SecurityAndAnalysis_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteObjectValue<SecurityAndAnalysis_secret_scanning>("secret_scanning", SecretScanning);
+            writer.WriteObjectValue<SecurityAndAnalysis_secret_scanning_non_provider_patterns>("secret_scanning_non_provider_patterns", SecretScanningNonProviderPatterns);
             writer.WriteObjectValue<SecurityAndAnalysis_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
             writer.WriteAdditionalData(AdditionalData);
         }

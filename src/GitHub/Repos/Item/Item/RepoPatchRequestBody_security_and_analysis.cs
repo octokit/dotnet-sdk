@@ -28,6 +28,14 @@ namespace GitHub.Repos.Item.Item {
 #else
         public RepoPatchRequestBody_security_and_analysis_secret_scanning SecretScanning { get; set; }
 #endif
+        /// <summary>Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see &quot;[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns? SecretScanningNonProviderPatterns { get; set; }
+#nullable restore
+#else
+        public RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns SecretScanningNonProviderPatterns { get; set; }
+#endif
         /// <summary>Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see &quot;[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +71,7 @@ namespace GitHub.Repos.Item.Item {
             {
                 {"advanced_security", n => { AdvancedSecurity = n.GetObjectValue<RepoPatchRequestBody_security_and_analysis_advanced_security>(RepoPatchRequestBody_security_and_analysis_advanced_security.CreateFromDiscriminatorValue); } },
                 {"secret_scanning", n => { SecretScanning = n.GetObjectValue<RepoPatchRequestBody_security_and_analysis_secret_scanning>(RepoPatchRequestBody_security_and_analysis_secret_scanning.CreateFromDiscriminatorValue); } },
+                {"secret_scanning_non_provider_patterns", n => { SecretScanningNonProviderPatterns = n.GetObjectValue<RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns>(RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns.CreateFromDiscriminatorValue); } },
                 {"secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetObjectValue<RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection>(RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,6 +84,7 @@ namespace GitHub.Repos.Item.Item {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<RepoPatchRequestBody_security_and_analysis_advanced_security>("advanced_security", AdvancedSecurity);
             writer.WriteObjectValue<RepoPatchRequestBody_security_and_analysis_secret_scanning>("secret_scanning", SecretScanning);
+            writer.WriteObjectValue<RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns>("secret_scanning_non_provider_patterns", SecretScanningNonProviderPatterns);
             writer.WriteObjectValue<RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
             writer.WriteAdditionalData(AdditionalData);
         }

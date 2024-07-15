@@ -41,6 +41,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
         public ConfigurationsPostRequestBody_secret_scanning? SecretScanning { get; set; }
         /// <summary>The enablement status of secret scanning push protection</summary>
         public ConfigurationsPostRequestBody_secret_scanning_push_protection? SecretScanningPushProtection { get; set; }
+        /// <summary>The enablement status of secret scanning validity checks</summary>
+        public ConfigurationsPostRequestBody_secret_scanning_validity_checks? SecretScanningValidityChecks { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="ConfigurationsPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -54,6 +56,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
             PrivateVulnerabilityReporting = ConfigurationsPostRequestBody_private_vulnerability_reporting.Disabled;
             SecretScanning = ConfigurationsPostRequestBody_secret_scanning.Disabled;
             SecretScanningPushProtection = ConfigurationsPostRequestBody_secret_scanning_push_protection.Disabled;
+            SecretScanningValidityChecks = ConfigurationsPostRequestBody_secret_scanning_validity_checks.Disabled;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -83,6 +86,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
                 {"private_vulnerability_reporting", n => { PrivateVulnerabilityReporting = n.GetEnumValue<ConfigurationsPostRequestBody_private_vulnerability_reporting>(); } },
                 {"secret_scanning", n => { SecretScanning = n.GetEnumValue<ConfigurationsPostRequestBody_secret_scanning>(); } },
                 {"secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetEnumValue<ConfigurationsPostRequestBody_secret_scanning_push_protection>(); } },
+                {"secret_scanning_validity_checks", n => { SecretScanningValidityChecks = n.GetEnumValue<ConfigurationsPostRequestBody_secret_scanning_validity_checks>(); } },
             };
         }
         /// <summary>
@@ -102,6 +106,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
             writer.WriteEnumValue<ConfigurationsPostRequestBody_private_vulnerability_reporting>("private_vulnerability_reporting", PrivateVulnerabilityReporting);
             writer.WriteEnumValue<ConfigurationsPostRequestBody_secret_scanning>("secret_scanning", SecretScanning);
             writer.WriteEnumValue<ConfigurationsPostRequestBody_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
+            writer.WriteEnumValue<ConfigurationsPostRequestBody_secret_scanning_validity_checks>("secret_scanning_validity_checks", SecretScanningValidityChecks);
         }
     }
 }
