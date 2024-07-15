@@ -27,6 +27,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The status of enforcement</summary>
+        public WithConfiguration_PatchRequestBody_enforcement? Enforcement { get; set; }
         /// <summary>The name of the code security configuration. Must be unique within the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +69,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
                 {"dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetEnumValue<WithConfiguration_PatchRequestBody_dependabot_security_updates>(); } },
                 {"dependency_graph", n => { DependencyGraph = n.GetEnumValue<WithConfiguration_PatchRequestBody_dependency_graph>(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
+                {"enforcement", n => { Enforcement = n.GetEnumValue<WithConfiguration_PatchRequestBody_enforcement>(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"private_vulnerability_reporting", n => { PrivateVulnerabilityReporting = n.GetEnumValue<WithConfiguration_PatchRequestBody_private_vulnerability_reporting>(); } },
                 {"secret_scanning", n => { SecretScanning = n.GetEnumValue<WithConfiguration_PatchRequestBody_secret_scanning>(); } },
@@ -87,6 +90,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_dependency_graph>("dependency_graph", DependencyGraph);
             writer.WriteStringValue("description", Description);
+            writer.WriteEnumValue<WithConfiguration_PatchRequestBody_enforcement>("enforcement", Enforcement);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_private_vulnerability_reporting>("private_vulnerability_reporting", PrivateVulnerabilityReporting);
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_secret_scanning>("secret_scanning", SecretScanning);

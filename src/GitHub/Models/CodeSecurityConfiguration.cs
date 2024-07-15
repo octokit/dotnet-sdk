@@ -32,6 +32,8 @@ namespace GitHub.Models {
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The enforcement status for a security configuration</summary>
+        public CodeSecurityConfiguration_enforcement? Enforcement { get; set; }
         /// <summary>The URL of the configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +104,7 @@ namespace GitHub.Models {
                 {"dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetEnumValue<CodeSecurityConfiguration_dependabot_security_updates>(); } },
                 {"dependency_graph", n => { DependencyGraph = n.GetEnumValue<CodeSecurityConfiguration_dependency_graph>(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
+                {"enforcement", n => { Enforcement = n.GetEnumValue<CodeSecurityConfiguration_enforcement>(); } },
                 {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetIntValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -128,6 +131,7 @@ namespace GitHub.Models {
             writer.WriteEnumValue<CodeSecurityConfiguration_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteEnumValue<CodeSecurityConfiguration_dependency_graph>("dependency_graph", DependencyGraph);
             writer.WriteStringValue("description", Description);
+            writer.WriteEnumValue<CodeSecurityConfiguration_enforcement>("enforcement", Enforcement);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);

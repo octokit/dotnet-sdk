@@ -12,7 +12,8 @@ namespace GitHub.Models {
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        /// <summary>**Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        [Obsolete("")]
         public bool? AdvancedSecurityEnabledForNewRepositories { get; set; }
         /// <summary>The archived_at property</summary>
         public DateTimeOffset? ArchivedAt { get; set; }
@@ -60,11 +61,14 @@ namespace GitHub.Models {
 #else
         public string DefaultRepositoryPermission { get; set; }
 #endif
-        /// <summary>Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred tothis organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        /// <summary>**Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        [Obsolete("")]
         public bool? DependabotAlertsEnabledForNewRepositories { get; set; }
-        /// <summary>Whether dependabot security updates are automatically enabled for new repositories and repositories transferredto this organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        /// <summary>**Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        [Obsolete("")]
         public bool? DependabotSecurityUpdatesEnabledForNewRepositories { get; set; }
-        /// <summary>Whether dependency graph is automatically enabled for new repositories and repositories transferred to thisorganization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        /// <summary>**Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        [Obsolete("")]
         public bool? DependencyGraphEnabledForNewRepositories { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -224,7 +228,8 @@ namespace GitHub.Models {
 #else
         public string ReposUrl { get; set; }
 #endif
-        /// <summary>Whether secret scanning is automatically enabled for new repositories and repositories transferred to thisorganization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        /// <summary>**Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        [Obsolete("")]
         public bool? SecretScanningEnabledForNewRepositories { get; set; }
         /// <summary>An optional URL string to display to contributors who are blocked from pushing a secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -236,7 +241,8 @@ namespace GitHub.Models {
 #endif
         /// <summary>Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.</summary>
         public bool? SecretScanningPushProtectionCustomLinkEnabled { get; set; }
-        /// <summary>Whether secret scanning push protection is automatically enabled for new repositories and repositoriestransferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        /// <summary>**Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.This field is only visible to organization owners or members of a team with the security manager role.</summary>
+        [Obsolete("")]
         public bool? SecretScanningPushProtectionEnabledForNewRepositories { get; set; }
         /// <summary>The total_private_repos property</summary>
         public int? TotalPrivateRepos { get; set; }
