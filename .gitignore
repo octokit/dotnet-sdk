@@ -114,3 +114,6 @@ dotnet-tools.json
 *.pem
 coveragereport/*
 .config/
+
+# Kiota
+.kiota.log
