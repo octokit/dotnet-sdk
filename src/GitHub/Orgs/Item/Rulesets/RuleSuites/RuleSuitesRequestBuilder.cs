@@ -32,7 +32,7 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RuleSuitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/rulesets/rule-suites{?actor_name*,page*,per_page*,repository_name*,rule_suite_result*,time_period*}", pathParameters)
+        public RuleSuitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,repository_name*,rule_suite_result*,time_period*}", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RuleSuitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/rulesets/rule-suites{?actor_name*,page*,per_page*,repository_name*,rule_suite_result*,time_period*}", rawUrl)
+        public RuleSuitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/rulesets/rule-suites{?actor_name*,page*,per_page*,ref*,repository_name*,rule_suite_result*,time_period*}", rawUrl)
         {
         }
         /// <summary>
@@ -119,6 +119,16 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites {
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ref")]
+            public string? Ref { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ref")]
+            public string Ref { get; set; }
+#endif
             /// <summary>The name of the repository to filter on. When specified, only rule evaluations from this repository will be returned.</summary>
             [QueryParameter("repository_name")]
             public int? RepositoryName { get; set; }

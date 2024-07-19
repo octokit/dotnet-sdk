@@ -30,7 +30,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.A
         {
         }
         /// <summary>
-        /// Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint.For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see &quot;[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)&quot;.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+        /// Gets all custom deployment protection rule integrations that are available for an environment.The authenticated user must have admin or owner permissions to the repository to use this endpoint.For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see &quot;[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)&quot;.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/deployments/protection-rules#list-custom-deployment-rule-integrations-available-for-an-environment" />
         /// </summary>
         /// <returns>A <see cref="AppsGetResponse"/></returns>
@@ -49,7 +49,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.A
             return await RequestAdapter.SendAsync<AppsGetResponse>(requestInfo, AppsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint.For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see &quot;[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)&quot;.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+        /// Gets all custom deployment protection rule integrations that are available for an environment.The authenticated user must have admin or owner permissions to the repository to use this endpoint.For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see &quot;[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)&quot;.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +77,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.A
             return new AppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets all custom deployment protection rule integrations that are available for an environment. Anyone with read access to the repository can use this endpoint.For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see &quot;[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)&quot;.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+        /// Gets all custom deployment protection rule integrations that are available for an environment.The authenticated user must have admin or owner permissions to the repository to use this endpoint.For more information about environments, see &quot;[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment).&quot;For more information about the app that is providing this custom deployment rule, see &quot;[GET an app](https://docs.github.com/rest/apps/apps#get-an-app)&quot;.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
         public class AppsRequestBuilderGetQueryParameters 
         {

@@ -35,7 +35,7 @@ namespace GitHub.Repos.Item.Item.Git.Commits {
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.</summary>
+        /// <summary>The full SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Parents { get; set; }
