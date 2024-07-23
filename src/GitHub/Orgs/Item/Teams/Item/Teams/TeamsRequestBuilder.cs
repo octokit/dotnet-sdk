@@ -31,7 +31,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Teams {
         {
         }
         /// <summary>
-        /// Lists the child teams of the team specified by `{team_slug}`.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
+        /// Lists the child teams of the team specified by `{team_slug}`.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#list-child-teams" />
         /// </summary>
         /// <returns>A List&lt;Team&gt;</returns>
@@ -51,7 +51,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Teams {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Lists the child teams of the team specified by `{team_slug}`.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
+        /// Lists the child teams of the team specified by `{team_slug}`.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Teams {
             return new TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the child teams of the team specified by `{team_slug}`.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
+        /// Lists the child teams of the team specified by `{team_slug}`.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
         /// </summary>
         public class TeamsRequestBuilderGetQueryParameters 
         {

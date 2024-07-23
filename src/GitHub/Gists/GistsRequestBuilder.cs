@@ -81,7 +81,7 @@ namespace GitHub.Gists {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Allows you to add a new gist with one or more files.**Note:** Don&apos;t name your files &quot;gistfile&quot; with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
+        /// Allows you to add a new gist with one or more files.&gt; [!NOTE]&gt; Don&apos;t name your files &quot;gistfile&quot; with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
         /// API method documentation <see href="https://docs.github.com/rest/gists/gists#create-a-gist" />
         /// </summary>
         /// <returns>A <see cref="GistSimple"/></returns>
@@ -130,7 +130,7 @@ namespace GitHub.Gists {
             return requestInfo;
         }
         /// <summary>
-        /// Allows you to add a new gist with one or more files.**Note:** Don&apos;t name your files &quot;gistfile&quot; with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
+        /// Allows you to add a new gist with one or more files.&gt; [!NOTE]&gt; Don&apos;t name your files &quot;gistfile&quot; with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

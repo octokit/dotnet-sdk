@@ -44,7 +44,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments {
         {
         }
         /// <summary>
-        /// List all comments on a team discussion.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// List all comments on a team discussion.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussion-comments#list-discussion-comments" />
         /// </summary>
         /// <returns>A List&lt;TeamDiscussionComment&gt;</returns>
@@ -64,7 +64,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Creates a new comment on a team discussion.This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see &quot;[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)&quot; and &quot;[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).&quot;**Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Creates a new comment on a team discussion.This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see &quot;[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)&quot; and &quot;[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).&quot;&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussion-comments#create-a-discussion-comment" />
         /// </summary>
         /// <returns>A <see cref="TeamDiscussionComment"/></returns>
@@ -85,7 +85,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments {
             return await RequestAdapter.SendAsync<TeamDiscussionComment>(requestInfo, TeamDiscussionComment.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all comments on a team discussion.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// List all comments on a team discussion.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments {
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new comment on a team discussion.This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see &quot;[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)&quot; and &quot;[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).&quot;**Note:** You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Creates a new comment on a team discussion.This endpoint triggers [notifications](https://docs.github.com/github/managing-subscriptions-and-notifications-on-github/about-notifications). Creating content too quickly using this endpoint may result in secondary rate limiting. For more information, see &quot;[Rate limits for the API](https://docs.github.com/rest/using-the-rest-api/rate-limits-for-the-rest-api#about-secondary-rate-limits)&quot; and &quot;[Best practices for using the REST API](https://docs.github.com/rest/guides/best-practices-for-using-the-rest-api).&quot;&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `POST /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments {
             return new CommentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all comments on a team discussion.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// List all comments on a team discussion.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>
         public class CommentsRequestBuilderGetQueryParameters 
         {

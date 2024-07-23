@@ -47,7 +47,7 @@ namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses {
 #endif
         /// <summary>The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.</summary>
         public StatusesPostRequestBody_state? State { get; set; }
-        /// <summary>The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. **Note:** It&apos;s recommended to use the `log_url` parameter, which replaces `target_url`.</summary>
+        /// <summary>The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment.&gt; [!NOTE]&gt; It&apos;s recommended to use the `log_url` parameter, which replaces `target_url`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetUrl { get; set; }

@@ -31,7 +31,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
         {
         }
         /// <summary>
-        /// **Note**: This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-user-management#list-all-copilot-seat-assignments-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="SeatsGetResponse"/></returns>
@@ -61,7 +61,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
             return await RequestAdapter.SendAsync<SeatsGetResponse>(requestInfo, SeatsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Note**: This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats {
             return new SeatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **Note**: This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
         /// </summary>
         public class SeatsRequestBuilderGetQueryParameters 
         {

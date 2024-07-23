@@ -37,7 +37,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments.Item {
         {
         }
         /// <summary>
-        /// Deletes a comment on a team discussion.**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Deletes a comment on a team discussion.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussion-comments#delete-a-discussion-comment" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -55,7 +55,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a specific comment on a team discussion.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// Get a specific comment on a team discussion.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment" />
         /// </summary>
         /// <returns>A <see cref="TeamDiscussionComment"/></returns>
@@ -74,7 +74,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments.Item {
             return await RequestAdapter.SendAsync<TeamDiscussionComment>(requestInfo, TeamDiscussionComment.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Edits the body text of a discussion comment.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Edits the body text of a discussion comment.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussion-comments#update-a-discussion-comment" />
         /// </summary>
         /// <returns>A <see cref="TeamDiscussionComment"/></returns>
@@ -95,7 +95,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments.Item {
             return await RequestAdapter.SendAsync<TeamDiscussionComment>(requestInfo, TeamDiscussionComment.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a comment on a team discussion.**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Deletes a comment on a team discussion.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a specific comment on a team discussion.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// Get a specific comment on a team discussion.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +132,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Edits the body text of a discussion comment.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Edits the body text of a discussion comment.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}/comments/{comment_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

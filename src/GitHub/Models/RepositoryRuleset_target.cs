@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
-    /// <summary>The target of the ruleset**Note**: The `push` target is in beta and is subject to change.</summary>
+    /// <summary>The target of the ruleset&gt; [!NOTE]&gt; The `push` target is in beta and is subject to change.</summary>
     public enum RepositoryRuleset_target
     {
         [EnumMember(Value = "branch")]

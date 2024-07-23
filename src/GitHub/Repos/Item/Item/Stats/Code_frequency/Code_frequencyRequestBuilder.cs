@@ -30,7 +30,7 @@ namespace GitHub.Repos.Item.Item.Stats.Code_frequency {
         {
         }
         /// <summary>
-        /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.
+        /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.&gt; [!NOTE]&gt; This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains 10,000 or more commits, a 422 status code will be returned.
         /// API method documentation <see href="https://docs.github.com/rest/metrics/statistics#get-the-weekly-commit-activity" />
         /// </summary>
         /// <returns>A List&lt;int&gt;</returns>
@@ -50,7 +50,7 @@ namespace GitHub.Repos.Item.Item.Stats.Code_frequency {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.**Note:** This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains10,000 or more commits, a 422 status code will be returned.
+        /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.&gt; [!NOTE]&gt; This endpoint can only be used for repositories with fewer than 10,000 commits. If the repository contains 10,000 or more commits, a 422 status code will be returned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

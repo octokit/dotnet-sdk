@@ -44,7 +44,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos {
         {
         }
         /// <summary>
-        /// Lists a team&apos;s repositories visible to the authenticated user.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
+        /// Lists a team&apos;s repositories visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#list-team-repositories" />
         /// </summary>
         /// <returns>A List&lt;MinimalRepository&gt;</returns>
@@ -64,7 +64,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Lists a team&apos;s repositories visible to the authenticated user.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
+        /// Lists a team&apos;s repositories visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +92,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos {
             return new ReposRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists a team&apos;s repositories visible to the authenticated user.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
+        /// Lists a team&apos;s repositories visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
         /// </summary>
         public class ReposRequestBuilderGetQueryParameters 
         {

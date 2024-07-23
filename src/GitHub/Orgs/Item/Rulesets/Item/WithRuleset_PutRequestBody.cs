@@ -46,7 +46,7 @@ namespace GitHub.Orgs.Item.Rulesets.Item {
 #else
         public List<RepositoryRule> Rules { get; set; }
 #endif
-        /// <summary>The target of the ruleset**Note**: The `push` target is in beta and is subject to change.</summary>
+        /// <summary>The target of the ruleset&gt; [!NOTE]&gt; The `push` target is in beta and is subject to change.</summary>
         public WithRuleset_PutRequestBody_target? Target { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="WithRuleset_PutRequestBody"/> and sets the default values.

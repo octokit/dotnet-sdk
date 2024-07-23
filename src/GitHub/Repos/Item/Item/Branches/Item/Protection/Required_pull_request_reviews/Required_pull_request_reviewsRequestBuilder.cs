@@ -73,7 +73,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
             return await RequestAdapter.SendAsync<ProtectedBranchPullRequestReview>(requestInfo, ProtectedBranchPullRequestReview.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.**Note**: Passing new arrays of `users` and `teams` replaces their previous values.
+        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.&gt; [!NOTE]&gt; Passing new arrays of `users` and `teams` replaces their previous values.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#update-pull-request-review-protection" />
         /// </summary>
         /// <returns>A <see cref="ProtectedBranchPullRequestReview"/></returns>
@@ -137,7 +137,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_
             return requestInfo;
         }
         /// <summary>
-        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.**Note**: Passing new arrays of `users` and `teams` replaces their previous values.
+        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Updating pull request review enforcement requires admin or owner permissions to the repository and branch protection to be enabled.&gt; [!NOTE]&gt; Passing new arrays of `users` and `teams` replaces their previous values.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

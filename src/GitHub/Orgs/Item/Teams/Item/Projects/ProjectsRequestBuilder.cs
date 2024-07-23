@@ -44,7 +44,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects {
         {
         }
         /// <summary>
-        /// Lists the organization projects for a team.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
+        /// Lists the organization projects for a team.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#list-team-projects" />
         /// </summary>
         /// <returns>A List&lt;TeamProject&gt;</returns>
@@ -64,7 +64,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Lists the organization projects for a team.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
+        /// Lists the organization projects for a team.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +92,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects {
             return new ProjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the organization projects for a team.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
+        /// Lists the organization projects for a team.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
         /// </summary>
         public class ProjectsRequestBuilderGetQueryParameters 
         {
