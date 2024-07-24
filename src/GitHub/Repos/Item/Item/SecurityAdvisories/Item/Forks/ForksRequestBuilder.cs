@@ -31,7 +31,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Forks {
         {
         }
         /// <summary>
-        /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.**Note**: Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
+        /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.&gt; [!NOTE]&gt; Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
         /// API method documentation <see href="https://docs.github.com/rest/security-advisories/repository-advisories#create-a-temporary-private-fork" />
         /// </summary>
         /// <returns>A <see cref="FullRepository"/></returns>
@@ -61,7 +61,7 @@ namespace GitHub.Repos.Item.Item.SecurityAdvisories.Item.Forks {
             return await RequestAdapter.SendAsync<FullRepository>(requestInfo, FullRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.**Note**: Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
+        /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.&gt; [!NOTE]&gt; Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

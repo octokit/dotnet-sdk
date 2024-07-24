@@ -30,7 +30,7 @@ namespace GitHub.Repos.Item.Item.Issues.Comments.Item.Reactions.Item {
         {
         }
         /// <summary>
-        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
+        /// &gt; [!NOTE]&gt; You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
         /// API method documentation <see href="https://docs.github.com/rest/reactions/reactions#delete-an-issue-comment-reaction" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace GitHub.Repos.Item.Item.Issues.Comments.Item.Reactions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
+        /// &gt; [!NOTE]&gt; You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

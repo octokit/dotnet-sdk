@@ -13,7 +13,7 @@ namespace GitHub.Models {
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether GitHub-owned actions are allowed. For example, this includes the actions in the `actions` organization.</summary>
         public bool? GithubOwnedAllowed { get; set; }
-        /// <summary>Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.**Note**: The `patterns_allowed` setting only applies to public repositories.</summary>
+        /// <summary>Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.&gt; [!NOTE]&gt; The `patterns_allowed` setting only applies to public repositories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PatternsAllowed { get; set; }

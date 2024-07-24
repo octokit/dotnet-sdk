@@ -31,7 +31,7 @@ namespace GitHub.Repos.Item.Item.Stats.Contributors {
         {
         }
         /// <summary>
-        /// Returns the `total` number of commits authored by the contributor. In addition, the response includes a Weekly Hash (`weeks` array) with the following information:*   `w` - Start of the week, given as a [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).*   `a` - Number of additions*   `d` - Number of deletions*   `c` - Number of commits**Note:** This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
+        /// Returns the `total` number of commits authored by the contributor. In addition, the response includes a Weekly Hash (`weeks` array) with the following information:*   `w` - Start of the week, given as a [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).*   `a` - Number of additions*   `d` - Number of deletions*   `c` - Number of commits&gt; [!NOTE]&gt; This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
         /// API method documentation <see href="https://docs.github.com/rest/metrics/statistics#get-all-contributor-commit-activity" />
         /// </summary>
         /// <returns>A List&lt;ContributorActivity&gt;</returns>
@@ -51,7 +51,7 @@ namespace GitHub.Repos.Item.Item.Stats.Contributors {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// Returns the `total` number of commits authored by the contributor. In addition, the response includes a Weekly Hash (`weeks` array) with the following information:*   `w` - Start of the week, given as a [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).*   `a` - Number of additions*   `d` - Number of deletions*   `c` - Number of commits**Note:** This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
+        /// Returns the `total` number of commits authored by the contributor. In addition, the response includes a Weekly Hash (`weeks` array) with the following information:*   `w` - Start of the week, given as a [Unix timestamp](https://en.wikipedia.org/wiki/Unix_time).*   `a` - Number of additions*   `d` - Number of deletions*   `c` - Number of commits&gt; [!NOTE]&gt; This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

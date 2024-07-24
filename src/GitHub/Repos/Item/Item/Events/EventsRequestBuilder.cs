@@ -31,7 +31,7 @@ namespace GitHub.Repos.Item.Item.Events {
         {
         }
         /// <summary>
-        /// **Note**: This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+        /// &gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// API method documentation <see href="https://docs.github.com/rest/activity/events#list-repository-events" />
         /// </summary>
         /// <returns>A List&lt;Event&gt;</returns>
@@ -51,7 +51,7 @@ namespace GitHub.Repos.Item.Item.Events {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// **Note**: This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+        /// &gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace GitHub.Repos.Item.Item.Events {
             return new EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **Note**: This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+        /// &gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         public class EventsRequestBuilderGetQueryParameters 
         {

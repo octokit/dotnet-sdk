@@ -31,7 +31,7 @@ namespace GitHub.Meta {
         {
         }
         /// <summary>
-        /// Returns meta information about GitHub, including a list of GitHub&apos;s IP addresses. For more information, see &quot;[About GitHub&apos;s IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/).&quot;The API&apos;s response also includes a list of GitHub&apos;s domain names.The values shown in the documentation&apos;s response are example values. You must always query the API directly to get the latest values.**Note:** This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
+        /// Returns meta information about GitHub, including a list of GitHub&apos;s IP addresses. For more information, see &quot;[About GitHub&apos;s IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/).&quot;The API&apos;s response also includes a list of GitHub&apos;s domain names.The values shown in the documentation&apos;s response are example values. You must always query the API directly to get the latest values.&gt; [!NOTE]&gt; This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
         /// API method documentation <see href="https://docs.github.com/rest/meta/meta#get-apiname-meta-information" />
         /// </summary>
         /// <returns>A <see cref="ApiOverview"/></returns>
@@ -50,7 +50,7 @@ namespace GitHub.Meta {
             return await RequestAdapter.SendAsync<ApiOverview>(requestInfo, ApiOverview.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns meta information about GitHub, including a list of GitHub&apos;s IP addresses. For more information, see &quot;[About GitHub&apos;s IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/).&quot;The API&apos;s response also includes a list of GitHub&apos;s domain names.The values shown in the documentation&apos;s response are example values. You must always query the API directly to get the latest values.**Note:** This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
+        /// Returns meta information about GitHub, including a list of GitHub&apos;s IP addresses. For more information, see &quot;[About GitHub&apos;s IP addresses](https://docs.github.com/articles/about-github-s-ip-addresses/).&quot;The API&apos;s response also includes a list of GitHub&apos;s domain names.The values shown in the documentation&apos;s response are example values. You must always query the API directly to get the latest values.&gt; [!NOTE]&gt; This endpoint returns both IPv4 and IPv6 addresses. However, not all features support IPv6. You should refer to the specific documentation for each feature to determine if IPv6 is supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

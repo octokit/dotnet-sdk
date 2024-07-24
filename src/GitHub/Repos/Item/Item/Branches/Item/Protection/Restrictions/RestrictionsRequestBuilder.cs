@@ -67,7 +67,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists who has access to this protected branch.**Note**: Users, apps, and teams `restrictions` are only available for organization-owned repositories.
+        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists who has access to this protected branch.&gt; [!NOTE]&gt; Users, apps, and teams `restrictions` are only available for organization-owned repositories.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#get-access-restrictions" />
         /// </summary>
         /// <returns>A <see cref="BranchRestrictionPolicy"/></returns>
@@ -109,7 +109,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions {
             return requestInfo;
         }
         /// <summary>
-        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists who has access to this protected branch.**Note**: Users, apps, and teams `restrictions` are only available for organization-owned repositories.
+        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Lists who has access to this protected branch.&gt; [!NOTE]&gt; Users, apps, and teams `restrictions` are only available for organization-owned repositories.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

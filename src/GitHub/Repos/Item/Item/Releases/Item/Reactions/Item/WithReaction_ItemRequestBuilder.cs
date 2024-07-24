@@ -30,7 +30,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item.Reactions.Item {
         {
         }
         /// <summary>
-        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`.Delete a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
+        /// &gt; [!NOTE]&gt; You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`.Delete a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
         /// API method documentation <see href="https://docs.github.com/rest/reactions/reactions#delete-a-release-reaction" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item.Reactions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`.Delete a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
+        /// &gt; [!NOTE]&gt; You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`.Delete a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

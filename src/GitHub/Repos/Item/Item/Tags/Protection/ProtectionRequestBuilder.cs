@@ -45,7 +45,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
         {
         }
         /// <summary>
-        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)&quot; endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
+        /// &gt; [!WARNING]&gt; **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)&quot; endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
         /// API method documentation <see href="https://docs.github.com/rest/repos/tags#deprecated---list-tag-protection-states-for-a-repository" />
         /// </summary>
         /// <returns>A List&lt;TagProtection&gt;</returns>
@@ -73,7 +73,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)&quot; endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
+        /// &gt; [!WARNING]&gt; **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)&quot; endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
         /// API method documentation <see href="https://docs.github.com/rest/repos/tags#deprecated---create-a-tag-protection-state-for-a-repository" />
         /// </summary>
         /// <returns>A <see cref="TagProtection"/></returns>
@@ -102,7 +102,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
             return await RequestAdapter.SendAsync<TagProtection>(requestInfo, TagProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)&quot; endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
+        /// &gt; [!WARNING]&gt; **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#get-all-repository-rulesets)&quot; endpoint instead.This returns the tag protection states of a repository.This information is only available to repository administrators.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +122,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection {
             return requestInfo;
         }
         /// <summary>
-        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)&quot; endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
+        /// &gt; [!WARNING]&gt; **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)&quot; endpoint instead.This creates a tag protection state for a repository.This endpoint is only available to repository administrators.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

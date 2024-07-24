@@ -15,6 +15,7 @@ namespace GitHub.Orgs.Item.Item {
         /// <summary>Gets an item from the GitHub.orgs.item.item.item collection</summary>
         /// <param name="position">The action to take.`enable_all` means to enable the specified security feature for all repositories in the organization.`disable_all` means to disable the specified security feature for all repositories in the organization.</param>
         /// <returns>A <see cref="WithEnablementItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public WithEnablementItemRequestBuilder this[string position]
         {
             get

@@ -61,7 +61,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a public release with the specified release ID.**Note:** This returns an `upload_url` key corresponding to the endpointfor uploading release assets. This key is a hypermedia resource. For more information, see&quot;[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia).&quot;
+        /// Gets a public release with the specified release ID.&gt; [!NOTE]&gt; This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see &quot;[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/releases/releases#get-a-release" />
         /// </summary>
         /// <returns>A <see cref="Release"/></returns>
@@ -124,7 +124,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Gets a public release with the specified release ID.**Note:** This returns an `upload_url` key corresponding to the endpointfor uploading release assets. This key is a hypermedia resource. For more information, see&quot;[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia).&quot;
+        /// Gets a public release with the specified release ID.&gt; [!NOTE]&gt; This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see &quot;[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia).&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

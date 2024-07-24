@@ -43,7 +43,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item {
         {
         }
         /// <summary>
-        /// Delete a discussion from a team&apos;s page.**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Delete a discussion from a team&apos;s page.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussions#delete-a-discussion" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a specific discussion on a team&apos;s page.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// Get a specific discussion on a team&apos;s page.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussions#get-a-discussion" />
         /// </summary>
         /// <returns>A <see cref="TeamDiscussion"/></returns>
@@ -80,7 +80,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item {
             return await RequestAdapter.SendAsync<TeamDiscussion>(requestInfo, TeamDiscussion.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Edits the title and body text of a discussion post. Only the parameters you provide are updated.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Edits the title and body text of a discussion post. Only the parameters you provide are updated.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussions#update-a-discussion" />
         /// </summary>
         /// <returns>A <see cref="TeamDiscussion"/></returns>
@@ -101,7 +101,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item {
             return await RequestAdapter.SendAsync<TeamDiscussion>(requestInfo, TeamDiscussion.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a discussion from a team&apos;s page.**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Delete a discussion from a team&apos;s page.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +119,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a specific discussion on a team&apos;s page.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// Get a specific discussion on a team&apos;s page.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +138,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Edits the title and body text of a discussion post. Only the parameters you provide are updated.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// Edits the title and body text of a discussion post. Only the parameters you provide are updated.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}/discussions/{discussion_number}`.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

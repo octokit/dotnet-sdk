@@ -108,7 +108,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
             return await RequestAdapter.SendAsync<BranchProtection>(requestInfo, BranchProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Protecting a branch requires admin or owner permissions to the repository.**Note**: Passing new arrays of `users` and `teams` replaces their previous values.**Note**: The list of users, apps, and teams in total is limited to 100 items.
+        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Protecting a branch requires admin or owner permissions to the repository.&gt; [!NOTE]&gt; Passing new arrays of `users` and `teams` replaces their previous values.&gt; [!NOTE]&gt; The list of users, apps, and teams in total is limited to 100 items.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#update-branch-protection" />
         /// </summary>
         /// <returns>A <see cref="ProtectedBranch"/></returns>
@@ -176,7 +176,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
             return requestInfo;
         }
         /// <summary>
-        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Protecting a branch requires admin or owner permissions to the repository.**Note**: Passing new arrays of `users` and `teams` replaces their previous values.**Note**: The list of users, apps, and teams in total is limited to 100 items.
+        /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Protecting a branch requires admin or owner permissions to the repository.&gt; [!NOTE]&gt; Passing new arrays of `users` and `teams` replaces their previous values.&gt; [!NOTE]&gt; The list of users, apps, and teams in total is limited to 100 items.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

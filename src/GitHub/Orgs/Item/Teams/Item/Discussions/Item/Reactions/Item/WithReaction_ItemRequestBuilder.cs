@@ -30,7 +30,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Reactions.Item {
         {
         }
         /// <summary>
-        /// **Note:** You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.Delete a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// &gt; [!NOTE]&gt; You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.Delete a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/reactions/reactions#delete-team-discussion-reaction" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -48,7 +48,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Reactions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Note:** You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.Delete a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// &gt; [!NOTE]&gt; You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.Delete a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

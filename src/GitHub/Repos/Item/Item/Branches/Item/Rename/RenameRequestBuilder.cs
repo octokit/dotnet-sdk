@@ -31,7 +31,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Rename {
         {
         }
         /// <summary>
-        /// Renames a branch in a repository.**Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won&apos;t be able to push to the old branch name while the rename process is in progress. For more information, see &quot;[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)&quot;.The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
+        /// Renames a branch in a repository.&gt; [!NOTE]&gt; Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won&apos;t be able to push to the old branch name while the rename process is in progress. For more information, see &quot;[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)&quot;.The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branches#rename-a-branch" />
         /// </summary>
         /// <returns>A <see cref="BranchWithProtection"/></returns>
@@ -61,7 +61,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Rename {
             return await RequestAdapter.SendAsync<BranchWithProtection>(requestInfo, BranchWithProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Renames a branch in a repository.**Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won&apos;t be able to push to the old branch name while the rename process is in progress. For more information, see &quot;[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)&quot;.The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
+        /// Renames a branch in a repository.&gt; [!NOTE]&gt; Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won&apos;t be able to push to the old branch name while the rename process is in progress. For more information, see &quot;[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)&quot;.The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

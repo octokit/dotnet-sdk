@@ -178,7 +178,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
             [QueryParameter("before")]
             public string Before { get; set; }
 #endif
-            /// <summary>&apos;The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;&apos;</summary>
+            /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>The target type of the code security configuration</summary>

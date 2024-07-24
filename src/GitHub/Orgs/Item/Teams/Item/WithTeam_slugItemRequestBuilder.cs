@@ -73,7 +73,7 @@ namespace GitHub.Orgs.Item.Teams.Item {
         {
         }
         /// <summary>
-        /// To delete a team, the authenticated user must be an organization owner or team maintainer.If you are an organization owner, deleting a parent team will delete all of its child teams as well.**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.
+        /// To delete a team, the authenticated user must be an organization owner or team maintainer.If you are an organization owner, deleting a parent team will delete all of its child teams as well.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#delete-a-team" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -91,7 +91,7 @@ namespace GitHub.Orgs.Item.Teams.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a team using the team&apos;s `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `&quot;My TEam Näme&quot;` would become `my-team-name`.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
+        /// Gets a team using the team&apos;s `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `&quot;My TEam Näme&quot;` would become `my-team-name`.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#get-a-team-by-name" />
         /// </summary>
         /// <returns>A <see cref="TeamFull"/></returns>
@@ -115,7 +115,7 @@ namespace GitHub.Orgs.Item.Teams.Item {
             return await RequestAdapter.SendAsync<TeamFull>(requestInfo, TeamFull.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
+        /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#update-a-team" />
         /// </summary>
         /// <returns>A <see cref="TeamFull"/></returns>
@@ -145,7 +145,7 @@ namespace GitHub.Orgs.Item.Teams.Item {
             return await RequestAdapter.SendAsync<TeamFull>(requestInfo, TeamFull.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To delete a team, the authenticated user must be an organization owner or team maintainer.If you are an organization owner, deleting a parent team will delete all of its child teams as well.**Note:** You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.
+        /// To delete a team, the authenticated user must be an organization owner or team maintainer.If you are an organization owner, deleting a parent team will delete all of its child teams as well.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `DELETE /organizations/{org_id}/team/{team_id}`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,7 +163,7 @@ namespace GitHub.Orgs.Item.Teams.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Gets a team using the team&apos;s `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `&quot;My TEam Näme&quot;` would become `my-team-name`.**Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
+        /// Gets a team using the team&apos;s `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `&quot;My TEam Näme&quot;` would become `my-team-name`.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace GitHub.Orgs.Item.Teams.Item {
             return requestInfo;
         }
         /// <summary>
-        /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.**Note:** You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
+        /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `PATCH /organizations/{org_id}/team/{team_id}`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -31,7 +31,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection.Item {
         {
         }
         /// <summary>
-        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#delete-a-repository-ruleset)&quot; endpoint instead.This deletes a tag protection state for a repository.This endpoint is only available to repository administrators.
+        /// &gt; [!WARNING]&gt; **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#delete-a-repository-ruleset)&quot; endpoint instead.This deletes a tag protection state for a repository.This endpoint is only available to repository administrators.
         /// API method documentation <see href="https://docs.github.com/rest/repos/tags#deprecated---delete-a-tag-protection-state-for-a-repository" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Note**: This operation is deprecated and will be removed after August 30th 2024Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#delete-a-repository-ruleset)&quot; endpoint instead.This deletes a tag protection state for a repository.This endpoint is only available to repository administrators.
+        /// &gt; [!WARNING]&gt; **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the &quot;[Repository Rulesets](https://docs.github.com/rest/repos/rules#delete-a-repository-ruleset)&quot; endpoint instead.This deletes a tag protection state for a repository.This endpoint is only available to repository administrators.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

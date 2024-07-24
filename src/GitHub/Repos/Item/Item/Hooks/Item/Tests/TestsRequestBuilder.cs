@@ -31,7 +31,7 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Tests {
         {
         }
         /// <summary>
-        /// This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.**Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
+        /// This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.&gt; [!NOTE]&gt; Previously `/repos/:owner/:repo/hooks/:hook_id/test`
         /// API method documentation <see href="https://docs.github.com/rest/repos/webhooks#test-the-push-repository-webhook" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -54,7 +54,7 @@ namespace GitHub.Repos.Item.Item.Hooks.Item.Tests {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.**Note**: Previously `/repos/:owner/:repo/hooks/:hook_id/test`
+        /// This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.&gt; [!NOTE]&gt; Previously `/repos/:owner/:repo/hooks/:hook_id/test`
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

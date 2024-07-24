@@ -17,6 +17,10 @@ namespace GitHub.Models {
         #pragma warning disable CS1591
         Detached,
         #pragma warning restore CS1591
+        [EnumMember(Value = "removed")]
+        #pragma warning disable CS1591
+        Removed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "enforced")]
         #pragma warning disable CS1591
         Enforced,
@@ -28,6 +32,10 @@ namespace GitHub.Models {
         [EnumMember(Value = "updating")]
         #pragma warning disable CS1591
         Updating,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "removed_by_enterprise")]
+        #pragma warning disable CS1591
+        Removed_by_enterprise,
         #pragma warning restore CS1591
     }
 }
