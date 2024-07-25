@@ -113,7 +113,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Repositories {
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>A comma-separated list of statuses. If specified, only repositories with these attachment statuses will be returned.Can be: `all`, `attached`, `attaching`, `detached`, `enforced`, `failed`, `updating`</summary>
+            /// <summary>A comma-separated list of statuses. If specified, only repositories with these attachment statuses will be returned.Can be: `all`, `attached`, `attaching`, `detached`, `removed`, `enforced`, `failed`, `updating`, `removed_by_enterprise`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]

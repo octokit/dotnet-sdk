@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
-    /// <summary>The status of enforcement</summary>
+    /// <summary>The enforcement status for a security configuration</summary>
     public enum ConfigurationsPostRequestBody_enforcement
     {
         [EnumMember(Value = "enforced")]

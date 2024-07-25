@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace GitHub.Models {
     /// <summary>
-    /// Note: file_extension_restriction is in beta and subject to change.Prevent commits that include files with specified file extensions from being pushed to the commit graph.
+    /// &gt; [!NOTE]&gt; `file_extension_restriction` is in beta and subject to change.Prevent commits that include files with specified file extensions from being pushed to the commit graph.
     /// </summary>
     public class File_extension_restriction : IAdditionalDataHolder, IParsable 
     {

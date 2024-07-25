@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace GitHub.Models {
     /// <summary>
-    /// Note: max_file_size is in beta and subject to change.Prevent commits that exceed a specified file size limit from being pushed to the commit.
+    /// &gt; [!NOTE]&gt; `max_file_size` is in beta and subject to change.Prevent commits that exceed a specified file size limit from being pushed to the commit.
     /// </summary>
     public class Max_file_size : IAdditionalDataHolder, IParsable 
     {
