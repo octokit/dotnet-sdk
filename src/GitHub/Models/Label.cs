@@ -20,9 +20,9 @@ namespace GitHub.Models {
 #else
         public string Color { get; set; }
 #endif
-        /// <summary>The default property</summary>
+        /// <summary>Whether this label comes by default in a new repository.</summary>
         public bool? Default { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Optional description of the label, such as its purpose.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -30,7 +30,7 @@ namespace GitHub.Models {
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique identifier for the label.</summary>
         public long? Id { get; set; }
         /// <summary>The name of the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

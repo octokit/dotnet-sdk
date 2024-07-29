@@ -11,6 +11,8 @@ namespace GitHub.Models {
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Allow repositories and branches to be created if a check would otherwise prohibit it.</summary>
+        public bool? DoNotEnforceOnCreate { get; set; }
         /// <summary>Status checks that are required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +48,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                {"do_not_enforce_on_create", n => { DoNotEnforceOnCreate = n.GetBoolValue(); } },
                 {"required_status_checks", n => { RequiredStatusChecks = n.GetCollectionOfObjectValues<RepositoryRuleParamsStatusCheckConfiguration>(RepositoryRuleParamsStatusCheckConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"strict_required_status_checks_policy", n => { StrictRequiredStatusChecksPolicy = n.GetBoolValue(); } },
             };
@@ -57,6 +60,7 @@ namespace GitHub.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("do_not_enforce_on_create", DoNotEnforceOnCreate);
             writer.WriteCollectionOfObjectValues<RepositoryRuleParamsStatusCheckConfiguration>("required_status_checks", RequiredStatusChecks);
             writer.WriteBoolValue("strict_required_status_checks_policy", StrictRequiredStatusChecksPolicy);
             writer.WriteAdditionalData(AdditionalData);

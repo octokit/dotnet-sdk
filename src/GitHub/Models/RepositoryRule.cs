@@ -7,7 +7,7 @@ using System.Linq;
 using System;
 namespace GitHub.Models {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="File_extension_restriction"/>, <see cref="File_path_restriction"/>, <see cref="Max_file_path_length"/>, <see cref="Max_file_size"/>, <see cref="RepositoryRuleBranchNamePattern"/>, <see cref="RepositoryRuleCodeScanning"/>, <see cref="RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="RepositoryRuleCommitMessagePattern"/>, <see cref="RepositoryRuleCommitterEmailPattern"/>, <see cref="RepositoryRuleCreation"/>, <see cref="RepositoryRuleDeletion"/>, <see cref="RepositoryRuleNonFastForward"/>, <see cref="RepositoryRulePullRequest"/>, <see cref="RepositoryRuleRequiredDeployments"/>, <see cref="RepositoryRuleRequiredLinearHistory"/>, <see cref="RepositoryRuleRequiredSignatures"/>, <see cref="RepositoryRuleRequiredStatusChecks"/>, <see cref="RepositoryRuleTagNamePattern"/>, <see cref="RepositoryRuleUpdate"/>, <see cref="RepositoryRuleWorkflows"/>
+    /// Composed type wrapper for classes <see cref="File_extension_restriction"/>, <see cref="File_path_restriction"/>, <see cref="Max_file_path_length"/>, <see cref="Max_file_size"/>, <see cref="RepositoryRuleBranchNamePattern"/>, <see cref="RepositoryRuleCodeScanning"/>, <see cref="RepositoryRuleCommitAuthorEmailPattern"/>, <see cref="RepositoryRuleCommitMessagePattern"/>, <see cref="RepositoryRuleCommitterEmailPattern"/>, <see cref="RepositoryRuleCreation"/>, <see cref="RepositoryRuleDeletion"/>, <see cref="RepositoryRuleMergeQueue"/>, <see cref="RepositoryRuleNonFastForward"/>, <see cref="RepositoryRulePullRequest"/>, <see cref="RepositoryRuleRequiredDeployments"/>, <see cref="RepositoryRuleRequiredLinearHistory"/>, <see cref="RepositoryRuleRequiredSignatures"/>, <see cref="RepositoryRuleRequiredStatusChecks"/>, <see cref="RepositoryRuleTagNamePattern"/>, <see cref="RepositoryRuleUpdate"/>, <see cref="RepositoryRuleWorkflows"/>
     /// </summary>
     public class RepositoryRule : IComposedTypeWrapper, IParsable 
     {
@@ -226,6 +226,14 @@ namespace GitHub.Models {
 #nullable restore
 #else
         public Max_file_size RepositoryRuleMaxFileSize2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleMergeQueue"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleMergeQueue? RepositoryRuleMergeQueue { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleMergeQueue RepositoryRuleMergeQueue { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleNonFastForward"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -466,6 +474,38 @@ namespace GitHub.Models {
 #nullable restore
 #else
         public GitHub.Models.RepositoryRuleDeletion RepositoryRuleRepositoryRuleDeletion2 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleMergeQueue"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleMergeQueue? RepositoryRuleRepositoryRuleMergeQueue { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleMergeQueue RepositoryRuleRepositoryRuleMergeQueue { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleMergeQueue"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleMergeQueue? RepositoryRuleRepositoryRuleMergeQueue0 { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleMergeQueue RepositoryRuleRepositoryRuleMergeQueue0 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleMergeQueue"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleMergeQueue? RepositoryRuleRepositoryRuleMergeQueue1 { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleMergeQueue RepositoryRuleRepositoryRuleMergeQueue1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleMergeQueue"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public GitHub.Models.RepositoryRuleMergeQueue? RepositoryRuleRepositoryRuleMergeQueue2 { get; set; }
+#nullable restore
+#else
+        public GitHub.Models.RepositoryRuleMergeQueue RepositoryRuleRepositoryRuleMergeQueue2 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="GitHub.Models.RepositoryRuleNonFastForward"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -929,6 +969,10 @@ namespace GitHub.Models {
             {
                 result.RepositoryRuleMaxFileSize2 = new Max_file_size();
             }
+            else if("repository-rule-merge-queue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleMergeQueue = new GitHub.Models.RepositoryRuleMergeQueue();
+            }
             else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RepositoryRuleNonFastForward = new GitHub.Models.RepositoryRuleNonFastForward();
@@ -1048,6 +1092,22 @@ namespace GitHub.Models {
             else if("repository-rule-deletion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RepositoryRuleRepositoryRuleDeletion2 = new GitHub.Models.RepositoryRuleDeletion();
+            }
+            else if("repository-rule-merge-queue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleRepositoryRuleMergeQueue = new GitHub.Models.RepositoryRuleMergeQueue();
+            }
+            else if("repository-rule-merge-queue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleRepositoryRuleMergeQueue0 = new GitHub.Models.RepositoryRuleMergeQueue();
+            }
+            else if("repository-rule-merge-queue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleRepositoryRuleMergeQueue1 = new GitHub.Models.RepositoryRuleMergeQueue();
+            }
+            else if("repository-rule-merge-queue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RepositoryRuleRepositoryRuleMergeQueue2 = new GitHub.Models.RepositoryRuleMergeQueue();
             }
             else if("repository-rule-non-fast-forward".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -1337,6 +1397,10 @@ namespace GitHub.Models {
             {
                 return RepositoryRuleMaxFileSize2.GetFieldDeserializers();
             }
+            else if(RepositoryRuleMergeQueue != null)
+            {
+                return RepositoryRuleMergeQueue.GetFieldDeserializers();
+            }
             else if(RepositoryRuleNonFastForward != null)
             {
                 return RepositoryRuleNonFastForward.GetFieldDeserializers();
@@ -1456,6 +1520,22 @@ namespace GitHub.Models {
             else if(RepositoryRuleRepositoryRuleDeletion2 != null)
             {
                 return RepositoryRuleRepositoryRuleDeletion2.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleRepositoryRuleMergeQueue != null)
+            {
+                return RepositoryRuleRepositoryRuleMergeQueue.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleRepositoryRuleMergeQueue0 != null)
+            {
+                return RepositoryRuleRepositoryRuleMergeQueue0.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleRepositoryRuleMergeQueue1 != null)
+            {
+                return RepositoryRuleRepositoryRuleMergeQueue1.GetFieldDeserializers();
+            }
+            else if(RepositoryRuleRepositoryRuleMergeQueue2 != null)
+            {
+                return RepositoryRuleRepositoryRuleMergeQueue2.GetFieldDeserializers();
             }
             else if(RepositoryRuleRepositoryRuleNonFastForward != null)
             {
@@ -1746,6 +1826,10 @@ namespace GitHub.Models {
             {
                 writer.WriteObjectValue<Max_file_size>(null, RepositoryRuleMaxFileSize2);
             }
+            else if(RepositoryRuleMergeQueue != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleMergeQueue>(null, RepositoryRuleMergeQueue);
+            }
             else if(RepositoryRuleNonFastForward != null)
             {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleNonFastForward>(null, RepositoryRuleNonFastForward);
@@ -1865,6 +1949,22 @@ namespace GitHub.Models {
             else if(RepositoryRuleRepositoryRuleDeletion2 != null)
             {
                 writer.WriteObjectValue<GitHub.Models.RepositoryRuleDeletion>(null, RepositoryRuleRepositoryRuleDeletion2);
+            }
+            else if(RepositoryRuleRepositoryRuleMergeQueue != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleMergeQueue>(null, RepositoryRuleRepositoryRuleMergeQueue);
+            }
+            else if(RepositoryRuleRepositoryRuleMergeQueue0 != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleMergeQueue>(null, RepositoryRuleRepositoryRuleMergeQueue0);
+            }
+            else if(RepositoryRuleRepositoryRuleMergeQueue1 != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleMergeQueue>(null, RepositoryRuleRepositoryRuleMergeQueue1);
+            }
+            else if(RepositoryRuleRepositoryRuleMergeQueue2 != null)
+            {
+                writer.WriteObjectValue<GitHub.Models.RepositoryRuleMergeQueue>(null, RepositoryRuleRepositoryRuleMergeQueue2);
             }
             else if(RepositoryRuleRepositoryRuleNonFastForward != null)
             {

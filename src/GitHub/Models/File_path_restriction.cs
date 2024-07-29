@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace GitHub.Models {
     /// <summary>
-    /// Note: file_path_restriction is in beta and subject to change.Prevent commits that include changes in specified file paths from being pushed to the commit graph.
+    /// &gt; [!NOTE]&gt; `file_path_restriction` is in beta and subject to change.Prevent commits that include changes in specified file paths from being pushed to the commit graph.
     /// </summary>
     public class File_path_restriction : IAdditionalDataHolder, IParsable 
     {

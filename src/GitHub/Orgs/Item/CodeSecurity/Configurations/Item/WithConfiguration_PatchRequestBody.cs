@@ -27,7 +27,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The status of enforcement</summary>
+        /// <summary>The enforcement status for a security configuration</summary>
         public WithConfiguration_PatchRequestBody_enforcement? Enforcement { get; set; }
         /// <summary>The name of the code security configuration. Must be unique within the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
