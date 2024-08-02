@@ -31,7 +31,7 @@ namespace GitHub.Users.Item.Events.Orgs.Item {
         {
         }
         /// <summary>
-        /// This is the user&apos;s organization dashboard. You must be authenticated as the user to view this.
+        /// This is the user&apos;s organization dashboard. You must be authenticated as the user to view this.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// API method documentation <see href="https://docs.github.com/rest/activity/events#list-organization-events-for-the-authenticated-user" />
         /// </summary>
         /// <returns>A List&lt;Event&gt;</returns>
@@ -51,7 +51,7 @@ namespace GitHub.Users.Item.Events.Orgs.Item {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// This is the user&apos;s organization dashboard. You must be authenticated as the user to view this.
+        /// This is the user&apos;s organization dashboard. You must be authenticated as the user to view this.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace GitHub.Users.Item.Events.Orgs.Item {
             return new WithOrgItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This is the user&apos;s organization dashboard. You must be authenticated as the user to view this.
+        /// This is the user&apos;s organization dashboard. You must be authenticated as the user to view this.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         public class WithOrgItemRequestBuilderGetQueryParameters 
         {

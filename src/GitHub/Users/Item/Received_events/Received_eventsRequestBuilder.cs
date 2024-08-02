@@ -37,7 +37,7 @@ namespace GitHub.Users.Item.Received_events {
         {
         }
         /// <summary>
-        /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
+        /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as thegiven user, you will see private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// API method documentation <see href="https://docs.github.com/rest/activity/events#list-events-received-by-the-authenticated-user" />
         /// </summary>
         /// <returns>A List&lt;Event&gt;</returns>
@@ -57,7 +57,7 @@ namespace GitHub.Users.Item.Received_events {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
+        /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as thegiven user, you will see private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace GitHub.Users.Item.Received_events {
             return new Received_eventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as the given user, you will see private events. Otherwise, you&apos;ll only see public events.
+        /// These are events that you&apos;ve received by watching repositories and following users. If you are authenticated as thegiven user, you will see private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         public class Received_eventsRequestBuilderGetQueryParameters 
         {
