@@ -31,7 +31,7 @@ namespace GitHub.Networks.Item.Item.Events {
         {
         }
         /// <summary>
-        /// List public events for a network of repositories
+        /// &gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// API method documentation <see href="https://docs.github.com/rest/activity/events#list-public-events-for-a-network-of-repositories" />
         /// </summary>
         /// <returns>A List&lt;Event&gt;</returns>
@@ -57,6 +57,9 @@ namespace GitHub.Networks.Item.Item.Events {
             var collectionResult = await RequestAdapter.SendCollectionAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
+        /// <summary>
+        /// &gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +86,7 @@ namespace GitHub.Networks.Item.Item.Events {
             return new EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List public events for a network of repositories
+        /// &gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         public class EventsRequestBuilderGetQueryParameters 
         {

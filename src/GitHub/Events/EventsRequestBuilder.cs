@@ -31,7 +31,7 @@ namespace GitHub.Events {
         {
         }
         /// <summary>
-        /// We delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
+        /// &gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// API method documentation <see href="https://docs.github.com/rest/activity/events#list-public-events" />
         /// </summary>
         /// <returns>A List&lt;Event&gt;</returns>
@@ -58,7 +58,7 @@ namespace GitHub.Events {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// We delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
+        /// &gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace GitHub.Events {
             return new EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// We delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
+        /// &gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         public class EventsRequestBuilderGetQueryParameters 
         {

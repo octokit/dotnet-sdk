@@ -43,7 +43,7 @@ namespace GitHub.Users.Item.Events {
         {
         }
         /// <summary>
-        /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.
+        /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// API method documentation <see href="https://docs.github.com/rest/activity/events#list-events-for-the-authenticated-user" />
         /// </summary>
         /// <returns>A List&lt;Event&gt;</returns>
@@ -63,7 +63,7 @@ namespace GitHub.Users.Item.Events {
             return collectionResult?.ToList();
         }
         /// <summary>
-        /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.
+        /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace GitHub.Users.Item.Events {
             return new EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.
+        /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         public class EventsRequestBuilderGetQueryParameters 
         {
