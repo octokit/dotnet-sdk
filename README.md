@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> This SDK is not yet stable. Breaking changes may occur at any time.
+
 # Octokit: .NET SDK
 
 [![Build and test .NET SDK](https://github.com/octokit/dotnet-sdk/actions/workflows/build.yml/badge.svg)](https://github.com/octokit/dotnet-sdk/actions/workflows/build.yml) [![CodeQL](https://github.com/octokit/dotnet-sdk/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/octokit/dotnet-sdk/actions/workflows/github-code-scanning/codeql) [![Publish Release to NuGet](https://github.com/octokit/dotnet-sdk/actions/workflows/publish.yml/badge.svg)](https://github.com/octokit/dotnet-sdk/actions/workflows/publish.yml)
@@ -12,8 +15,13 @@ You may also want:
 		- [NuGet link](https://www.nuget.org/packages/GitHub.Octokit.SDK)
 	- For GitHub Enterprise Cloud
 		- [dotnet-sdk-enterprise-cloud repository](https://github.com/octokit/dotnet-sdk-enterprise-cloud)
+		- [NuGet link](https://www.nuget.org/packages/GitHub.Octokit.GHEC.SDK/)
 	- For GitHub Enterprise Server
 		- [dotnet-sdk-enterprise-server repository](https://github.com/octokit/dotnet-sdk-enterprise-server)
+		- [NuGet link](https://www.nuget.org/packages?q=GitHub.Octokit.GHES.SDK)
+	- For our classic non-generated, hand-maintained Octokit.net project
+		- [Octokit.net repository](https://github.com/octokit/octokit.net)
+		- [NuGet link](https://www.nuget.org/packages/Octokit/)
 - Go
 	- For the standard GitHub.com product
 		- [go-sdk repository](https://github.com/octokit/go-sdk)
@@ -24,11 +32,9 @@ You may also want:
 	- For GitHub Enterprise Server
 		- [go-sdk-enterprise-server repository](https://github.com/octokit/go-sdk-enterprise-server)
 		- [pkg.go.dev docs link](https://pkg.go.dev/github.com/octokit/go-sdk-enterprise-server)
-    - For our classic non-generated, hand-maintained Octokit.net project
-		- [Octokit.net repository](https://github.com/octokit/octokit.net)
-		- For why we're building generative SDKs, see [Why a generated SDK?](#why-a-generated-sdk) below
 - [source-generator](https://github.com/octokit/source-generator) (the repository that creates these generated SDKs)
 	- Contributions to this repository should take place in source-generator instead, as they'll be distributed here through mechanisms there.
+- For why we're building generative SDKs, see [Why a generated SDK?](#why-a-generated-sdk) below
 
 ## How do I use it?
 
@@ -58,9 +64,6 @@ foreach (var pullRequest in pullRequests)
     Console.WriteLine($"#{pullRequest.Number} {pullRequest.Title}");
 }
 ```
-
-> [!IMPORTANT]
-> This SDK is not yet stable. Breaking changes may occur at any time.
 
 ### Authentication
 
