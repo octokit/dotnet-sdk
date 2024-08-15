@@ -102,9 +102,7 @@ Note that the SDK **does not yet** support authenticating as the App itself and 
 
 ## Why a generated SDK?
 
-We want to...
-1.  provide 100% coverage of the API in our SDK
-1.  use this as a building block for future SDK tooling
+Please take a moment and head over to the GitHub blog to read more about the [why's and how's behind our move to Generative SDKs](https://github.blog/news-insights/product-news/our-move-to-generated-sdks/).
 
 ## Why .NET?
 

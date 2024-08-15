@@ -19,6 +19,16 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
         public ConfigurationsPostRequestBody_dependabot_security_updates? DependabotSecurityUpdates { get; set; }
         /// <summary>The enablement status of Dependency Graph</summary>
         public ConfigurationsPostRequestBody_dependency_graph? DependencyGraph { get; set; }
+        /// <summary>The enablement status of Automatic dependency submission</summary>
+        public ConfigurationsPostRequestBody_dependency_graph_autosubmit_action? DependencyGraphAutosubmitAction { get; set; }
+        /// <summary>Feature options for Automatic dependency submission</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public ConfigurationsPostRequestBody_dependency_graph_autosubmit_action_options? DependencyGraphAutosubmitActionOptions { get; set; }
+#nullable restore
+#else
+        public ConfigurationsPostRequestBody_dependency_graph_autosubmit_action_options DependencyGraphAutosubmitActionOptions { get; set; }
+#endif
         /// <summary>A description of the code security configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,6 +65,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
             DependabotAlerts = ConfigurationsPostRequestBody_dependabot_alerts.Disabled;
             DependabotSecurityUpdates = ConfigurationsPostRequestBody_dependabot_security_updates.Disabled;
             DependencyGraph = ConfigurationsPostRequestBody_dependency_graph.Enabled;
+            DependencyGraphAutosubmitAction = ConfigurationsPostRequestBody_dependency_graph_autosubmit_action.Disabled;
             Enforcement = ConfigurationsPostRequestBody_enforcement.Enforced;
             PrivateVulnerabilityReporting = ConfigurationsPostRequestBody_private_vulnerability_reporting.Disabled;
             SecretScanning = ConfigurationsPostRequestBody_secret_scanning.Disabled;
@@ -84,6 +95,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
                 {"dependabot_alerts", n => { DependabotAlerts = n.GetEnumValue<ConfigurationsPostRequestBody_dependabot_alerts>(); } },
                 {"dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetEnumValue<ConfigurationsPostRequestBody_dependabot_security_updates>(); } },
                 {"dependency_graph", n => { DependencyGraph = n.GetEnumValue<ConfigurationsPostRequestBody_dependency_graph>(); } },
+                {"dependency_graph_autosubmit_action", n => { DependencyGraphAutosubmitAction = n.GetEnumValue<ConfigurationsPostRequestBody_dependency_graph_autosubmit_action>(); } },
+                {"dependency_graph_autosubmit_action_options", n => { DependencyGraphAutosubmitActionOptions = n.GetObjectValue<ConfigurationsPostRequestBody_dependency_graph_autosubmit_action_options>(ConfigurationsPostRequestBody_dependency_graph_autosubmit_action_options.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"enforcement", n => { Enforcement = n.GetEnumValue<ConfigurationsPostRequestBody_enforcement>(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -105,6 +118,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations {
             writer.WriteEnumValue<ConfigurationsPostRequestBody_dependabot_alerts>("dependabot_alerts", DependabotAlerts);
             writer.WriteEnumValue<ConfigurationsPostRequestBody_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteEnumValue<ConfigurationsPostRequestBody_dependency_graph>("dependency_graph", DependencyGraph);
+            writer.WriteEnumValue<ConfigurationsPostRequestBody_dependency_graph_autosubmit_action>("dependency_graph_autosubmit_action", DependencyGraphAutosubmitAction);
+            writer.WriteObjectValue<ConfigurationsPostRequestBody_dependency_graph_autosubmit_action_options>("dependency_graph_autosubmit_action_options", DependencyGraphAutosubmitActionOptions);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<ConfigurationsPostRequestBody_enforcement>("enforcement", Enforcement);
             writer.WriteStringValue("name", Name);

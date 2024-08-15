@@ -8,7 +8,7 @@ namespace GitHub.Models {
     /// <summary>
     /// Custom property defined on an organization
     /// </summary>
-    public class OrgCustomProperty : IAdditionalDataHolder, IParsable 
+    public class CustomProperty : IAdditionalDataHolder, IParsable 
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -23,10 +23,10 @@ namespace GitHub.Models {
         /// <summary>Default value of the property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OrgCustomProperty_default_value? DefaultValue { get; set; }
+        public CustomProperty_default_value? DefaultValue { get; set; }
 #nullable restore
 #else
-        public OrgCustomProperty_default_value DefaultValue { get; set; }
+        public CustomProperty_default_value DefaultValue { get; set; }
 #endif
         /// <summary>Short description of the property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,26 +46,34 @@ namespace GitHub.Models {
 #endif
         /// <summary>Whether the property is required.</summary>
         public bool? Required { get; set; }
+        /// <summary>The URL that can be used to fetch, update, or delete info about this property via the API.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; set; }
+#nullable restore
+#else
+        public string Url { get; set; }
+#endif
         /// <summary>Who can edit the values of the property</summary>
-        public OrgCustomProperty_values_editable_by? ValuesEditableBy { get; set; }
+        public CustomProperty_values_editable_by? ValuesEditableBy { get; set; }
         /// <summary>The type of the value for the property</summary>
-        public OrgCustomProperty_value_type? ValueType { get; set; }
+        public CustomProperty_value_type? ValueType { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="OrgCustomProperty"/> and sets the default values.
+        /// Instantiates a new <see cref="CustomProperty"/> and sets the default values.
         /// </summary>
-        public OrgCustomProperty()
+        public CustomProperty()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OrgCustomProperty"/></returns>
+        /// <returns>A <see cref="CustomProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OrgCustomProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static CustomProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OrgCustomProperty();
+            return new CustomProperty();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,12 +84,13 @@ namespace GitHub.Models {
             return new Dictionary<string, Action<IParseNode>>
             {
                 {"allowed_values", n => { AllowedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"default_value", n => { DefaultValue = n.GetObjectValue<OrgCustomProperty_default_value>(OrgCustomProperty_default_value.CreateFromDiscriminatorValue); } },
+                {"default_value", n => { DefaultValue = n.GetObjectValue<CustomProperty_default_value>(CustomProperty_default_value.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"property_name", n => { PropertyName = n.GetStringValue(); } },
                 {"required", n => { Required = n.GetBoolValue(); } },
-                {"value_type", n => { ValueType = n.GetEnumValue<OrgCustomProperty_value_type>(); } },
-                {"values_editable_by", n => { ValuesEditableBy = n.GetEnumValue<OrgCustomProperty_values_editable_by>(); } },
+                {"url", n => { Url = n.GetStringValue(); } },
+                {"value_type", n => { ValueType = n.GetEnumValue<CustomProperty_value_type>(); } },
+                {"values_editable_by", n => { ValuesEditableBy = n.GetEnumValue<CustomProperty_values_editable_by>(); } },
             };
         }
         /// <summary>
@@ -92,18 +101,19 @@ namespace GitHub.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowed_values", AllowedValues);
-            writer.WriteObjectValue<OrgCustomProperty_default_value>("default_value", DefaultValue);
+            writer.WriteObjectValue<CustomProperty_default_value>("default_value", DefaultValue);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("property_name", PropertyName);
             writer.WriteBoolValue("required", Required);
-            writer.WriteEnumValue<OrgCustomProperty_values_editable_by>("values_editable_by", ValuesEditableBy);
-            writer.WriteEnumValue<OrgCustomProperty_value_type>("value_type", ValueType);
+            writer.WriteStringValue("url", Url);
+            writer.WriteEnumValue<CustomProperty_values_editable_by>("values_editable_by", ValuesEditableBy);
+            writer.WriteEnumValue<CustomProperty_value_type>("value_type", ValueType);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="string"/>
         /// </summary>
-        public class OrgCustomProperty_default_value : IComposedTypeWrapper, IParsable 
+        public class CustomProperty_default_value : IComposedTypeWrapper, IParsable 
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,13 +126,13 @@ namespace GitHub.Models {
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="OrgCustomProperty_default_value"/></returns>
+            /// <returns>A <see cref="CustomProperty_default_value"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static OrgCustomProperty_default_value CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static CustomProperty_default_value CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new OrgCustomProperty_default_value();
+                var result = new CustomProperty_default_value();
                 if(parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;

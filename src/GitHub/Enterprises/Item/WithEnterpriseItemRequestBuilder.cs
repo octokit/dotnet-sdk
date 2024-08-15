@@ -2,6 +2,7 @@
 using GitHub.Enterprises.Item.Copilot;
 using GitHub.Enterprises.Item.Dependabot;
 using GitHub.Enterprises.Item.SecretScanning;
+using GitHub.Enterprises.Item.Team;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
@@ -28,6 +29,11 @@ namespace GitHub.Enterprises.Item {
         public SecretScanningRequestBuilder SecretScanning
         {
             get => new SecretScanningRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The team property</summary>
+        public TeamRequestBuilder Team
+        {
+            get => new TeamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="WithEnterpriseItemRequestBuilder"/> and sets the default values.

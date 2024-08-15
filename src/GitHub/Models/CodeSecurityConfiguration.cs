@@ -24,6 +24,16 @@ namespace GitHub.Models {
         public CodeSecurityConfiguration_dependabot_security_updates? DependabotSecurityUpdates { get; set; }
         /// <summary>The enablement status of Dependency Graph</summary>
         public CodeSecurityConfiguration_dependency_graph? DependencyGraph { get; set; }
+        /// <summary>The enablement status of Automatic dependency submission</summary>
+        public CodeSecurityConfiguration_dependency_graph_autosubmit_action? DependencyGraphAutosubmitAction { get; set; }
+        /// <summary>Feature options for Automatic dependency submission</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CodeSecurityConfiguration_dependency_graph_autosubmit_action_options? DependencyGraphAutosubmitActionOptions { get; set; }
+#nullable restore
+#else
+        public CodeSecurityConfiguration_dependency_graph_autosubmit_action_options DependencyGraphAutosubmitActionOptions { get; set; }
+#endif
         /// <summary>A description of the code security configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +113,8 @@ namespace GitHub.Models {
                 {"dependabot_alerts", n => { DependabotAlerts = n.GetEnumValue<CodeSecurityConfiguration_dependabot_alerts>(); } },
                 {"dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetEnumValue<CodeSecurityConfiguration_dependabot_security_updates>(); } },
                 {"dependency_graph", n => { DependencyGraph = n.GetEnumValue<CodeSecurityConfiguration_dependency_graph>(); } },
+                {"dependency_graph_autosubmit_action", n => { DependencyGraphAutosubmitAction = n.GetEnumValue<CodeSecurityConfiguration_dependency_graph_autosubmit_action>(); } },
+                {"dependency_graph_autosubmit_action_options", n => { DependencyGraphAutosubmitActionOptions = n.GetObjectValue<CodeSecurityConfiguration_dependency_graph_autosubmit_action_options>(CodeSecurityConfiguration_dependency_graph_autosubmit_action_options.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"enforcement", n => { Enforcement = n.GetEnumValue<CodeSecurityConfiguration_enforcement>(); } },
                 {"html_url", n => { HtmlUrl = n.GetStringValue(); } },
@@ -130,6 +142,8 @@ namespace GitHub.Models {
             writer.WriteEnumValue<CodeSecurityConfiguration_dependabot_alerts>("dependabot_alerts", DependabotAlerts);
             writer.WriteEnumValue<CodeSecurityConfiguration_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteEnumValue<CodeSecurityConfiguration_dependency_graph>("dependency_graph", DependencyGraph);
+            writer.WriteEnumValue<CodeSecurityConfiguration_dependency_graph_autosubmit_action>("dependency_graph_autosubmit_action", DependencyGraphAutosubmitAction);
+            writer.WriteObjectValue<CodeSecurityConfiguration_dependency_graph_autosubmit_action_options>("dependency_graph_autosubmit_action_options", DependencyGraphAutosubmitActionOptions);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<CodeSecurityConfiguration_enforcement>("enforcement", Enforcement);
             writer.WriteStringValue("html_url", HtmlUrl);

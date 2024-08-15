@@ -25,5 +25,9 @@ namespace GitHub.Models {
         #pragma warning disable CS1591
         DeployKey,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EnterpriseTeam")]
+        #pragma warning disable CS1591
+        EnterpriseTeam,
+        #pragma warning restore CS1591
     }
 }

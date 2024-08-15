@@ -19,6 +19,16 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
         public WithConfiguration_PatchRequestBody_dependabot_security_updates? DependabotSecurityUpdates { get; set; }
         /// <summary>The enablement status of Dependency Graph</summary>
         public WithConfiguration_PatchRequestBody_dependency_graph? DependencyGraph { get; set; }
+        /// <summary>The enablement status of Automatic dependency submission</summary>
+        public WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action? DependencyGraphAutosubmitAction { get; set; }
+        /// <summary>Feature options for Automatic dependency submission</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action_options? DependencyGraphAutosubmitActionOptions { get; set; }
+#nullable restore
+#else
+        public WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action_options DependencyGraphAutosubmitActionOptions { get; set; }
+#endif
         /// <summary>A description of the code security configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +78,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
                 {"dependabot_alerts", n => { DependabotAlerts = n.GetEnumValue<WithConfiguration_PatchRequestBody_dependabot_alerts>(); } },
                 {"dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetEnumValue<WithConfiguration_PatchRequestBody_dependabot_security_updates>(); } },
                 {"dependency_graph", n => { DependencyGraph = n.GetEnumValue<WithConfiguration_PatchRequestBody_dependency_graph>(); } },
+                {"dependency_graph_autosubmit_action", n => { DependencyGraphAutosubmitAction = n.GetEnumValue<WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action>(); } },
+                {"dependency_graph_autosubmit_action_options", n => { DependencyGraphAutosubmitActionOptions = n.GetObjectValue<WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action_options>(WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action_options.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"enforcement", n => { Enforcement = n.GetEnumValue<WithConfiguration_PatchRequestBody_enforcement>(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
@@ -89,6 +101,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_dependabot_alerts>("dependabot_alerts", DependabotAlerts);
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_dependency_graph>("dependency_graph", DependencyGraph);
+            writer.WriteEnumValue<WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action>("dependency_graph_autosubmit_action", DependencyGraphAutosubmitAction);
+            writer.WriteObjectValue<WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action_options>("dependency_graph_autosubmit_action_options", DependencyGraphAutosubmitActionOptions);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<WithConfiguration_PatchRequestBody_enforcement>("enforcement", Enforcement);
             writer.WriteStringValue("name", Name);

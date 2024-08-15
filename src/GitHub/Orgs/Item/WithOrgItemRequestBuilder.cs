@@ -35,6 +35,7 @@ using GitHub.Orgs.Item.SecretScanning;
 using GitHub.Orgs.Item.SecurityAdvisories;
 using GitHub.Orgs.Item.SecurityManagers;
 using GitHub.Orgs.Item.Settings;
+using GitHub.Orgs.Item.Team;
 using GitHub.Orgs.Item.Teams;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -219,6 +220,11 @@ namespace GitHub.Orgs.Item {
         public SettingsRequestBuilder Settings
         {
             get => new SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The team property</summary>
+        public TeamRequestBuilder Team
+        {
+            get => new TeamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
         public TeamsRequestBuilder Teams
