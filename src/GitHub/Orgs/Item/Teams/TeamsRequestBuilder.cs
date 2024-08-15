@@ -47,7 +47,7 @@ namespace GitHub.Orgs.Item.Teams {
         /// Lists all teams in an organization that are visible to the authenticated user.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#list-teams" />
         /// </summary>
-        /// <returns>A List&lt;Team&gt;</returns>
+        /// <returns>A List&lt;GitHub.Models.Team&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="BasicError">When receiving a 403 status code</exception>

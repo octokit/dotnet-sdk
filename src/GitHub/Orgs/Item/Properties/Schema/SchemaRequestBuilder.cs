@@ -47,18 +47,18 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// Gets all custom properties defined for an organization.Organization members can read these properties.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#get-all-custom-properties-for-an-organization" />
         /// </summary>
-        /// <returns>A List&lt;OrgCustomProperty&gt;</returns>
+        /// <returns>A List&lt;CustomProperty&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="BasicError">When receiving a 403 status code</exception>
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<OrgCustomProperty>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<CustomProperty>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<OrgCustomProperty>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<CustomProperty>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,14 +67,14 @@ namespace GitHub.Orgs.Item.Properties.Schema {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<OrgCustomProperty>(requestInfo, OrgCustomProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<CustomProperty>(requestInfo, CustomProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>
         /// Creates new or updates existing custom properties defined for an organization in a batch.To use this endpoint, the authenticated user must be one of:  - An administrator for the organization.  - A user, or a user on a team, with the fine-grained permission of `custom_properties_org_definitions_manager` in the organization.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/custom-properties#create-or-update-custom-properties-for-an-organization" />
         /// </summary>
-        /// <returns>A List&lt;OrgCustomProperty&gt;</returns>
+        /// <returns>A List&lt;CustomProperty&gt;</returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,11 +82,11 @@ namespace GitHub.Orgs.Item.Properties.Schema {
         /// <exception cref="BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<OrgCustomProperty>?> PatchAsync(SchemaPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<CustomProperty>?> PatchAsync(SchemaPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<OrgCustomProperty>> PatchAsync(SchemaPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<CustomProperty>> PatchAsync(SchemaPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -96,7 +96,7 @@ namespace GitHub.Orgs.Item.Properties.Schema {
                 {"403", BasicError.CreateFromDiscriminatorValue},
                 {"404", BasicError.CreateFromDiscriminatorValue},
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<OrgCustomProperty>(requestInfo, OrgCustomProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<CustomProperty>(requestInfo, CustomProperty.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.ToList();
         }
         /// <summary>

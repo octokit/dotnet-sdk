@@ -34,7 +34,7 @@ namespace GitHub.Orgs.Item.Invitations.Item.Teams {
         /// List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/members#list-organization-invitation-teams" />
         /// </summary>
-        /// <returns>A List&lt;Team&gt;</returns>
+        /// <returns>A List&lt;GitHub.Models.Team&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="BasicError">When receiving a 404 status code</exception>

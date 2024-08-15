@@ -56,7 +56,7 @@ namespace GitHub.Repos.Item.Item.Rulesets.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a ruleset for a repository.
+        /// Get a ruleset for a repository.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.
         /// API method documentation <see href="https://docs.github.com/rest/repos/rules#get-a-repository-ruleset" />
         /// </summary>
         /// <returns>A <see cref="RepositoryRuleset"/></returns>
@@ -129,7 +129,7 @@ namespace GitHub.Repos.Item.Item.Rulesets.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get a ruleset for a repository.
+        /// Get a ruleset for a repository.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +179,7 @@ namespace GitHub.Repos.Item.Item.Rulesets.Item {
             return new WithRuleset_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a ruleset for a repository.
+        /// Get a ruleset for a repository.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.
         /// </summary>
         public class WithRuleset_ItemRequestBuilderGetQueryParameters 
         {

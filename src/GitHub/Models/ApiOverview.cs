@@ -36,6 +36,14 @@ namespace GitHub.Models {
 #else
         public List<string> Api { get; set; }
 #endif
+        /// <summary>The copilot property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Copilot { get; set; }
+#nullable restore
+#else
+        public List<string> Copilot { get; set; }
+#endif
         /// <summary>The dependabot property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,6 +162,7 @@ namespace GitHub.Models {
                 {"actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"actions_macos", n => { ActionsMacos = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"api", n => { Api = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"copilot", n => { Copilot = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"dependabot", n => { Dependabot = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"domains", n => { Domains = n.GetObjectValue<ApiOverview_domains>(ApiOverview_domains.CreateFromDiscriminatorValue); } },
                 {"git", n => { Git = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -178,6 +187,7 @@ namespace GitHub.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("actions", Actions);
             writer.WriteCollectionOfPrimitiveValues<string>("actions_macos", ActionsMacos);
             writer.WriteCollectionOfPrimitiveValues<string>("api", Api);
+            writer.WriteCollectionOfPrimitiveValues<string>("copilot", Copilot);
             writer.WriteCollectionOfPrimitiveValues<string>("dependabot", Dependabot);
             writer.WriteObjectValue<ApiOverview_domains>("domains", Domains);
             writer.WriteCollectionOfPrimitiveValues<string>("git", Git);

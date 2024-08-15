@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models {
     /// <summary>Who can edit the values of the property</summary>
-    public enum OrgCustomProperty_values_editable_by
+    public enum CustomProperty_values_editable_by
     {
         [EnumMember(Value = "org_actors")]
         #pragma warning disable CS1591
