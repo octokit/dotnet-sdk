@@ -10,6 +10,7 @@ using GitHub.Repos.Item.Item.Branches;
 using GitHub.Repos.Item.Item.CheckRuns;
 using GitHub.Repos.Item.Item.CheckSuites;
 using GitHub.Repos.Item.Item.CodeScanning;
+using GitHub.Repos.Item.Item.CodeSecurityConfiguration;
 using GitHub.Repos.Item.Item.Codeowners;
 using GitHub.Repos.Item.Item.Codespaces;
 using GitHub.Repos.Item.Item.Collaborators;
@@ -134,6 +135,11 @@ namespace GitHub.Repos.Item.Item {
         public CodeScanningRequestBuilder CodeScanning
         {
             get => new CodeScanningRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The codeSecurityConfiguration property</summary>
+        public CodeSecurityConfigurationRequestBuilder CodeSecurityConfiguration
+        {
+            get => new CodeSecurityConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codespaces property</summary>
         public CodespacesRequestBuilder Codespaces

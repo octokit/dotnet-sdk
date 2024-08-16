@@ -18,7 +18,7 @@ public class UserAgentHandler(UserAgentOptions? userAgentHandlerOption = null) :
 
         if (!request.Headers.UserAgent.Any(x => userAgentHandlerOption.ProductName != null && userAgentHandlerOption.ProductName.Equals(x.Product?.Name, StringComparison.OrdinalIgnoreCase)))
         {
-             request.Headers.UserAgent.Add(new ProductInfoHeaderValue(userAgentHandlerOption.ProductName ?? string.Empty, userAgentHandlerOption.ProductVersion));
+            request.Headers.UserAgent.Add(new ProductInfoHeaderValue(userAgentHandlerOption.ProductName ?? string.Empty, userAgentHandlerOption.ProductVersion));
         }
         return base.SendAsync(request, cancellationToken);
     }

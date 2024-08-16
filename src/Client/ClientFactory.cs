@@ -25,7 +25,8 @@ public class ClientFactory
             new RateLimitHandler(),
         ]);
 
-    public ClientFactory(HttpMessageHandler? finalHandler = null) {
+    public ClientFactory(HttpMessageHandler? finalHandler = null)
+    {
         _finalHandler = finalHandler;
     }
 
@@ -46,22 +47,26 @@ public class ClientFactory
         return handler is not null ? new HttpClient(handler) : new HttpClient();
     }
 
-    public ClientFactory WithUserAgent(string productName, string productVersion) {
-        AddOrCreateHandler(new UserAgentHandler(new Middleware.Options.UserAgentOptions{ProductName = productName, ProductVersion = productVersion}));
+    public ClientFactory WithUserAgent(string productName, string productVersion)
+    {
+        AddOrCreateHandler(new UserAgentHandler(new Middleware.Options.UserAgentOptions { ProductName = productName, ProductVersion = productVersion }));
         return this;
     }
 
-    public ClientFactory WithRequestTimeout(TimeSpan timeSpan) {
+    public ClientFactory WithRequestTimeout(TimeSpan timeSpan)
+    {
         _requestTimeout = timeSpan;
         return this;
     }
 
-    public ClientFactory WithBaseUrl(string baseUrl) {
+    public ClientFactory WithBaseUrl(string baseUrl)
+    {
         _baseUrl = baseUrl;
         return this;
     }
 
-    public ClientFactory WithAuthenticationProvider(IAuthenticationProvider authenticationProvider) {
+    public ClientFactory WithAuthenticationProvider(IAuthenticationProvider authenticationProvider)
+    {
         _authenticationProvider = authenticationProvider;
         return this;
     }
@@ -79,7 +84,7 @@ public class ClientFactory
         {
             httpClient = new HttpClient(handler);
         }
-        
+
         if (_requestTimeout.HasValue)
         {
             httpClient.Timeout = _requestTimeout.Value;
@@ -90,7 +95,7 @@ public class ClientFactory
             httpClient.BaseAddress = new Uri(_baseUrl);
         }
 
-        return RequestAdapter.Create(_authenticationProvider, httpClient);;
+        return RequestAdapter.Create(_authenticationProvider, httpClient); ;
     }
     /// <summary>
     /// Creates a list of default delegating handlers for the Octokit client.
@@ -165,7 +170,7 @@ public class ClientFactory
     {
         // Find the index of the handler that matches the specified type
         int index = s_handlers.Value.FindIndex(h => h is THandler);
-        
+
         // If the handler is found, replace it with the new handler otehrwise add the new handler to the list
         if (index >= 0)
         {
@@ -175,5 +180,5 @@ public class ClientFactory
         {
             s_handlers.Value.Add(handler);
         }
-    } 
+    }
 }
