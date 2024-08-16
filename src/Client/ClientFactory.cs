@@ -2,6 +2,7 @@
 
 using System.Net;
 using GitHub.Octokit.Client.Middleware;
+using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace GitHub.Octokit.Client;
@@ -9,8 +10,13 @@ namespace GitHub.Octokit.Client;
 /// <summary>
 /// Represents a client factory for creating <see cref="HttpClient"/>.
 /// </summary>
-public static class ClientFactory
+public class ClientFactory
 {
+    private TimeSpan? _requestTimeout;
+    private string? _baseUrl;
+
+    private IAuthenticationProvider? _authenticationProvider;
+    private readonly HttpMessageHandler? _finalHandler;
     private static readonly Lazy<List<DelegatingHandler>> s_handlers =
         new(() =>
         [
@@ -18,6 +24,10 @@ public static class ClientFactory
             new UserAgentHandler(),
             new RateLimitHandler(),
         ]);
+
+    public ClientFactory(HttpMessageHandler? finalHandler = null) {
+        _finalHandler = finalHandler;
+    }
 
     /// <summary>
     /// Creates an <see cref="HttpClient"/> instance with the specified <see cref="HttpMessageHandler"/>.
@@ -36,6 +46,52 @@ public static class ClientFactory
         return handler is not null ? new HttpClient(handler) : new HttpClient();
     }
 
+    public ClientFactory WithUserAgent(string productName, string productVersion) {
+        AddOrCreateHandler(new UserAgentHandler(new Middleware.Options.UserAgentOptions{ProductName = productName, ProductVersion = productVersion}));
+        return this;
+    }
+
+    public ClientFactory WithRequestTimeout(TimeSpan timeSpan) {
+        _requestTimeout = timeSpan;
+        return this;
+    }
+
+    public ClientFactory WithBaseUrl(string baseUrl) {
+        _baseUrl = baseUrl;
+        return this;
+    }
+
+    public ClientFactory WithAuthenticationProvider(IAuthenticationProvider authenticationProvider) {
+        _authenticationProvider = authenticationProvider;
+        return this;
+    }
+
+    public HttpClientRequestAdapter Build()
+    {
+
+        if (_authenticationProvider == null) throw new ArgumentNullException("authenticationProvider");
+
+        var httpClient = new HttpClient();
+        var defaultHandlers = CreateDefaultHandlers();
+        var handler = ChainHandlersCollectionAndGetFirstLink(finalHandler: _finalHandler ?? GetDefaultHttpMessageHandler(), handlers: [.. defaultHandlers]);
+
+        if (handler != null)
+        {
+            httpClient = new HttpClient(handler);
+        }
+        
+        if (_requestTimeout.HasValue)
+        {
+            httpClient.Timeout = _requestTimeout.Value;
+        }
+
+        if (!string.IsNullOrEmpty(_baseUrl))
+        {
+            httpClient.BaseAddress = new Uri(_baseUrl);
+        }
+
+        return RequestAdapter.Create(_authenticationProvider, httpClient);;
+    }
     /// <summary>
     /// Creates a list of default delegating handlers for the Octokit client.
     /// </summary>
@@ -97,4 +153,27 @@ public static class ClientFactory
     /// <returns>The default HTTP message handler.</returns>
     public static HttpMessageHandler GetDefaultHttpMessageHandler(IWebProxy? proxy = null) =>
         new HttpClientHandler { Proxy = proxy, AllowAutoRedirect = false };
+
+    /// <summary>
+    /// In support of the constructor approach to building a client factory, this method allows for adding or updating
+    /// a handler in the list of handlers.
+    /// The final result of the list of handlers will be processed in the Build() method.
+    /// </summary>
+    /// <typeparam name="THandler"></typeparam>
+    /// <param name="handler"></param>
+    private void AddOrCreateHandler<THandler>(THandler handler) where THandler : DelegatingHandler
+    {
+        // Find the index of the handler that matches the specified type
+        int index = s_handlers.Value.FindIndex(h => h is THandler);
+        
+        // If the handler is found, replace it with the new handler otehrwise add the new handler to the list
+        if (index >= 0)
+        {
+            s_handlers.Value[index] = handler;
+        }
+        else
+        {
+            s_handlers.Value.Add(handler);
+        }
+    } 
 }

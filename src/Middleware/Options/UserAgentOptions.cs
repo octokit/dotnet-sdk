@@ -17,12 +17,12 @@ public class UserAgentOptions : IRequestOption
     /// Gets or sets the product name used in the user agent request header.
     /// Defaults to <c>"GitHub.Octokit.dotnet-sdk"</c>.
     /// </summary>
-    public string ProductName { get; set; } = DefaultProductName;
+    public string? ProductName { get; set; } = DefaultProductName;
 
     /// <summary>
     /// Gets or sets the product version used in the user agent request header.
     /// </summary>
-    public string ProductVersion { get; set; } = DefaultProductVersion;
+    public string? ProductVersion { get; set; } = DefaultProductVersion;
 
     public static string GetFullSDKVersion() => DefaultProductName + ":" + DefaultProductVersion;
 

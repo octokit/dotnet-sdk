@@ -28,24 +28,67 @@ public class AppInstallationToken
     static readonly string CLIENT_ID = Environment.GetEnvironmentVariable("GITHUB_APP_CLIENT_ID") ?? "";
     static readonly string PRIVATE_KEY_PATH = File.ReadAllText(Environment.GetEnvironmentVariable("GITHUB_APP_PRIVATE_KEY_PATH") ?? "");
 
-    public static async Task Run()
+
+    public static async Task Run(string approach)
     {
+        switch (approach)
+        {
+            case "builder":
+                await RunWithBuilder();
+                break;
+            case "default":
+                await RunWithDefault();
+                break;
+            default:
+                Console.WriteLine("Invalid approach. Please provide 'builder' or 'default'");
+                break;
+        }
+    }
+
+    private static async Task RunWithBuilder()
+    { 
         var githubAppTokenProvider = new GitHubAppTokenProvider();
-        var rsa = RSA.Create();
-        rsa.ImportFromPem(PRIVATE_KEY_PATH);
+        var rsa = BuildRSAKey();
 
         var aiAccessTokenProvider = new AppInstallationTokenProvider(CLIENT_ID, rsa, INSTALLATION_ID, githubAppTokenProvider);
-        var aiAdapter = RequestAdapter.Create(new AppInstallationAuthProvider(aiAccessTokenProvider));
-        var aiGitHubClient = new GitHubClient(aiAdapter);
 
+        var adapter = new ClientFactory()
+            .WithAuthenticationProvider(new AppInstallationAuthProvider(aiAccessTokenProvider))
+            .WithUserAgent("my-app", "1.0.0")
+            .WithRequestTimeout(TimeSpan.FromSeconds(100))
+            .WithBaseUrl("https://api.github.com")
+            .Build();
+
+            await MakeRequest(new GitHubClient(adapter));
+    } 
+
+    private static async Task RunWithDefault()
+    {
+        var githubAppTokenProvider = new GitHubAppTokenProvider();
+        var rsa = BuildRSAKey();
+
+        var aiAccessTokenProvider = new AppInstallationTokenProvider(CLIENT_ID, rsa, INSTALLATION_ID, githubAppTokenProvider);
+        var adapter = RequestAdapter.Create(new AppInstallationAuthProvider(aiAccessTokenProvider));
+        await MakeRequest(new GitHubClient(adapter));
+    } 
+
+    private static async Task MakeRequest(GitHubClient gitHubClient)
+    {
         try
         {
-            var response = await aiGitHubClient.Installation.Repositories.GetAsync();
+            var response = await gitHubClient.Installation.Repositories.GetAsync();
             response?.Repositories?.ForEach(repo => Console.WriteLine(repo.FullName));
         }
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
         }
+    }
+
+    private static RSA BuildRSAKey()
+    {
+        var rsa = RSA.Create();
+        rsa.ImportFromPem(PRIVATE_KEY_PATH);
+        return rsa;
     }
 }

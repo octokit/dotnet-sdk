@@ -53,15 +53,45 @@ using GitHub;
 using GitHub.Octokit.Client;
 using GitHub.Octokit.Client.Authentication;
 
-var token = Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "";
-var request = RequestAdapter.Create(new TokenAuthProvider(new TokenProvider(token)));
-var gitHubClient = new GitHubClient(request);
+var tokenProvider = new TokenProvider(Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "");
+var adapter = RequestAdapter.Create(new TokenAuthProvider(tokenProvider));
+await MakeRequest(new GitHubClient(adapter));
 
-var pullRequests = await gitHubClient.Repos["octokit"]["octokit.net"].Pulls.GetAsync();
-
-foreach (var pullRequest in pullRequests)
+try
 {
-    Console.WriteLine($"#{pullRequest.Number} {pullRequest.Title}");
+	var response = await gitHubClient.Repositories.GetAsync();
+	response?.ForEach(repo => Console.WriteLine(repo.FullName));
+}
+catch (Exception e)
+{
+	Console.WriteLine(e.Message);
+}
+```
+
+#### Custom configuration for requests 
+
+```csharp
+using GitHub;
+using GitHub.Octokit.Client;
+using GitHub.Octokit.Client.Authentication;
+
+var tokenProvider = new TokenProvider(Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "");
+
+var adapter = new ClientFactory()
+	.WithAuthenticationProvider(new TokenAuthProvider(tokenProvider))
+	.WithUserAgent("my-app", "1.0.0")
+	.WithRequestTimeout(TimeSpan.FromSeconds(100))
+	.WithBaseUrl("https://api.github.com")
+	.Build();
+
+try
+{
+	var response = await gitHubClient.Repositories.GetAsync();
+	response?.ForEach(repo => Console.WriteLine(repo.FullName));
+}
+catch (Exception e)
+{
+	Console.WriteLine(e.Message);
 }
 ```
 
