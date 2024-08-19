@@ -1,16 +1,21 @@
 // Copyright (c) GitHub 2023-2024 - Licensed as MIT.
-
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
 namespace GitHub.Octokit.Client;
 
-public static class RequestAdapter
+/// <summary>
+/// Represents an adapter for making HTTP requests using HttpClient with additional configuration options.
+/// </summary>
+public class RequestAdapter
 {
     /// <summary>
-    /// Represents an adapter for making HTTP requests using HttpClient.
+    /// Initializes and returns a new instance of the <see cref="HttpClientRequestAdapter"/> class.
     /// </summary>
-    /// TODO: Implement the missing props and methods
+    /// <param name="authenticationProvider">The authentication provider to use for making requests.</param>
+    /// <param name="clientFactory">Optional: A custom HttpClient factory. If not provided, a default client will be created.</param>
+    /// <returns>A new instance of the <see cref="HttpClientRequestAdapter"/> class.</returns>
+
     public static HttpClientRequestAdapter Create(IAuthenticationProvider authenticationProvider, HttpClient? clientFactory = null)
     {
         clientFactory ??= ClientFactory.Create();
@@ -26,3 +31,4 @@ public static class RequestAdapter
         return gitHubRequestAdapter;
     }
 }
+

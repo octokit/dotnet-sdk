@@ -63,7 +63,7 @@ public class GitHubAppTokenProvider : IGitHubAppTokenProvider
         request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
 
         var userAgentOptions = new UserAgentOptions();
-        request.Headers.UserAgent.Add(new ProductInfoHeaderValue(userAgentOptions.ProductName, userAgentOptions.ProductVersion));
+        request.Headers.UserAgent.Add(new ProductInfoHeaderValue(userAgentOptions.ProductName ?? string.Empty, userAgentOptions.ProductVersion));
 
         var response = await client.SendAsync(request);
         response.EnsureSuccessStatusCode();

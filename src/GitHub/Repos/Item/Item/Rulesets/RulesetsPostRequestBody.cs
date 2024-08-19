@@ -54,6 +54,7 @@ namespace GitHub.Repos.Item.Item.Rulesets {
         public RulesetsPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
+            Target = RulesetsPostRequestBody_target.Branch;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
