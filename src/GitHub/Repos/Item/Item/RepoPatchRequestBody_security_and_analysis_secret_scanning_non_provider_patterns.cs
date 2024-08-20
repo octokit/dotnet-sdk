@@ -6,7 +6,7 @@ using System.Linq;
 using System;
 namespace GitHub.Repos.Item.Item {
     /// <summary>
-    /// Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see &quot;[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).&quot;
+    /// Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see &quot;[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets).&quot;
     /// </summary>
     public class RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns : IAdditionalDataHolder, IParsable 
     {

@@ -126,7 +126,7 @@ namespace GitHub.Enterprises.Item.SecretScanning.Alerts {
             [QueryParameter("resolution")]
             public string Resolution { get; set; }
 #endif
-            /// <summary>A comma-separated list of secret types to return. By default all secret types are returned.See &quot;[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)&quot;for a complete list of secret types.</summary>
+            /// <summary>A comma-separated list of secret types to return. By default all secret types are returned.See &quot;[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)&quot;for a complete list of secret types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("secret_type")]

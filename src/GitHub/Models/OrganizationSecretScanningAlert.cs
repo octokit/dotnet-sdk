@@ -87,7 +87,7 @@ namespace GitHub.Models {
 #else
         public string SecretType { get; set; }
 #endif
-        /// <summary>User-friendly name for the detected secret, matching the `secret_type`.For a list of built-in patterns, see &quot;[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security).&quot;</summary>
+        /// <summary>User-friendly name for the detected secret, matching the `secret_type`.For a list of built-in patterns, see &quot;[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecretTypeDisplayName { get; set; }
