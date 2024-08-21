@@ -28,7 +28,7 @@ namespace GitHub.Repos.Item.Item {
 #else
         public RepoPatchRequestBody_security_and_analysis_secret_scanning SecretScanning { get; set; }
 #endif
-        /// <summary>Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see &quot;[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets).&quot;</summary>
+        /// <summary>Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see &quot;[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns? SecretScanningNonProviderPatterns { get; set; }

@@ -11,6 +11,14 @@ namespace GitHub.Models {
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The client_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientId { get; set; }
+#nullable restore
+#else
+        public string ClientId { get; set; }
+#endif
         /// <summary>The created_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +134,7 @@ namespace GitHub.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                {"client_id", n => { ClientId = n.GetStringValue(); } },
                 {"created_at", n => { CreatedAt = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -147,6 +156,7 @@ namespace GitHub.Models {
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
