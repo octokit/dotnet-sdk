@@ -3,37 +3,39 @@ using GitHub.Models;
 using GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Attach;
 using GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Defaults;
 using GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Repositories;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
+namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\code-security\configurations\{configuration_id}
     /// </summary>
-    public class WithConfiguration_ItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithConfiguration_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The attach property</summary>
-        public AttachRequestBuilder Attach
+        public global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Attach.AttachRequestBuilder Attach
         {
-            get => new AttachRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Attach.AttachRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaults property</summary>
-        public DefaultsRequestBuilder Defaults
+        public global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Defaults.DefaultsRequestBuilder Defaults
         {
-            get => new DefaultsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Defaults.DefaultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repositories property</summary>
-        public RepositoriesRequestBuilder Repositories
+        public global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Repositories.RepositoriesRequestBuilder Repositories
         {
-            get => new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Repositories.RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithConfiguration_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +43,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithConfiguration_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,10 +56,10 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 400 status code</exception>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
-        /// <exception cref="BasicError">When receiving a 409 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 400 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -70,10 +72,10 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"400", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"409", BasicError.CreateFromDiscriminatorValue},
+                { "400", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "409", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -81,48 +83,48 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
         /// Gets a code security configuration available in an organization.The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/code-security/configurations#get-a-code-security-configuration" />
         /// </summary>
-        /// <returns>A <see cref="GitHub.Models.CodeSecurityConfiguration"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.CodeSecurityConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GitHub.Models.CodeSecurityConfiguration?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.CodeSecurityConfiguration?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GitHub.Models.CodeSecurityConfiguration> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.CodeSecurityConfiguration> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GitHub.Models.CodeSecurityConfiguration>(requestInfo, GitHub.Models.CodeSecurityConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.CodeSecurityConfiguration>(requestInfo, global::GitHub.Models.CodeSecurityConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a code security configuration in an organization.The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/code-security/configurations#update-a-code-security-configuration" />
         /// </summary>
-        /// <returns>A <see cref="GitHub.Models.CodeSecurityConfiguration"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.CodeSecurityConfiguration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GitHub.Models.CodeSecurityConfiguration?> PatchAsync(WithConfiguration_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.CodeSecurityConfiguration?> PatchAsync(global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GitHub.Models.CodeSecurityConfiguration> PatchAsync(WithConfiguration_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.CodeSecurityConfiguration> PatchAsync(global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<GitHub.Models.CodeSecurityConfiguration>(requestInfo, GitHub.Models.CodeSecurityConfiguration.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.CodeSecurityConfiguration>(requestInfo, global::GitHub.Models.CodeSecurityConfiguration.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes the desired code security configuration from an organization.Repositories attached to the configuration will retain their settings but will no longer be associated withthe configuration.The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
@@ -170,11 +172,11 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WithConfiguration_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WithConfiguration_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -187,11 +189,11 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithConfiguration_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithConfiguration_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithConfiguration_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

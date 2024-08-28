@@ -5,54 +5,56 @@ using GitHub.Gists.Item.Forks;
 using GitHub.Gists.Item.Item;
 using GitHub.Gists.Item.Star;
 using GitHub.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Gists.Item {
+namespace GitHub.Gists.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \gists\{gist_id}
     /// </summary>
-    public class WithGist_ItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithGist_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The comments property</summary>
-        public CommentsRequestBuilder Comments
+        public global::GitHub.Gists.Item.Comments.CommentsRequestBuilder Comments
         {
-            get => new CommentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Gists.Item.Comments.CommentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The commits property</summary>
-        public CommitsRequestBuilder Commits
+        public global::GitHub.Gists.Item.Commits.CommitsRequestBuilder Commits
         {
-            get => new CommitsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Gists.Item.Commits.CommitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The forks property</summary>
-        public ForksRequestBuilder Forks
+        public global::GitHub.Gists.Item.Forks.ForksRequestBuilder Forks
         {
-            get => new ForksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Gists.Item.Forks.ForksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The star property</summary>
-        public StarRequestBuilder Star
+        public global::GitHub.Gists.Item.Star.StarRequestBuilder Star
         {
-            get => new StarRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Gists.Item.Star.StarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the GitHub.gists.item.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="WithShaItemRequestBuilder"/></returns>
-        public WithShaItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::GitHub.Gists.Item.Item.WithShaItemRequestBuilder"/></returns>
+        public global::GitHub.Gists.Item.Item.WithShaItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("sha", position);
-                return new WithShaItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::GitHub.Gists.Item.Item.WithShaItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithGist_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Gists.Item.WithGist_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,7 +62,7 @@ namespace GitHub.Gists.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithGist_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Gists.Item.WithGist_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,8 +75,8 @@ namespace GitHub.Gists.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,8 +89,8 @@ namespace GitHub.Gists.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -96,55 +98,55 @@ namespace GitHub.Gists.Item {
         /// Gets a specified gist.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.- **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
         /// API method documentation <see href="https://docs.github.com/rest/gists/gists#get-a-gist" />
         /// </summary>
-        /// <returns>A <see cref="GistSimple"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.GistSimple"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="GistSimple403Error">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.GistSimple403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GistSimple?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.GistSimple?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GistSimple> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.GistSimple> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", GistSimple403Error.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", global::GitHub.Models.GistSimple403Error.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GistSimple>(requestInfo, GistSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.GistSimple>(requestInfo, global::GitHub.Models.GistSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Allows you to update a gist&apos;s description and to update, delete, or rename gist files. Filesfrom the previous version of the gist that aren&apos;t explicitly changed during an editare unchanged.At least one of `description` or `files` is required.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.raw+json`**: Returns the raw markdown. This is the default if you do not pass any specific media type.- **`application/vnd.github.base64+json`**: Returns the base64-encoded contents. This can be useful if your gist contains any invalid UTF-8 sequences.
         /// API method documentation <see href="https://docs.github.com/rest/gists/gists#update-a-gist" />
         /// </summary>
-        /// <returns>A <see cref="GistSimple"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.GistSimple"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
-        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GistSimple?> PatchAsync(WithGist_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.GistSimple?> PatchAsync(global::GitHub.Gists.Item.WithGist_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GistSimple> PatchAsync(WithGist_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.GistSimple> PatchAsync(global::GitHub.Gists.Item.WithGist_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Models.ValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GistSimple>(requestInfo, GistSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.GistSimple>(requestInfo, global::GitHub.Models.GistSimple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -189,11 +191,11 @@ namespace GitHub.Gists.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WithGist_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::GitHub.Gists.Item.WithGist_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WithGist_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::GitHub.Gists.Item.WithGist_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -206,11 +208,11 @@ namespace GitHub.Gists.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithGist_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Gists.Item.WithGist_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithGist_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Gists.Item.WithGist_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithGist_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Gists.Item.WithGist_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

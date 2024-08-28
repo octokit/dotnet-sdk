@@ -67,357 +67,359 @@ using GitHub.Repos.Item.Item.Traffic;
 using GitHub.Repos.Item.Item.Transfer;
 using GitHub.Repos.Item.Item.VulnerabilityAlerts;
 using GitHub.Repos.Item.Item.Zipball;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item {
+namespace GitHub.Repos.Item.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}
     /// </summary>
-    public class RepoItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class RepoItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The actions property</summary>
-        public ActionsRequestBuilder Actions
+        public global::GitHub.Repos.Item.Item.Actions.ActionsRequestBuilder Actions
         {
-            get => new ActionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.ActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The activity property</summary>
-        public ActivityRequestBuilder Activity
+        public global::GitHub.Repos.Item.Item.Activity.ActivityRequestBuilder Activity
         {
-            get => new ActivityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Activity.ActivityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The assignees property</summary>
-        public AssigneesRequestBuilder Assignees
+        public global::GitHub.Repos.Item.Item.Assignees.AssigneesRequestBuilder Assignees
         {
-            get => new AssigneesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Assignees.AssigneesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The attestations property</summary>
-        public AttestationsRequestBuilder Attestations
+        public global::GitHub.Repos.Item.Item.Attestations.AttestationsRequestBuilder Attestations
         {
-            get => new AttestationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Attestations.AttestationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The autolinks property</summary>
-        public AutolinksRequestBuilder Autolinks
+        public global::GitHub.Repos.Item.Item.Autolinks.AutolinksRequestBuilder Autolinks
         {
-            get => new AutolinksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Autolinks.AutolinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The automatedSecurityFixes property</summary>
-        public AutomatedSecurityFixesRequestBuilder AutomatedSecurityFixes
+        public global::GitHub.Repos.Item.Item.AutomatedSecurityFixes.AutomatedSecurityFixesRequestBuilder AutomatedSecurityFixes
         {
-            get => new AutomatedSecurityFixesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.AutomatedSecurityFixes.AutomatedSecurityFixesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The branches property</summary>
-        public BranchesRequestBuilder Branches
+        public global::GitHub.Repos.Item.Item.Branches.BranchesRequestBuilder Branches
         {
-            get => new BranchesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Branches.BranchesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The checkRuns property</summary>
-        public CheckRunsRequestBuilder CheckRuns
+        public global::GitHub.Repos.Item.Item.CheckRuns.CheckRunsRequestBuilder CheckRuns
         {
-            get => new CheckRunsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CheckRuns.CheckRunsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The checkSuites property</summary>
-        public CheckSuitesRequestBuilder CheckSuites
+        public global::GitHub.Repos.Item.Item.CheckSuites.CheckSuitesRequestBuilder CheckSuites
         {
-            get => new CheckSuitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CheckSuites.CheckSuitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codeowners property</summary>
-        public CodeownersRequestBuilder Codeowners
+        public global::GitHub.Repos.Item.Item.Codeowners.CodeownersRequestBuilder Codeowners
         {
-            get => new CodeownersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Codeowners.CodeownersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codeScanning property</summary>
-        public CodeScanningRequestBuilder CodeScanning
+        public global::GitHub.Repos.Item.Item.CodeScanning.CodeScanningRequestBuilder CodeScanning
         {
-            get => new CodeScanningRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CodeScanning.CodeScanningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codeSecurityConfiguration property</summary>
-        public CodeSecurityConfigurationRequestBuilder CodeSecurityConfiguration
+        public global::GitHub.Repos.Item.Item.CodeSecurityConfiguration.CodeSecurityConfigurationRequestBuilder CodeSecurityConfiguration
         {
-            get => new CodeSecurityConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CodeSecurityConfiguration.CodeSecurityConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codespaces property</summary>
-        public CodespacesRequestBuilder Codespaces
+        public global::GitHub.Repos.Item.Item.Codespaces.CodespacesRequestBuilder Codespaces
         {
-            get => new CodespacesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Codespaces.CodespacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The collaborators property</summary>
-        public CollaboratorsRequestBuilder Collaborators
+        public global::GitHub.Repos.Item.Item.Collaborators.CollaboratorsRequestBuilder Collaborators
         {
-            get => new CollaboratorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Collaborators.CollaboratorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The comments property</summary>
-        public CommentsRequestBuilder Comments
+        public global::GitHub.Repos.Item.Item.Comments.CommentsRequestBuilder Comments
         {
-            get => new CommentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Comments.CommentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The commits property</summary>
-        public CommitsRequestBuilder Commits
+        public global::GitHub.Repos.Item.Item.Commits.CommitsRequestBuilder Commits
         {
-            get => new CommitsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Commits.CommitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The community property</summary>
-        public CommunityRequestBuilder Community
+        public global::GitHub.Repos.Item.Item.Community.CommunityRequestBuilder Community
         {
-            get => new CommunityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Community.CommunityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The compare property</summary>
-        public CompareRequestBuilder Compare
+        public global::GitHub.Repos.Item.Item.Compare.CompareRequestBuilder Compare
         {
-            get => new CompareRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Compare.CompareRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The contents property</summary>
-        public ContentsRequestBuilder Contents
+        public global::GitHub.Repos.Item.Item.Contents.ContentsRequestBuilder Contents
         {
-            get => new ContentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Contents.ContentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The contributors property</summary>
-        public ContributorsRequestBuilder Contributors
+        public global::GitHub.Repos.Item.Item.Contributors.ContributorsRequestBuilder Contributors
         {
-            get => new ContributorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Contributors.ContributorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dependabot property</summary>
-        public DependabotRequestBuilder Dependabot
+        public global::GitHub.Repos.Item.Item.Dependabot.DependabotRequestBuilder Dependabot
         {
-            get => new DependabotRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Dependabot.DependabotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dependencyGraph property</summary>
-        public DependencyGraphRequestBuilder DependencyGraph
+        public global::GitHub.Repos.Item.Item.DependencyGraph.DependencyGraphRequestBuilder DependencyGraph
         {
-            get => new DependencyGraphRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.DependencyGraph.DependencyGraphRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deployments property</summary>
-        public DeploymentsRequestBuilder Deployments
+        public global::GitHub.Repos.Item.Item.Deployments.DeploymentsRequestBuilder Deployments
         {
-            get => new DeploymentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Deployments.DeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dispatches property</summary>
-        public DispatchesRequestBuilder Dispatches
+        public global::GitHub.Repos.Item.Item.Dispatches.DispatchesRequestBuilder Dispatches
         {
-            get => new DispatchesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Dispatches.DispatchesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The environments property</summary>
-        public EnvironmentsRequestBuilder Environments
+        public global::GitHub.Repos.Item.Item.Environments.EnvironmentsRequestBuilder Environments
         {
-            get => new EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Environments.EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
-        public EventsRequestBuilder Events
+        public global::GitHub.Repos.Item.Item.Events.EventsRequestBuilder Events
         {
-            get => new EventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The forks property</summary>
-        public ForksRequestBuilder Forks
+        public global::GitHub.Repos.Item.Item.Forks.ForksRequestBuilder Forks
         {
-            get => new ForksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Forks.ForksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generate property</summary>
-        public GenerateRequestBuilder Generate
+        public global::GitHub.Repos.Item.Item.Generate.GenerateRequestBuilder Generate
         {
-            get => new GenerateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Generate.GenerateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The git property</summary>
-        public GitRequestBuilder Git
+        public global::GitHub.Repos.Item.Item.Git.GitRequestBuilder Git
         {
-            get => new GitRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Git.GitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The hooks property</summary>
-        public HooksRequestBuilder Hooks
+        public global::GitHub.Repos.Item.Item.Hooks.HooksRequestBuilder Hooks
         {
-            get => new HooksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Hooks.HooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The import property</summary>
-        public ImportRequestBuilder Import
+        public global::GitHub.Repos.Item.Item.Import.ImportRequestBuilder Import
         {
-            get => new ImportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Import.ImportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The installation property</summary>
-        public InstallationRequestBuilder Installation
+        public global::GitHub.Repos.Item.Item.Installation.InstallationRequestBuilder Installation
         {
-            get => new InstallationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Installation.InstallationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The interactionLimits property</summary>
-        public InteractionLimitsRequestBuilder InteractionLimits
+        public global::GitHub.Repos.Item.Item.InteractionLimits.InteractionLimitsRequestBuilder InteractionLimits
         {
-            get => new InteractionLimitsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.InteractionLimits.InteractionLimitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The invitations property</summary>
-        public InvitationsRequestBuilder Invitations
+        public global::GitHub.Repos.Item.Item.Invitations.InvitationsRequestBuilder Invitations
         {
-            get => new InvitationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Invitations.InvitationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The issues property</summary>
-        public IssuesRequestBuilder Issues
+        public global::GitHub.Repos.Item.Item.Issues.IssuesRequestBuilder Issues
         {
-            get => new IssuesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
-        public KeysRequestBuilder Keys
+        public global::GitHub.Repos.Item.Item.Keys.KeysRequestBuilder Keys
         {
-            get => new KeysRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Keys.KeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The labels property</summary>
-        public LabelsRequestBuilder Labels
+        public global::GitHub.Repos.Item.Item.Labels.LabelsRequestBuilder Labels
         {
-            get => new LabelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The languages property</summary>
-        public LanguagesRequestBuilder Languages
+        public global::GitHub.Repos.Item.Item.Languages.LanguagesRequestBuilder Languages
         {
-            get => new LanguagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Languages.LanguagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The license property</summary>
-        public LicenseRequestBuilder License
+        public global::GitHub.Repos.Item.Item.License.LicenseRequestBuilder License
         {
-            get => new LicenseRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.License.LicenseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The merges property</summary>
-        public MergesRequestBuilder Merges
+        public global::GitHub.Repos.Item.Item.Merges.MergesRequestBuilder Merges
         {
-            get => new MergesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Merges.MergesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mergeUpstream property</summary>
-        public MergeUpstreamRequestBuilder MergeUpstream
+        public global::GitHub.Repos.Item.Item.MergeUpstream.MergeUpstreamRequestBuilder MergeUpstream
         {
-            get => new MergeUpstreamRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.MergeUpstream.MergeUpstreamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The milestones property</summary>
-        public MilestonesRequestBuilder Milestones
+        public global::GitHub.Repos.Item.Item.Milestones.MilestonesRequestBuilder Milestones
         {
-            get => new MilestonesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Milestones.MilestonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The notifications property</summary>
-        public NotificationsRequestBuilder Notifications
+        public global::GitHub.Repos.Item.Item.Notifications.NotificationsRequestBuilder Notifications
         {
-            get => new NotificationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pages property</summary>
-        public PagesRequestBuilder Pages
+        public global::GitHub.Repos.Item.Item.Pages.PagesRequestBuilder Pages
         {
-            get => new PagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The privateVulnerabilityReporting property</summary>
-        public PrivateVulnerabilityReportingRequestBuilder PrivateVulnerabilityReporting
+        public global::GitHub.Repos.Item.Item.PrivateVulnerabilityReporting.PrivateVulnerabilityReportingRequestBuilder PrivateVulnerabilityReporting
         {
-            get => new PrivateVulnerabilityReportingRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.PrivateVulnerabilityReporting.PrivateVulnerabilityReportingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The projects property</summary>
-        public ProjectsRequestBuilder Projects
+        public global::GitHub.Repos.Item.Item.Projects.ProjectsRequestBuilder Projects
         {
-            get => new ProjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The properties property</summary>
-        public PropertiesRequestBuilder Properties
+        public global::GitHub.Repos.Item.Item.Properties.PropertiesRequestBuilder Properties
         {
-            get => new PropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Properties.PropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pulls property</summary>
-        public PullsRequestBuilder Pulls
+        public global::GitHub.Repos.Item.Item.Pulls.PullsRequestBuilder Pulls
         {
-            get => new PullsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Pulls.PullsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The readme property</summary>
-        public ReadmeRequestBuilder Readme
+        public global::GitHub.Repos.Item.Item.Readme.ReadmeRequestBuilder Readme
         {
-            get => new ReadmeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Readme.ReadmeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The releases property</summary>
-        public ReleasesRequestBuilder Releases
+        public global::GitHub.Repos.Item.Item.Releases.ReleasesRequestBuilder Releases
         {
-            get => new ReleasesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Releases.ReleasesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
-        public RulesRequestBuilder Rules
+        public global::GitHub.Repos.Item.Item.Rules.RulesRequestBuilder Rules
         {
-            get => new RulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rulesets property</summary>
-        public RulesetsRequestBuilder Rulesets
+        public global::GitHub.Repos.Item.Item.Rulesets.RulesetsRequestBuilder Rulesets
         {
-            get => new RulesetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Rulesets.RulesetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secretScanning property</summary>
-        public SecretScanningRequestBuilder SecretScanning
+        public global::GitHub.Repos.Item.Item.SecretScanning.SecretScanningRequestBuilder SecretScanning
         {
-            get => new SecretScanningRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.SecretScanning.SecretScanningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The securityAdvisories property</summary>
-        public SecurityAdvisoriesRequestBuilder SecurityAdvisories
+        public global::GitHub.Repos.Item.Item.SecurityAdvisories.SecurityAdvisoriesRequestBuilder SecurityAdvisories
         {
-            get => new SecurityAdvisoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.SecurityAdvisories.SecurityAdvisoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stargazers property</summary>
-        public StargazersRequestBuilder Stargazers
+        public global::GitHub.Repos.Item.Item.Stargazers.StargazersRequestBuilder Stargazers
         {
-            get => new StargazersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Stargazers.StargazersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stats property</summary>
-        public StatsRequestBuilder Stats
+        public global::GitHub.Repos.Item.Item.Stats.StatsRequestBuilder Stats
         {
-            get => new StatsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Stats.StatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The statuses property</summary>
-        public StatusesRequestBuilder Statuses
+        public global::GitHub.Repos.Item.Item.Statuses.StatusesRequestBuilder Statuses
         {
-            get => new StatusesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Statuses.StatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subscribers property</summary>
-        public SubscribersRequestBuilder Subscribers
+        public global::GitHub.Repos.Item.Item.Subscribers.SubscribersRequestBuilder Subscribers
         {
-            get => new SubscribersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Subscribers.SubscribersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subscription property</summary>
-        public SubscriptionRequestBuilder Subscription
+        public global::GitHub.Repos.Item.Item.Subscription.SubscriptionRequestBuilder Subscription
         {
-            get => new SubscriptionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Subscription.SubscriptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tags property</summary>
-        public TagsRequestBuilder Tags
+        public global::GitHub.Repos.Item.Item.Tags.TagsRequestBuilder Tags
         {
-            get => new TagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tarball property</summary>
-        public TarballRequestBuilder Tarball
+        public global::GitHub.Repos.Item.Item.Tarball.TarballRequestBuilder Tarball
         {
-            get => new TarballRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Tarball.TarballRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
-        public TeamsRequestBuilder Teams
+        public global::GitHub.Repos.Item.Item.Teams.TeamsRequestBuilder Teams
         {
-            get => new TeamsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The topics property</summary>
-        public TopicsRequestBuilder Topics
+        public global::GitHub.Repos.Item.Item.Topics.TopicsRequestBuilder Topics
         {
-            get => new TopicsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Topics.TopicsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The traffic property</summary>
-        public TrafficRequestBuilder Traffic
+        public global::GitHub.Repos.Item.Item.Traffic.TrafficRequestBuilder Traffic
         {
-            get => new TrafficRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Traffic.TrafficRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The transfer property</summary>
-        public TransferRequestBuilder Transfer
+        public global::GitHub.Repos.Item.Item.Transfer.TransferRequestBuilder Transfer
         {
-            get => new TransferRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Transfer.TransferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The vulnerabilityAlerts property</summary>
-        public VulnerabilityAlertsRequestBuilder VulnerabilityAlerts
+        public global::GitHub.Repos.Item.Item.VulnerabilityAlerts.VulnerabilityAlertsRequestBuilder VulnerabilityAlerts
         {
-            get => new VulnerabilityAlertsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.VulnerabilityAlerts.VulnerabilityAlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zipball property</summary>
-        public ZipballRequestBuilder Zipball
+        public global::GitHub.Repos.Item.Item.Zipball.ZipballRequestBuilder Zipball
         {
-            get => new ZipballRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Zipball.ZipballRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="RepoItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.RepoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -425,7 +427,7 @@ namespace GitHub.Repos.Item.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RepoItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.RepoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -438,8 +440,8 @@ namespace GitHub.Repos.Item.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Repo403Error">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Repos.Item.Item.Repo403Error">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -452,8 +454,8 @@ namespace GitHub.Repos.Item.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", Repo403Error.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", global::GitHub.Repos.Item.Item.Repo403Error.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -461,57 +463,57 @@ namespace GitHub.Repos.Item.Item {
         /// The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.&gt; [!NOTE]&gt; In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/repos/repos#get-a-repository" />
         /// </summary>
-        /// <returns>A <see cref="FullRepository"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.FullRepository"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FullRepository?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.FullRepository?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FullRepository> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.FullRepository> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FullRepository>(requestInfo, FullRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.FullRepository>(requestInfo, global::GitHub.Models.FullRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Note**: To edit a repository&apos;s topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/repos/repos#update-a-repository" />
         /// </summary>
-        /// <returns>A <see cref="FullRepository"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.FullRepository"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
-        /// <exception cref="ValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FullRepository?> PatchAsync(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.FullRepository?> PatchAsync(global::GitHub.Repos.Item.Item.RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FullRepository> PatchAsync(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.FullRepository> PatchAsync(global::GitHub.Repos.Item.Item.RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationError.CreateFromDiscriminatorValue},
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Models.ValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FullRepository>(requestInfo, FullRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.FullRepository>(requestInfo, global::GitHub.Models.FullRepository.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deleting a repository requires admin access.If an organization owner has configured the organization to prevent members from deleting organization-ownedrepositories, you will get a `403 Forbidden` response.OAuth app tokens and personal access tokens (classic) need the `delete_repo` scope to use this endpoint.
@@ -559,11 +561,11 @@ namespace GitHub.Repos.Item.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::GitHub.Repos.Item.Item.RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::GitHub.Repos.Item.Item.RepoPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -576,11 +578,11 @@ namespace GitHub.Repos.Item.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RepoItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.RepoItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RepoItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Repos.Item.Item.RepoItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new RepoItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Repos.Item.Item.RepoItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

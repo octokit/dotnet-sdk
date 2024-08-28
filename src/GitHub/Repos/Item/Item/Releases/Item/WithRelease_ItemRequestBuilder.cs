@@ -2,32 +2,34 @@
 using GitHub.Models;
 using GitHub.Repos.Item.Item.Releases.Item.Assets;
 using GitHub.Repos.Item.Item.Releases.Item.Reactions;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Releases.Item {
+namespace GitHub.Repos.Item.Item.Releases.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\releases\{release_id}
     /// </summary>
-    public class WithRelease_ItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithRelease_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The assets property</summary>
-        public AssetsRequestBuilder Assets
+        public global::GitHub.Repos.Item.Item.Releases.Item.Assets.AssetsRequestBuilder Assets
         {
-            get => new AssetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Releases.Item.Assets.AssetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The reactions property</summary>
-        public ReactionsRequestBuilder Reactions
+        public global::GitHub.Repos.Item.Item.Releases.Item.Reactions.ReactionsRequestBuilder Reactions
         {
-            get => new ReactionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Releases.Item.Reactions.ReactionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithRelease_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Releases.Item.WithRelease_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +37,7 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithRelease_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Releases.Item.WithRelease_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -64,46 +66,46 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// Gets a public release with the specified release ID.&gt; [!NOTE]&gt; This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see &quot;[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/releases/releases#get-a-release" />
         /// </summary>
-        /// <returns>A <see cref="Release"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.Release"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Release?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Release?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Release> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Release> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Release>(requestInfo, Release.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.Release>(requestInfo, global::GitHub.Models.Release.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Users with push access to the repository can edit a release.
         /// API method documentation <see href="https://docs.github.com/rest/releases/releases#update-a-release" />
         /// </summary>
-        /// <returns>A <see cref="Release"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.Release"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Release?> PatchAsync(WithRelease_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Release?> PatchAsync(global::GitHub.Repos.Item.Item.Releases.Item.WithRelease_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Release> PatchAsync(WithRelease_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Release> PatchAsync(global::GitHub.Repos.Item.Item.Releases.Item.WithRelease_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Release>(requestInfo, Release.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.Release>(requestInfo, global::GitHub.Models.Release.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Users with push access to the repository can delete a release.
@@ -150,11 +152,11 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(WithRelease_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::GitHub.Repos.Item.Item.Releases.Item.WithRelease_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(WithRelease_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::GitHub.Repos.Item.Item.Releases.Item.WithRelease_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -167,11 +169,11 @@ namespace GitHub.Repos.Item.Item.Releases.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithRelease_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Releases.Item.WithRelease_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithRelease_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Repos.Item.Item.Releases.Item.WithRelease_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithRelease_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Repos.Item.Item.Releases.Item.WithRelease_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

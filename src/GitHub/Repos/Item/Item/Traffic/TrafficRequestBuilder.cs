@@ -2,35 +2,37 @@
 using GitHub.Repos.Item.Item.Traffic.Clones;
 using GitHub.Repos.Item.Item.Traffic.Popular;
 using GitHub.Repos.Item.Item.Traffic.Views;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Traffic {
+namespace GitHub.Repos.Item.Item.Traffic
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\traffic
     /// </summary>
-    public class TrafficRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class TrafficRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The clones property</summary>
-        public ClonesRequestBuilder Clones
+        public global::GitHub.Repos.Item.Item.Traffic.Clones.ClonesRequestBuilder Clones
         {
-            get => new ClonesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Traffic.Clones.ClonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The popular property</summary>
-        public PopularRequestBuilder Popular
+        public global::GitHub.Repos.Item.Item.Traffic.Popular.PopularRequestBuilder Popular
         {
-            get => new PopularRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Traffic.Popular.PopularRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The views property</summary>
-        public ViewsRequestBuilder Views
+        public global::GitHub.Repos.Item.Item.Traffic.Views.ViewsRequestBuilder Views
         {
-            get => new ViewsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Traffic.Views.ViewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="TrafficRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Traffic.TrafficRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +40,7 @@ namespace GitHub.Repos.Item.Item.Traffic {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TrafficRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Traffic.TrafficRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

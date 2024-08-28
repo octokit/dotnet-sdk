@@ -5,47 +5,49 @@ using GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_revi
 using GitHub.Repos.Item.Item.Branches.Item.Protection.Required_signatures;
 using GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks;
 using GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection
     /// </summary>
-    public class ProtectionRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class ProtectionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The enforce_admins property</summary>
-        public Enforce_adminsRequestBuilder Enforce_admins
+        public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Enforce_admins.Enforce_adminsRequestBuilder Enforce_admins
         {
-            get => new Enforce_adminsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Enforce_admins.Enforce_adminsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The required_pull_request_reviews property</summary>
-        public Required_pull_request_reviewsRequestBuilder Required_pull_request_reviews
+        public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_reviews.Required_pull_request_reviewsRequestBuilder Required_pull_request_reviews
         {
-            get => new Required_pull_request_reviewsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_reviews.Required_pull_request_reviewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The required_signatures property</summary>
-        public Required_signaturesRequestBuilder Required_signatures
+        public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_signatures.Required_signaturesRequestBuilder Required_signatures
         {
-            get => new Required_signaturesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_signatures.Required_signaturesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The required_status_checks property</summary>
-        public Required_status_checksRequestBuilder Required_status_checks
+        public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Required_status_checksRequestBuilder Required_status_checks
         {
-            get => new Required_status_checksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Required_status_checksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The restrictions property</summary>
-        public RestrictionsRequestBuilder Restrictions
+        public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.RestrictionsRequestBuilder Restrictions
         {
-            get => new RestrictionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.RestrictionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProtectionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.ProtectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,7 +55,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProtectionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.ProtectionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -66,7 +68,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -79,7 +81,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -87,55 +89,55 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#get-branch-protection" />
         /// </summary>
-        /// <returns>A <see cref="BranchProtection"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.BranchProtection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<BranchProtection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.BranchProtection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<BranchProtection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.BranchProtection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<BranchProtection>(requestInfo, BranchProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.BranchProtection>(requestInfo, global::GitHub.Models.BranchProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.Protecting a branch requires admin or owner permissions to the repository.&gt; [!NOTE]&gt; Passing new arrays of `users` and `teams` replaces their previous values.&gt; [!NOTE]&gt; The list of users, apps, and teams in total is limited to 100 items.
         /// API method documentation <see href="https://docs.github.com/rest/branches/branch-protection#update-branch-protection" />
         /// </summary>
-        /// <returns>A <see cref="ProtectedBranch"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.ProtectedBranch"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
-        /// <exception cref="ValidationErrorSimple">When receiving a 422 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ProtectedBranch?> PutAsync(ProtectionPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.ProtectedBranch?> PutAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.ProtectionPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ProtectedBranch> PutAsync(ProtectionPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.ProtectedBranch> PutAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.ProtectionPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"422", ValidationErrorSimple.CreateFromDiscriminatorValue},
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Models.ValidationErrorSimple.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ProtectedBranch>(requestInfo, ProtectedBranch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.ProtectedBranch>(requestInfo, global::GitHub.Models.ProtectedBranch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -183,11 +185,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(ProtectionPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.ProtectionPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(ProtectionPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.ProtectionPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -200,11 +202,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ProtectionRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.ProtectionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ProtectionRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Repos.Item.Item.Branches.Item.Protection.ProtectionRequestBuilder WithUrl(string rawUrl)
         {
-            return new ProtectionRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Repos.Item.Item.Branches.Item.Protection.ProtectionRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

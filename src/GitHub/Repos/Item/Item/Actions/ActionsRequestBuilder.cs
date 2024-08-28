@@ -12,85 +12,87 @@ using GitHub.Repos.Item.Item.Actions.Runs;
 using GitHub.Repos.Item.Item.Actions.Secrets;
 using GitHub.Repos.Item.Item.Actions.Variables;
 using GitHub.Repos.Item.Item.Actions.Workflows;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Actions {
+namespace GitHub.Repos.Item.Item.Actions
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions
     /// </summary>
-    public class ActionsRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class ActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The artifacts property</summary>
-        public ArtifactsRequestBuilder Artifacts
+        public global::GitHub.Repos.Item.Item.Actions.Artifacts.ArtifactsRequestBuilder Artifacts
         {
-            get => new ArtifactsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Artifacts.ArtifactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cache property</summary>
-        public CacheRequestBuilder Cache
+        public global::GitHub.Repos.Item.Item.Actions.Cache.CacheRequestBuilder Cache
         {
-            get => new CacheRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Cache.CacheRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The caches property</summary>
-        public CachesRequestBuilder Caches
+        public global::GitHub.Repos.Item.Item.Actions.Caches.CachesRequestBuilder Caches
         {
-            get => new CachesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Caches.CachesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The jobs property</summary>
-        public JobsRequestBuilder Jobs
+        public global::GitHub.Repos.Item.Item.Actions.Jobs.JobsRequestBuilder Jobs
         {
-            get => new JobsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The oidc property</summary>
-        public OidcRequestBuilder Oidc
+        public global::GitHub.Repos.Item.Item.Actions.Oidc.OidcRequestBuilder Oidc
         {
-            get => new OidcRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Oidc.OidcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizationSecrets property</summary>
-        public OrganizationSecretsRequestBuilder OrganizationSecrets
+        public global::GitHub.Repos.Item.Item.Actions.OrganizationSecrets.OrganizationSecretsRequestBuilder OrganizationSecrets
         {
-            get => new OrganizationSecretsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.OrganizationSecrets.OrganizationSecretsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizationVariables property</summary>
-        public OrganizationVariablesRequestBuilder OrganizationVariables
+        public global::GitHub.Repos.Item.Item.Actions.OrganizationVariables.OrganizationVariablesRequestBuilder OrganizationVariables
         {
-            get => new OrganizationVariablesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.OrganizationVariables.OrganizationVariablesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The permissions property</summary>
-        public PermissionsRequestBuilder Permissions
+        public global::GitHub.Repos.Item.Item.Actions.Permissions.PermissionsRequestBuilder Permissions
         {
-            get => new PermissionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The runners property</summary>
-        public RunnersRequestBuilder Runners
+        public global::GitHub.Repos.Item.Item.Actions.Runners.RunnersRequestBuilder Runners
         {
-            get => new RunnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runners.RunnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The runs property</summary>
-        public RunsRequestBuilder Runs
+        public global::GitHub.Repos.Item.Item.Actions.Runs.RunsRequestBuilder Runs
         {
-            get => new RunsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.RunsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secrets property</summary>
-        public SecretsRequestBuilder Secrets
+        public global::GitHub.Repos.Item.Item.Actions.Secrets.SecretsRequestBuilder Secrets
         {
-            get => new SecretsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Secrets.SecretsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The variables property</summary>
-        public VariablesRequestBuilder Variables
+        public global::GitHub.Repos.Item.Item.Actions.Variables.VariablesRequestBuilder Variables
         {
-            get => new VariablesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Variables.VariablesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workflows property</summary>
-        public WorkflowsRequestBuilder Workflows
+        public global::GitHub.Repos.Item.Item.Actions.Workflows.WorkflowsRequestBuilder Workflows
         {
-            get => new WorkflowsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Workflows.WorkflowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ActionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Actions.ActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -98,7 +100,7 @@ namespace GitHub.Repos.Item.Item.Actions {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ActionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Actions.ActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

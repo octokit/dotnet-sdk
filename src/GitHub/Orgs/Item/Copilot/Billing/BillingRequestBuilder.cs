@@ -3,37 +3,39 @@ using GitHub.Models;
 using GitHub.Orgs.Item.Copilot.Billing.Seats;
 using GitHub.Orgs.Item.Copilot.Billing.Selected_teams;
 using GitHub.Orgs.Item.Copilot.Billing.Selected_users;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Copilot.Billing {
+namespace GitHub.Orgs.Item.Copilot.Billing
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\copilot\billing
     /// </summary>
-    public class BillingRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class BillingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The seats property</summary>
-        public SeatsRequestBuilder Seats
+        public global::GitHub.Orgs.Item.Copilot.Billing.Seats.SeatsRequestBuilder Seats
         {
-            get => new SeatsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Copilot.Billing.Seats.SeatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The selected_teams property</summary>
-        public Selected_teamsRequestBuilder Selected_teams
+        public global::GitHub.Orgs.Item.Copilot.Billing.Selected_teams.Selected_teamsRequestBuilder Selected_teams
         {
-            get => new Selected_teamsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Copilot.Billing.Selected_teams.Selected_teamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The selected_users property</summary>
-        public Selected_usersRequestBuilder Selected_users
+        public global::GitHub.Orgs.Item.Copilot.Billing.Selected_users.Selected_usersRequestBuilder Selected_users
         {
-            get => new Selected_usersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Copilot.Billing.Selected_users.Selected_usersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="BillingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.Copilot.Billing.BillingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +43,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="BillingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.Copilot.Billing.BillingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,31 +54,31 @@ namespace GitHub.Orgs.Item.Copilot.Billing {
         /// &gt; [!NOTE]&gt; This endpoint is in beta and is subject to change.Gets information about an organization&apos;s Copilot subscription, including seat breakdownand feature policies. To configure these settings, go to your organization&apos;s settings on GitHub.com.For more information, see &quot;[Managing policies for Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-policies-for-copilot-business-in-your-organization)&quot;.Only organization owners can view details about the organization&apos;s Copilot Business or Copilot Enterprise subscription.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-user-management#get-copilot-seat-information-and-settings-for-an-organization" />
         /// </summary>
-        /// <returns>A <see cref="CopilotOrganizationDetails"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.CopilotOrganizationDetails"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 401 status code</exception>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
-        /// <exception cref="BasicError">When receiving a 500 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CopilotOrganizationDetails?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.CopilotOrganizationDetails?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CopilotOrganizationDetails> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.CopilotOrganizationDetails> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
-                {"500", BasicError.CreateFromDiscriminatorValue},
+                { "401", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "500", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<CopilotOrganizationDetails>(requestInfo, CopilotOrganizationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.CopilotOrganizationDetails>(requestInfo, global::GitHub.Models.CopilotOrganizationDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &gt; [!NOTE]&gt; This endpoint is in beta and is subject to change.Gets information about an organization&apos;s Copilot subscription, including seat breakdownand feature policies. To configure these settings, go to your organization&apos;s settings on GitHub.com.For more information, see &quot;[Managing policies for Copilot in your organization](https://docs.github.com/copilot/managing-copilot/managing-policies-for-copilot-business-in-your-organization)&quot;.Only organization owners can view details about the organization&apos;s Copilot Business or Copilot Enterprise subscription.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
@@ -100,11 +102,11 @@ namespace GitHub.Orgs.Item.Copilot.Billing {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="BillingRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Orgs.Item.Copilot.Billing.BillingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public BillingRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Orgs.Item.Copilot.Billing.BillingRequestBuilder WithUrl(string rawUrl)
         {
-            return new BillingRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Orgs.Item.Copilot.Billing.BillingRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

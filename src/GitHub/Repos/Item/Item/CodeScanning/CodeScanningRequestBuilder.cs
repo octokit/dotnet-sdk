@@ -4,45 +4,47 @@ using GitHub.Repos.Item.Item.CodeScanning.Analyses;
 using GitHub.Repos.Item.Item.CodeScanning.Codeql;
 using GitHub.Repos.Item.Item.CodeScanning.DefaultSetup;
 using GitHub.Repos.Item.Item.CodeScanning.Sarifs;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.CodeScanning {
+namespace GitHub.Repos.Item.Item.CodeScanning
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning
     /// </summary>
-    public class CodeScanningRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class CodeScanningRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The alerts property</summary>
-        public AlertsRequestBuilder Alerts
+        public global::GitHub.Repos.Item.Item.CodeScanning.Alerts.AlertsRequestBuilder Alerts
         {
-            get => new AlertsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CodeScanning.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The analyses property</summary>
-        public AnalysesRequestBuilder Analyses
+        public global::GitHub.Repos.Item.Item.CodeScanning.Analyses.AnalysesRequestBuilder Analyses
         {
-            get => new AnalysesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CodeScanning.Analyses.AnalysesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codeql property</summary>
-        public CodeqlRequestBuilder Codeql
+        public global::GitHub.Repos.Item.Item.CodeScanning.Codeql.CodeqlRequestBuilder Codeql
         {
-            get => new CodeqlRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CodeScanning.Codeql.CodeqlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The defaultSetup property</summary>
-        public DefaultSetupRequestBuilder DefaultSetup
+        public global::GitHub.Repos.Item.Item.CodeScanning.DefaultSetup.DefaultSetupRequestBuilder DefaultSetup
         {
-            get => new DefaultSetupRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CodeScanning.DefaultSetup.DefaultSetupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sarifs property</summary>
-        public SarifsRequestBuilder Sarifs
+        public global::GitHub.Repos.Item.Item.CodeScanning.Sarifs.SarifsRequestBuilder Sarifs
         {
-            get => new SarifsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CodeScanning.Sarifs.SarifsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="CodeScanningRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.CodeScanning.CodeScanningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +52,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CodeScanningRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.CodeScanning.CodeScanningRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -3,37 +3,39 @@ using GitHub.Models;
 using GitHub.User.Migrations.Item.Archive;
 using GitHub.User.Migrations.Item.Repos;
 using GitHub.User.Migrations.Item.Repositories;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.User.Migrations.Item {
+namespace GitHub.User.Migrations.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \user\migrations\{migration_id}
     /// </summary>
-    public class WithMigration_ItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithMigration_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The archive property</summary>
-        public ArchiveRequestBuilder Archive
+        public global::GitHub.User.Migrations.Item.Archive.ArchiveRequestBuilder Archive
         {
-            get => new ArchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.User.Migrations.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repos property</summary>
-        public ReposRequestBuilder Repos
+        public global::GitHub.User.Migrations.Item.Repos.ReposRequestBuilder Repos
         {
-            get => new ReposRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.User.Migrations.Item.Repos.ReposRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repositories property</summary>
-        public RepositoriesRequestBuilder Repositories
+        public global::GitHub.User.Migrations.Item.Repositories.RepositoriesRequestBuilder Repositories
         {
-            get => new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.User.Migrations.Item.Repositories.RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithMigration_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.User.Migrations.Item.WithMigration_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +43,7 @@ namespace GitHub.User.Migrations.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithMigration_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.User.Migrations.Item.WithMigration_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,29 +54,29 @@ namespace GitHub.User.Migrations.Item {
         /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:*   `pending` - the migration hasn&apos;t started yet.*   `exporting` - the migration is in progress.*   `exported` - the migration finished successfully.*   `failed` - the migration failed.Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
         /// API method documentation <see href="https://docs.github.com/rest/migrations/users#get-a-user-migration-status" />
         /// </summary>
-        /// <returns>A <see cref="Migration"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.Migration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 401 status code</exception>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Migration?> GetAsync(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Migration?> GetAsync(Action<RequestConfiguration<global::GitHub.User.Migrations.Item.WithMigration_ItemRequestBuilder.WithMigration_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Migration> GetAsync(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Migration> GetAsync(Action<RequestConfiguration<global::GitHub.User.Migrations.Item.WithMigration_ItemRequestBuilder.WithMigration_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "401", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Migration>(requestInfo, Migration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.Migration>(requestInfo, global::GitHub.Models.Migration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:*   `pending` - the migration hasn&apos;t started yet.*   `exporting` - the migration is in progress.*   `exported` - the migration finished successfully.*   `failed` - the migration failed.Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
@@ -83,11 +85,11 @@ namespace GitHub.User.Migrations.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.User.Migrations.Item.WithMigration_ItemRequestBuilder.WithMigration_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithMigration_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.User.Migrations.Item.WithMigration_ItemRequestBuilder.WithMigration_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -98,16 +100,17 @@ namespace GitHub.User.Migrations.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithMigration_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.User.Migrations.Item.WithMigration_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithMigration_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.User.Migrations.Item.WithMigration_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithMigration_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.User.Migrations.Item.WithMigration_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:*   `pending` - the migration hasn&apos;t started yet.*   `exporting` - the migration is in progress.*   `exported` - the migration finished successfully.*   `failed` - the migration failed.Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
         /// </summary>
-        public class WithMigration_ItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class WithMigration_ItemRequestBuilderGetQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

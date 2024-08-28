@@ -13,87 +13,89 @@ using GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments;
 using GitHub.Repos.Item.Item.Actions.Runs.Item.Rerun;
 using GitHub.Repos.Item.Item.Actions.Runs.Item.RerunFailedJobs;
 using GitHub.Repos.Item.Item.Actions.Runs.Item.Timing;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
+namespace GitHub.Repos.Item.Item.Actions.Runs.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}
     /// </summary>
-    public class WithRun_ItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithRun_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The approvals property</summary>
-        public ApprovalsRequestBuilder Approvals
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Approvals.ApprovalsRequestBuilder Approvals
         {
-            get => new ApprovalsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Approvals.ApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The approve property</summary>
-        public ApproveRequestBuilder Approve
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Approve.ApproveRequestBuilder Approve
         {
-            get => new ApproveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Approve.ApproveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The artifacts property</summary>
-        public ArtifactsRequestBuilder Artifacts
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Artifacts.ArtifactsRequestBuilder Artifacts
         {
-            get => new ArtifactsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Artifacts.ArtifactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The attempts property</summary>
-        public AttemptsRequestBuilder Attempts
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.AttemptsRequestBuilder Attempts
         {
-            get => new AttemptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.AttemptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cancel property</summary>
-        public CancelRequestBuilder Cancel
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Cancel.CancelRequestBuilder Cancel
         {
-            get => new CancelRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deployment_protection_rule property</summary>
-        public Deployment_protection_ruleRequestBuilder Deployment_protection_rule
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule.Deployment_protection_ruleRequestBuilder Deployment_protection_rule
         {
-            get => new Deployment_protection_ruleRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Deployment_protection_rule.Deployment_protection_ruleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The forceCancel property</summary>
-        public ForceCancelRequestBuilder ForceCancel
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.ForceCancel.ForceCancelRequestBuilder ForceCancel
         {
-            get => new ForceCancelRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.ForceCancel.ForceCancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The jobs property</summary>
-        public JobsRequestBuilder Jobs
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Jobs.JobsRequestBuilder Jobs
         {
-            get => new JobsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logs property</summary>
-        public LogsRequestBuilder Logs
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Logs.LogsRequestBuilder Logs
         {
-            get => new LogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pending_deployments property</summary>
-        public Pending_deploymentsRequestBuilder Pending_deployments
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments.Pending_deploymentsRequestBuilder Pending_deployments
         {
-            get => new Pending_deploymentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments.Pending_deploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rerun property</summary>
-        public RerunRequestBuilder Rerun
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Rerun.RerunRequestBuilder Rerun
         {
-            get => new RerunRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Rerun.RerunRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rerunFailedJobs property</summary>
-        public RerunFailedJobsRequestBuilder RerunFailedJobs
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.RerunFailedJobs.RerunFailedJobsRequestBuilder RerunFailedJobs
         {
-            get => new RerunFailedJobsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.RerunFailedJobs.RerunFailedJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timing property</summary>
-        public TimingRequestBuilder Timing
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.Timing.TimingRequestBuilder Timing
         {
-            get => new TimingRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Runs.Item.Timing.TimingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithRun_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Actions.Runs.Item.WithRun_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -101,7 +103,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithRun_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Actions.Runs.Item.WithRun_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -130,20 +132,20 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         /// Gets a specific workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/actions/workflow-runs#get-a-workflow-run" />
         /// </summary>
-        /// <returns>A <see cref="WorkflowRun"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.WorkflowRun"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<WorkflowRun?> GetAsync(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.WorkflowRun?> GetAsync(Action<RequestConfiguration<global::GitHub.Repos.Item.Item.Actions.Runs.Item.WithRun_ItemRequestBuilder.WithRun_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<WorkflowRun> GetAsync(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.WorkflowRun> GetAsync(Action<RequestConfiguration<global::GitHub.Repos.Item.Item.Actions.Runs.Item.WithRun_ItemRequestBuilder.WithRun_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<WorkflowRun>(requestInfo, WorkflowRun.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.WorkflowRun>(requestInfo, global::GitHub.Models.WorkflowRun.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a specific workflow run.Anyone with write access to the repository can use this endpoint.If the repository is private, OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -170,11 +172,11 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Repos.Item.Item.Actions.Runs.Item.WithRun_ItemRequestBuilder.WithRun_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WithRun_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Repos.Item.Item.Actions.Runs.Item.WithRun_ItemRequestBuilder.WithRun_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -185,16 +187,17 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithRun_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Actions.Runs.Item.WithRun_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithRun_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Repos.Item.Item.Actions.Runs.Item.WithRun_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithRun_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Repos.Item.Item.Actions.Runs.Item.WithRun_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Gets a specific workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
-        public class WithRun_ItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class WithRun_ItemRequestBuilderGetQueryParameters 
         {
             /// <summary>If `true` pull requests are omitted from the response (empty array).</summary>
             [QueryParameter("exclude_pull_requests")]

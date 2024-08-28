@@ -2,32 +2,34 @@
 using GitHub.Models;
 using GitHub.Users.Item.Packages.Item.Item.Restore;
 using GitHub.Users.Item.Packages.Item.Item.Versions;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Packages.Item.Item {
+namespace GitHub.Users.Item.Packages.Item.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\packages\{package_type}\{package_name}
     /// </summary>
-    public class WithPackage_nameItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithPackage_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The restore property</summary>
-        public RestoreRequestBuilder Restore
+        public global::GitHub.Users.Item.Packages.Item.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Users.Item.Packages.Item.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The versions property</summary>
-        public VersionsRequestBuilder Versions
+        public global::GitHub.Users.Item.Packages.Item.Item.Versions.VersionsRequestBuilder Versions
         {
-            get => new VersionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Users.Item.Packages.Item.Item.Versions.VersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithPackage_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Users.Item.Packages.Item.Item.WithPackage_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +37,7 @@ namespace GitHub.Users.Item.Packages.Item.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithPackage_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Users.Item.Packages.Item.Item.WithPackage_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,9 +50,9 @@ namespace GitHub.Users.Item.Packages.Item.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 401 status code</exception>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
-        /// <exception cref="BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 401 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,9 +65,9 @@ namespace GitHub.Users.Item.Packages.Item.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"401", BasicError.CreateFromDiscriminatorValue},
-                {"403", BasicError.CreateFromDiscriminatorValue},
-                {"404", BasicError.CreateFromDiscriminatorValue},
+                { "401", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -73,20 +75,20 @@ namespace GitHub.Users.Item.Packages.Item.Item {
         /// Gets a specific package metadata for a public package owned by a user.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/packages/packages#get-a-package-for-a-user" />
         /// </summary>
-        /// <returns>A <see cref="Package"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.Package"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Package?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Package?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Package> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Package> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Package>(requestInfo, Package.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.Package>(requestInfo, global::GitHub.Models.Package.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an entire package for a user. You cannot delete a public package if any version of the package has more than 5,000 downloads. In this scenario, contact GitHub support for further assistance.If the `package_type` belongs to a GitHub Packages registry that supports granular permissions, the authenticated user must have admin permissions to the package. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#granular-permissions-for-userorganization-scoped-packages).&quot;OAuth app tokens and personal access tokens (classic) need the `read:packages` and `delete:packages` scopes to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
@@ -129,11 +131,11 @@ namespace GitHub.Users.Item.Packages.Item.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithPackage_nameItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Users.Item.Packages.Item.Item.WithPackage_nameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithPackage_nameItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Users.Item.Packages.Item.Item.WithPackage_nameItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithPackage_nameItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Users.Item.Packages.Item.Item.WithPackage_nameItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }
