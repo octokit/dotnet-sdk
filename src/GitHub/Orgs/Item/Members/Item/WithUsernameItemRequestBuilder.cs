@@ -2,32 +2,34 @@
 using GitHub.Models;
 using GitHub.Orgs.Item.Members.Item.Codespaces;
 using GitHub.Orgs.Item.Members.Item.Copilot;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Members.Item {
+namespace GitHub.Orgs.Item.Members.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\members\{username}
     /// </summary>
-    public class WithUsernameItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithUsernameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The codespaces property</summary>
-        public CodespacesRequestBuilder Codespaces
+        public global::GitHub.Orgs.Item.Members.Item.Codespaces.CodespacesRequestBuilder Codespaces
         {
-            get => new CodespacesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Members.Item.Codespaces.CodespacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The copilot property</summary>
-        public CopilotRequestBuilder Copilot
+        public global::GitHub.Orgs.Item.Members.Item.Copilot.CopilotRequestBuilder Copilot
         {
-            get => new CopilotRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Members.Item.Copilot.CopilotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.Members.Item.WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +37,7 @@ namespace GitHub.Orgs.Item.Members.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithUsernameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.Members.Item.WithUsernameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,7 +50,7 @@ namespace GitHub.Orgs.Item.Members.Item {
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="BasicError">When receiving a 403 status code</exception>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -61,7 +63,7 @@ namespace GitHub.Orgs.Item.Members.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"403", BasicError.CreateFromDiscriminatorValue},
+                { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -123,11 +125,11 @@ namespace GitHub.Orgs.Item.Members.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithUsernameItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Orgs.Item.Members.Item.WithUsernameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithUsernameItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Orgs.Item.Members.Item.WithUsernameItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithUsernameItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Orgs.Item.Members.Item.WithUsernameItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

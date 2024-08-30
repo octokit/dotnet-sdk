@@ -6,55 +6,57 @@ using GitHub.Search.Labels;
 using GitHub.Search.Repositories;
 using GitHub.Search.Topics;
 using GitHub.Search.Users;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Search {
+namespace GitHub.Search
+{
     /// <summary>
     /// Builds and executes requests for operations under \search
     /// </summary>
-    public class SearchRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class SearchRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The code property</summary>
-        public CodeRequestBuilder Code
+        public global::GitHub.Search.Code.CodeRequestBuilder Code
         {
-            get => new CodeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Search.Code.CodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The commits property</summary>
-        public CommitsRequestBuilder Commits
+        public global::GitHub.Search.Commits.CommitsRequestBuilder Commits
         {
-            get => new CommitsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Search.Commits.CommitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The issues property</summary>
-        public IssuesRequestBuilder Issues
+        public global::GitHub.Search.Issues.IssuesRequestBuilder Issues
         {
-            get => new IssuesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Search.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The labels property</summary>
-        public LabelsRequestBuilder Labels
+        public global::GitHub.Search.Labels.LabelsRequestBuilder Labels
         {
-            get => new LabelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Search.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repositories property</summary>
-        public RepositoriesRequestBuilder Repositories
+        public global::GitHub.Search.Repositories.RepositoriesRequestBuilder Repositories
         {
-            get => new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Search.Repositories.RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The topics property</summary>
-        public TopicsRequestBuilder Topics
+        public global::GitHub.Search.Topics.TopicsRequestBuilder Topics
         {
-            get => new TopicsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Search.Topics.TopicsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
-        public UsersRequestBuilder Users
+        public global::GitHub.Search.Users.UsersRequestBuilder Users
         {
-            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Search.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Search.SearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +64,7 @@ namespace GitHub.Search {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SearchRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Search.SearchRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

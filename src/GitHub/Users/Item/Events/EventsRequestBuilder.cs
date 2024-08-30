@@ -2,32 +2,34 @@
 using GitHub.Models;
 using GitHub.Users.Item.Events.Orgs;
 using GitHub.Users.Item.Events.Public;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Users.Item.Events {
+namespace GitHub.Users.Item.Events
+{
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\events
     /// </summary>
-    public class EventsRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The orgs property</summary>
-        public OrgsRequestBuilder Orgs
+        public global::GitHub.Users.Item.Events.Orgs.OrgsRequestBuilder Orgs
         {
-            get => new OrgsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Users.Item.Events.Orgs.OrgsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The public property</summary>
-        public PublicRequestBuilder Public
+        public global::GitHub.Users.Item.Events.Public.PublicRequestBuilder Public
         {
-            get => new PublicRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Users.Item.Events.Public.PublicRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Users.Item.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +37,7 @@ namespace GitHub.Users.Item.Events {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Users.Item.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,21 +48,21 @@ namespace GitHub.Users.Item.Events {
         /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// API method documentation <see href="https://docs.github.com/rest/activity/events#list-events-for-the-authenticated-user" />
         /// </summary>
-        /// <returns>A List&lt;Event&gt;</returns>
+        /// <returns>A List&lt;global::GitHub.Models.Event&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<Event>?> GetAsync(Action<RequestConfiguration<EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Models.Event>?> GetAsync(Action<RequestConfiguration<global::GitHub.Users.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<Event>> GetAsync(Action<RequestConfiguration<EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Models.Event>> GetAsync(Action<RequestConfiguration<global::GitHub.Users.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.ToList();
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::GitHub.Models.Event>(requestInfo, global::GitHub.Models.Event.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
         /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
@@ -69,11 +71,11 @@ namespace GitHub.Users.Item.Events {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Users.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Users.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -84,16 +86,17 @@ namespace GitHub.Users.Item.Events {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EventsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Users.Item.Events.EventsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EventsRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Users.Item.Events.EventsRequestBuilder WithUrl(string rawUrl)
         {
-            return new EventsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Users.Item.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
-        public class EventsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class EventsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("page")]

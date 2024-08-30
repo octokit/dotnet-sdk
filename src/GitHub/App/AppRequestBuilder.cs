@@ -3,37 +3,39 @@ using GitHub.App.Hook;
 using GitHub.App.InstallationRequests;
 using GitHub.App.Installations;
 using GitHub.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.App {
+namespace GitHub.App
+{
     /// <summary>
     /// Builds and executes requests for operations under \app
     /// </summary>
-    public class AppRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class AppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The hook property</summary>
-        public HookRequestBuilder Hook
+        public global::GitHub.App.Hook.HookRequestBuilder Hook
         {
-            get => new HookRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.App.Hook.HookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The installationRequests property</summary>
-        public InstallationRequestsRequestBuilder InstallationRequests
+        public global::GitHub.App.InstallationRequests.InstallationRequestsRequestBuilder InstallationRequests
         {
-            get => new InstallationRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.App.InstallationRequests.InstallationRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The installations property</summary>
-        public InstallationsRequestBuilder Installations
+        public global::GitHub.App.Installations.InstallationsRequestBuilder Installations
         {
-            get => new InstallationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.App.Installations.InstallationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.App.AppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +43,7 @@ namespace GitHub.App {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.App.AppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,20 +54,20 @@ namespace GitHub.App {
         /// Returns the GitHub App associated with the authentication credentials used. To see how many app installations are associated with this GitHub App, see the `installations_count` in the response. For more details about your app&apos;s installations, see the &quot;[List installations for the authenticated app](https://docs.github.com/rest/apps/apps#list-installations-for-the-authenticated-app)&quot; endpoint.You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/apps/apps#get-the-authenticated-app" />
         /// </summary>
-        /// <returns>A <see cref="Integration"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.Integration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Integration?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Integration?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Integration> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Integration> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Integration>(requestInfo, Integration.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.Integration>(requestInfo, global::GitHub.Models.Integration.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the GitHub App associated with the authentication credentials used. To see how many app installations are associated with this GitHub App, see the `installations_count` in the response. For more details about your app&apos;s installations, see the &quot;[List installations for the authenticated app](https://docs.github.com/rest/apps/apps#list-installations-for-the-authenticated-app)&quot; endpoint.You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
@@ -89,11 +91,11 @@ namespace GitHub.App {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AppRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.App.AppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AppRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.App.AppRequestBuilder WithUrl(string rawUrl)
         {
-            return new AppRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.App.AppRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

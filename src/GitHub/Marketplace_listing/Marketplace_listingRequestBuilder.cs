@@ -2,35 +2,37 @@
 using GitHub.Marketplace_listing.Accounts;
 using GitHub.Marketplace_listing.Plans;
 using GitHub.Marketplace_listing.Stubbed;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Marketplace_listing {
+namespace GitHub.Marketplace_listing
+{
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing
     /// </summary>
-    public class Marketplace_listingRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class Marketplace_listingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The accounts property</summary>
-        public AccountsRequestBuilder Accounts
+        public global::GitHub.Marketplace_listing.Accounts.AccountsRequestBuilder Accounts
         {
-            get => new AccountsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Marketplace_listing.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The plans property</summary>
-        public PlansRequestBuilder Plans
+        public global::GitHub.Marketplace_listing.Plans.PlansRequestBuilder Plans
         {
-            get => new PlansRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Marketplace_listing.Plans.PlansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stubbed property</summary>
-        public StubbedRequestBuilder Stubbed
+        public global::GitHub.Marketplace_listing.Stubbed.StubbedRequestBuilder Stubbed
         {
-            get => new StubbedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Marketplace_listing.Stubbed.StubbedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Marketplace_listingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Marketplace_listing.Marketplace_listingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +40,7 @@ namespace GitHub.Marketplace_listing {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Marketplace_listingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Marketplace_listing.Marketplace_listingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

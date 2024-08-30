@@ -44,193 +44,194 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub {
+namespace GitHub
+{
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    public class GitHubClient : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class GitHubClient : BaseRequestBuilder
     {
         /// <summary>The advisories property</summary>
-        public AdvisoriesRequestBuilder Advisories
+        public global::GitHub.Advisories.AdvisoriesRequestBuilder Advisories
         {
-            get => new AdvisoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Advisories.AdvisoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The app property</summary>
-        public AppRequestBuilder App
+        public global::GitHub.App.AppRequestBuilder App
         {
-            get => new AppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.App.AppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The applications property</summary>
-        public ApplicationsRequestBuilder Applications
+        public global::GitHub.Applications.ApplicationsRequestBuilder Applications
         {
-            get => new ApplicationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Applications.ApplicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The appManifests property</summary>
-        public AppManifestsRequestBuilder AppManifests
+        public global::GitHub.AppManifests.AppManifestsRequestBuilder AppManifests
         {
-            get => new AppManifestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.AppManifests.AppManifestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The apps property</summary>
-        public AppsRequestBuilder Apps
+        public global::GitHub.Apps.AppsRequestBuilder Apps
         {
-            get => new AppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The assignments property</summary>
-        public AssignmentsRequestBuilder Assignments
+        public global::GitHub.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The classrooms property</summary>
-        public ClassroomsRequestBuilder Classrooms
+        public global::GitHub.Classrooms.ClassroomsRequestBuilder Classrooms
         {
-            get => new ClassroomsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Classrooms.ClassroomsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codes_of_conduct property</summary>
-        public Codes_of_conductRequestBuilder Codes_of_conduct
+        public global::GitHub.Codes_of_conduct.Codes_of_conductRequestBuilder Codes_of_conduct
         {
-            get => new Codes_of_conductRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Codes_of_conduct.Codes_of_conductRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The emojis property</summary>
-        public EmojisRequestBuilder Emojis
+        public global::GitHub.Emojis.EmojisRequestBuilder Emojis
         {
-            get => new EmojisRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Emojis.EmojisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The enterprises property</summary>
-        public EnterprisesRequestBuilder Enterprises
+        public global::GitHub.Enterprises.EnterprisesRequestBuilder Enterprises
         {
-            get => new EnterprisesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Enterprises.EnterprisesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
-        public EventsRequestBuilder Events
+        public global::GitHub.Events.EventsRequestBuilder Events
         {
-            get => new EventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The feeds property</summary>
-        public FeedsRequestBuilder Feeds
+        public global::GitHub.Feeds.FeedsRequestBuilder Feeds
         {
-            get => new FeedsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Feeds.FeedsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The gists property</summary>
-        public GistsRequestBuilder Gists
+        public global::GitHub.Gists.GistsRequestBuilder Gists
         {
-            get => new GistsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Gists.GistsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The gitignore property</summary>
-        public GitignoreRequestBuilder Gitignore
+        public global::GitHub.Gitignore.GitignoreRequestBuilder Gitignore
         {
-            get => new GitignoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Gitignore.GitignoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The installation property</summary>
-        public InstallationRequestBuilder Installation
+        public global::GitHub.Installation.InstallationRequestBuilder Installation
         {
-            get => new InstallationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Installation.InstallationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The issues property</summary>
-        public IssuesRequestBuilder Issues
+        public global::GitHub.Issues.IssuesRequestBuilder Issues
         {
-            get => new IssuesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The licenses property</summary>
-        public LicensesRequestBuilder Licenses
+        public global::GitHub.Licenses.LicensesRequestBuilder Licenses
         {
-            get => new LicensesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Licenses.LicensesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The markdown property</summary>
-        public MarkdownRequestBuilder Markdown
+        public global::GitHub.Markdown.MarkdownRequestBuilder Markdown
         {
-            get => new MarkdownRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Markdown.MarkdownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The marketplace_listing property</summary>
-        public Marketplace_listingRequestBuilder Marketplace_listing
+        public global::GitHub.Marketplace_listing.Marketplace_listingRequestBuilder Marketplace_listing
         {
-            get => new Marketplace_listingRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Marketplace_listing.Marketplace_listingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The meta property</summary>
-        public MetaRequestBuilder Meta
+        public global::GitHub.Meta.MetaRequestBuilder Meta
         {
-            get => new MetaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Meta.MetaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The networks property</summary>
-        public NetworksRequestBuilder Networks
+        public global::GitHub.Networks.NetworksRequestBuilder Networks
         {
-            get => new NetworksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Networks.NetworksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The notifications property</summary>
-        public NotificationsRequestBuilder Notifications
+        public global::GitHub.Notifications.NotificationsRequestBuilder Notifications
         {
-            get => new NotificationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The octocat property</summary>
-        public OctocatRequestBuilder Octocat
+        public global::GitHub.Octocat.OctocatRequestBuilder Octocat
         {
-            get => new OctocatRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Octocat.OctocatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizations property</summary>
-        public OrganizationsRequestBuilder Organizations
+        public global::GitHub.Organizations.OrganizationsRequestBuilder Organizations
         {
-            get => new OrganizationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The orgs property</summary>
-        public OrgsRequestBuilder Orgs
+        public global::GitHub.Orgs.OrgsRequestBuilder Orgs
         {
-            get => new OrgsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.OrgsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The projects property</summary>
-        public ProjectsRequestBuilder Projects
+        public global::GitHub.Projects.ProjectsRequestBuilder Projects
         {
-            get => new ProjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rate_limit property</summary>
-        public Rate_limitRequestBuilder Rate_limit
+        public global::GitHub.Rate_limit.Rate_limitRequestBuilder Rate_limit
         {
-            get => new Rate_limitRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Rate_limit.Rate_limitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repos property</summary>
-        public ReposRequestBuilder Repos
+        public global::GitHub.Repos.ReposRequestBuilder Repos
         {
-            get => new ReposRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.ReposRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The repositories property</summary>
-        public RepositoriesRequestBuilder Repositories
+        public global::GitHub.Repositories.RepositoriesRequestBuilder Repositories
         {
-            get => new RepositoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repositories.RepositoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The search property</summary>
-        public SearchRequestBuilder Search
+        public global::GitHub.Search.SearchRequestBuilder Search
         {
-            get => new SearchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teams property</summary>
-        public TeamsRequestBuilder Teams
+        public global::GitHub.Teams.TeamsRequestBuilder Teams
         {
-            get => new TeamsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user property</summary>
-        public UserRequestBuilder User
+        public global::GitHub.User.UserRequestBuilder User
         {
-            get => new UserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.User.UserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
-        public UsersRequestBuilder Users
+        public global::GitHub.Users.UsersRequestBuilder Users
         {
-            get => new UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The versions property</summary>
-        public VersionsRequestBuilder Versions
+        public global::GitHub.Versions.VersionsRequestBuilder Versions
         {
-            get => new VersionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Versions.VersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zen property</summary>
-        public ZenRequestBuilder Zen
+        public global::GitHub.Zen.ZenRequestBuilder Zen
         {
-            get => new ZenRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Zen.ZenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GitHubClient"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.GitHubClient"/> and sets the default values.
         /// </summary>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public GitHubClient(IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>())
@@ -252,20 +253,20 @@ namespace GitHub {
         /// Get Hypermedia links to resources accessible in GitHub&apos;s REST API
         /// API method documentation <see href="https://docs.github.com/rest/meta/meta#github-api-root" />
         /// </summary>
-        /// <returns>A <see cref="Root"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.Root"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Root?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Root?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Root> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Root> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<Root>(requestInfo, Root.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.Root>(requestInfo, global::GitHub.Models.Root.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Hypermedia links to resources accessible in GitHub&apos;s REST API

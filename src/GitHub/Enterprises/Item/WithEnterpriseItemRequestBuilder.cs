@@ -3,40 +3,42 @@ using GitHub.Enterprises.Item.Copilot;
 using GitHub.Enterprises.Item.Dependabot;
 using GitHub.Enterprises.Item.SecretScanning;
 using GitHub.Enterprises.Item.Team;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Enterprises.Item {
+namespace GitHub.Enterprises.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \enterprises\{enterprise}
     /// </summary>
-    public class WithEnterpriseItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithEnterpriseItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The copilot property</summary>
-        public CopilotRequestBuilder Copilot
+        public global::GitHub.Enterprises.Item.Copilot.CopilotRequestBuilder Copilot
         {
-            get => new CopilotRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Enterprises.Item.Copilot.CopilotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dependabot property</summary>
-        public DependabotRequestBuilder Dependabot
+        public global::GitHub.Enterprises.Item.Dependabot.DependabotRequestBuilder Dependabot
         {
-            get => new DependabotRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Enterprises.Item.Dependabot.DependabotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secretScanning property</summary>
-        public SecretScanningRequestBuilder SecretScanning
+        public global::GitHub.Enterprises.Item.SecretScanning.SecretScanningRequestBuilder SecretScanning
         {
-            get => new SecretScanningRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Enterprises.Item.SecretScanning.SecretScanningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The team property</summary>
-        public TeamRequestBuilder Team
+        public global::GitHub.Enterprises.Item.Team.TeamRequestBuilder Team
         {
-            get => new TeamRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Enterprises.Item.Team.TeamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithEnterpriseItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Enterprises.Item.WithEnterpriseItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +46,7 @@ namespace GitHub.Enterprises.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithEnterpriseItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Enterprises.Item.WithEnterpriseItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

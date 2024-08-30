@@ -5,50 +5,52 @@ using GitHub.Orgs.Item.Actions.Permissions;
 using GitHub.Orgs.Item.Actions.Runners;
 using GitHub.Orgs.Item.Actions.Secrets;
 using GitHub.Orgs.Item.Actions.Variables;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Orgs.Item.Actions {
+namespace GitHub.Orgs.Item.Actions
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions
     /// </summary>
-    public class ActionsRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class ActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cache property</summary>
-        public CacheRequestBuilder Cache
+        public global::GitHub.Orgs.Item.Actions.Cache.CacheRequestBuilder Cache
         {
-            get => new CacheRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Cache.CacheRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The oidc property</summary>
-        public OidcRequestBuilder Oidc
+        public global::GitHub.Orgs.Item.Actions.Oidc.OidcRequestBuilder Oidc
         {
-            get => new OidcRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Oidc.OidcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The permissions property</summary>
-        public PermissionsRequestBuilder Permissions
+        public global::GitHub.Orgs.Item.Actions.Permissions.PermissionsRequestBuilder Permissions
         {
-            get => new PermissionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The runners property</summary>
-        public RunnersRequestBuilder Runners
+        public global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder Runners
         {
-            get => new RunnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secrets property</summary>
-        public SecretsRequestBuilder Secrets
+        public global::GitHub.Orgs.Item.Actions.Secrets.SecretsRequestBuilder Secrets
         {
-            get => new SecretsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Secrets.SecretsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The variables property</summary>
-        public VariablesRequestBuilder Variables
+        public global::GitHub.Orgs.Item.Actions.Variables.VariablesRequestBuilder Variables
         {
-            get => new VariablesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Variables.VariablesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="ActionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.Actions.ActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +58,7 @@ namespace GitHub.Orgs.Item.Actions {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ActionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.Actions.ActionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -2,32 +2,34 @@
 using GitHub.Models;
 using GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns;
 using GitHub.Repos.Item.Item.CheckSuites.Item.Rerequest;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.CheckSuites.Item {
+namespace GitHub.Repos.Item.Item.CheckSuites.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-suites\{check_suite_id}
     /// </summary>
-    public class WithCheck_suite_ItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithCheck_suite_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The checkRuns property</summary>
-        public CheckRunsRequestBuilder CheckRuns
+        public global::GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns.CheckRunsRequestBuilder CheckRuns
         {
-            get => new CheckRunsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CheckSuites.Item.CheckRuns.CheckRunsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rerequest property</summary>
-        public RerequestRequestBuilder Rerequest
+        public global::GitHub.Repos.Item.Item.CheckSuites.Item.Rerequest.RerequestRequestBuilder Rerequest
         {
-            get => new RerequestRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.CheckSuites.Item.Rerequest.RerequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithCheck_suite_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.CheckSuites.Item.WithCheck_suite_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +37,7 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithCheck_suite_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.CheckSuites.Item.WithCheck_suite_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,20 +48,20 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item {
         /// Gets a single check suite using its `id`.&gt; [!NOTE]&gt; The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/checks/suites#get-a-check-suite" />
         /// </summary>
-        /// <returns>A <see cref="CheckSuite"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.CheckSuite"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<CheckSuite?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.CheckSuite?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<CheckSuite> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.CheckSuite> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<CheckSuite>(requestInfo, CheckSuite.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.CheckSuite>(requestInfo, global::GitHub.Models.CheckSuite.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a single check suite using its `id`.&gt; [!NOTE]&gt; The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
@@ -83,11 +85,11 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithCheck_suite_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.CheckSuites.Item.WithCheck_suite_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithCheck_suite_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Repos.Item.Item.CheckSuites.Item.WithCheck_suite_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithCheck_suite_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Repos.Item.Item.CheckSuites.Item.WithCheck_suite_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

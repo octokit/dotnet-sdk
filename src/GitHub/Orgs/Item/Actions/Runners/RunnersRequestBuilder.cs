@@ -4,54 +4,56 @@ using GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig;
 using GitHub.Orgs.Item.Actions.Runners.Item;
 using GitHub.Orgs.Item.Actions.Runners.RegistrationToken;
 using GitHub.Orgs.Item.Actions.Runners.RemoveToken;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Orgs.Item.Actions.Runners {
+namespace GitHub.Orgs.Item.Actions.Runners
+{
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\runners
     /// </summary>
-    public class RunnersRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class RunnersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The downloads property</summary>
-        public DownloadsRequestBuilder Downloads
+        public global::GitHub.Orgs.Item.Actions.Runners.Downloads.DownloadsRequestBuilder Downloads
         {
-            get => new DownloadsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Runners.Downloads.DownloadsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The generateJitconfig property</summary>
-        public GenerateJitconfigRequestBuilder GenerateJitconfig
+        public global::GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig.GenerateJitconfigRequestBuilder GenerateJitconfig
         {
-            get => new GenerateJitconfigRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Runners.GenerateJitconfig.GenerateJitconfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The registrationToken property</summary>
-        public RegistrationTokenRequestBuilder RegistrationToken
+        public global::GitHub.Orgs.Item.Actions.Runners.RegistrationToken.RegistrationTokenRequestBuilder RegistrationToken
         {
-            get => new RegistrationTokenRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Runners.RegistrationToken.RegistrationTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The removeToken property</summary>
-        public RemoveTokenRequestBuilder RemoveToken
+        public global::GitHub.Orgs.Item.Actions.Runners.RemoveToken.RemoveTokenRequestBuilder RemoveToken
         {
-            get => new RemoveTokenRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Orgs.Item.Actions.Runners.RemoveToken.RemoveTokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the GitHub.orgs.item.actions.runners.item collection</summary>
         /// <param name="position">Unique identifier of the self-hosted runner.</param>
-        /// <returns>A <see cref="WithRunner_ItemRequestBuilder"/></returns>
-        public WithRunner_ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::GitHub.Orgs.Item.Actions.Runners.Item.WithRunner_ItemRequestBuilder"/></returns>
+        public global::GitHub.Orgs.Item.Actions.Runners.Item.WithRunner_ItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("runner_id", position);
-                return new WithRunner_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::GitHub.Orgs.Item.Actions.Runners.Item.WithRunner_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RunnersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,7 +61,7 @@ namespace GitHub.Orgs.Item.Actions.Runners {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RunnersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -70,20 +72,20 @@ namespace GitHub.Orgs.Item.Actions.Runners {
         /// Lists all self-hosted runners configured in an organization.Authenticated users must have admin access to the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// API method documentation <see href="https://docs.github.com/rest/actions/self-hosted-runners#list-self-hosted-runners-for-an-organization" />
         /// </summary>
-        /// <returns>A <see cref="RunnersGetResponse"/></returns>
+        /// <returns>A <see cref="global::GitHub.Orgs.Item.Actions.Runners.RunnersGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RunnersGetResponse?> GetAsync(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Orgs.Item.Actions.Runners.RunnersGetResponse?> GetAsync(Action<RequestConfiguration<global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder.RunnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RunnersGetResponse> GetAsync(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Orgs.Item.Actions.Runners.RunnersGetResponse> GetAsync(Action<RequestConfiguration<global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder.RunnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<RunnersGetResponse>(requestInfo, RunnersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Orgs.Item.Actions.Runners.RunnersGetResponse>(requestInfo, global::GitHub.Orgs.Item.Actions.Runners.RunnersGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all self-hosted runners configured in an organization.Authenticated users must have admin access to the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
@@ -92,11 +94,11 @@ namespace GitHub.Orgs.Item.Actions.Runners {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder.RunnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<RunnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder.RunnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -107,16 +109,17 @@ namespace GitHub.Orgs.Item.Actions.Runners {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RunnersRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RunnersRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder WithUrl(string rawUrl)
         {
-            return new RunnersRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all self-hosted runners configured in an organization.Authenticated users must have admin access to the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint. If the repository is private, the `repo` scope is also required.
         /// </summary>
-        public class RunnersRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+        public partial class RunnersRequestBuilderGetQueryParameters 
         {
             /// <summary>The name of a self-hosted runner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

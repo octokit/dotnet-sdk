@@ -4,45 +4,47 @@ using GitHub.Repos.Item.Item.Stats.Commit_activity;
 using GitHub.Repos.Item.Item.Stats.Contributors;
 using GitHub.Repos.Item.Item.Stats.Participation;
 using GitHub.Repos.Item.Item.Stats.Punch_card;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Stats {
+namespace GitHub.Repos.Item.Item.Stats
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats
     /// </summary>
-    public class StatsRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class StatsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The code_frequency property</summary>
-        public Code_frequencyRequestBuilder Code_frequency
+        public global::GitHub.Repos.Item.Item.Stats.Code_frequency.Code_frequencyRequestBuilder Code_frequency
         {
-            get => new Code_frequencyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Stats.Code_frequency.Code_frequencyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The commit_activity property</summary>
-        public Commit_activityRequestBuilder Commit_activity
+        public global::GitHub.Repos.Item.Item.Stats.Commit_activity.Commit_activityRequestBuilder Commit_activity
         {
-            get => new Commit_activityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Stats.Commit_activity.Commit_activityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The contributors property</summary>
-        public ContributorsRequestBuilder Contributors
+        public global::GitHub.Repos.Item.Item.Stats.Contributors.ContributorsRequestBuilder Contributors
         {
-            get => new ContributorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Stats.Contributors.ContributorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The participation property</summary>
-        public ParticipationRequestBuilder Participation
+        public global::GitHub.Repos.Item.Item.Stats.Participation.ParticipationRequestBuilder Participation
         {
-            get => new ParticipationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Stats.Participation.ParticipationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The punch_card property</summary>
-        public Punch_cardRequestBuilder Punch_card
+        public global::GitHub.Repos.Item.Item.Stats.Punch_card.Punch_cardRequestBuilder Punch_card
         {
-            get => new Punch_cardRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Stats.Punch_card.Punch_cardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="StatsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Stats.StatsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +52,7 @@ namespace GitHub.Repos.Item.Item.Stats {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="StatsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Stats.StatsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

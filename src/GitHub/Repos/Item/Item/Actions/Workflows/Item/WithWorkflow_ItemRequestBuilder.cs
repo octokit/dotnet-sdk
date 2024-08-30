@@ -5,47 +5,49 @@ using GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches;
 using GitHub.Repos.Item.Item.Actions.Workflows.Item.Enable;
 using GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs;
 using GitHub.Repos.Item.Item.Actions.Workflows.Item.Timing;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
+namespace GitHub.Repos.Item.Item.Actions.Workflows.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\workflows\{workflow_id}
     /// </summary>
-    public class WithWorkflow_ItemRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class WithWorkflow_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The disable property</summary>
-        public DisableRequestBuilder Disable
+        public global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Disable.DisableRequestBuilder Disable
         {
-            get => new DisableRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dispatches property</summary>
-        public DispatchesRequestBuilder Dispatches
+        public global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches.DispatchesRequestBuilder Dispatches
         {
-            get => new DispatchesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Dispatches.DispatchesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The enable property</summary>
-        public EnableRequestBuilder Enable
+        public global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Enable.EnableRequestBuilder Enable
         {
-            get => new EnableRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The runs property</summary>
-        public RunsRequestBuilder Runs
+        public global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs.RunsRequestBuilder Runs
         {
-            get => new RunsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs.RunsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timing property</summary>
-        public TimingRequestBuilder Timing
+        public global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Timing.TimingRequestBuilder Timing
         {
-            get => new TimingRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Timing.TimingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithWorkflow_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,7 +55,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WithWorkflow_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -64,20 +66,20 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
         /// Gets a specific workflow. You can replace `workflow_id` with the workflowfile name. For example, you could use `main.yaml`.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// API method documentation <see href="https://docs.github.com/rest/actions/workflows#get-a-workflow" />
         /// </summary>
-        /// <returns>A <see cref="GitHub.Models.Workflow"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.Workflow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GitHub.Models.Workflow?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Workflow?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GitHub.Models.Workflow> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::GitHub.Models.Workflow> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<GitHub.Models.Workflow>(requestInfo, GitHub.Models.Workflow.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::GitHub.Models.Workflow>(requestInfo, global::GitHub.Models.Workflow.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a specific workflow. You can replace `workflow_id` with the workflowfile name. For example, you could use `main.yaml`.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
@@ -101,11 +103,11 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item {
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WithWorkflow_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WithWorkflow_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::GitHub.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new WithWorkflow_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::GitHub.Repos.Item.Item.Actions.Workflows.Item.WithWorkflow_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

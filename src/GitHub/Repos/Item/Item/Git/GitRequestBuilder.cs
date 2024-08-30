@@ -6,55 +6,57 @@ using GitHub.Repos.Item.Item.Git.Ref;
 using GitHub.Repos.Item.Item.Git.Refs;
 using GitHub.Repos.Item.Item.Git.Tags;
 using GitHub.Repos.Item.Item.Git.Trees;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace GitHub.Repos.Item.Item.Git {
+namespace GitHub.Repos.Item.Item.Git
+{
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git
     /// </summary>
-    public class GitRequestBuilder : BaseRequestBuilder 
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    public partial class GitRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The blobs property</summary>
-        public BlobsRequestBuilder Blobs
+        public global::GitHub.Repos.Item.Item.Git.Blobs.BlobsRequestBuilder Blobs
         {
-            get => new BlobsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Git.Blobs.BlobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The commits property</summary>
-        public CommitsRequestBuilder Commits
+        public global::GitHub.Repos.Item.Item.Git.Commits.CommitsRequestBuilder Commits
         {
-            get => new CommitsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Git.Commits.CommitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The matchingRefs property</summary>
-        public MatchingRefsRequestBuilder MatchingRefs
+        public global::GitHub.Repos.Item.Item.Git.MatchingRefs.MatchingRefsRequestBuilder MatchingRefs
         {
-            get => new MatchingRefsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Git.MatchingRefs.MatchingRefsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ref property</summary>
-        public RefRequestBuilder Ref
+        public global::GitHub.Repos.Item.Item.Git.Ref.RefRequestBuilder Ref
         {
-            get => new RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Git.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The refs property</summary>
-        public RefsRequestBuilder Refs
+        public global::GitHub.Repos.Item.Item.Git.Refs.RefsRequestBuilder Refs
         {
-            get => new RefsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Git.Refs.RefsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tags property</summary>
-        public TagsRequestBuilder Tags
+        public global::GitHub.Repos.Item.Item.Git.Tags.TagsRequestBuilder Tags
         {
-            get => new TagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Git.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The trees property</summary>
-        public TreesRequestBuilder Trees
+        public global::GitHub.Repos.Item.Item.Git.Trees.TreesRequestBuilder Trees
         {
-            get => new TreesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::GitHub.Repos.Item.Item.Git.Trees.TreesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GitRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Git.GitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +64,7 @@ namespace GitHub.Repos.Item.Item.Git {
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GitRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Git.GitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
