@@ -16,5 +16,13 @@ namespace GitHub.Advisories
         #pragma warning disable CS1591
         Published,
         #pragma warning restore CS1591
+        [EnumMember(Value = "epss_percentage")]
+        #pragma warning disable CS1591
+        Epss_percentage,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "epss_percentile")]
+        #pragma warning disable CS1591
+        Epss_percentile,
+        #pragma warning restore CS1591
     }
 }
