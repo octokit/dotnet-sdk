@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Milestones.Item
 {
     /// <summary>The state of the milestone. Either `open` or `closed`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithMilestone_numberPatchRequestBody_state
     {
         [EnumMember(Value = "open")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The default workflow permissions granted to the GITHUB_TOKEN when running workflows.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ActionsDefaultWorkflowPermissions
     {
         [EnumMember(Value = "read")]

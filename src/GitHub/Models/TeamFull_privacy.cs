@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The level of privacy this team should have</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum TeamFull_privacy
     {
         [EnumMember(Value = "closed")]

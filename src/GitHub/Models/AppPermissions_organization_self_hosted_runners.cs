@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AppPermissions_organization_self_hosted_runners
     {
         [EnumMember(Value = "read")]

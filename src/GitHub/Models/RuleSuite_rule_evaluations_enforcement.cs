@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The enforcement level of this rule source.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RuleSuite_rule_evaluations_enforcement
     {
         [EnumMember(Value = "active")]

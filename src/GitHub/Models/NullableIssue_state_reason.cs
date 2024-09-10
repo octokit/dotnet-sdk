@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The reason for the current state</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum NullableIssue_state_reason
     {
         [EnumMember(Value = "completed")]

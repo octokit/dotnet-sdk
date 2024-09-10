@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
 {
     /// <summary>The enablement status of Automatic dependency submission</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithConfiguration_PatchRequestBody_dependency_graph_autosubmit_action
     {
         [EnumMember(Value = "enabled")]

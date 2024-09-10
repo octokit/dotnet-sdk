@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The operator to use for matching.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RepositoryRuleBranchNamePattern_parameters_operator
     {
         [EnumMember(Value = "starts_with")]

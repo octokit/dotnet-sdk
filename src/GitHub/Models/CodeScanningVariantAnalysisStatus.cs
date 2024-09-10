@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The new status of the CodeQL variant analysis repository task.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodeScanningVariantAnalysisStatus
     {
         [EnumMember(Value = "pending")]

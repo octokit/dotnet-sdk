@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Teams.Item
 {
     /// <summary>**Deprecated**. The permission that new repositories will be added to the team with when none is specified.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithTeam_slugPatchRequestBody_permission
     {
         [EnumMember(Value = "pull")]

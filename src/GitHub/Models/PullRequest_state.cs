@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>State of this Pull Request. Either `open` or `closed`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum PullRequest_state
     {
         [EnumMember(Value = "open")]

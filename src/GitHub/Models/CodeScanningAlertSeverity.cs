@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Severity of a code scanning alert.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodeScanningAlertSeverity
     {
         [EnumMember(Value = "critical")]

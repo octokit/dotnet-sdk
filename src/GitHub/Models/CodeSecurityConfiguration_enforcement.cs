@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The enforcement status for a security configuration</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodeSecurityConfiguration_enforcement
     {
         [EnumMember(Value = "enforced")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Type of repository selection requested.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum OrganizationProgrammaticAccessGrantRequest_repository_selection
     {
         [EnumMember(Value = "none")]

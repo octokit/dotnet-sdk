@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodeScanningVariantAnalysis_failure_reason
     {
         [EnumMember(Value = "no_repos_queried")]

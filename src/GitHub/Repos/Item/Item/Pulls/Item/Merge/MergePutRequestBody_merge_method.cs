@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.Merge
 {
     /// <summary>The merge method to use.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MergePutRequestBody_merge_method
     {
         [EnumMember(Value = "merge")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The visibility of newly created repositories for which the code security configuration will be applied to by default</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodeSecurityDefaultConfigurations_default_for_new_repos
     {
         [EnumMember(Value = "public")]

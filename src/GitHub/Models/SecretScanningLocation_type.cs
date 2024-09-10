@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum SecretScanningLocation_type
     {
         [EnumMember(Value = "commit")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The organization policy for allowing or disallowing Copilot to make suggestions that match public code.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CopilotOrganizationDetails_public_code_suggestions
     {
         [EnumMember(Value = "allow")]

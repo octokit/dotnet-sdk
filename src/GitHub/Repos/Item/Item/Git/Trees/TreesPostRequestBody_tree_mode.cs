@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Git.Trees
 {
     /// <summary>The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum TreesPostRequestBody_tree_mode
     {
         [EnumMember(Value = "100644")]

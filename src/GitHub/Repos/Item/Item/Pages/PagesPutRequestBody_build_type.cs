@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Pages
 {
     /// <summary>The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum PagesPutRequestBody_build_type
     {
         [EnumMember(Value = "legacy")]

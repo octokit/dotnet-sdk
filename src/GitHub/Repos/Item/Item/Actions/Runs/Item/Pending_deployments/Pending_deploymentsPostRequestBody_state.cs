@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments
 {
     /// <summary>Whether to approve or reject deployment to the specified environments.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum Pending_deploymentsPostRequestBody_state
     {
         [EnumMember(Value = "approved")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RepositoryRuleMergeQueue_parameters_grouping_strategy
     {
         [EnumMember(Value = "ALLGREEN")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The policy that controls the repositories in the organization that are allowed to run GitHub Actions.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum EnabledRepositories
     {
         [EnumMember(Value = "all")]

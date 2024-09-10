@@ -4,7 +4,7 @@ using System;
 namespace GitHub.User.Memberships.Orgs.Item
 {
     /// <summary>The state that the membership should be in. Only `&quot;active&quot;` will be accepted.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithOrgPatchRequestBody_state
     {
         [EnumMember(Value = "active")]
