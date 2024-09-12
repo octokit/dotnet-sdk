@@ -81,7 +81,7 @@ namespace GitHub.Models
 #endif
         /// <summary>The type of the source of the ruleset</summary>
         public global::GitHub.Models.RepositoryRuleset_source_type? SourceType { get; set; }
-        /// <summary>The target of the ruleset&gt; [!NOTE]&gt; The `push` target is in beta and is subject to change.</summary>
+        /// <summary>The target of the ruleset</summary>
         public global::GitHub.Models.RepositoryRuleset_target? Target { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

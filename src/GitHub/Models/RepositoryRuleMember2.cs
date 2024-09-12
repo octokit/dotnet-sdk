@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>
-    /// &gt; [!NOTE]&gt; `max_file_path_length` is in beta and subject to change.Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.
+    /// Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public partial class RepositoryRuleMember2 : IAdditionalDataHolder, IParsable

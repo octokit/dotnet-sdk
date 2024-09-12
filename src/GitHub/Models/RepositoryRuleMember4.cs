@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>
-    /// &gt; [!NOTE]&gt; `max_file_size` is in beta and subject to change.Prevent commits that exceed a specified file size limit from being pushed to the commit.
+    /// Prevent commits that exceed a specified file size limit from being pushed to the commit.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public partial class RepositoryRuleMember4 : IAdditionalDataHolder, IParsable

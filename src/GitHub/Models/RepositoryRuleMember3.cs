@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>
-    /// &gt; [!NOTE]&gt; `file_extension_restriction` is in beta and subject to change.Prevent commits that include files with specified file extensions from being pushed to the commit graph.
+    /// Prevent commits that include files with specified file extensions from being pushed to the commit graph.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public partial class RepositoryRuleMember3 : IAdditionalDataHolder, IParsable
