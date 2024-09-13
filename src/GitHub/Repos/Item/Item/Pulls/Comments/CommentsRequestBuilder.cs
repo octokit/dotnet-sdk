@@ -21,7 +21,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Comments
         /// <summary>Gets an item from the GitHub.repos.item.item.pulls.comments.item collection</summary>
         /// <param name="position">The unique identifier of the comment.</param>
         /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Pulls.Comments.Item.WithComment_ItemRequestBuilder"/></returns>
-        public global::GitHub.Repos.Item.Item.Pulls.Comments.Item.WithComment_ItemRequestBuilder this[int position]
+        public global::GitHub.Repos.Item.Item.Pulls.Comments.Item.WithComment_ItemRequestBuilder this[long position]
         {
             get
             {

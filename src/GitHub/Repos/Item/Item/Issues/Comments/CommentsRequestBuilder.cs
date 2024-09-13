@@ -21,7 +21,7 @@ namespace GitHub.Repos.Item.Item.Issues.Comments
         /// <summary>Gets an item from the GitHub.repos.item.item.issues.comments.item collection</summary>
         /// <param name="position">The unique identifier of the comment.</param>
         /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Issues.Comments.Item.WithComment_ItemRequestBuilder"/></returns>
-        public global::GitHub.Repos.Item.Item.Issues.Comments.Item.WithComment_ItemRequestBuilder this[int position]
+        public global::GitHub.Repos.Item.Item.Issues.Comments.Item.WithComment_ItemRequestBuilder this[long position]
         {
             get
             {

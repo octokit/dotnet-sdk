@@ -21,7 +21,7 @@ namespace GitHub.Gists.Item.Comments
         /// <summary>Gets an item from the GitHub.gists.item.comments.item collection</summary>
         /// <param name="position">The unique identifier of the comment.</param>
         /// <returns>A <see cref="global::GitHub.Gists.Item.Comments.Item.WithComment_ItemRequestBuilder"/></returns>
-        public global::GitHub.Gists.Item.Comments.Item.WithComment_ItemRequestBuilder this[int position]
+        public global::GitHub.Gists.Item.Comments.Item.WithComment_ItemRequestBuilder this[long position]
         {
             get
             {
