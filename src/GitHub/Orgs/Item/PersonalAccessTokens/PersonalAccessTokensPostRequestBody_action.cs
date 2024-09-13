@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.PersonalAccessTokens
 {
     /// <summary>Action to apply to the fine-grained personal access token.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum PersonalAccessTokensPostRequestBody_action
     {
         [EnumMember(Value = "revoke")]

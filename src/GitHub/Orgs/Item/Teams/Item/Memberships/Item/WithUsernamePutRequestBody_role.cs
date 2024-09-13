@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Teams.Item.Memberships.Item
 {
     /// <summary>The role that this user should have in the team.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithUsernamePutRequestBody_role
     {
         [EnumMember(Value = "member")]

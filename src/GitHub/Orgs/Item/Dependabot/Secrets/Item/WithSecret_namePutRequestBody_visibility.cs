@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Dependabot.Secrets.Item
 {
     /// <summary>Which type of organization repositories have access to the organization secret. `selected` means only the repositories specified by `selected_repository_ids` can access the secret.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithSecret_namePutRequestBody_visibility
     {
         [EnumMember(Value = "all")]

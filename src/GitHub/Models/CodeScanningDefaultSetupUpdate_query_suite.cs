@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>CodeQL query suite to be used.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodeScanningDefaultSetupUpdate_query_suite
     {
         [EnumMember(Value = "default")]

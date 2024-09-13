@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Git.Trees
 {
     /// <summary>Either `blob`, `tree`, or `commit`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum TreesPostRequestBody_tree_type
     {
         [EnumMember(Value = "blob")]

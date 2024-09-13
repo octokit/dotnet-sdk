@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The level of permission to grant the access token to list and manage repositories a user is starring.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AppPermissions_starring
     {
         [EnumMember(Value = "read")]

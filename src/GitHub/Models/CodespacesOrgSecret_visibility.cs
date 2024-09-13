@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The type of repositories in the organization that the secret is visible to</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodespacesOrgSecret_visibility
     {
         [EnumMember(Value = "all")]

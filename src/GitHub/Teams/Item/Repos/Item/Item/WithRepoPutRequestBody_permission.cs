@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Teams.Item.Repos.Item.Item
 {
     /// <summary>The permission to grant the team on this repository. If no permission is specified, the team&apos;s `permission` attribute will be used to determine what permission to grant the team on this repository.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithRepoPutRequestBody_permission
     {
         [EnumMember(Value = "pull")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Whether it&apos;s a group assignment or individual assignment.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ClassroomAssignment_type
     {
         [EnumMember(Value = "individual")]

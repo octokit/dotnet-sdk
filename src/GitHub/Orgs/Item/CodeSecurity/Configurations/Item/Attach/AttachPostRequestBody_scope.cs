@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Attach
 {
     /// <summary>The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AttachPostRequestBody_scope
     {
         [EnumMember(Value = "all")]

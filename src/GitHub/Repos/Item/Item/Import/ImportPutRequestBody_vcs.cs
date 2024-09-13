@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Import
 {
     /// <summary>The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ImportPutRequestBody_vcs
     {
         [EnumMember(Value = "subversion")]

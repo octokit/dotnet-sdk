@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>**Required when the state is dismissed.** The reason for dismissing or closing the alert.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodeScanningAlertDismissedReason
     {
         [EnumMember(Value = "false positive")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The state of the status.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DeploymentStatus_state
     {
         [EnumMember(Value = "error")]

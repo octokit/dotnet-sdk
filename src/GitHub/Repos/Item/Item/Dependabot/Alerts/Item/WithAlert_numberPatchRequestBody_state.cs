@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Dependabot.Alerts.Item
 {
     /// <summary>The state of the Dependabot alert.A `dismissed_reason` must be provided when setting the state to `dismissed`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithAlert_numberPatchRequestBody_state
     {
         [EnumMember(Value = "dismissed")]

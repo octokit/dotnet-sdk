@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The organization policy for allowing or disallowing organization members to use Copilot features within github.com.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CopilotOrganizationDetails_platform_chat
     {
         [EnumMember(Value = "enabled")]

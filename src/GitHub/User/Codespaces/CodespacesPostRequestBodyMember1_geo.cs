@@ -4,7 +4,7 @@ using System;
 namespace GitHub.User.Codespaces
 {
     /// <summary>The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodespacesPostRequestBodyMember1_geo
     {
         [EnumMember(Value = "EuropeWest")]

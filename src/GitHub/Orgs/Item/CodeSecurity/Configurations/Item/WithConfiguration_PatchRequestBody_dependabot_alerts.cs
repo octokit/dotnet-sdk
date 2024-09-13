@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
 {
     /// <summary>The enablement status of Dependabot alerts</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithConfiguration_PatchRequestBody_dependabot_alerts
     {
         [EnumMember(Value = "enabled")]

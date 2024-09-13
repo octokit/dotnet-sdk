@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The baseline permission that all organization members have on this project. Only present if owner is an organization.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum Project_organization_permission
     {
         [EnumMember(Value = "read")]

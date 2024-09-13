@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The side of the diff to which the comment applies. The side of the last line of the range for a multi-line comment</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum PullRequestReviewComment_side
     {
         [EnumMember(Value = "LEFT")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RuleSuite_evaluation_result
     {
         [EnumMember(Value = "pass")]

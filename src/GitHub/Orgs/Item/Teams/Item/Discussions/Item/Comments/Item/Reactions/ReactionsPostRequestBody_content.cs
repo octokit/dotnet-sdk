@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Comments.Item.Reactions
 {
     /// <summary>The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the team discussion comment.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ReactionsPostRequestBody_content
     {
         [EnumMember(Value = "+1")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The level at which the comment is targeted, can be a diff line or a file.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum PullRequestReviewComment_subject_type
     {
         [EnumMember(Value = "line")]

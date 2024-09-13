@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The type of actor that can bypass a ruleset.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RepositoryRulesetBypassActor_actor_type
     {
         [EnumMember(Value = "Integration")]
@@ -26,10 +26,6 @@ namespace GitHub.Models
         [EnumMember(Value = "DeployKey")]
         #pragma warning disable CS1591
         DeployKey,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "EnterpriseTeam")]
-        #pragma warning disable CS1591
-        EnterpriseTeam,
         #pragma warning restore CS1591
     }
 }

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Code scanning default setup has been configured or not.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum CodeScanningDefaultSetup_state
     {
         [EnumMember(Value = "configured")]

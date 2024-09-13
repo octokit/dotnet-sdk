@@ -3,8 +3,8 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Rulesets
 {
-    /// <summary>The target of the ruleset&gt; [!NOTE]&gt; The `push` target is in beta and is subject to change.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    /// <summary>The target of the ruleset</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RulesetsPostRequestBody_target
     {
         [EnumMember(Value = "branch")]

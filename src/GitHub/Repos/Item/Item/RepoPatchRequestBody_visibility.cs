@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item
 {
     /// <summary>The visibility of the repository.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RepoPatchRequestBody_visibility
     {
         [EnumMember(Value = "public")]

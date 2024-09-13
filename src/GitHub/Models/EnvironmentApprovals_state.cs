@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Whether deployment to the environment(s) was approved or rejected or pending (with comments)</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum EnvironmentApprovals_state
     {
         [EnumMember(Value = "approved")]

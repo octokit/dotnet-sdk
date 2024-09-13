@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Teams.Item
 {
     /// <summary>The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are:  * `notifications_enabled` - team members receive notifications when the team is @mentioned.   * `notifications_disabled` - no one receives notifications.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WithTeam_slugPatchRequestBody_notification_setting
     {
         [EnumMember(Value = "notifications_enabled")]

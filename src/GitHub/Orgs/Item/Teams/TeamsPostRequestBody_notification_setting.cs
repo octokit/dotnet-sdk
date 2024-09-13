@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Teams
 {
     /// <summary>The notification setting the team has chosen. The options are:   * `notifications_enabled` - team members receive notifications when the team is @mentioned.   * `notifications_disabled` - no one receives notifications.  Default: `notifications_enabled`</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum TeamsPostRequestBody_notification_setting
     {
         [EnumMember(Value = "notifications_enabled")]

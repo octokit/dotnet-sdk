@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Import.Lfs
 {
     /// <summary>Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum LfsPatchRequestBody_use_lfs
     {
         [EnumMember(Value = "opt_in")]

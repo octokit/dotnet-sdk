@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Advisories
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
     public enum GetSortQueryParameterType
     #pragma warning restore CS1591
@@ -15,6 +15,14 @@ namespace GitHub.Advisories
         [EnumMember(Value = "published")]
         #pragma warning disable CS1591
         Published,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "epss_percentage")]
+        #pragma warning disable CS1591
+        Epss_percentage,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "epss_percentile")]
+        #pragma warning disable CS1591
+        Epss_percentile,
         #pragma warning restore CS1591
     }
 }

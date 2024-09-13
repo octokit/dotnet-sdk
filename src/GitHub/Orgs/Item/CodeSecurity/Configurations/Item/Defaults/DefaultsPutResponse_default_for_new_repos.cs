@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Defaults
 {
     /// <summary>Specifies which types of repository this security configuration is applied to by default.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DefaultsPutResponse_default_for_new_repos
     {
         [EnumMember(Value = "all")]

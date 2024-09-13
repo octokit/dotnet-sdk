@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Whether this rule targets a branch or tag.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.17.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DeploymentBranchPolicy_type
     {
         [EnumMember(Value = "branch")]
