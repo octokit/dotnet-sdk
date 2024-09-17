@@ -37,6 +37,14 @@ namespace GitHub.Models
 #else
         public global::GitHub.Models.GlobalAdvisory_cvss Cvss { get; set; }
 #endif
+        /// <summary>The cvss_severities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Models.CvssSeverities? CvssSeverities { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Models.CvssSeverities CvssSeverities { get; set; }
+#endif
         /// <summary>The cwes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -168,6 +176,7 @@ namespace GitHub.Models
                 { "credits", n => { Credits = n.GetCollectionOfObjectValues<global::GitHub.Models.GlobalAdvisory_credits>(global::GitHub.Models.GlobalAdvisory_credits.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cve_id", n => { CveId = n.GetStringValue(); } },
                 { "cvss", n => { Cvss = n.GetObjectValue<global::GitHub.Models.GlobalAdvisory_cvss>(global::GitHub.Models.GlobalAdvisory_cvss.CreateFromDiscriminatorValue); } },
+                { "cvss_severities", n => { CvssSeverities = n.GetObjectValue<global::GitHub.Models.CvssSeverities>(global::GitHub.Models.CvssSeverities.CreateFromDiscriminatorValue); } },
                 { "cwes", n => { Cwes = n.GetCollectionOfObjectValues<global::GitHub.Models.GlobalAdvisory_cwes>(global::GitHub.Models.GlobalAdvisory_cwes.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "epss", n => { Epss = n.GetObjectValue<global::GitHub.Models.GlobalAdvisory_epss>(global::GitHub.Models.GlobalAdvisory_epss.CreateFromDiscriminatorValue); } },
@@ -197,6 +206,7 @@ namespace GitHub.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::GitHub.Models.GlobalAdvisory_cvss>("cvss", Cvss);
+            writer.WriteObjectValue<global::GitHub.Models.CvssSeverities>("cvss_severities", CvssSeverities);
             writer.WriteCollectionOfObjectValues<global::GitHub.Models.GlobalAdvisory_cwes>("cwes", Cwes);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::GitHub.Models.GlobalAdvisory_epss>("epss", Epss);

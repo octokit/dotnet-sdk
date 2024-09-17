@@ -29,6 +29,14 @@ namespace GitHub.Models
 #else
         public global::GitHub.Models.DependabotAlertSecurityAdvisory_cvss Cvss { get; private set; }
 #endif
+        /// <summary>The cvss_severities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Models.CvssSeverities? CvssSeverities { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Models.CvssSeverities CvssSeverities { get; set; }
+#endif
         /// <summary>Details for the advisory pertaining to Common Weakness Enumeration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,6 +121,7 @@ namespace GitHub.Models
             {
                 { "cve_id", n => { CveId = n.GetStringValue(); } },
                 { "cvss", n => { Cvss = n.GetObjectValue<global::GitHub.Models.DependabotAlertSecurityAdvisory_cvss>(global::GitHub.Models.DependabotAlertSecurityAdvisory_cvss.CreateFromDiscriminatorValue); } },
+                { "cvss_severities", n => { CvssSeverities = n.GetObjectValue<global::GitHub.Models.CvssSeverities>(global::GitHub.Models.CvssSeverities.CreateFromDiscriminatorValue); } },
                 { "cwes", n => { Cwes = n.GetCollectionOfObjectValues<global::GitHub.Models.DependabotAlertSecurityAdvisory_cwes>(global::GitHub.Models.DependabotAlertSecurityAdvisory_cwes.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ghsa_id", n => { GhsaId = n.GetStringValue(); } },
@@ -133,6 +142,7 @@ namespace GitHub.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::GitHub.Models.CvssSeverities>("cvss_severities", CvssSeverities);
         }
     }
 }
