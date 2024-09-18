@@ -41,7 +41,7 @@ namespace GitHub.Models
 #else
         public string BeforeSha { get; set; }
 #endif
-        /// <summary>The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.</summary>
+        /// <summary>The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.</summary>
         public global::GitHub.Models.RuleSuite_evaluation_result? EvaluationResult { get; set; }
         /// <summary>The unique identifier of the rule insight.</summary>
         public int? Id { get; set; }
