@@ -15,5 +15,9 @@ namespace GitHub.Models
         #pragma warning disable CS1591
         Fail,
         #pragma warning restore CS1591
+        [EnumMember(Value = "bypass")]
+        #pragma warning disable CS1591
+        Bypass,
+        #pragma warning restore CS1591
     }
 }
