@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>
-    /// Information about the seat breakdown and policies set for an organization with a Copilot Business subscription.
+    /// Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public partial class CopilotOrganizationDetails : IAdditionalDataHolder, IParsable
