@@ -19,7 +19,7 @@ namespace GitHub.Models
         public global::GitHub.Models.RepositoryRulesetBypassActor_actor_type? ActorType { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.</summary>
+        /// <summary>When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.</summary>
         public global::GitHub.Models.RepositoryRulesetBypassActor_bypass_mode? BypassMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Models.RepositoryRulesetBypassActor"/> and sets the default values.
@@ -27,6 +27,7 @@ namespace GitHub.Models
         public RepositoryRulesetBypassActor()
         {
             AdditionalData = new Dictionary<string, object>();
+            BypassMode = global::GitHub.Models.RepositoryRulesetBypassActor_bypass_mode.Always;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
