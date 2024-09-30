@@ -23,7 +23,7 @@ namespace GitHub.Orgs.Item.Rulesets
 #else
         public List<global::GitHub.Models.RepositoryRulesetBypassActor> BypassActors { get; set; }
 #endif
-        /// <summary>Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.</summary>
+        /// <summary>Conditions for an organization ruleset.The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.The push rulesets conditions object does not require the `ref_name` property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.Models.OrgRulesetConditions? Conditions { get; set; }
