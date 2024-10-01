@@ -14,13 +14,13 @@ namespace GitHub.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public partial class CopilotSeatDetails : IParsable
     {
-        /// <summary>The assignee that has been granted access to GitHub Copilot.</summary>
+        /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::GitHub.Models.CopilotSeatDetails_assignee? Assignee { get; set; }
+        public global::GitHub.Models.SimpleUser? Assignee { get; set; }
 #nullable restore
 #else
-        public global::GitHub.Models.CopilotSeatDetails_assignee Assignee { get; set; }
+        public global::GitHub.Models.SimpleUser Assignee { get; set; }
 #endif
         /// <summary>The team through which the assignee is granted access to GitHub Copilot, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,13 +42,13 @@ namespace GitHub.Models
 #else
         public string LastActivityEditor { get; set; }
 #endif
-        /// <summary>The organization to which this seat belongs.</summary>
+        /// <summary>A GitHub organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::GitHub.Models.CopilotSeatDetails_organization? Organization { get; set; }
+        public global::GitHub.Models.NullableOrganizationSimple? Organization { get; set; }
 #nullable restore
 #else
-        public global::GitHub.Models.CopilotSeatDetails_organization Organization { get; set; }
+        public global::GitHub.Models.NullableOrganizationSimple Organization { get; set; }
 #endif
         /// <summary>The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee&apos;s Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization&apos;s next billing cycle.</summary>
         public Date? PendingCancellationDate { get; set; }
@@ -72,12 +72,12 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignee", n => { Assignee = n.GetObjectValue<global::GitHub.Models.CopilotSeatDetails_assignee>(global::GitHub.Models.CopilotSeatDetails_assignee.CreateFromDiscriminatorValue); } },
+                { "assignee", n => { Assignee = n.GetObjectValue<global::GitHub.Models.SimpleUser>(global::GitHub.Models.SimpleUser.CreateFromDiscriminatorValue); } },
                 { "assigning_team", n => { AssigningTeam = n.GetObjectValue<global::GitHub.Models.CopilotSeatDetails.CopilotSeatDetails_assigning_team>(global::GitHub.Models.CopilotSeatDetails.CopilotSeatDetails_assigning_team.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "last_activity_at", n => { LastActivityAt = n.GetDateTimeOffsetValue(); } },
                 { "last_activity_editor", n => { LastActivityEditor = n.GetStringValue(); } },
-                { "organization", n => { Organization = n.GetObjectValue<global::GitHub.Models.CopilotSeatDetails_organization>(global::GitHub.Models.CopilotSeatDetails_organization.CreateFromDiscriminatorValue); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::GitHub.Models.NullableOrganizationSimple>(global::GitHub.Models.NullableOrganizationSimple.CreateFromDiscriminatorValue); } },
                 { "pending_cancellation_date", n => { PendingCancellationDate = n.GetDateValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -89,12 +89,12 @@ namespace GitHub.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::GitHub.Models.CopilotSeatDetails_assignee>("assignee", Assignee);
+            writer.WriteObjectValue<global::GitHub.Models.SimpleUser>("assignee", Assignee);
             writer.WriteObjectValue<global::GitHub.Models.CopilotSeatDetails.CopilotSeatDetails_assigning_team>("assigning_team", AssigningTeam);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("last_activity_at", LastActivityAt);
             writer.WriteStringValue("last_activity_editor", LastActivityEditor);
-            writer.WriteObjectValue<global::GitHub.Models.CopilotSeatDetails_organization>("organization", Organization);
+            writer.WriteObjectValue<global::GitHub.Models.NullableOrganizationSimple>("organization", Organization);
             writer.WriteDateValue("pending_cancellation_date", PendingCancellationDate);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }

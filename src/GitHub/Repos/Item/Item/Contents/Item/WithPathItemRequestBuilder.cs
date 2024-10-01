@@ -237,17 +237,17 @@ namespace GitHub.Repos.Item.Item.Contents.Item
             public static global::GitHub.Repos.Item.Item.Contents.Item.WithPathItemRequestBuilder.WithPathGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
                 var result = new global::GitHub.Repos.Item.Item.Contents.Item.WithPathItemRequestBuilder.WithPathGetResponse();
-                if("content-file".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("file".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ContentFile = new global::GitHub.Models.ContentFile();
                 }
-                else if("content-submodule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("submodule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ContentSubmodule = new global::GitHub.Models.ContentSubmodule();
                 }
-                else if("content-symlink".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("symlink".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ContentSymlink = new global::GitHub.Models.ContentSymlink();
                 }

@@ -144,7 +144,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns
             public static global::GitHub.Repos.Item.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
                 var result = new global::GitHub.Repos.Item.Item.CheckRuns.CheckRunsRequestBuilder.CheckRunsPostRequestBody();
                 if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
