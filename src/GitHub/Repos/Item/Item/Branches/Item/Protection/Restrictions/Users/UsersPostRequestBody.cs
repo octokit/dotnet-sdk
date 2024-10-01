@@ -5,39 +5,39 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
+namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
-    public partial class AppsPostRequestBodyMember1 : IAdditionalDataHolder, IParsable
+    public partial class UsersPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.</summary>
+        /// <summary>The username for users</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Apps { get; set; }
+        public List<string>? Users { get; set; }
 #nullable restore
 #else
-        public List<string> Apps { get; set; }
+        public List<string> Users { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBody"/> and sets the default values.
         /// </summary>
-        public AppsPostRequestBodyMember1()
+        public UsersPostRequestBody()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1"/></returns>
+        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps.AppsPostRequestBodyMember1();
+            return new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +47,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "apps", n => { Apps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "users", n => { Users = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("apps", Apps);
+            writer.WriteCollectionOfPrimitiveValues<string>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

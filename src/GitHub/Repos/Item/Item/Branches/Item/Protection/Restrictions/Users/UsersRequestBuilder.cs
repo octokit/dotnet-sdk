@@ -44,11 +44,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::GitHub.Models.SimpleUser>?> DeleteAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Models.SimpleUser>?> DeleteAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::GitHub.Models.SimpleUser>> DeleteAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Models.SimpleUser>> DeleteAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -96,11 +96,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::GitHub.Models.SimpleUser>?> PostAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Models.SimpleUser>?> PostAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::GitHub.Models.SimpleUser>> PostAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Models.SimpleUser>> PostAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -123,11 +123,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::GitHub.Models.SimpleUser>?> PutAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Models.SimpleUser>?> PutAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::GitHub.Models.SimpleUser>> PutAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::GitHub.Models.SimpleUser>> PutAsync(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -147,11 +147,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -188,11 +188,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -210,11 +210,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -232,327 +232,6 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users
         public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
-        public partial class UsersDeleteRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1? UsersDeleteRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1 UsersDeleteRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? UsersDeleteRequestBodyString { get; set; }
-#nullable restore
-#else
-            public string UsersDeleteRequestBodyString { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1? UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1 UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersDeleteRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersDeleteRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersDeleteRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UsersDeleteRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetStringValue() is string usersDeleteRequestBodyStringValue)
-                {
-                    result.UsersDeleteRequestBodyString = usersDeleteRequestBodyStringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UsersDeleteRequestBodyMember1 != null)
-                {
-                    return UsersDeleteRequestBodyMember1.GetFieldDeserializers();
-                }
-                else if(UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 != null)
-                {
-                    return UsersDeleteRequestBodyUsersDeleteRequestBodyMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(UsersDeleteRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1>(null, UsersDeleteRequestBodyMember1);
-                }
-                else if(UsersDeleteRequestBodyUsersDeleteRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersDeleteRequestBodyMember1>(null, UsersDeleteRequestBodyUsersDeleteRequestBodyMember1);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(UsersDeleteRequestBodyString != null)
-                {
-                    writer.WriteStringValue(null, UsersDeleteRequestBodyString);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
-        public partial class UsersPostRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1? UsersPostRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1 UsersPostRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? UsersPostRequestBodyString { get; set; }
-#nullable restore
-#else
-            public string UsersPostRequestBodyString { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1? UsersPostRequestBodyUsersPostRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1 UsersPostRequestBodyUsersPostRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPostRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPostRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UsersPostRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UsersPostRequestBodyUsersPostRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetStringValue() is string usersPostRequestBodyStringValue)
-                {
-                    result.UsersPostRequestBodyString = usersPostRequestBodyStringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UsersPostRequestBodyMember1 != null)
-                {
-                    return UsersPostRequestBodyMember1.GetFieldDeserializers();
-                }
-                else if(UsersPostRequestBodyUsersPostRequestBodyMember1 != null)
-                {
-                    return UsersPostRequestBodyUsersPostRequestBodyMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(UsersPostRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1>(null, UsersPostRequestBodyMember1);
-                }
-                else if(UsersPostRequestBodyUsersPostRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPostRequestBodyMember1>(null, UsersPostRequestBodyUsersPostRequestBodyMember1);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(UsersPostRequestBodyString != null)
-                {
-                    writer.WriteStringValue(null, UsersPostRequestBodyString);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
-        public partial class UsersPutRequestBody : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1? UsersPutRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1 UsersPutRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? UsersPutRequestBodyString { get; set; }
-#nullable restore
-#else
-            public string UsersPutRequestBodyString { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1? UsersPutRequestBodyUsersPutRequestBodyMember1 { get; set; }
-#nullable restore
-#else
-            public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1 UsersPutRequestBodyUsersPutRequestBodyMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPutRequestBody"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersRequestBuilder.UsersPutRequestBody();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UsersPutRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UsersPutRequestBodyUsersPutRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1();
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetStringValue() is string usersPutRequestBodyStringValue)
-                {
-                    result.UsersPutRequestBodyString = usersPutRequestBodyStringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UsersPutRequestBodyMember1 != null)
-                {
-                    return UsersPutRequestBodyMember1.GetFieldDeserializers();
-                }
-                else if(UsersPutRequestBodyUsersPutRequestBodyMember1 != null)
-                {
-                    return UsersPutRequestBodyUsersPutRequestBodyMember1.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(UsersPutRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1>(null, UsersPutRequestBodyMember1);
-                }
-                else if(UsersPutRequestBodyUsersPutRequestBodyMember1 != null)
-                {
-                    writer.WriteObjectValue<global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Users.UsersPutRequestBodyMember1>(null, UsersPutRequestBodyUsersPutRequestBodyMember1);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(UsersPutRequestBodyString != null)
-                {
-                    writer.WriteStringValue(null, UsersPutRequestBodyString);
-                }
-            }
         }
     }
 }
