@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Deployments.Item.Statuses
 {
     /// <summary>The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum StatusesPostRequestBody_state
     {
         [EnumMember(Value = "error")]

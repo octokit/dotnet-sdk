@@ -15,7 +15,7 @@ namespace GitHub.User.Ssh_signing_keys
     /// <summary>
     /// Builds and executes requests for operations under \user\ssh_signing_keys
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Ssh_signing_keysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.ssh_signing_keys.item collection</summary>
@@ -160,7 +160,7 @@ namespace GitHub.User.Ssh_signing_keys
         /// <summary>
         /// Lists the SSH signing keys for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:ssh_signing_key` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class Ssh_signing_keysRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

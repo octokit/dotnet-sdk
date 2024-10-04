@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Pull requests let you tell others about changes you&apos;ve pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class PullRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>The active_lock_reason property</summary>

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Pulls.Comments.Item.Reactions
 {
     /// <summary>The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the pull request review comment.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum ReactionsPostRequestBody_content
     {
         [EnumMember(Value = "+1")]

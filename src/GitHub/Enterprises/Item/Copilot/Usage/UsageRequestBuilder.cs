@@ -14,7 +14,7 @@ namespace GitHub.Enterprises.Item.Copilot.Usage
     /// <summary>
     /// Builds and executes requests for operations under \enterprises\{enterprise}\copilot\usage
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UsageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -95,7 +95,7 @@ namespace GitHub.Enterprises.Item.Copilot.Usage
         /// <summary>
         /// &gt; [!NOTE]&gt; This endpoint is in beta and is subject to change.You can use this endpoint to see a daily breakdown of aggregated usage metrics for Copilot completions and Copilot Chat in the IDEfor all users across organizations with access to Copilot within your enterprise, with a further breakdown of suggestions, acceptances,and number of active users by editor and language for each day. See the response schema tab for detailed metrics definitions.The response contains metrics for up to 28 days prior. Usage metrics are processed once per day for the previous day,and the response will only include data up until yesterday. In order for an end user to be counted towards these metrics,they must have telemetry enabled in their IDE.Only owners and billing managers can view Copilot usage metrics for the enterprise.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:enterprise` scopes to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class UsageRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

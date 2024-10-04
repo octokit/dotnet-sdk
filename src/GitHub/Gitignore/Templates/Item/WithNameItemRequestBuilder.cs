@@ -14,7 +14,7 @@ namespace GitHub.Gitignore.Templates.Item
     /// <summary>
     /// Builds and executes requests for operations under \gitignore\templates\{name}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

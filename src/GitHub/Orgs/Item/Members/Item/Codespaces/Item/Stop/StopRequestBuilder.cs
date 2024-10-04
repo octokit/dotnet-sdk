@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Members.Item.Codespaces.Item.Stop
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\members\{username}\codespaces\{codespace_name}\stop
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class StopRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

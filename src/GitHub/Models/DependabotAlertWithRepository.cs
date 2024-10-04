@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A Dependabot alert.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DependabotAlertWithRepository : IParsable
     {
         /// <summary>The time that the alert was auto-dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>

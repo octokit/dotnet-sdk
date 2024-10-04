@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Assignees.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\{issue_number}\assignees\{assignee}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithAssigneeItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

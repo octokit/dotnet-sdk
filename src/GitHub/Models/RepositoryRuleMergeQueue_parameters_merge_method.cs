@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Method to use when merging changes from queued pull requests.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum RepositoryRuleMergeQueue_parameters_merge_method
     {
         [EnumMember(Value = "MERGE")]

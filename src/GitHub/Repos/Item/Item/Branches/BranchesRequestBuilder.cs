@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Branches
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class BranchesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.branches.item collection</summary>
@@ -99,7 +99,7 @@ namespace GitHub.Repos.Item.Item.Branches
         /// <summary>
         /// List branches
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class BranchesRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

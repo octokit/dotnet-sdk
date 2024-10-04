@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Public User
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class PublicUser : IParsable
     {
         /// <summary>The avatar_url property</summary>

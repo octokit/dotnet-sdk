@@ -12,7 +12,7 @@ namespace GitHub.Projects.Columns.Cards
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns\cards
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CardsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.projects.columns.cards.item collection</summary>

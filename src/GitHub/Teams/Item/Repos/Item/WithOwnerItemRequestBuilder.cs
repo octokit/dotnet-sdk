@@ -12,7 +12,7 @@ namespace GitHub.Teams.Item.Repos.Item
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\repos\{owner}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithOwnerItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.teams.item.repos.item.item collection</summary>

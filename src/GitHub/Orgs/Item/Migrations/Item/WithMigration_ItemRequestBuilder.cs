@@ -17,7 +17,7 @@ namespace GitHub.Orgs.Item.Migrations.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\migrations\{migration_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithMigration_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The archive property</summary>
@@ -106,7 +106,7 @@ namespace GitHub.Orgs.Item.Migrations.Item
         /// <summary>
         /// Fetches the status of a migration.The `state` of a migration can be one of the following values:*   `pending`, which means the migration hasn&apos;t started yet.*   `exporting`, which means the migration is in progress.*   `exported`, which means the migration finished successfully.*   `failed`, which means the migration failed.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithMigration_ItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Exclude attributes from the API response to improve performance</summary>

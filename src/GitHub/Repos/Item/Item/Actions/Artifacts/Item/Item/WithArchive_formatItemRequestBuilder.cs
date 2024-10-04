@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Actions.Artifacts.Item.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\artifacts\{artifact_id}\{archive_format}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithArchive_formatItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

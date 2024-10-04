@@ -4,7 +4,7 @@ using System;
 namespace GitHub.User.Email.Visibility
 {
     /// <summary>Denotes whether an email is publicly visible.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum VisibilityPatchRequestBody_visibility
     {
         [EnumMember(Value = "public")]

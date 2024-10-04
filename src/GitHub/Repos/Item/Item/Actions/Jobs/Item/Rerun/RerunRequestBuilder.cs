@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Actions.Jobs.Item.Rerun
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\jobs\{job_id}\rerun
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RerunRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

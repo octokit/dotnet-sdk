@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Codespaces.Secrets.Item.Repositories.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\codespaces\secrets\{secret_name}\repositories\{repository_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithRepository_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

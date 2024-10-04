@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Git.Blobs.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git\blobs\{file_sha}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithFile_shaItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

@@ -13,7 +13,7 @@ namespace GitHub.Projects
     /// <summary>
     /// Builds and executes requests for operations under \projects
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The columns property</summary>

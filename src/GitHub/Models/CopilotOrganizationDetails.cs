@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CopilotOrganizationDetails : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

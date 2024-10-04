@@ -16,7 +16,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}\attempts\{attempt_number}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithAttempt_numberItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The jobs property</summary>
@@ -95,7 +95,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Attempts.Item
         /// <summary>
         /// Gets a specific workflow run attempt.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithAttempt_numberItemRequestBuilderGetQueryParameters 
         {
             /// <summary>If `true` pull requests are omitted from the response (empty array).</summary>

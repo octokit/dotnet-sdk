@@ -17,7 +17,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\copilot\billing
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class BillingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The seats property</summary>

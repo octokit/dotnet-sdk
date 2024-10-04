@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
 {
     /// <summary>The enablement status of secret scanning</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WithConfiguration_PatchRequestBody_secret_scanning
     {
         [EnumMember(Value = "enabled")]

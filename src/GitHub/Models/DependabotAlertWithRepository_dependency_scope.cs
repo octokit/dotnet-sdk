@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The execution scope of the vulnerable dependency.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum DependabotAlertWithRepository_dependency_scope
     {
         [EnumMember(Value = "development")]

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Teams.Item.Discussions.Item
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class WithDiscussion_numberPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

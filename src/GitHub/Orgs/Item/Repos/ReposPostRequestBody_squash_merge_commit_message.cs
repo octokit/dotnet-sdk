@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Repos
 {
     /// <summary>The default value for a squash merge commit message:- `PR_BODY` - default to the pull request&apos;s body.- `COMMIT_MESSAGES` - default to the branch&apos;s commit messages.- `BLANK` - default to a blank commit message.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum ReposPostRequestBody_squash_merge_commit_message
     {
         [EnumMember(Value = "PR_BODY")]

@@ -17,7 +17,7 @@ namespace GitHub.Gists
     /// <summary>
     /// Builds and executes requests for operations under \gists
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class GistsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The public property</summary>
@@ -166,7 +166,7 @@ namespace GitHub.Gists
         /// <summary>
         /// Lists the authenticated user&apos;s gists or if called anonymously, this endpoint returns all public gists:
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class GistsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

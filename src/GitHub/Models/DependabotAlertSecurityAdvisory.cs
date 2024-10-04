@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Details for the GitHub Security Advisory.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DependabotAlertSecurityAdvisory : IParsable
     {
         /// <summary>The unique CVE ID assigned to the advisory.</summary>

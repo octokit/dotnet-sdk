@@ -12,7 +12,7 @@ namespace GitHub.Orgs.Item.CodeScanning
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\code-scanning
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CodeScanningRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The alerts property</summary>

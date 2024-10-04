@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace GitHub.App.Installations.Item.Access_tokens
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class Access_tokensPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

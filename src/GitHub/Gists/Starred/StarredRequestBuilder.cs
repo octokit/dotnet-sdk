@@ -14,7 +14,7 @@ namespace GitHub.Gists.Starred
     /// <summary>
     /// Builds and executes requests for operations under \gists\starred
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class StarredRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace GitHub.Gists.Starred
         /// <summary>
         /// List the authenticated user&apos;s starred gists:
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class StarredRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

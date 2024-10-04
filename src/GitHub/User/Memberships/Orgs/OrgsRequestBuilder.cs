@@ -15,7 +15,7 @@ namespace GitHub.User.Memberships.Orgs
     /// <summary>
     /// Builds and executes requests for operations under \user\memberships\orgs
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OrgsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.memberships.orgs.item collection</summary>
@@ -106,7 +106,7 @@ namespace GitHub.User.Memberships.Orgs
         /// <summary>
         /// Lists all of the authenticated user&apos;s organization memberships.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class OrgsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

@@ -14,7 +14,7 @@ namespace GitHub.Teams.Item.Discussions.Item.Comments.Item.Reactions
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\discussions\{discussion_number}\comments\{comment_number}\reactions
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ReactionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -132,7 +132,7 @@ namespace GitHub.Teams.Item.Discussions.Item.Comments.Item.Reactions
         /// <summary>
         /// &gt; [!WARNING]&gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion comment`](https://docs.github.com/rest/reactions/reactions#list-reactions-for-a-team-discussion-comment) endpoint.List the reactions to a [team discussion comment](https://docs.github.com/rest/teams/discussion-comments#get-a-discussion-comment).OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ReactionsRequestBuilderGetQueryParameters 
         {
             /// <summary>Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to a team discussion comment.</summary>

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations
 {
     /// <summary>The enablement status of GitHub Advanced Security</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum ConfigurationsPostRequestBody_advanced_security
     {
         [EnumMember(Value = "enabled")]

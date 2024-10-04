@@ -13,7 +13,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Comments.Item.Reactions.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\comments\{comment_id}\reactions\{reaction_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithReaction_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

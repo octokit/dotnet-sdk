@@ -15,7 +15,7 @@ namespace GitHub.App.Installations
     /// <summary>
     /// Builds and executes requests for operations under \app\installations
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class InstallationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.app.installations.item collection</summary>
@@ -97,7 +97,7 @@ namespace GitHub.App.Installations
         /// <summary>
         /// The permissions the installation has are included under the `permissions` key.You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class InstallationsRequestBuilderGetQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -11,7 +11,7 @@ namespace GitHub.Models
     /// <summary>
     /// Summary of Copilot usage.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CopilotUsageMetrics : IParsable
     {
         /// <summary>Breakdown of Copilot code completions usage by language and editor</summary>

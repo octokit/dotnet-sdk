@@ -14,7 +14,7 @@ namespace GitHub.Gists.Item.Forks
     /// <summary>
     /// Builds and executes requests for operations under \gists\{gist_id}\forks
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ForksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -132,7 +132,7 @@ namespace GitHub.Gists.Item.Forks
         /// <summary>
         /// List gist forks
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ForksRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

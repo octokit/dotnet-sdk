@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Orgs.Item.Properties.Schema.Item
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class WithCustom_property_namePutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -89,18 +89,26 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithCustom_property_namePutRequestBody_default_value : IComposedTypeWrapper, IParsable
         {
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public string? WithCustomPropertyNamePutRequestBodyDefaultValueString { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public string WithCustomPropertyNamePutRequestBodyDefaultValueString { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -112,7 +120,11 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::GitHub.Orgs.Item.Properties.Schema.Item.WithCustom_property_namePutRequestBody.WithCustom_property_namePutRequestBody_default_value();
-                if(parseNode.GetStringValue() is string stringValue)
+                if(parseNode.GetStringValue() is string withCustomPropertyNamePutRequestBodyDefaultValueStringValue)
+                {
+                    result.WithCustomPropertyNamePutRequestBodyDefaultValueString = withCustomPropertyNamePutRequestBodyDefaultValueStringValue;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -133,9 +145,13 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(String != null)
+                if(WithCustomPropertyNamePutRequestBodyDefaultValueString != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteStringValue(null, WithCustomPropertyNamePutRequestBodyDefaultValueString);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
             }
         }

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>`pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CodeScanningSarifsStatus_processing_status
     {
         [EnumMember(Value = "pending")]

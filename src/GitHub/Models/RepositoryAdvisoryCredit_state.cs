@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The state of the user&apos;s acceptance of the credit.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum RepositoryAdvisoryCredit_state
     {
         [EnumMember(Value = "accepted")]

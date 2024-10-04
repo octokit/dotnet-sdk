@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum OrgMembership_state
     {
         [EnumMember(Value = "active")]

@@ -15,7 +15,7 @@ namespace GitHub.Projects.Item.Collaborators
     /// <summary>
     /// Builds and executes requests for operations under \projects\{project_id}\collaborators
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CollaboratorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.projects.item.collaborators.item collection</summary>
@@ -108,7 +108,7 @@ namespace GitHub.Projects.Item.Collaborators
         /// <summary>
         /// Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CollaboratorsRequestBuilderGetQueryParameters 
         {
             /// <summary>Filters the collaborators by their affiliation. `outside` means outside collaborators of a project that are not a member of the project&apos;s organization. `direct` means collaborators with permissions to a project, regardless of organization membership status. `all` means all collaborators the authenticated user can see.</summary>

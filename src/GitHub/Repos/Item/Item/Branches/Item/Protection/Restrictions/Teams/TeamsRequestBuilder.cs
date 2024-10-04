@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\restrictions\teams
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class TeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -234,18 +234,18 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
             return new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class TeamsDeleteRequestBody : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public List<string>? String { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public List<string> String { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -255,13 +255,13 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
 #else
             public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1 TeamsDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? TeamsDeleteRequestBodyString { get; set; }
+            public List<string>? TeamsDeleteRequestBodyString { get; set; }
 #nullable restore
 #else
-            public string TeamsDeleteRequestBodyString { get; set; }
+            public List<string> TeamsDeleteRequestBodyString { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -289,11 +289,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
                 {
                     result.TeamsDeleteRequestBodyTeamsDeleteRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsDeleteRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetStringValue() is string teamsDeleteRequestBodyStringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> teamsDeleteRequestBodyStringValue)
                 {
                     result.TeamsDeleteRequestBodyString = teamsDeleteRequestBodyStringValue;
                 }
@@ -332,27 +332,27 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
                 }
                 else if(String != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
                 else if(TeamsDeleteRequestBodyString != null)
                 {
-                    writer.WriteStringValue(null, TeamsDeleteRequestBodyString);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, TeamsDeleteRequestBodyString);
                 }
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class TeamsPostRequestBody : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public List<string>? String { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public List<string> String { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -362,13 +362,13 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
 #else
             public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1 TeamsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? TeamsPostRequestBodyString { get; set; }
+            public List<string>? TeamsPostRequestBodyString { get; set; }
 #nullable restore
 #else
-            public string TeamsPostRequestBodyString { get; set; }
+            public List<string> TeamsPostRequestBodyString { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -396,11 +396,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
                 {
                     result.TeamsPostRequestBodyTeamsPostRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPostRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetStringValue() is string teamsPostRequestBodyStringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> teamsPostRequestBodyStringValue)
                 {
                     result.TeamsPostRequestBodyString = teamsPostRequestBodyStringValue;
                 }
@@ -439,27 +439,27 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
                 }
                 else if(String != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
                 else if(TeamsPostRequestBodyString != null)
                 {
-                    writer.WriteStringValue(null, TeamsPostRequestBodyString);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, TeamsPostRequestBodyString);
                 }
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class TeamsPutRequestBody : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public List<string>? String { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public List<string> String { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -469,13 +469,13 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
 #else
             public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1 TeamsPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? TeamsPutRequestBodyString { get; set; }
+            public List<string>? TeamsPutRequestBodyString { get; set; }
 #nullable restore
 #else
-            public string TeamsPutRequestBodyString { get; set; }
+            public List<string> TeamsPutRequestBodyString { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -503,11 +503,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
                 {
                     result.TeamsPutRequestBodyTeamsPutRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams.TeamsPutRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetStringValue() is string teamsPutRequestBodyStringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> teamsPutRequestBodyStringValue)
                 {
                     result.TeamsPutRequestBodyString = teamsPutRequestBodyStringValue;
                 }
@@ -546,11 +546,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Teams
                 }
                 else if(String != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
                 else if(TeamsPutRequestBodyString != null)
                 {
-                    writer.WriteStringValue(null, TeamsPutRequestBodyString);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, TeamsPutRequestBodyString);
                 }
             }
         }

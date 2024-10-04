@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Sets the state of the secret scanning alert. You must provide `resolution` when you set the state to `resolved`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum SecretScanningAlertState
     {
         [EnumMember(Value = "open")]

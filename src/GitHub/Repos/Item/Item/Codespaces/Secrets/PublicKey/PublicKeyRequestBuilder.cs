@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.PublicKey
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\secrets\public-key
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class PublicKeyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

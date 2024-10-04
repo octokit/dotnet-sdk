@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Tags.Protection.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\tags\protection\{tag_protection_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithTag_protection_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

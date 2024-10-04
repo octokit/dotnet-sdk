@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Actions.Caches
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\caches
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CachesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.actions.caches.item collection</summary>
@@ -134,7 +134,7 @@ namespace GitHub.Repos.Item.Item.Actions.Caches
         /// <summary>
         /// Deletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CachesRequestBuilderDeleteQueryParameters 
         {
             /// <summary>A key for identifying the cache.</summary>
@@ -161,7 +161,7 @@ namespace GitHub.Repos.Item.Item.Actions.Caches
         /// <summary>
         /// Lists the GitHub Actions caches for a repository.OAuth tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CachesRequestBuilderGetQueryParameters 
         {
             /// <summary>The direction to sort the results by.</summary>

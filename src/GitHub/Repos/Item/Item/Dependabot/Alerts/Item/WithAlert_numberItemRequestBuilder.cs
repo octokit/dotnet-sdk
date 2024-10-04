@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Dependabot.Alerts.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependabot\alerts\{alert_number}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithAlert_numberItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

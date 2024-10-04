@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Codespaces.Access
 {
     /// <summary>Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum AccessPutRequestBody_visibility
     {
         [EnumMember(Value = "disabled")]

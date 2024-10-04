@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations
 {
     /// <summary>The enablement status of code scanning default setup</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum ConfigurationsPostRequestBody_code_scanning_default_setup
     {
         [EnumMember(Value = "enabled")]

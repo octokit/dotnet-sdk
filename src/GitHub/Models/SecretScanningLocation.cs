@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class SecretScanningLocation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -67,7 +67,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.SecretScanningLocationCommit"/>, <see cref="global::GitHub.Models.SecretScanningLocationDiscussionBody"/>, <see cref="global::GitHub.Models.SecretScanningLocationDiscussionComment"/>, <see cref="global::GitHub.Models.SecretScanningLocationDiscussionTitle"/>, <see cref="global::GitHub.Models.SecretScanningLocationIssueBody"/>, <see cref="global::GitHub.Models.SecretScanningLocationIssueComment"/>, <see cref="global::GitHub.Models.SecretScanningLocationIssueTitle"/>, <see cref="global::GitHub.Models.SecretScanningLocationPullRequestBody"/>, <see cref="global::GitHub.Models.SecretScanningLocationPullRequestComment"/>, <see cref="global::GitHub.Models.SecretScanningLocationPullRequestReview"/>, <see cref="global::GitHub.Models.SecretScanningLocationPullRequestReviewComment"/>, <see cref="global::GitHub.Models.SecretScanningLocationPullRequestTitle"/>, <see cref="global::GitHub.Models.SecretScanningLocationWikiCommit"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class SecretScanningLocation_details : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.SecretScanningLocationCommit"/></summary>

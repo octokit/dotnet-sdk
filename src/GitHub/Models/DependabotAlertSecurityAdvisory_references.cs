@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A link to additional advisory information.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DependabotAlertSecurityAdvisory_references : IParsable
     {
         /// <summary>The URL of the reference.</summary>

@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Details for the vulnerable package.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DependabotAlertPackage : IParsable
     {
         /// <summary>The package&apos;s language or package management ecosystem.</summary>

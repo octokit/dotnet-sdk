@@ -12,7 +12,7 @@ namespace GitHub.Orgs.Item.Actions.Oidc.Customization
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\oidc\customization
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CustomizationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The sub property</summary>

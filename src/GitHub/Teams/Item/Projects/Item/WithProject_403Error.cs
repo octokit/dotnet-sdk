@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace GitHub.Teams.Item.Projects.Item
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class WithProject_403Error : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

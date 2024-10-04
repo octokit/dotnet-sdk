@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Import
 {
     /// <summary>The type of version control system you are migrating from.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum ImportPatchRequestBody_vcs
     {
         [EnumMember(Value = "subversion")]

@@ -15,7 +15,7 @@ namespace GitHub.Teams.Item.Discussions.Item.Comments.Item
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\discussions\{discussion_number}\comments\{comment_number}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithComment_numberItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The reactions property</summary>

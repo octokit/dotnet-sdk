@@ -12,7 +12,7 @@ namespace GitHub.Orgs.Item.Attestations
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\attestations
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AttestationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.attestations.item collection</summary>

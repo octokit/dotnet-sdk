@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// The breakdown of Copilot Business seats for the organization.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CopilotSeatBreakdown : IAdditionalDataHolder, IParsable
     {
         /// <summary>The number of seats that have used Copilot during the current billing cycle.</summary>

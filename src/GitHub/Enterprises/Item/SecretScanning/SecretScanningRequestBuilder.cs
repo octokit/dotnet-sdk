@@ -12,7 +12,7 @@ namespace GitHub.Enterprises.Item.SecretScanning
     /// <summary>
     /// Builds and executes requests for operations under \enterprises\{enterprise}\secret-scanning
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SecretScanningRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The alerts property</summary>

@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// The public key used for setting user Codespaces&apos; Secrets.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CodespacesUserPublicKey : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

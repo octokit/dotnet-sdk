@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The organization policy for allowing or disallowing organization members to use Copilot within their CLI.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CopilotOrganizationDetails_cli
     {
         [EnumMember(Value = "enabled")]

@@ -12,7 +12,7 @@ namespace GitHub.User.Packages.Item
     /// <summary>
     /// Builds and executes requests for operations under \user\packages\{package_type}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithPackage_typeItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.packages.item.item collection</summary>

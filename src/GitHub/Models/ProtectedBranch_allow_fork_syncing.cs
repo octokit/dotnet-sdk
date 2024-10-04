@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ProtectedBranch_allow_fork_syncing : IParsable
     {
         /// <summary>The enabled property</summary>

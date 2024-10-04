@@ -14,7 +14,7 @@ namespace GitHub.Markdown
     /// <summary>
     /// Builds and executes requests for operations under \markdown
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MarkdownRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The raw property</summary>

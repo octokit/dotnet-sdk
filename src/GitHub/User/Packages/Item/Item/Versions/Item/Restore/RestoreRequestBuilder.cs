@@ -14,7 +14,7 @@ namespace GitHub.User.Packages.Item.Item.Versions.Item.Restore
     /// <summary>
     /// Builds and executes requests for operations under \user\packages\{package_type}\{package_name}\versions\{package_version_id}\restore
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RestoreRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

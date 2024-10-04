@@ -12,7 +12,7 @@ namespace GitHub.Marketplace_listing.Accounts
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\accounts
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AccountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.marketplace_listing.accounts.item collection</summary>

@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Git.Refs
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\git\refs
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RefsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.git.refs.item collection</summary>

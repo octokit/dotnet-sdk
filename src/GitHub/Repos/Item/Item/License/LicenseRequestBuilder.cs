@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.License
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\license
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class LicenseRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace GitHub.Repos.Item.Item.License
         /// <summary>
         /// This method returns the contents of the repository&apos;s license file, if one is detected.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.raw+json`**: Returns the raw contents of the license.- **`application/vnd.github.html+json`**: Returns the license contents in HTML. Markup languages are rendered to HTML using GitHub&apos;s open-source [Markup library](https://github.com/github/markup).
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class LicenseRequestBuilderGetQueryParameters 
         {
             /// <summary>The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`. To reference a pull request use `refs/pull/&lt;number&gt;/merge`.</summary>

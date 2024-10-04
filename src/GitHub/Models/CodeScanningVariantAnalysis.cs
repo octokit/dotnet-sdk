@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A run of a CodeQL query against one or more repositories.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CodeScanningVariantAnalysis : IAdditionalDataHolder, IParsable
     {
         /// <summary>The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.</summary>

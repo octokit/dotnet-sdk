@@ -6,7 +6,7 @@ namespace GitHub.Models
     /// <summary>
     /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WebhookConfigInsecureSsl : IComposedTypeWrapper, IParsable
     {
         /// <summary>Composed type representation for type <see cref="double"/></summary>

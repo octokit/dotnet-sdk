@@ -16,7 +16,7 @@ namespace GitHub.Repos.Item.Item.Pulls
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class PullsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The comments property</summary>
@@ -158,7 +158,7 @@ namespace GitHub.Repos.Item.Item.Pulls
         /// <summary>
         /// Lists pull requests in a specified repository.Draft pull requests are available in public repositories with GitHubFree and GitHub Free for organizations, GitHub Pro, and legacy per-repository billingplans, and in public and private repositories with GitHub Team and GitHub EnterpriseCloud. For more information, see [GitHub&apos;s products](https://docs.github.com/github/getting-started-with-github/githubs-products)in the GitHub Help documentation.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.- **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.- **`application/vnd.github.html+json`**: Returns HTML rendered from the body&apos;s markdown. Response will include `body_html`.- **`application/vnd.github.full+json`**: Returns raw, text, and HTML representations. Response will include `body`, `body_text`, and `body_html`.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class PullsRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter pulls by base branch name. Example: `gh-pages`.</summary>

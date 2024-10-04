@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\permissions_check
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Permissions_checkRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -96,7 +96,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Permissions_check
         /// <summary>
         /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class Permissions_checkRequestBuilderGetQueryParameters 
         {
             /// <summary>Path to the devcontainer.json configuration to use for the permission check.</summary>

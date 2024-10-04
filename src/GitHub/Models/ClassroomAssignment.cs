@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A GitHub Classroom assignment
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ClassroomAssignment : IAdditionalDataHolder, IParsable
     {
         /// <summary>The number of students that have accepted the assignment.</summary>

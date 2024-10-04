@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Settings.Billing.SharedStorage
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\settings\billing\shared-storage
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SharedStorageRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

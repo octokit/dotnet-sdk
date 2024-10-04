@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\copilot\billing\seats
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SeatsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -94,7 +94,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Seats
         /// <summary>
         /// &gt; [!NOTE]&gt; This endpoint is in beta and is subject to change.Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.Only organization owners can view assigned seats.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class SeatsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
 {
     /// <summary>The enforcement status for a security configuration</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WithConfiguration_PatchRequestBody_enforcement
     {
         [EnumMember(Value = "enforced")]

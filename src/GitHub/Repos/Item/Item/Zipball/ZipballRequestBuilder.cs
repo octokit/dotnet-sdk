@@ -12,7 +12,7 @@ namespace GitHub.Repos.Item.Item.Zipball
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\zipball
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ZipballRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.zipball.item collection</summary>

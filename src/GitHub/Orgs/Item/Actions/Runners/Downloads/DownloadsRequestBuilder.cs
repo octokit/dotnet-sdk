@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Actions.Runners.Downloads
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\runners\downloads
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DownloadsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

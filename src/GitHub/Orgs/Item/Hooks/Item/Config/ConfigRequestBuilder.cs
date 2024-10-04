@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Config
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\hooks\{hook_id}\config
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ConfigRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

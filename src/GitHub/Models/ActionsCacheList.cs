@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Repository actions caches
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ActionsCacheList : IAdditionalDataHolder, IParsable
     {
         /// <summary>Array of caches</summary>

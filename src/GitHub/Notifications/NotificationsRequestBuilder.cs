@@ -15,7 +15,7 @@ namespace GitHub.Notifications
     /// <summary>
     /// Builds and executes requests for operations under \notifications
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class NotificationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The threads property</summary>
@@ -149,7 +149,7 @@ namespace GitHub.Notifications
         /// <summary>
         /// List all notifications for the current user, sorted by most recently updated.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class NotificationsRequestBuilderGetQueryParameters 
         {
             /// <summary>If `true`, show notifications marked as read.</summary>

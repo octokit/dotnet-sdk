@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The outcome of the job.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum Job_conclusion
     {
         [EnumMember(Value = "success")]

@@ -16,7 +16,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-roles\{role_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithRole_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The teams property</summary>

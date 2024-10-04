@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Notifications
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\notifications
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class NotificationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -127,7 +127,7 @@ namespace GitHub.Repos.Item.Item.Notifications
         /// <summary>
         /// Lists all notifications for the current user in the specified repository.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class NotificationsRequestBuilderGetQueryParameters 
         {
             /// <summary>If `true`, show notifications marked as read.</summary>

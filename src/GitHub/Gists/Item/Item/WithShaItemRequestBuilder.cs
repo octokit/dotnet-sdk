@@ -14,7 +14,7 @@ namespace GitHub.Gists.Item.Item
     /// <summary>
     /// Builds and executes requests for operations under \gists\{gist_id}\{sha}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithShaItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

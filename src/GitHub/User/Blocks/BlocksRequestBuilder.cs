@@ -15,7 +15,7 @@ namespace GitHub.User.Blocks
     /// <summary>
     /// Builds and executes requests for operations under \user\blocks
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class BlocksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.blocks.item collection</summary>
@@ -106,7 +106,7 @@ namespace GitHub.User.Blocks
         /// <summary>
         /// List the users you&apos;ve blocked on your personal account.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class BlocksRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

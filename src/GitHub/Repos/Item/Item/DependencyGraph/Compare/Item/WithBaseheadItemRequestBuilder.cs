@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Compare.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\dependency-graph\compare\{basehead}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithBaseheadItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace GitHub.Repos.Item.Item.DependencyGraph.Compare.Item
         /// <summary>
         /// Gets the diff of the dependency changes between two commits of a repository, based on the changes to the dependency manifests made in those commits.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithBaseheadItemRequestBuilderGetQueryParameters 
         {
             /// <summary>The full path, relative to the repository root, of the dependency manifest file.</summary>

@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\required_status_checks\contexts
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ContextsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -242,9 +242,9 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
             return new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ContextsDeleteRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1"/></summary>
@@ -263,21 +263,21 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1 ContextsDeleteRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? ContextsDeleteRequestBodyString { get; set; }
+            public List<string>? ContextsDeleteRequestBodyString { get; set; }
 #nullable restore
 #else
-            public string ContextsDeleteRequestBodyString { get; set; }
+            public List<string> ContextsDeleteRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public List<string>? String { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public List<string> String { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -297,11 +297,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
                 {
                     result.ContextsDeleteRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsDeleteRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string contextsDeleteRequestBodyStringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> contextsDeleteRequestBodyStringValue)
                 {
                     result.ContextsDeleteRequestBodyString = contextsDeleteRequestBodyStringValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -340,18 +340,18 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
                 }
                 else if(ContextsDeleteRequestBodyString != null)
                 {
-                    writer.WriteStringValue(null, ContextsDeleteRequestBodyString);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, ContextsDeleteRequestBodyString);
                 }
                 else if(String != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ContextsPostRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1"/></summary>
@@ -370,21 +370,21 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1 ContextsPostRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? ContextsPostRequestBodyString { get; set; }
+            public List<string>? ContextsPostRequestBodyString { get; set; }
 #nullable restore
 #else
-            public string ContextsPostRequestBodyString { get; set; }
+            public List<string> ContextsPostRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public List<string>? String { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public List<string> String { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -404,11 +404,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
                 {
                     result.ContextsPostRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPostRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string contextsPostRequestBodyStringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> contextsPostRequestBodyStringValue)
                 {
                     result.ContextsPostRequestBodyString = contextsPostRequestBodyStringValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -447,18 +447,18 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
                 }
                 else if(ContextsPostRequestBodyString != null)
                 {
-                    writer.WriteStringValue(null, ContextsPostRequestBodyString);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, ContextsPostRequestBodyString);
                 }
                 else if(String != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ContextsPutRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1"/></summary>
@@ -477,21 +477,21 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
 #else
             public global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1 ContextsPutRequestBodyMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? ContextsPutRequestBodyString { get; set; }
+            public List<string>? ContextsPutRequestBodyString { get; set; }
 #nullable restore
 #else
-            public string ContextsPutRequestBodyString { get; set; }
+            public List<string> ContextsPutRequestBodyString { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public List<string>? String { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public List<string> String { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -511,11 +511,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
                 {
                     result.ContextsPutRequestBodyMember1 = new global::GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks.Contexts.ContextsPutRequestBodyMember1();
                 }
-                else if(parseNode.GetStringValue() is string contextsPutRequestBodyStringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> contextsPutRequestBodyStringValue)
                 {
                     result.ContextsPutRequestBodyString = contextsPutRequestBodyStringValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -554,11 +554,11 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_status_checks
                 }
                 else if(ContextsPutRequestBodyString != null)
                 {
-                    writer.WriteStringValue(null, ContextsPutRequestBodyString);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, ContextsPutRequestBodyString);
                 }
                 else if(String != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
             }
         }

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Repos.Item.Item.Pages
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class PagesPutRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -81,7 +81,7 @@ namespace GitHub.Repos.Item.Item.Pages
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Pages.PagesPutRequestBody_sourceMember1"/>, <see cref="string"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class PagesPutRequestBody_source : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Pages.PagesPutRequestBody_sourceMember1"/></summary>

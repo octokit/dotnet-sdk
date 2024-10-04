@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Import.Authors.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\import\authors\{author_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithAuthor_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

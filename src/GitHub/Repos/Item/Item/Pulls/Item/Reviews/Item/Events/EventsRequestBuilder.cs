@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Reviews.Item.Events
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pulls\{pull_number}\reviews\{review_id}\events
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

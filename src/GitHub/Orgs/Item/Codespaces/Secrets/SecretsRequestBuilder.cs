@@ -15,7 +15,7 @@ namespace GitHub.Orgs.Item.Codespaces.Secrets
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\codespaces\secrets
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SecretsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The publicKey property</summary>
@@ -101,7 +101,7 @@ namespace GitHub.Orgs.Item.Codespaces.Secrets
         /// <summary>
         /// Lists all Codespaces development environment secrets available at the organization-level without revealing their encryptedvalues.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class SecretsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

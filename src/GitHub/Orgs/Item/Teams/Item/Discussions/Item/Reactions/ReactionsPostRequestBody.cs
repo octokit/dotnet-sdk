@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Orgs.Item.Teams.Item.Discussions.Item.Reactions
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class ReactionsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

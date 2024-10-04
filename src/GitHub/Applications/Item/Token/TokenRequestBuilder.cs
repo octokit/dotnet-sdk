@@ -15,7 +15,7 @@ namespace GitHub.Applications.Item.Token
     /// <summary>
     /// Builds and executes requests for operations under \applications\{client_id}\token
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class TokenRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The scoped property</summary>

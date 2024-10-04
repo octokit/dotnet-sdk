@@ -16,7 +16,7 @@ namespace GitHub.Users.Item.Events
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\events
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The orgs property</summary>
@@ -96,7 +96,7 @@ namespace GitHub.Users.Item.Events
         /// <summary>
         /// If you are authenticated as the given user, you will see your private events. Otherwise, you&apos;ll only see public events.&gt; [!NOTE]&gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

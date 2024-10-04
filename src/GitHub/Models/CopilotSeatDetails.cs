@@ -11,7 +11,7 @@ namespace GitHub.Models
     /// <summary>
     /// Information about a Copilot Business seat assignment for a user, team, or organization.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CopilotSeatDetails : IParsable
     {
         /// <summary>A GitHub user.</summary>
@@ -101,7 +101,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.EnterpriseTeam"/>, <see cref="global::GitHub.Models.Team"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CopilotSeatDetails_assigning_team : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.EnterpriseTeam"/></summary>

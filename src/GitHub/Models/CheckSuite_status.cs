@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CheckSuite_status
     {
         [EnumMember(Value = "queued")]

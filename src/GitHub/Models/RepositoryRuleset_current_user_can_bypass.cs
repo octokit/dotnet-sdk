@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The bypass type of the user making the API request for this ruleset. This field is only returned whenquerying the repository-level endpoint.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum RepositoryRuleset_current_user_can_bypass
     {
         [EnumMember(Value = "always")]

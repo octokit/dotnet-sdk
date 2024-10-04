@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum AppPermissions_pages
     {
         [EnumMember(Value = "read")]

@@ -12,7 +12,7 @@ namespace GitHub.Networks.Item.Item
     /// <summary>
     /// Builds and executes requests for operations under \networks\{owner}\{repo}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithRepoItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The events property</summary>

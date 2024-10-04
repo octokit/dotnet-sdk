@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The severity level at which code scanning results that raise alerts block a reference update. For more information on alert severity levels, see &quot;[About code scanning alerts](https://docs.github.com/code-security/code-scanning/managing-code-scanning-alerts/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels).&quot;</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum RepositoryRuleParamsCodeScanningTool_alerts_threshold
     {
         [EnumMember(Value = "none")]

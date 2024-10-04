@@ -14,7 +14,7 @@ namespace GitHub.User.Ssh_signing_keys.Item
     /// <summary>
     /// Builds and executes requests for operations under \user\ssh_signing_keys\{ssh_signing_key_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithSsh_signing_key_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

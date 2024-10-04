@@ -15,7 +15,7 @@ namespace GitHub.App.Hook.Deliveries
     /// <summary>
     /// Builds and executes requests for operations under \app\hook\deliveries
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeliveriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.app.hook.deliveries.item collection</summary>
@@ -104,7 +104,7 @@ namespace GitHub.App.Hook.Deliveries
         /// <summary>
         /// Returns a list of webhook deliveries for the webhook configured for a GitHub App.You must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class DeliveriesRequestBuilderGetQueryParameters 
         {
             /// <summary>Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors.</summary>

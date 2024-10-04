@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>State of this codespace.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CodespaceWithFullRepository_state
     {
         [EnumMember(Value = "Unknown")]

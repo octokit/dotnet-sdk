@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>A classification of the file. For example to identify it as generated.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CodeScanningAlertClassification
     {
         [EnumMember(Value = "source")]

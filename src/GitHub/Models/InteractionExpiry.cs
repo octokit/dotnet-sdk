@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The duration of the interaction restriction. Default: `one_day`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum InteractionExpiry
     {
         [EnumMember(Value = "one_day")]

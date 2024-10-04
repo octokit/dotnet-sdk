@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CodeScanningVariantAnalysis_skipped_repositories : IAdditionalDataHolder, IParsable
     {
         /// <summary>The access_mismatch_repos property</summary>

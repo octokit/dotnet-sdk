@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Properties.Schema.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\properties\schema\{custom_property_name}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithCustom_property_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

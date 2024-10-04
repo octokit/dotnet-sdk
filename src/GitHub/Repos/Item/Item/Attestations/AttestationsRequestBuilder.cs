@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Attestations
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\attestations
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AttestationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.attestations.item collection</summary>

@@ -16,7 +16,7 @@ namespace GitHub.Orgs.Item.Packages.Item.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\packages\{package_type}\{package_name}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithPackage_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The restore property</summary>

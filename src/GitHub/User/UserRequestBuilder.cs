@@ -41,7 +41,7 @@ namespace GitHub.User
     /// <summary>
     /// Builds and executes requests for operations under \user
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The blocks property</summary>
@@ -313,7 +313,7 @@ namespace GitHub.User
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.PrivateUser"/>, <see cref="global::GitHub.Models.PublicUser"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class UserGetResponse : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.PrivateUser"/></summary>

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Whether to approve or reject deployment to the specified environments.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum ReviewCustomGatesStateRequired_state
     {
         [EnumMember(Value = "approved")]

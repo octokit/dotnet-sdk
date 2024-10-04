@@ -12,7 +12,7 @@ namespace GitHub.User.Email
     /// <summary>
     /// Builds and executes requests for operations under \user\email
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class EmailRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The visibility property</summary>

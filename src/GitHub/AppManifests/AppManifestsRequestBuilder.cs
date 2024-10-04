@@ -12,7 +12,7 @@ namespace GitHub.AppManifests
     /// <summary>
     /// Builds and executes requests for operations under \app-manifests
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AppManifestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.appManifests.item collection</summary>

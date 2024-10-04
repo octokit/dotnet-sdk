@@ -15,7 +15,7 @@ namespace GitHub.User.Codespaces.Item.Exports
     /// <summary>
     /// Builds and executes requests for operations under \user\codespaces\{codespace_name}\exports
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ExportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.codespaces.item.exports.item collection</summary>

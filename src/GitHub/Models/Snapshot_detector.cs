@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A description of the detector used.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Snapshot_detector : IParsable
     {
         /// <summary>The name of the detector used.</summary>

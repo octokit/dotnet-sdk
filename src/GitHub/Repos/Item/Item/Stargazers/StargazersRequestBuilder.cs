@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Stargazers
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stargazers
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class StargazersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace GitHub.Repos.Item.Item.Stargazers
         /// <summary>
         /// Composed type wrapper for classes List&lt;global::GitHub.Repos.Item.Item.Stargazers.SimpleUser&gt;, List&lt;global::GitHub.Repos.Item.Item.Stargazers.Stargazer&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class StargazersGetResponse : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type List&lt;global::GitHub.Repos.Item.Item.Stargazers.SimpleUser&gt;</summary>
@@ -154,7 +154,7 @@ namespace GitHub.Repos.Item.Item.Stargazers
         /// <summary>
         /// Lists the people that have starred the repository.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class StargazersRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Details of a deployment environment
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class EnvironmentObject : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -126,7 +126,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.Environment_protection_rulesMember1"/>, <see cref="global::GitHub.Models.Environment_protection_rulesMember2"/>, <see cref="global::GitHub.Models.Environment_protection_rulesMember3"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class Environment_protection_rules : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.Environment_protection_rulesMember1"/></summary>

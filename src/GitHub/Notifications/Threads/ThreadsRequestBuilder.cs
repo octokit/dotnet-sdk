@@ -12,7 +12,7 @@ namespace GitHub.Notifications.Threads
     /// <summary>
     /// Builds and executes requests for operations under \notifications\threads
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ThreadsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.notifications.threads.item collection</summary>

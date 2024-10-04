@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Details for the advisory pertaining to the Common Vulnerability Scoring System.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DependabotAlertSecurityAdvisory_cvss : IParsable
     {
         /// <summary>The overall CVSS score of the advisory.</summary>

@@ -27,7 +27,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runs\{run_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithRun_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The approvals property</summary>
@@ -197,7 +197,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runs.Item
         /// <summary>
         /// Gets a specific workflow run.Anyone with read access to the repository can use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithRun_ItemRequestBuilderGetQueryParameters 
         {
             /// <summary>If `true` pull requests are omitted from the response (empty array).</summary>

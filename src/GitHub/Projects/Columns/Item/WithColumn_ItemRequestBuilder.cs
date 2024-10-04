@@ -16,7 +16,7 @@ namespace GitHub.Projects.Columns.Item
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns\{column_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithColumn_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cards property</summary>

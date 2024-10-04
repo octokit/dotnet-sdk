@@ -14,7 +14,7 @@ namespace GitHub.App.Installations.Item.Access_tokens
     /// <summary>
     /// Builds and executes requests for operations under \app\installations\{installation_id}\access_tokens
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Access_tokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Rulesets.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rulesets\{ruleset_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithRuleset_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -184,7 +184,7 @@ namespace GitHub.Repos.Item.Item.Rulesets.Item
         /// <summary>
         /// Get a ruleset for a repository.**Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the usermaking the API request has write access to the ruleset.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithRuleset_ItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Include rulesets configured at higher levels that apply to this repository</summary>

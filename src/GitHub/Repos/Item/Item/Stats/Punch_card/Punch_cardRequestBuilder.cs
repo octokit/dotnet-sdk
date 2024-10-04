@@ -13,7 +13,7 @@ namespace GitHub.Repos.Item.Item.Stats.Punch_card
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats\punch_card
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Punch_cardRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

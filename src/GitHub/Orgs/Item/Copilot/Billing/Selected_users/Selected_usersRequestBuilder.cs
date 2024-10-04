@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\copilot\billing\selected_users
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Selected_usersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

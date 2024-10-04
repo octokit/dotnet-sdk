@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Issues.Comments.Item.Reactions
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\comments\{comment_id}\reactions
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ReactionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.issues.comments.item.reactions.item collection</summary>
@@ -150,7 +150,7 @@ namespace GitHub.Repos.Item.Item.Issues.Comments.Item.Reactions
         /// <summary>
         /// List the reactions to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ReactionsRequestBuilderGetQueryParameters 
         {
             /// <summary>Returns a single [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions). Omit this parameter to list all reactions to an issue comment.</summary>

@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.SecretScanning.Alerts.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\secret-scanning\alerts\{alert_number}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithAlert_numberItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The locations property</summary>

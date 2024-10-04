@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Snapshot_manifests : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

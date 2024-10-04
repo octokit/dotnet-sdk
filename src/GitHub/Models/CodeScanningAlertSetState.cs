@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CodeScanningAlertSetState
     {
         [EnumMember(Value = "open")]
