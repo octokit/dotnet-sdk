@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Languages
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\languages
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class LanguagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

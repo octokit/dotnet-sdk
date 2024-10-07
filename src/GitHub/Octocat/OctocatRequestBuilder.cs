@@ -13,7 +13,7 @@ namespace GitHub.Octocat
     /// <summary>
     /// Builds and executes requests for operations under \octocat
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OctocatRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -82,7 +82,7 @@ namespace GitHub.Octocat
         /// <summary>
         /// Get the octocat as ASCII art
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class OctocatRequestBuilderGetQueryParameters 
         {
             /// <summary>The words to show in Octocat&apos;s speech bubble</summary>

@@ -14,7 +14,7 @@ namespace GitHub.Enterprises.Item.Dependabot.Alerts
     /// <summary>
     /// Builds and executes requests for operations under \enterprises\{enterprise}\dependabot\alerts
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AlertsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace GitHub.Enterprises.Item.Dependabot.Alerts
         /// <summary>
         /// Lists Dependabot alerts for repositories that are owned by the specified enterprise.The authenticated user must be a member of the enterprise to use this endpoint.Alerts are only returned for organizations in the enterprise for which you are an organization owner or a security manager. For more information about security managers, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class AlertsRequestBuilderGetQueryParameters 
         {
             /// <summary>A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

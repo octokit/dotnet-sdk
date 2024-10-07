@@ -15,7 +15,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\repos
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ReposRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.teams.item.repos.item collection</summary>
@@ -97,7 +97,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Repos
         /// <summary>
         /// Lists a team&apos;s repositories visible to the authenticated user.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/repos`.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ReposRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

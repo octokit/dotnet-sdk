@@ -17,7 +17,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\code-security\configurations\{configuration_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithConfiguration_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The attach property</summary>

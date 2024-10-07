@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Activity
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\activity
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ActivityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -89,7 +89,7 @@ namespace GitHub.Repos.Item.Item.Activity
         /// <summary>
         /// Lists a detailed history of changes to a repository, such as pushes, merges, force pushes, and branch changes, and associates these changes with commits and users.For more information about viewing repository activity,see &quot;[Viewing activity and data for your repository](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository).&quot;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ActivityRequestBuilderGetQueryParameters 
         {
             /// <summary>The activity type to filter by.For example, you can choose to filter by &quot;force_push&quot;, to see all force pushes to the repository.</summary>

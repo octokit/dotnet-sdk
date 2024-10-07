@@ -16,7 +16,7 @@ namespace GitHub.Orgs.Item.Codespaces
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\codespaces
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CodespacesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The access property</summary>
@@ -106,7 +106,7 @@ namespace GitHub.Orgs.Item.Codespaces
         /// <summary>
         /// Lists the codespaces associated to a specified organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CodespacesRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

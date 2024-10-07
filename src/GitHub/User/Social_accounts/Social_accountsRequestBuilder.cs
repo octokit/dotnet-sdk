@@ -14,7 +14,7 @@ namespace GitHub.User.Social_accounts
     /// <summary>
     /// Builds and executes requests for operations under \user\social_accounts
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Social_accountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -201,7 +201,7 @@ namespace GitHub.User.Social_accounts
         /// <summary>
         /// Lists all of your social accounts.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class Social_accountsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

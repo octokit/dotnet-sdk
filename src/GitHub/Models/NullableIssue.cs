@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class NullableIssue : IAdditionalDataHolder, IParsable
     {
         /// <summary>The active_lock_reason property</summary>

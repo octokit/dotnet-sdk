@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Projects.Item
 {
     /// <summary>The baseline permission that all organization members have on this project</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WithProject_PatchRequestBody_organization_permission
     {
         [EnumMember(Value = "read")]

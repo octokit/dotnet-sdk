@@ -12,7 +12,7 @@ namespace GitHub.Applications
     /// <summary>
     /// Builds and executes requests for operations under \applications
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ApplicationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.applications.item collection</summary>

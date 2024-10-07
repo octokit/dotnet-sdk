@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Users.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-roles\users\{username}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithUsernameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.organizationRoles.users.item.item collection</summary>

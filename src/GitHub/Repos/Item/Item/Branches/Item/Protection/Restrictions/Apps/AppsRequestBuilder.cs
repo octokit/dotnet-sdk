@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Restrictions.Apps
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\restrictions\apps
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AppsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

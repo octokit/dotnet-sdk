@@ -18,7 +18,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\runners
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RunnersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The downloads property</summary>
@@ -119,7 +119,7 @@ namespace GitHub.Repos.Item.Item.Actions.Runners
         /// <summary>
         /// Lists all self-hosted runners configured in a repository.Authenticated users must have admin access to the repository to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class RunnersRequestBuilderGetQueryParameters 
         {
             /// <summary>The name of a self-hosted runner.</summary>

@@ -12,7 +12,7 @@ namespace GitHub.Users.Item.Settings
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\settings
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The billing property</summary>

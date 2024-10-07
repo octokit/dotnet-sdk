@@ -15,7 +15,7 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\rulesets\rule-suites
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RuleSuitesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.rulesets.ruleSuites.item collection</summary>
@@ -104,7 +104,7 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites
         /// <summary>
         /// Lists suites of rule evaluations at the organization level.For more information, see &quot;[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets).&quot;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class RuleSuitesRequestBuilderGetQueryParameters 
         {
             /// <summary>The handle for the GitHub user account to filter on. When specified, only rule evaluations triggered by this actor will be returned.</summary>

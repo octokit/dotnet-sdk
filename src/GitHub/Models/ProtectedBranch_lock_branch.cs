@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ProtectedBranch_lock_branch : IParsable
     {
         /// <summary>The enabled property</summary>

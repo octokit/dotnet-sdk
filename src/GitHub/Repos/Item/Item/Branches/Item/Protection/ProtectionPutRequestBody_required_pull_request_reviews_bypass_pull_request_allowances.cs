@@ -10,7 +10,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection
     /// <summary>
     /// Allow specific users, teams, or apps to bypass pull request requirements.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ProtectionPutRequestBody_required_pull_request_reviews_bypass_pull_request_allowances : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

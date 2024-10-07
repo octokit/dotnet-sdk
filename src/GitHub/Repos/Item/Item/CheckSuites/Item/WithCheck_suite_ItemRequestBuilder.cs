@@ -16,7 +16,7 @@ namespace GitHub.Repos.Item.Item.CheckSuites.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-suites\{check_suite_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithCheck_suite_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The checkRuns property</summary>

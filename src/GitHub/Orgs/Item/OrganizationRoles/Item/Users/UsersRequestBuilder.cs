@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Item.Users
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-roles\{role_id}\users
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Item.Users
         /// <summary>
         /// Lists organization members that are assigned to an organization role. For more information on organization roles, see &quot;[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles).&quot;To use this endpoint, you must be an administrator for the organization.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class UsersRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Pull Request Simple
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class PullRequestSimple : IAdditionalDataHolder, IParsable
     {
         /// <summary>The active_lock_reason property</summary>

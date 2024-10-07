@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item
 {
     /// <summary>State of this Pull Request. Either `open` or `closed`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WithPull_numberPatchRequestBody_state
     {
         [EnumMember(Value = "open")]

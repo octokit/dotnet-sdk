@@ -15,7 +15,7 @@ namespace GitHub.User.Keys
     /// <summary>
     /// Builds and executes requests for operations under \user\keys
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class KeysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.keys.item collection</summary>
@@ -160,7 +160,7 @@ namespace GitHub.User.Keys
         /// <summary>
         /// Lists the public SSH keys for the authenticated user&apos;s GitHub account.OAuth app tokens and personal access tokens (classic) need the `read:public_key` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class KeysRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

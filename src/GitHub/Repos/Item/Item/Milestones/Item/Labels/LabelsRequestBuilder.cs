@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item.Labels
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\milestones\{milestone_number}\labels
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class LabelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace GitHub.Repos.Item.Item.Milestones.Item.Labels
         /// <summary>
         /// Lists labels for issues in a milestone.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class LabelsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

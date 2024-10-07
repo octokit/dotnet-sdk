@@ -12,7 +12,7 @@ namespace GitHub.Orgs.Item.Memberships
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\memberships
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MembershipsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.memberships.item collection</summary>

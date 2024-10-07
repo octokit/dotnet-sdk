@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The default value for a merge commit title.- `PR_TITLE` - default to the pull request&apos;s title.- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., &quot;Merge pull request #123 from branch-name&quot;).</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum PullRequestWebhook_merge_commit_title
     {
         [EnumMember(Value = "PR_TITLE")]

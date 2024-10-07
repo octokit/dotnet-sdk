@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Actions.Variables.Item
 {
     /// <summary>The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WithNamePatchRequestBody_visibility
     {
         [EnumMember(Value = "all")]

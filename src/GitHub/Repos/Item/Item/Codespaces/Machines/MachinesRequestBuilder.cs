@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Machines
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\machines
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MachinesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -94,7 +94,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Machines
         /// <summary>
         /// List the machine types available for a given repository based on its configuration.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class MachinesRequestBuilderGetQueryParameters 
         {
             /// <summary>IP for location auto-detection when proxying a request</summary>

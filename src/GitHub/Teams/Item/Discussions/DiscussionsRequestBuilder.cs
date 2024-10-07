@@ -15,7 +15,7 @@ namespace GitHub.Teams.Item.Discussions
     /// <summary>
     /// Builds and executes requests for operations under \teams\{team_id}\discussions
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DiscussionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.teams.item.discussions.item collection</summary>
@@ -146,7 +146,7 @@ namespace GitHub.Teams.Item.Discussions
         /// <summary>
         /// &gt; [!WARNING]&gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List discussions`](https://docs.github.com/rest/teams/discussions#list-discussions) endpoint.List all discussions on a team&apos;s page.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class DiscussionsRequestBuilderGetQueryParameters 
         {
             /// <summary>The direction to sort the results by.</summary>

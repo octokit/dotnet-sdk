@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Traffic.Views
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\traffic\views
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ViewsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace GitHub.Repos.Item.Item.Traffic.Views
         /// <summary>
         /// Get the total number of views and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ViewsRequestBuilderGetQueryParameters 
         {
             /// <summary>The time frame to display results for.</summary>

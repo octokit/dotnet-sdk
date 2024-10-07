@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Removed from Project Issue Event
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RemovedFromProjectIssueEvent : IAdditionalDataHolder, IParsable
     {
         /// <summary>A GitHub user.</summary>

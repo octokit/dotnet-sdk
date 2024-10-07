@@ -14,7 +14,7 @@ namespace GitHub.Projects.Item.Columns
     /// <summary>
     /// Builds and executes requests for operations under \projects\{project_id}\columns
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ColumnsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -143,7 +143,7 @@ namespace GitHub.Projects.Item.Columns
         /// <summary>
         /// Lists the project columns in a project.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ColumnsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

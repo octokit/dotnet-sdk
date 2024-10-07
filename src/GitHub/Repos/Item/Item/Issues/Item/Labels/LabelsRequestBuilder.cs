@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\issues\{issue_number}\labels
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class LabelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.issues.item.labels.item collection</summary>
@@ -252,9 +252,9 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
             return new global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1"/>, <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2"/>, <see cref="string"/>, List&lt;global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3&gt;
+        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1"/>, <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember2"/>, <see cref="string"/>, List&lt;global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3&gt;, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class LabelsPostRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember1"/></summary>
@@ -313,13 +313,29 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
 #else
             public string LabelsPostRequestBodyString { get; set; }
 #endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? LabelsPostRequestBodyString0 { get; set; }
+#nullable restore
+#else
+            public List<string> LabelsPostRequestBodyString0 { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public string? LabelsPostRequestBodyString1 { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public string LabelsPostRequestBodyString1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -351,9 +367,9 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
                 {
                     result.LabelsPostRequestBodyString = labelsPostRequestBodyStringValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetStringValue() is string labelsPostRequestBodyString1Value)
                 {
-                    result.String = stringValue;
+                    result.LabelsPostRequestBodyString1 = labelsPostRequestBodyString1Value;
                 }
                 else if(parseNode.GetCollectionOfObjectValues<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3.CreateFromDiscriminatorValue)?.AsList() is List<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> labelsPostRequestBodyLabelsPostRequestBodyMember3Value)
                 {
@@ -362,6 +378,14 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
                 else if(parseNode.GetCollectionOfObjectValues<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3.CreateFromDiscriminatorValue)?.AsList() is List<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3> labelsPostRequestBodyMember3Value)
                 {
                     result.LabelsPostRequestBodyMember3 = labelsPostRequestBodyMember3Value;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> labelsPostRequestBodyString0Value)
+                {
+                    result.LabelsPostRequestBodyString0 = labelsPostRequestBodyString0Value;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+                {
+                    result.String = stringValue;
                 }
                 return result;
             }
@@ -416,9 +440,9 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
                 {
                     writer.WriteStringValue(null, LabelsPostRequestBodyString);
                 }
-                else if(String != null)
+                else if(LabelsPostRequestBodyString1 != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteStringValue(null, LabelsPostRequestBodyString1);
                 }
                 else if(LabelsPostRequestBodyLabelsPostRequestBodyMember3 != null)
                 {
@@ -428,12 +452,20 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
                 {
                     writer.WriteCollectionOfObjectValues<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPostRequestBodyMember3>(null, LabelsPostRequestBodyMember3);
                 }
+                else if(LabelsPostRequestBodyString0 != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, LabelsPostRequestBodyString0);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                }
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1"/>, <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2"/>, <see cref="string"/>, List&lt;global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3&gt;
+        /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1"/>, <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember2"/>, <see cref="string"/>, List&lt;global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3&gt;, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class LabelsPutRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember1"/></summary>
@@ -492,13 +524,29 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
 #else
             public string LabelsPutRequestBodyString { get; set; }
 #endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? LabelsPutRequestBodyString0 { get; set; }
+#nullable restore
+#else
+            public List<string> LabelsPutRequestBodyString0 { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public string? LabelsPutRequestBodyString1 { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public string LabelsPutRequestBodyString1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -530,9 +578,9 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
                 {
                     result.LabelsPutRequestBodyString = labelsPutRequestBodyStringValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetStringValue() is string labelsPutRequestBodyString1Value)
                 {
-                    result.String = stringValue;
+                    result.LabelsPutRequestBodyString1 = labelsPutRequestBodyString1Value;
                 }
                 else if(parseNode.GetCollectionOfObjectValues<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3.CreateFromDiscriminatorValue)?.AsList() is List<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> labelsPutRequestBodyLabelsPutRequestBodyMember3Value)
                 {
@@ -541,6 +589,14 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
                 else if(parseNode.GetCollectionOfObjectValues<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3.CreateFromDiscriminatorValue)?.AsList() is List<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3> labelsPutRequestBodyMember3Value)
                 {
                     result.LabelsPutRequestBodyMember3 = labelsPutRequestBodyMember3Value;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> labelsPutRequestBodyString0Value)
+                {
+                    result.LabelsPutRequestBodyString0 = labelsPutRequestBodyString0Value;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+                {
+                    result.String = stringValue;
                 }
                 return result;
             }
@@ -595,9 +651,9 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
                 {
                     writer.WriteStringValue(null, LabelsPutRequestBodyString);
                 }
-                else if(String != null)
+                else if(LabelsPutRequestBodyString1 != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteStringValue(null, LabelsPutRequestBodyString1);
                 }
                 else if(LabelsPutRequestBodyLabelsPutRequestBodyMember3 != null)
                 {
@@ -607,12 +663,20 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Labels
                 {
                     writer.WriteCollectionOfObjectValues<global::GitHub.Repos.Item.Item.Issues.Item.Labels.LabelsPutRequestBodyMember3>(null, LabelsPutRequestBodyMember3);
                 }
+                else if(LabelsPutRequestBodyString0 != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, LabelsPutRequestBodyString0);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                }
             }
         }
         /// <summary>
         /// Lists all labels for an issue.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class LabelsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

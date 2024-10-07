@@ -14,7 +14,7 @@ namespace GitHub.Assignments.Item.Grades
     /// <summary>
     /// Builds and executes requests for operations under \assignments\{assignment_id}\grades
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class GradesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

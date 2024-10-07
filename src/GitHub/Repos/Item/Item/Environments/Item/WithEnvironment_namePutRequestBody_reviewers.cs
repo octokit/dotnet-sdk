@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace GitHub.Repos.Item.Item.Environments.Item
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class WithEnvironment_namePutRequestBody_reviewers : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

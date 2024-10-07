@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Webhooks for repositories.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Hook : IAdditionalDataHolder, IParsable
     {
         /// <summary>Determines whether the hook is actually triggered on pushes.</summary>

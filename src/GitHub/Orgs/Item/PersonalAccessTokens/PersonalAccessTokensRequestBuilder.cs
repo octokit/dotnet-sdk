@@ -15,7 +15,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\personal-access-tokens
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class PersonalAccessTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.personalAccessTokens.item collection</summary>
@@ -162,7 +162,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens
         /// <summary>
         /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources.Only GitHub Apps can use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class PersonalAccessTokensRequestBuilderGetQueryParameters 
         {
             /// <summary>The direction to sort the results by.</summary>

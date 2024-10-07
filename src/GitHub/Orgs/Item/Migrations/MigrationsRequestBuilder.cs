@@ -15,7 +15,7 @@ namespace GitHub.Orgs.Item.Migrations
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\migrations
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MigrationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.migrations.item collection</summary>
@@ -147,7 +147,7 @@ namespace GitHub.Orgs.Item.Migrations
         /// <summary>
         /// Lists the most recent migrations, including both exports (which can be started through the REST API) and imports (which cannot be started using the REST API).A list of `repositories` is only returned for export migrations.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class MigrationsRequestBuilderGetQueryParameters 
         {
             /// <summary>Exclude attributes from the API response to improve performance</summary>

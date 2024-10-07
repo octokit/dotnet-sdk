@@ -15,7 +15,7 @@ namespace GitHub.User.Marketplace_purchases
     /// <summary>
     /// Builds and executes requests for operations under \user\marketplace_purchases
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Marketplace_purchasesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The stubbed property</summary>
@@ -97,7 +97,7 @@ namespace GitHub.User.Marketplace_purchases
         /// <summary>
         /// Lists the active subscriptions for the authenticated user.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class Marketplace_purchasesRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

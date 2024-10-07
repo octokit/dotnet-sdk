@@ -14,7 +14,7 @@ namespace GitHub.Projects.Columns.Item.Cards
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns\{column_id}\cards
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CardsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -140,7 +140,7 @@ namespace GitHub.Projects.Columns.Item.Cards
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1"/>, <see cref="global::GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember2"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CardsPostRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Projects.Columns.Item.Cards.CardsPostRequestBodyMember1"/></summary>
@@ -255,7 +255,7 @@ namespace GitHub.Projects.Columns.Item.Cards
         /// <summary>
         /// Lists the project cards in a project.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CardsRequestBuilderGetQueryParameters 
         {
             /// <summary>Filters the project cards that are returned by the card&apos;s state.</summary>

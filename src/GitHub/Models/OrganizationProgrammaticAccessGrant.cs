@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Minimal representation of an organization programmatic access grant for enumerations
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OrganizationProgrammaticAccessGrant : IAdditionalDataHolder, IParsable
     {
         /// <summary>Date and time when the fine-grained personal access token was approved to access the organization.</summary>

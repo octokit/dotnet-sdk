@@ -15,7 +15,7 @@ namespace GitHub.Classrooms.Item
     /// <summary>
     /// Builds and executes requests for operations under \classrooms\{classroom_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithClassroom_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The assignments property</summary>

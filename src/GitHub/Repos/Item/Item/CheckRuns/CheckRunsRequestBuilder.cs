@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\check-runs
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CheckRunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.checkRuns.item collection</summary>
@@ -101,7 +101,7 @@ namespace GitHub.Repos.Item.Item.CheckRuns
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Repos.Item.Item.CheckRuns.CheckRunsPostRequestBodyMember1"/>, <see cref="global::GitHub.Repos.Item.Item.CheckRuns.CheckRunsPostRequestBodyMember2"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CheckRunsPostRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Repos.Item.Item.CheckRuns.CheckRunsPostRequestBodyMember1"/></summary>

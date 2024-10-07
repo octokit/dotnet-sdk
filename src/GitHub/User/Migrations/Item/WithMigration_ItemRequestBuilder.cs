@@ -17,7 +17,7 @@ namespace GitHub.User.Migrations.Item
     /// <summary>
     /// Builds and executes requests for operations under \user\migrations\{migration_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithMigration_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The archive property</summary>
@@ -110,7 +110,7 @@ namespace GitHub.User.Migrations.Item
         /// <summary>
         /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:*   `pending` - the migration hasn&apos;t started yet.*   `exporting` - the migration is in progress.*   `exported` - the migration finished successfully.*   `failed` - the migration failed.Once the migration has been `exported` you can [download the migration archive](https://docs.github.com/rest/migrations/users#download-a-user-migration-archive).
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithMigration_ItemRequestBuilderGetQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

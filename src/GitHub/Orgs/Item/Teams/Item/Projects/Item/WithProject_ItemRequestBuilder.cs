@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\projects\{project_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithProject_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

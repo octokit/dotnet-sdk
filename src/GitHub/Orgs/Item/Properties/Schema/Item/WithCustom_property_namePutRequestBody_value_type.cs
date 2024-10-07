@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.Properties.Schema.Item
 {
     /// <summary>The type of the value for the property</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WithCustom_property_namePutRequestBody_value_type
     {
         [EnumMember(Value = "string")]

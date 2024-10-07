@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Custom property defined on an organization
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CustomProperty : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -114,18 +114,26 @@ namespace GitHub.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CustomProperty_default_value : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public string? CustomPropertyDefaultValueString { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public string CustomPropertyDefaultValueString { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -137,7 +145,11 @@ namespace GitHub.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::GitHub.Models.CustomProperty.CustomProperty_default_value();
-                if(parseNode.GetStringValue() is string stringValue)
+                if(parseNode.GetStringValue() is string customPropertyDefaultValueStringValue)
+                {
+                    result.CustomPropertyDefaultValueString = customPropertyDefaultValueStringValue;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -158,9 +170,13 @@ namespace GitHub.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(String != null)
+                if(CustomPropertyDefaultValueString != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteStringValue(null, CustomPropertyDefaultValueString);
+                }
+                else if(String != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
             }
         }

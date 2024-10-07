@@ -4,7 +4,7 @@ using System;
 namespace GitHub.User.Migrations
 {
     /// <summary>Allowed values that can be passed to the exclude param.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum MigrationsPostRequestBody_exclude
     {
         [EnumMember(Value = "repositories")]

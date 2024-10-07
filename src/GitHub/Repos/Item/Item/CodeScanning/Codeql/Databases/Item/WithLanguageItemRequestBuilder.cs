@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Codeql.Databases.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\code-scanning\codeql\databases\{language}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithLanguageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

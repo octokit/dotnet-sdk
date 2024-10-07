@@ -16,7 +16,7 @@ namespace GitHub.Orgs.Item.Rulesets
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\rulesets
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RulesetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ruleSuites property</summary>
@@ -160,7 +160,7 @@ namespace GitHub.Orgs.Item.Rulesets
         /// <summary>
         /// Get all the repository rulesets for an organization.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class RulesetsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

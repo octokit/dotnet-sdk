@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// An SSH key granting access to a single repository.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeployKey : IAdditionalDataHolder, IParsable
     {
         /// <summary>The added_by property</summary>

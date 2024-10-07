@@ -16,7 +16,7 @@ namespace GitHub.Repos.Item.Item.Rulesets
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rulesets
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RulesetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ruleSuites property</summary>
@@ -160,7 +160,7 @@ namespace GitHub.Repos.Item.Item.Rulesets
         /// <summary>
         /// Get all the rulesets for a repository.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class RulesetsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include rulesets configured at higher levels that apply to this repository</summary>

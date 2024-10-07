@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.OrganizationRoles.Teams.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\organization-roles\teams\{team_slug}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithTeam_slugItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.organizationRoles.teams.item.item collection</summary>

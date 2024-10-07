@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Dependabot.Secrets.PublicKey
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\dependabot\secrets\public-key
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class PublicKeyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

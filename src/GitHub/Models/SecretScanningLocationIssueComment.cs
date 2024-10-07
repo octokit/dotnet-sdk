@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Represents an &apos;issue_comment&apos; secret scanning location type. This location type shows that a secret was detected in a comment on an issue.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SecretScanningLocationIssueComment : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

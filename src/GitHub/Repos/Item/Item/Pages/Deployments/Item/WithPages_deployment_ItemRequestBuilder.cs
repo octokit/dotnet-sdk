@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Pages.Deployments.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\pages\deployments\{pages_deployment_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithPages_deployment_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cancel property</summary>

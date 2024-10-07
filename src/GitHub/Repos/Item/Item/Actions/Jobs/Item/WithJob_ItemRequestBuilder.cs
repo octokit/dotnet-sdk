@@ -16,7 +16,7 @@ namespace GitHub.Repos.Item.Item.Actions.Jobs.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\jobs\{job_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithJob_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The logs property</summary>

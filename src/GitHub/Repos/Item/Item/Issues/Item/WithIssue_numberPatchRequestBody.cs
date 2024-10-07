@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Repos.Item.Item.Issues.Item
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class WithIssue_numberPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -121,7 +121,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithIssue_numberPatchRequestBody_milestone : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="int"/></summary>
@@ -182,7 +182,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item
         /// <summary>
         /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithIssue_numberPatchRequestBody_title : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="int"/></summary>

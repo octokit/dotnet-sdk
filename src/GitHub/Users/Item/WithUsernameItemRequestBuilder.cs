@@ -34,7 +34,7 @@ namespace GitHub.Users.Item
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithUsernameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The attestations property</summary>
@@ -208,7 +208,7 @@ namespace GitHub.Users.Item
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.PrivateUser"/>, <see cref="global::GitHub.Models.PublicUser"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithUsernameGetResponse : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.PrivateUser"/></summary>

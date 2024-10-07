@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Repos.Item.Item.Branches.Item.Protection
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class ProtectionPutRequestBody_required_status_checks_checks : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Issues.Item
 {
     /// <summary>The reason for the state change. Ignored unless `state` is changed.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WithIssue_numberPatchRequestBody_state_reason
     {
         [EnumMember(Value = "completed")]

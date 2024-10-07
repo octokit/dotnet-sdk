@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Represents a &apos;pull_request_review&apos; secret scanning location type. This location type shows that a secret was detected in a review on a pull request.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SecretScanningLocationPullRequestReview : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

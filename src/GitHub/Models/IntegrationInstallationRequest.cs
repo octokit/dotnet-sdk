@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Request to install an integration on a target
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class IntegrationInstallationRequest : IAdditionalDataHolder, IParsable
     {
         /// <summary>The account property</summary>
@@ -92,7 +92,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.Enterprise"/>, <see cref="global::GitHub.Models.SimpleUser"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class IntegrationInstallationRequest_account : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.Enterprise"/></summary>

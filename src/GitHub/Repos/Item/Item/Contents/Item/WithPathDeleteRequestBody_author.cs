@@ -10,7 +10,7 @@ namespace GitHub.Repos.Item.Item.Contents.Item
     /// <summary>
     /// object containing information about the author.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithPathDeleteRequestBody_author : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -12,7 +12,7 @@ namespace GitHub.Repos.Item.Item.Rules
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\rules
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The branches property</summary>

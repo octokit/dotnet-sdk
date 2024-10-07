@@ -13,7 +13,7 @@ namespace GitHub.Users.Item.Following.Item
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\following\{target_user}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithTarget_userItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

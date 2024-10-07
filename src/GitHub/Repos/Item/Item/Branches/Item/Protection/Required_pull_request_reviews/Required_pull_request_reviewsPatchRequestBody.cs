@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Required_pull_request_reviews
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class Required_pull_request_reviewsPatchRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

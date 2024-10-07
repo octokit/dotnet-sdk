@@ -14,7 +14,7 @@ namespace GitHub.Marketplace_listing.Plans.Item.Accounts
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\plans\{plan_id}\accounts
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AccountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace GitHub.Marketplace_listing.Plans.Item.Accounts
         /// <summary>
         /// Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won&apos;t be processed until the end of their billing cycle, you will also see the upcoming pending change.GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class AccountsRequestBuilderGetQueryParameters 
         {
             /// <summary>To return the oldest accounts first, set to `asc`. Ignored without the `sort` parameter.</summary>

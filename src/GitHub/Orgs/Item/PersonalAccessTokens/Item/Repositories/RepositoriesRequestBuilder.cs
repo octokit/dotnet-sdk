@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens.Item.Repositories
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\personal-access-tokens\{pat_id}\repositories
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RepositoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -93,7 +93,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens.Item.Repositories
         /// <summary>
         /// Lists the repositories a fine-grained personal access token has access to.Only GitHub Apps can use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class RepositoriesRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

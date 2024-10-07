@@ -10,7 +10,7 @@ namespace GitHub.Orgs.Item.Repos
     /// <summary>
     /// The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ReposPostRequestBody_custom_properties : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

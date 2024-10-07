@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A GitHub App that is providing a custom deployment protection rule.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CustomDeploymentRuleApp : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

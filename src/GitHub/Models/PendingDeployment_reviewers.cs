@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class PendingDeployment_reviewers : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
@@ -67,7 +67,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.SimpleUser"/>, <see cref="global::GitHub.Models.Team"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class PendingDeployment_reviewers_reviewer : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.SimpleUser"/></summary>

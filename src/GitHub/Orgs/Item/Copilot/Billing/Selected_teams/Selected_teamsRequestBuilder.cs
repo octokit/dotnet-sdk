@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Copilot.Billing.Selected_teams
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\copilot\billing\selected_teams
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Selected_teamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

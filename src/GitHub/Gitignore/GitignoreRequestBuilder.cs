@@ -12,7 +12,7 @@ namespace GitHub.Gitignore
     /// <summary>
     /// Builds and executes requests for operations under \gitignore
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class GitignoreRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The templates property</summary>

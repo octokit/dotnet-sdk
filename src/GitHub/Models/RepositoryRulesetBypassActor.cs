@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// An actor that can bypass rules in a ruleset
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RepositoryRulesetBypassActor : IAdditionalDataHolder, IParsable
     {
         /// <summary>The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.</summary>

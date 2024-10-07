@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Codeowners.Errors
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codeowners\errors
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ErrorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -83,7 +83,7 @@ namespace GitHub.Repos.Item.Item.Codeowners.Errors
         /// <summary>
         /// List any syntax errors that are detected in the CODEOWNERSfile.For more information about the correct CODEOWNERS syntax,see &quot;[About code owners](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).&quot;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ErrorsRequestBuilderGetQueryParameters 
         {
             /// <summary>A branch, tag or commit name used to determine which version of the CODEOWNERS file to use. Default: the repository&apos;s default branch (e.g. `main`)</summary>

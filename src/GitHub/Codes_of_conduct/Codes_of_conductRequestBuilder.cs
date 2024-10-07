@@ -15,7 +15,7 @@ namespace GitHub.Codes_of_conduct
     /// <summary>
     /// Builds and executes requests for operations under \codes_of_conduct
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Codes_of_conductRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.codes_of_conduct.item collection</summary>

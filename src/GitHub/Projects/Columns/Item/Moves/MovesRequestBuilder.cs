@@ -14,7 +14,7 @@ namespace GitHub.Projects.Columns.Item.Moves
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns\{column_id}\moves
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MovesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

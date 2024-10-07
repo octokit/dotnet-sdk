@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Breakdown of Copilot usage by editor for this language
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CopilotUsageMetrics_breakdown : IAdditionalDataHolder, IParsable
     {
         /// <summary>The number of Copilot suggestions accepted by users in the editor specified during the day specified.</summary>

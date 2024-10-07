@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Migrations.Item.Repos.Item.Lock
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\migrations\{migration_id}\repos\{repo_name}\lock
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class LockRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A CWE weakness assigned to the advisory.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DependabotAlertSecurityAdvisory_cwes : IParsable
     {
         /// <summary>The unique CWE ID.</summary>

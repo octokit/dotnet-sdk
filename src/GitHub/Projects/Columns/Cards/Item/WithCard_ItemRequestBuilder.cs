@@ -15,7 +15,7 @@ namespace GitHub.Projects.Columns.Cards.Item
     /// <summary>
     /// Builds and executes requests for operations under \projects\columns\cards\{card_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithCard_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The moves property</summary>

@@ -14,7 +14,7 @@ namespace GitHub.User.Emails
     /// <summary>
     /// Builds and executes requests for operations under \user\emails
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class EmailsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -199,9 +199,9 @@ namespace GitHub.User.Emails
             return new global::GitHub.User.Emails.EmailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.User.Emails.EmailsDeleteRequestBodyMember1"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.User.Emails.EmailsDeleteRequestBodyMember1"/>, <see cref="string"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class EmailsDeleteRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.User.Emails.EmailsDeleteRequestBodyMember1"/></summary>
@@ -228,13 +228,29 @@ namespace GitHub.User.Emails
 #else
             public string EmailsDeleteRequestBodyString { get; set; }
 #endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? EmailsDeleteRequestBodyString0 { get; set; }
+#nullable restore
+#else
+            public List<string> EmailsDeleteRequestBodyString0 { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public string? EmailsDeleteRequestBodyString1 { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public string EmailsDeleteRequestBodyString1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -258,7 +274,15 @@ namespace GitHub.User.Emails
                 {
                     result.EmailsDeleteRequestBodyString = emailsDeleteRequestBodyStringValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetStringValue() is string emailsDeleteRequestBodyString1Value)
+                {
+                    result.EmailsDeleteRequestBodyString1 = emailsDeleteRequestBodyString1Value;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> emailsDeleteRequestBodyString0Value)
+                {
+                    result.EmailsDeleteRequestBodyString0 = emailsDeleteRequestBodyString0Value;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -299,16 +323,24 @@ namespace GitHub.User.Emails
                 {
                     writer.WriteStringValue(null, EmailsDeleteRequestBodyString);
                 }
+                else if(EmailsDeleteRequestBodyString1 != null)
+                {
+                    writer.WriteStringValue(null, EmailsDeleteRequestBodyString1);
+                }
+                else if(EmailsDeleteRequestBodyString0 != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, EmailsDeleteRequestBodyString0);
+                }
                 else if(String != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::GitHub.User.Emails.EmailsPostRequestBodyMember1"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::GitHub.User.Emails.EmailsPostRequestBodyMember1"/>, <see cref="string"/>, List&lt;string&gt;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class EmailsPostRequestBody : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.User.Emails.EmailsPostRequestBodyMember1"/></summary>
@@ -335,13 +367,29 @@ namespace GitHub.User.Emails
 #else
             public string EmailsPostRequestBodyString { get; set; }
 #endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? EmailsPostRequestBodyString0 { get; set; }
+#nullable restore
+#else
+            public List<string> EmailsPostRequestBodyString0 { get; set; }
+#endif
             /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public string? EmailsPostRequestBodyString1 { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public string EmailsPostRequestBodyString1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public List<string>? String { get; set; }
+#nullable restore
+#else
+            public List<string> String { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -365,7 +413,15 @@ namespace GitHub.User.Emails
                 {
                     result.EmailsPostRequestBodyString = emailsPostRequestBodyStringValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetStringValue() is string emailsPostRequestBodyString1Value)
+                {
+                    result.EmailsPostRequestBodyString1 = emailsPostRequestBodyString1Value;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> emailsPostRequestBodyString0Value)
+                {
+                    result.EmailsPostRequestBodyString0 = emailsPostRequestBodyString0Value;
+                }
+                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -406,16 +462,24 @@ namespace GitHub.User.Emails
                 {
                     writer.WriteStringValue(null, EmailsPostRequestBodyString);
                 }
+                else if(EmailsPostRequestBodyString1 != null)
+                {
+                    writer.WriteStringValue(null, EmailsPostRequestBodyString1);
+                }
+                else if(EmailsPostRequestBodyString0 != null)
+                {
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, EmailsPostRequestBodyString0);
+                }
                 else if(String != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
                 }
             }
         }
         /// <summary>
         /// Lists all of your email addresses, and specifies which one is visibleto the public.OAuth app tokens and personal access tokens (classic) need the `user:email` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class EmailsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

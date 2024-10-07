@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The enablement status of Dependabot security updates</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CodeSecurityConfiguration_dependabot_security_updates
     {
         [EnumMember(Value = "enabled")]

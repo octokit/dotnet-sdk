@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Environments.Item.Deployment_protection_rules.I
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\environments\{environment_name}\deployment_protection_rules\{protection_rule_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithProtection_rule_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

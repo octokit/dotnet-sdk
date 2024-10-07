@@ -12,7 +12,7 @@ namespace GitHub.Marketplace_listing.Stubbed.Plans.Item
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\stubbed\plans\{plan_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithPlan_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The accounts property</summary>

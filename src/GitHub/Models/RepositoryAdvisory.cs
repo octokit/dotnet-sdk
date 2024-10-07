@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A repository security advisory.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RepositoryAdvisory : IParsable
     {
         /// <summary>The author of the advisory.</summary>

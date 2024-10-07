@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Marketplace Listing Plan
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MarketplaceListingPlan : IAdditionalDataHolder, IParsable
     {
         /// <summary>The accounts_url property</summary>

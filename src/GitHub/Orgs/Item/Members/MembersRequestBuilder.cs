@@ -15,7 +15,7 @@ namespace GitHub.Orgs.Item.Members
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\members
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MembersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.members.item collection</summary>
@@ -102,7 +102,7 @@ namespace GitHub.Orgs.Item.Members
         /// <summary>
         /// List all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class MembersRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter members returned in the list. `2fa_disabled` means that only members without [two-factor authentication](https://github.com/blog/1614-two-factor-authentication) enabled will be returned. This options is only available for organization owners.</summary>

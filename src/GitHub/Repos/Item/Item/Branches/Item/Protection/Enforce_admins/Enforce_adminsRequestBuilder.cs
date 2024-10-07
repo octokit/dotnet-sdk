@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Branches.Item.Protection.Enforce_admins
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\branches\{branch}\protection\enforce_admins
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Enforce_adminsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

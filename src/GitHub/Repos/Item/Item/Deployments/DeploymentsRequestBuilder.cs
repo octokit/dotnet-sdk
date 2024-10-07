@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Deployments
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\deployments
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeploymentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.deployments.item collection</summary>
@@ -145,7 +145,7 @@ namespace GitHub.Repos.Item.Item.Deployments
         /// <summary>
         /// Simple filtering of deployments is available via query parameters:
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class DeploymentsRequestBuilderGetQueryParameters 
         {
             /// <summary>The name of the environment that was deployed to (e.g., `staging` or `production`).</summary>

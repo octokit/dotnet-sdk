@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.Requested_reviewers
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class Requested_reviewersDeleteRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

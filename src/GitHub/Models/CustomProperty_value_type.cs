@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The type of the value for the property</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CustomProperty_value_type
     {
         [EnumMember(Value = "string")]

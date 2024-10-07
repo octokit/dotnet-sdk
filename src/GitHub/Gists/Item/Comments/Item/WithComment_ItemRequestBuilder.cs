@@ -14,7 +14,7 @@ namespace GitHub.Gists.Item.Comments.Item
     /// <summary>
     /// Builds and executes requests for operations under \gists\{gist_id}\comments\{comment_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithComment_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

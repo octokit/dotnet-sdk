@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Keys
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\keys
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class KeysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.keys.item collection</summary>
@@ -142,7 +142,7 @@ namespace GitHub.Repos.Item.Item.Keys
         /// <summary>
         /// List deploy keys
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class KeysRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

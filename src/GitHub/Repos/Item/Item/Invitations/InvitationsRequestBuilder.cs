@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Invitations
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\invitations
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class InvitationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.invitations.item collection</summary>
@@ -97,7 +97,7 @@ namespace GitHub.Repos.Item.Item.Invitations
         /// <summary>
         /// When authenticating as a user with admin rights to a repository, this endpoint will list all currently open repository invitations.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class InvitationsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

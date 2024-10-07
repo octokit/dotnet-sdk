@@ -14,7 +14,7 @@ namespace GitHub.User.Codespaces.Item.Machines
     /// <summary>
     /// Builds and executes requests for operations under \user\codespaces\{codespace_name}\machines
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MachinesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

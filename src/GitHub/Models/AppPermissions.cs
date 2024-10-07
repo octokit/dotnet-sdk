@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// The permissions granted to the user access token.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AppPermissions : IAdditionalDataHolder, IParsable
     {
         /// <summary>The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.</summary>

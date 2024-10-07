@@ -12,7 +12,7 @@ namespace GitHub.Enterprises.Item.Team
     /// <summary>
     /// Builds and executes requests for operations under \enterprises\{enterprise}\team
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class TeamRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.enterprises.item.team.item collection</summary>

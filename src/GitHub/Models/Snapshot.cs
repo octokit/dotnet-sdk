@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Create a new snapshot of a repository&apos;s dependencies.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Snapshot : IParsable
     {
         /// <summary>A description of the detector used.</summary>

@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace GitHub.Repos.Item.Item.Actions.Runs.Item.Pending_deployments
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class Pending_deploymentsPostRequestBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Timeline Unassigned Issue Event
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class TimelineUnassignedIssueEvent : IAdditionalDataHolder, IParsable
     {
         /// <summary>A GitHub user.</summary>

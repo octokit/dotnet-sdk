@@ -15,7 +15,7 @@ namespace GitHub.Projects.Item.Collaborators.Item
     /// <summary>
     /// Builds and executes requests for operations under \projects\{project_id}\collaborators\{username}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithUsernameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The permission property</summary>

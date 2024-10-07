@@ -15,7 +15,7 @@ namespace GitHub.Users.Item.Following
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\following
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class FollowingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.users.item.following.item collection</summary>
@@ -97,7 +97,7 @@ namespace GitHub.Users.Item.Following
         /// <summary>
         /// Lists the people who the specified user follows.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class FollowingRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

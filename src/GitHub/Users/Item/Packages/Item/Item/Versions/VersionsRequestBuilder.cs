@@ -15,7 +15,7 @@ namespace GitHub.Users.Item.Packages.Item.Item.Versions
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\packages\{package_type}\{package_name}\versions
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class VersionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.users.item.packages.item.item.versions.item collection</summary>

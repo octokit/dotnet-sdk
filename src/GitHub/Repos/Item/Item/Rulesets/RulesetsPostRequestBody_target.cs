@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Rulesets
 {
     /// <summary>The target of the ruleset</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum RulesetsPostRequestBody_target
     {
         [EnumMember(Value = "branch")]

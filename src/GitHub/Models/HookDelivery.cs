@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Delivery made by a webhook.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class HookDelivery : IAdditionalDataHolder, IParsable
     {
         /// <summary>The type of activity for the event that triggered the delivery.</summary>

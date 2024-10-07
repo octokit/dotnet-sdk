@@ -10,7 +10,7 @@ namespace GitHub.Repos.Item.Item
     /// <summary>
     /// Specify which security and analysis features to enable or disable for the repository.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;For example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request:`{ &quot;security_and_analysis&quot;: {&quot;advanced_security&quot;: { &quot;status&quot;: &quot;enabled&quot; } } }`.You can check which security and analysis features are currently enabled by using a `GET /repos/{owner}/{repo}` request.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RepoPatchRequestBody_security_and_analysis : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

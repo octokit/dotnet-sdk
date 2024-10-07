@@ -15,7 +15,7 @@ namespace GitHub.User.Starred
     /// <summary>
     /// Builds and executes requests for operations under \user\starred
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class StarredRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.starred.item collection</summary>
@@ -104,7 +104,7 @@ namespace GitHub.User.Starred
         /// <summary>
         /// Lists repositories the authenticated user has starred.This endpoint supports the following custom media types. For more information, see &quot;[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).&quot;- **`application/vnd.github.star+json`**: Includes a timestamp of when the star was created.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class StarredRequestBuilderGetQueryParameters 
         {
             /// <summary>The direction to sort the results by.</summary>

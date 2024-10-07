@@ -15,7 +15,7 @@ namespace GitHub.Repos.Item.Item.Milestones
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\milestones
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MilestonesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.repos.item.item.milestones.item collection</summary>
@@ -152,7 +152,7 @@ namespace GitHub.Repos.Item.Item.Milestones
         /// <summary>
         /// Lists milestones for a repository.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class MilestonesRequestBuilderGetQueryParameters 
         {
             /// <summary>The direction of the sort. Either `asc` or `desc`.</summary>

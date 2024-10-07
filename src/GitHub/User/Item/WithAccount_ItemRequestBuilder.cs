@@ -14,7 +14,7 @@ namespace GitHub.User.Item
     /// <summary>
     /// Builds and executes requests for operations under \user\{account_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithAccount_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -88,7 +88,7 @@ namespace GitHub.User.Item
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.PrivateUser"/>, <see cref="global::GitHub.Models.PublicUser"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithAccount_GetResponse : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.PrivateUser"/></summary>

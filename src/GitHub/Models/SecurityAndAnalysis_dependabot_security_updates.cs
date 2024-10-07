@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Enable or disable Dependabot security updates for the repository.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SecurityAndAnalysis_dependabot_security_updates : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

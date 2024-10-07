@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// A set of rules to apply when specified conditions are met.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RepositoryRuleset : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -152,7 +152,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.OrgRulesetConditions"/>, <see cref="global::GitHub.Models.RepositoryRulesetConditions"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class RepositoryRuleset_conditions : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.OrgRulesetConditions"/></summary>

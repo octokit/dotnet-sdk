@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.Comments
 {
     /// <summary>The level at which the comment is targeted.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CommentsPostRequestBody_subject_type
     {
         [EnumMember(Value = "line")]

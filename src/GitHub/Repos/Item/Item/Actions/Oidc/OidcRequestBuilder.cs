@@ -12,7 +12,7 @@ namespace GitHub.Repos.Item.Item.Actions.Oidc
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\oidc
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OidcRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The customization property</summary>

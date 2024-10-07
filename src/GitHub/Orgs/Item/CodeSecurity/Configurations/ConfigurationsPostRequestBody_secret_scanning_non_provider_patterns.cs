@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.CodeSecurity.Configurations
 {
     /// <summary>The enablement status of secret scanning non provider patterns</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum ConfigurationsPostRequestBody_secret_scanning_non_provider_patterns
     {
         [EnumMember(Value = "enabled")]

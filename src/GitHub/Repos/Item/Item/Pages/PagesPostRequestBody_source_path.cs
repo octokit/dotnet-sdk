@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Pages
 {
     /// <summary>The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`. Default: `/`</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum PagesPostRequestBody_source_path
     {
         [EnumMember(Value = "/")]

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Git.Tags
 {
     /// <summary>The type of the object we&apos;re tagging. Normally this is a `commit` but it can also be a `tree` or a `blob`.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum TagsPostRequestBody_type
     {
         [EnumMember(Value = "commit")]

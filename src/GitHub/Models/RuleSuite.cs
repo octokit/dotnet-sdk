@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Response
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RuleSuite : IAdditionalDataHolder, IParsable
     {
         /// <summary>The number that identifies the user.</summary>

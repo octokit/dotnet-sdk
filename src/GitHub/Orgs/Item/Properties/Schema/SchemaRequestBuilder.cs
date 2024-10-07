@@ -15,11 +15,11 @@ namespace GitHub.Orgs.Item.Properties.Schema
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\properties\schema
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class SchemaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.properties.schema.item collection</summary>
-        /// <param name="position">The custom property name. The name is case sensitive.</param>
+        /// <param name="position">The custom property name</param>
         /// <returns>A <see cref="global::GitHub.Orgs.Item.Properties.Schema.Item.WithCustom_property_nameItemRequestBuilder"/></returns>
         public global::GitHub.Orgs.Item.Properties.Schema.Item.WithCustom_property_nameItemRequestBuilder this[string position]
         {

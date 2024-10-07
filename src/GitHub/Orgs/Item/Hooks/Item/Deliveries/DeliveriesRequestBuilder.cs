@@ -15,7 +15,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\hooks\{hook_id}\deliveries
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeliveriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.hooks.item.deliveries.item collection</summary>
@@ -104,7 +104,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries
         /// <summary>
         /// Returns a list of webhook deliveries for a webhook configured in an organization.You must be an organization owner to use this endpoint.OAuth app tokens and personal access tokens (classic) need `admin:org_hook` scope. OAuth apps cannot list, view, or editwebhooks that they did not create and users cannot list, view, or edit webhooks that were created by OAuth apps.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class DeliveriesRequestBuilderGetQueryParameters 
         {
             /// <summary>Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors.</summary>

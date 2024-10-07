@@ -81,7 +81,7 @@ namespace GitHub.Repos.Item.Item
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RepoItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The actions property</summary>

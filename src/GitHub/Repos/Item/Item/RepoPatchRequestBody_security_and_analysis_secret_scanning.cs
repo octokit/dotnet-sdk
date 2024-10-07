@@ -10,7 +10,7 @@ namespace GitHub.Repos.Item.Item
     /// <summary>
     /// Use the `status` property to enable or disable secret scanning for this repository. For more information, see &quot;[About secret scanning](/code-security/secret-security/about-secret-scanning).&quot;
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RepoPatchRequestBody_security_and_analysis_secret_scanning : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

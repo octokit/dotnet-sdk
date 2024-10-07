@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Stats.Commit_activity
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\stats\commit_activity
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Commit_activityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

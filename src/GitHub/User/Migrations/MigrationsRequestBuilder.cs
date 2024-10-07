@@ -15,7 +15,7 @@ namespace GitHub.User.Migrations
     /// <summary>
     /// Builds and executes requests for operations under \user\migrations
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MigrationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.user.migrations.item collection</summary>
@@ -156,7 +156,7 @@ namespace GitHub.User.Migrations
         /// <summary>
         /// Lists all migrations a user has started.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class MigrationsRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

@@ -15,7 +15,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\teams\{team_slug}\discussions
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DiscussionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.orgs.item.teams.item.discussions.item collection</summary>
@@ -140,7 +140,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Discussions
         /// <summary>
         /// List all discussions on a team&apos;s page.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions`.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class DiscussionsRequestBuilderGetQueryParameters 
         {
             /// <summary>The direction to sort the results by.</summary>

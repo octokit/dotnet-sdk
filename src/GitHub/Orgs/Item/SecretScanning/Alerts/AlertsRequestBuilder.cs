@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.SecretScanning.Alerts
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\secret-scanning\alerts
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AlertsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -91,7 +91,7 @@ namespace GitHub.Orgs.Item.SecretScanning.Alerts
         /// <summary>
         /// Lists secret scanning alerts for eligible repositories in an organization, from newest to oldest.The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class AlertsRequestBuilderGetQueryParameters 
         {
             /// <summary>A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for events after this cursor.  To receive an initial cursor on your first request, include an empty &quot;after&quot; query string.</summary>

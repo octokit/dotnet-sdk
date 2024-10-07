@@ -13,7 +13,7 @@ namespace GitHub.Orgs.Item.SecurityManagers.Teams.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\security-managers\teams\{team_slug}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithTeam_slugItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

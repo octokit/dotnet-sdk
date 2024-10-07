@@ -10,7 +10,7 @@ namespace GitHub.User.Codespaces
     /// <summary>
     /// Pull request number for this codespace
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CodespacesPostRequestBodyMember2_pull_request : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

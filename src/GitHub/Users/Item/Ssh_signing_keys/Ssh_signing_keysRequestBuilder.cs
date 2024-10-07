@@ -14,7 +14,7 @@ namespace GitHub.Users.Item.Ssh_signing_keys
     /// <summary>
     /// Builds and executes requests for operations under \users\{username}\ssh_signing_keys
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Ssh_signing_keysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -84,7 +84,7 @@ namespace GitHub.Users.Item.Ssh_signing_keys
         /// <summary>
         /// Lists the SSH signing keys for a user. This operation is accessible by anyone.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class Ssh_signing_keysRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

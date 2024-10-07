@@ -11,7 +11,7 @@ namespace GitHub.Models
     /// <summary>
     /// Composed type wrapper for classes <see cref="global::GitHub.Models.AddedToProjectIssueEvent"/>, <see cref="global::GitHub.Models.AssignedIssueEvent"/>, <see cref="global::GitHub.Models.ConvertedNoteToIssueIssueEvent"/>, <see cref="global::GitHub.Models.DemilestonedIssueEvent"/>, <see cref="global::GitHub.Models.LabeledIssueEvent"/>, <see cref="global::GitHub.Models.LockedIssueEvent"/>, <see cref="global::GitHub.Models.MilestonedIssueEvent"/>, <see cref="global::GitHub.Models.MovedColumnInProjectIssueEvent"/>, <see cref="global::GitHub.Models.RemovedFromProjectIssueEvent"/>, <see cref="global::GitHub.Models.RenamedIssueEvent"/>, <see cref="global::GitHub.Models.ReviewDismissedIssueEvent"/>, <see cref="global::GitHub.Models.ReviewRequestedIssueEvent"/>, <see cref="global::GitHub.Models.ReviewRequestRemovedIssueEvent"/>, <see cref="global::GitHub.Models.UnassignedIssueEvent"/>, <see cref="global::GitHub.Models.UnlabeledIssueEvent"/>
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class IssueEventForIssue : IComposedTypeWrapper, IParsable
     {
         /// <summary>Composed type representation for type <see cref="global::GitHub.Models.AddedToProjectIssueEvent"/></summary>

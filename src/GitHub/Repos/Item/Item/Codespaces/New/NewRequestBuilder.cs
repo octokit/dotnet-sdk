@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.New
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\codespaces\new
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class NewRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -92,7 +92,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.New
         /// <summary>
         /// Gets the default attributes for codespaces created by the user with the repository.OAuth app tokens and personal access tokens (classic) need the `codespace` scope to use this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class NewRequestBuilderGetQueryParameters 
         {
             /// <summary>An alternative IP for default location auto-detection, such as when proxying a request.</summary>

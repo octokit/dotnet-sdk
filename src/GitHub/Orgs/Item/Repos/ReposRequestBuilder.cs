@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Repos
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\repos
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ReposRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
@@ -134,7 +134,7 @@ namespace GitHub.Orgs.Item.Repos
         /// <summary>
         /// Lists repositories for the specified organization.&gt; [!NOTE]&gt; In order to see the `security_and_analysis` block for a repository you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ReposRequestBuilderGetQueryParameters 
         {
             /// <summary>The order to sort by. Default: `asc` when using `full_name`, otherwise `desc`.</summary>

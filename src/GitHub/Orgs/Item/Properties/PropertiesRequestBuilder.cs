@@ -13,7 +13,7 @@ namespace GitHub.Orgs.Item.Properties
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\properties
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class PropertiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The schema property</summary>

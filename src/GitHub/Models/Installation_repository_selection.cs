@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>Describe whether all repositories have been selected or there&apos;s a selection involved</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum Installation_repository_selection
     {
         [EnumMember(Value = "all")]

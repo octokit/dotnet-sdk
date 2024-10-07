@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Migrations.Item.Archive
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\migrations\{migration_id}\archive
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ArchiveRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// Commit
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Commit : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -164,7 +164,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.EmptyObject"/>, <see cref="global::GitHub.Models.SimpleUser"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class Commit_author : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.EmptyObject"/></summary>
@@ -239,7 +239,7 @@ namespace GitHub.Models
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::GitHub.Models.EmptyObject"/>, <see cref="global::GitHub.Models.SimpleUser"/>
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class Commit_committer : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::GitHub.Models.EmptyObject"/></summary>

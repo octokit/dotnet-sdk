@@ -15,7 +15,7 @@ namespace GitHub.Orgs.Item.Hooks.Item.Deliveries.Item
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\hooks\{hook_id}\deliveries\{delivery_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithDelivery_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The attempts property</summary>

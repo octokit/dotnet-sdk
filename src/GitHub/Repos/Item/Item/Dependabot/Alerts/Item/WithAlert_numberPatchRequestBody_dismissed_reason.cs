@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Dependabot.Alerts.Item
 {
     /// <summary>**Required when `state` is `dismissed`.** A reason for dismissing the alert.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WithAlert_numberPatchRequestBody_dismissed_reason
     {
         [EnumMember(Value = "fix_started")]

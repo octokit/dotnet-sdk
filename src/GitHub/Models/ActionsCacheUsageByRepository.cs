@@ -10,7 +10,7 @@ namespace GitHub.Models
     /// <summary>
     /// GitHub Actions Cache Usage by repository.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ActionsCacheUsageByRepository : IAdditionalDataHolder, IParsable
     {
         /// <summary>The number of active caches in the repository.</summary>

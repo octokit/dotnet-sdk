@@ -15,7 +15,7 @@ namespace GitHub.Notifications.Threads.Item
     /// <summary>
     /// Builds and executes requests for operations under \notifications\threads\{thread_id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WithThread_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The subscription property</summary>

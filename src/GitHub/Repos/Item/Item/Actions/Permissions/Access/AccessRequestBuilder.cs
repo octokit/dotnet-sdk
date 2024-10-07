@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Actions.Permissions.Access
     /// <summary>
     /// Builds and executes requests for operations under \repos\{owner-id}\{repo-id}\actions\permissions\access
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AccessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

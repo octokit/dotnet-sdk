@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>The state of the Dependabot alert.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum DependabotAlert_state
     {
         [EnumMember(Value = "auto_dismissed")]

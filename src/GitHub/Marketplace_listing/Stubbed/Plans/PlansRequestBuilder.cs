@@ -15,7 +15,7 @@ namespace GitHub.Marketplace_listing.Stubbed.Plans
     /// <summary>
     /// Builds and executes requests for operations under \marketplace_listing\stubbed\plans
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class PlansRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.marketplace_listing.stubbed.plans.item collection</summary>
@@ -102,7 +102,7 @@ namespace GitHub.Marketplace_listing.Stubbed.Plans
         /// <summary>
         /// Lists all plans that are part of your GitHub Marketplace listing.GitHub Apps must use a [JWT](https://docs.github.com/apps/building-github-apps/authenticating-with-github-apps/#authenticating-as-a-github-app) to access this endpoint. OAuth apps must use [basic authentication](https://docs.github.com/rest/authentication/authenticating-to-the-rest-api#using-basic-authentication) with their client ID and client secret to access this endpoint.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class PlansRequestBuilderGetQueryParameters 
         {
             /// <summary>The page number of the results to fetch. For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>

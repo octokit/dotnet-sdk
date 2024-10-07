@@ -14,7 +14,7 @@ namespace GitHub.Orgs.Item.Actions.Runners.RemoveToken
     /// <summary>
     /// Builds and executes requests for operations under \orgs\{org}\actions\runners\remove-token
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class RemoveTokenRequestBuilder : BaseRequestBuilder
     {
         /// <summary>

@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Orgs.Item.PersonalAccessTokenRequests
 {
     /// <summary>Action to apply to the requests.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum PersonalAccessTokenRequestsPostRequestBody_action
     {
         [EnumMember(Value = "approve")]

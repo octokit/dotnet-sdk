@@ -4,7 +4,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Issues.Item.Lock
 {
     /// <summary>The reason for locking the issue or pull request conversation. Lock will fail if you don&apos;t use one of these reasons:   * `off-topic`   * `too heated`   * `resolved`   * `spam`</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum LockPutRequestBody_lock_reason
     {
         [EnumMember(Value = "off-topic")]

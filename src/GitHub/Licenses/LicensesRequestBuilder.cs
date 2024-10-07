@@ -15,7 +15,7 @@ namespace GitHub.Licenses
     /// <summary>
     /// Builds and executes requests for operations under \licenses
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class LicensesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.licenses.item collection</summary>
@@ -97,7 +97,7 @@ namespace GitHub.Licenses
         /// <summary>
         /// Lists the most commonly used licenses on GitHub. For more information, see &quot;[Licensing a repository ](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).&quot;
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class LicensesRequestBuilderGetQueryParameters 
         {
             [QueryParameter("featured")]

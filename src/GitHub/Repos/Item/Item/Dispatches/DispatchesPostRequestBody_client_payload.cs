@@ -10,7 +10,7 @@ namespace GitHub.Repos.Item.Item.Dispatches
     /// <summary>
     /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DispatchesPostRequestBody_client_payload : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
