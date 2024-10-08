@@ -19,6 +19,8 @@ namespace GitHub.Models
         public global::GitHub.Models.CopilotOrganizationDetails_cli? Cli { get; set; }
         /// <summary>The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.</summary>
         public global::GitHub.Models.CopilotOrganizationDetails_ide_chat? IdeChat { get; set; }
+        /// <summary>The Copilot plan of the organization, or the parent enterprise, when applicable.</summary>
+        public global::GitHub.Models.CopilotOrganizationDetails_plan_type? PlanType { get; set; }
         /// <summary>The organization policy for allowing or disallowing organization members to use Copilot features within github.com.</summary>
         public global::GitHub.Models.CopilotOrganizationDetails_platform_chat? PlatformChat { get; set; }
         /// <summary>The organization policy for allowing or disallowing Copilot to make suggestions that match public code.</summary>
@@ -60,6 +62,7 @@ namespace GitHub.Models
             {
                 { "cli", n => { Cli = n.GetEnumValue<global::GitHub.Models.CopilotOrganizationDetails_cli>(); } },
                 { "ide_chat", n => { IdeChat = n.GetEnumValue<global::GitHub.Models.CopilotOrganizationDetails_ide_chat>(); } },
+                { "plan_type", n => { PlanType = n.GetEnumValue<global::GitHub.Models.CopilotOrganizationDetails_plan_type>(); } },
                 { "platform_chat", n => { PlatformChat = n.GetEnumValue<global::GitHub.Models.CopilotOrganizationDetails_platform_chat>(); } },
                 { "public_code_suggestions", n => { PublicCodeSuggestions = n.GetEnumValue<global::GitHub.Models.CopilotOrganizationDetails_public_code_suggestions>(); } },
                 { "seat_breakdown", n => { SeatBreakdown = n.GetObjectValue<global::GitHub.Models.CopilotSeatBreakdown>(global::GitHub.Models.CopilotSeatBreakdown.CreateFromDiscriminatorValue); } },
@@ -75,6 +78,7 @@ namespace GitHub.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::GitHub.Models.CopilotOrganizationDetails_cli>("cli", Cli);
             writer.WriteEnumValue<global::GitHub.Models.CopilotOrganizationDetails_ide_chat>("ide_chat", IdeChat);
+            writer.WriteEnumValue<global::GitHub.Models.CopilotOrganizationDetails_plan_type>("plan_type", PlanType);
             writer.WriteEnumValue<global::GitHub.Models.CopilotOrganizationDetails_platform_chat>("platform_chat", PlatformChat);
             writer.WriteEnumValue<global::GitHub.Models.CopilotOrganizationDetails_public_code_suggestions>("public_code_suggestions", PublicCodeSuggestions);
             writer.WriteObjectValue<global::GitHub.Models.CopilotSeatBreakdown>("seat_breakdown", SeatBreakdown);
