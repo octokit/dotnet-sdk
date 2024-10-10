@@ -41,7 +41,7 @@ namespace GitHub.Repos.Item.Item.Rulesets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets{?includes_parents*,page*,per_page*}", pathParameters)
+        public RulesetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets{?includes_parents*,page*,per_page*,targets*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace GitHub.Repos.Item.Item.Rulesets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets{?includes_parents*,page*,per_page*}", rawUrl)
+        public RulesetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/repos/{owner%2Did}/{repo%2Did}/rulesets{?includes_parents*,page*,per_page*,targets*}", rawUrl)
         {
         }
         /// <summary>
@@ -172,6 +172,16 @@ namespace GitHub.Repos.Item.Item.Rulesets
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>A comma-separated list of rule targets to filter by.If provided, only rulesets that apply to the specified targets will be returned.For example, `branch,tag,push`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("targets")]
+            public string? Targets { get; set; }
+#nullable restore
+#else
+            [QueryParameter("targets")]
+            public string Targets { get; set; }
+#endif
         }
     }
 }
