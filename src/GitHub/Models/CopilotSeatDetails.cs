@@ -52,6 +52,8 @@ namespace GitHub.Models
 #endif
         /// <summary>The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee&apos;s Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization&apos;s next billing cycle.</summary>
         public Date? PendingCancellationDate { get; set; }
+        /// <summary>The Copilot plan of the organization, or the parent enterprise, when applicable.</summary>
+        public global::GitHub.Models.CopilotSeatDetails_plan_type? PlanType { get; set; }
         /// <summary>Timestamp of when the assignee&apos;s GitHub Copilot access was last updated, in ISO 8601 format.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -79,6 +81,7 @@ namespace GitHub.Models
                 { "last_activity_editor", n => { LastActivityEditor = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::GitHub.Models.NullableOrganizationSimple>(global::GitHub.Models.NullableOrganizationSimple.CreateFromDiscriminatorValue); } },
                 { "pending_cancellation_date", n => { PendingCancellationDate = n.GetDateValue(); } },
+                { "plan_type", n => { PlanType = n.GetEnumValue<global::GitHub.Models.CopilotSeatDetails_plan_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -96,6 +99,7 @@ namespace GitHub.Models
             writer.WriteStringValue("last_activity_editor", LastActivityEditor);
             writer.WriteObjectValue<global::GitHub.Models.NullableOrganizationSimple>("organization", Organization);
             writer.WriteDateValue("pending_cancellation_date", PendingCancellationDate);
+            writer.WriteEnumValue<global::GitHub.Models.CopilotSeatDetails_plan_type>("plan_type", PlanType);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }
         /// <summary>
