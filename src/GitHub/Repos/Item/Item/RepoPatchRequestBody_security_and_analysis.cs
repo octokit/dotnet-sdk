@@ -31,6 +31,14 @@ namespace GitHub.Repos.Item.Item
 #else
         public global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning SecretScanning { get; set; }
 #endif
+        /// <summary>Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see &quot;[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets).&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_ai_detection? SecretScanningAiDetection { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_ai_detection SecretScanningAiDetection { get; set; }
+#endif
         /// <summary>Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see &quot;[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +82,7 @@ namespace GitHub.Repos.Item.Item
             {
                 { "advanced_security", n => { AdvancedSecurity = n.GetObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_advanced_security>(global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_advanced_security.CreateFromDiscriminatorValue); } },
                 { "secret_scanning", n => { SecretScanning = n.GetObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning>(global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning.CreateFromDiscriminatorValue); } },
+                { "secret_scanning_ai_detection", n => { SecretScanningAiDetection = n.GetObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_ai_detection>(global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_ai_detection.CreateFromDiscriminatorValue); } },
                 { "secret_scanning_non_provider_patterns", n => { SecretScanningNonProviderPatterns = n.GetObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns>(global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns.CreateFromDiscriminatorValue); } },
                 { "secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection>(global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection.CreateFromDiscriminatorValue); } },
             };
@@ -87,6 +96,7 @@ namespace GitHub.Repos.Item.Item
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_advanced_security>("advanced_security", AdvancedSecurity);
             writer.WriteObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning>("secret_scanning", SecretScanning);
+            writer.WriteObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_ai_detection>("secret_scanning_ai_detection", SecretScanningAiDetection);
             writer.WriteObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_non_provider_patterns>("secret_scanning_non_provider_patterns", SecretScanningNonProviderPatterns);
             writer.WriteObjectValue<global::GitHub.Repos.Item.Item.RepoPatchRequestBody_security_and_analysis_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
             writer.WriteAdditionalData(AdditionalData);

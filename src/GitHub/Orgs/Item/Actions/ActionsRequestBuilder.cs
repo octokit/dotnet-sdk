@@ -3,6 +3,7 @@
 using GitHub.Orgs.Item.Actions.Cache;
 using GitHub.Orgs.Item.Actions.Oidc;
 using GitHub.Orgs.Item.Actions.Permissions;
+using GitHub.Orgs.Item.Actions.RunnerGroups;
 using GitHub.Orgs.Item.Actions.Runners;
 using GitHub.Orgs.Item.Actions.Secrets;
 using GitHub.Orgs.Item.Actions.Variables;
@@ -34,6 +35,11 @@ namespace GitHub.Orgs.Item.Actions
         public global::GitHub.Orgs.Item.Actions.Permissions.PermissionsRequestBuilder Permissions
         {
             get => new global::GitHub.Orgs.Item.Actions.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The runnerGroups property</summary>
+        public global::GitHub.Orgs.Item.Actions.RunnerGroups.RunnerGroupsRequestBuilder RunnerGroups
+        {
+            get => new global::GitHub.Orgs.Item.Actions.RunnerGroups.RunnerGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The runners property</summary>
         public global::GitHub.Orgs.Item.Actions.Runners.RunnersRequestBuilder Runners
