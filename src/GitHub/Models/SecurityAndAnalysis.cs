@@ -38,6 +38,14 @@ namespace GitHub.Models
 #else
         public global::GitHub.Models.SecurityAndAnalysis_secret_scanning SecretScanning { get; set; }
 #endif
+        /// <summary>The secret_scanning_ai_detection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Models.SecurityAndAnalysis_secret_scanning_ai_detection? SecretScanningAiDetection { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Models.SecurityAndAnalysis_secret_scanning_ai_detection SecretScanningAiDetection { get; set; }
+#endif
         /// <summary>The secret_scanning_non_provider_patterns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +90,7 @@ namespace GitHub.Models
                 { "advanced_security", n => { AdvancedSecurity = n.GetObjectValue<global::GitHub.Models.SecurityAndAnalysis_advanced_security>(global::GitHub.Models.SecurityAndAnalysis_advanced_security.CreateFromDiscriminatorValue); } },
                 { "dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetObjectValue<global::GitHub.Models.SecurityAndAnalysis_dependabot_security_updates>(global::GitHub.Models.SecurityAndAnalysis_dependabot_security_updates.CreateFromDiscriminatorValue); } },
                 { "secret_scanning", n => { SecretScanning = n.GetObjectValue<global::GitHub.Models.SecurityAndAnalysis_secret_scanning>(global::GitHub.Models.SecurityAndAnalysis_secret_scanning.CreateFromDiscriminatorValue); } },
+                { "secret_scanning_ai_detection", n => { SecretScanningAiDetection = n.GetObjectValue<global::GitHub.Models.SecurityAndAnalysis_secret_scanning_ai_detection>(global::GitHub.Models.SecurityAndAnalysis_secret_scanning_ai_detection.CreateFromDiscriminatorValue); } },
                 { "secret_scanning_non_provider_patterns", n => { SecretScanningNonProviderPatterns = n.GetObjectValue<global::GitHub.Models.SecurityAndAnalysis_secret_scanning_non_provider_patterns>(global::GitHub.Models.SecurityAndAnalysis_secret_scanning_non_provider_patterns.CreateFromDiscriminatorValue); } },
                 { "secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetObjectValue<global::GitHub.Models.SecurityAndAnalysis_secret_scanning_push_protection>(global::GitHub.Models.SecurityAndAnalysis_secret_scanning_push_protection.CreateFromDiscriminatorValue); } },
             };
@@ -96,6 +105,7 @@ namespace GitHub.Models
             writer.WriteObjectValue<global::GitHub.Models.SecurityAndAnalysis_advanced_security>("advanced_security", AdvancedSecurity);
             writer.WriteObjectValue<global::GitHub.Models.SecurityAndAnalysis_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteObjectValue<global::GitHub.Models.SecurityAndAnalysis_secret_scanning>("secret_scanning", SecretScanning);
+            writer.WriteObjectValue<global::GitHub.Models.SecurityAndAnalysis_secret_scanning_ai_detection>("secret_scanning_ai_detection", SecretScanningAiDetection);
             writer.WriteObjectValue<global::GitHub.Models.SecurityAndAnalysis_secret_scanning_non_provider_patterns>("secret_scanning_non_provider_patterns", SecretScanningNonProviderPatterns);
             writer.WriteObjectValue<global::GitHub.Models.SecurityAndAnalysis_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
             writer.WriteAdditionalData(AdditionalData);
