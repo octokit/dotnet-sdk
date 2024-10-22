@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Repos.Item.Item.Pulls.Item.Codespaces
 {
-    /// <summary>The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.</summary>
+    /// <summary>The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CodespacesPostRequestBody_geo
     {

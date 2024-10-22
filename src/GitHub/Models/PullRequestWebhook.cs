@@ -26,7 +26,7 @@ namespace GitHub.Models
         public global::GitHub.Models.PullRequestWebhook_squash_merge_commit_message? SquashMergeCommitMessage { get; set; }
         /// <summary>The default value for a squash merge commit title:- `PR_TITLE` - default to the pull request&apos;s title.- `COMMIT_OR_PR_TITLE` - default to the commit&apos;s title (if only one commit) or the pull request&apos;s title (when more than one commit).</summary>
         public global::GitHub.Models.PullRequestWebhook_squash_merge_commit_title? SquashMergeCommitTitle { get; set; }
-        /// <summary>Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.**</summary>
+        /// <summary>Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.**</summary>
         public bool? UseSquashPrTitleAsDefault { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

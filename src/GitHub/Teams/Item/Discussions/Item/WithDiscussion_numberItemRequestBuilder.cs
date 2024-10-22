@@ -48,7 +48,7 @@ namespace GitHub.Teams.Item.Discussions.Item
         {
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a discussion`](https://docs.github.com/rest/teams/discussions#delete-a-discussion) endpoint.Delete a discussion from a team&apos;s page.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a discussion`](https://docs.github.com/rest/teams/discussions#delete-a-discussion) endpoint.Delete a discussion from a team&apos;s page.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussions#delete-a-discussion-legacy" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace GitHub.Teams.Item.Discussions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get a discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion) endpoint.Get a specific discussion on a team&apos;s page.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get a discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion) endpoint.Get a specific discussion on a team&apos;s page.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussions#get-a-discussion-legacy" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.TeamDiscussion"/></returns>
@@ -87,7 +87,7 @@ namespace GitHub.Teams.Item.Discussions.Item
             return await RequestAdapter.SendAsync<global::GitHub.Models.TeamDiscussion>(requestInfo, global::GitHub.Models.TeamDiscussion.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a discussion](https://docs.github.com/rest/teams/discussions#update-a-discussion) endpoint.Edits the title and body text of a discussion post. Only the parameters you provide are updated.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a discussion](https://docs.github.com/rest/teams/discussions#update-a-discussion) endpoint.Edits the title and body text of a discussion post. Only the parameters you provide are updated.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/teams/discussions#update-a-discussion-legacy" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.TeamDiscussion"/></returns>
@@ -109,7 +109,7 @@ namespace GitHub.Teams.Item.Discussions.Item
             return await RequestAdapter.SendAsync<global::GitHub.Models.TeamDiscussion>(requestInfo, global::GitHub.Models.TeamDiscussion.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a discussion`](https://docs.github.com/rest/teams/discussions#delete-a-discussion) endpoint.Delete a discussion from a team&apos;s page.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Delete a discussion`](https://docs.github.com/rest/teams/discussions#delete-a-discussion) endpoint.Delete a discussion from a team&apos;s page.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace GitHub.Teams.Item.Discussions.Item
             return requestInfo;
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get a discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion) endpoint.Get a specific discussion on a team&apos;s page.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get a discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion) endpoint.Get a specific discussion on a team&apos;s page.OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace GitHub.Teams.Item.Discussions.Item
             return requestInfo;
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a discussion](https://docs.github.com/rest/teams/discussions#update-a-discussion) endpoint.Edits the title and body text of a discussion post. Only the parameters you provide are updated.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Endpoint closing down notice:** This endpoint route is closing down and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a discussion](https://docs.github.com/rest/teams/discussions#update-a-discussion) endpoint.Edits the title and body text of a discussion post. Only the parameters you provide are updated.OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

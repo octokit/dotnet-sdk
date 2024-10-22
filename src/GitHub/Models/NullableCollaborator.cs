@@ -179,6 +179,14 @@ namespace GitHub.Models
 #else
         public string Url { get; set; }
 #endif
+        /// <summary>The user_view_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserViewType { get; set; }
+#nullable restore
+#else
+        public string UserViewType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Models.NullableCollaborator"/> and sets the default values.
         /// </summary>
@@ -226,6 +234,7 @@ namespace GitHub.Models
                 { "subscriptions_url", n => { SubscriptionsUrl = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
+                { "user_view_type", n => { UserViewType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -257,6 +266,7 @@ namespace GitHub.Models
             writer.WriteStringValue("subscriptions_url", SubscriptionsUrl);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("user_view_type", UserViewType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

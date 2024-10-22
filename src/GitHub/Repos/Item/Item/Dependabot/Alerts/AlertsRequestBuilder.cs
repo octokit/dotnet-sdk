@@ -170,7 +170,7 @@ namespace GitHub.Repos.Item.Item.Dependabot.Alerts
             [QueryParameter("package")]
             public string Package { get; set; }
 #endif
-            /// <summary>**Deprecated**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead.</summary>
+            /// <summary>**Closing down notice**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead.</summary>
             [Obsolete("")]
             [QueryParameter("page")]
             public int? Page { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models
 {
-    /// <summary>The level of permission to grant the access token to manage organization projects and projects beta (where available).</summary>
+    /// <summary>The level of permission to grant the access token to manage organization projects and projects public preview (where available).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum AppPermissions_organization_projects
     {

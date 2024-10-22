@@ -93,7 +93,7 @@ namespace GitHub.Models
 #endif
         /// <summary>The state of the status.</summary>
         public global::GitHub.Models.DeploymentStatus_state? State { get; set; }
-        /// <summary>Deprecated: the URL to associate with this status.</summary>
+        /// <summary>Closing down notice: the URL to associate with this status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetUrl { get; set; }

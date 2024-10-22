@@ -34,7 +34,7 @@ namespace GitHub.Teams.Item
         public global::GitHub.Teams.Item.WithTeam_PatchRequestBody_notification_setting? NotificationSetting { get; set; }
         /// <summary>The ID of a team to set as the parent team.</summary>
         public int? ParentTeamId { get; set; }
-        /// <summary>**Deprecated**. The permission that new repositories will be added to the team with when none is specified.</summary>
+        /// <summary>**Closing down notice**. The permission that new repositories will be added to the team with when none is specified.</summary>
         public global::GitHub.Teams.Item.WithTeam_PatchRequestBody_permission? Permission { get; set; }
         /// <summary>The level of privacy this team should have. Editing teams without specifying this parameter leaves `privacy` intact. The options are:  **For a non-nested team:**   * `secret` - only visible to organization owners and members of this team.   * `closed` - visible to all members of this organization.  **For a parent or child team:**   * `closed` - visible to all members of this organization.</summary>
         public global::GitHub.Teams.Item.WithTeam_PatchRequestBody_privacy? Privacy { get; set; }

@@ -88,7 +88,7 @@ namespace GitHub.Repos.Item.Item
         public global::GitHub.Repos.Item.Item.RepoPatchRequestBody_squash_merge_commit_message? SquashMergeCommitMessage { get; set; }
         /// <summary>Required when using `squash_merge_commit_message`.The default value for a squash merge commit title:- `PR_TITLE` - default to the pull request&apos;s title.- `COMMIT_OR_PR_TITLE` - default to the commit&apos;s title (if only one commit) or the pull request&apos;s title (when more than one commit).</summary>
         public global::GitHub.Repos.Item.Item.RepoPatchRequestBody_squash_merge_commit_title? SquashMergeCommitTitle { get; set; }
-        /// <summary>Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.</summary>
+        /// <summary>Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.</summary>
         [Obsolete("")]
         public bool? UseSquashPrTitleAsDefault { get; set; }
         /// <summary>The visibility of the repository.</summary>

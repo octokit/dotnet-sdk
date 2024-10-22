@@ -22,7 +22,7 @@ namespace GitHub.Repos.Item.Item.Commits.Item.Comments
 #else
         public string Body { get; set; }
 #endif
-        /// <summary>**Deprecated**. Use **position** parameter instead. Line number in the file to comment on.</summary>
+        /// <summary>**Closing down notice**. Use **position** parameter instead. Line number in the file to comment on.</summary>
         public int? Line { get; set; }
         /// <summary>Relative path of the file to comment on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

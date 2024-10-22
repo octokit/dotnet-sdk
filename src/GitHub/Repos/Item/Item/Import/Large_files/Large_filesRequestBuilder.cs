@@ -34,7 +34,7 @@ namespace GitHub.Repos.Item.Item.Import.Large_files
         {
         }
         /// <summary>
-        /// List files larger than 100MB found during the import&gt; [!WARNING]&gt; **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+        /// List files larger than 100MB found during the import&gt; [!WARNING]&gt; **Endpoint closing down notice:** Due to very low levels of usage and available alternatives, this endpoint is closing down and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// API method documentation <see href="https://docs.github.com/rest/migrations/source-imports#get-large-files" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.PorterLargeFile&gt;</returns>
@@ -60,7 +60,7 @@ namespace GitHub.Repos.Item.Item.Import.Large_files
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// List files larger than 100MB found during the import&gt; [!WARNING]&gt; **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+        /// List files larger than 100MB found during the import&gt; [!WARNING]&gt; **Endpoint closing down notice:** Due to very low levels of usage and available alternatives, this endpoint is closing down and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

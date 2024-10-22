@@ -538,7 +538,7 @@ namespace GitHub.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.</summary>
+        /// <summary>Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.</summary>
         [Obsolete("")]
         public bool? UseSquashPrTitleAsDefault { get; set; }
         /// <summary>The repository visibility: public, private, or internal.</summary>

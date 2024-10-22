@@ -51,7 +51,7 @@ namespace GitHub.Models
         public global::GitHub.Models.AppPermissions_organization_administration? OrganizationAdministration { get; set; }
         /// <summary>The level of permission to grant the access token to view and manage announcement banners for an organization.</summary>
         public global::GitHub.Models.AppPermissions_organization_announcement_banners? OrganizationAnnouncementBanners { get; set; }
-        /// <summary>The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.</summary>
+        /// <summary>The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.</summary>
         public global::GitHub.Models.AppPermissions_organization_copilot_seat_management? OrganizationCopilotSeatManagement { get; set; }
         /// <summary>The level of permission to grant the access token for custom organization roles management.</summary>
         public global::GitHub.Models.AppPermissions_organization_custom_org_roles? OrganizationCustomOrgRoles { get; set; }
@@ -71,7 +71,7 @@ namespace GitHub.Models
         public global::GitHub.Models.AppPermissions_organization_personal_access_tokens? OrganizationPersonalAccessTokens { get; set; }
         /// <summary>The level of permission to grant the access token for viewing an organization&apos;s plan.</summary>
         public global::GitHub.Models.AppPermissions_organization_plan? OrganizationPlan { get; set; }
-        /// <summary>The level of permission to grant the access token to manage organization projects and projects beta (where available).</summary>
+        /// <summary>The level of permission to grant the access token to manage organization projects and projects public preview (where available).</summary>
         public global::GitHub.Models.AppPermissions_organization_projects? OrganizationProjects { get; set; }
         /// <summary>The level of permission to grant the access token to manage organization secrets.</summary>
         public global::GitHub.Models.AppPermissions_organization_secrets? OrganizationSecrets { get; set; }
