@@ -32,8 +32,12 @@ namespace GitHub.Models
 #else
         public string LocationsUrl { get; set; }
 #endif
+        /// <summary>Whether the detected secret was found in multiple repositories under the same organization or enterprise.</summary>
+        public bool? MultiRepo { get; set; }
         /// <summary>The security alert number.</summary>
         public int? Number { get; private set; }
+        /// <summary>Whether the detected secret was publicly leaked.</summary>
+        public bool? PubliclyLeaked { get; set; }
         /// <summary>Whether push protection was bypassed for the detected secret.</summary>
         public bool? PushProtectionBypassed { get; set; }
         /// <summary>The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
@@ -132,7 +136,9 @@ namespace GitHub.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "locations_url", n => { LocationsUrl = n.GetStringValue(); } },
+                { "multi_repo", n => { MultiRepo = n.GetBoolValue(); } },
                 { "number", n => { Number = n.GetIntValue(); } },
+                { "publicly_leaked", n => { PubliclyLeaked = n.GetBoolValue(); } },
                 { "push_protection_bypassed", n => { PushProtectionBypassed = n.GetBoolValue(); } },
                 { "push_protection_bypassed_at", n => { PushProtectionBypassedAt = n.GetDateTimeOffsetValue(); } },
                 { "push_protection_bypassed_by", n => { PushProtectionBypassedBy = n.GetObjectValue<global::GitHub.Models.NullableSimpleUser>(global::GitHub.Models.NullableSimpleUser.CreateFromDiscriminatorValue); } },
@@ -157,6 +163,8 @@ namespace GitHub.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("locations_url", LocationsUrl);
+            writer.WriteBoolValue("multi_repo", MultiRepo);
+            writer.WriteBoolValue("publicly_leaked", PubliclyLeaked);
             writer.WriteBoolValue("push_protection_bypassed", PushProtectionBypassed);
             writer.WriteDateTimeOffsetValue("push_protection_bypassed_at", PushProtectionBypassedAt);
             writer.WriteObjectValue<global::GitHub.Models.NullableSimpleUser>("push_protection_bypassed_by", PushProtectionBypassedBy);

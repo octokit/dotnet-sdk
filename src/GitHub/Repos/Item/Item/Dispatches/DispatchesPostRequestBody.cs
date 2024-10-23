@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Dispatches
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.</summary>
+        /// <summary>JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::GitHub.Repos.Item.Item.Dispatches.DispatchesPostRequestBody_client_payload? ClientPayload { get; set; }

@@ -22,7 +22,7 @@ namespace GitHub.Enterprises.Item.SecretScanning.Alerts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/alerts{?after*,before*,direction*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", pathParameters)
+        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/alerts{?after*,before*,direction*,is_multi_repo*,is_publicly_leaked*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.Enterprises.Item.SecretScanning.Alerts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/alerts{?after*,before*,direction*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", rawUrl)
+        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/secret-scanning/alerts{?after*,before*,direction*,is_multi_repo*,is_publicly_leaked*,per_page*,resolution*,secret_type*,sort*,state*,validity*}", rawUrl)
         {
         }
         /// <summary>
@@ -117,6 +117,12 @@ namespace GitHub.Enterprises.Item.SecretScanning.Alerts
             /// <summary>The direction to sort the results by.</summary>
             [QueryParameter("direction")]
             public global::GitHub.Enterprises.Item.SecretScanning.Alerts.GetDirectionQueryParameterType? Direction { get; set; }
+            /// <summary>A boolean value representing whether or not to filter alerts by the multi-repo tag being present.</summary>
+            [QueryParameter("is_multi_repo")]
+            public bool? IsMultiRepo { get; set; }
+            /// <summary>A boolean value representing whether or not to filter alerts by the publicly-leaked tag being present.</summary>
+            [QueryParameter("is_publicly_leaked")]
+            public bool? IsPubliclyLeaked { get; set; }
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }

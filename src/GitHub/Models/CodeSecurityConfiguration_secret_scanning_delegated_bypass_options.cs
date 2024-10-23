@@ -5,32 +5,40 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace GitHub.Repos.Item.Item.Dispatches
+namespace GitHub.Models
 {
     /// <summary>
-    /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
+    /// Feature options for secret scanning delegated bypass
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    public partial class DispatchesPostRequestBody_client_payload : IAdditionalDataHolder, IParsable
+    public partial class CodeSecurityConfiguration_secret_scanning_delegated_bypass_options : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The bypass reviewers for secret scanning delegated bypass</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options_reviewers>? Reviewers { get; set; }
+#nullable restore
+#else
+        public List<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options_reviewers> Reviewers { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Dispatches.DispatchesPostRequestBody_client_payload"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options"/> and sets the default values.
         /// </summary>
-        public DispatchesPostRequestBody_client_payload()
+        public CodeSecurityConfiguration_secret_scanning_delegated_bypass_options()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Dispatches.DispatchesPostRequestBody_client_payload"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.Repos.Item.Item.Dispatches.DispatchesPostRequestBody_client_payload CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.Repos.Item.Item.Dispatches.DispatchesPostRequestBody_client_payload();
+            return new global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,6 +48,7 @@ namespace GitHub.Repos.Item.Item.Dispatches
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options_reviewers>(global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options_reviewers.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,6 +58,7 @@ namespace GitHub.Repos.Item.Item.Dispatches
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options_reviewers>("reviewers", Reviewers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

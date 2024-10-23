@@ -44,6 +44,8 @@ namespace GitHub.Models
 #else
         public string Blog { get; set; }
 #endif
+        /// <summary>The number of collaborators on private repositories.This field may be null if the number of private repositories is over 50,000.</summary>
+        public int? Collaborators { get; set; }
         /// <summary>The company property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -307,6 +309,7 @@ namespace GitHub.Models
                 { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
                 { "billing_email", n => { BillingEmail = n.GetStringValue(); } },
                 { "blog", n => { Blog = n.GetStringValue(); } },
+                { "collaborators", n => { Collaborators = n.GetIntValue(); } },
                 { "company", n => { Company = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "default_repository_permission", n => { DefaultRepositoryPermission = n.GetStringValue(); } },
@@ -372,6 +375,7 @@ namespace GitHub.Models
             writer.WriteStringValue("avatar_url", AvatarUrl);
             writer.WriteStringValue("billing_email", BillingEmail);
             writer.WriteStringValue("blog", Blog);
+            writer.WriteIntValue("collaborators", Collaborators);
             writer.WriteStringValue("company", Company);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("default_repository_permission", DefaultRepositoryPermission);
