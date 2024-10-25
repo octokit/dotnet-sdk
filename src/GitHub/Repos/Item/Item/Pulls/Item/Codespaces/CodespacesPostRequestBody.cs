@@ -38,7 +38,7 @@ namespace GitHub.Repos.Item.Item.Pulls.Item.Codespaces
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.</summary>
+        /// <summary>The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.</summary>
         public global::GitHub.Repos.Item.Item.Pulls.Item.Codespaces.CodespacesPostRequestBody_geo? Geo { get; set; }
         /// <summary>Time in minutes before codespace stops from inactivity</summary>
         public int? IdleTimeoutMinutes { get; set; }

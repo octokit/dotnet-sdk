@@ -34,7 +34,7 @@ namespace GitHub.Orgs.Item.Members.Item.Copilot
         {
         }
         /// <summary>
-        /// &gt; [!NOTE]&gt; This endpoint is in beta and is subject to change.Gets the GitHub Copilot seat assignment details for a member of an organization who currently has access to GitHub Copilot.Only organization owners can view Copilot seat assignment details for members of their organization.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Gets the GitHub Copilot seat assignment details for a member of an organization who currently has access to GitHub Copilot.Only organization owners can view Copilot seat assignment details for members of their organization.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
         /// API method documentation <see href="https://docs.github.com/rest/copilot/copilot-user-management#get-copilot-seat-assignment-details-for-a-user" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.CopilotSeatDetails"/></returns>
@@ -64,7 +64,7 @@ namespace GitHub.Orgs.Item.Members.Item.Copilot
             return await RequestAdapter.SendAsync<global::GitHub.Models.CopilotSeatDetails>(requestInfo, global::GitHub.Models.CopilotSeatDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!NOTE]&gt; This endpoint is in beta and is subject to change.Gets the GitHub Copilot seat assignment details for a member of an organization who currently has access to GitHub Copilot.Only organization owners can view Copilot seat assignment details for members of their organization.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
+        /// &gt; [!NOTE]&gt; This endpoint is in public preview and is subject to change.Gets the GitHub Copilot seat assignment details for a member of an organization who currently has access to GitHub Copilot.Only organization owners can view Copilot seat assignment details for members of their organization.OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

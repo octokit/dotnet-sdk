@@ -15,5 +15,9 @@ namespace GitHub.Models
         #pragma warning disable CS1591
         Organization,
         #pragma warning restore CS1591
+        [EnumMember(Value = "enterprise")]
+        #pragma warning disable CS1591
+        Enterprise,
+        #pragma warning restore CS1591
     }
 }

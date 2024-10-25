@@ -225,8 +225,6 @@ namespace GitHub.Models
 #else
         public string SubscriptionsUrl { get; set; }
 #endif
-        /// <summary>The suspended_at property</summary>
-        public DateTimeOffset? SuspendedAt { get; set; }
         /// <summary>The total_private_repos property</summary>
         public int? TotalPrivateRepos { get; set; }
         /// <summary>The twitter_username property</summary>
@@ -256,6 +254,14 @@ namespace GitHub.Models
 #nullable restore
 #else
         public string Url { get; set; }
+#endif
+        /// <summary>The user_view_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserViewType { get; set; }
+#nullable restore
+#else
+        public string UserViewType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Models.PrivateUser"/> and sets the default values.
@@ -318,13 +324,13 @@ namespace GitHub.Models
                 { "site_admin", n => { SiteAdmin = n.GetBoolValue(); } },
                 { "starred_url", n => { StarredUrl = n.GetStringValue(); } },
                 { "subscriptions_url", n => { SubscriptionsUrl = n.GetStringValue(); } },
-                { "suspended_at", n => { SuspendedAt = n.GetDateTimeOffsetValue(); } },
                 { "total_private_repos", n => { TotalPrivateRepos = n.GetIntValue(); } },
                 { "twitter_username", n => { TwitterUsername = n.GetStringValue(); } },
                 { "two_factor_authentication", n => { TwoFactorAuthentication = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
+                { "user_view_type", n => { UserViewType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -370,13 +376,13 @@ namespace GitHub.Models
             writer.WriteBoolValue("site_admin", SiteAdmin);
             writer.WriteStringValue("starred_url", StarredUrl);
             writer.WriteStringValue("subscriptions_url", SubscriptionsUrl);
-            writer.WriteDateTimeOffsetValue("suspended_at", SuspendedAt);
             writer.WriteIntValue("total_private_repos", TotalPrivateRepos);
             writer.WriteStringValue("twitter_username", TwitterUsername);
             writer.WriteBoolValue("two_factor_authentication", TwoFactorAuthentication);
             writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("user_view_type", UserViewType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -99,7 +99,7 @@ namespace GitHub.Models
 #endif
         /// <summary>The line of the blob to which the comment applies. The last line of the range for a multi-line comment</summary>
         public int? OriginalLine { get; set; }
-        /// <summary>The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.</summary>
+        /// <summary>The index of the original line in the diff to which the comment applies. This field is closing down; use `original_line` instead.</summary>
         public int? OriginalPosition { get; set; }
         /// <summary>The first line of the range for a multi-line comment.</summary>
         public int? OriginalStartLine { get; set; }
@@ -111,7 +111,7 @@ namespace GitHub.Models
 #else
         public string Path { get; set; }
 #endif
-        /// <summary>The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.</summary>
+        /// <summary>The line index in the diff to which the comment applies. This field is closing down; use `line` instead.</summary>
         public int? Position { get; set; }
         /// <summary>The ID of the pull request review to which the comment belongs.</summary>
         public long? PullRequestReviewId { get; set; }

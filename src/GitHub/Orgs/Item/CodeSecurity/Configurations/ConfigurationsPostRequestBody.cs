@@ -54,6 +54,16 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations
         public global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_private_vulnerability_reporting? PrivateVulnerabilityReporting { get; set; }
         /// <summary>The enablement status of secret scanning</summary>
         public global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning? SecretScanning { get; set; }
+        /// <summary>The enablement status of secret scanning delegated bypass</summary>
+        public global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_delegated_bypass? SecretScanningDelegatedBypass { get; set; }
+        /// <summary>Feature options for secret scanning delegated bypass</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_delegated_bypass_options? SecretScanningDelegatedBypassOptions { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_delegated_bypass_options SecretScanningDelegatedBypassOptions { get; set; }
+#endif
         /// <summary>The enablement status of secret scanning non provider patterns</summary>
         public global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_non_provider_patterns? SecretScanningNonProviderPatterns { get; set; }
         /// <summary>The enablement status of secret scanning push protection</summary>
@@ -74,6 +84,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations
             Enforcement = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_enforcement.Enforced;
             PrivateVulnerabilityReporting = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_private_vulnerability_reporting.Disabled;
             SecretScanning = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning.Disabled;
+            SecretScanningDelegatedBypass = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_delegated_bypass.Disabled;
             SecretScanningNonProviderPatterns = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_non_provider_patterns.Disabled;
             SecretScanningPushProtection = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_push_protection.Disabled;
             SecretScanningValidityChecks = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_validity_checks.Disabled;
@@ -108,6 +119,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "private_vulnerability_reporting", n => { PrivateVulnerabilityReporting = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_private_vulnerability_reporting>(); } },
                 { "secret_scanning", n => { SecretScanning = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning>(); } },
+                { "secret_scanning_delegated_bypass", n => { SecretScanningDelegatedBypass = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_delegated_bypass>(); } },
+                { "secret_scanning_delegated_bypass_options", n => { SecretScanningDelegatedBypassOptions = n.GetObjectValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_delegated_bypass_options>(global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_delegated_bypass_options.CreateFromDiscriminatorValue); } },
                 { "secret_scanning_non_provider_patterns", n => { SecretScanningNonProviderPatterns = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_non_provider_patterns>(); } },
                 { "secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_push_protection>(); } },
                 { "secret_scanning_validity_checks", n => { SecretScanningValidityChecks = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_validity_checks>(); } },
@@ -132,6 +145,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_private_vulnerability_reporting>("private_vulnerability_reporting", PrivateVulnerabilityReporting);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning>("secret_scanning", SecretScanning);
+            writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_delegated_bypass>("secret_scanning_delegated_bypass", SecretScanningDelegatedBypass);
+            writer.WriteObjectValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_delegated_bypass_options>("secret_scanning_delegated_bypass_options", SecretScanningDelegatedBypassOptions);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_non_provider_patterns>("secret_scanning_non_provider_patterns", SecretScanningNonProviderPatterns);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_validity_checks>("secret_scanning_validity_checks", SecretScanningValidityChecks);

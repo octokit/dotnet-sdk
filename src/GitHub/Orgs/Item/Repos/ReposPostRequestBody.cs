@@ -96,7 +96,7 @@ namespace GitHub.Orgs.Item.Repos
         public global::GitHub.Orgs.Item.Repos.ReposPostRequestBody_squash_merge_commit_title? SquashMergeCommitTitle { get; set; }
         /// <summary>The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.</summary>
         public int? TeamId { get; set; }
-        /// <summary>Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.</summary>
+        /// <summary>Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.</summary>
         [Obsolete("")]
         public bool? UseSquashPrTitleAsDefault { get; set; }
         /// <summary>The visibility of the repository.</summary>

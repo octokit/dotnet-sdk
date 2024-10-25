@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Teams.Item
 {
-    /// <summary>**Deprecated**. The permission that new repositories will be added to the team with when none is specified.</summary>
+    /// <summary>**Closing down notice**. The permission that new repositories will be added to the team with when none is specified.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WithTeam_PatchRequestBody_permission
     {

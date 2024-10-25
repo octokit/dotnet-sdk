@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Repos.Item.Item.Dispatches
 {
     /// <summary>
-    /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
+    /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DispatchesPostRequestBody_client_payload : IAdditionalDataHolder, IParsable

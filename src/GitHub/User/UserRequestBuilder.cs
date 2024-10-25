@@ -340,13 +340,13 @@ namespace GitHub.User
             public static global::GitHub.User.UserRequestBuilder.UserGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var mappingValue = parseNode.GetChildNode("user_view_type")?.GetStringValue();
                 var result = new global::GitHub.User.UserRequestBuilder.UserGetResponse();
-                if("private-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("private".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PrivateUser = new global::GitHub.Models.PrivateUser();
                 }
-                else if("public-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("public".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.PublicUser = new global::GitHub.Models.PublicUser();
                 }

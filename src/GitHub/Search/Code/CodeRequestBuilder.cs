@@ -95,7 +95,7 @@ namespace GitHub.Search.Code
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CodeRequestBuilderGetQueryParameters 
         {
-            /// <summary>**This field is deprecated.** Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`. </summary>
+            /// <summary>**This field is closing down.** Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`. </summary>
             [Obsolete("")]
             [QueryParameter("order")]
             public global::GitHub.Search.Code.GetOrderQueryParameterType? Order { get; set; }
@@ -115,7 +115,7 @@ namespace GitHub.Search.Code
             [QueryParameter("q")]
             public string Q { get; set; }
 #endif
-            /// <summary>**This field is deprecated.** Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub search infrastructure. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results)</summary>
+            /// <summary>**This field is closing down.** Sorts the results of your query. Can only be `indexed`, which indicates how recently a file has been indexed by the GitHub search infrastructure. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results)</summary>
             [Obsolete("")]
             [QueryParameter("sort")]
             public global::GitHub.Search.Code.GetSortQueryParameterType? Sort { get; set; }
