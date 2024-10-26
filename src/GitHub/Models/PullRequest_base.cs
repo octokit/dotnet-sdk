@@ -30,13 +30,13 @@ namespace GitHub.Models
 #else
         public string Ref { get; set; }
 #endif
-        /// <summary>The repo property</summary>
+        /// <summary>A repository on GitHub.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::GitHub.Models.PullRequest_base_repo? Repo { get; set; }
+        public global::GitHub.Models.Repository? Repo { get; set; }
 #nullable restore
 #else
-        public global::GitHub.Models.PullRequest_base_repo Repo { get; set; }
+        public global::GitHub.Models.Repository Repo { get; set; }
 #endif
         /// <summary>The sha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,13 +46,13 @@ namespace GitHub.Models
 #else
         public string Sha { get; set; }
 #endif
-        /// <summary>The user property</summary>
+        /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::GitHub.Models.PullRequest_base_user? User { get; set; }
+        public global::GitHub.Models.SimpleUser? User { get; set; }
 #nullable restore
 #else
-        public global::GitHub.Models.PullRequest_base_user User { get; set; }
+        public global::GitHub.Models.SimpleUser User { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Models.PullRequest_base"/> and sets the default values.
@@ -81,9 +81,9 @@ namespace GitHub.Models
             {
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
-                { "repo", n => { Repo = n.GetObjectValue<global::GitHub.Models.PullRequest_base_repo>(global::GitHub.Models.PullRequest_base_repo.CreateFromDiscriminatorValue); } },
+                { "repo", n => { Repo = n.GetObjectValue<global::GitHub.Models.Repository>(global::GitHub.Models.Repository.CreateFromDiscriminatorValue); } },
                 { "sha", n => { Sha = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::GitHub.Models.PullRequest_base_user>(global::GitHub.Models.PullRequest_base_user.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::GitHub.Models.SimpleUser>(global::GitHub.Models.SimpleUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace GitHub.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("ref", Ref);
-            writer.WriteObjectValue<global::GitHub.Models.PullRequest_base_repo>("repo", Repo);
+            writer.WriteObjectValue<global::GitHub.Models.Repository>("repo", Repo);
             writer.WriteStringValue("sha", Sha);
-            writer.WriteObjectValue<global::GitHub.Models.PullRequest_base_user>("user", User);
+            writer.WriteObjectValue<global::GitHub.Models.SimpleUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
