@@ -34,7 +34,7 @@ namespace GitHub.User.Orgs
         {
         }
         /// <summary>
-        /// List organizations for the authenticated user.For OAuth app tokens and personal access tokens (classic), this endpoint only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope for OAuth app tokens and personal access tokens (classic). Requests with insufficient scope will receive a `403 Forbidden` response.
+        /// List organizations for the authenticated user.For OAuth app tokens and personal access tokens (classic), this endpoint only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope for OAuth app tokens and personal access tokens (classic). Requests with insufficient scope will receive a `403 Forbidden` response.&gt; [!NOTE]&gt; Requests using a fine-grained access token will receive a `200 Success` response with an empty list.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/orgs#list-organizations-for-the-authenticated-user" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.OrganizationSimple&gt;</returns>
@@ -61,7 +61,7 @@ namespace GitHub.User.Orgs
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// List organizations for the authenticated user.For OAuth app tokens and personal access tokens (classic), this endpoint only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope for OAuth app tokens and personal access tokens (classic). Requests with insufficient scope will receive a `403 Forbidden` response.
+        /// List organizations for the authenticated user.For OAuth app tokens and personal access tokens (classic), this endpoint only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope for OAuth app tokens and personal access tokens (classic). Requests with insufficient scope will receive a `403 Forbidden` response.&gt; [!NOTE]&gt; Requests using a fine-grained access token will receive a `200 Success` response with an empty list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace GitHub.User.Orgs
             return new global::GitHub.User.Orgs.OrgsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List organizations for the authenticated user.For OAuth app tokens and personal access tokens (classic), this endpoint only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope for OAuth app tokens and personal access tokens (classic). Requests with insufficient scope will receive a `403 Forbidden` response.
+        /// List organizations for the authenticated user.For OAuth app tokens and personal access tokens (classic), this endpoint only lists organizations that your authorization allows you to operate on in some way (e.g., you can list teams with `read:org` scope, you can publicize your organization membership with `user` scope, etc.). Therefore, this API requires at least `user` or `read:org` scope for OAuth app tokens and personal access tokens (classic). Requests with insufficient scope will receive a `403 Forbidden` response.&gt; [!NOTE]&gt; Requests using a fine-grained access token will receive a `200 Success` response with an empty list.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class OrgsRequestBuilderGetQueryParameters 

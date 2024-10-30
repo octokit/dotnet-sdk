@@ -11,6 +11,10 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item.Attach
         #pragma warning disable CS1591
         All,
         #pragma warning restore CS1591
+        [EnumMember(Value = "all_without_configurations")]
+        #pragma warning disable CS1591
+        All_without_configurations,
+        #pragma warning restore CS1591
         [EnumMember(Value = "public")]
         #pragma warning disable CS1591
         Public,
