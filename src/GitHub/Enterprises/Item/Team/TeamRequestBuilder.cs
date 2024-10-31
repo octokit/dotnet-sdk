@@ -16,7 +16,7 @@ namespace GitHub.Enterprises.Item.Team
     public partial class TeamRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the GitHub.enterprises.item.team.item collection</summary>
-        /// <param name="position">The slug of the team name.</param>
+        /// <param name="position">The slug of the enterprise team name.</param>
         /// <returns>A <see cref="global::GitHub.Enterprises.Item.Team.Item.WithTeam_slugItemRequestBuilder"/></returns>
         public global::GitHub.Enterprises.Item.Team.Item.WithTeam_slugItemRequestBuilder this[string position]
         {
