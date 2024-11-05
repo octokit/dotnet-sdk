@@ -23,7 +23,7 @@ namespace GitHub.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Unique identifier of the fine-grained personal access token. The `pat_id` used to get details about an approved fine-grained personal access token.</summary>
+        /// <summary>Unique identifier of the fine-grained personal access token grant. The `pat_id` used to get details about an approved fine-grained personal access token.</summary>
         public int? Id { get; set; }
         /// <summary>A GitHub user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,6 +61,8 @@ namespace GitHub.Models
 #else
         public string TokenExpiresAt { get; set; }
 #endif
+        /// <summary>Unique identifier of the user&apos;s token. This field can also be found in audit log events and the organization&apos;s settings for their PAT grants.</summary>
+        public int? TokenId { get; set; }
         /// <summary>Date and time when the associated fine-grained personal access token was last used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +104,7 @@ namespace GitHub.Models
                 { "repository_selection", n => { RepositorySelection = n.GetEnumValue<global::GitHub.Models.OrganizationProgrammaticAccessGrant_repository_selection>(); } },
                 { "token_expired", n => { TokenExpired = n.GetBoolValue(); } },
                 { "token_expires_at", n => { TokenExpiresAt = n.GetStringValue(); } },
+                { "token_id", n => { TokenId = n.GetIntValue(); } },
                 { "token_last_used_at", n => { TokenLastUsedAt = n.GetStringValue(); } },
             };
         }
@@ -120,6 +123,7 @@ namespace GitHub.Models
             writer.WriteEnumValue<global::GitHub.Models.OrganizationProgrammaticAccessGrant_repository_selection>("repository_selection", RepositorySelection);
             writer.WriteBoolValue("token_expired", TokenExpired);
             writer.WriteStringValue("token_expires_at", TokenExpiresAt);
+            writer.WriteIntValue("token_id", TokenId);
             writer.WriteStringValue("token_last_used_at", TokenLastUsedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

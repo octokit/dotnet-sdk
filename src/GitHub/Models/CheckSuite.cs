@@ -76,7 +76,7 @@ namespace GitHub.Models
         public string HeadSha { get; set; }
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The latest_check_runs_count property</summary>
         public int? LatestCheckRunsCount { get; set; }
         /// <summary>The node_id property</summary>
@@ -153,7 +153,7 @@ namespace GitHub.Models
                 { "head_branch", n => { HeadBranch = n.GetStringValue(); } },
                 { "head_commit", n => { HeadCommit = n.GetObjectValue<global::GitHub.Models.SimpleCommit>(global::GitHub.Models.SimpleCommit.CreateFromDiscriminatorValue); } },
                 { "head_sha", n => { HeadSha = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
                 { "latest_check_runs_count", n => { LatestCheckRunsCount = n.GetIntValue(); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
                 { "pull_requests", n => { PullRequests = n.GetCollectionOfObjectValues<global::GitHub.Models.PullRequestMinimal>(global::GitHub.Models.PullRequestMinimal.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -181,7 +181,7 @@ namespace GitHub.Models
             writer.WriteStringValue("head_branch", HeadBranch);
             writer.WriteObjectValue<global::GitHub.Models.SimpleCommit>("head_commit", HeadCommit);
             writer.WriteStringValue("head_sha", HeadSha);
-            writer.WriteIntValue("id", Id);
+            writer.WriteLongValue("id", Id);
             writer.WriteIntValue("latest_check_runs_count", LatestCheckRunsCount);
             writer.WriteStringValue("node_id", NodeId);
             writer.WriteCollectionOfObjectValues<global::GitHub.Models.PullRequestMinimal>("pull_requests", PullRequests);

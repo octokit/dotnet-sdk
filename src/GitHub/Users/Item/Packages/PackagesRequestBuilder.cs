@@ -47,7 +47,7 @@ namespace GitHub.Users.Item.Packages
         {
         }
         /// <summary>
-        /// Lists all packages in a user&apos;s namespace for which the requesting user has access.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
+        /// Lists all packages in a user&apos;s namespace for which the requesting user has access.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
         /// API method documentation <see href="https://docs.github.com/rest/packages/packages#list-packages-for-a-user" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.Package&gt;</returns>
@@ -74,7 +74,7 @@ namespace GitHub.Users.Item.Packages
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists all packages in a user&apos;s namespace for which the requesting user has access.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
+        /// Lists all packages in a user&apos;s namespace for which the requesting user has access.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +102,7 @@ namespace GitHub.Users.Item.Packages
             return new global::GitHub.Users.Item.Packages.PackagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists all packages in a user&apos;s namespace for which the requesting user has access.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. If the `package_type` belongs to a GitHub Packages registry that only supports repository-scoped permissions, the `repo` scope is also required. For the list of these registries, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
+        /// Lists all packages in a user&apos;s namespace for which the requesting user has access.OAuth app tokens and personal access tokens (classic) need the `read:packages` scope to use this endpoint. For more information, see &quot;[About permissions for GitHub Packages](https://docs.github.com/packages/learn-github-packages/about-permissions-for-github-packages#permissions-for-repository-scoped-packages).&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class PackagesRequestBuilderGetQueryParameters 
