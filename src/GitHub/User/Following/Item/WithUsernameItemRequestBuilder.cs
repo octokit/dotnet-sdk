@@ -96,6 +96,7 @@ namespace GitHub.User.Following.Item
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 401 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
+        /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -111,6 +112,7 @@ namespace GitHub.User.Following.Item
                 { "401", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
                 { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
+                { "422", global::GitHub.Models.ValidationError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
