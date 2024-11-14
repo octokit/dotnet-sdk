@@ -15,6 +15,8 @@ namespace GitHub.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Determines if the user has a direct, indirect, or mixed relationship to a role</summary>
+        public global::GitHub.Models.UserRoleAssignment_assignment? Assignment { get; set; }
         /// <summary>The avatar_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +83,14 @@ namespace GitHub.Models
 #endif
         /// <summary>The id property</summary>
         public int? Id { get; set; }
+        /// <summary>Team the user has gotten the role through</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::GitHub.Models.TeamSimple>? InheritedFrom { get; set; }
+#nullable restore
+#else
+        public List<global::GitHub.Models.TeamSimple> InheritedFrom { get; set; }
+#endif
         /// <summary>The login property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -204,6 +214,7 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "assignment", n => { Assignment = n.GetEnumValue<global::GitHub.Models.UserRoleAssignment_assignment>(); } },
                 { "avatar_url", n => { AvatarUrl = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "events_url", n => { EventsUrl = n.GetStringValue(); } },
@@ -213,6 +224,7 @@ namespace GitHub.Models
                 { "gravatar_id", n => { GravatarId = n.GetStringValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
+                { "inherited_from", n => { InheritedFrom = n.GetCollectionOfObjectValues<global::GitHub.Models.TeamSimple>(global::GitHub.Models.TeamSimple.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "login", n => { Login = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
@@ -235,6 +247,7 @@ namespace GitHub.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::GitHub.Models.UserRoleAssignment_assignment>("assignment", Assignment);
             writer.WriteStringValue("avatar_url", AvatarUrl);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("events_url", EventsUrl);
@@ -244,6 +257,7 @@ namespace GitHub.Models
             writer.WriteStringValue("gravatar_id", GravatarId);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteIntValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::GitHub.Models.TeamSimple>("inherited_from", InheritedFrom);
             writer.WriteStringValue("login", Login);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("node_id", NodeId);
