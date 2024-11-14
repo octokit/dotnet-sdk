@@ -9,10 +9,6 @@ namespace GitHub.Octokit.Client.Authentication;
 /// This is beneficial for dev ergonomics - where BaseBearerTokenAuthenticationProvider
 /// is a base class for all authentication providers that use a bearer token 
 /// </summary>
-public class AppInstallationAuthProvider : BaseBearerTokenAuthenticationProvider
+public class AppInstallationAuthProvider(IAccessTokenProvider tokenProvider) : BaseBearerTokenAuthenticationProvider(tokenProvider)
 {
-    public AppInstallationAuthProvider(IAccessTokenProvider tokenProvider) : base(tokenProvider)
-    {
-
-    }
 }

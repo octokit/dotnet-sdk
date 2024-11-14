@@ -9,7 +9,6 @@ namespace GitHub.Octokit.Client.Middleware.Options;
 /// </summary>
 public class UserAgentOptions : IRequestOption
 {
-
     private const string DefaultProductName = "GitHub.Octokit.dotnet-sdk";
     private const string DefaultProductVersion = "0.0.0";
 
@@ -24,6 +23,9 @@ public class UserAgentOptions : IRequestOption
     /// </summary>
     public string? ProductVersion { get; set; } = DefaultProductVersion;
 
-    public static string GetFullSDKVersion() => DefaultProductName + ":" + DefaultProductVersion;
-
+    /// <summary>
+    /// Gets the full SDK version.
+    /// </summary>
+    /// <returns>A string representation of the full SDK version.</returns>
+    public static string GetFullSDKVersion() => $"{DefaultProductName}:{DefaultProductVersion}";
 }

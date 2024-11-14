@@ -1,4 +1,5 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -8,7 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitignore = .gitignore
+		.github\workflows\add_to_octokit_project.yml = .github\workflows\add_to_octokit_project.yml
+		.github\workflows\build.yml = .github\workflows\build.yml
+		.github\workflows\immediate-response.yml = .github\workflows\immediate-response.yml
 		LICENSE = LICENSE
+		.github\workflows\publish.yml = .github\workflows\publish.yml
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -28,10 +33,6 @@ Global
 		{7EF0200D-9F10-4A77-8F73-3E26D3EBD326}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EF0200D-9F10-4A77-8F73-3E26D3EBD326}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EF0200D-9F10-4A77-8F73-3E26D3EBD326}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3A6900D7-23D6-4AE5-B76A-76A05CD336F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3A6900D7-23D6-4AE5-B76A-76A05CD336F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3A6900D7-23D6-4AE5-B76A-76A05CD336F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3A6900D7-23D6-4AE5-B76A-76A05CD336F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
