@@ -1,14 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>GitHub .NET SDK Unit tests</Description>
     <AssemblyTitle>Tests</AssemblyTitle>
     <OutputType>Library</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Authors>GitHub</Authors>
-    <Copyright>Copyright (c) GitHub 2023-2024</Copyright>
+    <Copyright>Copyright (c) GitHub 2023-$([System.DateTime]::Now.ToString('yyyy'))</Copyright>
   </PropertyGroup>
 
   <PropertyGroup>
