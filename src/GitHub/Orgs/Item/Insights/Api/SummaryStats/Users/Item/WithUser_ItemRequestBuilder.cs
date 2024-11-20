@@ -22,7 +22,7 @@ namespace GitHub.Orgs.Item.Insights.Api.SummaryStats.Users.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUser_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats/users/{user_id}?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}", pathParameters)
+        public WithUser_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats/users/{user_id}?min_timestamp={min_timestamp}{&max_timestamp*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.Orgs.Item.Insights.Api.SummaryStats.Users.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUser_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats/users/{user_id}?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}", rawUrl)
+        public WithUser_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/summary-stats/users/{user_id}?min_timestamp={min_timestamp}{&max_timestamp*}", rawUrl)
         {
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace GitHub.Orgs.Item.Insights.Api.SummaryStats.Users.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithUser_ItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum timestamp to query for stats</summary>
+            /// <summary>The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("max_timestamp")]
@@ -96,7 +96,7 @@ namespace GitHub.Orgs.Item.Insights.Api.SummaryStats.Users.Item
             [QueryParameter("max_timestamp")]
             public string MaxTimestamp { get; set; }
 #endif
-            /// <summary>The minimum timestamp to query for stats</summary>
+            /// <summary>The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("min_timestamp")]

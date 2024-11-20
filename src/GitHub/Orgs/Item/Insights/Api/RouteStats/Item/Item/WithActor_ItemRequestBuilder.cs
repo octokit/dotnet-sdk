@@ -22,7 +22,7 @@ namespace GitHub.Orgs.Item.Insights.Api.RouteStats.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithActor_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}{&direction*,page*,per_page*,sort*}", pathParameters)
+        public WithActor_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.Orgs.Item.Insights.Api.RouteStats.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithActor_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?max_timestamp={max_timestamp}&min_timestamp={min_timestamp}{&direction*,page*,per_page*,sort*}", rawUrl)
+        public WithActor_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace GitHub.Orgs.Item.Insights.Api.RouteStats.Item.Item
             /// <summary>The direction to sort the results by.</summary>
             [QueryParameter("direction")]
             public global::GitHub.Orgs.Item.Insights.Api.RouteStats.Item.Item.GetDirectionQueryParameterType? Direction { get; set; }
-            /// <summary>The maximum timestamp to query for stats</summary>
+            /// <summary>The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("max_timestamp")]
@@ -100,7 +100,7 @@ namespace GitHub.Orgs.Item.Insights.Api.RouteStats.Item.Item
             [QueryParameter("max_timestamp")]
             public string MaxTimestamp { get; set; }
 #endif
-            /// <summary>The minimum timestamp to query for stats</summary>
+            /// <summary>The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("min_timestamp")]
