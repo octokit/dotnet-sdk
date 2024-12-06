@@ -22,7 +22,7 @@ namespace GitHub.Orgs.Item.Insights.Api.RouteStats.Item.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithActor_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*}", pathParameters)
+        public WithActor_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&api_route_substring*,direction*,max_timestamp*,page*,per_page*,sort*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.Orgs.Item.Insights.Api.RouteStats.Item.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithActor_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*}", rawUrl)
+        public WithActor_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}?min_timestamp={min_timestamp}{&api_route_substring*,direction*,max_timestamp*,page*,per_page*,sort*}", rawUrl)
         {
         }
         /// <summary>
@@ -87,6 +87,16 @@ namespace GitHub.Orgs.Item.Insights.Api.RouteStats.Item.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WithActor_ItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>Providing a substring will filter results where the API route contains the substring. This is a case-insensitive search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("api_route_substring")]
+            public string? ApiRouteSubstring { get; set; }
+#nullable restore
+#else
+            [QueryParameter("api_route_substring")]
+            public string ApiRouteSubstring { get; set; }
+#endif
             /// <summary>The direction to sort the results by.</summary>
             [QueryParameter("direction")]
             public global::GitHub.Orgs.Item.Insights.Api.RouteStats.Item.Item.GetDirectionQueryParameterType? Direction { get; set; }

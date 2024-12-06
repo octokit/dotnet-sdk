@@ -22,7 +22,7 @@ namespace GitHub.Orgs.Item.Insights.Api.SubjectStats
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubjectStatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/subject-stats?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*}", pathParameters)
+        public SubjectStatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/subject-stats?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*,subject_name_substring*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.Orgs.Item.Insights.Api.SubjectStats
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubjectStatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/subject-stats?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*}", rawUrl)
+        public SubjectStatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/insights/api/subject-stats?min_timestamp={min_timestamp}{&direction*,max_timestamp*,page*,per_page*,sort*,subject_name_substring*}", rawUrl)
         {
         }
         /// <summary>
@@ -125,6 +125,16 @@ namespace GitHub.Orgs.Item.Insights.Api.SubjectStats
 #else
             [QueryParameter("sort")]
             public global::GitHub.Orgs.Item.Insights.Api.SubjectStats.GetSortQueryParameterType[] Sort { get; set; }
+#endif
+            /// <summary>Providing a substring will filter results where the subject name contains the substring. This is a case-insensitive search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("subject_name_substring")]
+            public string? SubjectNameSubstring { get; set; }
+#nullable restore
+#else
+            [QueryParameter("subject_name_substring")]
+            public string SubjectNameSubstring { get; set; }
 #endif
         }
     }
