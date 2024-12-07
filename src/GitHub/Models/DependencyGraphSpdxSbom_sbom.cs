@@ -14,6 +14,14 @@ namespace GitHub.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>An optional comment about the SPDX document.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Comment { get; set; }
+#nullable restore
+#else
+        public string Comment { get; set; }
+#endif
         /// <summary>The creationInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,14 +37,6 @@ namespace GitHub.Models
 #nullable restore
 #else
         public string DataLicense { get; set; }
-#endif
-        /// <summary>The name of the repository that the SPDX document describes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? DocumentDescribes { get; set; }
-#nullable restore
-#else
-        public List<string> DocumentDescribes { get; set; }
 #endif
         /// <summary>The namespace for the SPDX document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,6 +61,14 @@ namespace GitHub.Models
 #nullable restore
 #else
         public List<global::GitHub.Models.DependencyGraphSpdxSbom_sbom_packages> Packages { get; set; }
+#endif
+        /// <summary>The relationships property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::GitHub.Models.DependencyGraphSpdxSbom_sbom_relationships>? Relationships { get; set; }
+#nullable restore
+#else
+        public List<global::GitHub.Models.DependencyGraphSpdxSbom_sbom_relationships> Relationships { get; set; }
 #endif
         /// <summary>The SPDX identifier for the SPDX document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,12 +111,13 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "comment", n => { Comment = n.GetStringValue(); } },
                 { "creationInfo", n => { CreationInfo = n.GetObjectValue<global::GitHub.Models.DependencyGraphSpdxSbom_sbom_creationInfo>(global::GitHub.Models.DependencyGraphSpdxSbom_sbom_creationInfo.CreateFromDiscriminatorValue); } },
                 { "dataLicense", n => { DataLicense = n.GetStringValue(); } },
-                { "documentDescribes", n => { DocumentDescribes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "documentNamespace", n => { DocumentNamespace = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "packages", n => { Packages = n.GetCollectionOfObjectValues<global::GitHub.Models.DependencyGraphSpdxSbom_sbom_packages>(global::GitHub.Models.DependencyGraphSpdxSbom_sbom_packages.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "relationships", n => { Relationships = n.GetCollectionOfObjectValues<global::GitHub.Models.DependencyGraphSpdxSbom_sbom_relationships>(global::GitHub.Models.DependencyGraphSpdxSbom_sbom_relationships.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "SPDXID", n => { SPDXID = n.GetStringValue(); } },
                 { "spdxVersion", n => { SpdxVersion = n.GetStringValue(); } },
             };
@@ -120,12 +129,13 @@ namespace GitHub.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("comment", Comment);
             writer.WriteObjectValue<global::GitHub.Models.DependencyGraphSpdxSbom_sbom_creationInfo>("creationInfo", CreationInfo);
             writer.WriteStringValue("dataLicense", DataLicense);
-            writer.WriteCollectionOfPrimitiveValues<string>("documentDescribes", DocumentDescribes);
             writer.WriteStringValue("documentNamespace", DocumentNamespace);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::GitHub.Models.DependencyGraphSpdxSbom_sbom_packages>("packages", Packages);
+            writer.WriteCollectionOfObjectValues<global::GitHub.Models.DependencyGraphSpdxSbom_sbom_relationships>("relationships", Relationships);
             writer.WriteStringValue("SPDXID", SPDXID);
             writer.WriteStringValue("spdxVersion", SpdxVersion);
             writer.WriteAdditionalData(AdditionalData);

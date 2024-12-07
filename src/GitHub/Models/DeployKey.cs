@@ -31,6 +31,8 @@ namespace GitHub.Models
 #else
         public string CreatedAt { get; set; }
 #endif
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
         /// <summary>The key property</summary>
@@ -96,6 +98,7 @@ namespace GitHub.Models
             {
                 { "added_by", n => { AddedBy = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "last_used", n => { LastUsed = n.GetStringValue(); } },
@@ -114,6 +117,7 @@ namespace GitHub.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("added_by", AddedBy);
             writer.WriteStringValue("created_at", CreatedAt);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("last_used", LastUsed);

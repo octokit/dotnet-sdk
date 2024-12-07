@@ -54,7 +54,8 @@ namespace GitHub.Models
         public Date? PendingCancellationDate { get; set; }
         /// <summary>The Copilot plan of the organization, or the parent enterprise, when applicable.</summary>
         public global::GitHub.Models.CopilotSeatDetails_plan_type? PlanType { get; set; }
-        /// <summary>Timestamp of when the assignee&apos;s GitHub Copilot access was last updated, in ISO 8601 format.</summary>
+        /// <summary>**Closing down notice:** This field is no longer relevant and is closing down. Use the `created_at` field to determine when the assignee was last granted access to GitHub Copilot. Timestamp of when the assignee&apos;s GitHub Copilot access was last updated, in ISO 8601 format.</summary>
+        [Obsolete("")]
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

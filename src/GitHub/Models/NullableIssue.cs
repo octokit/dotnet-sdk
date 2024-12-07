@@ -193,6 +193,14 @@ namespace GitHub.Models
 #endif
         /// <summary>The reason for the current state</summary>
         public global::GitHub.Models.NullableIssue_state_reason? StateReason { get; set; }
+        /// <summary>The sub_issues_summary property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Models.SubIssuesSummary? SubIssuesSummary { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Models.SubIssuesSummary SubIssuesSummary { get; set; }
+#endif
         /// <summary>The timeline_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -281,6 +289,7 @@ namespace GitHub.Models
                 { "repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "state_reason", n => { StateReason = n.GetEnumValue<global::GitHub.Models.NullableIssue_state_reason>(); } },
+                { "sub_issues_summary", n => { SubIssuesSummary = n.GetObjectValue<global::GitHub.Models.SubIssuesSummary>(global::GitHub.Models.SubIssuesSummary.CreateFromDiscriminatorValue); } },
                 { "timeline_url", n => { TimelineUrl = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -324,6 +333,7 @@ namespace GitHub.Models
             writer.WriteStringValue("repository_url", RepositoryUrl);
             writer.WriteStringValue("state", State);
             writer.WriteEnumValue<global::GitHub.Models.NullableIssue_state_reason>("state_reason", StateReason);
+            writer.WriteObjectValue<global::GitHub.Models.SubIssuesSummary>("sub_issues_summary", SubIssuesSummary);
             writer.WriteStringValue("timeline_url", TimelineUrl);
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

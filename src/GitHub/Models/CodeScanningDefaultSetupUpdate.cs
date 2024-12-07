@@ -23,6 +23,16 @@ namespace GitHub.Models
 #endif
         /// <summary>CodeQL query suite to be used.</summary>
         public global::GitHub.Models.CodeScanningDefaultSetupUpdate_query_suite? QuerySuite { get; set; }
+        /// <summary>Runner label to be used if the runner type is labeled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RunnerLabel { get; set; }
+#nullable restore
+#else
+        public string RunnerLabel { get; set; }
+#endif
+        /// <summary>Runner type to be used.</summary>
+        public global::GitHub.Models.CodeScanningDefaultSetupUpdate_runner_type? RunnerType { get; set; }
         /// <summary>The desired state of code scanning default setup.</summary>
         public global::GitHub.Models.CodeScanningDefaultSetupUpdate_state? State { get; set; }
         /// <summary>
@@ -45,6 +55,8 @@ namespace GitHub.Models
             {
                 { "languages", n => { Languages = n.GetCollectionOfEnumValues<global::GitHub.Models.CodeScanningDefaultSetupUpdate_languages>()?.AsList(); } },
                 { "query_suite", n => { QuerySuite = n.GetEnumValue<global::GitHub.Models.CodeScanningDefaultSetupUpdate_query_suite>(); } },
+                { "runner_label", n => { RunnerLabel = n.GetStringValue(); } },
+                { "runner_type", n => { RunnerType = n.GetEnumValue<global::GitHub.Models.CodeScanningDefaultSetupUpdate_runner_type>(); } },
                 { "state", n => { State = n.GetEnumValue<global::GitHub.Models.CodeScanningDefaultSetupUpdate_state>(); } },
             };
         }
@@ -57,6 +69,8 @@ namespace GitHub.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::GitHub.Models.CodeScanningDefaultSetupUpdate_languages>("languages", Languages);
             writer.WriteEnumValue<global::GitHub.Models.CodeScanningDefaultSetupUpdate_query_suite>("query_suite", QuerySuite);
+            writer.WriteStringValue("runner_label", RunnerLabel);
+            writer.WriteEnumValue<global::GitHub.Models.CodeScanningDefaultSetupUpdate_runner_type>("runner_type", RunnerType);
             writer.WriteEnumValue<global::GitHub.Models.CodeScanningDefaultSetupUpdate_state>("state", State);
         }
     }

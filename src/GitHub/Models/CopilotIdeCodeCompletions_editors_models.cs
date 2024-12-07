@@ -32,7 +32,7 @@ namespace GitHub.Models
 #else
         public List<global::GitHub.Models.CopilotIdeCodeCompletions_editors_models_languages> Languages { get; set; }
 #endif
-        /// <summary>Name of the language used for Copilot code completion suggestions, for the given editor.</summary>
+        /// <summary>Name of the model used for Copilot code completion suggestions. If the default model is used will appear as &apos;default&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

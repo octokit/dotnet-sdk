@@ -7,6 +7,8 @@ using GitHub.Repos.Item.Item.Issues.Item.Events;
 using GitHub.Repos.Item.Item.Issues.Item.Labels;
 using GitHub.Repos.Item.Item.Issues.Item.Lock;
 using GitHub.Repos.Item.Item.Issues.Item.Reactions;
+using GitHub.Repos.Item.Item.Issues.Item.Sub_issue;
+using GitHub.Repos.Item.Item.Issues.Item.Sub_issues;
 using GitHub.Repos.Item.Item.Issues.Item.Timeline;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -53,6 +55,16 @@ namespace GitHub.Repos.Item.Item.Issues.Item
         public global::GitHub.Repos.Item.Item.Issues.Item.Reactions.ReactionsRequestBuilder Reactions
         {
             get => new global::GitHub.Repos.Item.Item.Issues.Item.Reactions.ReactionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sub_issue property</summary>
+        public global::GitHub.Repos.Item.Item.Issues.Item.Sub_issue.Sub_issueRequestBuilder Sub_issue
+        {
+            get => new global::GitHub.Repos.Item.Item.Issues.Item.Sub_issue.Sub_issueRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sub_issues property</summary>
+        public global::GitHub.Repos.Item.Item.Issues.Item.Sub_issues.Sub_issuesRequestBuilder Sub_issues
+        {
+            get => new global::GitHub.Repos.Item.Item.Issues.Item.Sub_issues.Sub_issuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeline property</summary>
         public global::GitHub.Repos.Item.Item.Issues.Item.Timeline.TimelineRequestBuilder Timeline

@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users
 {
     /// <summary>
-    /// The total number of seat assignments cancelled.
+    /// The total number of seats set to &quot;pending cancellation&quot; for the specified users.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Selected_usersDeleteResponse : IAdditionalDataHolder, IParsable
