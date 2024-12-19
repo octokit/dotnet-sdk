@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Orgs.Item.Copilot.Billing.Selected_teams
 {
     /// <summary>
-    /// The total number of seat assignments created.
+    /// The total number of seats created for members of the specified team(s).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Selected_teamsPostResponse : IAdditionalDataHolder, IParsable

@@ -49,6 +49,8 @@ namespace GitHub.Models
 #endif
         /// <summary>Whether the property is required.</summary>
         public bool? Required { get; set; }
+        /// <summary>The source type of the property</summary>
+        public global::GitHub.Models.CustomProperty_source_type? SourceType { get; set; }
         /// <summary>The URL that can be used to fetch, update, or delete info about this property via the API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +93,7 @@ namespace GitHub.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "property_name", n => { PropertyName = n.GetStringValue(); } },
                 { "required", n => { Required = n.GetBoolValue(); } },
+                { "source_type", n => { SourceType = n.GetEnumValue<global::GitHub.Models.CustomProperty_source_type>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "value_type", n => { ValueType = n.GetEnumValue<global::GitHub.Models.CustomProperty_value_type>(); } },
                 { "values_editable_by", n => { ValuesEditableBy = n.GetEnumValue<global::GitHub.Models.CustomProperty_values_editable_by>(); } },
@@ -108,6 +111,7 @@ namespace GitHub.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("property_name", PropertyName);
             writer.WriteBoolValue("required", Required);
+            writer.WriteEnumValue<global::GitHub.Models.CustomProperty_source_type>("source_type", SourceType);
             writer.WriteStringValue("url", Url);
             writer.WriteEnumValue<global::GitHub.Models.CustomProperty_values_editable_by>("values_editable_by", ValuesEditableBy);
             writer.WriteEnumValue<global::GitHub.Models.CustomProperty_value_type>("value_type", ValueType);

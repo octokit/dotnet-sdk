@@ -52,7 +52,7 @@ namespace GitHub.Repos.Item.Item.Releases.Assets.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// To download the asset&apos;s binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
+        /// To download the asset&apos;s binary content:- If within a browser, fetch the location specified in the `browser_download_url` key provided in the response.- Alternatively, set the `Accept` header of the request to   [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).   The API will either redirect the client to the location, or stream it directly if possible.  API clients should handle both a `200` or `302` response.
         /// API method documentation <see href="https://docs.github.com/rest/releases/assets#get-a-release-asset" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.ReleaseAsset"/></returns>
@@ -112,7 +112,7 @@ namespace GitHub.Repos.Item.Item.Releases.Assets.Item
             return requestInfo;
         }
         /// <summary>
-        /// To download the asset&apos;s binary content, set the `Accept` header of the request to [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types). The API will either redirect the client to the location, or stream it directly if possible. API clients should handle both a `200` or `302` response.
+        /// To download the asset&apos;s binary content:- If within a browser, fetch the location specified in the `browser_download_url` key provided in the response.- Alternatively, set the `Accept` header of the request to   [`application/octet-stream`](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types).   The API will either redirect the client to the location, or stream it directly if possible.  API clients should handle both a `200` or `302` response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

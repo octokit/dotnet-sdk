@@ -8,7 +8,7 @@ using System;
 namespace GitHub.Orgs.Item.Copilot.Billing.Selected_users
 {
     /// <summary>
-    /// The total number of seat assignments created.
+    /// The total number of seats created for the specified user(s).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Selected_usersPostResponse : IAdditionalDataHolder, IParsable
