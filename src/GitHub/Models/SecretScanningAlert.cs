@@ -74,6 +74,14 @@ namespace GitHub.Models
 #else
         public global::GitHub.Models.NullableSimpleUser PushProtectionBypassRequestReviewer { get; set; }
 #endif
+        /// <summary>An optional comment when reviewing a push protection bypass.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PushProtectionBypassRequestReviewerComment { get; set; }
+#nullable restore
+#else
+        public string PushProtectionBypassRequestReviewerComment { get; set; }
+#endif
         /// <summary>**Required when the `state` is `resolved`.** The reason for resolving the alert.</summary>
         public global::GitHub.Models.SecretScanningAlertResolution? Resolution { get; set; }
         /// <summary>An optional comment to resolve an alert.</summary>
@@ -166,6 +174,7 @@ namespace GitHub.Models
                 { "push_protection_bypass_request_comment", n => { PushProtectionBypassRequestComment = n.GetStringValue(); } },
                 { "push_protection_bypass_request_html_url", n => { PushProtectionBypassRequestHtmlUrl = n.GetStringValue(); } },
                 { "push_protection_bypass_request_reviewer", n => { PushProtectionBypassRequestReviewer = n.GetObjectValue<global::GitHub.Models.NullableSimpleUser>(global::GitHub.Models.NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "push_protection_bypass_request_reviewer_comment", n => { PushProtectionBypassRequestReviewerComment = n.GetStringValue(); } },
                 { "push_protection_bypassed", n => { PushProtectionBypassed = n.GetBoolValue(); } },
                 { "push_protection_bypassed_at", n => { PushProtectionBypassedAt = n.GetDateTimeOffsetValue(); } },
                 { "push_protection_bypassed_by", n => { PushProtectionBypassedBy = n.GetObjectValue<global::GitHub.Models.NullableSimpleUser>(global::GitHub.Models.NullableSimpleUser.CreateFromDiscriminatorValue); } },
@@ -198,6 +207,7 @@ namespace GitHub.Models
             writer.WriteStringValue("push_protection_bypass_request_comment", PushProtectionBypassRequestComment);
             writer.WriteStringValue("push_protection_bypass_request_html_url", PushProtectionBypassRequestHtmlUrl);
             writer.WriteObjectValue<global::GitHub.Models.NullableSimpleUser>("push_protection_bypass_request_reviewer", PushProtectionBypassRequestReviewer);
+            writer.WriteStringValue("push_protection_bypass_request_reviewer_comment", PushProtectionBypassRequestReviewerComment);
             writer.WriteEnumValue<global::GitHub.Models.SecretScanningAlertResolution>("resolution", Resolution);
             writer.WriteStringValue("resolution_comment", ResolutionComment);
             writer.WriteDateTimeOffsetValue("resolved_at", ResolvedAt);
