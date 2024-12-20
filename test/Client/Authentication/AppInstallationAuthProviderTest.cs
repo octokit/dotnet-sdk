@@ -3,6 +3,8 @@ using Microsoft.Kiota.Abstractions.Authentication;
 using Moq;
 using Xunit;
 
+namespace GitHub.Octokit.Client.Authentication.Tests;
+
 public class AppInstallationAuthProviderTests
 {
     [Fact]

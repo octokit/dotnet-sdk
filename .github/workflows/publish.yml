@@ -18,7 +18,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.x.x
+        dotnet-version: 9.x.x
 
     - name: Build and strong name
       run: dotnet build --configuration Release --no-incremental -p:version=${GITHUB_REF#refs/*/v} -p:SignAssembly=true -p:AssemblyOriginatorKeyFile=../key.snk

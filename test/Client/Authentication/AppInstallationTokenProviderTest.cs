@@ -1,8 +1,9 @@
 using System.Security.Cryptography;
-using GitHub.Octokit.Client.Authentication;
 using Microsoft.IdentityModel.Tokens;
 using Moq;
 using Xunit;
+
+namespace GitHub.Octokit.Client.Authentication.Tests;
 
 public class AppInstallationTokenProviderTests
 {

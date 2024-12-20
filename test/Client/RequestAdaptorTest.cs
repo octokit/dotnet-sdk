@@ -1,13 +1,14 @@
 // Copyright (c) GitHub 2023-2024 - Licensed as MIT.
 
-using GitHub.Octokit.Client;
 using GitHub.Octokit.Client.Authentication;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Xunit;
 
+namespace GitHub.Octokit.Client.Tests;
+
 public class RequestAdapterTests
 {
-    private TokenProvider _tokenProvider = new TokenProvider("JRRTOLKIEN");
+    private TokenProvider _tokenProvider = new("JRRTOLKIEN");
 
     [Fact]
     public void Setup()
