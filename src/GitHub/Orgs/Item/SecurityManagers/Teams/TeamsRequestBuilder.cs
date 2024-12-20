@@ -18,6 +18,7 @@ namespace GitHub.Orgs.Item.SecurityManagers.Teams
         /// <summary>Gets an item from the GitHub.orgs.item.securityManagers.teams.item collection</summary>
         /// <param name="position">The slug of the team name.</param>
         /// <returns>A <see cref="global::GitHub.Orgs.Item.SecurityManagers.Teams.Item.WithTeam_slugItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.Orgs.Item.SecurityManagers.Teams.Item.WithTeam_slugItemRequestBuilder this[string position]
         {
             get

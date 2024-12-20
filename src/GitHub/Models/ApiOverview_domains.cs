@@ -20,6 +20,14 @@ namespace GitHub.Models
 #else
         public List<string> Actions { get; set; }
 #endif
+        /// <summary>The actions_inbound property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Models.ApiOverview_domains_actions_inbound? ActionsInbound { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Models.ApiOverview_domains_actions_inbound ActionsInbound { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The artifact_attestations property</summary>
@@ -88,6 +96,7 @@ namespace GitHub.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "actions_inbound", n => { ActionsInbound = n.GetObjectValue<global::GitHub.Models.ApiOverview_domains_actions_inbound>(global::GitHub.Models.ApiOverview_domains_actions_inbound.CreateFromDiscriminatorValue); } },
                 { "artifact_attestations", n => { ArtifactAttestations = n.GetObjectValue<global::GitHub.Models.ApiOverview_domains_artifact_attestations>(global::GitHub.Models.ApiOverview_domains_artifact_attestations.CreateFromDiscriminatorValue); } },
                 { "codespaces", n => { Codespaces = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "copilot", n => { Copilot = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -103,6 +112,7 @@ namespace GitHub.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("actions", Actions);
+            writer.WriteObjectValue<global::GitHub.Models.ApiOverview_domains_actions_inbound>("actions_inbound", ActionsInbound);
             writer.WriteObjectValue<global::GitHub.Models.ApiOverview_domains_artifact_attestations>("artifact_attestations", ArtifactAttestations);
             writer.WriteCollectionOfPrimitiveValues<string>("codespaces", Codespaces);
             writer.WriteCollectionOfPrimitiveValues<string>("copilot", Copilot);

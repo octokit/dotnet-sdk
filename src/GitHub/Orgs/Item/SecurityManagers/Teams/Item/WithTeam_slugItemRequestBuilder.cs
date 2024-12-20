@@ -33,11 +33,12 @@ namespace GitHub.Orgs.Item.SecurityManagers.Teams.Item
         {
         }
         /// <summary>
-        /// Removes the security manager role from a team for an organization. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) team from an organization.&quot;The authenticated user must be an administrator for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the &quot;[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)&quot; endpoints instead.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/security-managers#remove-a-security-manager-team" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,11 +52,12 @@ namespace GitHub.Orgs.Item.SecurityManagers.Teams.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a team as a security manager for an organization. For more information, see &quot;[Managing security for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) for an organization.&quot;The authenticated user must be an administrator for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the &quot;[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)&quot; endpoints instead.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/security-managers#add-a-security-manager-team" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,10 +71,11 @@ namespace GitHub.Orgs.Item.SecurityManagers.Teams.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes the security manager role from a team for an organization. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) team from an organization.&quot;The authenticated user must be an administrator for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the &quot;[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)&quot; endpoints instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -87,10 +90,11 @@ namespace GitHub.Orgs.Item.SecurityManagers.Teams.Item
             return requestInfo;
         }
         /// <summary>
-        /// Adds a team as a security manager for an organization. For more information, see &quot;[Managing security for an organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization) for an organization.&quot;The authenticated user must be an administrator for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `write:org` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the &quot;[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)&quot; endpoints instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -109,6 +113,7 @@ namespace GitHub.Orgs.Item.SecurityManagers.Teams.Item
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Orgs.Item.SecurityManagers.Teams.Item.WithTeam_slugItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Orgs.Item.SecurityManagers.Teams.Item.WithTeam_slugItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Orgs.Item.SecurityManagers.Teams.Item.WithTeam_slugItemRequestBuilder(rawUrl, RequestAdapter);
