@@ -1,15 +1,14 @@
-using GitHub.Octokit.Client.Authentication;
 using Microsoft.Kiota.Abstractions;
-using Microsoft.Kiota.Abstractions.Authentication;
 using Xunit;
 
+namespace GitHub.Octokit.Client.Authentication.Tests;
 public class TokenAuthenticationProviderTests
 {
     private const string ValidToken = "validToken";
 
-    private TokenProvider _tokenProvider;
+    private readonly TokenProvider _tokenProvider;
 
-    private TokenAuthProvider _authProvider;
+    private readonly TokenAuthProvider _authProvider;
 
     public TokenAuthenticationProviderTests()
     {

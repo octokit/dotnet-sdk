@@ -4,6 +4,8 @@ using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
 using Xunit;
 
+namespace GitHub.Octokit.Client.Authentication.Tests;
+
 public class GitHubAppTokenProviderTests
 {
     [Fact]
