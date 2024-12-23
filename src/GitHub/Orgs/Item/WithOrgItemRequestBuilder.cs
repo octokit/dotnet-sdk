@@ -28,6 +28,7 @@ using GitHub.Orgs.Item.Outside_collaborators;
 using GitHub.Orgs.Item.Packages;
 using GitHub.Orgs.Item.PersonalAccessTokenRequests;
 using GitHub.Orgs.Item.PersonalAccessTokens;
+using GitHub.Orgs.Item.PrivateRegistries;
 using GitHub.Orgs.Item.Projects;
 using GitHub.Orgs.Item.Properties;
 using GitHub.Orgs.Item.Public_members;
@@ -184,6 +185,11 @@ namespace GitHub.Orgs.Item
         public global::GitHub.Orgs.Item.PersonalAccessTokens.PersonalAccessTokensRequestBuilder PersonalAccessTokens
         {
             get => new global::GitHub.Orgs.Item.PersonalAccessTokens.PersonalAccessTokensRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The privateRegistries property</summary>
+        public global::GitHub.Orgs.Item.PrivateRegistries.PrivateRegistriesRequestBuilder PrivateRegistries
+        {
+            get => new global::GitHub.Orgs.Item.PrivateRegistries.PrivateRegistriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The projects property</summary>
         public global::GitHub.Orgs.Item.Projects.ProjectsRequestBuilder Projects

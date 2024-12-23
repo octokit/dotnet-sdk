@@ -22,6 +22,14 @@ namespace GitHub.Orgs.Item.Attestations.Item
 #else
         public global::GitHub.Orgs.Item.Attestations.Item.WithSubject_digestGetResponse_attestations_bundle Bundle { get; set; }
 #endif
+        /// <summary>The bundle_url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BundleUrl { get; set; }
+#nullable restore
+#else
+        public string BundleUrl { get; set; }
+#endif
         /// <summary>The repository_id property</summary>
         public int? RepositoryId { get; set; }
         /// <summary>
@@ -50,6 +58,7 @@ namespace GitHub.Orgs.Item.Attestations.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bundle", n => { Bundle = n.GetObjectValue<global::GitHub.Orgs.Item.Attestations.Item.WithSubject_digestGetResponse_attestations_bundle>(global::GitHub.Orgs.Item.Attestations.Item.WithSubject_digestGetResponse_attestations_bundle.CreateFromDiscriminatorValue); } },
+                { "bundle_url", n => { BundleUrl = n.GetStringValue(); } },
                 { "repository_id", n => { RepositoryId = n.GetIntValue(); } },
             };
         }
@@ -61,6 +70,7 @@ namespace GitHub.Orgs.Item.Attestations.Item
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::GitHub.Orgs.Item.Attestations.Item.WithSubject_digestGetResponse_attestations_bundle>("bundle", Bundle);
+            writer.WriteStringValue("bundle_url", BundleUrl);
             writer.WriteIntValue("repository_id", RepositoryId);
             writer.WriteAdditionalData(AdditionalData);
         }

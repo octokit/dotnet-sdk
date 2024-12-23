@@ -19,6 +19,7 @@ namespace GitHub.Orgs.Item.SecurityManagers
     public partial class SecurityManagersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The teams property</summary>
+        [Obsolete("")]
         public global::GitHub.Orgs.Item.SecurityManagers.Teams.TeamsRequestBuilder Teams
         {
             get => new global::GitHub.Orgs.Item.SecurityManagers.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
@@ -40,12 +41,13 @@ namespace GitHub.Orgs.Item.SecurityManagers
         {
         }
         /// <summary>
-        /// Lists teams that are security managers for an organization. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the &quot;[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)&quot; endpoints instead.
         /// API method documentation <see href="https://docs.github.com/rest/orgs/security-managers#list-security-manager-teams" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.TeamSimple&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.Models.TeamSimple>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -60,10 +62,11 @@ namespace GitHub.Orgs.Item.SecurityManagers
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists teams that are security managers for an organization. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;The authenticated user must be an administrator or security manager for the organization to use this endpoint.OAuth app tokens and personal access tokens (classic) need the `read:org` scope to use this endpoint.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** This operation is closing down and will be removed starting January 1, 2026. Please use the &quot;[Organization Roles](https://docs.github.com/rest/orgs/organization-roles)&quot; endpoints instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -83,6 +86,7 @@ namespace GitHub.Orgs.Item.SecurityManagers
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Orgs.Item.SecurityManagers.SecurityManagersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Orgs.Item.SecurityManagers.SecurityManagersRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Orgs.Item.SecurityManagers.SecurityManagersRequestBuilder(rawUrl, RequestAdapter);

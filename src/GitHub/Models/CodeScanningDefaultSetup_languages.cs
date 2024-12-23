@@ -8,6 +8,10 @@ namespace GitHub.Models
     public enum CodeScanningDefaultSetup_languages
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "actions")]
+        #pragma warning disable CS1591
+        Actions,
+        #pragma warning restore CS1591
         [EnumMember(Value = "c-cpp")]
         #pragma warning disable CS1591
         CCpp,
