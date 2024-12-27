@@ -25,6 +25,16 @@ namespace GitHub.Models
 #endif
         /// <summary>CodeQL query suite to be used.</summary>
         public global::GitHub.Models.CodeScanningDefaultSetup_query_suite? QuerySuite { get; set; }
+        /// <summary>Runner label to be used if the runner type is labeled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RunnerLabel { get; set; }
+#nullable restore
+#else
+        public string RunnerLabel { get; set; }
+#endif
+        /// <summary>Runner type to be used.</summary>
+        public global::GitHub.Models.CodeScanningDefaultSetup_runner_type? RunnerType { get; set; }
         /// <summary>The frequency of the periodic analysis.</summary>
         public global::GitHub.Models.CodeScanningDefaultSetup_schedule? Schedule { get; set; }
         /// <summary>Code scanning default setup has been configured or not.</summary>
@@ -58,6 +68,8 @@ namespace GitHub.Models
             {
                 { "languages", n => { Languages = n.GetCollectionOfEnumValues<global::GitHub.Models.CodeScanningDefaultSetup_languages>()?.AsList(); } },
                 { "query_suite", n => { QuerySuite = n.GetEnumValue<global::GitHub.Models.CodeScanningDefaultSetup_query_suite>(); } },
+                { "runner_label", n => { RunnerLabel = n.GetStringValue(); } },
+                { "runner_type", n => { RunnerType = n.GetEnumValue<global::GitHub.Models.CodeScanningDefaultSetup_runner_type>(); } },
                 { "schedule", n => { Schedule = n.GetEnumValue<global::GitHub.Models.CodeScanningDefaultSetup_schedule>(); } },
                 { "state", n => { State = n.GetEnumValue<global::GitHub.Models.CodeScanningDefaultSetup_state>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -72,6 +84,8 @@ namespace GitHub.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::GitHub.Models.CodeScanningDefaultSetup_languages>("languages", Languages);
             writer.WriteEnumValue<global::GitHub.Models.CodeScanningDefaultSetup_query_suite>("query_suite", QuerySuite);
+            writer.WriteStringValue("runner_label", RunnerLabel);
+            writer.WriteEnumValue<global::GitHub.Models.CodeScanningDefaultSetup_runner_type>("runner_type", RunnerType);
             writer.WriteEnumValue<global::GitHub.Models.CodeScanningDefaultSetup_schedule>("schedule", Schedule);
             writer.WriteEnumValue<global::GitHub.Models.CodeScanningDefaultSetup_state>("state", State);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
