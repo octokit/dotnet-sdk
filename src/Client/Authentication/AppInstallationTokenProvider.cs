@@ -9,18 +9,17 @@ namespace GitHub.Octokit.Client.Authentication;
 /// <summary>
 /// Used for Github App InstallationToken authentication
 /// </summary>
-public class AppInstallationTokenProvider : IAccessTokenProvider
+public sealed class AppInstallationTokenProvider : IAccessTokenProvider
 {
+    private string _accessToken = string.Empty;
+    private SecurityTokenDescriptor? _tokenDescriptor;
+
     private readonly string _sourceId;
     private readonly RSA _privateKey;
     private readonly string _installationId;
-    private string _accessToken = string.Empty;
+    private readonly IGitHubAppTokenProvider _gitHubAppTokenProvider;
 
-    private SecurityTokenDescriptor? _tokenDescriptor;
-
-    private IGitHubAppTokenProvider _gitHubAppTokenProvider;
-
-    AllowedHostsValidator IAccessTokenProvider.AllowedHostsValidator => new AllowedHostsValidator();
+    AllowedHostsValidator IAccessTokenProvider.AllowedHostsValidator => new();
 
     /// <summary>
     /// Constructor for AppInstallationTokenProvider using the clientId

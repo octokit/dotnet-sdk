@@ -55,7 +55,7 @@ using GitHub.Octokit.Client.Authentication;
 
 var tokenProvider = new TokenProvider(Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "");
 var adapter = RequestAdapter.Create(new TokenAuthProvider(tokenProvider));
-await MakeRequest(new GitHubClient(adapter));
+var gitHubClient = new GitHubClient(adapter);
 
 try
 {
@@ -84,6 +84,8 @@ var adapter = new ClientFactory()
 	.WithBaseUrl("https://api.github.com")
 	.Build();
 
+var gitHubClient = new GitHubClient(adapter);
+
 try
 {
 	var response = await gitHubClient.Repositories.GetAsync();
@@ -102,21 +104,21 @@ This SDK supports [Personal Access Tokens (classic)](https://docs.github.com/en/
 In order to use either type of Personal Access token, you can use the `TokenAuthProvider` constructor option when constructing a new token provider, like so:
 
 ```csharp
-    var tokenProvider = new TokenProvider(Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "");
-    var adapter = RequestAdapter.Create(new TokenAuthProvider(tokenProvider));
-    var gitHubClient = new GitHubClient(adapter);
+var tokenProvider = new TokenProvider(Environment.GetEnvironmentVariable("GITHUB_TOKEN") ?? "");
+var adapter = RequestAdapter.Create(new TokenAuthProvider(tokenProvider));
+var gitHubClient = new GitHubClient(adapter);
 ```
 
 In order to authenticate as a GitHub App, you can use the `AppInstallationAuthProvider` constructor option:
 
 ```csharp
-    var githubAppTokenProvider = new GitHubAppTokenProvider();
-    var rsa = RSA.Create();
-    rsa.ImportFromPem(PRIVATE_KEY_PATH);
+var githubAppTokenProvider = new GitHubAppTokenProvider();
+var rsa = RSA.Create();
+rsa.ImportFromPem(PRIVATE_KEY_PATH);
 
-    var aiAccessTokenProvider = new AppInstallationTokenProvider(CLIENT_ID, rsa, INSTALLATION_ID, githubAppTokenProvider);
-    var aiAdapter = RequestAdapter.Create(new AppInstallationAuthProvider(aiAccessTokenProvider));
-    var aiGitHubClient = new GitHubClient(aiAdapter);
+var aiAccessTokenProvider = new AppInstallationTokenProvider(CLIENT_ID, rsa, INSTALLATION_ID, githubAppTokenProvider);
+var aiAdapter = RequestAdapter.Create(new AppInstallationAuthProvider(aiAccessTokenProvider));
+var aiGitHubClient = new GitHubClient(aiAdapter);
 ```
 
 To see more detailed examples, view [the cli/ directory in this repo](cli/).

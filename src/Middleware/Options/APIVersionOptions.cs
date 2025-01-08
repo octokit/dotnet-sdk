@@ -15,5 +15,4 @@ public class APIVersionOptions : IRequestOption
     /// This should never be set from the client code.
     /// </summary>
     public const string APIVersion = "2022-11-28";
-
 }

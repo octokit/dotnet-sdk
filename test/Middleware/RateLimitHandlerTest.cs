@@ -1,14 +1,17 @@
 using System.Net;
 using System.Net.Http.Headers;
 using GitHub.Octokit.Client.Middleware;
+using GitHub.Octokit.Mocks;
+using GitHub.Octokit.SDK.Middleware.Options;
 using Newtonsoft.Json;
 using Xunit;
 
+namespace GitHub.Octokit.Middleware.Tests;
+
 public class RateLimitHandlerTests : IDisposable
 {
-
     // paired with 200 status code
-    const string happyPathTestHeaders = @"{
+    private const string HappyPathTestHeaders = @"{
         ""Access-Control-Allow-Origin"": [
             ""*""
         ],
@@ -79,7 +82,7 @@ public class RateLimitHandlerTests : IDisposable
 }";
 
     // example primary rate-limited headers (paired with 403 status code)
-    const string primaryRateLimitHeaders = @"{
+    private const string PrimaryRateLimitHeaders = @"{
 	""Access-Control-Allow-Origin"": [
 		""*""
 	],
@@ -152,7 +155,7 @@ public class RateLimitHandlerTests : IDisposable
 }";
 
     // example secondary rate-limited headers (paired with 403 status code)
-    const string secondaryRateLimitHeaders = @"{
+    private const string SecondaryRateLimitHeaders = @"{
 	""Access-Control-Allow-Origin"": [
 		""*""
 	],
@@ -238,7 +241,7 @@ public class RateLimitHandlerTests : IDisposable
         var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "http://example.org/foo");
         var expectedResponse = new HttpResponseMessage(HttpStatusCode.OK);
 
-        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(happyPathTestHeaders);
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(HappyPathTestHeaders);
 
         if (headersDictionary != null)
         {
@@ -266,7 +269,7 @@ public class RateLimitHandlerTests : IDisposable
         var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "http://example.org/foo");
         var firstResponse = new HttpResponseMessage(statusCode);
 
-        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(primaryRateLimitHeaders);
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(PrimaryRateLimitHeaders);
 
         if (headersDictionary != null)
         {
@@ -295,7 +298,7 @@ public class RateLimitHandlerTests : IDisposable
         var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, "http://example.org/foo");
         var firstResponse = new HttpResponseMessage(statusCode);
 
-        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(secondaryRateLimitHeaders);
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(SecondaryRateLimitHeaders);
 
         if (headersDictionary != null)
         {
@@ -323,7 +326,7 @@ public class RateLimitHandlerTests : IDisposable
         var response = new HttpResponseMessage(HttpStatusCode.OK);
         var rateLimitHandlerOptions = new RateLimitHandlerOptions();
 
-        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(happyPathTestHeaders);
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(HappyPathTestHeaders);
 
         if (headersDictionary != null)
         {
@@ -345,7 +348,7 @@ public class RateLimitHandlerTests : IDisposable
         var response = new HttpResponseMessage(HttpStatusCode.Forbidden);
         var rateLimitHandlerOptions = new RateLimitHandlerOptions();
 
-        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(primaryRateLimitHeaders);
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(PrimaryRateLimitHeaders);
 
 
         if (headersDictionary != null)
@@ -368,7 +371,7 @@ public class RateLimitHandlerTests : IDisposable
         var response = new HttpResponseMessage(HttpStatusCode.TooManyRequests);
         var rateLimitHandlerOptions = new RateLimitHandlerOptions();
 
-        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(primaryRateLimitHeaders);
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(PrimaryRateLimitHeaders);
 
         if (headersDictionary != null)
         {
@@ -390,7 +393,7 @@ public class RateLimitHandlerTests : IDisposable
         var response = new HttpResponseMessage(HttpStatusCode.Forbidden);
         var rateLimitHandlerOptions = new RateLimitHandlerOptions();
 
-        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(secondaryRateLimitHeaders);
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(SecondaryRateLimitHeaders);
 
         if (headersDictionary != null)
         {
@@ -412,7 +415,7 @@ public class RateLimitHandlerTests : IDisposable
         var response = new HttpResponseMessage(HttpStatusCode.TooManyRequests);
         var rateLimitHandlerOptions = new RateLimitHandlerOptions();
 
-        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(secondaryRateLimitHeaders);
+        var headersDictionary = JsonConvert.DeserializeObject<Dictionary<string, IEnumerable<string>>>(SecondaryRateLimitHeaders);
 
         if (headersDictionary != null)
         {

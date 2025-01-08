@@ -1,8 +1,9 @@
 // Copyright (c) GitHub 2023-2024 - Licensed as MIT.
 
-using GitHub.Octokit.Client;
 using GitHub.Octokit.Client.Middleware;
 using Xunit;
+
+namespace GitHub.Octokit.Client.Tests;
 
 public class TestHandler1 : DelegatingHandler { }
 public class TestHandler2 : DelegatingHandler { }
