@@ -52,6 +52,8 @@ namespace GitHub.Orgs.Item
         /// <summary>**Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see &quot;[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization).&quot;You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.</summary>
         [Obsolete("")]
         public bool? DependencyGraphEnabledForNewRepositories { get; set; }
+        /// <summary>Controls whether or not deploy keys may be added and used for repositories in the organization.</summary>
+        public bool? DeployKeysEnabledForRepositories { get; set; }
         /// <summary>The description of the company. The maximum size is 160 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,6 +168,7 @@ namespace GitHub.Orgs.Item
                 { "dependabot_alerts_enabled_for_new_repositories", n => { DependabotAlertsEnabledForNewRepositories = n.GetBoolValue(); } },
                 { "dependabot_security_updates_enabled_for_new_repositories", n => { DependabotSecurityUpdatesEnabledForNewRepositories = n.GetBoolValue(); } },
                 { "dependency_graph_enabled_for_new_repositories", n => { DependencyGraphEnabledForNewRepositories = n.GetBoolValue(); } },
+                { "deploy_keys_enabled_for_repositories", n => { DeployKeysEnabledForRepositories = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "has_organization_projects", n => { HasOrganizationProjects = n.GetBoolValue(); } },
@@ -204,6 +207,7 @@ namespace GitHub.Orgs.Item
             writer.WriteBoolValue("dependabot_alerts_enabled_for_new_repositories", DependabotAlertsEnabledForNewRepositories);
             writer.WriteBoolValue("dependabot_security_updates_enabled_for_new_repositories", DependabotSecurityUpdatesEnabledForNewRepositories);
             writer.WriteBoolValue("dependency_graph_enabled_for_new_repositories", DependencyGraphEnabledForNewRepositories);
+            writer.WriteBoolValue("deploy_keys_enabled_for_repositories", DeployKeysEnabledForRepositories);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("email", Email);
             writer.WriteBoolValue("has_organization_projects", HasOrganizationProjects);

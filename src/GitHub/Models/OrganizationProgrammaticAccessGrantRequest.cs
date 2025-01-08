@@ -79,6 +79,14 @@ namespace GitHub.Models
 #else
         public string TokenLastUsedAt { get; set; }
 #endif
+        /// <summary>The name given to the user&apos;s token. This field can also be found in an organization&apos;s settings page for Active Tokens.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TokenName { get; set; }
+#nullable restore
+#else
+        public string TokenName { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Models.OrganizationProgrammaticAccessGrantRequest"/> and sets the default values.
         /// </summary>
@@ -115,6 +123,7 @@ namespace GitHub.Models
                 { "token_expires_at", n => { TokenExpiresAt = n.GetStringValue(); } },
                 { "token_id", n => { TokenId = n.GetIntValue(); } },
                 { "token_last_used_at", n => { TokenLastUsedAt = n.GetStringValue(); } },
+                { "token_name", n => { TokenName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -135,6 +144,7 @@ namespace GitHub.Models
             writer.WriteStringValue("token_expires_at", TokenExpiresAt);
             writer.WriteIntValue("token_id", TokenId);
             writer.WriteStringValue("token_last_used_at", TokenLastUsedAt);
+            writer.WriteStringValue("token_name", TokenName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

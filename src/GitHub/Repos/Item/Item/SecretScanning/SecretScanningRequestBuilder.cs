@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using GitHub.Repos.Item.Item.SecretScanning.Alerts;
 using GitHub.Repos.Item.Item.SecretScanning.PushProtectionBypasses;
+using GitHub.Repos.Item.Item.SecretScanning.ScanHistory;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
@@ -25,6 +26,11 @@ namespace GitHub.Repos.Item.Item.SecretScanning
         public global::GitHub.Repos.Item.Item.SecretScanning.PushProtectionBypasses.PushProtectionBypassesRequestBuilder PushProtectionBypasses
         {
             get => new global::GitHub.Repos.Item.Item.SecretScanning.PushProtectionBypasses.PushProtectionBypassesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scanHistory property</summary>
+        public global::GitHub.Repos.Item.Item.SecretScanning.ScanHistory.ScanHistoryRequestBuilder ScanHistory
+        {
+            get => new global::GitHub.Repos.Item.Item.SecretScanning.ScanHistory.ScanHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.SecretScanning.SecretScanningRequestBuilder"/> and sets the default values.

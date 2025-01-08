@@ -15,6 +15,8 @@ namespace GitHub.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The system role from which this role inherits permissions.</summary>
+        public global::GitHub.Models.OrganizationRole_base_role? BaseRole { get; set; }
         /// <summary>The date and time the role was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>A short description about who this role is for or what permissions it grants.</summary>
@@ -51,6 +53,8 @@ namespace GitHub.Models
 #else
         public List<string> Permissions { get; set; }
 #endif
+        /// <summary>Source answers the question, &quot;where did this role come from?&quot;</summary>
+        public global::GitHub.Models.OrganizationRole_source? Source { get; set; }
         /// <summary>The date and time the role was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -78,12 +82,14 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "base_role", n => { BaseRole = n.GetEnumValue<global::GitHub.Models.OrganizationRole_base_role>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::GitHub.Models.NullableSimpleUser>(global::GitHub.Models.NullableSimpleUser.CreateFromDiscriminatorValue); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "source", n => { Source = n.GetEnumValue<global::GitHub.Models.OrganizationRole_source>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -94,12 +100,14 @@ namespace GitHub.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::GitHub.Models.OrganizationRole_base_role>("base_role", BaseRole);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteLongValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::GitHub.Models.NullableSimpleUser>("organization", Organization);
             writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
+            writer.WriteEnumValue<global::GitHub.Models.OrganizationRole_source>("source", Source);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

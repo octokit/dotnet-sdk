@@ -58,7 +58,7 @@ namespace GitHub.Repos.Item.Item.Hooks.Item
         {
         }
         /// <summary>
-        /// Delete a repository webhook
+        /// Delete a webhook for an organization.The authenticated user must be a repository owner, or have admin access in the repository, to delete the webhook.
         /// API method documentation <see href="https://docs.github.com/rest/repos/webhooks#delete-a-repository-webhook" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -132,6 +132,9 @@ namespace GitHub.Repos.Item.Item.Hooks.Item
             };
             return await RequestAdapter.SendAsync<global::GitHub.Models.Hook>(requestInfo, global::GitHub.Models.Hook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
+        /// <summary>
+        /// Delete a webhook for an organization.The authenticated user must be a repository owner, or have admin access in the repository, to delete the webhook.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

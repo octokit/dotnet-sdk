@@ -19,5 +19,9 @@ namespace GitHub.Models
         #pragma warning disable CS1591
         Push,
         #pragma warning restore CS1591
+        [EnumMember(Value = "repository")]
+        #pragma warning disable CS1591
+        Repository,
+        #pragma warning restore CS1591
     }
 }

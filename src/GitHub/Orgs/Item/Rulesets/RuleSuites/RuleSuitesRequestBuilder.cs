@@ -133,9 +133,16 @@ namespace GitHub.Orgs.Item.Rulesets.RuleSuites
             [QueryParameter("ref")]
             public string Ref { get; set; }
 #endif
-            /// <summary>The name of the repository to filter on. When specified, only rule evaluations from this repository will be returned.</summary>
+            /// <summary>The name of the repository to filter on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("repository_name")]
-            public int? RepositoryName { get; set; }
+            public string? RepositoryName { get; set; }
+#nullable restore
+#else
+            [QueryParameter("repository_name")]
+            public string RepositoryName { get; set; }
+#endif
             /// <summary>The rule results to filter on. When specified, only suites with this result will be returned.</summary>
             [QueryParameter("rule_suite_result")]
             public global::GitHub.Orgs.Item.Rulesets.RuleSuites.GetRule_suite_resultQueryParameterType? RuleSuiteResult { get; set; }

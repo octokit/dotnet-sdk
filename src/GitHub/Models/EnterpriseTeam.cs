@@ -18,7 +18,13 @@ namespace GitHub.Models
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The group_id property</summary>
-        public int? GroupId { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupId { get; set; }
+#nullable restore
+#else
+        public string GroupId { get; set; }
+#endif
         /// <summary>The html_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,7 +103,7 @@ namespace GitHub.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "group_id", n => { GroupId = n.GetIntValue(); } },
+                { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "members_url", n => { MembersUrl = n.GetStringValue(); } },
@@ -116,7 +122,7 @@ namespace GitHub.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteIntValue("group_id", GroupId);
+            writer.WriteStringValue("group_id", GroupId);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteLongValue("id", Id);
             writer.WriteStringValue("members_url", MembersUrl);

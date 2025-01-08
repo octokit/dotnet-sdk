@@ -15,6 +15,8 @@ namespace GitHub.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Determines if the team has a direct, indirect, or mixed relationship to a role</summary>
+        public global::GitHub.Models.TeamRoleAssignment_assignment? Assignment { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +148,7 @@ namespace GitHub.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "assignment", n => { Assignment = n.GetEnumValue<global::GitHub.Models.TeamRoleAssignment_assignment>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
@@ -169,6 +172,7 @@ namespace GitHub.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::GitHub.Models.TeamRoleAssignment_assignment>("assignment", Assignment);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteIntValue("id", Id);

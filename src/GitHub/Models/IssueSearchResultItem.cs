@@ -193,6 +193,14 @@ namespace GitHub.Models
 #else
         public string StateReason { get; set; }
 #endif
+        /// <summary>The sub_issues_summary property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Models.IssueSearchResultItem_sub_issues_summary? SubIssuesSummary { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Models.IssueSearchResultItem_sub_issues_summary SubIssuesSummary { get; set; }
+#endif
         /// <summary>The text_matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -289,6 +297,7 @@ namespace GitHub.Models
                 { "score", n => { Score = n.GetDoubleValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "state_reason", n => { StateReason = n.GetStringValue(); } },
+                { "sub_issues_summary", n => { SubIssuesSummary = n.GetObjectValue<global::GitHub.Models.IssueSearchResultItem_sub_issues_summary>(global::GitHub.Models.IssueSearchResultItem_sub_issues_summary.CreateFromDiscriminatorValue); } },
                 { "text_matches", n => { TextMatches = n.GetCollectionOfObjectValues<global::GitHub.Models.Issues>(global::GitHub.Models.Issues.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timeline_url", n => { TimelineUrl = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -333,6 +342,7 @@ namespace GitHub.Models
             writer.WriteDoubleValue("score", Score);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("state_reason", StateReason);
+            writer.WriteObjectValue<global::GitHub.Models.IssueSearchResultItem_sub_issues_summary>("sub_issues_summary", SubIssuesSummary);
             writer.WriteCollectionOfObjectValues<global::GitHub.Models.Issues>("text_matches", TextMatches);
             writer.WriteStringValue("timeline_url", TimelineUrl);
             writer.WriteStringValue("title", Title);

@@ -40,6 +40,14 @@ namespace GitHub.Models
 #endif
         /// <summary>The verified property</summary>
         public bool? Verified { get; set; }
+        /// <summary>The verified_at property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VerifiedAt { get; set; }
+#nullable restore
+#else
+        public string VerifiedAt { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Models.TimelineCommittedEvent_verification"/> and sets the default values.
         /// </summary>
@@ -69,6 +77,7 @@ namespace GitHub.Models
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "verified", n => { Verified = n.GetBoolValue(); } },
+                { "verified_at", n => { VerifiedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,6 +91,7 @@ namespace GitHub.Models
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("signature", Signature);
             writer.WriteBoolValue("verified", Verified);
+            writer.WriteStringValue("verified_at", VerifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

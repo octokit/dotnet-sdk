@@ -33,7 +33,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs
         {
         }
         /// <summary>
-        /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+        /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
         /// API method documentation <see href="https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-workflow" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs.RunsGetResponse"/></returns>
@@ -52,7 +52,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs
             return await RequestAdapter.SendAsync<global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs.RunsGetResponse>(requestInfo, global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs.RunsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+        /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs
             return new global::GitHub.Repos.Item.Item.Actions.Workflows.Item.Runs.RunsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
+        /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).Anyone with read access to the repository can use this endpointOAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.This endpoint will return up to 1,000 results for each search when using the following parameters: `actor`, `branch`, `check_suite_id`, `created`, `event`, `head_sha`, `status`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class RunsRequestBuilderGetQueryParameters 

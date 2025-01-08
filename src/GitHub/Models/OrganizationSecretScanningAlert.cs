@@ -50,6 +50,38 @@ namespace GitHub.Models
 #else
         public global::GitHub.Models.NullableSimpleUser PushProtectionBypassedBy { get; set; }
 #endif
+        /// <summary>An optional comment when requesting a push protection bypass.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PushProtectionBypassRequestComment { get; set; }
+#nullable restore
+#else
+        public string PushProtectionBypassRequestComment { get; set; }
+#endif
+        /// <summary>The URL to a push protection bypass request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PushProtectionBypassRequestHtmlUrl { get; set; }
+#nullable restore
+#else
+        public string PushProtectionBypassRequestHtmlUrl { get; set; }
+#endif
+        /// <summary>A GitHub user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Models.NullableSimpleUser? PushProtectionBypassRequestReviewer { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Models.NullableSimpleUser PushProtectionBypassRequestReviewer { get; set; }
+#endif
+        /// <summary>An optional comment when reviewing a push protection bypass.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PushProtectionBypassRequestReviewerComment { get; set; }
+#nullable restore
+#else
+        public string PushProtectionBypassRequestReviewerComment { get; set; }
+#endif
         /// <summary>A GitHub repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,6 +179,10 @@ namespace GitHub.Models
                 { "multi_repo", n => { MultiRepo = n.GetBoolValue(); } },
                 { "number", n => { Number = n.GetIntValue(); } },
                 { "publicly_leaked", n => { PubliclyLeaked = n.GetBoolValue(); } },
+                { "push_protection_bypass_request_comment", n => { PushProtectionBypassRequestComment = n.GetStringValue(); } },
+                { "push_protection_bypass_request_html_url", n => { PushProtectionBypassRequestHtmlUrl = n.GetStringValue(); } },
+                { "push_protection_bypass_request_reviewer", n => { PushProtectionBypassRequestReviewer = n.GetObjectValue<global::GitHub.Models.NullableSimpleUser>(global::GitHub.Models.NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "push_protection_bypass_request_reviewer_comment", n => { PushProtectionBypassRequestReviewerComment = n.GetStringValue(); } },
                 { "push_protection_bypassed", n => { PushProtectionBypassed = n.GetBoolValue(); } },
                 { "push_protection_bypassed_at", n => { PushProtectionBypassedAt = n.GetDateTimeOffsetValue(); } },
                 { "push_protection_bypassed_by", n => { PushProtectionBypassedBy = n.GetObjectValue<global::GitHub.Models.NullableSimpleUser>(global::GitHub.Models.NullableSimpleUser.CreateFromDiscriminatorValue); } },
@@ -177,6 +213,10 @@ namespace GitHub.Models
             writer.WriteBoolValue("push_protection_bypassed", PushProtectionBypassed);
             writer.WriteDateTimeOffsetValue("push_protection_bypassed_at", PushProtectionBypassedAt);
             writer.WriteObjectValue<global::GitHub.Models.NullableSimpleUser>("push_protection_bypassed_by", PushProtectionBypassedBy);
+            writer.WriteStringValue("push_protection_bypass_request_comment", PushProtectionBypassRequestComment);
+            writer.WriteStringValue("push_protection_bypass_request_html_url", PushProtectionBypassRequestHtmlUrl);
+            writer.WriteObjectValue<global::GitHub.Models.NullableSimpleUser>("push_protection_bypass_request_reviewer", PushProtectionBypassRequestReviewer);
+            writer.WriteStringValue("push_protection_bypass_request_reviewer_comment", PushProtectionBypassRequestReviewerComment);
             writer.WriteObjectValue<global::GitHub.Models.SimpleRepository>("repository", Repository);
             writer.WriteEnumValue<global::GitHub.Models.SecretScanningAlertResolution>("resolution", Resolution);
             writer.WriteStringValue("resolution_comment", ResolutionComment);
