@@ -16,5 +16,9 @@ namespace GitHub.Repos.Item.Item.Dependabot.Alerts
         #pragma warning disable CS1591
         Updated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "epss_percentage")]
+        #pragma warning disable CS1591
+        Epss_percentage,
+        #pragma warning restore CS1591
     }
 }

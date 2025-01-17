@@ -191,7 +191,7 @@ namespace GitHub.Repos.Item.Item.Dependabot.Alerts
             [QueryParameter("severity")]
             public string Severity { get; set; }
 #endif
-            /// <summary>The property by which to sort the results.`created` means when the alert was created.`updated` means when the alert&apos;s state last changed.</summary>
+            /// <summary>The property by which to sort the results.`created` means when the alert was created.`updated` means when the alert&apos;s state last changed.`epss_percentage` sorts alerts by the Exploit Prediction Scoring System (EPSS) percentage.</summary>
             [QueryParameter("sort")]
             public global::GitHub.Repos.Item.Item.Dependabot.Alerts.GetSortQueryParameterType? Sort { get; set; }
             /// <summary>A comma-separated list of states. If specified, only alerts with these states will be returned.Can be: `auto_dismissed`, `dismissed`, `fixed`, `open`</summary>
