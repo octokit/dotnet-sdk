@@ -14,7 +14,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Sub_issue
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The sub-issue to remove</summary>
+        /// <summary>The id of the sub-issue to remove</summary>
         public int? SubIssueId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Sub_issue.Sub_issueDeleteRequestBody"/> and sets the default values.

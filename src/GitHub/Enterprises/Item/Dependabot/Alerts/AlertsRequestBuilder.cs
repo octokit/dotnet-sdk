@@ -22,7 +22,7 @@ namespace GitHub.Enterprises.Item.Dependabot.Alerts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,before*,direction*,ecosystem*,first*,last*,package*,per_page*,scope*,severity*,sort*,state*}", pathParameters)
+        public AlertsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,before*,direction*,ecosystem*,epss_percentage*,first*,last*,package*,per_page*,scope*,severity*,sort*,state*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.Enterprises.Item.Dependabot.Alerts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,before*,direction*,ecosystem*,first*,last*,package*,per_page*,scope*,severity*,sort*,state*}", rawUrl)
+        public AlertsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/enterprises/{enterprise}/dependabot/alerts{?after*,before*,direction*,ecosystem*,epss_percentage*,first*,last*,package*,per_page*,scope*,severity*,sort*,state*}", rawUrl)
         {
         }
         /// <summary>
@@ -128,6 +128,16 @@ namespace GitHub.Enterprises.Item.Dependabot.Alerts
 #else
             [QueryParameter("ecosystem")]
             public string Ecosystem { get; set; }
+#endif
+            /// <summary>CVE Exploit Prediction Scoring System (EPSS) percentage. Can be specified as:- An exact number (`n`)- Comparators such as `&gt;n`, `&lt;n`, `&gt;=n`, `&lt;=n`- A range like `n..n`, where `n` is a number from 0.0 to 1.0Filters the list of alerts based on EPSS percentages. If specified, only alerts with the provided EPSS percentages will be returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("epss_percentage")]
+            public string? EpssPercentage { get; set; }
+#nullable restore
+#else
+            [QueryParameter("epss_percentage")]
+            public string EpssPercentage { get; set; }
 #endif
             /// <summary>**Deprecated**. The number of results per page (max 100), starting from the first matching result.This parameter must not be used in combination with `last`.Instead, use `per_page` in combination with `after` to fetch the first page of results.</summary>
             [QueryParameter("first")]
