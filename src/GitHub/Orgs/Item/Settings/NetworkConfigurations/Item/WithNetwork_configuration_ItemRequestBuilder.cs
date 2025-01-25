@@ -35,7 +35,7 @@ namespace GitHub.Orgs.Item.Settings.NetworkConfigurations.Item
         }
         /// <summary>
         /// Deletes a hosted compute network configuration from an organization.OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
-        /// API method documentation <see href="https://docs.github.com/rest/settings/network-configurations#delete-a-hosted-compute-network-configuration-from-an-organization" />
+        /// API method documentation <see href="https://docs.github.com/rest/orgs/network-configurations#delete-a-hosted-compute-network-configuration-from-an-organization" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -53,7 +53,7 @@ namespace GitHub.Orgs.Item.Settings.NetworkConfigurations.Item
         }
         /// <summary>
         /// Gets a hosted compute network configuration configured in an organization.OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
-        /// API method documentation <see href="https://docs.github.com/rest/settings/network-configurations#get-a-hosted-compute-network-configuration-for-an-organization" />
+        /// API method documentation <see href="https://docs.github.com/rest/orgs/network-configurations#get-a-hosted-compute-network-configuration-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.NetworkConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,7 +72,7 @@ namespace GitHub.Orgs.Item.Settings.NetworkConfigurations.Item
         }
         /// <summary>
         /// Updates a hosted compute network configuration for an organization.OAuth app tokens and personal access tokens (classic) need the `write:network_configurations` scope to use this endpoint.
-        /// API method documentation <see href="https://docs.github.com/rest/settings/network-configurations#update-a-hosted-compute-network-configuration-for-an-organization" />
+        /// API method documentation <see href="https://docs.github.com/rest/orgs/network-configurations#update-a-hosted-compute-network-configuration-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.NetworkConfiguration"/></returns>
         /// <param name="body">The request body</param>

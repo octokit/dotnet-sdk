@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace GitHub.Models
 {
+    /// <summary>
+    /// The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
-    public partial class GlobalAdvisory_epss : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class SecurityAdvisoryEpss : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -19,21 +20,21 @@ namespace GitHub.Models
         /// <summary>The percentile property</summary>
         public double? Percentile { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::GitHub.Models.GlobalAdvisory_epss"/> and sets the default values.
+        /// Instantiates a new <see cref="global::GitHub.Models.SecurityAdvisoryEpss"/> and sets the default values.
         /// </summary>
-        public GlobalAdvisory_epss()
+        public SecurityAdvisoryEpss()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::GitHub.Models.GlobalAdvisory_epss"/></returns>
+        /// <returns>A <see cref="global::GitHub.Models.SecurityAdvisoryEpss"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::GitHub.Models.GlobalAdvisory_epss CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::GitHub.Models.SecurityAdvisoryEpss CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::GitHub.Models.GlobalAdvisory_epss();
+            return new global::GitHub.Models.SecurityAdvisoryEpss();
         }
         /// <summary>
         /// The deserialization information for the current model

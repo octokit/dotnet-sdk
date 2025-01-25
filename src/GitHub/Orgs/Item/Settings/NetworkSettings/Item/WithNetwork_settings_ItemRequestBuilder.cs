@@ -35,7 +35,7 @@ namespace GitHub.Orgs.Item.Settings.NetworkSettings.Item
         }
         /// <summary>
         /// Gets a hosted compute network settings resource configured for an organization.OAuth app tokens and personal access tokens (classic) need the `read:network_configurations` scope to use this endpoint.
-        /// API method documentation <see href="https://docs.github.com/rest/settings/network-configurations#get-a-hosted-compute-network-settings-resource-for-an-organization" />
+        /// API method documentation <see href="https://docs.github.com/rest/orgs/network-configurations#get-a-hosted-compute-network-settings-resource-for-an-organization" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.NetworkSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
