@@ -19,6 +19,7 @@ namespace GitHub.Projects.Item.Collaborators.Item
     public partial class WithUsernameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The permission property</summary>
+        [Obsolete("")]
         public global::GitHub.Projects.Item.Collaborators.Item.Permission.PermissionRequestBuilder Permission
         {
             get => new global::GitHub.Projects.Item.Collaborators.Item.Permission.PermissionRequestBuilder(PathParameters, RequestAdapter);
@@ -40,7 +41,7 @@ namespace GitHub.Projects.Item.Collaborators.Item
         {
         }
         /// <summary>
-        /// Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/collaborators#remove-user-as-a-collaborator" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -49,6 +50,7 @@ namespace GitHub.Projects.Item.Collaborators.Item
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,7 +71,7 @@ namespace GitHub.Projects.Item.Collaborators.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/collaborators#add-project-collaborator" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -79,6 +81,7 @@ namespace GitHub.Projects.Item.Collaborators.Item
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PutAsync(global::GitHub.Projects.Item.Collaborators.Item.WithUsernamePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,10 +103,11 @@ namespace GitHub.Projects.Item.Collaborators.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes a collaborator from an organization project. You must be an organization owner or a project `admin` to remove a collaborator.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -119,11 +123,12 @@ namespace GitHub.Projects.Item.Collaborators.Item
             return requestInfo;
         }
         /// <summary>
-        /// Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPutRequestInformation(global::GitHub.Projects.Item.Collaborators.Item.WithUsernamePutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -145,6 +150,7 @@ namespace GitHub.Projects.Item.Collaborators.Item
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Projects.Item.Collaborators.Item.WithUsernameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Projects.Item.Collaborators.Item.WithUsernameItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Projects.Item.Collaborators.Item.WithUsernameItemRequestBuilder(rawUrl, RequestAdapter);

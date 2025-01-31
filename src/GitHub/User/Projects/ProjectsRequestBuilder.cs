@@ -34,7 +34,7 @@ namespace GitHub.User.Projects
         {
         }
         /// <summary>
-        /// Creates a user project board. Returns a `410 Gone` status if the user does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/projects#create-a-user-project" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.Project"/></returns>
@@ -44,6 +44,7 @@ namespace GitHub.User.Projects
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 401 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Models.Project?> PostAsync(global::GitHub.User.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,11 +65,12 @@ namespace GitHub.User.Projects
             return await RequestAdapter.SendAsync<global::GitHub.Models.Project>(requestInfo, global::GitHub.Models.Project.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a user project board. Returns a `410 Gone` status if the user does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::GitHub.User.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -90,6 +92,7 @@ namespace GitHub.User.Projects
         /// </summary>
         /// <returns>A <see cref="global::GitHub.User.Projects.ProjectsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.User.Projects.ProjectsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.User.Projects.ProjectsRequestBuilder(rawUrl, RequestAdapter);

@@ -34,13 +34,14 @@ namespace GitHub.Users.Item.Projects
         {
         }
         /// <summary>
-        /// Lists projects for a user.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/projects#list-user-projects" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.Project&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.Models.Project>?> GetAsync(Action<RequestConfiguration<global::GitHub.Users.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -59,10 +60,11 @@ namespace GitHub.Users.Item.Projects
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists projects for a user.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Users.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -82,12 +84,13 @@ namespace GitHub.Users.Item.Projects
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Users.Item.Projects.ProjectsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Users.Item.Projects.ProjectsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Users.Item.Projects.ProjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists projects for a user.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ProjectsRequestBuilderGetQueryParameters 

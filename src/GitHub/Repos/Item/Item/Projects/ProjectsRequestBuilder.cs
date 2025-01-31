@@ -34,7 +34,7 @@ namespace GitHub.Repos.Item.Item.Projects
         {
         }
         /// <summary>
-        /// Lists the projects in a repository. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/projects#list-repository-projects" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.Project&gt;</returns>
@@ -45,6 +45,7 @@ namespace GitHub.Repos.Item.Item.Projects
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 410 status code</exception>
         /// <exception cref="global::GitHub.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.Models.Project>?> GetAsync(Action<RequestConfiguration<global::GitHub.Repos.Item.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,7 +68,7 @@ namespace GitHub.Repos.Item.Item.Projects
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Creates a repository project board. Returns a `410 Gone` status if projects are disabled in the repository or if the repository does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/projects#create-a-repository-project" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.Project"/></returns>
@@ -79,6 +80,7 @@ namespace GitHub.Repos.Item.Item.Projects
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 410 status code</exception>
         /// <exception cref="global::GitHub.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Models.Project?> PostAsync(global::GitHub.Repos.Item.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -101,10 +103,11 @@ namespace GitHub.Repos.Item.Item.Projects
             return await RequestAdapter.SendAsync<global::GitHub.Models.Project>(requestInfo, global::GitHub.Models.Project.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the projects in a repository. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Repos.Item.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -120,11 +123,12 @@ namespace GitHub.Repos.Item.Item.Projects
             return requestInfo;
         }
         /// <summary>
-        /// Creates a repository project board. Returns a `410 Gone` status if projects are disabled in the repository or if the repository does not have existing classic projects. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::GitHub.Repos.Item.Item.Projects.ProjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -146,12 +150,13 @@ namespace GitHub.Repos.Item.Item.Projects
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Repos.Item.Item.Projects.ProjectsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Repos.Item.Item.Projects.ProjectsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Repos.Item.Item.Projects.ProjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the projects in a repository. Returns a `404 Not Found` status if projects are disabled in the repository. If you do not have sufficient privileges to perform this action, a `401 Unauthorized` or `410 Gone` status is returned.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ProjectsRequestBuilderGetQueryParameters 

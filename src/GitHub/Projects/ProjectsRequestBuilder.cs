@@ -24,6 +24,7 @@ namespace GitHub.Projects
         /// <summary>Gets an item from the GitHub.projects.item collection</summary>
         /// <param name="position">The unique identifier of the project.</param>
         /// <returns>A <see cref="global::GitHub.Projects.Item.WithProject_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.Projects.Item.WithProject_ItemRequestBuilder this[int position]
         {
             get

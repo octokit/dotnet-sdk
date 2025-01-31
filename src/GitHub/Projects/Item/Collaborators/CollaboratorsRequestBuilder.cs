@@ -21,6 +21,7 @@ namespace GitHub.Projects.Item.Collaborators
         /// <summary>Gets an item from the GitHub.projects.item.collaborators.item collection</summary>
         /// <param name="position">The handle for the GitHub user account.</param>
         /// <returns>A <see cref="global::GitHub.Projects.Item.Collaborators.Item.WithUsernameItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.Projects.Item.Collaborators.Item.WithUsernameItemRequestBuilder this[string position]
         {
             get
@@ -47,7 +48,7 @@ namespace GitHub.Projects.Item.Collaborators
         {
         }
         /// <summary>
-        /// Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/collaborators#list-project-collaborators" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.SimpleUser&gt;</returns>
@@ -57,6 +58,7 @@ namespace GitHub.Projects.Item.Collaborators
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.Models.SimpleUser>?> GetAsync(Action<RequestConfiguration<global::GitHub.Projects.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -78,10 +80,11 @@ namespace GitHub.Projects.Item.Collaborators
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Projects.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -101,12 +104,13 @@ namespace GitHub.Projects.Item.Collaborators
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Projects.Item.Collaborators.CollaboratorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Projects.Item.Collaborators.CollaboratorsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Projects.Item.Collaborators.CollaboratorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the collaborators for an organization project. For a project, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners. You must be an organization owner or a project `admin` to list collaborators.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CollaboratorsRequestBuilderGetQueryParameters 
