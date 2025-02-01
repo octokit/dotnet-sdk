@@ -97,16 +97,16 @@ namespace GitHub.Organizations.Item.Settings.Billing.Usage
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class UsageRequestBuilderGetQueryParameters 
         {
-            /// <summary>If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`.</summary>
+            /// <summary>If specified, only return results for a single day. The value of `day` is an integer between `1` and `31`. If no `year` or `month` is specified, the default `year` and `month` are used.</summary>
             [QueryParameter("day")]
             public int? Day { get; set; }
-            /// <summary>If specified, only return results for a single hour. The value of `hour` is an integer between `0` and `23`.</summary>
+            /// <summary>If specified, only return results for a single hour. The value of `hour` is an integer between `0` and `23`. If no `year`, `month`, or `day` is specified, the default `year`, `month`, and `day` are used.</summary>
             [QueryParameter("hour")]
             public int? Hour { get; set; }
-            /// <summary>If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`.</summary>
+            /// <summary>If specified, only return results for a single month. The value of `month` is an integer between `1` and `12`. If no year is specified the default `year` is used.</summary>
             [QueryParameter("month")]
             public int? Month { get; set; }
-            /// <summary>If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2024`. Default value is the current year.</summary>
+            /// <summary>If specified, only return results for a single year. The value of `year` is an integer with four digits representing a year. For example, `2025`. Default value is the current year.</summary>
             [QueryParameter("year")]
             public int? Year { get; set; }
         }
