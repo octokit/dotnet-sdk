@@ -24,6 +24,8 @@ namespace GitHub.Models
 #else
         public string HtmlUrl { get; private set; }
 #endif
+        /// <summary>A boolean value representing whether or not alert is base64 encoded</summary>
+        public bool? IsBase64Encoded { get; set; }
         /// <summary>The REST API URL of the code locations for this alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,6 +177,7 @@ namespace GitHub.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
+                { "is_base64_encoded", n => { IsBase64Encoded = n.GetBoolValue(); } },
                 { "locations_url", n => { LocationsUrl = n.GetStringValue(); } },
                 { "multi_repo", n => { MultiRepo = n.GetBoolValue(); } },
                 { "number", n => { Number = n.GetIntValue(); } },
@@ -207,6 +210,7 @@ namespace GitHub.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("is_base64_encoded", IsBase64Encoded);
             writer.WriteStringValue("locations_url", LocationsUrl);
             writer.WriteBoolValue("multi_repo", MultiRepo);
             writer.WriteBoolValue("publicly_leaked", PubliclyLeaked);

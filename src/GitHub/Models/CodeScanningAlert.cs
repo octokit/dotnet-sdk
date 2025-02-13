@@ -16,6 +16,14 @@ namespace GitHub.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
+        /// <summary>A GitHub user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Models.NullableSimpleUser? DismissalApprovedBy { get; set; }
+#nullable restore
+#else
+        public global::GitHub.Models.NullableSimpleUser DismissalApprovedBy { get; set; }
+#endif
         /// <summary>The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.</summary>
         public DateTimeOffset? DismissedAt { get; private set; }
         /// <summary>A GitHub user.</summary>
@@ -118,6 +126,7 @@ namespace GitHub.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "dismissal_approved_by", n => { DismissalApprovedBy = n.GetObjectValue<global::GitHub.Models.NullableSimpleUser>(global::GitHub.Models.NullableSimpleUser.CreateFromDiscriminatorValue); } },
                 { "dismissed_at", n => { DismissedAt = n.GetDateTimeOffsetValue(); } },
                 { "dismissed_by", n => { DismissedBy = n.GetObjectValue<global::GitHub.Models.NullableSimpleUser>(global::GitHub.Models.NullableSimpleUser.CreateFromDiscriminatorValue); } },
                 { "dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
@@ -141,6 +150,7 @@ namespace GitHub.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::GitHub.Models.NullableSimpleUser>("dismissal_approved_by", DismissalApprovedBy);
             writer.WriteObjectValue<global::GitHub.Models.NullableSimpleUser>("dismissed_by", DismissedBy);
             writer.WriteStringValue("dismissed_comment", DismissedComment);
             writer.WriteEnumValue<global::GitHub.Models.CodeScanningAlertDismissedReason>("dismissed_reason", DismissedReason);
