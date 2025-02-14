@@ -16,7 +16,7 @@ namespace GitHub.Repos.Item.Item.Issues.Item.Sub_issues
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Option that, when true, instructs the operation to replace the sub-issues current parent issue</summary>
         public bool? ReplaceParent { get; set; }
-        /// <summary>The id of the sub-issue to add. The sub-issue must belong to the same repository as the parent issue</summary>
+        /// <summary>The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue</summary>
         public int? SubIssueId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Repos.Item.Item.Issues.Item.Sub_issues.Sub_issuesPostRequestBody"/> and sets the default values.
