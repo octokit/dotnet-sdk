@@ -25,6 +25,14 @@ namespace GitHub.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Digest { get; set; }
+#nullable restore
+#else
+        public string Digest { get; set; }
+#endif
         /// <summary>Whether or not the artifact has expired.</summary>
         public bool? Expired { get; set; }
         /// <summary>The expires_at property</summary>
@@ -94,6 +102,7 @@ namespace GitHub.Models
             {
                 { "archive_download_url", n => { ArchiveDownloadUrl = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "digest", n => { Digest = n.GetStringValue(); } },
                 { "expired", n => { Expired = n.GetBoolValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
@@ -114,6 +123,7 @@ namespace GitHub.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("archive_download_url", ArchiveDownloadUrl);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("digest", Digest);
             writer.WriteBoolValue("expired", Expired);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteIntValue("id", Id);
