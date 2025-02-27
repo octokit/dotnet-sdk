@@ -34,7 +34,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item.Autofix.Commits
         {
         }
         /// <summary>
-        /// Commits an autofix for a code scanning alert.If an autofix is commited as a result of this request, then this endpoint will return a 201 Created response.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+        /// Commits an autofix for a code scanning alert.If an autofix is committed as a result of this request, then this endpoint will return a 201 Created response.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
         /// API method documentation <see href="https://docs.github.com/rest/code-scanning/code-scanning#commit-an-autofix-for-a-code-scanning-alert" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.CodeScanningAutofixCommitsResponse"/></returns>
@@ -66,7 +66,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item.Autofix.Commits
             return await RequestAdapter.SendAsync<global::GitHub.Models.CodeScanningAutofixCommitsResponse>(requestInfo, global::GitHub.Models.CodeScanningAutofixCommitsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Commits an autofix for a code scanning alert.If an autofix is commited as a result of this request, then this endpoint will return a 201 Created response.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
+        /// Commits an autofix for a code scanning alert.If an autofix is committed as a result of this request, then this endpoint will return a 201 Created response.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Commit an autofix for a code scanning alert</param>

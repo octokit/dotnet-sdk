@@ -77,6 +77,8 @@ namespace GitHub.Models
         public global::GitHub.Models.CodeSecurityConfiguration_private_vulnerability_reporting? PrivateVulnerabilityReporting { get; set; }
         /// <summary>The enablement status of secret scanning</summary>
         public global::GitHub.Models.CodeSecurityConfiguration_secret_scanning? SecretScanning { get; set; }
+        /// <summary>The enablement status of secret scanning delegated alert dismissal</summary>
+        public global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal? SecretScanningDelegatedAlertDismissal { get; set; }
         /// <summary>The enablement status of secret scanning delegated bypass</summary>
         public global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass? SecretScanningDelegatedBypass { get; set; }
         /// <summary>Feature options for secret scanning delegated bypass</summary>
@@ -146,6 +148,7 @@ namespace GitHub.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "private_vulnerability_reporting", n => { PrivateVulnerabilityReporting = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_private_vulnerability_reporting>(); } },
                 { "secret_scanning", n => { SecretScanning = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning>(); } },
+                { "secret_scanning_delegated_alert_dismissal", n => { SecretScanningDelegatedAlertDismissal = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal>(); } },
                 { "secret_scanning_delegated_bypass", n => { SecretScanningDelegatedBypass = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass>(); } },
                 { "secret_scanning_delegated_bypass_options", n => { SecretScanningDelegatedBypassOptions = n.GetObjectValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options>(global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options.CreateFromDiscriminatorValue); } },
                 { "secret_scanning_non_provider_patterns", n => { SecretScanningNonProviderPatterns = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_non_provider_patterns>(); } },
@@ -179,6 +182,7 @@ namespace GitHub.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_private_vulnerability_reporting>("private_vulnerability_reporting", PrivateVulnerabilityReporting);
             writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning>("secret_scanning", SecretScanning);
+            writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_alert_dismissal>("secret_scanning_delegated_alert_dismissal", SecretScanningDelegatedAlertDismissal);
             writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass>("secret_scanning_delegated_bypass", SecretScanningDelegatedBypass);
             writer.WriteObjectValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_delegated_bypass_options>("secret_scanning_delegated_bypass_options", SecretScanningDelegatedBypassOptions);
             writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_secret_scanning_non_provider_patterns>("secret_scanning_non_provider_patterns", SecretScanningNonProviderPatterns);
