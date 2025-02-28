@@ -14,7 +14,7 @@ namespace GitHub.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled.</summary>
+        /// <summary>Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedMergeMethods { get; set; }

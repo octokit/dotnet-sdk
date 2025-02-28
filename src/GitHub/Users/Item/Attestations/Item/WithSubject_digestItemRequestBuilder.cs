@@ -22,7 +22,7 @@ namespace GitHub.Users.Item.Attestations.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSubject_digestItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/attestations/{subject_digest}{?after*,before*,per_page*}", pathParameters)
+        public WithSubject_digestItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/attestations/{subject_digest}{?after*,before*,per_page*,predicate_type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace GitHub.Users.Item.Attestations.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithSubject_digestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/attestations/{subject_digest}{?after*,before*,per_page*}", rawUrl)
+        public WithSubject_digestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{username}/attestations/{subject_digest}{?after*,before*,per_page*,predicate_type*}", rawUrl)
         {
         }
         /// <summary>
@@ -114,6 +114,16 @@ namespace GitHub.Users.Item.Attestations.Item
             /// <summary>The number of results per page (max 100). For more information, see &quot;[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api).&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Optional filter for fetching attestations with a given predicate type.This option accepts `provenance`, `sbom`, or freeform text for custom predicate types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("predicate_type")]
+            public string? PredicateType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("predicate_type")]
+            public string PredicateType { get; set; }
+#endif
         }
     }
 }
