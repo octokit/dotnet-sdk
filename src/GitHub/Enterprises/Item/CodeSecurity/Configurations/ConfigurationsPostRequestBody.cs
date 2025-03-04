@@ -63,6 +63,8 @@ namespace GitHub.Enterprises.Item.CodeSecurity.Configurations
         public global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_private_vulnerability_reporting? PrivateVulnerabilityReporting { get; set; }
         /// <summary>The enablement status of secret scanning</summary>
         public global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning? SecretScanning { get; set; }
+        /// <summary>The enablement status of Copilot secret scanning</summary>
+        public global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_generic_secrets? SecretScanningGenericSecrets { get; set; }
         /// <summary>The enablement status of secret scanning non provider patterns</summary>
         public global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_non_provider_patterns? SecretScanningNonProviderPatterns { get; set; }
         /// <summary>The enablement status of secret scanning push protection</summary>
@@ -83,6 +85,7 @@ namespace GitHub.Enterprises.Item.CodeSecurity.Configurations
             Enforcement = global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_enforcement.Enforced;
             PrivateVulnerabilityReporting = global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_private_vulnerability_reporting.Disabled;
             SecretScanning = global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning.Disabled;
+            SecretScanningGenericSecrets = global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_generic_secrets.Disabled;
             SecretScanningNonProviderPatterns = global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_non_provider_patterns.Disabled;
             SecretScanningPushProtection = global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_push_protection.Disabled;
             SecretScanningValidityChecks = global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_validity_checks.Disabled;
@@ -118,6 +121,7 @@ namespace GitHub.Enterprises.Item.CodeSecurity.Configurations
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "private_vulnerability_reporting", n => { PrivateVulnerabilityReporting = n.GetEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_private_vulnerability_reporting>(); } },
                 { "secret_scanning", n => { SecretScanning = n.GetEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning>(); } },
+                { "secret_scanning_generic_secrets", n => { SecretScanningGenericSecrets = n.GetEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_generic_secrets>(); } },
                 { "secret_scanning_non_provider_patterns", n => { SecretScanningNonProviderPatterns = n.GetEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_non_provider_patterns>(); } },
                 { "secret_scanning_push_protection", n => { SecretScanningPushProtection = n.GetEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_push_protection>(); } },
                 { "secret_scanning_validity_checks", n => { SecretScanningValidityChecks = n.GetEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_validity_checks>(); } },
@@ -143,6 +147,7 @@ namespace GitHub.Enterprises.Item.CodeSecurity.Configurations
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_private_vulnerability_reporting>("private_vulnerability_reporting", PrivateVulnerabilityReporting);
             writer.WriteEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning>("secret_scanning", SecretScanning);
+            writer.WriteEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_generic_secrets>("secret_scanning_generic_secrets", SecretScanningGenericSecrets);
             writer.WriteEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_non_provider_patterns>("secret_scanning_non_provider_patterns", SecretScanningNonProviderPatterns);
             writer.WriteEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_push_protection>("secret_scanning_push_protection", SecretScanningPushProtection);
             writer.WriteEnumValue<global::GitHub.Enterprises.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_secret_scanning_validity_checks>("secret_scanning_validity_checks", SecretScanningValidityChecks);
