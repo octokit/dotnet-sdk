@@ -25,6 +25,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations
 #else
         public global::GitHub.Models.CodeScanningDefaultSetupOptions CodeScanningDefaultSetupOptions { get; set; }
 #endif
+        /// <summary>The enablement status of code scanning delegated alert dismissal</summary>
+        public global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_code_scanning_delegated_alert_dismissal? CodeScanningDelegatedAlertDismissal { get; set; }
         /// <summary>The enablement status of Dependabot alerts</summary>
         public global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependabot_alerts? DependabotAlerts { get; set; }
         /// <summary>The enablement status of Dependabot security updates</summary>
@@ -90,6 +92,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations
         {
             AdvancedSecurity = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_advanced_security.Disabled;
             CodeScanningDefaultSetup = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_code_scanning_default_setup.Disabled;
+            CodeScanningDelegatedAlertDismissal = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_code_scanning_delegated_alert_dismissal.Not_set;
             DependabotAlerts = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependabot_alerts.Disabled;
             DependabotSecurityUpdates = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependabot_security_updates.Disabled;
             DependencyGraph = global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependency_graph.Enabled;
@@ -124,6 +127,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations
                 { "advanced_security", n => { AdvancedSecurity = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_advanced_security>(); } },
                 { "code_scanning_default_setup", n => { CodeScanningDefaultSetup = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_code_scanning_default_setup>(); } },
                 { "code_scanning_default_setup_options", n => { CodeScanningDefaultSetupOptions = n.GetObjectValue<global::GitHub.Models.CodeScanningDefaultSetupOptions>(global::GitHub.Models.CodeScanningDefaultSetupOptions.CreateFromDiscriminatorValue); } },
+                { "code_scanning_delegated_alert_dismissal", n => { CodeScanningDelegatedAlertDismissal = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_code_scanning_delegated_alert_dismissal>(); } },
                 { "dependabot_alerts", n => { DependabotAlerts = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependabot_alerts>(); } },
                 { "dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependabot_security_updates>(); } },
                 { "dependency_graph", n => { DependencyGraph = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependency_graph>(); } },
@@ -153,6 +157,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_advanced_security>("advanced_security", AdvancedSecurity);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_code_scanning_default_setup>("code_scanning_default_setup", CodeScanningDefaultSetup);
             writer.WriteObjectValue<global::GitHub.Models.CodeScanningDefaultSetupOptions>("code_scanning_default_setup_options", CodeScanningDefaultSetupOptions);
+            writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_code_scanning_delegated_alert_dismissal>("code_scanning_delegated_alert_dismissal", CodeScanningDelegatedAlertDismissal);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependabot_alerts>("dependabot_alerts", DependabotAlerts);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.ConfigurationsPostRequestBody_dependency_graph>("dependency_graph", DependencyGraph);

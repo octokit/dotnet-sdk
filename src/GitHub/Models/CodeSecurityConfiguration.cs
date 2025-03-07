@@ -27,6 +27,8 @@ namespace GitHub.Models
 #else
         public global::GitHub.Models.CodeSecurityConfiguration_code_scanning_default_setup_options CodeScanningDefaultSetupOptions { get; set; }
 #endif
+        /// <summary>The enablement status of code scanning delegated alert dismissal</summary>
+        public global::GitHub.Models.CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal? CodeScanningDelegatedAlertDismissal { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The enablement status of Dependabot alerts</summary>
@@ -137,6 +139,7 @@ namespace GitHub.Models
                 { "advanced_security", n => { AdvancedSecurity = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_advanced_security>(); } },
                 { "code_scanning_default_setup", n => { CodeScanningDefaultSetup = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_code_scanning_default_setup>(); } },
                 { "code_scanning_default_setup_options", n => { CodeScanningDefaultSetupOptions = n.GetObjectValue<global::GitHub.Models.CodeSecurityConfiguration_code_scanning_default_setup_options>(global::GitHub.Models.CodeSecurityConfiguration_code_scanning_default_setup_options.CreateFromDiscriminatorValue); } },
+                { "code_scanning_delegated_alert_dismissal", n => { CodeScanningDelegatedAlertDismissal = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dependabot_alerts", n => { DependabotAlerts = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_dependabot_alerts>(); } },
                 { "dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetEnumValue<global::GitHub.Models.CodeSecurityConfiguration_dependabot_security_updates>(); } },
@@ -172,6 +175,7 @@ namespace GitHub.Models
             writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_advanced_security>("advanced_security", AdvancedSecurity);
             writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_code_scanning_default_setup>("code_scanning_default_setup", CodeScanningDefaultSetup);
             writer.WriteObjectValue<global::GitHub.Models.CodeSecurityConfiguration_code_scanning_default_setup_options>("code_scanning_default_setup_options", CodeScanningDefaultSetupOptions);
+            writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_code_scanning_delegated_alert_dismissal>("code_scanning_delegated_alert_dismissal", CodeScanningDelegatedAlertDismissal);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_dependabot_alerts>("dependabot_alerts", DependabotAlerts);
             writer.WriteEnumValue<global::GitHub.Models.CodeSecurityConfiguration_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);

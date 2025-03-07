@@ -25,6 +25,8 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
 #else
         public global::GitHub.Models.CodeScanningDefaultSetupOptions CodeScanningDefaultSetupOptions { get; set; }
 #endif
+        /// <summary>The enablement status of code scanning delegated alert dismissal</summary>
+        public global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_code_scanning_delegated_alert_dismissal? CodeScanningDelegatedAlertDismissal { get; set; }
         /// <summary>The enablement status of Dependabot alerts</summary>
         public global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_dependabot_alerts? DependabotAlerts { get; set; }
         /// <summary>The enablement status of Dependabot security updates</summary>
@@ -84,6 +86,13 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
         /// <summary>The enablement status of secret scanning validity checks</summary>
         public global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_secret_scanning_validity_checks? SecretScanningValidityChecks { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody"/> and sets the default values.
+        /// </summary>
+        public WithConfiguration_PatchRequestBody()
+        {
+            CodeScanningDelegatedAlertDismissal = global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_code_scanning_delegated_alert_dismissal.Disabled;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody"/></returns>
@@ -104,6 +113,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
                 { "advanced_security", n => { AdvancedSecurity = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_advanced_security>(); } },
                 { "code_scanning_default_setup", n => { CodeScanningDefaultSetup = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_code_scanning_default_setup>(); } },
                 { "code_scanning_default_setup_options", n => { CodeScanningDefaultSetupOptions = n.GetObjectValue<global::GitHub.Models.CodeScanningDefaultSetupOptions>(global::GitHub.Models.CodeScanningDefaultSetupOptions.CreateFromDiscriminatorValue); } },
+                { "code_scanning_delegated_alert_dismissal", n => { CodeScanningDelegatedAlertDismissal = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_code_scanning_delegated_alert_dismissal>(); } },
                 { "dependabot_alerts", n => { DependabotAlerts = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_dependabot_alerts>(); } },
                 { "dependabot_security_updates", n => { DependabotSecurityUpdates = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_dependabot_security_updates>(); } },
                 { "dependency_graph", n => { DependencyGraph = n.GetEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_dependency_graph>(); } },
@@ -133,6 +143,7 @@ namespace GitHub.Orgs.Item.CodeSecurity.Configurations.Item
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_advanced_security>("advanced_security", AdvancedSecurity);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_code_scanning_default_setup>("code_scanning_default_setup", CodeScanningDefaultSetup);
             writer.WriteObjectValue<global::GitHub.Models.CodeScanningDefaultSetupOptions>("code_scanning_default_setup_options", CodeScanningDefaultSetupOptions);
+            writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_code_scanning_delegated_alert_dismissal>("code_scanning_delegated_alert_dismissal", CodeScanningDelegatedAlertDismissal);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_dependabot_alerts>("dependabot_alerts", DependabotAlerts);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_dependabot_security_updates>("dependabot_security_updates", DependabotSecurityUpdates);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.CodeSecurity.Configurations.Item.WithConfiguration_PatchRequestBody_dependency_graph>("dependency_graph", DependencyGraph);
