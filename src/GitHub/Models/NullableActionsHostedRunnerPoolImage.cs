@@ -35,14 +35,6 @@ namespace GitHub.Models
         public int? SizeGb { get; set; }
         /// <summary>The image provider.</summary>
         public global::GitHub.Models.NullableActionsHostedRunnerPoolImage_source? Source { get; set; }
-        /// <summary>The image version of the hosted runner pool.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Version { get; set; }
-#nullable restore
-#else
-        public string Version { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Models.NullableActionsHostedRunnerPoolImage"/> and sets the default values.
         /// </summary>
@@ -72,7 +64,6 @@ namespace GitHub.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "size_gb", n => { SizeGb = n.GetIntValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::GitHub.Models.NullableActionsHostedRunnerPoolImage_source>(); } },
-                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -86,7 +77,6 @@ namespace GitHub.Models
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("size_gb", SizeGb);
             writer.WriteEnumValue<global::GitHub.Models.NullableActionsHostedRunnerPoolImage_source>("source", Source);
-            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

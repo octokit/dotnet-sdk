@@ -81,6 +81,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::GitHub.Models.BasicError">When receiving a 400 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Models.CodeScanningAlert503Error">When receiving a 503 status code</exception>
@@ -97,6 +98,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
                 { "403", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
                 { "404", global::GitHub.Models.BasicError.CreateFromDiscriminatorValue },
                 { "503", global::GitHub.Models.CodeScanningAlert503Error.CreateFromDiscriminatorValue },

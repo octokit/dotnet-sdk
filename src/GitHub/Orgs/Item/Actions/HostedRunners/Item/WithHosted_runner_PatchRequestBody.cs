@@ -16,14 +16,6 @@ namespace GitHub.Orgs.Item.Actions.HostedRunners.Item
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this runner should be updated with a static public IP. Note limit on account. To list limits on account, use `GET actions/hosted-runners/limits`</summary>
         public bool? EnableStaticIp { get; set; }
-        /// <summary>The version of the runner image to deploy. This is relevant only for runners using custom images.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ImageVersion { get; set; }
-#nullable restore
-#else
-        public string ImageVersion { get; set; }
-#endif
         /// <summary>The maximum amount of runners to scale up to. Runners will not auto-scale above this number. Use this setting to limit your cost.</summary>
         public int? MaximumRunners { get; set; }
         /// <summary>Name of the runner. Must be between 1 and 64 characters and may only contain upper and lowercase letters a-z, numbers 0-9, &apos;.&apos;, &apos;-&apos;, and &apos;_&apos;.</summary>
@@ -62,7 +54,6 @@ namespace GitHub.Orgs.Item.Actions.HostedRunners.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enable_static_ip", n => { EnableStaticIp = n.GetBoolValue(); } },
-                { "image_version", n => { ImageVersion = n.GetStringValue(); } },
                 { "maximum_runners", n => { MaximumRunners = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "runner_group_id", n => { RunnerGroupId = n.GetIntValue(); } },
@@ -76,7 +67,6 @@ namespace GitHub.Orgs.Item.Actions.HostedRunners.Item
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enable_static_ip", EnableStaticIp);
-            writer.WriteStringValue("image_version", ImageVersion);
             writer.WriteIntValue("maximum_runners", MaximumRunners);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("runner_group_id", RunnerGroupId);

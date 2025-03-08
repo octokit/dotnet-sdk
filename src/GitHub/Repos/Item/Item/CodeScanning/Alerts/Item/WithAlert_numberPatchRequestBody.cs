@@ -15,6 +15,8 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>If `true`, attempt to create an alert dismissal request.</summary>
+        public bool? CreateRequest { get; set; }
         /// <summary>The dismissal comment associated with the dismissal of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +54,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "create_request", n => { CreateRequest = n.GetBoolValue(); } },
                 { "dismissed_comment", n => { DismissedComment = n.GetStringValue(); } },
                 { "dismissed_reason", n => { DismissedReason = n.GetEnumValue<global::GitHub.Models.CodeScanningAlertDismissedReason>(); } },
                 { "state", n => { State = n.GetEnumValue<global::GitHub.Models.CodeScanningAlertSetState>(); } },
@@ -64,6 +67,7 @@ namespace GitHub.Repos.Item.Item.CodeScanning.Alerts.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("create_request", CreateRequest);
             writer.WriteStringValue("dismissed_comment", DismissedComment);
             writer.WriteEnumValue<global::GitHub.Models.CodeScanningAlertDismissedReason>("dismissed_reason", DismissedReason);
             writer.WriteEnumValue<global::GitHub.Models.CodeScanningAlertSetState>("state", State);
