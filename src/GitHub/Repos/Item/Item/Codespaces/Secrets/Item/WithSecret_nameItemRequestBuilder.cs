@@ -34,7 +34,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.Item
         {
         }
         /// <summary>
-        /// Deletes a development environment secret in a repository using the secret name.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// Deletes a development environment secret in a repository using the secret name.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/repository-secrets#delete-a-repository-secret" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,7 +71,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.Item
             return await RequestAdapter.SendAsync<global::GitHub.Models.RepoCodespacesSecret>(requestInfo, global::GitHub.Models.RepoCodespacesSecret.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see &quot;[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).&quot;OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see &quot;[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).&quot;OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
         /// API method documentation <see href="https://docs.github.com/rest/codespaces/repository-secrets#create-or-update-a-repository-secret" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.EmptyObject"/></returns>
@@ -92,7 +92,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.Item
             return await RequestAdapter.SendAsync<global::GitHub.Models.EmptyObject>(requestInfo, global::GitHub.Models.EmptyObject.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a development environment secret in a repository using the secret name.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// Deletes a development environment secret in a repository using the secret name.OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace GitHub.Repos.Item.Item.Codespaces.Secrets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see &quot;[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).&quot;OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
+        /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using[LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages). For more information, see &quot;[Encrypting secrets for the REST API](https://docs.github.com/rest/guides/encrypting-secrets-for-the-rest-api).&quot;OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint. The associated user must be a repository admin.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

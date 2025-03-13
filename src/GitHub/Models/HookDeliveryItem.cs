@@ -44,13 +44,13 @@ namespace GitHub.Models
         public string Guid { get; set; }
 #endif
         /// <summary>Unique identifier of the webhook delivery.</summary>
-        public int? Id { get; set; }
+        public long? Id { get; set; }
         /// <summary>The id of the GitHub App installation associated with this event.</summary>
-        public int? InstallationId { get; set; }
+        public long? InstallationId { get; set; }
         /// <summary>Whether the webhook delivery is a redelivery.</summary>
         public bool? Redelivery { get; set; }
         /// <summary>The id of the repository associated with this event.</summary>
-        public int? RepositoryId { get; set; }
+        public long? RepositoryId { get; set; }
         /// <summary>Describes the response returned after attempting the delivery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,10 +93,10 @@ namespace GitHub.Models
                 { "duration", n => { Duration = n.GetDoubleValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
                 { "guid", n => { Guid = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "installation_id", n => { InstallationId = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetLongValue(); } },
+                { "installation_id", n => { InstallationId = n.GetLongValue(); } },
                 { "redelivery", n => { Redelivery = n.GetBoolValue(); } },
-                { "repository_id", n => { RepositoryId = n.GetIntValue(); } },
+                { "repository_id", n => { RepositoryId = n.GetLongValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "status_code", n => { StatusCode = n.GetIntValue(); } },
                 { "throttled_at", n => { ThrottledAt = n.GetDateTimeOffsetValue(); } },
@@ -114,10 +114,10 @@ namespace GitHub.Models
             writer.WriteDoubleValue("duration", Duration);
             writer.WriteStringValue("event", Event);
             writer.WriteStringValue("guid", Guid);
-            writer.WriteIntValue("id", Id);
-            writer.WriteIntValue("installation_id", InstallationId);
+            writer.WriteLongValue("id", Id);
+            writer.WriteLongValue("installation_id", InstallationId);
             writer.WriteBoolValue("redelivery", Redelivery);
-            writer.WriteIntValue("repository_id", RepositoryId);
+            writer.WriteLongValue("repository_id", RepositoryId);
             writer.WriteStringValue("status", Status);
             writer.WriteIntValue("status_code", StatusCode);
             writer.WriteDateTimeOffsetValue("throttled_at", ThrottledAt);
