@@ -34,7 +34,7 @@ namespace GitHub.Search.Issues
         {
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+        /// &gt; [!WARNING]&gt; **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.&gt; You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
         /// API method documentation <see href="https://docs.github.com/rest/search/search#search-issues-and-pull-requests" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Search.Issues.IssuesGetResponse"/></returns>
@@ -63,7 +63,7 @@ namespace GitHub.Search.Issues
             return await RequestAdapter.SendAsync<global::GitHub.Search.Issues.IssuesGetResponse>(requestInfo, global::GitHub.Search.Issues.IssuesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+        /// &gt; [!WARNING]&gt; **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.&gt; You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace GitHub.Search.Issues
             return new global::GitHub.Search.Issues.IssuesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &gt; [!WARNING]&gt; **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.
+        /// &gt; [!WARNING]&gt; **Notice:** Search for issues and pull requests will be overridden by advanced search on September 4, 2025.&gt; You can read more about this change on [the GitHub blog](https://github.blog/changelog/2025-03-06-github-issues-projects-api-support-for-issues-advanced-search-and-more/).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class IssuesRequestBuilderGetQueryParameters 

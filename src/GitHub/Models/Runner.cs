@@ -19,7 +19,7 @@ namespace GitHub.Models
         public bool? Busy { get; set; }
         /// <summary>The ephemeral property</summary>
         public bool? Ephemeral { get; set; }
-        /// <summary>The id of the runner.</summary>
+        /// <summary>The ID of the runner.</summary>
         public int? Id { get; set; }
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,7 +45,7 @@ namespace GitHub.Models
 #else
         public string Os { get; set; }
 #endif
-        /// <summary>The id of the runner group.</summary>
+        /// <summary>The ID of the runner group.</summary>
         public int? RunnerGroupId { get; set; }
         /// <summary>The status of the runner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
