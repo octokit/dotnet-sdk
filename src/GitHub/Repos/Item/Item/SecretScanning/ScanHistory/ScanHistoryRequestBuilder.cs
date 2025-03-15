@@ -34,7 +34,7 @@ namespace GitHub.Repos.Item.Item.SecretScanning.ScanHistory
         {
         }
         /// <summary>
-        /// Lists the latest incremental and backfill scans by type for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Lists the latest default incremental and backfill scans by type for a repository. Scans from Copilot Secret Scanning are not included.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
         /// API method documentation <see href="https://docs.github.com/rest/secret-scanning/secret-scanning#get-secret-scanning-scan-history-for-a-repository" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.SecretScanningScanHistory"/></returns>
@@ -58,7 +58,7 @@ namespace GitHub.Repos.Item.Item.SecretScanning.ScanHistory
             return await RequestAdapter.SendAsync<global::GitHub.Models.SecretScanningScanHistory>(requestInfo, global::GitHub.Models.SecretScanningScanHistory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the latest incremental and backfill scans by type for a repository.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
+        /// Lists the latest default incremental and backfill scans by type for a repository. Scans from Copilot Secret Scanning are not included.OAuth app tokens and personal access tokens (classic) need the `repo` or `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

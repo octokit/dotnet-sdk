@@ -85,13 +85,13 @@ namespace GitHub.Models
 #else
         public string NodeId { get; set; }
 #endif
-        /// <summary>A GitHub user.</summary>
+        /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::GitHub.Models.NullableSimpleUser? Owner { get; set; }
+        public global::GitHub.Models.NullableIntegration.NullableIntegration_owner? Owner { get; set; }
 #nullable restore
 #else
-        public global::GitHub.Models.NullableSimpleUser Owner { get; set; }
+        public global::GitHub.Models.NullableIntegration.NullableIntegration_owner Owner { get; set; }
 #endif
         /// <summary>The pem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -163,7 +163,7 @@ namespace GitHub.Models
                 { "installations_count", n => { InstallationsCount = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "node_id", n => { NodeId = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::GitHub.Models.NullableSimpleUser>(global::GitHub.Models.NullableSimpleUser.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::GitHub.Models.NullableIntegration.NullableIntegration_owner>(global::GitHub.Models.NullableIntegration.NullableIntegration_owner.CreateFromDiscriminatorValue); } },
                 { "pem", n => { Pem = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::GitHub.Models.NullableIntegration_permissions>(global::GitHub.Models.NullableIntegration_permissions.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
@@ -189,13 +189,88 @@ namespace GitHub.Models
             writer.WriteIntValue("installations_count", InstallationsCount);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("node_id", NodeId);
-            writer.WriteObjectValue<global::GitHub.Models.NullableSimpleUser>("owner", Owner);
+            writer.WriteObjectValue<global::GitHub.Models.NullableIntegration.NullableIntegration_owner>("owner", Owner);
             writer.WriteStringValue("pem", Pem);
             writer.WriteObjectValue<global::GitHub.Models.NullableIntegration_permissions>("permissions", Permissions);
             writer.WriteStringValue("slug", Slug);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("webhook_secret", WebhookSecret);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::GitHub.Models.Enterprise"/>, <see cref="global::GitHub.Models.SimpleUser"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+        public partial class NullableIntegration_owner : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::GitHub.Models.Enterprise"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::GitHub.Models.Enterprise? Enterprise { get; set; }
+#nullable restore
+#else
+            public global::GitHub.Models.Enterprise Enterprise { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::GitHub.Models.SimpleUser"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::GitHub.Models.SimpleUser? SimpleUser { get; set; }
+#nullable restore
+#else
+            public global::GitHub.Models.SimpleUser SimpleUser { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::GitHub.Models.NullableIntegration.NullableIntegration_owner"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::GitHub.Models.NullableIntegration.NullableIntegration_owner CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::GitHub.Models.NullableIntegration.NullableIntegration_owner();
+                if("enterprise".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.Enterprise = new global::GitHub.Models.Enterprise();
+                }
+                else if("simple-user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.SimpleUser = new global::GitHub.Models.SimpleUser();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(Enterprise != null)
+                {
+                    return Enterprise.GetFieldDeserializers();
+                }
+                else if(SimpleUser != null)
+                {
+                    return SimpleUser.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(Enterprise != null)
+                {
+                    writer.WriteObjectValue<global::GitHub.Models.Enterprise>(null, Enterprise);
+                }
+                else if(SimpleUser != null)
+                {
+                    writer.WriteObjectValue<global::GitHub.Models.SimpleUser>(null, SimpleUser);
+                }
+            }
         }
     }
 }

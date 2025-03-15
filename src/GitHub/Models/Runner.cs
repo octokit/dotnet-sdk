@@ -17,7 +17,9 @@ namespace GitHub.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The busy property</summary>
         public bool? Busy { get; set; }
-        /// <summary>The id of the runner.</summary>
+        /// <summary>The ephemeral property</summary>
+        public bool? Ephemeral { get; set; }
+        /// <summary>The ID of the runner.</summary>
         public int? Id { get; set; }
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,7 +45,7 @@ namespace GitHub.Models
 #else
         public string Os { get; set; }
 #endif
-        /// <summary>The id of the runner group.</summary>
+        /// <summary>The ID of the runner group.</summary>
         public int? RunnerGroupId { get; set; }
         /// <summary>The status of the runner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,6 +81,7 @@ namespace GitHub.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "busy", n => { Busy = n.GetBoolValue(); } },
+                { "ephemeral", n => { Ephemeral = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "labels", n => { Labels = n.GetCollectionOfObjectValues<global::GitHub.Models.RunnerLabel>(global::GitHub.Models.RunnerLabel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -95,6 +98,7 @@ namespace GitHub.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("busy", Busy);
+            writer.WriteBoolValue("ephemeral", Ephemeral);
             writer.WriteIntValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::GitHub.Models.RunnerLabel>("labels", Labels);
             writer.WriteStringValue("name", Name);

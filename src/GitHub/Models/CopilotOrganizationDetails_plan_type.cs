@@ -15,9 +15,5 @@ namespace GitHub.Models
         #pragma warning disable CS1591
         Enterprise,
         #pragma warning restore CS1591
-        [EnumMember(Value = "unknown")]
-        #pragma warning disable CS1591
-        Unknown,
-        #pragma warning restore CS1591
     }
 }

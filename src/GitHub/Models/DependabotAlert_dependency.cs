@@ -31,6 +31,8 @@ namespace GitHub.Models
 #else
         public global::GitHub.Models.DependabotAlertPackage Package { get; private set; }
 #endif
+        /// <summary>The vulnerable dependency&apos;s relationship to your project.&gt; [!NOTE]&gt; We are rolling out support for dependency relationship across ecosystems. This value will be &quot;unknown&quot; for all dependencies in unsupported ecosystems.</summary>
+        public global::GitHub.Models.DependabotAlert_dependency_relationship? Relationship { get; private set; }
         /// <summary>The execution scope of the vulnerable dependency.</summary>
         public global::GitHub.Models.DependabotAlert_dependency_scope? Scope { get; private set; }
         /// <summary>
@@ -60,6 +62,7 @@ namespace GitHub.Models
             {
                 { "manifest_path", n => { ManifestPath = n.GetStringValue(); } },
                 { "package", n => { Package = n.GetObjectValue<global::GitHub.Models.DependabotAlertPackage>(global::GitHub.Models.DependabotAlertPackage.CreateFromDiscriminatorValue); } },
+                { "relationship", n => { Relationship = n.GetEnumValue<global::GitHub.Models.DependabotAlert_dependency_relationship>(); } },
                 { "scope", n => { Scope = n.GetEnumValue<global::GitHub.Models.DependabotAlert_dependency_scope>(); } },
             };
         }

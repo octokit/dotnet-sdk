@@ -17,6 +17,8 @@ namespace GitHub.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The comments property</summary>
         public int? Comments { get; set; }
+        /// <summary>The comments_enabled property</summary>
+        public bool? CommentsEnabled { get; set; }
         /// <summary>The comments_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -193,6 +195,7 @@ namespace GitHub.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comments", n => { Comments = n.GetIntValue(); } },
+                { "comments_enabled", n => { CommentsEnabled = n.GetBoolValue(); } },
                 { "comments_url", n => { CommentsUrl = n.GetStringValue(); } },
                 { "commits_url", n => { CommitsUrl = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
@@ -223,6 +226,7 @@ namespace GitHub.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("comments", Comments);
+            writer.WriteBoolValue("comments_enabled", CommentsEnabled);
             writer.WriteStringValue("comments_url", CommentsUrl);
             writer.WriteStringValue("commits_url", CommitsUrl);
             writer.WriteStringValue("created_at", CreatedAt);

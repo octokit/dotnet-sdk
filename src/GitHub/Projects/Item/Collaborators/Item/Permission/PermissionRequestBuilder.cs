@@ -34,7 +34,7 @@ namespace GitHub.Projects.Item.Collaborators.Item.Permission
         {
         }
         /// <summary>
-        /// Returns the collaborator&apos;s permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user&apos;s permission level.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/collaborators#get-project-permission-for-a-user" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.ProjectCollaboratorPermission"/></returns>
@@ -44,6 +44,7 @@ namespace GitHub.Projects.Item.Collaborators.Item.Permission
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 404 status code</exception>
         /// <exception cref="global::GitHub.Models.ValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Models.ProjectCollaboratorPermission?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,10 +65,11 @@ namespace GitHub.Projects.Item.Collaborators.Item.Permission
             return await RequestAdapter.SendAsync<global::GitHub.Models.ProjectCollaboratorPermission>(requestInfo, global::GitHub.Models.ProjectCollaboratorPermission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the collaborator&apos;s permission level for an organization project. Possible values for the `permission` key: `admin`, `write`, `read`, `none`. You must be an organization owner or a project `admin` to review a user&apos;s permission level.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -87,6 +89,7 @@ namespace GitHub.Projects.Item.Collaborators.Item.Permission
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Projects.Item.Collaborators.Item.Permission.PermissionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Projects.Item.Collaborators.Item.Permission.PermissionRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Projects.Item.Collaborators.Item.Permission.PermissionRequestBuilder(rawUrl, RequestAdapter);

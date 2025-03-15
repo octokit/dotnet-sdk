@@ -24,6 +24,14 @@ namespace GitHub.Orgs.Item.Actions.RunnerGroups.Item
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The identifier of a hosted compute network configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NetworkConfigurationId { get; set; }
+#nullable restore
+#else
+        public string NetworkConfigurationId { get; set; }
+#endif
         /// <summary>If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.</summary>
         public bool? RestrictedToWorkflows { get; set; }
         /// <summary>List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.</summary>
@@ -63,6 +71,7 @@ namespace GitHub.Orgs.Item.Actions.RunnerGroups.Item
             {
                 { "allows_public_repositories", n => { AllowsPublicRepositories = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "network_configuration_id", n => { NetworkConfigurationId = n.GetStringValue(); } },
                 { "restricted_to_workflows", n => { RestrictedToWorkflows = n.GetBoolValue(); } },
                 { "selected_workflows", n => { SelectedWorkflows = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "visibility", n => { Visibility = n.GetEnumValue<global::GitHub.Orgs.Item.Actions.RunnerGroups.Item.WithRunner_group_PatchRequestBody_visibility>(); } },
@@ -77,6 +86,7 @@ namespace GitHub.Orgs.Item.Actions.RunnerGroups.Item
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allows_public_repositories", AllowsPublicRepositories);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("network_configuration_id", NetworkConfigurationId);
             writer.WriteBoolValue("restricted_to_workflows", RestrictedToWorkflows);
             writer.WriteCollectionOfPrimitiveValues<string>("selected_workflows", SelectedWorkflows);
             writer.WriteEnumValue<global::GitHub.Orgs.Item.Actions.RunnerGroups.Item.WithRunner_group_PatchRequestBody_visibility>("visibility", Visibility);

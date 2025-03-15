@@ -8,16 +8,16 @@ using System;
 namespace GitHub.Models
 {
     /// <summary>
-    /// Check Automated Security Fixes
+    /// Check Dependabot security updates
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class CheckAutomatedSecurityFixes : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether automated security fixes are enabled for the repository.</summary>
+        /// <summary>Whether Dependabot security updates are enabled for the repository.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>Whether automated security fixes are paused for the repository.</summary>
+        /// <summary>Whether Dependabot security updates are paused for the repository.</summary>
         public bool? Paused { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::GitHub.Models.CheckAutomatedSecurityFixes"/> and sets the default values.

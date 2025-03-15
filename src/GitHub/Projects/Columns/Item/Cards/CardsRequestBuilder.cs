@@ -34,7 +34,7 @@ namespace GitHub.Projects.Columns.Item.Cards
         {
         }
         /// <summary>
-        /// Lists the project cards in a project.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/cards#list-project-cards" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.ProjectCard&gt;</returns>
@@ -42,6 +42,7 @@ namespace GitHub.Projects.Columns.Item.Cards
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 401 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.Models.ProjectCard>?> GetAsync(Action<RequestConfiguration<global::GitHub.Projects.Columns.Item.Cards.CardsRequestBuilder.CardsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -61,7 +62,7 @@ namespace GitHub.Projects.Columns.Item.Cards
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a project card
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/cards#create-a-project-card" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.ProjectCard"/></returns>
@@ -71,6 +72,7 @@ namespace GitHub.Projects.Columns.Item.Cards
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 401 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Projects.Columns.Item.Cards.ProjectCard503Error">When receiving a 503 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Models.ProjectCard?> PostAsync(global::GitHub.Projects.Columns.Item.Cards.CardsRequestBuilder.CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -91,10 +93,11 @@ namespace GitHub.Projects.Columns.Item.Cards
             return await RequestAdapter.SendAsync<global::GitHub.Models.ProjectCard>(requestInfo, global::GitHub.Models.ProjectCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the project cards in a project.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Projects.Columns.Item.Cards.CardsRequestBuilder.CardsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -109,9 +112,13 @@ namespace GitHub.Projects.Columns.Item.Cards
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
+        /// <summary>
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
+        /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::GitHub.Projects.Columns.Item.Cards.CardsRequestBuilder.CardsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -133,6 +140,7 @@ namespace GitHub.Projects.Columns.Item.Cards
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Projects.Columns.Item.Cards.CardsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Projects.Columns.Item.Cards.CardsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Projects.Columns.Item.Cards.CardsRequestBuilder(rawUrl, RequestAdapter);
@@ -253,7 +261,7 @@ namespace GitHub.Projects.Columns.Item.Cards
             }
         }
         /// <summary>
-        /// Lists the project cards in a project.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class CardsRequestBuilderGetQueryParameters 

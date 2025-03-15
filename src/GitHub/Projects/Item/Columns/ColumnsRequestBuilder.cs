@@ -34,7 +34,7 @@ namespace GitHub.Projects.Item.Columns
         {
         }
         /// <summary>
-        /// Lists the project columns in a project.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/columns#list-project-columns" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.ProjectColumn&gt;</returns>
@@ -42,6 +42,7 @@ namespace GitHub.Projects.Item.Columns
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 401 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.Models.ProjectColumn>?> GetAsync(Action<RequestConfiguration<global::GitHub.Projects.Item.Columns.ColumnsRequestBuilder.ColumnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -61,7 +62,7 @@ namespace GitHub.Projects.Item.Columns
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Creates a new project column.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/projects/columns#create-a-project-column" />
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Models.ProjectColumn"/></returns>
@@ -71,6 +72,7 @@ namespace GitHub.Projects.Item.Columns
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 401 status code</exception>
         /// <exception cref="global::GitHub.Models.BasicError">When receiving a 403 status code</exception>
         /// <exception cref="global::GitHub.Models.ValidationErrorSimple">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::GitHub.Models.ProjectColumn?> PostAsync(global::GitHub.Projects.Item.Columns.ColumnsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -91,10 +93,11 @@ namespace GitHub.Projects.Item.Columns
             return await RequestAdapter.SendAsync<global::GitHub.Models.ProjectColumn>(requestInfo, global::GitHub.Models.ProjectColumn.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists the project columns in a project.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Projects.Item.Columns.ColumnsRequestBuilder.ColumnsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -110,11 +113,12 @@ namespace GitHub.Projects.Item.Columns
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new project column.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::GitHub.Projects.Item.Columns.ColumnsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -136,12 +140,13 @@ namespace GitHub.Projects.Item.Columns
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Projects.Item.Columns.ColumnsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Projects.Item.Columns.ColumnsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Projects.Item.Columns.ColumnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the project columns in a project.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ColumnsRequestBuilderGetQueryParameters 

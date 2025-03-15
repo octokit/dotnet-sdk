@@ -25,6 +25,14 @@ namespace GitHub.Models
 #else
         public string GroupId { get; set; }
 #endif
+        /// <summary>The group_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupName { get; set; }
+#nullable restore
+#else
+        public string GroupName { get; set; }
+#endif
         /// <summary>The html_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,6 +112,7 @@ namespace GitHub.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
+                { "group_name", n => { GroupName = n.GetStringValue(); } },
                 { "html_url", n => { HtmlUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetLongValue(); } },
                 { "members_url", n => { MembersUrl = n.GetStringValue(); } },
@@ -123,6 +132,7 @@ namespace GitHub.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("group_id", GroupId);
+            writer.WriteStringValue("group_name", GroupName);
             writer.WriteStringValue("html_url", HtmlUrl);
             writer.WriteLongValue("id", Id);
             writer.WriteStringValue("members_url", MembersUrl);

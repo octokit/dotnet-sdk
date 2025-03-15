@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Models
 {
-    /// <summary>The organization policy for allowing or disallowing Copilot to make suggestions that match public code.</summary>
+    /// <summary>The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum CopilotOrganizationDetails_public_code_suggestions
     {
@@ -18,10 +18,6 @@ namespace GitHub.Models
         [EnumMember(Value = "unconfigured")]
         #pragma warning disable CS1591
         Unconfigured,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "unknown")]
-        #pragma warning disable CS1591
-        Unknown,
         #pragma warning restore CS1591
     }
 }

@@ -12,7 +12,7 @@ namespace GitHub.Enterprises.Item.CodeSecurity.Configurations.Item.Attach
     public partial class AttachPostRequestBody : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`</summary>
+        /// <summary>The type of repositories to attach the configuration to.</summary>
         public global::GitHub.Enterprises.Item.CodeSecurity.Configurations.Item.Attach.AttachPostRequestBody_scope? Scope { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

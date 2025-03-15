@@ -53,6 +53,14 @@ namespace GitHub.Models
 #else
         public string Description { get; private set; }
 #endif
+        /// <summary>The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::GitHub.Models.SecurityAdvisoryEpss? Epss { get; private set; }
+#nullable restore
+#else
+        public global::GitHub.Models.SecurityAdvisoryEpss Epss { get; private set; }
+#endif
         /// <summary>The unique GitHub Security Advisory ID assigned to the advisory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +132,7 @@ namespace GitHub.Models
                 { "cvss_severities", n => { CvssSeverities = n.GetObjectValue<global::GitHub.Models.CvssSeverities>(global::GitHub.Models.CvssSeverities.CreateFromDiscriminatorValue); } },
                 { "cwes", n => { Cwes = n.GetCollectionOfObjectValues<global::GitHub.Models.DependabotAlertSecurityAdvisory_cwes>(global::GitHub.Models.DependabotAlertSecurityAdvisory_cwes.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "epss", n => { Epss = n.GetObjectValue<global::GitHub.Models.SecurityAdvisoryEpss>(global::GitHub.Models.SecurityAdvisoryEpss.CreateFromDiscriminatorValue); } },
                 { "ghsa_id", n => { GhsaId = n.GetStringValue(); } },
                 { "identifiers", n => { Identifiers = n.GetCollectionOfObjectValues<global::GitHub.Models.DependabotAlertSecurityAdvisory_identifiers>(global::GitHub.Models.DependabotAlertSecurityAdvisory_identifiers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "published_at", n => { PublishedAt = n.GetDateTimeOffsetValue(); } },

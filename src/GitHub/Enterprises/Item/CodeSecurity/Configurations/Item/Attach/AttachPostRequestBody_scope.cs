@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace GitHub.Enterprises.Item.CodeSecurity.Configurations.Item.Attach
 {
-    /// <summary>The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`</summary>
+    /// <summary>The type of repositories to attach the configuration to.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum AttachPostRequestBody_scope
     {

@@ -35,7 +35,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonalAccessTokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens{?direction*,last_used_after*,last_used_before*,owner*,page*,per_page*,permission*,repository*,sort*}", pathParameters)
+        public PersonalAccessTokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens{?direction*,last_used_after*,last_used_before*,owner*,page*,per_page*,permission*,repository*,sort*,token_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PersonalAccessTokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens{?direction*,last_used_after*,last_used_before*,owner*,page*,per_page*,permission*,repository*,sort*}", rawUrl)
+        public PersonalAccessTokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/orgs/{org}/personal-access-tokens{?direction*,last_used_after*,last_used_before*,owner*,page*,per_page*,permission*,repository*,sort*,token_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -213,6 +213,16 @@ namespace GitHub.Orgs.Item.PersonalAccessTokens
             /// <summary>The property by which to sort the results.</summary>
             [QueryParameter("sort")]
             public global::GitHub.Orgs.Item.PersonalAccessTokens.GetSortQueryParameterType? Sort { get; set; }
+            /// <summary>The ID of the token</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("token_id")]
+            public string[]? TokenId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("token_id")]
+            public string[] TokenId { get; set; }
+#endif
         }
     }
 }

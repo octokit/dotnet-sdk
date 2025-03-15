@@ -21,6 +21,7 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects
         /// <summary>Gets an item from the GitHub.orgs.item.teams.item.projects.item collection</summary>
         /// <param name="position">The unique identifier of the project.</param>
         /// <returns>A <see cref="global::GitHub.Orgs.Item.Teams.Item.Projects.Item.WithProject_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.Orgs.Item.Teams.Item.Projects.Item.WithProject_ItemRequestBuilder this[int position]
         {
             get
@@ -47,12 +48,13 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects
         {
         }
         /// <summary>
-        /// Lists the organization projects for a team.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// API method documentation <see href="https://docs.github.com/rest/teams/teams#list-team-projects" />
         /// </summary>
         /// <returns>A List&lt;global::GitHub.Models.TeamProject&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::GitHub.Models.TeamProject>?> GetAsync(Action<RequestConfiguration<global::GitHub.Orgs.Item.Teams.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -67,10 +69,11 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists the organization projects for a team.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::GitHub.Orgs.Item.Teams.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -90,12 +93,13 @@ namespace GitHub.Orgs.Item.Teams.Item.Projects
         /// </summary>
         /// <returns>A <see cref="global::GitHub.Orgs.Item.Teams.Item.Projects.ProjectsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::GitHub.Orgs.Item.Teams.Item.Projects.ProjectsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::GitHub.Orgs.Item.Teams.Item.Projects.ProjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Lists the organization projects for a team.&gt; [!NOTE]&gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/projects`.
+        /// &gt; [!WARNING]&gt; **Closing down notice:** Projects (classic) is being deprecated in favor of the new Projects experience.&gt; See the [changelog](https://github.blog/changelog/2024-05-23-sunset-notice-projects-classic/) for more information.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class ProjectsRequestBuilderGetQueryParameters 

@@ -24,6 +24,7 @@ namespace GitHub.Projects.Columns
         /// <summary>Gets an item from the GitHub.projects.columns.item collection</summary>
         /// <param name="position">The unique identifier of the column.</param>
         /// <returns>A <see cref="global::GitHub.Projects.Columns.Item.WithColumn_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.Projects.Columns.Item.WithColumn_ItemRequestBuilder this[int position]
         {
             get

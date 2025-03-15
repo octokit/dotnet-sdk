@@ -18,6 +18,7 @@ namespace GitHub.Projects.Columns.Cards
         /// <summary>Gets an item from the GitHub.projects.columns.cards.item collection</summary>
         /// <param name="position">The unique identifier of the card.</param>
         /// <returns>A <see cref="global::GitHub.Projects.Columns.Cards.Item.WithCard_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::GitHub.Projects.Columns.Cards.Item.WithCard_ItemRequestBuilder this[int position]
         {
             get

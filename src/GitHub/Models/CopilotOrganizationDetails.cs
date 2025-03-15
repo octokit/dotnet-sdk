@@ -15,23 +15,23 @@ namespace GitHub.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The organization policy for allowing or disallowing organization members to use Copilot within their CLI.</summary>
+        /// <summary>The organization policy for allowing or disallowing Copilot in the CLI.</summary>
         public global::GitHub.Models.CopilotOrganizationDetails_cli? Cli { get; set; }
-        /// <summary>The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.</summary>
+        /// <summary>The organization policy for allowing or disallowing Copilot Chat in the IDE.</summary>
         public global::GitHub.Models.CopilotOrganizationDetails_ide_chat? IdeChat { get; set; }
         /// <summary>The Copilot plan of the organization, or the parent enterprise, when applicable.</summary>
         public global::GitHub.Models.CopilotOrganizationDetails_plan_type? PlanType { get; set; }
-        /// <summary>The organization policy for allowing or disallowing organization members to use Copilot features within github.com.</summary>
+        /// <summary>The organization policy for allowing or disallowing Copilot features on GitHub.com.</summary>
         public global::GitHub.Models.CopilotOrganizationDetails_platform_chat? PlatformChat { get; set; }
-        /// <summary>The organization policy for allowing or disallowing Copilot to make suggestions that match public code.</summary>
+        /// <summary>The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).</summary>
         public global::GitHub.Models.CopilotOrganizationDetails_public_code_suggestions? PublicCodeSuggestions { get; set; }
         /// <summary>The breakdown of Copilot Business seats for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::GitHub.Models.CopilotSeatBreakdown? SeatBreakdown { get; set; }
+        public global::GitHub.Models.CopilotOrganizationSeatBreakdown? SeatBreakdown { get; set; }
 #nullable restore
 #else
-        public global::GitHub.Models.CopilotSeatBreakdown SeatBreakdown { get; set; }
+        public global::GitHub.Models.CopilotOrganizationSeatBreakdown SeatBreakdown { get; set; }
 #endif
         /// <summary>The mode of assigning new seats.</summary>
         public global::GitHub.Models.CopilotOrganizationDetails_seat_management_setting? SeatManagementSetting { get; set; }
@@ -65,7 +65,7 @@ namespace GitHub.Models
                 { "plan_type", n => { PlanType = n.GetEnumValue<global::GitHub.Models.CopilotOrganizationDetails_plan_type>(); } },
                 { "platform_chat", n => { PlatformChat = n.GetEnumValue<global::GitHub.Models.CopilotOrganizationDetails_platform_chat>(); } },
                 { "public_code_suggestions", n => { PublicCodeSuggestions = n.GetEnumValue<global::GitHub.Models.CopilotOrganizationDetails_public_code_suggestions>(); } },
-                { "seat_breakdown", n => { SeatBreakdown = n.GetObjectValue<global::GitHub.Models.CopilotSeatBreakdown>(global::GitHub.Models.CopilotSeatBreakdown.CreateFromDiscriminatorValue); } },
+                { "seat_breakdown", n => { SeatBreakdown = n.GetObjectValue<global::GitHub.Models.CopilotOrganizationSeatBreakdown>(global::GitHub.Models.CopilotOrganizationSeatBreakdown.CreateFromDiscriminatorValue); } },
                 { "seat_management_setting", n => { SeatManagementSetting = n.GetEnumValue<global::GitHub.Models.CopilotOrganizationDetails_seat_management_setting>(); } },
             };
         }
@@ -81,7 +81,7 @@ namespace GitHub.Models
             writer.WriteEnumValue<global::GitHub.Models.CopilotOrganizationDetails_plan_type>("plan_type", PlanType);
             writer.WriteEnumValue<global::GitHub.Models.CopilotOrganizationDetails_platform_chat>("platform_chat", PlatformChat);
             writer.WriteEnumValue<global::GitHub.Models.CopilotOrganizationDetails_public_code_suggestions>("public_code_suggestions", PublicCodeSuggestions);
-            writer.WriteObjectValue<global::GitHub.Models.CopilotSeatBreakdown>("seat_breakdown", SeatBreakdown);
+            writer.WriteObjectValue<global::GitHub.Models.CopilotOrganizationSeatBreakdown>("seat_breakdown", SeatBreakdown);
             writer.WriteEnumValue<global::GitHub.Models.CopilotOrganizationDetails_seat_management_setting>("seat_management_setting", SeatManagementSetting);
             writer.WriteAdditionalData(AdditionalData);
         }
