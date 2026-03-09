@@ -90,6 +90,9 @@ orleans.codegen.cs
 .ntvs_analysis.dat
 node_modules/
 
+# JetBrains IDEs
+.idea/
+
 # VS
 .vs/*
 

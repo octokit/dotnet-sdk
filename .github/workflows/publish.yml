@@ -3,7 +3,7 @@ name: Publish Release to NuGet
 on:
   release:
     types: [published]
-    
+
 defaults:
   run:
     shell: bash
@@ -11,14 +11,20 @@ defaults:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v6
 
     - name: Setup .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: 8.x.x
+        source-url: https://nuget.pkg.github.com/${{github.repository_owner}}/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     - name: Build and strong name
       run: dotnet build --configuration Release --no-incremental -p:version=${GITHUB_REF#refs/*/v} -p:SignAssembly=true -p:AssemblyOriginatorKeyFile=../key.snk
@@ -26,5 +32,5 @@ jobs:
     - name: Pack SDK
       run: dotnet pack -p:version=${GITHUB_REF#refs/*/v} -o ./publish
 
-    - name: Ship to NuGet
-      run: dotnet nuget push ./publish/*.nupkg -s https://api.nuget.org/v3/index.json -k ${{secrets.NUGET_API_KEY}} --skip-duplicate
+    - name: Publish to GitHub Packages
+      run: dotnet nuget push ./publish/*.nupkg --skip-duplicate
